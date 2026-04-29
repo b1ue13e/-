@@ -1,0 +1,28 @@
+{
+  "accentColor": "#588b46",
+  "cssTheme": "Shiba Inu",
+  "enabledCssSnippets": [
+    "print",
+    "隐藏status bar",
+    "yaozhuwa@CSS",
+    "【背景】默认笔记背景",
+    "透明status-bar",
+    "custom-admonitions.c9c6cb",
+    "分隔符分页",
+    "ytmaps@CSS",
+    "ytmaps0512@CSS",
+    "深色模式使用",
+    "👉微信：ytmaps0512制作",
+    "👉vx：ytmaps0512制作",
+    "👉vx：ytmaps0512更新",
+    "minimalcards",
+    "meta-bind",
+    "Nord主题",
+    "Shiba Inu主题"
+  ],
+  "theme": "moonstone",
+  "baseFontSize": 23,
+  "showViewHeader": true,
+  "textFontFamily": "霞鹜文楷",
+  "baseFontSizeAction": true
+}

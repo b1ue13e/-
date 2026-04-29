@@ -1,0 +1,18 @@
+﻿# Local/sync temp files
+.tmp.driveupload/
+.tmp.drivedownload/
+.playwright-cli/
+output/
+__pycache__/
+.trash/
+*.crdownload
+
+# Local Obsidian UI state
+.obsidian/workspace.json
+.obsidian/workspaces.json
+.obsidian/.obsidian/
+.obsidian/plugins/remember-cursor-position/cursor-positions.json
+
+# Sensitive sync plugin data
+.obsidian/plugins/remotely-save/data.json
+.obsidian/plugins/google-drive-sync/data.json

@@ -1,0 +1,5 @@
+# 避免把重复压缩包、Jupyter 缓存和大型模型权重误提交
+*.zip
+.ipynb_checkpoints/
+*.pth
+!**/lstm.pth

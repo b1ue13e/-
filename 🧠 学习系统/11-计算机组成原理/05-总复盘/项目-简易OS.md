@@ -1,0 +1,59 @@
+---
+type: project
+topic: 项目-简易OS
+created: 2026-04-18
+status: active
+difficulty: advanced
+concept:
+- 计算机组成原理
+- 简易OS实现
+prerequisites: []
+related: []
+tags:
+- 学习
+- 计算机组成原理
+- 项目
+project_type: 简易OS实现
+progress: 0%
+---
+
+# 项目-简易OS
+
+> 所属路径：[[../🗺️ 计算机组成原理学习路径|计算机组成原理学习路径]]
+> 所属阶段：[[🧠 学习系统/11-计算机组成原理/05-总复盘/✅ 第五阶段：总复盘|✅ 第五阶段：总复盘]]
+> 教材入口：[[../📚 教材挂载索引|教材挂载索引]]
+
+## 项目定位
+- 项目模块：简易OS实现
+- 这次实践要解决的问题：简易OS实现
+- 阶段目标：目标：将前面所有知识串联起来，形成从晶体管到应用程序的完整认知，掌握系统优化和性能分析能力。 周期：预计 2-3 周
+
+## 对应教材
+- `《深入理解计算机系统》`：Machine-Level Code、Processor Architecture、Exceptional Control Flow
+- `《深入理解计算机系统》`：Memory Hierarchy、Virtual Memory、Processes、Linking
+- `《Java并发编程实战》`：Thread Safety、Synchronization、Executors、Memory Model
+- `《现代操作系统》`：Synchronization、Deadlocks、Concurrency
+- `ARM嵌入式微控制器程序设计入门`：微控制器、寄存器、底层程序设计、硬件控制
+
+## 最小交付
+- 一个可以复现的任务定义或实验脚手架
+- 一份数据 / 环境 / 指标说明
+- 一份结果记录或复盘提纲
+
+## 实施步骤
+- [ ] 明确任务目标与评价指标
+- [ ] 准备数据、工具和实验环境
+- [ ] 跑通一个最小 baseline
+- [ ] 记录结果、问题和下一轮改进点
+
+## 和其他笔记的关系
+- 前置：待补
+- 相关：待补
+- 返回阶段索引：[[🧠 学习系统/11-计算机组成原理/05-总复盘/✅ 第五阶段：总复盘|✅ 第五阶段：总复盘]]
+
+## 复盘问题
+- [ ] 这个项目验证了哪一个课程概念
+- [ ] 哪一步最卡，原因是什么
+- [ ] 下一步要补哪一张理论卡
+
+*创建于：2026-04-18*

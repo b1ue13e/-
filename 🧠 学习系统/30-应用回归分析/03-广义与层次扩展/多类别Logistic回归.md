@@ -1,0 +1,27 @@
+---
+type: study
+topic: 多类别Logistic回归
+created: 2026-04-16
+status: ongoing
+difficulty: intermediate
+concept:
+- 多类别Logistic回归
+prerequisites: []
+related: []
+tags:
+- 学习
+- 回归分析
+---
+
+# 多类别Logistic回归
+
+> 所属模块：[[🧠 学习系统/30-应用回归分析/🗺️ 应用回归分析学习路径|应用回归分析]]
+> 主教材：[[📚 书库/书籍笔记/应用回归分析-第5版|应用回归分析（第5版）]]
+> 对应阶段：[[🧩 第三阶段：广义与层次扩展|返回阶段页]]
+
+## 待写
+
+- 核心定义：
+- 关键方法/公式：
+- 典型例子：
+- 与前后章节的关系：

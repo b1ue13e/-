@@ -1,0 +1,801 @@
+{
+  "workspaces": {
+    "侧工作区": {
+      "main": {
+        "id": "324e2b7a0a2aed88",
+        "type": "split",
+        "children": [
+          {
+            "id": "21e803b5cfc0d9c0",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "c7d2e156f00adec2",
+                "type": "leaf",
+                "state": {
+                  "type": "empty",
+                  "state": {}
+                }
+              }
+            ]
+          }
+        ],
+        "direction": "vertical"
+      },
+      "left": {
+        "id": "9f3c145813b44c60",
+        "type": "split",
+        "children": [
+          {
+            "id": "f957f74ea5e4fa9a",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "60a7820e453ce0cc",
+                "type": "leaf",
+                "state": {
+                  "type": "file-explorer",
+                  "state": {
+                    "sortOrder": "alphabetical"
+                  }
+                }
+              },
+              {
+                "id": "da0db952287911d9",
+                "type": "leaf",
+                "state": {
+                  "type": "search",
+                  "state": {
+                    "query": "makdown",
+                    "matchingCase": true,
+                    "explainSearch": false,
+                    "collapseAll": false,
+                    "extraContext": false,
+                    "sortOrder": "alphabetical"
+                  }
+                }
+              },
+              {
+                "id": "046b0cecf2429b84",
+                "type": "leaf",
+                "state": {
+                  "type": "bookmarks",
+                  "state": {}
+                }
+              }
+            ]
+          }
+        ],
+        "direction": "horizontal",
+        "width": 253,
+        "collapsed": true
+      },
+      "right": {
+        "id": "128c55eacc93ffde",
+        "type": "split",
+        "children": [
+          {
+            "id": "a0ce31a991c18e01",
+            "type": "tabs",
+            "dimension": 54.759568204121685,
+            "children": [
+              {
+                "id": "481ded08027b63b3",
+                "type": "leaf",
+                "pinned": true,
+                "state": {
+                  "type": "markdown",
+                  "state": {
+                    "file": "Documents/Homepage/homepage-侧页.md",
+                    "mode": "preview",
+                    "source": false
+                  },
+                  "pinned": true
+                }
+              },
+              {
+                "id": "919b0f2e5fed0394",
+                "type": "leaf",
+                "state": {
+                  "type": "review-queue-list-view",
+                  "state": {}
+                }
+              },
+              {
+                "id": "6fd3f438d60509c5",
+                "type": "leaf",
+                "state": {
+                  "type": "tag",
+                  "state": {
+                    "sortOrder": "frequency",
+                    "useHierarchy": true
+                  }
+                }
+              },
+              {
+                "id": "9f4f7dd6207943f9",
+                "type": "leaf",
+                "state": {
+                  "type": "outline",
+                  "state": {}
+                }
+              },
+              {
+                "id": "79b313f7d24a2e13",
+                "type": "leaf",
+                "state": {
+                  "type": "file-properties",
+                  "state": {}
+                }
+              },
+              {
+                "id": "39e75f7514b2ebd0",
+                "type": "leaf",
+                "state": {
+                  "type": "backlink",
+                  "state": {
+                    "collapseAll": false,
+                    "extraContext": false,
+                    "sortOrder": "alphabetical",
+                    "showSearch": false,
+                    "searchQuery": "",
+                    "backlinkCollapsed": false,
+                    "unlinkedCollapsed": true
+                  }
+                }
+              },
+              {
+                "id": "1248937f197b0a59",
+                "type": "leaf",
+                "state": {
+                  "type": "outgoing-link",
+                  "state": {
+                    "linksCollapsed": false,
+                    "unlinkedCollapsed": true
+                  }
+                }
+              },
+              {
+                "id": "98f46faf679e7e46",
+                "type": "leaf",
+                "state": {
+                  "type": "calendar",
+                  "state": {}
+                }
+              },
+              {
+                "id": "71850f8c7d26a57b",
+                "type": "leaf",
+                "state": {
+                  "type": "all-properties",
+                  "state": {
+                    "sortOrder": "frequency",
+                    "showSearch": false,
+                    "searchQuery": ""
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "id": "bda6964f87b3610f",
+            "type": "tabs",
+            "dimension": 45.240431795878315,
+            "children": [
+              {
+                "id": "e841c27eb19b6666",
+                "type": "leaf",
+                "state": {
+                  "type": "localgraph",
+                  "state": {
+                    "options": {
+                      "collapse-filter": false,
+                      "search": "",
+                      "localJumps": 4,
+                      "localBacklinks": true,
+                      "localForelinks": true,
+                      "localInterlinks": false,
+                      "showTags": false,
+                      "showAttachments": true,
+                      "hideUnresolved": false,
+                      "collapse-color-groups": false,
+                      "colorGroups": [
+                        {
+                          "query": "path:Assistants  ",
+                          "color": {
+                            "a": 1,
+                            "rgb": 6076630
+                          }
+                        },
+                        {
+                          "query": "path:Books  ",
+                          "color": {
+                            "a": 1,
+                            "rgb": 15374780
+                          }
+                        },
+                        {
+                          "query": "path:Connections  ",
+                          "color": {
+                            "a": 1,
+                            "rgb": 6069206
+                          }
+                        },
+                        {
+                          "query": "path:Documents  ",
+                          "color": {
+                            "a": 1,
+                            "rgb": 11230422
+                          }
+                        },
+                        {
+                          "query": "path:Extras  ",
+                          "color": {
+                            "a": 1,
+                            "rgb": 4013129
+                          }
+                        }
+                      ],
+                      "collapse-display": false,
+                      "showArrow": false,
+                      "textFadeMultiplier": -0.6,
+                      "nodeSizeMultiplier": 1.54421052631579,
+                      "lineSizeMultiplier": 2.24052631578947,
+                      "collapse-forces": false,
+                      "centerStrength": 0.353146853146853,
+                      "repelStrength": 0,
+                      "linkStrength": 0,
+                      "linkDistance": 186,
+                      "scale": 0.5087618855792615,
+                      "close": true
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        ],
+        "direction": "horizontal",
+        "width": 289
+      },
+      "left-ribbon": {
+        "hiddenItems": {
+          "command-palette:打开命令面板": false,
+          "workspaces:管理工作区布局": false,
+          "switcher:打开快速切换": false,
+          "graph:查看关系图谱": false,
+          "canvas:新建白板": false,
+          "daily-notes:打开/创建今天的日记": false,
+          "templates:插入模板": false,
+          "random-note:开始漫游笔记": false,
+          "templater-obsidian:Templater": false,
+          "obsidian-spaced-repetition:复习卡片": false,
+          "pdf-plus:PDF++: Toggle auto-copy": false,
+          "pdf-plus:PDF++: Toggle auto-focus": false,
+          "pdf-plus:PDF++: Toggle auto-paste": false,
+          "homepage:Open homepage": false,
+          "easy-toggle-sidebars:autoHide switcher": false,
+          "obsidian-excalidraw-plugin:新建绘图文件": false
+        }
+      },
+      "active": "c7d2e156f00adec2",
+      "mtime": "2024-07-10T10:32:44+08:00"
+    },
+    "工作区-移动端": {
+      "main": {
+        "id": "c6a41e69814d2f1e",
+        "type": "split",
+        "children": [
+          {
+            "id": "3747646c65c88fe5",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "dfd4c5388afdd025",
+                "type": "leaf",
+                "state": {
+                  "type": "markdown",
+                  "state": {
+                    "file": "homepage-移动端.md",
+                    "mode": "preview",
+                    "source": false
+                  }
+                }
+              }
+            ]
+          }
+        ],
+        "direction": "vertical"
+      },
+      "left": {
+        "id": "7dbd99518a7d892b",
+        "type": "mobile-drawer",
+        "children": [
+          {
+            "id": "2a0736350e09bc44",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "923757e1e9113941",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "63cc19e806219da1",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "20ff47b6d51bdf1b",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          },
+          {
+            "id": "2b8154e2d1c70eff",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              }
+            }
+          }
+        ],
+        "currentTab": 0
+      },
+      "right": {
+        "id": "4bcb18d1deb7057e",
+        "type": "mobile-drawer",
+        "children": [
+          {
+            "id": "28184298b62e5735",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "homepage-移动端.md",
+                "collapseAll": true,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "96750870a72f025b",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "homepage-移动端.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "a1a48c839e83a36f",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "homepage-移动端.md"
+              }
+            }
+          },
+          {
+            "id": "5f2ac8ae0d433899",
+            "type": "leaf",
+            "state": {
+              "type": "calendar",
+              "state": {}
+            }
+          }
+        ]
+      },
+      "left-ribbon": {
+        "hiddenItems": {
+          "switcher:打开快速切换": false,
+          "graph:查看关系图谱": false,
+          "canvas:新建白板": false,
+          "daily-notes:打开/创建今天的日记": false,
+          "templates:插入模板": false,
+          "command-palette:打开命令面板": false,
+          "templater-obsidian:Templater": false,
+          "obsidian-spaced-repetition:复习卡片": false,
+          "pdf-plus:PDF++: Toggle auto-copy": false,
+          "pdf-plus:PDF++: Toggle auto-focus": false,
+          "pdf-plus:PDF++: Toggle auto-paste": false,
+          "homepage:Open homepage": false,
+          "obsidian-excalidraw-plugin:新建绘图文件": false,
+          "random-note:开始漫游笔记": false,
+          "workspaces:管理工作区布局": false
+        }
+      },
+      "active": "dfd4c5388afdd025",
+      "mtime": "2024-06-27T10:58:25+08:00"
+    },
+    "阅读工作区": {
+      "main": {
+        "id": "324e2b7a0a2aed88",
+        "type": "split",
+        "children": [
+          {
+            "id": "3977b0a6dbfa0edb",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "46ea85912fa7724d",
+                "type": "leaf",
+                "state": {
+                  "type": "pdf",
+                  "state": {
+                    "file": "Books/pdf书籍/认知觉醒.pdf",
+                    "page": 22,
+                    "left": -14,
+                    "top": 84,
+                    "zoom": 1.1090686274509804
+                  }
+                }
+              }
+            ]
+          }
+        ],
+        "direction": "vertical"
+      },
+      "left": {
+        "id": "9f3c145813b44c60",
+        "type": "split",
+        "children": [
+          {
+            "id": "f957f74ea5e4fa9a",
+            "type": "tabs",
+            "dimension": 33.52941176470588,
+            "children": [
+              {
+                "id": "60a7820e453ce0cc",
+                "type": "leaf",
+                "state": {
+                  "type": "file-explorer",
+                  "state": {
+                    "sortOrder": "alphabetical"
+                  }
+                }
+              },
+              {
+                "id": "da0db952287911d9",
+                "type": "leaf",
+                "state": {
+                  "type": "search",
+                  "state": {
+                    "query": "tag:#模块",
+                    "matchingCase": true,
+                    "explainSearch": false,
+                    "collapseAll": false,
+                    "extraContext": false,
+                    "sortOrder": "alphabetical"
+                  }
+                }
+              },
+              {
+                "id": "b32ed24d66354503",
+                "type": "leaf",
+                "state": {
+                  "type": "bookmarks",
+                  "state": {}
+                }
+              }
+            ]
+          },
+          {
+            "id": "332658b81e17d99c",
+            "type": "tabs",
+            "dimension": 33.92156862745098,
+            "children": [
+              {
+                "id": "ce54b765a304ec82",
+                "type": "leaf",
+                "state": {
+                  "type": "markdown",
+                  "state": {
+                    "file": "Assistants/Modules/图表模块/读书时长追踪图表模块.md",
+                    "mode": "source",
+                    "source": false
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "id": "01a8f57dc9a2590a",
+            "type": "tabs",
+            "dimension": 32.549019607843135,
+            "children": [
+              {
+                "id": "2cab806788cb52bd",
+                "type": "leaf",
+                "state": {
+                  "type": "markdown",
+                  "state": {
+                    "file": "Assistants/Modules/图表模块/读书打卡日历图表模块.md",
+                    "mode": "source",
+                    "source": false
+                  }
+                }
+              }
+            ]
+          }
+        ],
+        "direction": "horizontal",
+        "width": 328
+      },
+      "right": {
+        "id": "128c55eacc93ffde",
+        "type": "split",
+        "children": [
+          {
+            "id": "a0ce31a991c18e01",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "481ded08027b63b3",
+                "type": "leaf",
+                "pinned": true,
+                "state": {
+                  "type": "markdown",
+                  "state": {
+                    "file": "Documents/Homepage/homepage-侧页.md",
+                    "mode": "preview",
+                    "source": true
+                  },
+                  "pinned": true
+                }
+              },
+              {
+                "id": "eec1760e6cda4907",
+                "type": "leaf",
+                "state": {
+                  "type": "markdown",
+                  "state": {
+                    "file": "Assistants/Modules/查询模块/读书笔记列表.md",
+                    "mode": "preview",
+                    "source": false
+                  }
+                }
+              },
+              {
+                "id": "ea6d967e8678abfb",
+                "type": "leaf",
+                "pinned": true,
+                "state": {
+                  "type": "markdown",
+                  "state": {
+                    "file": "Assistants/Modules/查询模块/查询卡片盒笔记法看板-list.md",
+                    "mode": "preview",
+                    "source": false
+                  },
+                  "pinned": true
+                }
+              },
+              {
+                "id": "919b0f2e5fed0394",
+                "type": "leaf",
+                "state": {
+                  "type": "review-queue-list-view",
+                  "state": {}
+                }
+              },
+              {
+                "id": "e841c27eb19b6666",
+                "type": "leaf",
+                "state": {
+                  "type": "localgraph",
+                  "state": {
+                    "file": "Books/pdf书籍/认知觉醒.pdf",
+                    "options": {
+                      "collapse-filter": false,
+                      "search": "",
+                      "localJumps": 2,
+                      "localBacklinks": true,
+                      "localForelinks": true,
+                      "localInterlinks": false,
+                      "showTags": false,
+                      "showAttachments": true,
+                      "hideUnresolved": false,
+                      "collapse-color-groups": false,
+                      "colorGroups": [
+                        {
+                          "query": "path:Assistants  ",
+                          "color": {
+                            "a": 1,
+                            "rgb": 6076630
+                          }
+                        },
+                        {
+                          "query": "path:Books  ",
+                          "color": {
+                            "a": 1,
+                            "rgb": 15374780
+                          }
+                        },
+                        {
+                          "query": "path:Connections  ",
+                          "color": {
+                            "a": 1,
+                            "rgb": 6069206
+                          }
+                        },
+                        {
+                          "query": "path:Documents  ",
+                          "color": {
+                            "a": 1,
+                            "rgb": 11230422
+                          }
+                        },
+                        {
+                          "query": "path:Extras  ",
+                          "color": {
+                            "a": 1,
+                            "rgb": 4013129
+                          }
+                        }
+                      ],
+                      "collapse-display": false,
+                      "showArrow": false,
+                      "textFadeMultiplier": -0.6,
+                      "nodeSizeMultiplier": 1.54421052631579,
+                      "lineSizeMultiplier": 2.24052631578947,
+                      "collapse-forces": false,
+                      "centerStrength": 0.353146853146853,
+                      "repelStrength": 0,
+                      "linkStrength": 0,
+                      "linkDistance": 186,
+                      "scale": 1.4019828977761135,
+                      "close": true
+                    }
+                  }
+                }
+              },
+              {
+                "id": "6fd3f438d60509c5",
+                "type": "leaf",
+                "state": {
+                  "type": "tag",
+                  "state": {
+                    "sortOrder": "frequency",
+                    "useHierarchy": true
+                  }
+                }
+              },
+              {
+                "id": "9f4f7dd6207943f9",
+                "type": "leaf",
+                "state": {
+                  "type": "outline",
+                  "state": {
+                    "file": "Books/pdf书籍/认知觉醒.pdf"
+                  }
+                }
+              },
+              {
+                "id": "39e75f7514b2ebd0",
+                "type": "leaf",
+                "state": {
+                  "type": "backlink",
+                  "state": {
+                    "file": "Books/pdf书籍/认知觉醒.pdf",
+                    "collapseAll": false,
+                    "extraContext": false,
+                    "sortOrder": "alphabetical",
+                    "showSearch": false,
+                    "searchQuery": "",
+                    "backlinkCollapsed": false,
+                    "unlinkedCollapsed": true
+                  }
+                }
+              },
+              {
+                "id": "1248937f197b0a59",
+                "type": "leaf",
+                "state": {
+                  "type": "outgoing-link",
+                  "state": {
+                    "file": "Books/pdf书籍/认知觉醒.pdf",
+                    "linksCollapsed": false,
+                    "unlinkedCollapsed": true
+                  }
+                }
+              },
+              {
+                "id": "98f46faf679e7e46",
+                "type": "leaf",
+                "state": {
+                  "type": "calendar",
+                  "state": {}
+                }
+              },
+              {
+                "id": "32bea175cc173aab",
+                "type": "leaf",
+                "state": {
+                  "type": "all-properties",
+                  "state": {
+                    "sortOrder": "frequency",
+                    "showSearch": false,
+                    "searchQuery": ""
+                  }
+                }
+              },
+              {
+                "id": "307d2964bf13f841",
+                "type": "leaf",
+                "state": {
+                  "type": "file-properties",
+                  "state": {
+                    "file": "Books/pdf书籍/认知觉醒.pdf"
+                  }
+                }
+              }
+            ],
+            "currentTab": 1
+          }
+        ],
+        "direction": "horizontal",
+        "width": 389
+      },
+      "left-ribbon": {
+        "hiddenItems": {
+          "command-palette:打开命令面板": false,
+          "workspaces:管理工作区布局": false,
+          "switcher:打开快速切换": false,
+          "graph:查看关系图谱": false,
+          "canvas:新建白板": false,
+          "daily-notes:打开/创建今天的日记": false,
+          "templates:插入模板": false,
+          "random-note:开始漫游笔记": false,
+          "templater-obsidian:Templater": false,
+          "obsidian-spaced-repetition:复习卡片": false,
+          "pdf-plus:PDF++: Toggle auto-copy": false,
+          "pdf-plus:PDF++: Toggle auto-focus": false,
+          "pdf-plus:PDF++: Toggle auto-paste": false,
+          "homepage:Open homepage": false,
+          "easy-toggle-sidebars:autoHide switcher": false,
+          "obsidian-excalidraw-plugin:新建绘图文件": false
+        }
+      },
+      "active": "46ea85912fa7724d",
+      "mtime": "2024-08-27T08:51:18+08:00"
+    }
+  },
+  "active": "阅读工作区"
+}

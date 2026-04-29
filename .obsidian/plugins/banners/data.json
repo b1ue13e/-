@@ -1,0 +1,22 @@
+{
+  "style": "gradient",
+  "height": 200,
+  "mobileHeight": 200,
+  "adjustWidthToReadableLineWidth": false,
+  "showInInternalEmbed": true,
+  "showInPopover": false,
+  "bannerDragModifier": "None",
+  "enableDragInInternalEmbed": false,
+  "enableDragInPopover": false,
+  "enableLockButton": true,
+  "headerSize": "3em",
+  "headerDecor": "none",
+  "headerHorizontalAlignment": "center",
+  "headerVerticalAlignment": "edge",
+  "useHeaderByDefault": false,
+  "useTwemoji": true,
+  "showPreviewInLocalModal": true,
+  "localModalSuggestionLimit": "15",
+  "autoDownloadPastedBanners": false,
+  "version": "1.3.3"
+}

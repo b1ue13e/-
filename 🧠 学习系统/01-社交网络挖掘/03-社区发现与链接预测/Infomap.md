@@ -1,0 +1,31 @@
+---
+type: study
+topic: "Infomap"
+created: 2026-04-18
+status: ongoing
+difficulty: intermediate
+concept: ["Infomap", "经典算法"]
+prerequisites: ["Walktrap"]
+related: ["谱聚类"]
+tags: ["学习", "社交网络挖掘"]
+---
+# Infomap
+
+> 所属模块：[[../🗺️ 社交网络挖掘学习路径|社交网络挖掘学习路径]]
+> 主教材：`Mathematics for Machine Learning`
+> 对应阶段：[[🧠 学习系统/01-社交网络挖掘/03-社区发现与链接预测/👥 阶段3：社区发现与链接预测|返回阶段页]]
+> 建议先看：矩阵分解、特征值、概率分布、优化
+> 辅助教材：`《Networks, Crowds, and Markets》`、`机器学习（周志华）`
+
+## 待写提纲
+- 这章/这个知识点在这门课里解决什么问题：
+- 所属主线：经典算法
+- 这张卡要补哪块：经典算法
+- 核心定义：
+- 关键方法 / 公式：
+- 一个最小例子：
+- 与前后笔记的关系：
+- 前置：[[Walktrap]]
+- 相关：[[🧠 学习系统/01-社交网络挖掘/03-社区发现与链接预测/谱聚类|谱聚类]]
+
+*创建于：2026-04-18*

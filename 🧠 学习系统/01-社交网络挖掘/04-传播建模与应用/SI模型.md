@@ -1,0 +1,31 @@
+---
+type: study
+topic: "SI模型"
+created: 2026-04-18
+status: ongoing
+difficulty: advanced
+concept: ["SI模型", "流行病模型"]
+prerequisites: []
+related: ["SIS模型", "SIR模型"]
+tags: ["学习", "社交网络挖掘"]
+---
+# SI模型
+
+> 所属模块：[[../🗺️ 社交网络挖掘学习路径|社交网络挖掘学习路径]]
+> 主教材：`《Networks, Crowds, and Markets》`
+> 对应阶段：[[🧠 学习系统/01-社交网络挖掘/04-传播建模与应用/🌊 阶段4：传播建模与应用|返回阶段页]]
+> 建议先看：Community Structure、Diffusion、Influence、Network Effects
+> 辅助教材：`《Networks, Crowds, and Markets》`
+
+## 待写提纲
+- 这章/这个知识点在这门课里解决什么问题：
+- 所属主线：流行病模型
+- 这张卡要补哪块：流行病模型
+- 核心定义：
+- 关键方法 / 公式：
+- 一个最小例子：
+- 与前后笔记的关系：
+- 前置：待补
+- 相关：[[SIS模型]]、[[SIR模型]]
+
+*创建于：2026-04-18*

@@ -1,0 +1,31 @@
+---
+type: study
+topic: "CoT"
+created: 2026-04-18
+status: ongoing
+difficulty: advanced
+concept: ["CoT", "基础技术"]
+prerequisites: ["Few-shot"]
+related: ["Self-Consistency", "ReAct"]
+tags: ["学习", "NLP全栈"]
+---
+# CoT
+
+> 所属模块：[[../🗺️ NLP全栈学习路径|NLP全栈学习路径]]
+> 主教材：`《Speech and Language Processing》`
+> 对应阶段：[[🧠 学习系统/08-NLP全栈/05-大语言模型与前沿技术/🚀 第五阶段：大语言模型与前沿技术|返回阶段页]]
+> 建议先看：Transformer、Pretraining、Modern Language Models
+> 辅助教材：`检索力`
+
+## 待写提纲
+- 这章/这个知识点在这门课里解决什么问题：
+- 所属主线：基础技术
+- 这张卡要补哪块：基础技术
+- 核心定义：
+- 关键方法 / 公式：
+- 一个最小例子：
+- 与前后笔记的关系：
+- 前置：[[Few-shot]]
+- 相关：[[Self-Consistency]]、[[ReAct]]
+
+*创建于：2026-04-18*
