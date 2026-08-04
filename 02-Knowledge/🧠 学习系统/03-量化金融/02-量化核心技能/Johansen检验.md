@@ -8,9 +8,9 @@ tags:
 - 学习
 - 量化金融
 upstream:
-- '[[Black-Scholes]]'
+- '[[Black-Scholes 期权定价模型 (Black-Scholes Option Pricing Model)|Black-Scholes]]'
 downstream:
-- '[[Greeks]]'
+- '[[高阶希腊字母与衍生品风险对冲 (Higher-Order Greeks_ Vanna, Volga & Charm)|Greeks]]'
 status: learning
 ---
 广义特征值和对数似然比检验的数学公式初看像是一堆无意义的符号，但如果把它拆解开，你会发现这两个统计量其实是**两个不同风格的“侦探”**——一个喜欢大包大揽的“全局扫荡官”，另一个是步步为营的“精准狙击手”。
@@ -180,11 +180,11 @@ $$J_{\max}(r, r+1) = -T \ln(1 - \hat{\lambda}_{r+1})$$
 
 上游依赖
 
-- [[Black-Scholes]]：提供基础概念与理论推导支撑。
+- [[Black-Scholes 期权定价模型 (Black-Scholes Option Pricing Model)|Black-Scholes]]：提供基础概念与理论推导支撑。
 
 下游延伸
 
-- [[Greeks]]：进一步延伸拓展该知识点的应用场景与模型构建。
+- [[高阶希腊字母与衍生品风险对冲 (Higher-Order Greeks_ Vanna, Volga & Charm)|Greeks]]：进一步延伸拓展该知识点的应用场景与模型构建。
 
 横向关联
 
