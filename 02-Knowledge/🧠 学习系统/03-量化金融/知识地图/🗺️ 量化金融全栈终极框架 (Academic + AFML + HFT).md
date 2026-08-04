@@ -6,7 +6,7 @@ status: active
 difficulty: beginner
 concept: ["数学金融", "金融机器学习", "微观结构", "高频交易"]
 prerequisites: ["无要求（包含新手村引导）"]
-related: []]", "[[🧠 量化金融李宏毅式实战作业总索引]]"]
+related: []
 tags: [索引, 量化金融, 终极框架, MOC, 渐进式学习]
 flow: knowledge
 kind: moc
@@ -21,9 +21,7 @@ kind: moc
 
 ---
 
-
-
-\n## 🌳 量化通关技能树 (Dataview 自动化引擎)
+## 🌳 量化通关技能树 (Dataview 自动化引擎)
 
 > **🚀 提示**：下表由 Dataview 自动扫描全库生成。未来新增课程，只需在卡片头部加上 `nav_level: 11` 即可自动并入技能树！
 
@@ -36,7 +34,6 @@ FROM "02-Knowledge/🧠 学习系统/03-量化金融"
 WHERE nav_level != null
 SORT nav_level ASC
 ```
-
 
 ## 🐣 Level 0: 新手启蒙村 (小白从这里开始) 🎖️ `[Lv.1 量化探索者]` -> `[Lv.2 策略设计师]`
 
@@ -54,7 +51,6 @@ SORT nav_level ASC
 - [[不要骗自己：什么叫前视偏差 (Look-Ahead Bias)]]
 
 ---
-
 
 ## 🏆 贯穿全周期的主线战役 (The Capstone Thread)
 - [[Capstone-统一标的贯穿实战项目]] (同一只苹果，从均线研究到期权定价)
@@ -178,7 +174,8 @@ SORT nav_level ASC
 
 </details>
 
----\n\n
+---
+
 ## 📜 赏金公会：全量支线副本集会所 (Quest Board)
 
 > **🎯 提示**：想要一口气刷题？这里为您聚合了所有挂载在各主线任务底下的副本入口。无需跑图，直接接取悬赏！
