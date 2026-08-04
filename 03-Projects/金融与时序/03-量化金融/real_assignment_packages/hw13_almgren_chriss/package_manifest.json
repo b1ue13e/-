@@ -1,0 +1,18 @@
+{
+  "id": "HW13",
+  "slug": "hw13_almgren_chriss",
+  "title": "Almgren-Chriss 最优执行",
+  "stage": "第四阶段：高频交易与强化学习",
+  "generated_at": "2026-07-31",
+  "real_data_dir": "f:\\-\\03-Projects\\data\\quant_finance\\hw13_almgren_chriss",
+  "real_files": [
+    "parent_order.csv",
+    "liquidity_profile.csv"
+  ],
+  "smoke_files": [
+    "parent_order.smoke.csv",
+    "liquidity_profile.smoke.csv"
+  ],
+  "baseline": "TWAP vs Almgren-Chriss",
+  "next_step": "把 smoke 设定替换成真实流动性曲线，补执行成本与轨迹求解器。"
+}

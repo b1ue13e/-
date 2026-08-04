@@ -1,0 +1,18 @@
+{
+  "id": "HW03",
+  "slug": "hw03_fama_macbeth",
+  "title": "Fama-MacBeth 跨期横截面风险溢价估计",
+  "stage": "第一阶段：资产定价与财务量化",
+  "generated_at": "2026-07-31",
+  "real_data_dir": "f:\\-\\03-Projects\\data\\quant_finance\\hw03_fama_macbeth",
+  "real_files": [
+    "asset_panel.monthly.csv",
+    "factor_panel.monthly.csv"
+  ],
+  "smoke_files": [
+    "asset_panel.smoke.csv",
+    "factor_panel.smoke.csv"
+  ],
+  "baseline": "两步回归 + 风险溢价显著性",
+  "next_step": "用真实月频面板替换 smoke 数据，并补足两步回归循环与稳健标准误。"
+}

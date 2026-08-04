@@ -1,0 +1,20 @@
+{
+  "id": "HW17",
+  "slug": "hw17_qlib_factor_research",
+  "title": "Qlib 因子研究与成本敏感回测",
+  "stage": "第五阶段：Capstone / 开源工作流",
+  "generated_at": "2026-07-31",
+  "real_data_dir": "f:\\-\\03-Projects\\data\\quant_finance\\hw17_qlib_factor_research",
+  "real_files": [
+    "qlib_manifest.json",
+    "workflow_config.yaml",
+    "baseline_protocol.md"
+  ],
+  "smoke_files": [
+    "qlib_manifest.smoke.csv",
+    "workflow_config.smoke.csv",
+    "baseline_protocol.smoke.csv"
+  ],
+  "baseline": "等权/朴素信号 vs Qlib LightGBM Alpha158",
+  "next_step": "将 smoke 协议替换成真实 commit、manifest 与配置文件，再跑官方 smoke workflow。"
+}

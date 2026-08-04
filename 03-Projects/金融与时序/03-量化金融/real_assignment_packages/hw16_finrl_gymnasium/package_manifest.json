@@ -1,0 +1,16 @@
+{
+  "id": "HW16",
+  "slug": "hw16_finrl_gymnasium",
+  "title": "Gymnasium 金融交易环境与 PPO",
+  "stage": "第四阶段：高频交易与强化学习",
+  "generated_at": "2026-07-31",
+  "real_data_dir": "f:\\-\\03-Projects\\data\\quant_finance\\hw16_finrl_gymnasium",
+  "real_files": [
+    "market_state.daily.csv"
+  ],
+  "smoke_files": [
+    "market_state.smoke.csv"
+  ],
+  "baseline": "最小 Gymnasium 环境 + PPO 接口占位",
+  "next_step": "先把环境接口做成最小可运行版本，再逐步加入奖励塑形和评估协议。"
+}

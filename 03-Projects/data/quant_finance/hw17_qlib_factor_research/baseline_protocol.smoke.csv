@@ -1,0 +1,4 @@
+protocol,detail
+E0,equal_weight
+E1,naive_momentum
+E2,qlib_lightgbm

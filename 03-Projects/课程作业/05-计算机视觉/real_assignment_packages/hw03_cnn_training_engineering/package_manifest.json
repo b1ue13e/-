@@ -1,0 +1,19 @@
+{
+  "id": "HW03",
+  "slug": "hw03_cnn_training_engineering",
+  "title": "小型 CNN 与训练工程",
+  "stage": "第三阶段：CNN 训练闭环与日志",
+  "generated_at": "2026-08-01",
+  "real_data_dir": "F:\\-\\03-Projects\\data\\computer_vision\\hw03_cnn_training_engineering",
+  "real_files": [
+    "cifar10_images.train.npz",
+    "cifar10_images.val.npz",
+    "label_map.json"
+  ],
+  "smoke_files": [
+    "train.smoke.csv",
+    "val.smoke.csv"
+  ],
+  "baseline": "小型 CNN 风格特征 + 线性头",
+  "next_step": "把 smoke 图像替换成真实 CIFAR-10 图像张量，再补真实 CNN 训练、增强和误差审计。"
+}

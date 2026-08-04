@@ -1,0 +1,13 @@
+{
+  "problem": "比较轻量 backbone 与数据增强方案在小型视觉任务上的效果。",
+  "dataset": "cifar10-mini",
+  "metric": "macro_f1",
+  "baseline": "小型 CNN",
+  "improvement": "加入迁移学习与更稳的增强策略",
+  "success_threshold": 0.68,
+  "milestone_status": "on_track",
+  "risks": [
+    "数据规模偏小",
+    "改进可能只在少数类别生效"
+  ]
+}

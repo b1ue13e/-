@@ -1,0 +1,18 @@
+{
+  "id": "HW14",
+  "slug": "hw14_darkpool_sor",
+  "title": "暗池与智能订单路由",
+  "stage": "第四阶段：高频交易与强化学习",
+  "generated_at": "2026-07-31",
+  "real_data_dir": "f:\\-\\03-Projects\\data\\quant_finance\\hw14_darkpool_sor",
+  "real_files": [
+    "venue_quotes.csv",
+    "latency_profile.csv"
+  ],
+  "smoke_files": [
+    "venue_quotes.smoke.csv",
+    "latency_profile.smoke.csv"
+  ],
+  "baseline": "单市场执行 vs 多市场 SOR",
+  "next_step": "补充真实多 venue 数据或仿真数据，实现路由与延迟分析。"
+}

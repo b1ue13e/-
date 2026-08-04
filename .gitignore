@@ -1,6 +1,13 @@
 ﻿# Local/sync temp files
 .tmp.driveupload/
 .tmp.drivedownload/
+.recovery-hold/
+99-System/.tmp/
+99-System/🗄️ 归档/*.zip
+99-System/🗄️ 归档/**/*knowledge_notes*_scores*.json
+99-System/🗄️ 归档/**/*knowledge_notes*_scores*.csv
+00-Inbox/恢复待确认/
+04-Review/知识库审计/
 .playwright-cli/
 output/
 __pycache__/

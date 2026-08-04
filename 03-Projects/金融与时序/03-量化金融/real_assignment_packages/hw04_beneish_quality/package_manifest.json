@@ -1,0 +1,18 @@
+{
+  "id": "HW04",
+  "slug": "hw04_beneish_quality",
+  "title": "Beneish M-Score 与财报排雷",
+  "stage": "第一阶段：资产定价与财务量化",
+  "generated_at": "2026-07-31",
+  "real_data_dir": "f:\\-\\03-Projects\\data\\quant_finance\\hw04_beneish_quality",
+  "real_files": [
+    "financial_statement.panel.csv",
+    "filing_calendar.csv"
+  ],
+  "smoke_files": [
+    "financial_statement.smoke.csv",
+    "filing_calendar.smoke.csv"
+  ],
+  "baseline": "Beneish M-Score + 简单质量分层",
+  "next_step": "把 starter 扩成真实财报字段映射，并加入发布日期过滤逻辑。"
+}

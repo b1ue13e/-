@@ -1,0 +1,18 @@
+{
+  "id": "HW02",
+  "slug": "hw02_markowitz_frontier",
+  "title": "马科维茨均值-方差有效前沿",
+  "stage": "第一阶段：资产定价与财务量化",
+  "generated_at": "2026-07-31",
+  "real_data_dir": "f:\\-\\03-Projects\\data\\quant_finance\\hw02_markowitz_frontier",
+  "real_files": [
+    "asset_returns.daily.csv",
+    "asset_metadata.csv"
+  ],
+  "smoke_files": [
+    "asset_returns.smoke.csv",
+    "asset_metadata.smoke.csv"
+  ],
+  "baseline": "等权 vs 最小方差 vs 切线组合",
+  "next_step": "把 starter 扩展成真实优化器，并补充权重约束和样本外比较。"
+}

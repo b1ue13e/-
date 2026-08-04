@@ -1,0 +1,20 @@
+{
+  "id": "HW04",
+  "slug": "hw04_transfer_learning_error_analysis",
+  "title": "迁移学习与误差分析",
+  "stage": "第四阶段：冻结、微调与误差审计",
+  "generated_at": "2026-08-01",
+  "real_data_dir": "F:\\-\\03-Projects\\data\\computer_vision\\hw04_transfer_learning_error_analysis",
+  "real_files": [
+    "cifar10_transfer.train.npz",
+    "cifar10_transfer.val.npz",
+    "label_map.json",
+    "transfer_config.json"
+  ],
+  "smoke_files": [
+    "train.smoke.csv",
+    "val.smoke.csv"
+  ],
+  "baseline": "预训练 backbone + 冻结头 / 微调对照",
+  "next_step": "把 smoke 分数表替换成真实迁移学习训练日志，再补完整 backbone、类别级混淆矩阵与失败样本图库。"
+}

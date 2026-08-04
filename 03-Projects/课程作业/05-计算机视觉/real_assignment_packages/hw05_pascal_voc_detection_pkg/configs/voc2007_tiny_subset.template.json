@@ -1,0 +1,30 @@
+{
+  "dataset": {
+    "name": "VOC2007-tiny-subset",
+    "source_split": "VOC2007 trainval + test",
+    "subset_policy": {
+      "classes": ["cat", "dog", "person"],
+      "max_train_images_per_class": 40,
+      "max_val_images_per_class": 15,
+      "allow_multi_label_images": true
+    },
+    "paths": {
+      "jpeg_images": "VOCdevkit/VOC2007/JPEGImages",
+      "annotations": "VOCdevkit/VOC2007/Annotations",
+      "image_sets_main": "VOCdevkit/VOC2007/ImageSets/Main"
+    }
+  },
+  "train": {
+    "batch_size": 4,
+    "epochs": 8,
+    "optimizer": "sgd",
+    "learning_rate": 0.001
+  },
+  "eval": {
+    "metric": "IoU@0.5",
+    "score_threshold": 0.5,
+    "nms_threshold": 0.5,
+    "export_csv": "artifacts/eval/eval_export.csv"
+  },
+  "notes": "Teacher-side template for a real VOC subset. Freeze exact file lists before formal release."
+}

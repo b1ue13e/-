@@ -1,0 +1,5 @@
+image_id,label,gt_x1,gt_y1,gt_x2,gt_y2,pred_label,pred_score,pred_x1,pred_y1,pred_x2,pred_y2
+va1,cat,10,10,50,50,cat,0.92,12,12,48,49
+va2,dog,20,20,70,70,dog,0.88,22,24,66,69
+va3,person,15,12,45,80,cat,0.76,16,15,44,78
+va4,dog,30,30,68,72,dog,0.91,31,31,67,71
