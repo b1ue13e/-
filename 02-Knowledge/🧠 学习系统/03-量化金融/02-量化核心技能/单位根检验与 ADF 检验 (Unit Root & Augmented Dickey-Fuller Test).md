@@ -126,7 +126,13 @@ $$\Delta X_t = \alpha + \beta t + \gamma X_{t-1} + \sum_{i=1}^p \psi_i \Delta X_
 
 ### 为什么 ADF 检验不能使用标准 $t$ 分布临界值？
 1. **零假设下的非正态性**：在 $H_0: \gamma = 0$（即序列是随机游走 $X_t = \sum \epsilon_i$）的前提下，估计量 $\hat{\gamma}$ 的分母包含维纳过程的平方积分：
+<details>
+<summary>🧠 点击展开：硬核的维纳过程积分分布（不看完全没关系）</summary>
+
    $$\hat{\gamma} \xrightarrow{d} \frac{\frac{1}{2} [W(1)^2 - 1]}{\int_0^1 W(r)^2 dr}$$
+这不再是一个钟形的标准正态分布，而是一个极其向左偏斜的怪物分布。
+</details>
+
 2. **转念（Dickey-Fuller 模拟临界值）**：此极限分布严重**左偏**，并非标准正态 $N(0,1)$ 或学生 $t$ 分布！因此 Dickey 和 Fuller 运用 Monte Carlo 模拟得出了专门的 **DF/ADF 临界值表**（通常 5% 显著性水平下的临界值为 $-2.86 \sim -3.45$ 左右，远比正态分布的 $-1.645$ 更加严格/偏负）。
 
 ---
