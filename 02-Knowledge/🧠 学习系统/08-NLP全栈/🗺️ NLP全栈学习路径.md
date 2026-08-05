@@ -226,3 +226,20 @@ dv.table(
 ---
 
 *路线图更新：2026-04-14*
+
+## 🏫 开源名校作业体系挂载
+
+### 1. Stanford CS224N (深度学习与自然语言处理)
+这是 NLP 领域的经典标杆课程，注重数学推导和代码实现。
+- [ ] **Assignment 1**: Word Vectors -> 对应 [[词向量与Word2Vec]] 和 [[GloVe与稠密向量]]
+- [ ] **Assignment 2**: word2vec 实现 + softmax 分类 -> 对应 [[词向量与Word2Vec]] 与 [[文本分类与情感分析]]（本体系重构为 HW02 文本分类）
+- [ ] **Assignment 3**: Dependency Parser（MLP-based arc-standard）-> 对应 [[句法分析]]（本体系重构为 HW03 序列标注/依存分析）
+- [ ] **Assignment 4**: Neural Machine Translation with RNNs and Attention -> 对应 [[Seq2Seq与注意力机制]]
+- [ ] **Assignment 5**: Neural Machine Translation with Transformers -> 对应 [[Transformer架构]]
+
+### 2. Hugging Face Course
+侧重于现代 NLP 工程实战和 Transformers 库的熟练使用。
+- [ ] NLP Pipeline & Models
+- [ ] Datasets & Tokenizers
+- [ ] Fine-tuning a pre-trained model (Trainer API & Keras)
+- [ ] Sharing models and custom datasets

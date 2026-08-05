@@ -31,11 +31,11 @@ $$r_t(\theta) = \frac{\pi_\theta(a_t|s_t)}{\pi_{\theta_{\text{old}}}(a_t|s_t)}, 
 **广义优势估计 AEV (Advantage) 与 PPO-Clip 目标函数推导**：
 1. 设 $A_t$ 为广义优势函数 (GAE) 估计值；
 2. 基础策略梯度目标：$L^{\text{CPI}}(\theta) = \mathbb{E}_t \left[ r_t(\theta) A_t 
-ight]$；
+\right]$；
 3. **PPO-Clip 截断目标**：为了限制 $r_t(\theta)$ 远离区间 $[1-\epsilon, 1+\epsilon]$（通常 $\epsilon=0.2$）：
 $$L^{\text{CLIP}}(\theta) = \hat{\mathbb{E}}_t \left[ \min\left( r_t(\theta) A_t, \;\text{clip}(r_t(\theta), 1-\epsilon, 1+\epsilon) A_t 
-ight) 
-ight]$$
+\right) 
+\right]$$
 4. **悲观下界 (Pessimistic Bound) 推导**：取 $\min$ 确保了当优势 $A_t > 0$ 时，若 $r_t > 1+\epsilon$（策略改善过大），目标被封顶在 $(1+\epsilon) A_t$，梯度归零不给予额外奖励；当 $A_t < 0$ 时，若 $r_t < 1-\epsilon$，同样截断封顶。
 5. **因此**，该下界悲观约束彻底阻止了策略发生破坏性的巨幅更新。
 

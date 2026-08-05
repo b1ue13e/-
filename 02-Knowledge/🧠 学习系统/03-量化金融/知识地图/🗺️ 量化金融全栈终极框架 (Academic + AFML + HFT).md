@@ -152,6 +152,7 @@ SORT nav_level ASC
 - [[因子预处理：去极值、中性化与标准化 (Factor Preprocessing_ Winsorization, Neutralization & Z-Score)]]
 
 ### 2.2 特征工程与元标注 (主模型做预测，副模型定仓位)
+- [[滚动窗口与波动率特征]]
 - [[树模型基线]]
 - [[Meta-labeling 二级标签与元标注 (Meta-labeling in Financial ML)]]
 

@@ -34,26 +34,37 @@ $$J(\theta) = \mathbb{E}_{\tau \sim \pi_\theta}[R(\tau)] = \int P(\tau; \theta) 
 **推导过程（Log-Derivative / 对数似然比技巧 Log-Likelihood Ratio Trick）**：
 1. 对目标函数偏导：
 $$
-abla_\theta J(\theta) = \int 
-abla_\theta P(\tau; \theta) R(\tau) d\tau$$
+
+\nabla_\theta J(\theta) = \int 
+
+\nabla_\theta P(\tau; \theta) R(\tau) d\tau$$
 2. 利用对数求导恒等式 $
-abla_\theta P(\tau; \theta) = P(\tau; \theta) 
-abla_\theta \log P(\tau; \theta)$：
+
+\nabla_\theta P(\tau; \theta) = P(\tau; \theta) 
+
+\nabla_\theta \log P(\tau; \theta)$：
 $$
-abla_\theta J(\theta) = \int P(\tau; \theta) 
-abla_\theta \log P(\tau; \theta) R(\tau) d\tau = \mathbb{E}_{\tau \sim \pi_\theta} \left[ 
-abla_\theta \log P(\tau; \theta) R(\tau) 
-ight]$$
+
+\nabla_\theta J(\theta) = \int P(\tau; \theta) 
+
+\nabla_\theta \log P(\tau; \theta) R(\tau) d\tau = \mathbb{E}_{\tau \sim \pi_\theta} \left[ 
+
+\nabla_\theta \log P(\tau; \theta) R(\tau) 
+\right]$$
 3. 将轨迹概率 $P(\tau;\theta)$ 取对数，因为初始分布 $\mu(s_0)$ 与环境状态转移 $P(s_{t+1}|s_t, a_t)$ 与参数 $\theta$ 无关，偏导为 0：
 $$\log P(\tau; \theta) = \log \mu(s_0) + \sum_{t=0}^T \log \pi_\theta(a_t|s_t) + \sum_{t=0}^T \log P(s_{t+1}|s_t, a_t)$$
 $$
-abla_\theta \log P(\tau; \theta) = \sum_{t=0}^T 
-abla_\theta \log \pi_\theta(a_t|s_t)$$
+
+\nabla_\theta \log P(\tau; \theta) = \sum_{t=0}^T 
+
+\nabla_\theta \log \pi_\theta(a_t|s_t)$$
 4. **REINFORCE 策略梯度公式**：
 $$
-abla_\theta J(\theta) = \mathbb{E}_{\tau} \left[ \sum_{t=0}^T 
-abla_\theta \log \pi_\theta(a_t|s_t) G_t 
-ight]$$
+
+\nabla_\theta J(\theta) = \mathbb{E}_{\tau} \left[ \sum_{t=0}^T 
+
+\nabla_\theta \log \pi_\theta(a_t|s_t) G_t 
+\right]$$
 5. **因此**，环境状态转移概率 $P(s_{t+1}|s_t, a_t)$ 在求导中被完全消除，算法无需环境概率模型即可直接更新策略参数。
 
 ---
@@ -118,5 +129,5 @@ if __name__ == "__main__":
 
 ## 5. 权威参考文献
 - Williams, R. J. (1992). Simple statistical gradient-following algorithms for connectionist reinforcement learning. *Machine Learning*, 8(3-4), 229-256. DOI: https://doi.org/10.1007/BF00992696 URL: https://link.springer.com/article/10.1007/BF00992696
-- Sutton, R. S., & Barto, A. G. (2018). *Reinforcement Learning: An Introduction* (2nd ed.). MIT Press. Chapter 13 (Policy Gradient Methods). ISBN: 978-0262039246. URL: http://incompleteideas.net/book/the-book-2nd.html
+- Sutton, R. S., & Barto, A. G. (2018). *Reinforcement Learning: An Introduction* (2nd ed.). MIT Press. Chapter 13 (Policy Gradient Methods). ISBN: 978-0262039246. URL: https://incompleteideas.net/book/the-book-2nd.html
 - Sutton, R. S., McAllester, D., Singh, S., & Mansour, Y. (1999). Policy gradient methods for reinforcement learning with function approximation. *Advances in Neural Information Processing Systems (NIPS '99)*, 12, 1057-1063. URL: https://papers.nips.cc/paper/1713-policy-gradient-methods-for-reinforcement-learning-with-function-approximation

@@ -34,8 +34,8 @@ created: 2026-07-31
 $$y_t^{\text{DQN}} = r_{t+1} + \gamma (1 - \text{done}) \max_{a'} Q(s_{t+1}, a'; \theta^-)$$
 3. **均方误差 / Huber 损失函数**：
 $$L(\theta) = \mathbb{E}_{(s,a,r,s',\text{done}) \sim \mathcal{D}} \left[ \left( y^{\text{DQN}} - Q(s, a; \theta) 
-ight)^2 
-ight]$$
+\right)^2 
+\right]$$
 4. **梯度剪裁 (Gradient Clipping)**：使用 Huber Loss 防止 TD Error 爆炸。
 
 ---
@@ -47,7 +47,7 @@ ight]$$
 | **Vanilla DQN** | 经验回放 + 目标网络 | 采样非 i.i.d.、目标发散 | $y = r + \gamma \max_{a'} Q(s', a'; \theta^-)$ |
 | **Double DQN** | **选择与评估解耦** | **消去 Q 值高估偏差** | $y = r + \gamma Q(s', \mathbf{\arg\max_{a'} Q(s', a'; \theta)}; \theta^-)$ |
 | **Dueling DQN** | 拆分为 V(s) 与 A(s,a) | 区分状态价值与动作优势 | $Q(s,a) = V(s) + \left(A(s,a) - \frac{1}{|\mathcal{A}|}\sum A
-ight)$ |
+\right)$ |
 | **Prioritized Replay (PER)** | 基于 $|TD\_error|$ 优先级采样 | 提升高价值误报样本利用率 | 采样概率 $P(i) \propto |\delta_i|^\alpha$ |
 
 **局限（误区）**：DQN 深度 Q 网络仅能处理**有限离散动作空间**，无法直接输出连续动作（如机器人关节扭矩）；处理连续动作须改用 DDPG 或 SAC 算法。

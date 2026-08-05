@@ -27,26 +27,26 @@ created: 2026-07-31
 
 **最大熵目标函数**：
 $$J(\pi) = \sum_{t=0}^T \mathbb{E}_{(s_t, a_t) \sim 
-ho_\pi} \left[ r(s_t, a_t) + \alpha \mathcal{H}(\pi(\cdot|s_t)) 
-ight]$$
+\rho_\pi} \left[ r(s_t, a_t) + \alpha \mathcal{H}(\pi(\cdot|s_t)) 
+\right]$$
 
 其中 $\alpha > 0$ 为**熵温度系数 (Temperature Parameter)**，控制奖励与探索熵之间的相对比重。
 
 **推导过程（软 Q 值与策略重参数化）**：
 1. **软贝尔曼方程 (Soft Bellman Equation)**：
 $$Q^{\text{soft}}(s, a) = r(s, a) + \gamma \mathbb{E}_{s' \sim P} \left[ V^{\text{soft}}(s') 
-ight]$$
+\right]$$
 $$V^{\text{soft}}(s) = \mathbb{E}_{a \sim \pi} \left[ Q^{\text{soft}}(s, a) - \alpha \ln \pi(a|s) 
-ight]$$
+\right]$$
 2. **Double Q 技巧（Clipped Double-Q）**：维护两个独立的 Q 网络 $Q_{\theta_1}, Q_{\theta_2}$，取最小值防止高估：
 $$y_t^{\text{SAC}} = r_t + \gamma (1 - \text{done}) \left( \min_{i=1,2} Q_{\bar{\theta}_i}(s_{t+1}, a_{t+1}) - \alpha \ln \pi_\phi(a_{t+1}|s_{t+1}) 
-ight)$$
+\right)$$
 3. **策略网络更新 (Reparameterization Trick)**：设 $a = f_\phi(\epsilon; s), \epsilon \sim \mathcal{N}(0, I)$：
 $$J_\pi(\phi) = \mathbb{E}_{s \sim \mathcal{D}, \epsilon \sim \mathcal{N}} \left[ \alpha \ln \pi_\phi(f_\phi(\epsilon; s)|s) - \min_{i=1,2} Q_{\theta_i}(s, f_\phi(\epsilon; s)) 
-ight]$$
+\right]$$
 4. **温度系数 $\alpha$ 自动调节**：自动约束策略熵不低于目标熵 $\bar{\mathcal{H}}$：
 $$J(\alpha) = \mathbb{E}_{a \sim \pi} \left[ -\alpha \ln \pi(a|s) - \alpha \bar{\mathcal{H}} 
-ight]$$
+\right]$$
 
 ---
 

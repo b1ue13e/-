@@ -45,15 +45,15 @@ dv.paragraph(`**阶段进度: ${progress}%** (${completed}/${total} 概念卡)`)
 
 > 图是关系的可视化，是网络科学的基石。
 > 
-> 💡 **关联**：[[🗺️ 社交网络挖掘学习路径|社交网络挖掘]] 路径深度关联。
+> 💡 **关联**：[[02-Knowledge/🧠 学习系统/01-社交网络挖掘/🗺️ 社交网络挖掘学习路径|社交网络挖掘]] 路径深度关联。
 
 ### 图的表示
 
 | 表示方法 | 特点 | 适用场景 | 状态 | 笔记 |
 |:---|:---|:---|:---:|:---|
-| **邻接矩阵** | O(1)查边，O(n²)空间 | 稠密图 | ⬜ | [[02-Knowledge/🧠 学习系统/10-数据结构与算法/04-图论基础/邻接矩阵\|邻接矩阵]] |
-| **邻接表** | O(deg)遍历，O(n+m)空间 | 稀疏图 | ⬜ | [[02-Knowledge/🧠 学习系统/10-数据结构与算法/04-图论基础/邻接表\|邻接表]] |
-| **边列表** | 简单直观 | 逐边处理与数据交换 | ⬜ | [[02-Knowledge/🧠 学习系统/10-数据结构与算法/04-图论基础/边列表\|边列表]] |
+| **邻接矩阵** | O(1)查边，O(n²)空间 | 稠密图 | ⬜ | [[02-Knowledge/🧠 学习系统/04-离散数学/02-核心深化/邻接矩阵\|邻接矩阵]] |
+| **邻接表** | O(deg)遍历，O(n+m)空间 | 稀疏图 | ⬜ | [[02-Knowledge/🧠 学习系统/04-离散数学/02-核心深化/邻接表\|邻接表]] |
+| **边列表** | 简单直观 | 简单处理 | ⬜ | [[02-Knowledge/🧠 学习系统/04-离散数学/02-核心深化/边列表\|边列表]] |
 | **关联矩阵** | 顶点-边关系 | 特殊分析 | ⬜ | [[关联矩阵]] |
 
 ### 图的遍历
@@ -73,8 +73,8 @@ dv.paragraph(`**阶段进度: ${progress}%** (${completed}/${total} 概念卡)`)
 | **树的性质** | 连通无环图 | n-1条边 | ⬜ | [[树的性质]] |
 | **生成树** | 包含所有顶点的树 | n顶点n-1边 | ⬜ | [[生成树]] |
 | **最小生成树(MST)** | 边权和最小 | 优化基础 | ⬜ | [[最小生成树]] |
-| **Prim算法** | 加点法 | O(n²)或O(mlogn) | ⬜ | [[02-Knowledge/🧠 学习系统/10-数据结构与算法/04-图论基础/Prim算法\|Prim算法]] |
-| **Kruskal算法** | 加边法+并查集 | O(mlogm) | ⬜ | [[02-Knowledge/🧠 学习系统/10-数据结构与算法/04-图论基础/Kruskal算法\|Kruskal算法]] |
+| **Prim算法** | 加点法 | O(n²)或O(mlogn) | ⬜ | [[02-Knowledge/🧠 学习系统/04-离散数学/02-核心深化/Prim算法\|Prim算法]] |
+| **Kruskal算法** | 加边法+并查集 | O(mlogm) | ⬜ | [[02-Knowledge/🧠 学习系统/04-离散数学/02-核心深化/Kruskal算法\|Kruskal算法]] |
 
 ### 🎯 模块4检查点
 - [ ] 能选择合适的方式表示图
@@ -250,9 +250,9 @@ dv.paragraph(`**阶段进度: ${progress}%** (${completed}/${total} 概念卡)`)
 
 | 项目 | 内容 | 技能点 | 状态 | 笔记 |
 |:---|:---|:---|:---:|:---|
-| **图算法库** | 实现MST、最短路径、最大流 | 算法实现 | ⬜ | [[项目-图算法库]] |
-| **组合计数器** | 实现各种计数公式 | 组合数学 | ⬜ | [[项目-组合计数]] |
-| **布尔表达式化简** | Quine-McCluskey算法 | 布尔代数 | ⬜ | [[项目-布尔化简]] |
+| **图算法库** | 实现MST、最短路径、最大流 | 算法实现 | ⬜ | [[03-Projects/数学底座/04-离散数学/项目-图算法库]] |
+| **组合计数器** | 实现各种计数公式 | 组合数学 | ⬜ | [[03-Projects/数学底座/04-离散数学/项目-组合计数]] |
+| **布尔表达式化简** | Quine-McCluskey算法 | 布尔代数 | ⬜ | [[03-Projects/数学底座/04-离散数学/项目-布尔化简]] |
 
 ---
 
@@ -261,14 +261,14 @@ dv.paragraph(`**阶段进度: ${progress}%** (${completed}/${total} 概念卡)`)
 
 | 模块 | 要解决的问题 | 教材定位 | 原子卡片 | 完成标准 |
 |:---|:---|:---|:---|:---|
-| 图的表示 | 理解“图的表示”中的“邻接矩阵”，并能说明它在“🌐 第二阶段：核心深化 (Core Deepening)”中的作用。 | Graphs、Trees、Counting、Recurrence Relations、Algebraic Structures；Sums、Recurrences、Generating Functions、Discrete Probability | [[02-Knowledge/🧠 学习系统/04-离散数学/02-核心深化/邻接矩阵]]<br>[[02-Knowledge/🧠 学习系统/04-离散数学/02-核心深化/邻接表]]<br>[[02-Knowledge/🧠 学习系统/04-离散数学/02-核心深化/边列表]]<br>[[关联矩阵]] | 能用自己的话解释“邻接矩阵”，给出一个最小例子，并说明它与本模块相邻概念的关系。 |
+| 图的表示 | 理解“图的表示”中的“邻接矩阵”，并能说明它在“🌐 第二阶段：核心深化 (Core Deepening)”中的作用。 | Graphs、Trees、Counting、Recurrence Relations、Algebraic Structures；Sums、Recurrences、Generating Functions、Discrete Probability | [[02-Knowledge/🧠 学习系统/01-社交网络挖掘/01-图与网络基础/邻接矩阵]]<br>[[02-Knowledge/🧠 学习系统/01-社交网络挖掘/01-图与网络基础/邻接表]]<br>[[02-Knowledge/🧠 学习系统/01-社交网络挖掘/01-图与网络基础/边列表]]<br>[[关联矩阵]] | 能用自己的话解释“邻接矩阵”，给出一个最小例子，并说明它与本模块相邻概念的关系。 |
 | 图的遍历 | 理解“图的遍历”中的“BFS算法”，并能说明它在“🌐 第二阶段：核心深化 (Core Deepening)”中的作用。 | Graphs、Trees、Counting、Recurrence Relations、Algebraic Structures；Sums、Recurrences、Generating Functions、Discrete Probability | [[BFS算法]]<br>[[DFS算法]]<br>[[双色判定]]<br>[[欧拉路]]<br>[[哈密顿路]] | 能用自己的话解释“BFS算法”，给出一个最小例子，并说明它与本模块相邻概念的关系。 |
-| 树与生成树 | 理解“树与生成树”中的“树的性质”，并能说明它在“🌐 第二阶段：核心深化 (Core Deepening)”中的作用。 | Graphs、Trees、Counting、Recurrence Relations、Algebraic Structures；Sums、Recurrences、Generating Functions、Discrete Probability | [[树的性质]]<br>[[生成树]]<br>[[最小生成树]]<br>[[02-Knowledge/🧠 学习系统/04-离散数学/02-核心深化/Prim算法]]<br>[[02-Knowledge/🧠 学习系统/04-离散数学/02-核心深化/Kruskal算法]] | 能用自己的话解释“树的性质”，给出一个最小例子，并说明它与本模块相邻概念的关系。 |
+| 树与生成树 | 理解“树与生成树”中的“树的性质”，并能说明它在“🌐 第二阶段：核心深化 (Core Deepening)”中的作用。 | Graphs、Trees、Counting、Recurrence Relations、Algebraic Structures；Sums、Recurrences、Generating Functions、Discrete Probability | [[树的性质]]<br>[[生成树]]<br>[[最小生成树]]<br>[[Prim算法]]<br>[[Kruskal算法]] | 能用自己的话解释“树的性质”，给出一个最小例子，并说明它与本模块相邻概念的关系。 |
 | 最短路径 | 理解“最短路径”中的“Dijkstra”，并能说明它在“🌐 第二阶段：核心深化 (Core Deepening)”中的作用。 | Graphs、Trees、Counting、Recurrence Relations、Algebraic Structures；Sums、Recurrences、Generating Functions、Discrete Probability | [[Dijkstra]]<br>[[BellmanFord]]<br>[[SPFA]]<br>[[Floyd]] | 能用自己的话解释“Dijkstra”，给出一个最小例子，并说明它与本模块相邻概念的关系。 |
 | 图着色 | 理解“图着色”中的“顶点着色”，并能说明它在“🌐 第二阶段：核心深化 (Core Deepening)”中的作用。 | Graphs、Trees、Counting、Recurrence Relations、Algebraic Structures；Sums、Recurrences、Generating Functions、Discrete Probability | [[顶点着色]]<br>[[色数]]<br>[[四色定理]]<br>[[边着色]] | 能用自己的话解释“顶点着色”，给出一个最小例子，并说明它与本模块相邻概念的关系。 |
 | 网络流 | 理解“网络流”中的“最大流”，并能说明它在“🌐 第二阶段：核心深化 (Core Deepening)”中的作用。 | Graphs、Trees、Counting、Recurrence Relations、Algebraic Structures；Sums、Recurrences、Generating Functions、Discrete Probability | [[最大流]]<br>[[EdmondsKarp]]<br>[[Dinic]]<br>[[最小割]]<br>[[费用流]] | 能用自己的话解释“最大流”，给出一个最小例子，并说明它与本模块相邻概念的关系。 |
 | 匹配理论 | 理解“匹配理论”中的“二分图匹配”，并能说明它在“🌐 第二阶段：核心深化 (Core Deepening)”中的作用。 | Graphs、Trees、Counting、Recurrence Relations、Algebraic Structures；Sums、Recurrences、Generating Functions、Discrete Probability | [[二分图匹配]]<br>[[最大匹配]]<br>[[完美匹配]]<br>[[稳定婚姻]]<br>[[KM算法]] | 能用自己的话解释“二分图匹配”，给出一个最小例子，并说明它与本模块相邻概念的关系。 |
-| 平面图 | 理解“平面图”中的“平面性判定”，并能说明它在“🌐 第二阶段：核心深化 (Core Deepening)”中的作用。 | Graphs、Trees、Counting、Recurrence Relations、Algebraic Structures；Sums、Recurrences、Generating Functions、Discrete Probability | [[平面性判定]]<br>[[02-Knowledge/🧠 学习系统/04-离散数学/02-核心深化/欧拉公式]]<br>[[对偶图]] | 能用自己的话解释“平面性判定”，给出一个最小例子，并说明它与本模块相邻概念的关系。 |
+| 平面图 | 理解“平面图”中的“平面性判定”，并能说明它在“🌐 第二阶段：核心深化 (Core Deepening)”中的作用。 | Graphs、Trees、Counting、Recurrence Relations、Algebraic Structures；Sums、Recurrences、Generating Functions、Discrete Probability | [[平面性判定]]<br>[[欧拉公式]]<br>[[对偶图]] | 能用自己的话解释“平面性判定”，给出一个最小例子，并说明它与本模块相邻概念的关系。 |
 | 排列组合 | 理解“排列组合”中的“排列”，并能说明它在“🌐 第二阶段：核心深化 (Core Deepening)”中的作用。 | Graphs、Trees、Counting、Recurrence Relations、Algebraic Structures；Sums、Recurrences、Generating Functions、Discrete Probability | [[排列]]<br>[[组合]]<br>[[可重复排列]]<br>[[可重复组合]]<br>[[圆排列]] | 能用自己的话解释“排列”，给出一个最小例子，并说明它与本模块相邻概念的关系。 |
 | 二项式定理 | 理解“二项式定理”中的“二项式定理”，并能说明它在“🌐 第二阶段：核心深化 (Core Deepening)”中的作用。 | Graphs、Trees、Counting、Recurrence Relations、Algebraic Structures；Sums、Recurrences、Generating Functions、Discrete Probability | [[二项式定理]]<br>[[组合恒等式]]<br>[[多项式定理]] | 能用自己的话解释“二项式定理”，给出一个最小例子，并说明它与本模块相邻概念的关系。 |
 | 递推关系 | 理解“递推关系”中的“线性齐次递推”，并能说明它在“🌐 第二阶段：核心深化 (Core Deepening)”中的作用。 | Graphs、Trees、Counting、Recurrence Relations、Algebraic Structures；Sums、Recurrences、Generating Functions、Discrete Probability | [[线性齐次递推]]<br>[[非齐次递推]]<br>[[Fibonacci]]<br>[[Catalan数]] | 能用自己的话解释“线性齐次递推”，给出一个最小例子，并说明它与本模块相邻概念的关系。 |
@@ -278,7 +278,7 @@ dv.paragraph(`**阶段进度: ${progress}%** (${completed}/${total} 概念卡)`)
 | 群论基础 | 理解“群论基础”中的“群定义”，并能说明它在“🌐 第二阶段：核心深化 (Core Deepening)”中的作用。 | Graphs、Trees、Counting、Recurrence Relations、Algebraic Structures；Sums、Recurrences、Generating Functions、Discrete Probability | [[群定义]]<br>[[子群]]<br>[[循环群]]<br>[[置换群]]<br>[[拉格朗日定理]] | 能用自己的话解释“群定义”，给出一个最小例子，并说明它与本模块相邻概念的关系。 |
 | 环与域 | 理解“环与域”中的“环”，并能说明它在“🌐 第二阶段：核心深化 (Core Deepening)”中的作用。 | Graphs、Trees、Counting、Recurrence Relations、Algebraic Structures；Sums、Recurrences、Generating Functions、Discrete Probability | [[环]]<br>[[整环]]<br>[[域]]<br>[[有限域]] | 能用自己的话解释“环”，给出一个最小例子，并说明它与本模块相邻概念的关系。 |
 | 格与布尔代数 | 理解“格与布尔代数”中的“格”，并能说明它在“🌐 第二阶段：核心深化 (Core Deepening)”中的作用。 | Graphs、Trees、Counting、Recurrence Relations、Algebraic Structures；Sums、Recurrences、Generating Functions、Discrete Probability | [[格]]<br>[[分配格]]<br>[[布尔代数]]<br>[[Stone表示]] | 能用自己的话解释“格”，给出一个最小例子，并说明它与本模块相邻概念的关系。 |
-| 🛠️ 阶段项目 | 理解“🛠️ 阶段项目”中的“项目-图算法库”，并能说明它在“🌐 第二阶段：核心深化 (Core Deepening)”中的作用。 | Graphs、Trees、Counting、Recurrence Relations、Algebraic Structures；Sums、Recurrences、Generating Functions、Discrete Probability | [[项目-图算法库]]<br>[[项目-组合计数]]<br>[[项目-布尔化简]] | 能用自己的话解释“项目-图算法库”，给出一个最小例子，并说明它与本模块相邻概念的关系。 |
+| 🛠️ 阶段项目 | 理解“🛠️ 阶段项目”中的“项目-图算法库”，并能说明它在“🌐 第二阶段：核心深化 (Core Deepening)”中的作用。 | Graphs、Trees、Counting、Recurrence Relations、Algebraic Structures；Sums、Recurrences、Generating Functions、Discrete Probability | [[03-Projects/数学底座/04-离散数学/项目-图算法库]]<br>[[03-Projects/数学底座/04-离散数学/项目-组合计数]]<br>[[03-Projects/数学底座/04-离散数学/项目-布尔化简]] | 能用自己的话解释“项目-图算法库”，给出一个最小例子，并说明它与本模块相邻概念的关系。 |
 
 <!-- curriculum-repair:end -->
 

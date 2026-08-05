@@ -30,7 +30,10 @@ created: 2026-08-01
 
 **策略梯度带基线 (Baseline) 假设**：
 在策略梯度中引入与动作 $a$ 无关的基线 $b(s)$，有 $\mathbb{E}_{a \sim \pi} [
-abla_\theta \log \pi_\theta(a|s) b(s)] = 0$。
+
+
+
+\nabla_\theta \log \pi_\theta(a|s) b(s)] = 0$。
 
 **推导过程（优势函数与单步 TD 误差等价性）**：
 1. 将基线设定为状态价值函数 $b(s) = V^\pi(s)$，定义**优势函数 (Advantage Function)**：
@@ -40,14 +43,26 @@ $$A(s_t, a_t) \approx \delta_t = r_t + \gamma V_\phi(s_{t+1}) - V_\phi(s_t)$$
 其中 $\delta_t$ 称为**时序差分误差 (TD Error)**；
 3. **Actor 策略网络梯度更新式**：
 $$
-abla_\theta J(\theta) = \mathbb{E} \left[ 
-abla_\theta \log \pi_\theta(a_t|s_t) \delta_t 
-ight]$$
+
+
+
+\nabla_\theta J(\theta) = \mathbb{E} \left[ 
+
+
+
+\nabla_\theta \log \pi_\theta(a_t|s_t) \delta_t 
+\right]$$
 4. **Critic 价值网络梯度更新式**：通过 MSE 损失最小化 TD 误差：
 $$L(\phi) = \frac{1}{2} \left( r_t + \gamma V_\phi(s_{t+1}) - V_\phi(s_t) 
-ight)^2 \Rightarrow 
-abla_\phi L(\phi) = -\delta_t 
-abla_\phi V_\phi(s_t)$$
+\right)^2 \Rightarrow 
+
+
+
+\nabla_\phi L(\phi) = -\delta_t 
+
+
+
+\nabla_\phi V_\phi(s_t)$$
 5. **因此**，用单步估算 $\delta_t$ 替换全轨迹累积回报 $G_t$，将策略更新从回合制 (Monte Carlo) 转化为单步在线 (TD Online) 学习。
 
 ---
@@ -106,4 +121,4 @@ if __name__ == "__main__":
 ## 5. 权威参考文献
 - Konda, V. R., & Tsitsiklis, J. N. (2000). Actor-critic algorithms. *Advances in Neural Information Processing Systems (NIPS '00)*, 12, 1008-1014. URL: https://papers.nips.cc/paper/1786-actor-critic-algorithms
 - Mnih, V., Badia, A. P., Mirza, M., Graves, A., Lillicrap, T., Harley, T., Silver, D., & Kavukcuoglu, K. (2016). Asynchronous methods for deep reinforcement learning (A3C/A2C). *International Conference on Machine Learning (ICML '16)*, 1928-1937. URL: https://proceedings.mlr.press/v48/mnih16.html
-- Sutton, R. S., & Barto, A. G. (2018). *Reinforcement Learning: An Introduction* (2nd ed.). MIT Press. Chapter 13.5 (Actor-Critic Methods). ISBN: 978-0262039246. URL: http://incompleteideas.net/book/the-book-2nd.html
+- Sutton, R. S., & Barto, A. G. (2018). *Reinforcement Learning: An Introduction* (2nd ed.). MIT Press. Chapter 13.5 (Actor-Critic Methods). ISBN: 978-0262039246. URL: https://incompleteideas.net/book/the-book-2nd.html

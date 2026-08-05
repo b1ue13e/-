@@ -31,7 +31,7 @@ created: 2026-07-31
 **推导过程（Bellman 最优算子与 TD Target）**：
 1. 根据贝尔曼最优原理 (Bellman Optimality Equation)：
 $$Q^*(s, a) = \mathbb{E} \left[ r_{t+1} + \gamma \max_{a'} Q^*(s_{t+1}, a') \;\middle|\; s_t = s, a_t = a 
-ight]$$
+\right]$$
 2. **TD 目标值 (TD Target)**：以单步采样奖励估算当前目标：
 $$y_t = r_{t+1} + \gamma \max_{a'} Q(s_{t+1}, a')$$
 3. **TD 误差 (TD Error)**：$\delta_t = y_t - Q(s_t, a_t) = r_{t+1} + \gamma \max_{a'} Q(s_{t+1}, a') - Q(s_t, a_t)$；
@@ -125,5 +125,5 @@ if __name__ == "__main__":
 
 ## 5. 权威参考文献
 - Watkins, C. J., & Dayan, P. (1992). Q-learning. *Machine Learning*, 8(3-4), 279-292. DOI: https://doi.org/10.1007/BF00992698
-- Sutton, R. S., & Barto, A. G. (2018). *Reinforcement Learning: An Introduction* (2nd ed.). MIT Press. Chapter 6.5 (Q-learning: Off-Policy TD Control). ISBN: 978-0262039246. URL: http://incompleteideas.net/book/the-book-2nd.html
+- Sutton, R. S., & Barto, A. G. (2018). *Reinforcement Learning: An Introduction* (2nd ed.). MIT Press. Chapter 6.5 (Q-learning: Off-Policy TD Control). ISBN: 978-0262039246. URL: https://incompleteideas.net/book/the-book-2nd.html
 - Mnih, V., et al. (2015). Human-level control through deep reinforcement learning. *Nature*, 518(7540), 529-533. DOI: https://doi.org/10.1038/nature14236
