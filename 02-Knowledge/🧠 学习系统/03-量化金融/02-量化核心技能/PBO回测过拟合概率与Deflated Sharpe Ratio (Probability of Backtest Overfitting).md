@@ -78,15 +78,34 @@ anki_tags: ["量化金融", "回测", "过拟合", "PBO"]
 
 #### (a) Deflated Sharpe Ratio (DSR)
 
-$$DSR = \mathbb{P}\left[SR \leq \widehat{SR}^*\right] = Z\left[\frac{(\widehat{SR}^* - E_0[SR]) \cdot \sqrt{T-1}}{\sqrt{1 - \gamma_3 \cdot \widehat{SR}^* + \frac{\gamma_4 - 1}{4} \cdot (\widehat{SR}^*)^2}}\right]$$
+DSR 本质是将观测夏普比率与多重比较下的零假设分布比较。计算分三步：
 
-其中：
-- $\widehat{SR}^*$：观测到的夏普比率（经过最多策略尝试后的最大值）
-- $E_0[SR] = \sqrt{\frac{\text{Var}[SR_k]}{T}} \cdot \left((1-\gamma)Z^{-1}\left[1-\frac{1}{K}\right] + \gamma Z^{-1}\left[1-\frac{1}{Ke}\right]\right)$
-- $\gamma_3$：偏度，$\gamma_4$：峰度
-- $T$：样本量（观测数）
+**第1步：计算零假设期望夏普 $E_0[SR]$**
+
+在 $K$ 次独立试验后，纯噪声产生的期望最大夏普比率（极值理论近似）：
+
+$$E_0[SR] \approx \sqrt{\frac{1}{T}} \cdot Z^{-1}\!\left[1 - \frac{1}{K}\right]$$
+
+其中 $Z^{-1}$ 为标准正态分位数函数。$K=1$ 时 $E_0[SR]\to 0$；$K$ 越大，$E_0[SR]$ 越大（多重比较越严重）。
+
+**第2步：构造检验统计量（Studentized）**
+
+$$z = \frac{(\widehat{SR}^* - E_0[SR]) \cdot \sqrt{T-1}}{\sqrt{1 - \gamma_3 \cdot \widehat{SR}^* + \frac{\gamma_4 - 1}{4} \cdot (\widehat{SR}^*)^2}}$$
+
+- 分子：观测夏普超出零假设期望的部分，乘以 $\sqrt{T-1}$ 做标准化
+- 分母：考虑偏度 $\gamma_3$ 和峰度 $\gamma_4$ 的方差校正项。正态时 $\gamma_3=0,\gamma_4=3$，分母退化为 $\sqrt{1 + (\widehat{SR}^*)^2/2}$
+
+**第3步：查正态表得 p-value**
+
+$$DSR = \mathbb{P}\!\left[SR \leq \widehat{SR}^*\right] = \Phi(z)$$
+
+$\Phi$ 为标准正态 CDF。$DSR \to 1$ 表示显著（策略有真实 alpha）；$DSR \to 0$ 表示不显著（可能是噪声）。
+
+符号说明：
+- $\widehat{SR}^*$：观测到的最大夏普比率
 - $K$：独立策略试验次数
-- $Z$：标准正态 CDF
+- $T$：样本量（日频 $T=252$ 即 1 年）
+- $\gamma_3$：收益率偏度，$\gamma_4$：收益率峰度
 
 #### (b) PBO 通过 CSCV 计算
 
@@ -96,7 +115,10 @@ $$DSR = \mathbb{P}\left[SR \leq \widehat{SR}^*\right] = Z\left[\frac{(\widehat{S
 2. 从 $S$ 个子区间中随机抽取 $S/2$ 个作为样本内（IS），剩余 $S/2$ 个作为样本外（OOS）
 3. 对所有策略 $k=1,\dots,N$，计算 IS 和 OOS 的性能排名
 4. 统计 IS 排名前列（如前 50%）的策略在 OOS 中的相对排名
-5. 对 $M$ 次随机组合（$M = \binom{S}{S/2}$ 或蒙特卡洛抽样）重复上述步骤
+5. 对 $M$ 次随机组合重复上述步骤
+   - 若 $S=16$，全部组合数 $\binom{16}{8}=12870$，精确枚举完全可行
+   - 若 $S=20$，$\binom{20}{10}=184756$，建议用蒙特卡洛抽样 $M \geq 1000$
+   - 代码示例中 $M=100$ 仅用于快速演示，正式审计应不低于 $1000$
 
 $$PBO = \frac{1}{M} \sum_{m=1}^{M} \mathbb{1}\left[ \text{Rank}_{OOS}^{(m)}(\text{best IS}) > \text{median OOS rank} \right]$$
 
