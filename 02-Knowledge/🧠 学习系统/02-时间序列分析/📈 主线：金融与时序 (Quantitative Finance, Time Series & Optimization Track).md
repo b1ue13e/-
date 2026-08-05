@@ -34,7 +34,7 @@ flowchart TD
     end
 
     subgraph 时序预测与量化金融
-        TS["[[📈 时间序列分析学习路径|02-时间序列分析]]<br/>(单位根检验, ARIMA, VAR, GARCH, 协整)"]
+        TS["[[🗺️ 时间序列分析学习路径|02-时间序列分析]]<br/>(单位根检验, ARIMA, VAR, GARCH, 协整)"]
         QF["[[🗺️ 量化金融学习路径|03-量化金融]]<br/>(CAPM, Alpha 因子, 印花税回测, Qlib 框架)"]
         TS --> QF
     end
