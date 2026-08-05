@@ -354,7 +354,7 @@ def dollar_bars(tick_df: pd.DataFrame, threshold: float) -> pd.DataFrame:
 > 不看上文，尝试写出核心公式或推导主线：
 
 ### 我的错误与卡点
-- 
+-
 
 ### 下次复习日期
 - [ ] 明天

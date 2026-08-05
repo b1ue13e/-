@@ -15,7 +15,7 @@ kind: moc
 # 🗺️ 量化金融全栈终极框架 (Academic + AFML + HFT)
 
 > **导读**：欢迎来到量化金融的终极武库。
-> 为了防止信息过载，本指南采用了**“任务驱动”**与**“渐进式展开”**设计。每一个折叠面板后，不再是冰冷的知识点列表，而是明确的“通关目标”、“实战大作业”和“知识救生圈”。
+> 为了防止信息过载，本指南采用了 **“任务驱动”** 与 **“渐进式展开”** 设计。每一个折叠面板后，不再是冰冷的知识点列表，而是明确的“通关目标”、“实战大作业”和“知识救生圈”。
 >
 > 🧗‍♂️ **如果是零基础小白，请只在 【Level 0】 停留，直到你完成第一次回测再往下走！**
 
@@ -81,7 +81,6 @@ SORT nav_level ASC
 - [[🧠 夏普比率 (Sharpe Ratio)]]
 - [[🧠 无风险资产与资本市场线 (Risk-free Asset & Capital Market Line)]]
 - [[马科维茨有效前沿]]
-- [[CAPM与资产定价]]
 - [[相关系数、协方差与资产组合分散化 (Covariance, Correlation & Diversification)]]
 - [[WACC加权平均资本成本]]
 - [[ROE 拆解与杜邦分析 (DuPont Analysis)]]
@@ -173,8 +172,6 @@ SORT nav_level ASC
 - [[动态下注规模与凯利公式 (Bet Sizing & Kelly Criterion in AFML)]]
 
 </details>
-- [[Qlib回测工作流(Qlib Workflow)]]
-- [[ML 如何规范地进入金融建模常见题型]]
 
 ---
 
@@ -203,8 +200,6 @@ SORT nav_level ASC
 - [[价格发现机制与 Hasbrouck 信息份额模型 (Price Discovery & Hasbrouck Information Share)]]
 
 ### 3.3 算法执行与智能路由 (大资金如何隐身)
-- [[Almgren-Chriss 最优算法执行轨迹推导 (Almgren-Chriss Optimal Execution)]]
-- [[暗池与SOR智能路由]]
 - [[TWAP 时间加权平均价格 (Time-Weighted Average Price)]]
 - [[VWAP 成交量加权平均价格 (Volume-Weighted Average Price)]]
 - [[Implementation Shortfall 执行缺口与 Almgren-Chriss 最优执行模型]]
@@ -227,6 +222,8 @@ SORT nav_level ASC
 - [[量化金融-动态最优化-3-Merton最优消费问题应用]]
 - [[强化学习金融交易环境与 MDP 状态-动作空间设计 (Gym-Finance & MDP in Financial RL)]]
 
+- [[Qlib回测工作流(Qlib Workflow)]]
+- [[ML 如何规范地进入金融建模常见题型]]
 </details>
 
 ---
