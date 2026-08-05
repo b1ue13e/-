@@ -8,7 +8,7 @@ status: completed
 difficulty: intermediate
 concept: ["自回归模型", "平稳性", "冲击衰减"]
 prerequisites: ["平稳时间序列", "白噪声", "自相关函数ACF"]
-related: ["MA模型", "ARMA模型", "PACF（深挖笔记）"]
+related: ["MA模型", "ARMA模型", "PACF（偏自相关函数）"]
 tags: [学习, 时间序列, AR模型]
 flow: knowledge
 kind: derivation
