@@ -1,7 +1,7 @@
 ---
 title: "{{title}}"
 date: "{{date}}"
-type: study
+type: concept
 course: "数学"
 importance: "A"  # A:核心定理 | B:常用工具 | C:前置背景 | D:边角术语 | E:跳过
 tags: [学习, 数学]
