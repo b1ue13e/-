@@ -1,0 +1,26 @@
+﻿{
+    "run_id":  "2026-07-31-stage29-output-organization",
+    "operation_count":  5,
+    "operations":  [
+                       {
+                           "source":  "batch_upgrade_stage29.py",
+                           "destination":  ".\\99-System\\tools\\batch_upgrade_stage29.py"
+                       },
+                       {
+                           "source":  "fix_tf.py",
+                           "destination":  ".\\99-System\\tools\\fix_tf.py"
+                       },
+                       {
+                           "source":  "run_audit_stage29.py",
+                           "destination":  ".\\99-System\\tools\\run_audit_stage29.py"
+                       },
+                       {
+                           "source":  "verify_stage29_final_fast.py",
+                           "destination":  ".\\99-System\\tools\\verify_stage29_final_fast.py"
+                       },
+                       {
+                           "source":  "knowledge_notes_harsh_scores_2026-07-31.csv",
+                           "destination":  ".\\04-Review\\知识库审计\\stage29_knowledge_notes_harsh_scores_2026-07-31.csv"
+                       }
+                   ]
+}

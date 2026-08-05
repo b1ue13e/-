@@ -1,0 +1,258 @@
+﻿[
+    {
+        "Repo":  "CambridgeUniversityPress/FirstCourseNetworkScience",
+        "Stars":  436,
+        "Updated":  "2026-07-15",
+        "Archived":  false,
+        "License":  "NOASSERTION",
+        "Description":  "Tutorials, datasets, and other material associated with textbook \"A First Course in Network Science\" by Menczer, Fortunato \u0026 Davis"
+    },
+    {
+        "Repo":  "PacktPublishing/Time-Series-Analysis-with-Python-Cookbook",
+        "Stars":  289,
+        "Updated":  "2026-04-28",
+        "Archived":  false,
+        "License":  "NONE",
+        "Description":  "Time Series Analysis with Python Cookbook, published by Packt"
+    },
+    {
+        "Repo":  "microsoft/qlib",
+        "Stars":  46702,
+        "Updated":  "2026-07-27",
+        "Archived":  false,
+        "License":  "MIT",
+        "Description":  "Qlib is an AI-oriented Quant investment platform that aims to use AI tech to empower Quant Research, from exploring ideas to implementing productions. Qlib supports diverse ML modeling paradigms, including supervised learning, market dynamics modeling, and RL, and is now equipped with https://github.com/microsoft/RD-Agent to automate R\u0026D process."
+    },
+    {
+        "Repo":  "oscarlevin/discrete-book",
+        "Stars":  284,
+        "Updated":  "2026-07-14",
+        "Archived":  false,
+        "License":  "NOASSERTION",
+        "Description":  "An open textbook for Discrete Mathematics, as taught at the University of Northern Colorado"
+    },
+    {
+        "Repo":  "d2l-ai/d2l-en",
+        "Stars":  29241,
+        "Updated":  "2026-07-27",
+        "Archived":  false,
+        "License":  "NOASSERTION",
+        "Description":  "Interactive deep learning book with multi-framework code, math, and discussions. Adopted at 500 universities from 70 countries including Stanford, MIT, Harvard, and Cambridge."
+    },
+    {
+        "Repo":  "DS-4-DS/DS4DS_Course",
+        "Stars":  151,
+        "Updated":  "2026-07-07",
+        "Archived":  false,
+        "License":  "NONE",
+        "Description":  "Data Science for Dynamical System  Course"
+    },
+    {
+        "Repo":  "epfml/OptML_course",
+        "Stars":  1461,
+        "Updated":  "2026-07-23",
+        "Archived":  false,
+        "License":  "NONE",
+        "Description":  "EPFL Course - Optimization for Machine Learning - CS-439"
+    },
+    {
+        "Repo":  "huggingface/course",
+        "Stars":  4090,
+        "Updated":  "2026-07-27",
+        "Archived":  false,
+        "License":  "Apache-2.0",
+        "Description":  "The Hugging Face course on Transformers"
+    },
+    {
+        "Repo":  "fastai/numerical-linear-algebra-v2",
+        "Stars":  282,
+        "Updated":  "2026-06-28",
+        "Archived":  false,
+        "License":  "NONE",
+        "Description":  "Jupyter Notebooks for Computational Linear Algebra course, taught summer 2018 in USF MSDS program"
+    },
+    {
+        "Repo":  "OpenDSA/OpenDSA",
+        "Stars":  366,
+        "Updated":  "2026-07-23",
+        "Archived":  false,
+        "License":  "NOASSERTION",
+        "Description":  "Working source for the OpenDSA eTextbook project"
+    },
+    {
+        "Repo":  "nand2tetris/projects",
+        "Stars":  36,
+        "Updated":  "2026-07-27",
+        "Archived":  false,
+        "License":  "NOASSERTION",
+        "Description":  "Files for Nand to Tetris projects 1-12"
+    },
+    {
+        "Repo":  "AllenDowney/ThinkDSP",
+        "Stars":  4589,
+        "Updated":  "2026-07-26",
+        "Archived":  false,
+        "License":  "NONE",
+        "Description":  "Think DSP: Digital Signal Processing in Python, by Allen B. Downey."
+    },
+    {
+        "Repo":  "openai/spinningup",
+        "Stars":  11868,
+        "Updated":  "2026-07-27",
+        "Archived":  false,
+        "License":  "MIT",
+        "Description":  "An educational resource to help anyone learn deep reinforcement learning."
+    },
+    {
+        "Repo":  "pgmpy/pgmpy",
+        "Stars":  3304,
+        "Updated":  "2026-07-22",
+        "Archived":  false,
+        "License":  "MIT",
+        "Description":  "Python Toolkit for Causal and Probabilistic Reasoning"
+    },
+    {
+        "Repo":  "AtsushiSakai/PythonRobotics",
+        "Stars":  30148,
+        "Updated":  "2026-07-27",
+        "Archived":  false,
+        "License":  "NOASSERTION",
+        "Description":  "Python sample codes and textbook for robotics algorithms."
+    },
+    {
+        "Repo":  "intro-stat-learning/ISLP_labs",
+        "Stars":  1356,
+        "Updated":  "2026-07-25",
+        "Archived":  false,
+        "License":  "BSD-2-Clause",
+        "Description":  "Up-to-date version of labs for ISLP"
+    },
+    {
+        "Repo":  "mlcourse-ai/mlcourse.ai",
+        "Stars":  "ERR",
+        "Updated":  "",
+        "Archived":  "",
+        "License":  "",
+        "Description":  "远程服务器返回错误: (404) 未找到。"
+    },
+    {
+        "Repo":  "AllenDowney/ThinkStats2",
+        "Stars":  4220,
+        "Updated":  "2026-07-24",
+        "Archived":  false,
+        "License":  "GPL-3.0",
+        "Description":  "Text and supporting code for Think Stats, 2nd Edition"
+    },
+    {
+        "Repo":  "pyg-team/pytorch_geometric",
+        "Stars":  23944,
+        "Updated":  "2026-07-27",
+        "Archived":  false,
+        "License":  "MIT",
+        "Description":  "Graph Neural Network Library for PyTorch"
+    },
+    {
+        "Repo":  "QuantEcon/lecture-python.myst",
+        "Stars":  122,
+        "Updated":  "2026-07-26",
+        "Archived":  false,
+        "License":  "NONE",
+        "Description":  "Quantitative Economics with Python"
+    },
+    {
+        "Repo":  "leanprover-community/mathlib4",
+        "Stars":  3694,
+        "Updated":  "2026-07-27",
+        "Archived":  false,
+        "License":  "Apache-2.0",
+        "Description":  "The math library of Lean 4"
+    },
+    {
+        "Repo":  "jirilebl/ra",
+        "Stars":  93,
+        "Updated":  "2026-07-24",
+        "Archived":  false,
+        "License":  "NOASSERTION",
+        "Description":  "Basic Analysis, undergraduate real analysis textbook"
+    },
+    {
+        "Repo":  "google/or-tools",
+        "Stars":  13820,
+        "Updated":  "2026-07-27",
+        "Archived":  false,
+        "License":  "Apache-2.0",
+        "Description":  "Google\u0027s Operations Research tools:"
+    },
+    {
+        "Repo":  "friendly/psy6136",
+        "Stars":  17,
+        "Updated":  "2026-07-09",
+        "Archived":  false,
+        "License":  "GPL-3.0",
+        "Description":  "Psychology 6136: Categorical Data Analysis"
+    },
+    {
+        "Repo":  "OpenIntroStat/ims",
+        "Stars":  938,
+        "Updated":  "2026-07-15",
+        "Archived":  false,
+        "License":  "NOASSERTION",
+        "Description":  "📚 Introduction to Modern Statistics - A college-level open-source textbook with a modern approach highlighting multivariable relationships and simulation-based inference."
+    },
+    {
+        "Repo":  "pymc-devs/pymc-examples",
+        "Stars":  392,
+        "Updated":  "2026-07-15",
+        "Archived":  false,
+        "License":  "MIT",
+        "Description":  "Examples of PyMC models, including a library of Jupyter notebooks."
+    },
+    {
+        "Repo":  "iitrabhi/fenics-workshop",
+        "Stars":  11,
+        "Updated":  "2026-07-24",
+        "Archived":  false,
+        "License":  "MIT",
+        "Description":  "Tutorials and exercises for learning to use FEniCS"
+    },
+    {
+        "Repo":  "mitmath/18335",
+        "Stars":  583,
+        "Updated":  "2026-07-26",
+        "Archived":  false,
+        "License":  "NONE",
+        "Description":  "18.335 - Introduction to Numerical Methods course"
+    },
+    {
+        "Repo":  "castorini/pyserini",
+        "Stars":  2104,
+        "Updated":  "2026-07-27",
+        "Archived":  false,
+        "License":  "Apache-2.0",
+        "Description":  "Pyserini is a Python toolkit for reproducible information retrieval research with sparse and dense representations."
+    },
+    {
+        "Repo":  "complex-analysis/complex-analysis.github.io",
+        "Stars":  230,
+        "Updated":  "2026-07-23",
+        "Archived":  false,
+        "License":  "NOASSERTION",
+        "Description":  " Complex Analysis: A Visual and Interactive Introduction"
+    },
+    {
+        "Repo":  "cvxpy/cvxpy",
+        "Stars":  6288,
+        "Updated":  "2026-07-26",
+        "Archived":  false,
+        "License":  "Apache-2.0",
+        "Description":  "A Python-embedded modeling language for convex optimization problems."
+    },
+    {
+        "Repo":  "FEniCS/dolfinx",
+        "Stars":  1171,
+        "Updated":  "2026-07-27",
+        "Archived":  false,
+        "License":  "LGPL-3.0",
+        "Description":  "Next generation FEniCS problem solving environment for solving finite element problems"
+    }
+]

@@ -1,0 +1,56 @@
+{
+  "total_markdown_files": 392,
+  "meta_index_moc_files": 29,
+  "total_knowledge_cards": 363,
+  "nlp_knowledge_cards": 241,
+  "nlp_fully_compliant_cards": 241,
+  "nlp_compliance_rate": 100.0,
+  "ml_knowledge_cards": 122,
+  "ml_fully_compliant_cards": 122,
+  "ml_compliance_rate": 100.0,
+  "overall_fully_compliant_cards": 363,
+  "overall_compliance_rate": 100.0,
+  "section_coverage": {
+    "0. Category Assessment (A/B/C/D/E Category & Reason)": "363/363 (100.0%)",
+    "1. Problem Context (\"我们遇到了什么麻烦\")": "363/363 (100.0%)",
+    "2. Importance & Big Picture": "363/363 (100.0%)",
+    "3. Minimal Prerequisites": "363/363 (100.0%)",
+    "4. Intuitive Explanation (\"这东西其实就像...\")": "363/363 (100.0%)",
+    "5. Formal Definition, Core Math & Symbol Table": "363/363 (100.0%)",
+    "6. Derivation & Mathematical Motivation": "363/363 (100.0%)",
+    "7. 3-Level Examples (Basic -> Intermediate -> Real World)": "363/363 (100.0%)",
+    "8. Misconceptions & Comparison Table": "363/363 (100.0%)",
+    "9. Obsidian Wikilinks & Reasoning": "363/363 (100.0%)",
+    "10. Closed-book Recall Checklist": "363/363 (100.0%)",
+    "11. 5 Self-test Questions with Callout Answers": "363/363 (100.0%)",
+    "12. Blank Active Recall Section": "363/363 (100.0%)",
+    "13. Obsidian Archival Recommendations": "363/363 (100.0%)"
+  },
+  "verification_rounds": {
+    "Round_1": {
+      "total_cards": 363,
+      "passed_cards": 363,
+      "compliance_rate": 100.0
+    },
+    "Round_2": {
+      "total_cards": 363,
+      "passed_cards": 363,
+      "compliance_rate": 100.0
+    },
+    "Round_3": {
+      "total_cards": 363,
+      "passed_cards": 363,
+      "compliance_rate": 100.0
+    },
+    "Round_4": {
+      "total_cards": 363,
+      "passed_cards": 363,
+      "compliance_rate": 100.0
+    },
+    "Round_5": {
+      "total_cards": 363,
+      "passed_cards": 363,
+      "compliance_rate": 100.0
+    }
+  }
+}

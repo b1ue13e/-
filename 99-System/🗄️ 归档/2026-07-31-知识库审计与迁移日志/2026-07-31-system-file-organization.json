@@ -1,0 +1,174 @@
+﻿{
+    "run_id":  "2026-07-31-system-file-organization",
+    "operation_count":  42,
+    "operations":  [
+                       {
+                           "source":  "F:\\-\\audit_knowledge_notes_harsh.py",
+                           "destination":  ".\\99-System\\tools\\audit_knowledge_notes_harsh.py"
+                       },
+                       {
+                           "source":  "F:\\-\\audit_learning_domains.py",
+                           "destination":  ".\\99-System\\tools\\audit_learning_domains.py"
+                       },
+                       {
+                           "source":  "F:\\-\\batch_upgrade_csapp_80plus_batch2.py",
+                           "destination":  ".\\99-System\\tools\\batch_upgrade_csapp_80plus_batch2.py"
+                       },
+                       {
+                           "source":  "F:\\-\\batch_upgrade_stage12.py",
+                           "destination":  ".\\99-System\\tools\\batch_upgrade_stage12.py"
+                       },
+                       {
+                           "source":  "F:\\-\\batch_upgrade_stage16.py",
+                           "destination":  ".\\99-System\\tools\\batch_upgrade_stage16.py"
+                       },
+                       {
+                           "source":  "F:\\-\\batch_upgrade_stage18.py",
+                           "destination":  ".\\99-System\\tools\\batch_upgrade_stage18.py"
+                       },
+                       {
+                           "source":  "F:\\-\\canonical_dedup_algo.py",
+                           "destination":  ".\\99-System\\tools\\canonical_dedup_algo.py"
+                       },
+                       {
+                           "source":  "F:\\-\\debug_audit.py",
+                           "destination":  ".\\99-System\\tools\\debug_audit.py"
+                       },
+                       {
+                           "source":  "F:\\-\\fix_projects.py",
+                           "destination":  ".\\99-System\\tools\\fix_projects.py"
+                       },
+                       {
+                           "source":  "F:\\-\\inspect_csapp_notes.py",
+                           "destination":  ".\\99-System\\tools\\inspect_csapp_notes.py"
+                       },
+                       {
+                           "source":  "F:\\-\\inspect_timeseries_notes.py",
+                           "destination":  ".\\99-System\\tools\\inspect_timeseries_notes.py"
+                       },
+                       {
+                           "source":  "F:\\-\\run_audit.py",
+                           "destination":  ".\\99-System\\tools\\run_audit.py"
+                       },
+                       {
+                           "source":  "F:\\-\\run_audit_round1.py",
+                           "destination":  ".\\99-System\\tools\\run_audit_round1.py"
+                       },
+                       {
+                           "source":  "F:\\-\\strict_knowledge_note_audit.py",
+                           "destination":  ".\\99-System\\tools\\strict_knowledge_note_audit.py"
+                       },
+                       {
+                           "source":  "F:\\-\\update_46_projects.py",
+                           "destination":  ".\\99-System\\tools\\update_46_projects.py"
+                       },
+                       {
+                           "source":  "F:\\-\\audit_report_raw.json",
+                           "destination":  ".\\04-Review\\知识库审计\\audit_report_raw.json"
+                       },
+                       {
+                           "source":  "F:\\-\\domain_audit_report.json",
+                           "destination":  ".\\04-Review\\知识库审计\\domain_audit_report.json"
+                       },
+                       {
+                           "source":  "F:\\-\\final_audit_report.json",
+                           "destination":  ".\\04-Review\\知识库审计\\final_audit_report.json"
+                       },
+                       {
+                           "source":  "F:\\-\\knowledge_notes_harsh_audit_2026-07-31.md",
+                           "destination":  ".\\04-Review\\知识库审计\\knowledge_notes_harsh_audit_2026-07-31.md"
+                       },
+                       {
+                           "source":  "F:\\-\\knowledge_notes_harsh_scores_2026-07-31.csv",
+                           "destination":  ".\\04-Review\\知识库审计\\knowledge_notes_harsh_scores_2026-07-31.csv"
+                       },
+                       {
+                           "source":  "F:\\-\\knowledge_notes_harsh_scores_2026-07-31.json",
+                           "destination":  ".\\04-Review\\知识库审计\\knowledge_notes_harsh_scores_2026-07-31.json"
+                       },
+                       {
+                           "source":  "F:\\-\\knowledge_notes_strict_audit.md",
+                           "destination":  ".\\04-Review\\知识库审计\\knowledge_notes_strict_audit.md"
+                       },
+                       {
+                           "source":  "F:\\-\\knowledge_notes_strict_audit_round1.md",
+                           "destination":  ".\\04-Review\\知识库审计\\knowledge_notes_strict_audit_round1.md"
+                       },
+                       {
+                           "source":  "F:\\-\\knowledge_notes_strict_audit_round2.md",
+                           "destination":  ".\\04-Review\\知识库审计\\knowledge_notes_strict_audit_round2.md"
+                       },
+                       {
+                           "source":  "F:\\-\\note_scoring_report.md",
+                           "destination":  ".\\04-Review\\知识库审计\\note_scoring_report.md"
+                       },
+                       {
+                           "source":  "F:\\-\\📁 项目模板.md",
+                           "destination":  ".\\.recovery-hold\\2026-07-31-system-file-organization\\template-variants\\root\\📁 项目模板.md"
+                       },
+                       {
+                           "source":  "F:\\-\\📄 论文笔记模板.md",
+                           "destination":  ".\\.recovery-hold\\2026-07-31-system-file-organization\\template-variants\\root\\📄 论文笔记模板.md"
+                       },
+                       {
+                           "source":  "F:\\-\\📓 学习笔记模板.md",
+                           "destination":  ".\\.recovery-hold\\2026-07-31-system-file-organization\\template-variants\\root\\📓 学习笔记模板.md"
+                       },
+                       {
+                           "source":  "F:\\-\\📓 快速笔记模板.md",
+                           "destination":  ".\\.recovery-hold\\2026-07-31-system-file-organization\\template-variants\\root\\📓 快速笔记模板.md"
+                       },
+                       {
+                           "source":  "F:\\-\\📘 读书笔记模板.md",
+                           "destination":  ".\\.recovery-hold\\2026-07-31-system-file-organization\\template-variants\\root\\📘 读书笔记模板.md"
+                       },
+                       {
+                           "source":  "F:\\-\\📚 论文库\\📄 论文笔记模板.md",
+                           "destination":  ".\\.recovery-hold\\2026-07-31-system-file-organization\\template-variants\\论文库\\📄 论文笔记模板.md"
+                       },
+                       {
+                           "source":  "F:\\-\\📚 书库\\📘 读书笔记模板.md",
+                           "destination":  ".\\.recovery-hold\\2026-07-31-system-file-organization\\template-variants\\书库\\📘 读书笔记模板.md"
+                       },
+                       {
+                           "source":  "F:\\-\\.obsidian\\app.json.git-recovered",
+                           "destination":  ".\\.recovery-hold\\2026-07-31-system-file-organization\\obsidian-config\\app.json.git-recovered"
+                       },
+                       {
+                           "source":  "F:\\-\\.obsidian\\community-plugins.json.git-recovered",
+                           "destination":  ".\\.recovery-hold\\2026-07-31-system-file-organization\\obsidian-config\\community-plugins.json.git-recovered"
+                       },
+                       {
+                           "source":  "F:\\-\\.obsidian\\core-plugins.json.before-troubleshoot",
+                           "destination":  ".\\.recovery-hold\\2026-07-31-system-file-organization\\obsidian-config\\core-plugins.json.before-troubleshoot"
+                       },
+                       {
+                           "source":  "F:\\-\\.obsidian\\core-plugins.json.git-recovered",
+                           "destination":  ".\\.recovery-hold\\2026-07-31-system-file-organization\\obsidian-config\\core-plugins.json.git-recovered"
+                       },
+                       {
+                           "source":  "F:\\-\\.obsidian\\core-plugins.json.with-file-recovery",
+                           "destination":  ".\\.recovery-hold\\2026-07-31-system-file-organization\\obsidian-config\\core-plugins.json.with-file-recovery"
+                       },
+                       {
+                           "source":  "F:\\-\\.obsidian\\workspace.json.bak",
+                           "destination":  ".\\.recovery-hold\\2026-07-31-system-file-organization\\obsidian-config\\workspace.json.bak"
+                       },
+                       {
+                           "source":  "F:\\-\\.obsidian.disabled",
+                           "destination":  ".\\.recovery-hold\\2026-07-31-system-file-organization\\obsidian-config\\.obsidian.disabled"
+                       },
+                       {
+                           "source":  "F:\\-\\scratch",
+                           "destination":  ".\\99-System\\.tmp\\root-scratch-20260731"
+                       },
+                       {
+                           "source":  "F:\\-\\__pycache__",
+                           "destination":  ".\\99-System\\.tmp\\root-pycache-20260731"
+                       },
+                       {
+                           "source":  "F:\\-\\indexeddb_records.jsonl",
+                           "destination":  ".\\99-System\\.tmp\\indexeddb_records-20260731.jsonl"
+                       }
+                   ]
+}

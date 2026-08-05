@@ -1,0 +1,22 @@
+﻿[
+    {
+        "source":  ".\\03-Projects\\数学底座\\04-离散数学\\项目-知识图谱.md",
+        "destination":  ".\\.recovery-hold\\2026-07-31-final-cleanup\\duplicate-projects\\数学底座\\04-离散数学\\项目-知识图谱.md"
+    },
+    {
+        "source":  ".\\03-Projects\\系统与硬件\\12-信号与系统\\项目-性质判断.md",
+        "destination":  ".\\.recovery-hold\\2026-07-31-final-cleanup\\duplicate-projects\\系统与硬件\\12-信号与系统\\项目-性质判断.md"
+    },
+    {
+        "source":  ".\\audit_knowledge_notes_harsh.py",
+        "destination":  ".\\99-System\\tools\\audit_knowledge_notes_integrated.py"
+    },
+    {
+        "source":  ".\\knowledge_notes_harsh_scores_2026-07-31.csv",
+        "destination":  ".\\.recovery-hold\\2026-07-31-final-cleanup\\invalid-audit-output\\knowledge_notes_harsh_scores_2026-07-31.csv"
+    },
+    {
+        "source":  ".\\knowledge_notes_harsh_scores_2026-07-31.json",
+        "destination":  ".\\.recovery-hold\\2026-07-31-final-cleanup\\invalid-audit-output\\knowledge_notes_harsh_scores_2026-07-31.json"
+    }
+]

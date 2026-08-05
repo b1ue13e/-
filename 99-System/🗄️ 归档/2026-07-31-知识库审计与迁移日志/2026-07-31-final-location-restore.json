@@ -1,0 +1,1576 @@
+﻿{
+    "run_id":  "2026-07-31-final-location-restore",
+    "operation_count":  314,
+    "operations":  [
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\3SAT归约.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\03-专题进阶\\3SAT归约.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\3SAT归约.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\ACM图论.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\04-融会贯通\\ACM图论.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\ACM图论.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\ACM字符串.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\04-融会贯通\\ACM字符串.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\ACM字符串.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\ACM数论.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\04-融会贯通\\ACM数论.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\ACM数论.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\ACM组合.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\04-融会贯通\\ACM组合.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\ACM组合.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\BellmanFord.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\02-核心深化\\BellmanFord.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\BellmanFord.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\BFS算法.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\02-核心深化\\BFS算法.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\BFS算法.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\Catalan数.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\02-核心深化\\Catalan数.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\Catalan数.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\CFL泵引理.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\03-专题进阶\\CFL泵引理.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\CFL泵引理.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\CookLevin.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\03-专题进阶\\CookLevin.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\CookLevin.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\CRT应用.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\03-专题进阶\\CRT应用.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\CRT应用.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\CRT证明.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\03-专题进阶\\CRT证明.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\CRT证明.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\DFA.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\03-专题进阶\\DFA.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\DFA.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\DFA最小化.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\03-专题进阶\\DFA最小化.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\DFA最小化.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\DFS算法.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\02-核心深化\\DFS算法.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\DFS算法.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\Diffie-Hellman协议.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\Diffie-Hellman协议.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\Diffie-Hellman协议.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\Dijkstra.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\02-核心深化\\Dijkstra.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\Dijkstra.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\Dinic.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\02-核心深化\\Dinic.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\Dinic.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\DPLL与CDCL算法 (DPLL \u0026 CDCL SAT Solver Algorithms).md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\DPLL与CDCL算法 (DPLL \u0026 CDCL SAT Solver Algorithms).md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\DPLL与CDCL算法 (DPLL \u0026 CDCL SAT Solver Algorithms).md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\EdmondsKarp.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\02-核心深化\\EdmondsKarp.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\EdmondsKarp.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\Fibonacci.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\02-核心深化\\Fibonacci.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\Fibonacci.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\Floyd.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\02-核心深化\\Floyd.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\Floyd.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\gcd_lcm.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\03-专题进阶\\gcd_lcm.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\gcd_lcm.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\GNN原理 (Graph Neural Networks Principles).md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\GNN原理 (Graph Neural Networks Principles).md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\GNN原理 (Graph Neural Networks Principles).md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\GNN原理.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\04-融会贯通\\GNN原理.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\GNN原理.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\Hall婚姻定理 (Hall\u0027s Marriage Theorem).md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\Hall婚姻定理 (Hall\u0027s Marriage Theorem).md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\Hall婚姻定理 (Hall\u0027s Marriage Theorem).md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\KM算法.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\02-核心深化\\KM算法.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\KM算法.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\Kruskal算法.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\02-核心深化\\Kruskal算法.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\Kruskal算法.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\Kuratowski定理.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\Kuratowski定理.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\Kuratowski定理.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\Mealy与Moore状态机.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\Mealy与Moore状态机.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\Mealy与Moore状态机.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\MyhillNerode定理 (Myhill-Nerode Theorem).md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\MyhillNerode定理 (Myhill-Nerode Theorem).md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\MyhillNerode定理 (Myhill-Nerode Theorem).md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\NAS离散.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\04-融会贯通\\NAS离散.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\NAS离散.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\NFA.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\03-专题进阶\\NFA.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\NFA.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\NP完全.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\03-专题进阶\\NP完全.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\NP完全.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\NP类.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\03-专题进阶\\NP类.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\NP类.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\NP难.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\03-专题进阶\\NP难.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\NP难.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\n元组.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\01-基础奠基\\n元组.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\n元组.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\PDA.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\03-专题进阶\\PDA.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\PDA.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\Polya计数定理.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\Polya计数定理.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\Polya计数定理.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\Prim算法.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\02-核心深化\\Prim算法.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\Prim算法.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\PSPACE与Savitch定理 (PSPACE \u0026 Savitch\u0027s Theorem).md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\PSPACE与Savitch定理 (PSPACE \u0026 Savitch\u0027s Theorem).md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\PSPACE与Savitch定理 (PSPACE \u0026 Savitch\u0027s Theorem).md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\PvsNP.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\03-专题进阶\\PvsNP.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\PvsNP.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\P_NP问题常见题型.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\P_NP问题常见题型.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\P_NP问题常见题型.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\P类.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\03-专题进阶\\P类.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\P类.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\QuineMcCluskey算法.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\QuineMcCluskey算法.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\QuineMcCluskey算法.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\Ramsey理论.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\02-核心深化\\Ramsey理论.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\Ramsey理论.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\Rice定理 (Rice\u0027s Theorem).md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\Rice定理 (Rice\u0027s Theorem).md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\Rice定理 (Rice\u0027s Theorem).md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\RSA加密.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\03-专题进阶\\RSA加密.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\RSA加密.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\RSA安全性.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\03-专题进阶\\RSA安全性.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\RSA安全性.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\RSA密钥生成.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\03-专题进阶\\RSA密钥生成.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\RSA密钥生成.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\RSA解密.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\03-专题进阶\\RSA解密.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\RSA解密.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\SAT求解器.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\04-融会贯通\\SAT求解器.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\SAT求解器.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\SPFA.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\02-核心深化\\SPFA.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\SPFA.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\Stone表示.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\02-核心深化\\Stone表示.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\Stone表示.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\TSP求解.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\04-融会贯通\\TSP求解.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\TSP求解.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\Warshall算法 (Warshall\u0027s Algorithm).md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\Warshall算法 (Warshall\u0027s Algorithm).md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\Warshall算法 (Warshall\u0027s Algorithm).md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\Warshall算法.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\Warshall算法.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\Warshall算法.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\Zorn勒马与选择公理 (Zorn\u0027s Lemma \u0026 Axiom of Choice).md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\Zorn勒马与选择公理 (Zorn\u0027s Lemma \u0026 Axiom of Choice).md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\Zorn勒马与选择公理 (Zorn\u0027s Lemma \u0026 Axiom of Choice).md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\上下文无关文法常见题型.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\上下文无关文法常见题型.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\上下文无关文法常见题型.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\不可数集.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\01-基础奠基\\不可数集.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\不可数集.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\丘奇图灵论题.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\03-专题进阶\\丘奇图灵论题.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\丘奇图灵论题.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\中国剩余定理 (Chinese Remainder Theorem, CRT).md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\中国剩余定理 (Chinese Remainder Theorem, CRT).md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\中国剩余定理 (Chinese Remainder Theorem, CRT).md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\中国剩余定理.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\03-专题进阶\\中国剩余定理.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\中国剩余定理.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\中科大.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\04-融会贯通\\中科大.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\中科大.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\主定理.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\03-专题进阶\\主定理.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\主定理.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\主定理情况1.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\03-专题进阶\\主定理情况1.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\主定理情况1.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\主定理情况2.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\03-专题进阶\\主定理情况2.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\主定理情况2.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\主定理情况3.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\03-专题进阶\\主定理情况3.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\主定理情况3.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\主范式与极小项 (Principal Normal Forms \u0026 Minterms).md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\主范式与极小项 (Principal Normal Forms \u0026 Minterms).md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\主范式与极小项 (Principal Normal Forms \u0026 Minterms).md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\主范式与极小项.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\主范式与极小项.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\主范式与极小项.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\乔姆斯基文法谱系.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\乔姆斯基文法谱系.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\乔姆斯基文法谱系.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\二元关系常见题型.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\二元关系常见题型.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\二元关系常见题型.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\二分图匹配.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\02-核心深化\\二分图匹配.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\二分图匹配.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\二项式定理.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\02-核心深化\\二项式定理.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\二项式定理.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\交集.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\01-基础奠基\\交集.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\交集.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\传递性.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\01-基础奠基\\传递性.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\传递性.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\假言三段论.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\01-基础奠基\\假言三段论.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\假言三段论.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\假言推理.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\01-基础奠基\\假言推理.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\假言推理.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\偏序关系 (Partial Order).md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\偏序关系 (Partial Order).md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\偏序关系 (Partial Order).md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\偏序关系与哈斯图常见题型.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\偏序关系与哈斯图常见题型.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\偏序关系与哈斯图常见题型.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\停机问题.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\停机问题.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\停机问题.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\全序.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\01-基础奠基\\全序.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\全序.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\公钥加密.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\04-融会贯通\\公钥加密.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\公钥加密.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\关系图.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\01-基础奠基\\关系图.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\关系图.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\关系定义.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\01-基础奠基\\关系定义.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\关系定义.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\关系矩阵.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\01-基础奠基\\关系矩阵.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\关系矩阵.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\关系运算.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\01-基础奠基\\关系运算.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\关系运算.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\关系闭包.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\01-基础奠基\\关系闭包.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\关系闭包.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\关联矩阵.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\02-核心深化\\关联矩阵.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\关联矩阵.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\函数性质与复合常见题型.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\函数性质与复合常见题型.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\函数性质与复合常见题型.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\分配格.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\02-核心深化\\分配格.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\分配格.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\前束范式.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\01-基础奠基\\前束范式.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\前束范式.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\割点割边与Tarjan.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\割点割边与Tarjan.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\割点割边与Tarjan.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\北大信科.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\04-融会贯通\\北大信科.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\北大信科.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\单位元.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\02-核心深化\\单位元.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\单位元.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\单射.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\01-基础奠基\\单射.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\单射.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\卡诺图化简.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\卡诺图化简.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\卡诺图化简.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\双射.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\01-基础奠基\\双射.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\双射.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\双色判定.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\02-核心深化\\双色判定.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\双色判定.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\反自反性.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\反自反性.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\反自反性.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\可判定性.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\03-专题进阶\\可判定性.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\可判定性.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\可数集.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\01-基础奠基\\可数集.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\可数集.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\可重复排列.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\02-核心深化\\可重复排列.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\可重复排列.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\可重复组合.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\02-核心深化\\可重复组合.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\可重复组合.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\合一算法.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\01-基础奠基\\合一算法.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\合一算法.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\同余.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\03-专题进阶\\同余.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\同余.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\同余运算.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\03-专题进阶\\同余运算.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\同余运算.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\同态加密.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\04-融会贯通\\同态加密.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\同态加密.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\命题与联结词.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\01-基础奠基\\命题与联结词.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\命题与联结词.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\哈密顿路.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\02-核心深化\\哈密顿路.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\哈密顿路.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\哈斯图.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\01-基础奠基\\哈斯图.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\哈斯图.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\哥德尔不完备定理 (Gödel\u0027s Incompleteness Theorems).md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\哥德尔不完备定理 (Gödel\u0027s Incompleteness Theorems).md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\哥德尔不完备定理 (Gödel\u0027s Incompleteness Theorems).md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\商集.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\01-基础奠基\\商集.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\商集.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\四色定理.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\02-核心深化\\四色定理.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\四色定理.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\图同构.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\图同构.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\图同构.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\图嵌入ML.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\04-融会贯通\\图嵌入ML.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\图嵌入ML.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\图拉普拉斯矩阵与谱图论 (Graph Laplacian Matrix \u0026 Spectral Graph Theory).md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\图拉普拉斯矩阵与谱图论 (Graph Laplacian Matrix \u0026 Spectral Graph Theory).md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\图拉普拉斯矩阵与谱图论 (Graph Laplacian Matrix \u0026 Spectral Graph Theory).md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\图灵机定义.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\03-专题进阶\\图灵机定义.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\图灵机定义.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\图着色优化.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\04-融会贯通\\图着色优化.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\图着色优化.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\图论基础.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\图论基础.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\图论基础.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\圆排列.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\02-核心深化\\圆排列.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\圆排列.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\域.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\02-核心深化\\域.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\域.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\基数算术与阿列夫数 (Cardinal Arithmetic \u0026 Aleph Numbers).md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\基数算术与阿列夫数 (Cardinal Arithmetic \u0026 Aleph Numbers).md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\基数算术与阿列夫数 (Cardinal Arithmetic \u0026 Aleph Numbers).md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\复合函数.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\01-基础奠基\\复合函数.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\复合函数.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\多项式定理.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\02-核心深化\\多项式定理.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\多项式定理.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\多项式归约.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\03-专题进阶\\多项式归约.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\多项式归约.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\大O.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\03-专题进阶\\大O.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\大O.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\大Θ.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\03-专题进阶\\大Θ.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\大Θ.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\大Ω.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\03-专题进阶\\大Ω.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\大Ω.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\子句集.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\01-基础奠基\\子句集.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\子句集.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\子群.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\02-核心深化\\子群.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\子群.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\子集构造.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\03-专题进阶\\子集构造.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\子集构造.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\字母表字符串.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\03-专题进阶\\字母表字符串.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\字母表字符串.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\完美匹配.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\02-核心深化\\完美匹配.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\完美匹配.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\定理证明.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\04-融会贯通\\定理证明.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\定理证明.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\定理证明推导.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\定理证明推导.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\定理证明推导.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\容斥一般.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\01-基础奠基\\容斥一般.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\容斥一般.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\容斥三集合.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\01-基础奠基\\容斥三集合.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\容斥三集合.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\容斥两集合.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\01-基础奠基\\容斥两集合.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\容斥两集合.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\对偶图.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\02-核心深化\\对偶图.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\对偶图.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\对数空间类L与NL (Logarithmic Space Classes L \u0026 NL).md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\对数空间类L与NL (Logarithmic Space Classes L \u0026 NL).md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\对数空间类L与NL (Logarithmic Space Classes L \u0026 NL).md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\对称差.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\01-基础奠基\\对称差.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\对称差.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\对称性.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\01-基础奠基\\对称性.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\对称性.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\小o.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\03-专题进阶\\小o.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\小o.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\嵌套量词与否定.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\嵌套量词与否定.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\嵌套量词与否定.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\差集.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\01-基础奠基\\差集.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\差集.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\布尔代数.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\02-核心深化\\布尔代数.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\布尔代数.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\布尔矩阵与布尔积.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\布尔矩阵与布尔积.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\布尔矩阵与布尔积.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\幂集.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\01-基础奠基\\幂集.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\幂集.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\平面性判定.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\02-核心深化\\平面性判定.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\平面性判定.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\并集.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\01-基础奠基\\并集.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\并集.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\康托定理.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\01-基础奠基\\康托定理.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\康托定理.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\归结反驳 (Resolution Refutation).md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\归结反驳 (Resolution Refutation).md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\归结反驳 (Resolution Refutation).md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\归结反驳.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\01-基础奠基\\归结反驳.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\归结反驳.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\归结规则.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\01-基础奠基\\归结规则.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\归结规则.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\循环不变量与程序正确性.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\循环不变量与程序正确性.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\循环不变量与程序正确性.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\循环群.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\02-核心深化\\循环群.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\循环群.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\快速模幂算法.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\快速模幂算法.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\快速模幂算法.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\抽象解释.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\04-融会贯通\\抽象解释.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\抽象解释.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\拉格朗日定理.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\02-核心深化\\拉格朗日定理.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\拉格朗日定理.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\拒取式.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\01-基础奠基\\拒取式.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\拒取式.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\拓扑排序.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\拓扑排序.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\拓扑排序.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\指数生成函数.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\02-核心深化\\指数生成函数.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\指数生成函数.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\排列.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\02-核心深化\\排列.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\排列.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\数字签名.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\04-融会贯通\\数字签名.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\数字签名.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\数学归纳法与良序原理.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\数学归纳法与良序原理.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\数学归纳法与良序原理.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\整数拆分 (Integer Partition).md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\整数拆分 (Integer Partition).md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\整数拆分 (Integer Partition).md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\整环.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\02-核心深化\\整环.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\整环.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\整除.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\03-专题进阶\\整除.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\整除.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\文法定义.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\03-专题进阶\\文法定义.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\文法定义.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\文法范式.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\03-专题进阶\\文法范式.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\文法范式.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\斯特林数.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\斯特林数.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\斯特林数.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\时序逻辑LTL-CTL (Temporal Logic_ LTL \u0026 CTL).md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\时序逻辑LTL-CTL (Temporal Logic_ LTL \u0026 CTL).md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\时序逻辑LTL-CTL (Temporal Logic_ LTL \u0026 CTL).md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\普通生成函数.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\02-核心深化\\普通生成函数.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\普通生成函数.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\最大匹配.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\02-核心深化\\最大匹配.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\最大匹配.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\最大流.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\02-核心深化\\最大流.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\最大流.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\最大流应用.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\04-融会贯通\\最大流应用.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\最大流应用.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\最小割.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\02-核心深化\\最小割.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\最小割.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\最小生成树 (Minimum Spanning Tree, MST).md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\最小生成树 (Minimum Spanning Tree, MST).md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\最小生成树 (Minimum Spanning Tree, MST).md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\最小生成树.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\02-核心深化\\最小生成树.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\最小生成树.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\有限域.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\02-核心深化\\有限域.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\有限域.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\期末代数.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\04-融会贯通\\期末代数.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\期末代数.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\期末图论.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\04-融会贯通\\期末图论.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\期末图论.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\期末组合.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\04-融会贯通\\期末组合.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\期末组合.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\期末计算理论.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\04-融会贯通\\期末计算理论.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\期末计算理论.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\期末逻辑.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\04-融会贯通\\期末逻辑.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\期末逻辑.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\期末集合.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\04-融会贯通\\期末集合.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\期末集合.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\极值元.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\01-基础奠基\\极值元.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\极值元.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\树的性质.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\02-核心深化\\树的性质.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\树的性质.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\格.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\02-核心深化\\格.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\格.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\格基础.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\01-基础奠基\\格基础.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\格基础.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\棣莫弗公式.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\棣莫弗公式.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\棣莫弗公式.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\棣莫弗公式推导.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\棣莫弗公式推导.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\棣莫弗公式推导.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\模型检测.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\04-融会贯通\\模型检测.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\模型检测.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\模型检测应用.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\04-融会贯通\\模型检测应用.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\模型检测应用.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\欧拉公式.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\02-核心深化\\欧拉公式.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\欧拉公式.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\欧拉函数.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\03-专题进阶\\欧拉函数.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\欧拉函数.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\欧拉定理.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\03-专题进阶\\欧拉定理.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\欧拉定理.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\欧拉路.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\02-核心深化\\欧拉路.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\欧拉路.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\正则泵引理.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\03-专题进阶\\正则泵引理.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\正则泵引理.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\正则表达式.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\03-专题进阶\\正则表达式.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\正则表达式.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\正则运算.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\03-专题进阶\\正则运算.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\正则运算.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\正规子群与商群 (Normal Subgroups \u0026 Quotient Groups).md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\正规子群与商群 (Normal Subgroups \u0026 Quotient Groups).md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\正规子群与商群 (Normal Subgroups \u0026 Quotient Groups).md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\派生树.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\03-专题进阶\\派生树.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\派生树.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\清华912.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\04-融会贯通\\清华912.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\清华912.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\满射.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\01-基础奠基\\满射.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\满射.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\环.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\02-核心深化\\环.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\环.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\理想与商环 (Ideals \u0026 Quotient Rings).md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\理想与商环 (Ideals \u0026 Quotient Rings).md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\理想与商环 (Ideals \u0026 Quotient Rings).md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\生成函数运算 (Generating Function Operations).md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\生成函数运算 (Generating Function Operations).md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\生成函数运算 (Generating Function Operations).md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\生成函数运算.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\02-核心深化\\生成函数运算.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\生成函数运算.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\生成树.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\02-核心深化\\生成树.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\生成树.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\真值表.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\01-基础奠基\\真值表.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\真值表.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\矩阵树定理 (Kirchhoff\u0027s Matrix Tree Theorem).md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\矩阵树定理 (Kirchhoff\u0027s Matrix Tree Theorem).md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\矩阵树定理 (Kirchhoff\u0027s Matrix Tree Theorem).md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\离散微积分与下降幂 (Discrete Calculus \u0026 Falling Factorials).md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\离散微积分与下降幂 (Discrete Calculus \u0026 Falling Factorials).md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\离散微积分与下降幂 (Discrete Calculus \u0026 Falling Factorials).md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\离散数学 MOC.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\离散数学 MOC.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\离散数学 MOC.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\离散数学概念笔记入口.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\离散数学概念笔记入口.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\离散数学概念笔记入口.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\离散数学证明方法.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\离散数学证明方法.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\离散数学证明方法.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\程序验证.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\04-融会贯通\\程序验证.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\程序验证.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\稳定婚姻.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\02-核心深化\\稳定婚姻.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\稳定婚姻.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\笛卡尔积 (Cartesian Product).md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\笛卡尔积 (Cartesian Product).md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\笛卡尔积 (Cartesian Product).md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\符号执行.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\04-融会贯通\\符号执行.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\符号执行.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\等价类 (Equivalence Class).md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\等价类 (Equivalence Class).md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\等价类 (Equivalence Class).md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\等势.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\01-基础奠基\\等势.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\等势.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\类型系统验证.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\04-融会贯通\\类型系统验证.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\类型系统验证.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\素数.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\03-专题进阶\\素数.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\素数.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\约束变元.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\01-基础奠基\\约束变元.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\约束变元.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\线性齐次递推.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\02-核心深化\\线性齐次递推.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\线性齐次递推.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\组合.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\02-核心深化\\组合.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\组合.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\组合优化ML.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\04-融会贯通\\组合优化ML.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\组合优化ML.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\组合恒等式.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\02-核心深化\\组合恒等式.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\组合恒等式.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\结合律.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\02-核心深化\\结合律.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\结合律.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\结构归纳法.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\结构归纳法.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\结构归纳法.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\置换群.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\02-核心深化\\置换群.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\置换群.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\群作用与轨域稳定子定理 (Group Actions \u0026 Orbit-Stabilizer Theorem).md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\群作用与轨域稳定子定理 (Group Actions \u0026 Orbit-Stabilizer Theorem).md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\群作用与轨域稳定子定理 (Group Actions \u0026 Orbit-Stabilizer Theorem).md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\群同态基本定理 (First Isomorphism Theorem for Groups).md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\群同态基本定理 (First Isomorphism Theorem for Groups).md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\群同态基本定理 (First Isomorphism Theorem for Groups).md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\群定义 (Definition of a Group).md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\群定义 (Definition of a Group).md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\群定义 (Definition of a Group).md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\群定义.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\02-核心深化\\群定义.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\群定义.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\考研题型.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\04-融会贯通\\考研题型.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\考研题型.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\背包问题.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\04-融会贯通\\背包问题.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\背包问题.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\自反性.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\01-基础奠基\\自反性.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\自反性.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\自然演绎.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\01-基础奠基\\自然演绎.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\自然演绎.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\色数.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\02-核心深化\\色数.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\色数.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\范式.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\01-基础奠基\\范式.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\范式.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\补集.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\01-基础奠基\\补集.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\补集.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\裴蜀定理与ExGCD.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\裴蜀定理与ExGCD.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\裴蜀定理与ExGCD.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\谓词.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\01-基础奠基\\谓词.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\谓词.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\贝尔数 (Bell Numbers).md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\贝尔数 (Bell Numbers).md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\贝尔数 (Bell Numbers).md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\费用流.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\02-核心深化\\费用流.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\费用流.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\费马小定理.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\03-专题进阶\\费马小定理.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\费马小定理.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\边列表.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\02-核心深化\\边列表.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\边列表.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\边着色.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\02-核心深化\\边着色.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\边着色.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\运算封闭性.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\02-核心深化\\运算封闭性.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\运算封闭性.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\逆元.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\02-核心深化\\逆元.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\逆元.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\逆函数.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\01-基础奠基\\逆函数.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\逆函数.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\通用图灵机.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\03-专题进阶\\通用图灵机.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\通用图灵机.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\逻辑等价.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\01-基础奠基\\逻辑等价.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\逻辑等价.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\邻接矩阵.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\02-核心深化\\邻接矩阵.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\邻接矩阵.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\邻接矩阵（Adjacency Matrix）.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\邻接矩阵（Adjacency Matrix）.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\邻接矩阵（Adjacency Matrix）.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\邻接表.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\02-核心深化\\邻接表.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\邻接表.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\量词.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\01-基础奠基\\量词.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\量词.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\错排问题.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\错排问题.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\错排问题.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\随机图与ER模型 (Random Graphs \u0026 Erdős–Rényi Model).md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\随机图与ER模型 (Random Graphs \u0026 Erdős–Rényi Model).md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\随机图与ER模型 (Random Graphs \u0026 Erdős–Rényi Model).md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\隔板法.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\隔板法.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\隔板法.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\零知识证明.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\04-融会贯通\\零知识证明.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\零知识证明.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\霍夫曼编码.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\霍夫曼编码.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\霍夫曼编码.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\非齐次递推.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\02-核心深化\\非齐次递推.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\非齐次递推.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\顶点着色.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\02-核心深化\\顶点着色.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\顶点着色.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\项目-GNN节点分类.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\项目-GNN节点分类.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\项目-GNN节点分类.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\项目-RSA实现.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\项目-RSA实现.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\项目-RSA实现.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\项目-RSA通信.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\项目-RSA通信.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\项目-RSA通信.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\项目-SAT求解器.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\项目-SAT求解器.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\项目-SAT求解器.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\项目-关系分析.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\项目-关系分析.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\项目-关系分析.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\项目-图算法库.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\项目-图算法库.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\项目-图算法库.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\项目-复杂度分析.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\项目-复杂度分析.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\项目-复杂度分析.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\项目-布尔化简.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\项目-布尔化简.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\项目-布尔化简.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\项目-正则引擎.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\项目-正则引擎.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\项目-正则引擎.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\项目-知识图谱.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\项目-知识图谱.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\项目-知识图谱.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\项目-组合计数.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\项目-组合计数.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\项目-组合计数.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\项目-词法分析器.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\项目-词法分析器.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\项目-词法分析器.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\项目-逻辑引擎.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\项目-逻辑引擎.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\项目-逻辑引擎.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\项目-集合计算.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\项目-集合计算.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\项目-集合计算.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\鸽巢原理基本.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\02-核心深化\\鸽巢原理基本.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\鸽巢原理基本.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\鸽巢推广.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\02-核心深化\\鸽巢推广.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\鸽巢推广.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\🌐 第二阶段：核心深化 (Core Deepening).md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\🌐 第二阶段：核心深化 (Core Deepening).md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\🌐 第二阶段：核心深化 (Core Deepening).md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\🎯 第四阶段：融会贯通 (Integration).md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\🎯 第四阶段：融会贯通 (Integration).md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\🎯 第四阶段：融会贯通 (Integration).md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\🎯 第四阶段：融会贯通.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\🎯 第四阶段：融会贯通.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\🎯 第四阶段：融会贯通.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\📐 第一阶段：基础奠基 (Foundation).md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\📐 第一阶段：基础奠基 (Foundation).md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\📐 第一阶段：基础奠基 (Foundation).md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\📘 从数学到哲学.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\📘 从数学到哲学.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\📘 从数学到哲学.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\📚 教材挂载索引.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\📚 教材挂载索引.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\📚 教材挂载索引.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\离散数学\\🚀 第三阶段：专题进阶 (Advanced Topics).md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\04-离散数学\\🚀 第三阶段：专题进阶 (Advanced Topics).md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\离散数学\\🚀 第三阶段：专题进阶 (Advanced Topics).md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\01-社交网络挖掘\\🌊 阶段4：传播建模与应用.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\01-社交网络挖掘\\04-传播建模与应用\\🌊 阶段4：传播建模与应用.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\01-社交网络挖掘\\🌊 阶段4：传播建模与应用.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\01-社交网络挖掘\\👥 阶段3：社区发现与链接预测.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\01-社交网络挖掘\\03-社区发现与链接预测\\👥 阶段3：社区发现与链接预测.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\01-社交网络挖掘\\👥 阶段3：社区发现与链接预测.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\01-社交网络挖掘\\📊 阶段2：网络统计与中心性.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\01-社交网络挖掘\\02-网络统计与中心性\\📊 阶段2：网络统计与中心性.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\01-社交网络挖掘\\📊 阶段2：网络统计与中心性.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\01-社交网络挖掘\\🕸️ 阶段1：图与网络基础.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\01-社交网络挖掘\\01-图与网络基础\\🕸️ 阶段1：图与网络基础.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\01-社交网络挖掘\\🕸️ 阶段1：图与网络基础.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\06-常微分方程\\📕 第四阶段：精通与专题.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\06-常微分方程\\04-精通与专题\\📕 第四阶段：精通与专题.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\06-常微分方程\\📕 第四阶段：精通与专题.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\06-常微分方程\\📗 第二阶段：中级.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\06-常微分方程\\02-中级\\📗 第二阶段：中级.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\06-常微分方程\\📗 第二阶段：中级.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\07-最优化方法\\⚙️ 第三阶段：经典数值优化算法.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\07-最优化方法\\03-经典数值优化算法\\⚙️ 第三阶段：经典数值优化算法.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\07-最优化方法\\⚙️ 第三阶段：经典数值优化算法.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\07-最优化方法\\🎯 第五阶段：专题应用.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\07-最优化方法\\05-专题应用\\🎯 第五阶段：专题应用.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\07-最优化方法\\🎯 第五阶段：专题应用.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\07-最优化方法\\📐 第二阶段：凸分析与最优性条件.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\07-最优化方法\\02-凸分析与最优性条件\\📐 第二阶段：凸分析与最优性条件.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\07-最优化方法\\📐 第二阶段：凸分析与最优性条件.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\07-最优化方法\\🔧 第一阶段：数学基础.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\07-最优化方法\\01-数学基础\\🔧 第一阶段：数学基础.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\07-最优化方法\\🔧 第一阶段：数学基础.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\07-最优化方法\\🚀 第四阶段：现代一阶与随机优化.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\07-最优化方法\\04-现代一阶与随机优化\\🚀 第四阶段：现代一阶与随机优化.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\07-最优化方法\\🚀 第四阶段：现代一阶与随机优化.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\10-数据结构与算法\\🌱 第一阶段：算法入门与基本分析.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\10-数据结构与算法\\01-算法入门与基本分析\\🌱 第一阶段：算法入门与基本分析.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\10-数据结构与算法\\🌱 第一阶段：算法入门与基本分析.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\10-数据结构与算法\\🌳 第三阶段：树与堆.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\10-数据结构与算法\\03-树与堆\\🌳 第三阶段：树与堆.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\10-数据结构与算法\\🌳 第三阶段：树与堆.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\10-数据结构与算法\\🕸️ 第四阶段：图论基础.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\10-数据结构与算法\\04-图论基础\\🕸️ 第四阶段：图论基础.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\10-数据结构与算法\\🕸️ 第四阶段：图论基础.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\11-计算机组成原理\\⚙️ 第一阶段：CPU架构.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\11-计算机组成原理\\01-CPU架构\\⚙️ 第一阶段：CPU架构.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\11-计算机组成原理\\⚙️ 第一阶段：CPU架构.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\11-计算机组成原理\\✅ 第五阶段：总复盘.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\11-计算机组成原理\\05-总复盘\\✅ 第五阶段：总复盘.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\11-计算机组成原理\\✅ 第五阶段：总复盘.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\11-计算机组成原理\\存储层次-寄存器.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\11-计算机组成原理\\02-内存管理\\存储层次-寄存器.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\11-计算机组成原理\\存储层次-寄存器.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\11-计算机组成原理\\💾 第二阶段：内存管理.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\11-计算机组成原理\\02-内存管理\\💾 第二阶段：内存管理.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\11-计算机组成原理\\💾 第二阶段：内存管理.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\12-信号与系统\\🌉 第六阶段：采样定理.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\12-信号与系统\\06-桥梁篇-采样定理\\🌉 第六阶段：采样定理.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\12-信号与系统\\🌉 第六阶段：采样定理.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\12-信号与系统\\🌊 第四阶段：拉普拉斯变换.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\12-信号与系统\\04-变换篇-拉普拉斯\\🌊 第四阶段：拉普拉斯变换.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\12-信号与系统\\🌊 第四阶段：拉普拉斯变换.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\12-信号与系统\\🎯 第二阶段：核心篇.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\12-信号与系统\\02-核心篇-LTI与卷积\\🎯 第二阶段：核心篇.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\12-信号与系统\\🎯 第二阶段：核心篇.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\12-信号与系统\\💻 第七阶段：DFT与FFT.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\12-信号与系统\\07-数字篇-DFT与FFT\\💻 第七阶段：DFT与FFT.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\12-信号与系统\\💻 第七阶段：DFT与FFT.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\15-控制与机器人学\\📡 阶段10：状态估计.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\15-控制与机器人学\\10-状态估计\\📡 阶段10：状态估计.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\15-控制与机器人学\\📡 阶段10：状态估计.md"
+                       },
+                       {
+                           "source":  "02-Knowledge\\🧠 学习系统\\15-控制与机器人学\\🛠️ 阶段11：工程实战.md",
+                           "destination":  "02-Knowledge\\🧠 学习系统\\15-控制与机器人学\\11-工程实战\\🛠️ 阶段11：工程实战.md",
+                           "backup":  "covery-hold\\2026-07-31-final-location-restore\\sources\\02-Knowledge\\🧠 学习系统\\15-控制与机器人学\\🛠️ 阶段11：工程实战.md"
+                       }
+                   ]
+}

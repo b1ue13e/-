@@ -1,0 +1,1383 @@
+{
+  "run_id": "2026-07-31-generic-project-restore",
+  "mode": "apply",
+  "generated_at": "2026-07-31T15:48:02",
+  "operation_count": 225,
+  "unresolved_count": 0,
+  "replacement_count": 89,
+  "distribution": {
+    "机器学习与AI应用/13-强化学习": 26,
+    "系统与硬件/15-控制与机器人学": 34,
+    "机器学习与AI应用/14-概率图模型": 22,
+    "机器学习与AI应用/05-计算机视觉": 17,
+    "金融与时序/07-最优化方法": 10,
+    "系统与硬件/12-信号与系统": 23,
+    "数学底座/04-离散数学": 14,
+    "数学底座/06-常微分方程": 5,
+    "系统与硬件/11-计算机组成原理": 18,
+    "机器学习与AI应用/08-NLP全栈": 7,
+    "系统与硬件/通用与跨学科": 4,
+    "心理与认知/通用与跨学科": 7,
+    "AI Agent工程/通用与跨学科": 7,
+    "机器学习与AI应用/通用与跨学科": 18,
+    "数学底座/通用与跨学科": 3,
+    "哲学与人文/通用与跨学科": 4,
+    "概率统计与数据建模/通用与跨学科": 3,
+    "金融与时序/02-时间序列分析": 1,
+    "机器学习与AI应用/01-社交网络挖掘": 1,
+    "金融与时序/03-量化金融": 1
+  },
+  "operations": [
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\02-Knowledge\\项目-A2C.md",
+      "destination": "03-Projects\\机器学习与AI应用\\13-强化学习\\项目-A2C.md",
+      "replaced_backup": ""
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\02-Knowledge\\项目-ACC仿真.md",
+      "destination": "03-Projects\\系统与硬件\\15-控制与机器人学\\项目-ACC仿真.md",
+      "replaced_backup": ""
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\02-Knowledge\\项目-AC对比.md",
+      "destination": "03-Projects\\机器学习与AI应用\\13-强化学习\\项目-AC对比.md",
+      "replaced_backup": ""
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\02-Knowledge\\项目-AtariPPO.md",
+      "destination": "03-Projects\\机器学习与AI应用\\13-强化学习\\项目-AtariPPO.md",
+      "replaced_backup": ""
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\02-Knowledge\\项目-BNN.md",
+      "destination": "03-Projects\\机器学习与AI应用\\14-概率图模型\\项目-BNN.md",
+      "replaced_backup": ""
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\02-Knowledge\\项目-BN学习.md",
+      "destination": "03-Projects\\机器学习与AI应用\\14-概率图模型\\项目-BN学习.md",
+      "replaced_backup": ""
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\02-Knowledge\\项目-Breakout.md",
+      "destination": "03-Projects\\机器学习与AI应用\\13-强化学习\\项目-Breakout.md",
+      "replaced_backup": ""
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\02-Knowledge\\项目-CartPoleAC.md",
+      "destination": "03-Projects\\机器学习与AI应用\\13-强化学习\\项目-CartPoleAC.md",
+      "replaced_backup": ""
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\02-Knowledge\\项目-CartPoleDQN.md",
+      "destination": "03-Projects\\机器学习与AI应用\\13-强化学习\\项目-CartPoleDQN.md",
+      "replaced_backup": ""
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\02-Knowledge\\项目-CartPolePG.md",
+      "destination": "03-Projects\\机器学习与AI应用\\13-强化学习\\项目-CartPolePG.md",
+      "replaced_backup": ""
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\02-Knowledge\\项目-CartPole建模.md",
+      "destination": "03-Projects\\机器学习与AI应用\\13-强化学习\\项目-CartPole建模.md",
+      "replaced_backup": ""
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\02-Knowledge\\项目-ChowLiu.md",
+      "destination": "03-Projects\\机器学习与AI应用\\14-概率图模型\\项目-ChowLiu.md",
+      "replaced_backup": ""
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\02-Knowledge\\项目-CIFAR10.md",
+      "destination": "03-Projects\\机器学习与AI应用\\05-计算机视觉\\项目-CIFAR10.md",
+      "replaced_backup": ".recovery-hold\\2026-07-31-generic-project-restore\\replaced-targets\\03-Projects\\机器学习与AI应用\\05-计算机视觉\\项目-CIFAR10.md"
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\02-Knowledge\\项目-CLIP检索.md",
+      "destination": "03-Projects\\机器学习与AI应用\\05-计算机视觉\\项目-CLIP检索.md",
+      "replaced_backup": ".recovery-hold\\2026-07-31-generic-project-restore\\replaced-targets\\03-Projects\\机器学习与AI应用\\05-计算机视觉\\项目-CLIP检索.md"
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\02-Knowledge\\项目-CNN可视化.md",
+      "destination": "03-Projects\\机器学习与AI应用\\05-计算机视觉\\项目-CNN可视化.md",
+      "replaced_backup": ".recovery-hold\\2026-07-31-generic-project-restore\\replaced-targets\\03-Projects\\机器学习与AI应用\\05-计算机视觉\\项目-CNN可视化.md"
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\02-Knowledge\\项目-DBN.md",
+      "destination": "03-Projects\\机器学习与AI应用\\14-概率图模型\\项目-DBN.md",
+      "replaced_backup": ""
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\02-Knowledge\\项目-DL调参.md",
+      "destination": "03-Projects\\金融与时序\\07-最优化方法\\项目-DL调参.md",
+      "replaced_backup": ".recovery-hold\\2026-07-31-generic-project-restore\\replaced-targets\\03-Projects\\金融与时序\\07-最优化方法\\项目-DL调参.md"
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\02-Knowledge\\项目-D分离分析.md",
+      "destination": "03-Projects\\机器学习与AI应用\\14-概率图模型\\项目-D分离分析.md",
+      "replaced_backup": ""
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\02-Knowledge\\项目-ECG.md",
+      "destination": "03-Projects\\系统与硬件\\12-信号与系统\\项目-ECG.md",
+      "replaced_backup": ""
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\02-Knowledge\\项目-FFT实现.md",
+      "destination": "03-Projects\\系统与硬件\\12-信号与系统\\项目-FFT实现.md",
+      "replaced_backup": ".recovery-hold\\2026-07-31-generic-project-restore\\replaced-targets\\03-Projects\\系统与硬件\\12-信号与系统\\项目-FFT实现.md"
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\02-Knowledge\\项目-Gibbs.md",
+      "destination": "03-Projects\\机器学习与AI应用\\14-概率图模型\\项目-Gibbs.md",
+      "replaced_backup": ""
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\02-Knowledge\\项目-GMM.md",
+      "destination": "03-Projects\\机器学习与AI应用\\14-概率图模型\\项目-GMM.md",
+      "replaced_backup": ""
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\02-Knowledge\\项目-GNN节点分类.md",
+      "destination": "03-Projects\\数学底座\\04-离散数学\\项目-GNN节点分类.md",
+      "replaced_backup": ".recovery-hold\\2026-07-31-generic-project-restore\\replaced-targets\\03-Projects\\数学底座\\04-离散数学\\项目-GNN节点分类.md"
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\02-Knowledge\\项目-GridWorld.md",
+      "destination": "03-Projects\\机器学习与AI应用\\13-强化学习\\项目-GridWorld.md",
+      "replaced_backup": ""
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\02-Knowledge\\项目-GridWorldMDP.md",
+      "destination": "03-Projects\\机器学习与AI应用\\13-强化学习\\项目-GridWorldMDP.md",
+      "replaced_backup": ""
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\02-Knowledge\\项目-GridWorld最优.md",
+      "destination": "03-Projects\\机器学习与AI应用\\13-强化学习\\项目-GridWorld最优.md",
+      "replaced_backup": ""
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\02-Knowledge\\项目-HDR.md",
+      "destination": "03-Projects\\机器学习与AI应用\\05-计算机视觉\\项目-HDR.md",
+      "replaced_backup": ".recovery-hold\\2026-07-31-generic-project-restore\\replaced-targets\\03-Projects\\机器学习与AI应用\\05-计算机视觉\\项目-HDR.md"
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\02-Knowledge\\项目-HMM完整.md",
+      "destination": "03-Projects\\机器学习与AI应用\\14-概率图模型\\项目-HMM完整.md",
+      "replaced_backup": ""
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\02-Knowledge\\项目-Jacobian可视化.md",
+      "destination": "03-Projects\\系统与硬件\\15-控制与机器人学\\项目-Jacobian可视化.md",
+      "replaced_backup": ""
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\02-Knowledge\\项目-KF跟踪.md",
+      "destination": "03-Projects\\系统与硬件\\15-控制与机器人学\\项目-KF跟踪.md",
+      "replaced_backup": ""
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\02-Knowledge\\项目-Lasso.md",
+      "destination": "03-Projects\\金融与时序\\07-最优化方法\\项目-Lasso.md",
+      "replaced_backup": ".recovery-hold\\2026-07-31-generic-project-restore\\replaced-targets\\03-Projects\\金融与时序\\07-最优化方法\\项目-Lasso.md"
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\02-Knowledge\\项目-LDA.md",
+      "destination": "03-Projects\\机器学习与AI应用\\14-概率图模型\\项目-LDA.md",
+      "replaced_backup": ""
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\02-Knowledge\\项目-Lorenz.md",
+      "destination": "03-Projects\\数学底座\\06-常微分方程\\项目-Lorenz.md",
+      "replaced_backup": ".recovery-hold\\2026-07-31-generic-project-restore\\replaced-targets\\03-Projects\\数学底座\\06-常微分方程\\项目-Lorenz.md"
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\02-Knowledge\\项目-MAB仿真.md",
+      "destination": "03-Projects\\机器学习与AI应用\\13-强化学习\\项目-MAB仿真.md",
+      "replaced_backup": ""
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\02-Knowledge\\项目-MCL.md",
+      "destination": "03-Projects\\系统与硬件\\15-控制与机器人学\\项目-MCL.md",
+      "replaced_backup": ""
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\02-Knowledge\\项目-MDP求解器.md",
+      "destination": "03-Projects\\机器学习与AI应用\\13-强化学习\\项目-MDP求解器.md",
+      "replaced_backup": ""
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\02-Knowledge\\项目-MPC倒立摆.md",
+      "destination": "03-Projects\\系统与硬件\\15-控制与机器人学\\项目-MPC倒立摆.md",
+      "replaced_backup": ""
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\02-Knowledge\\项目-MujocoPPO.md",
+      "destination": "03-Projects\\机器学习与AI应用\\13-强化学习\\项目-MujocoPPO.md",
+      "replaced_backup": ""
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\02-Knowledge\\项目-NeRF.md",
+      "destination": "03-Projects\\机器学习与AI应用\\05-计算机视觉\\项目-NeRF.md",
+      "replaced_backup": ".recovery-hold\\2026-07-31-generic-project-restore\\replaced-targets\\03-Projects\\机器学习与AI应用\\05-计算机视觉\\项目-NeRF.md"
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\02-Knowledge\\项目-ODE求解器.md",
+      "destination": "03-Projects\\数学底座\\06-常微分方程\\项目-ODE求解器.md",
+      "replaced_backup": ".recovery-hold\\2026-07-31-generic-project-restore\\replaced-targets\\03-Projects\\数学底座\\06-常微分方程\\项目-ODE求解器.md"
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\02-Knowledge\\项目-Panorama.md",
+      "destination": "03-Projects\\机器学习与AI应用\\05-计算机视觉\\项目-Panorama.md",
+      "replaced_backup": ".recovery-hold\\2026-07-31-generic-project-restore\\replaced-targets\\03-Projects\\机器学习与AI应用\\05-计算机视觉\\项目-Panorama.md"
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\02-Knowledge\\项目-PC.md",
+      "destination": "03-Projects\\机器学习与AI应用\\14-概率图模型\\项目-PC.md",
+      "replaced_backup": ""
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\02-Knowledge\\项目-PendulumPG.md",
+      "destination": "03-Projects\\机器学习与AI应用\\13-强化学习\\项目-PendulumPG.md",
+      "replaced_backup": ""
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\02-Knowledge\\项目-PGBaseline.md",
+      "destination": "03-Projects\\机器学习与AI应用\\13-强化学习\\项目-PGBaseline.md",
+      "replaced_backup": ""
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\02-Knowledge\\项目-PID温度控制.md",
+      "destination": "03-Projects\\系统与硬件\\15-控制与机器人学\\项目-PID温度控制.md",
+      "replaced_backup": ""
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\02-Knowledge\\项目-POS.md",
+      "destination": "03-Projects\\机器学习与AI应用\\14-概率图模型\\项目-POS.md",
+      "replaced_backup": ""
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\02-Knowledge\\项目-PPO实现.md",
+      "destination": "03-Projects\\机器学习与AI应用\\13-强化学习\\项目-PPO实现.md",
+      "replaced_backup": ""
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\02-Knowledge\\项目-PPO调参.md",
+      "destination": "03-Projects\\机器学习与AI应用\\13-强化学习\\项目-PPO调参.md",
+      "replaced_backup": ""
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\02-Knowledge\\项目-PUMA仿真.md",
+      "destination": "03-Projects\\系统与硬件\\15-控制与机器人学\\项目-PUMA仿真.md",
+      "replaced_backup": ""
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\02-Knowledge\\项目-RL实现.md",
+      "destination": "03-Projects\\金融与时序\\07-最优化方法\\项目-RL实现.md",
+      "replaced_backup": ".recovery-hold\\2026-07-31-generic-project-restore\\replaced-targets\\03-Projects\\金融与时序\\07-最优化方法\\项目-RL实现.md"
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\02-Knowledge\\项目-RSA实现.md",
+      "destination": "03-Projects\\数学底座\\04-离散数学\\项目-RSA实现.md",
+      "replaced_backup": ".recovery-hold\\2026-07-31-generic-project-restore\\replaced-targets\\03-Projects\\数学底座\\04-离散数学\\项目-RSA实现.md"
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\02-Knowledge\\项目-RSA通信.md",
+      "destination": "03-Projects\\数学底座\\04-离散数学\\项目-RSA通信.md",
+      "replaced_backup": ".recovery-hold\\2026-07-31-generic-project-restore\\replaced-targets\\03-Projects\\数学底座\\04-离散数学\\项目-RSA通信.md"
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\02-Knowledge\\项目-SAT求解器.md",
+      "destination": "03-Projects\\数学底座\\04-离散数学\\项目-SAT求解器.md",
+      "replaced_backup": ".recovery-hold\\2026-07-31-generic-project-restore\\replaced-targets\\03-Projects\\数学底座\\04-离散数学\\项目-SAT求解器.md"
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\02-Knowledge\\项目-SDE.md",
+      "destination": "03-Projects\\数学底座\\06-常微分方程\\项目-SDE.md",
+      "replaced_backup": ".recovery-hold\\2026-07-31-generic-project-restore\\replaced-targets\\03-Projects\\数学底座\\06-常微分方程\\项目-SDE.md"
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\02-Knowledge\\项目-SD微调.md",
+      "destination": "03-Projects\\机器学习与AI应用\\05-计算机视觉\\项目-SD微调.md",
+      "replaced_backup": ".recovery-hold\\2026-07-31-generic-project-restore\\replaced-targets\\03-Projects\\机器学习与AI应用\\05-计算机视觉\\项目-SD微调.md"
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\02-Knowledge\\项目-shell实现.md",
+      "destination": "03-Projects\\系统与硬件\\11-计算机组成原理\\项目-shell实现.md",
+      "replaced_backup": ".recovery-hold\\2026-07-31-generic-project-restore\\replaced-targets\\03-Projects\\系统与硬件\\11-计算机组成原理\\项目-shell实现.md"
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\02-Knowledge\\项目-TLB分析.md",
+      "destination": "03-Projects\\系统与硬件\\11-计算机组成原理\\项目-TLB分析.md",
+      "replaced_backup": ".recovery-hold\\2026-07-31-generic-project-restore\\replaced-targets\\03-Projects\\系统与硬件\\11-计算机组成原理\\项目-TLB分析.md"
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\02-Knowledge\\项目-VAE.md",
+      "destination": "03-Projects\\机器学习与AI应用\\14-概率图模型\\项目-VAE.md",
+      "replaced_backup": ""
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\02-Knowledge\\项目-VE实现.md",
+      "destination": "03-Projects\\机器学习与AI应用\\14-概率图模型\\项目-VE实现.md",
+      "replaced_backup": ""
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\02-Knowledge\\项目-VI.md",
+      "destination": "03-Projects\\机器学习与AI应用\\14-概率图模型\\项目-VI.md",
+      "replaced_backup": ""
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\02-Knowledge\\项目-ViT实现.md",
+      "destination": "03-Projects\\机器学习与AI应用\\05-计算机视觉\\项目-ViT实现.md",
+      "replaced_backup": ".recovery-hold\\2026-07-31-generic-project-restore\\replaced-targets\\03-Projects\\机器学习与AI应用\\05-计算机视觉\\项目-ViT实现.md"
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\02-Knowledge\\项目-价值可视化.md",
+      "destination": "03-Projects\\机器学习与AI应用\\13-强化学习\\项目-价值可视化.md",
+      "replaced_backup": ""
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\02-Knowledge\\项目-优化器对比.md",
+      "destination": "03-Projects\\金融与时序\\07-最优化方法\\项目-优化器对比.md",
+      "replaced_backup": ".recovery-hold\\2026-07-31-generic-project-restore\\replaced-targets\\03-Projects\\金融与时序\\07-最优化方法\\项目-优化器对比.md"
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\02-Knowledge\\项目-优化对比.md",
+      "destination": "03-Projects\\金融与时序\\07-最优化方法\\项目-优化对比.md",
+      "replaced_backup": ".recovery-hold\\2026-07-31-generic-project-restore\\replaced-targets\\03-Projects\\金融与时序\\07-最优化方法\\项目-优化对比.md"
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\02-Knowledge\\项目-优化工具包.md",
+      "destination": "03-Projects\\金融与时序\\07-最优化方法\\项目-优化工具包.md",
+      "replaced_backup": ".recovery-hold\\2026-07-31-generic-project-restore\\replaced-targets\\03-Projects\\金融与时序\\07-最优化方法\\项目-优化工具包.md"
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\02-Knowledge\\项目-位姿估计.md",
+      "destination": "03-Projects\\系统与硬件\\15-控制与机器人学\\项目-位姿估计.md",
+      "replaced_backup": ""
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\02-Knowledge\\项目-信号分解.md",
+      "destination": "03-Projects\\系统与硬件\\12-信号与系统\\项目-信号分解.md",
+      "replaced_backup": ".recovery-hold\\2026-07-31-generic-project-restore\\replaced-targets\\03-Projects\\系统与硬件\\12-信号与系统\\项目-信号分解.md"
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\02-Knowledge\\项目-信号绘制.md",
+      "destination": "03-Projects\\系统与硬件\\12-信号与系统\\项目-信号绘制.md",
+      "replaced_backup": ".recovery-hold\\2026-07-31-generic-project-restore\\replaced-targets\\03-Projects\\系统与硬件\\12-信号与系统\\项目-信号绘制.md"
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\02-Knowledge\\项目-倒立摆.md",
+      "destination": "03-Projects\\系统与硬件\\15-控制与机器人学\\项目-倒立摆.md",
+      "replaced_backup": ""
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\02-Knowledge\\项目-停车场规划.md",
+      "destination": "03-Projects\\系统与硬件\\15-控制与机器人学\\项目-停车场规划.md",
+      "replaced_backup": ""
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\02-Knowledge\\项目-八字绕环.md",
+      "destination": "03-Projects\\系统与硬件\\15-控制与机器人学\\项目-八字绕环.md",
+      "replaced_backup": ""
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\02-Knowledge\\项目-关系分析.md",
+      "destination": "03-Projects\\数学底座\\04-离散数学\\项目-关系分析.md",
+      "replaced_backup": ".recovery-hold\\2026-07-31-generic-project-restore\\replaced-targets\\03-Projects\\数学底座\\04-离散数学\\项目-关系分析.md"
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\02-Knowledge\\项目-内存分配器.md",
+      "destination": "03-Projects\\系统与硬件\\11-计算机组成原理\\项目-内存分配器.md",
+      "replaced_backup": ".recovery-hold\\2026-07-31-generic-project-restore\\replaced-targets\\03-Projects\\系统与硬件\\11-计算机组成原理\\项目-内存分配器.md"
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\02-Knowledge\\项目-分支预测分析.md",
+      "destination": "03-Projects\\系统与硬件\\11-计算机组成原理\\项目-分支预测分析.md",
+      "replaced_backup": ".recovery-hold\\2026-07-31-generic-project-restore\\replaced-targets\\03-Projects\\系统与硬件\\11-计算机组成原理\\项目-分支预测分析.md"
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\02-Knowledge\\项目-分词.md",
+      "destination": "03-Projects\\机器学习与AI应用\\14-概率图模型\\项目-分词.md",
+      "replaced_backup": ""
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\02-Knowledge\\项目-医学分割.md",
+      "destination": "03-Projects\\机器学习与AI应用\\05-计算机视觉\\项目-医学分割.md",
+      "replaced_backup": ".recovery-hold\\2026-07-31-generic-project-restore\\replaced-targets\\03-Projects\\机器学习与AI应用\\05-计算机视觉\\项目-医学分割.md"
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\02-Knowledge\\项目-医疗BN.md",
+      "destination": "03-Projects\\机器学习与AI应用\\14-概率图模型\\项目-医疗BN.md",
+      "replaced_backup": ""
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\02-Knowledge\\项目-卷积可视化.md",
+      "destination": "03-Projects\\系统与硬件\\12-信号与系统\\项目-卷积可视化.md",
+      "replaced_backup": ".recovery-hold\\2026-07-31-generic-project-restore\\replaced-targets\\03-Projects\\系统与硬件\\12-信号与系统\\项目-卷积可视化.md"
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\02-Knowledge\\项目-卷积计算.md",
+      "destination": "03-Projects\\系统与硬件\\12-信号与系统\\项目-卷积计算.md",
+      "replaced_backup": ".recovery-hold\\2026-07-31-generic-project-restore\\replaced-targets\\03-Projects\\系统与硬件\\12-信号与系统\\项目-卷积计算.md"
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\02-Knowledge\\项目-因果估计.md",
+      "destination": "03-Projects\\机器学习与AI应用\\14-概率图模型\\项目-因果估计.md",
+      "replaced_backup": ""
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\02-Knowledge\\项目-图像去噪.md",
+      "destination": "03-Projects\\机器学习与AI应用\\14-概率图模型\\项目-图像去噪.md",
+      "replaced_backup": ""
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\02-Knowledge\\项目-图像搜索.md",
+      "destination": "03-Projects\\机器学习与AI应用\\05-计算机视觉\\项目-图像搜索.md",
+      "replaced_backup": ".recovery-hold\\2026-07-31-generic-project-restore\\replaced-targets\\03-Projects\\机器学习与AI应用\\05-计算机视觉\\项目-图像搜索.md"
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\02-Knowledge\\项目-图算法库.md",
+      "destination": "03-Projects\\数学底座\\04-离散数学\\项目-图算法库.md",
+      "replaced_backup": ".recovery-hold\\2026-07-31-generic-project-restore\\replaced-targets\\03-Projects\\数学底座\\04-离散数学\\项目-图算法库.md"
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\02-Knowledge\\项目-均衡器.md",
+      "destination": "03-Projects\\系统与硬件\\12-信号与系统\\项目-均衡器.md",
+      "replaced_backup": ".recovery-hold\\2026-07-31-generic-project-restore\\replaced-targets\\03-Projects\\系统与硬件\\12-信号与系统\\项目-均衡器.md"
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\02-Knowledge\\项目-复杂度分析.md",
+      "destination": "03-Projects\\数学底座\\04-离散数学\\项目-复杂度分析.md",
+      "replaced_backup": ".recovery-hold\\2026-07-31-generic-project-restore\\replaced-targets\\03-Projects\\数学底座\\04-离散数学\\项目-复杂度分析.md"
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\02-Knowledge\\项目-多模态搜索.md",
+      "destination": "03-Projects\\机器学习与AI应用\\08-NLP全栈\\项目-多模态搜索.md",
+      "replaced_backup": ".recovery-hold\\2026-07-31-generic-project-restore\\replaced-targets\\03-Projects\\机器学习与AI应用\\08-NLP全栈\\项目-多模态搜索.md"
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\02-Knowledge\\项目-大规模优化.md",
+      "destination": "03-Projects\\金融与时序\\07-最优化方法\\项目-大规模优化.md",
+      "replaced_backup": ".recovery-hold\\2026-07-31-generic-project-restore\\replaced-targets\\03-Projects\\金融与时序\\07-最优化方法\\项目-大规模优化.md"
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\02-Knowledge\\项目-姿态估计.md",
+      "destination": "03-Projects\\机器学习与AI应用\\05-计算机视觉\\项目-姿态估计.md",
+      "replaced_backup": ".recovery-hold\\2026-07-31-generic-project-restore\\replaced-targets\\03-Projects\\机器学习与AI应用\\05-计算机视觉\\项目-姿态估计.md"
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\02-Knowledge\\项目-定速巡航.md",
+      "destination": "03-Projects\\系统与硬件\\15-控制与机器人学\\项目-定速巡航.md",
+      "replaced_backup": ""
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\02-Knowledge\\项目-实时MPC.md",
+      "destination": "03-Projects\\系统与硬件\\15-控制与机器人学\\项目-实时MPC.md",
+      "replaced_backup": ""
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\02-Knowledge\\项目-实时频谱.md",
+      "destination": "03-Projects\\系统与硬件\\12-信号与系统\\项目-实时频谱.md",
+      "replaced_backup": ""
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\02-Knowledge\\项目-导航小车.md",
+      "destination": "03-Projects\\系统与硬件\\15-控制与机器人学\\项目-导航小车.md",
+      "replaced_backup": ""
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\02-Knowledge\\项目-层次图.md",
+      "destination": "03-Projects\\系统与硬件\\11-计算机组成原理\\项目-层次图.md",
+      "replaced_backup": ".recovery-hold\\2026-07-31-generic-project-restore\\replaced-targets\\03-Projects\\系统与硬件\\11-计算机组成原理\\项目-层次图.md"
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\02-Knowledge\\项目-差分方程.md",
+      "destination": "03-Projects\\系统与硬件\\12-信号与系统\\项目-差分方程.md",
+      "replaced_backup": ".recovery-hold\\2026-07-31-generic-project-restore\\replaced-targets\\03-Projects\\系统与硬件\\12-信号与系统\\项目-差分方程.md"
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\02-Knowledge\\项目-布尔化简.md",
+      "destination": "03-Projects\\数学底座\\04-离散数学\\项目-布尔化简.md",
+      "replaced_backup": ".recovery-hold\\2026-07-31-generic-project-restore\\replaced-targets\\03-Projects\\数学底座\\04-离散数学\\项目-布尔化简.md"
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\02-Knowledge\\项目-并行PPO.md",
+      "destination": "03-Projects\\机器学习与AI应用\\13-强化学习\\项目-并行PPO.md",
+      "replaced_backup": ""
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\02-Knowledge\\项目-并行排序.md",
+      "destination": "03-Projects\\系统与硬件\\11-计算机组成原理\\项目-并行排序.md",
+      "replaced_backup": ".recovery-hold\\2026-07-31-generic-project-restore\\replaced-targets\\03-Projects\\系统与硬件\\11-计算机组成原理\\项目-并行排序.md"
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\02-Knowledge\\项目-广告推荐.md",
+      "destination": "03-Projects\\机器学习与AI应用\\13-强化学习\\项目-广告推荐.md",
+      "replaced_backup": ""
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\02-Knowledge\\项目-延迟测试.md",
+      "destination": "03-Projects\\系统与硬件\\11-计算机组成原理\\项目-延迟测试.md",
+      "replaced_backup": ".recovery-hold\\2026-07-31-generic-project-restore\\replaced-targets\\03-Projects\\系统与硬件\\11-计算机组成原理\\项目-延迟测试.md"
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\02-Knowledge\\项目-快速卷积.md",
+      "destination": "03-Projects\\系统与硬件\\12-信号与系统\\项目-快速卷积.md",
+      "replaced_backup": ".recovery-hold\\2026-07-31-generic-project-restore\\replaced-targets\\03-Projects\\系统与硬件\\12-信号与系统\\项目-快速卷积.md"
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\02-Knowledge\\项目-性能优化实战.md",
+      "destination": "03-Projects\\系统与硬件\\11-计算机组成原理\\项目-性能优化实战.md",
+      "replaced_backup": ".recovery-hold\\2026-07-31-generic-project-restore\\replaced-targets\\03-Projects\\系统与硬件\\11-计算机组成原理\\项目-性能优化实战.md"
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\02-Knowledge\\项目-性能计算.md",
+      "destination": "03-Projects\\系统与硬件\\11-计算机组成原理\\项目-性能计算.md",
+      "replaced_backup": ".recovery-hold\\2026-07-31-generic-project-restore\\replaced-targets\\03-Projects\\系统与硬件\\11-计算机组成原理\\项目-性能计算.md"
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\02-Knowledge\\项目-性质判断.md",
+      "destination": "03-Projects\\数学底座\\04-离散数学\\项目-性质判断.md",
+      "replaced_backup": ""
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\02-Knowledge\\项目-悬崖对比.md",
+      "destination": "03-Projects\\机器学习与AI应用\\13-强化学习\\项目-悬崖对比.md",
+      "replaced_backup": ""
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\02-Knowledge\\项目-技术博客.md",
+      "destination": "03-Projects\\系统与硬件\\11-计算机组成原理\\项目-技术博客.md",
+      "replaced_backup": ".recovery-hold\\2026-07-31-generic-project-restore\\replaced-targets\\03-Projects\\系统与硬件\\11-计算机组成原理\\项目-技术博客.md"
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\02-Knowledge\\项目-换道规划.md",
+      "destination": "03-Projects\\系统与硬件\\15-控制与机器人学\\项目-换道规划.md",
+      "replaced_backup": ""
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\02-Knowledge\\项目-推断对比.md",
+      "destination": "03-Projects\\机器学习与AI应用\\14-概率图模型\\项目-推断对比.md",
+      "replaced_backup": ""
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\02-Knowledge\\项目-文本统计.md",
+      "destination": "03-Projects\\机器学习与AI应用\\08-NLP全栈\\项目-文本统计.md",
+      "replaced_backup": ".recovery-hold\\2026-07-31-generic-project-restore\\replaced-targets\\03-Projects\\机器学习与AI应用\\08-NLP全栈\\项目-文本统计.md"
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\02-Knowledge\\项目-文档问答.md",
+      "destination": "03-Projects\\机器学习与AI应用\\08-NLP全栈\\项目-文档问答.md",
+      "replaced_backup": ".recovery-hold\\2026-07-31-generic-project-restore\\replaced-targets\\03-Projects\\机器学习与AI应用\\08-NLP全栈\\项目-文档问答.md"
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\02-Knowledge\\项目-方差分析.md",
+      "destination": "03-Projects\\机器学习与AI应用\\13-强化学习\\项目-方差分析.md",
+      "replaced_backup": ""
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\02-Knowledge\\项目-无人机控制.md",
+      "destination": "03-Projects\\系统与硬件\\15-控制与机器人学\\项目-无人机控制.md",
+      "replaced_backup": ""
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\02-Knowledge\\项目-智能客服.md",
+      "destination": "03-Projects\\机器学习与AI应用\\08-NLP全栈\\项目-智能客服.md",
+      "replaced_backup": ".recovery-hold\\2026-07-31-generic-project-restore\\replaced-targets\\03-Projects\\机器学习与AI应用\\08-NLP全栈\\项目-智能客服.md"
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\02-Knowledge\\项目-最小二乘.md",
+      "destination": "03-Projects\\金融与时序\\07-最优化方法\\项目-最小二乘.md",
+      "replaced_backup": ".recovery-hold\\2026-07-31-generic-project-restore\\replaced-targets\\03-Projects\\金融与时序\\07-最优化方法\\项目-最小二乘.md"
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\02-Knowledge\\项目-机械臂抓取.md",
+      "destination": "03-Projects\\系统与硬件\\15-控制与机器人学\\项目-机械臂抓取.md",
+      "replaced_backup": ""
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\02-Knowledge\\项目-根轨迹工具.md",
+      "destination": "03-Projects\\系统与硬件\\15-控制与机器人学\\项目-根轨迹工具.md",
+      "replaced_backup": ""
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\02-Knowledge\\项目-模型部署.md",
+      "destination": "03-Projects\\机器学习与AI应用\\05-计算机视觉\\项目-模型部署.md",
+      "replaced_backup": ".recovery-hold\\2026-07-31-generic-project-restore\\replaced-targets\\03-Projects\\机器学习与AI应用\\05-计算机视觉\\项目-模型部署.md"
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\02-Knowledge\\项目-横向控制对比.md",
+      "destination": "03-Projects\\系统与硬件\\15-控制与机器人学\\项目-横向控制对比.md",
+      "replaced_backup": ""
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\02-Knowledge\\项目-横向调参.md",
+      "destination": "03-Projects\\系统与硬件\\15-控制与机器人学\\项目-横向调参.md",
+      "replaced_backup": ""
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\02-Knowledge\\项目-正则引擎.md",
+      "destination": "03-Projects\\数学底座\\04-离散数学\\项目-正则引擎.md",
+      "replaced_backup": ".recovery-hold\\2026-07-31-generic-project-restore\\replaced-targets\\03-Projects\\数学底座\\04-离散数学\\项目-正则引擎.md"
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\02-Knowledge\\项目-正则提取.md",
+      "destination": "03-Projects\\机器学习与AI应用\\08-NLP全栈\\项目-正则提取.md",
+      "replaced_backup": ".recovery-hold\\2026-07-31-generic-project-restore\\replaced-targets\\03-Projects\\机器学习与AI应用\\08-NLP全栈\\项目-正则提取.md"
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\02-Knowledge\\项目-死锁检测器.md",
+      "destination": "03-Projects\\系统与硬件\\11-计算机组成原理\\项目-死锁检测器.md",
+      "replaced_backup": ".recovery-hold\\2026-07-31-generic-project-restore\\replaced-targets\\03-Projects\\系统与硬件\\11-计算机组成原理\\项目-死锁检测器.md"
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\02-Knowledge\\项目-汇编编程.md",
+      "destination": "03-Projects\\系统与硬件\\11-计算机组成原理\\项目-汇编编程.md",
+      "replaced_backup": ".recovery-hold\\2026-07-31-generic-project-restore\\replaced-targets\\03-Projects\\系统与硬件\\11-计算机组成原理\\项目-汇编编程.md"
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\02-Knowledge\\项目-流水线模拟.md",
+      "destination": "03-Projects\\系统与硬件\\11-计算机组成原理\\项目-流水线模拟.md",
+      "replaced_backup": ".recovery-hold\\2026-07-31-generic-project-restore\\replaced-targets\\03-Projects\\系统与硬件\\11-计算机组成原理\\项目-流水线模拟.md"
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\02-Knowledge\\项目-混叠演示.md",
+      "destination": "03-Projects\\系统与硬件\\12-信号与系统\\项目-混叠演示.md",
+      "replaced_backup": ".recovery-hold\\2026-07-31-generic-project-restore\\replaced-targets\\03-Projects\\系统与硬件\\12-信号与系统\\项目-混叠演示.md"
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\02-Knowledge\\项目-温度控制.md",
+      "destination": "03-Projects\\系统与硬件\\15-控制与机器人学\\项目-温度控制.md",
+      "replaced_backup": ""
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\02-Knowledge\\项目-滤波器.md",
+      "destination": "03-Projects\\系统与硬件\\12-信号与系统\\项目-滤波器.md",
+      "replaced_backup": ".recovery-hold\\2026-07-31-generic-project-restore\\replaced-targets\\03-Projects\\系统与硬件\\12-信号与系统\\项目-滤波器.md"
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\02-Knowledge\\项目-滤波器分析.md",
+      "destination": "03-Projects\\系统与硬件\\12-信号与系统\\项目-滤波器分析.md",
+      "replaced_backup": ".recovery-hold\\2026-07-31-generic-project-restore\\replaced-targets\\03-Projects\\系统与硬件\\12-信号与系统\\项目-滤波器分析.md"
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\02-Knowledge\\项目-物理建模.md",
+      "destination": "03-Projects\\数学底座\\06-常微分方程\\项目-物理建模.md",
+      "replaced_backup": ".recovery-hold\\2026-07-31-generic-project-restore\\replaced-targets\\03-Projects\\数学底座\\06-常微分方程\\项目-物理建模.md"
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\02-Knowledge\\项目-生产者消费者.md",
+      "destination": "03-Projects\\系统与硬件\\11-计算机组成原理\\项目-生产者消费者.md",
+      "replaced_backup": ".recovery-hold\\2026-07-31-generic-project-restore\\replaced-targets\\03-Projects\\系统与硬件\\11-计算机组成原理\\项目-生产者消费者.md"
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\02-Knowledge\\项目-生成对比.md",
+      "destination": "03-Projects\\机器学习与AI应用\\14-概率图模型\\项目-生成对比.md",
+      "replaced_backup": ""
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\02-Knowledge\\项目-生物HMM.md",
+      "destination": "03-Projects\\机器学习与AI应用\\14-概率图模型\\项目-生物HMM.md",
+      "replaced_backup": ""
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\02-Knowledge\\项目-电机三环.md",
+      "destination": "03-Projects\\系统与硬件\\15-控制与机器人学\\项目-电机三环.md",
+      "replaced_backup": ""
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\02-Knowledge\\项目-电机仿真.md",
+      "destination": "03-Projects\\系统与硬件\\15-控制与机器人学\\项目-电机仿真.md",
+      "replaced_backup": ""
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\02-Knowledge\\项目-电路分析.md",
+      "destination": "03-Projects\\系统与硬件\\12-信号与系统\\项目-电路分析.md",
+      "replaced_backup": ".recovery-hold\\2026-07-31-generic-project-restore\\replaced-targets\\03-Projects\\系统与硬件\\12-信号与系统\\项目-电路分析.md"
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\02-Knowledge\\项目-知识图谱.md",
+      "destination": "03-Projects\\机器学习与AI应用\\08-NLP全栈\\项目-知识图谱.md",
+      "replaced_backup": ".recovery-hold\\2026-07-31-generic-project-restore\\replaced-targets\\03-Projects\\机器学习与AI应用\\08-NLP全栈\\项目-知识图谱.md"
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\02-Knowledge\\项目-神经ODE.md",
+      "destination": "03-Projects\\数学底座\\06-常微分方程\\项目-神经ODE.md",
+      "replaced_backup": ".recovery-hold\\2026-07-31-generic-project-restore\\replaced-targets\\03-Projects\\数学底座\\06-常微分方程\\项目-神经ODE.md"
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\02-Knowledge\\项目-移动机器人仿真.md",
+      "destination": "03-Projects\\系统与硬件\\15-控制与机器人学\\项目-移动机器人仿真.md",
+      "replaced_backup": ""
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\02-Knowledge\\项目-稳定性.md",
+      "destination": "03-Projects\\系统与硬件\\12-信号与系统\\项目-稳定性.md",
+      "replaced_backup": ".recovery-hold\\2026-07-31-generic-project-restore\\replaced-targets\\03-Projects\\系统与硬件\\12-信号与系统\\项目-稳定性.md"
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\02-Knowledge\\项目-简单搜索.md",
+      "destination": "03-Projects\\机器学习与AI应用\\08-NLP全栈\\项目-简单搜索.md",
+      "replaced_backup": ".recovery-hold\\2026-07-31-generic-project-restore\\replaced-targets\\03-Projects\\机器学习与AI应用\\08-NLP全栈\\项目-简单搜索.md"
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\02-Knowledge\\项目-简易OS.md",
+      "destination": "03-Projects\\系统与硬件\\11-计算机组成原理\\项目-简易OS.md",
+      "replaced_backup": ".recovery-hold\\2026-07-31-generic-project-restore\\replaced-targets\\03-Projects\\系统与硬件\\11-计算机组成原理\\项目-简易OS.md"
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\02-Knowledge\\项目-系统分析.md",
+      "destination": "03-Projects\\系统与硬件\\12-信号与系统\\项目-系统分析.md",
+      "replaced_backup": ".recovery-hold\\2026-07-31-generic-project-restore\\replaced-targets\\03-Projects\\系统与硬件\\12-信号与系统\\项目-系统分析.md"
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\02-Knowledge\\项目-线程安全队列.md",
+      "destination": "03-Projects\\系统与硬件\\11-计算机组成原理\\项目-线程安全队列.md",
+      "replaced_backup": ".recovery-hold\\2026-07-31-generic-project-restore\\replaced-targets\\03-Projects\\系统与硬件\\11-计算机组成原理\\项目-线程安全队列.md"
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\02-Knowledge\\项目-组合求解器.md",
+      "destination": "03-Projects\\金融与时序\\07-最优化方法\\项目-组合求解器.md",
+      "replaced_backup": ".recovery-hold\\2026-07-31-generic-project-restore\\replaced-targets\\03-Projects\\金融与时序\\07-最优化方法\\项目-组合求解器.md"
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\02-Knowledge\\项目-组合计数.md",
+      "destination": "03-Projects\\数学底座\\04-离散数学\\项目-组合计数.md",
+      "replaced_backup": ".recovery-hold\\2026-07-31-generic-project-restore\\replaced-targets\\03-Projects\\数学底座\\04-离散数学\\项目-组合计数.md"
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\02-Knowledge\\项目-缓存模拟器.md",
+      "destination": "03-Projects\\系统与硬件\\11-计算机组成原理\\项目-缓存模拟器.md",
+      "replaced_backup": ".recovery-hold\\2026-07-31-generic-project-restore\\replaced-targets\\03-Projects\\系统与硬件\\11-计算机组成原理\\项目-缓存模拟器.md"
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\02-Knowledge\\项目-自动驾驶仿真.md",
+      "destination": "03-Projects\\系统与硬件\\15-控制与机器人学\\项目-自动驾驶仿真.md",
+      "replaced_backup": ""
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\02-Knowledge\\项目-自定义检测.md",
+      "destination": "03-Projects\\机器学习与AI应用\\05-计算机视觉\\项目-自定义检测.md",
+      "replaced_backup": ".recovery-hold\\2026-07-31-generic-project-restore\\replaced-targets\\03-Projects\\机器学习与AI应用\\05-计算机视觉\\项目-自定义检测.md"
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\02-Knowledge\\项目-自监督.md",
+      "destination": "03-Projects\\机器学习与AI应用\\05-计算机视觉\\项目-自监督.md",
+      "replaced_backup": ".recovery-hold\\2026-07-31-generic-project-restore\\replaced-targets\\03-Projects\\机器学习与AI应用\\05-计算机视觉\\项目-自监督.md"
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\02-Knowledge\\项目-观测器.md",
+      "destination": "03-Projects\\系统与硬件\\15-控制与机器人学\\项目-观测器.md",
+      "replaced_backup": ""
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\02-Knowledge\\项目-视频分析.md",
+      "destination": "03-Projects\\机器学习与AI应用\\05-计算机视觉\\项目-视频分析.md",
+      "replaced_backup": ".recovery-hold\\2026-07-31-generic-project-restore\\replaced-targets\\03-Projects\\机器学习与AI应用\\05-计算机视觉\\项目-视频分析.md"
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\02-Knowledge\\项目-计算力矩.md",
+      "destination": "03-Projects\\系统与硬件\\15-控制与机器人学\\项目-计算力矩.md",
+      "replaced_backup": ""
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\02-Knowledge\\项目-诊断网络.md",
+      "destination": "03-Projects\\机器学习与AI应用\\14-概率图模型\\项目-诊断网络.md",
+      "replaced_backup": ""
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\02-Knowledge\\项目-词法分析器.md",
+      "destination": "03-Projects\\数学底座\\04-离散数学\\项目-词法分析器.md",
+      "replaced_backup": ".recovery-hold\\2026-07-31-generic-project-restore\\replaced-targets\\03-Projects\\数学底座\\04-离散数学\\项目-词法分析器.md"
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\02-Knowledge\\项目-调度器模拟.md",
+      "destination": "03-Projects\\系统与硬件\\11-计算机组成原理\\项目-调度器模拟.md",
+      "replaced_backup": ".recovery-hold\\2026-07-31-generic-project-restore\\replaced-targets\\03-Projects\\系统与硬件\\11-计算机组成原理\\项目-调度器模拟.md"
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\02-Knowledge\\项目-贝尔曼求解.md",
+      "destination": "03-Projects\\机器学习与AI应用\\13-强化学习\\项目-贝尔曼求解.md",
+      "replaced_backup": ""
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\02-Knowledge\\项目-超参优化.md",
+      "destination": "03-Projects\\金融与时序\\07-最优化方法\\项目-超参优化.md",
+      "replaced_backup": ".recovery-hold\\2026-07-31-generic-project-restore\\replaced-targets\\03-Projects\\金融与时序\\07-最优化方法\\项目-超参优化.md"
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\02-Knowledge\\项目-车辆MPC.md",
+      "destination": "03-Projects\\系统与硬件\\15-控制与机器人学\\项目-车辆MPC.md",
+      "replaced_backup": ""
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\02-Knowledge\\项目-车辆模型验证.md",
+      "destination": "03-Projects\\系统与硬件\\15-控制与机器人学\\项目-车辆模型验证.md",
+      "replaced_backup": ""
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\02-Knowledge\\项目-车队仿真.md",
+      "destination": "03-Projects\\系统与硬件\\15-控制与机器人学\\项目-车队仿真.md",
+      "replaced_backup": ""
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\02-Knowledge\\项目-轨迹插值.md",
+      "destination": "03-Projects\\系统与硬件\\15-控制与机器人学\\项目-轨迹插值.md",
+      "replaced_backup": ""
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\02-Knowledge\\项目-轨迹跟踪.md",
+      "destination": "03-Projects\\系统与硬件\\15-控制与机器人学\\项目-轨迹跟踪.md",
+      "replaced_backup": ""
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\02-Knowledge\\项目-边缘检测.md",
+      "destination": "03-Projects\\系统与硬件\\12-信号与系统\\项目-边缘检测.md",
+      "replaced_backup": ""
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\02-Knowledge\\项目-边缘部署.md",
+      "destination": "03-Projects\\机器学习与AI应用\\05-计算机视觉\\项目-边缘部署.md",
+      "replaced_backup": ".recovery-hold\\2026-07-31-generic-project-restore\\replaced-targets\\03-Projects\\机器学习与AI应用\\05-计算机视觉\\项目-边缘部署.md"
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\02-Knowledge\\项目-连续AC.md",
+      "destination": "03-Projects\\机器学习与AI应用\\13-强化学习\\项目-连续AC.md",
+      "replaced_backup": ""
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\02-Knowledge\\项目-迷宫QL.md",
+      "destination": "03-Projects\\机器学习与AI应用\\13-强化学习\\项目-迷宫QL.md",
+      "replaced_backup": ""
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\02-Knowledge\\项目-逆变换.md",
+      "destination": "03-Projects\\系统与硬件\\12-信号与系统\\项目-逆变换.md",
+      "replaced_backup": ".recovery-hold\\2026-07-31-generic-project-restore\\replaced-targets\\03-Projects\\系统与硬件\\12-信号与系统\\项目-逆变换.md"
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\02-Knowledge\\项目-逻辑引擎.md",
+      "destination": "03-Projects\\数学底座\\04-离散数学\\项目-逻辑引擎.md",
+      "replaced_backup": ".recovery-hold\\2026-07-31-generic-project-restore\\replaced-targets\\03-Projects\\数学底座\\04-离散数学\\项目-逻辑引擎.md"
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\02-Knowledge\\项目-避障重规划.md",
+      "destination": "03-Projects\\系统与硬件\\15-控制与机器人学\\项目-避障重规划.md",
+      "replaced_backup": ""
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\02-Knowledge\\项目-采样仿真.md",
+      "destination": "03-Projects\\系统与硬件\\12-信号与系统\\项目-采样仿真.md",
+      "replaced_backup": ".recovery-hold\\2026-07-31-generic-project-restore\\replaced-targets\\03-Projects\\系统与硬件\\12-信号与系统\\项目-采样仿真.md"
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\02-Knowledge\\项目-集合计算.md",
+      "destination": "03-Projects\\数学底座\\04-离散数学\\项目-集合计算.md",
+      "replaced_backup": ".recovery-hold\\2026-07-31-generic-project-restore\\replaced-targets\\03-Projects\\数学底座\\04-离散数学\\项目-集合计算.md"
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\02-Knowledge\\项目-零极点设计.md",
+      "destination": "03-Projects\\系统与硬件\\12-信号与系统\\项目-零极点设计.md",
+      "replaced_backup": ".recovery-hold\\2026-07-31-generic-project-restore\\replaced-targets\\03-Projects\\系统与硬件\\12-信号与系统\\项目-零极点设计.md"
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\02-Knowledge\\项目-音频采样.md",
+      "destination": "03-Projects\\系统与硬件\\12-信号与系统\\项目-音频采样.md",
+      "replaced_backup": ".recovery-hold\\2026-07-31-generic-project-restore\\replaced-targets\\03-Projects\\系统与硬件\\12-信号与系统\\项目-音频采样.md"
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\02-Knowledge\\项目-频率响应.md",
+      "destination": "03-Projects\\系统与硬件\\15-控制与机器人学\\项目-频率响应.md",
+      "replaced_backup": ""
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\02-Knowledge\\项目-频谱仪.md",
+      "destination": "03-Projects\\系统与硬件\\12-信号与系统\\项目-频谱仪.md",
+      "replaced_backup": ""
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\02-Knowledge\\项目-频谱分析.md",
+      "destination": "03-Projects\\系统与硬件\\12-信号与系统\\项目-频谱分析.md",
+      "replaced_backup": ".recovery-hold\\2026-07-31-generic-project-restore\\replaced-targets\\03-Projects\\系统与硬件\\12-信号与系统\\项目-频谱分析.md"
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\02-Knowledge\\项目-风格迁移.md",
+      "destination": "03-Projects\\机器学习与AI应用\\05-计算机视觉\\项目-风格迁移.md",
+      "replaced_backup": ".recovery-hold\\2026-07-31-generic-project-restore\\replaced-targets\\03-Projects\\机器学习与AI应用\\05-计算机视觉\\项目-风格迁移.md"
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\03-Projects\\项目-AI编译器与机器学习系统底层原理教学项目.md",
+      "destination": "03-Projects\\系统与硬件\\项目-AI编译器与机器学习系统底层原理教学项目.md",
+      "replaced_backup": ""
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\03-Projects\\项目-CognitiveFoundations认知心理学与AI表征教学项目.md",
+      "destination": "03-Projects\\心理与认知\\项目-CognitiveFoundations认知心理学与AI表征教学项目.md",
+      "replaced_backup": ""
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\03-Projects\\项目-CS224N-GPT架构手写与下游任务作业.md",
+      "destination": "03-Projects\\AI Agent工程\\项目-CS224N-GPT架构手写与下游任务作业.md",
+      "replaced_backup": ""
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\03-Projects\\项目-CS285深度强化学习算法手写与离线RL作业.md",
+      "destination": "03-Projects\\机器学习与AI应用\\项目-CS285深度强化学习算法手写与离线RL作业.md",
+      "replaced_backup": ""
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\03-Projects\\项目-CS330多任务与元学习MAML实验包.md",
+      "destination": "03-Projects\\机器学习与AI应用\\项目-CS330多任务与元学习MAML实验包.md",
+      "replaced_backup": ""
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\03-Projects\\项目-CS336大语言模型训练系统与ScalingLaw硬核项目.md",
+      "destination": "03-Projects\\AI Agent工程\\项目-CS336大语言模型训练系统与ScalingLaw硬核项目.md",
+      "replaced_backup": ""
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\03-Projects\\项目-D2L动手学深度学习标准基准实验包.md",
+      "destination": "03-Projects\\机器学习与AI应用\\项目-D2L动手学深度学习标准基准实验包.md",
+      "replaced_backup": ""
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\03-Projects\\项目-DCAI以数据为中心的AI与数据诊断实验包.md",
+      "destination": "03-Projects\\机器学习与AI应用\\项目-DCAI以数据为中心的AI与数据诊断实验包.md",
+      "replaced_backup": ""
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\03-Projects\\项目-fastai实用深度学习快速原型扩展训练.md",
+      "destination": "03-Projects\\机器学习与AI应用\\项目-fastai实用深度学习快速原型扩展训练.md",
+      "replaced_backup": ""
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\03-Projects\\项目-FSDL全栈深度学习产品化与监控扩展训练.md",
+      "destination": "03-Projects\\机器学习与AI应用\\项目-FSDL全栈深度学习产品化与监控扩展训练.md",
+      "replaced_backup": ""
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\03-Projects\\项目-GeometricDeepLearning几何深度学习与对称性理论实验包.md",
+      "destination": "03-Projects\\数学底座\\项目-GeometricDeepLearning几何深度学习与对称性理论实验包.md",
+      "replaced_backup": ""
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\03-Projects\\项目-HSEDeepGenerativeModels深度生成模型与FlowMatching实验包.md",
+      "destination": "03-Projects\\机器学习与AI应用\\项目-HSEDeepGenerativeModels深度生成模型与FlowMatching实验包.md",
+      "replaced_backup": ""
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\03-Projects\\项目-HuggingFaceAudioTransformers语音与音频工程扩展训练.md",
+      "destination": "03-Projects\\AI Agent工程\\项目-HuggingFaceAudioTransformers语音与音频工程扩展训练.md",
+      "replaced_backup": ""
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\03-Projects\\项目-HuggingFaceCourse通用Transformer工程微调扩展训练.md",
+      "destination": "03-Projects\\AI Agent工程\\项目-HuggingFaceCourse通用Transformer工程微调扩展训练.md",
+      "replaced_backup": ""
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\03-Projects\\项目-HuggingFaceCV视觉Transformer与生成模型扩展训练.md",
+      "destination": "03-Projects\\机器学习与AI应用\\项目-HuggingFaceCV视觉Transformer与生成模型扩展训练.md",
+      "replaced_backup": ""
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\03-Projects\\项目-HuggingFaceRobotics具身智能与LeRobot工程扩展训练.md",
+      "destination": "03-Projects\\系统与硬件\\项目-HuggingFaceRobotics具身智能与LeRobot工程扩展训练.md",
+      "replaced_backup": ""
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\03-Projects\\项目-ISLP统计学习实验室教学项目.md",
+      "destination": "03-Projects\\机器学习与AI应用\\项目-ISLP统计学习实验室教学项目.md",
+      "replaced_backup": ""
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\03-Projects\\项目-Karpathy-ZeroToHero神经网络底层手写教学项目.md",
+      "destination": "03-Projects\\机器学习与AI应用\\项目-Karpathy-ZeroToHero神经网络底层手写教学项目.md",
+      "replaced_backup": ""
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\03-Projects\\项目-LearningStatisticsWithR心理统计与表达教学项目.md",
+      "destination": "03-Projects\\心理与认知\\项目-LearningStatisticsWithR心理统计与表达教学项目.md",
+      "replaced_backup": ""
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\03-Projects\\项目-LLMsFromScratch从零手写大语言模型教学项目.md",
+      "destination": "03-Projects\\AI Agent工程\\项目-LLMsFromScratch从零手写大语言模型教学项目.md",
+      "replaced_backup": ""
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\03-Projects\\项目-MaximeLabonne大模型工程化全景与部署扩展训练.md",
+      "destination": "03-Projects\\AI Agent工程\\项目-MaximeLabonne大模型工程化全景与部署扩展训练.md",
+      "replaced_backup": ""
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\03-Projects\\项目-MIT6S191深度学习极速跨方向实战训练.md",
+      "destination": "03-Projects\\机器学习与AI应用\\项目-MIT6S191深度学习极速跨方向实战训练.md",
+      "replaced_backup": ""
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\03-Projects\\项目-MIT哲学问题与论证写作教学项目.md",
+      "destination": "03-Projects\\哲学与人文\\项目-MIT哲学问题与论证写作教学项目.md",
+      "replaced_backup": ""
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\03-Projects\\项目-MIT心灵与机器AI意识哲学教学项目.md",
+      "destination": "03-Projects\\哲学与人文\\项目-MIT心灵与机器AI意识哲学教学项目.md",
+      "replaced_backup": ""
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\03-Projects\\项目-ML-Zoomcamp端到端工程部署扩展训练.md",
+      "destination": "03-Projects\\机器学习与AI应用\\项目-ML-Zoomcamp端到端工程部署扩展训练.md",
+      "replaced_backup": ""
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\03-Projects\\项目-MLC机器学习编译与GPU算子调度优化工程项目.md",
+      "destination": "03-Projects\\系统与硬件\\项目-MLC机器学习编译与GPU算子调度优化工程项目.md",
+      "replaced_backup": ""
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\03-Projects\\项目-MLSystems端到端AI系统与MLOps工程项目.md",
+      "destination": "03-Projects\\系统与硬件\\项目-MLSystems端到端AI系统与MLOps工程项目.md",
+      "replaced_backup": ""
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\03-Projects\\项目-MML机器学习数学底座与算法导图.md",
+      "destination": "03-Projects\\数学底座\\项目-MML机器学习数学底座与算法导图.md",
+      "replaced_backup": ""
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\03-Projects\\项目-MultimodalLLMs多模态大模型与视觉语言扩展训练.md",
+      "destination": "03-Projects\\机器学习与AI应用\\项目-MultimodalLLMs多模态大模型与视觉语言扩展训练.md",
+      "replaced_backup": ""
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\03-Projects\\项目-NeuromatchDeepLearning与NeuroAI协作实验训练.md",
+      "destination": "03-Projects\\机器学习与AI应用\\项目-NeuromatchDeepLearning与NeuroAI协作实验训练.md",
+      "replaced_backup": ""
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\03-Projects\\项目-NobaPsychology模块化心理学扩展训练.md",
+      "destination": "03-Projects\\心理与认知\\项目-NobaPsychology模块化心理学扩展训练.md",
+      "replaced_backup": ""
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\03-Projects\\项目-OpenLogic开放逻辑与哥德尔不完备性教学项目.md",
+      "destination": "03-Projects\\数学底座\\项目-OpenLogic开放逻辑与哥德尔不完备性教学项目.md",
+      "replaced_backup": ""
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\03-Projects\\项目-OpenStax哲学概论开放主线教学项目.md",
+      "destination": "03-Projects\\哲学与人文\\项目-OpenStax哲学概论开放主线教学项目.md",
+      "replaced_backup": ""
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\03-Projects\\项目-OpenStax普通心理学主线教学项目.md",
+      "destination": "03-Projects\\心理与认知\\项目-OpenStax普通心理学主线教学项目.md",
+      "replaced_backup": ""
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\03-Projects\\项目-PracticingTrustworthyML可信与可解释AI教学项目.md",
+      "destination": "03-Projects\\机器学习与AI应用\\项目-PracticingTrustworthyML可信与可解释AI教学项目.md",
+      "replaced_backup": ""
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\03-Projects\\项目-PsychoPy行为实验构建与即时满足决策工程项目.md",
+      "destination": "03-Projects\\心理与认知\\项目-PsychoPy行为实验构建与即时满足决策工程项目.md",
+      "replaced_backup": ""
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\03-Projects\\项目-psyTeachR可重复心理学研究与开放科学扩展训练.md",
+      "destination": "03-Projects\\心理与认知\\项目-psyTeachR可重复心理学研究与开放科学扩展训练.md",
+      "replaced_backup": ""
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\03-Projects\\项目-PyProbML概率机器学习与变分推断实验包.md",
+      "destination": "03-Projects\\概率统计与数据建模\\项目-PyProbML概率机器学习与变分推断实验包.md",
+      "replaced_backup": ""
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\03-Projects\\项目-Recommenders微软推荐系统与排序工程项目.md",
+      "destination": "03-Projects\\概率统计与数据建模\\项目-Recommenders微软推荐系统与排序工程项目.md",
+      "replaced_backup": ""
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\03-Projects\\项目-R语言心理学研究方法与数据分析教学项目.md",
+      "destination": "03-Projects\\心理与认知\\项目-R语言心理学研究方法与数据分析教学项目.md",
+      "replaced_backup": ""
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\03-Projects\\项目-UDL深度学习紧凑理论与机制剖析实验包.md",
+      "destination": "03-Projects\\机器学习与AI应用\\项目-UDL深度学习紧凑理论与机制剖析实验包.md",
+      "replaced_backup": ""
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\03-Projects\\项目-UvADeepLearning论文级高级模型实验包.md",
+      "destination": "03-Projects\\机器学习与AI应用\\项目-UvADeepLearning论文级高级模型实验包.md",
+      "replaced_backup": ""
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\03-Projects\\项目-Yale人性哲学与科学交叉教学项目.md",
+      "destination": "03-Projects\\哲学与人文\\项目-Yale人性哲学与科学交叉教学项目.md",
+      "replaced_backup": ""
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\03-Projects\\项目-YSDANLP学术化进阶与序列模型实验包.md",
+      "destination": "03-Projects\\AI Agent工程\\项目-YSDANLP学术化进阶与序列模型实验包.md",
+      "replaced_backup": ""
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\03-Projects\\项目-YSDAPracticalDL代码实战扩展训练.md",
+      "destination": "03-Projects\\机器学习与AI应用\\项目-YSDAPracticalDL代码实战扩展训练.md",
+      "replaced_backup": ""
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\03-Projects\\项目-因果推断与双重机器学习实验包.md",
+      "destination": "03-Projects\\概率统计与数据建模\\项目-因果推断与双重机器学习实验包.md",
+      "replaced_backup": ""
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\03-Projects\\项目-时间序列预测与漂移监控.md",
+      "destination": "03-Projects\\金融与时序\\02-时间序列分析\\项目-时间序列预测与漂移监控.md",
+      "replaced_backup": ""
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\03-Projects\\项目-社交网络传播与影响力分析.md",
+      "destination": "03-Projects\\机器学习与AI应用\\01-社交网络挖掘\\项目-社交网络传播与影响力分析.md",
+      "replaced_backup": ""
+    },
+    {
+      "action": "restore-copy",
+      "source": ".recovery-hold\\03-Projects\\通用项目\\03-Projects\\项目-量化策略回测与风险控制.md",
+      "destination": "03-Projects\\金融与时序\\03-量化金融\\项目-量化策略回测与风险控制.md",
+      "replaced_backup": ""
+    }
+  ],
+  "unresolved": []
+}

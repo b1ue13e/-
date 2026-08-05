@@ -1,0 +1,663 @@
+﻿{
+    "run_id":  "2026-07-31-categorized-project-restore",
+    "mode":  "copy",
+    "operation_count":  164,
+    "operations":  [
+                       {
+                           "source":  ".recovery-hold\\03-Projects\\03-🛠️ Projects.md",
+                           "destination":  "03-Projects\\03-🛠️ Projects.md"
+                       },
+                       {
+                           "source":  ".recovery-hold\\03-Projects\\33门课程作业来源审计总表.md",
+                           "destination":  "03-Projects\\33门课程作业来源审计总表.md"
+                       },
+                       {
+                           "source":  ".recovery-hold\\03-Projects\\33门课程完整作业编目审计-2026-07-28.md",
+                           "destination":  "03-Projects\\33门课程完整作业编目审计-2026-07-28.md"
+                       },
+                       {
+                           "source":  ".recovery-hold\\03-Projects\\旧项目与作业资产资格审计-2026-07-28.md",
+                           "destination":  "03-Projects\\旧项目与作业资产资格审计-2026-07-28.md"
+                       },
+                       {
+                           "source":  ".recovery-hold\\03-Projects\\正式作业包修复审计-2026-07-28.md",
+                           "destination":  "03-Projects\\正式作业包修复审计-2026-07-28.md"
+                       },
+                       {
+                           "source":  ".recovery-hold\\03-Projects\\项目-33门课程开源作业体系升级.md",
+                           "destination":  "03-Projects\\项目-33门课程开源作业体系升级.md"
+                       },
+                       {
+                           "source":  ".recovery-hold\\03-Projects\\数学底座\\04-离散数学\\项目-GNN节点分类.md",
+                           "destination":  "03-Projects\\数学底座\\04-离散数学\\项目-GNN节点分类.md"
+                       },
+                       {
+                           "source":  ".recovery-hold\\03-Projects\\数学底座\\04-离散数学\\项目-RSA实现.md",
+                           "destination":  "03-Projects\\数学底座\\04-离散数学\\项目-RSA实现.md"
+                       },
+                       {
+                           "source":  ".recovery-hold\\03-Projects\\数学底座\\04-离散数学\\项目-RSA通信.md",
+                           "destination":  "03-Projects\\数学底座\\04-离散数学\\项目-RSA通信.md"
+                       },
+                       {
+                           "source":  ".recovery-hold\\03-Projects\\数学底座\\04-离散数学\\项目-SAT求解器.md",
+                           "destination":  "03-Projects\\数学底座\\04-离散数学\\项目-SAT求解器.md"
+                       },
+                       {
+                           "source":  ".recovery-hold\\03-Projects\\数学底座\\04-离散数学\\项目-关系分析.md",
+                           "destination":  "03-Projects\\数学底座\\04-离散数学\\项目-关系分析.md"
+                       },
+                       {
+                           "source":  ".recovery-hold\\03-Projects\\数学底座\\04-离散数学\\项目-图算法库.md",
+                           "destination":  "03-Projects\\数学底座\\04-离散数学\\项目-图算法库.md"
+                       },
+                       {
+                           "source":  ".recovery-hold\\03-Projects\\数学底座\\04-离散数学\\项目-复杂度分析.md",
+                           "destination":  "03-Projects\\数学底座\\04-离散数学\\项目-复杂度分析.md"
+                       },
+                       {
+                           "source":  ".recovery-hold\\03-Projects\\数学底座\\04-离散数学\\项目-布尔化简.md",
+                           "destination":  "03-Projects\\数学底座\\04-离散数学\\项目-布尔化简.md"
+                       },
+                       {
+                           "source":  ".recovery-hold\\03-Projects\\数学底座\\04-离散数学\\项目-正则引擎.md",
+                           "destination":  "03-Projects\\数学底座\\04-离散数学\\项目-正则引擎.md"
+                       },
+                       {
+                           "source":  ".recovery-hold\\03-Projects\\数学底座\\04-离散数学\\项目-知识图谱.md",
+                           "destination":  "03-Projects\\数学底座\\04-离散数学\\项目-知识图谱.md"
+                       },
+                       {
+                           "source":  ".recovery-hold\\03-Projects\\数学底座\\04-离散数学\\项目-组合计数.md",
+                           "destination":  "03-Projects\\数学底座\\04-离散数学\\项目-组合计数.md"
+                       },
+                       {
+                           "source":  ".recovery-hold\\03-Projects\\数学底座\\04-离散数学\\项目-词法分析器.md",
+                           "destination":  "03-Projects\\数学底座\\04-离散数学\\项目-词法分析器.md"
+                       },
+                       {
+                           "source":  ".recovery-hold\\03-Projects\\数学底座\\04-离散数学\\项目-逻辑引擎.md",
+                           "destination":  "03-Projects\\数学底座\\04-离散数学\\项目-逻辑引擎.md"
+                       },
+                       {
+                           "source":  ".recovery-hold\\03-Projects\\数学底座\\04-离散数学\\项目-集合计算.md",
+                           "destination":  "03-Projects\\数学底座\\04-离散数学\\项目-集合计算.md"
+                       },
+                       {
+                           "source":  ".recovery-hold\\03-Projects\\数学底座\\06-常微分方程\\项目-Lorenz.md",
+                           "destination":  "03-Projects\\数学底座\\06-常微分方程\\项目-Lorenz.md"
+                       },
+                       {
+                           "source":  ".recovery-hold\\03-Projects\\数学底座\\06-常微分方程\\项目-ODE求解器.md",
+                           "destination":  "03-Projects\\数学底座\\06-常微分方程\\项目-ODE求解器.md"
+                       },
+                       {
+                           "source":  ".recovery-hold\\03-Projects\\数学底座\\06-常微分方程\\项目-SDE.md",
+                           "destination":  "03-Projects\\数学底座\\06-常微分方程\\项目-SDE.md"
+                       },
+                       {
+                           "source":  ".recovery-hold\\03-Projects\\数学底座\\06-常微分方程\\项目-物理建模.md",
+                           "destination":  "03-Projects\\数学底座\\06-常微分方程\\项目-物理建模.md"
+                       },
+                       {
+                           "source":  ".recovery-hold\\03-Projects\\数学底座\\06-常微分方程\\项目-神经ODE.md",
+                           "destination":  "03-Projects\\数学底座\\06-常微分方程\\项目-神经ODE.md"
+                       },
+                       {
+                           "source":  ".recovery-hold\\03-Projects\\机器学习与AI应用\\05-计算机视觉\\项目-CIFAR10.md",
+                           "destination":  "03-Projects\\机器学习与AI应用\\05-计算机视觉\\项目-CIFAR10.md"
+                       },
+                       {
+                           "source":  ".recovery-hold\\03-Projects\\机器学习与AI应用\\05-计算机视觉\\项目-CLIP检索.md",
+                           "destination":  "03-Projects\\机器学习与AI应用\\05-计算机视觉\\项目-CLIP检索.md"
+                       },
+                       {
+                           "source":  ".recovery-hold\\03-Projects\\机器学习与AI应用\\05-计算机视觉\\项目-CNN可视化.md",
+                           "destination":  "03-Projects\\机器学习与AI应用\\05-计算机视觉\\项目-CNN可视化.md"
+                       },
+                       {
+                           "source":  ".recovery-hold\\03-Projects\\机器学习与AI应用\\05-计算机视觉\\项目-HDR.md",
+                           "destination":  "03-Projects\\机器学习与AI应用\\05-计算机视觉\\项目-HDR.md"
+                       },
+                       {
+                           "source":  ".recovery-hold\\03-Projects\\机器学习与AI应用\\05-计算机视觉\\项目-NeRF.md",
+                           "destination":  "03-Projects\\机器学习与AI应用\\05-计算机视觉\\项目-NeRF.md"
+                       },
+                       {
+                           "source":  ".recovery-hold\\03-Projects\\机器学习与AI应用\\05-计算机视觉\\项目-Panorama.md",
+                           "destination":  "03-Projects\\机器学习与AI应用\\05-计算机视觉\\项目-Panorama.md"
+                       },
+                       {
+                           "source":  ".recovery-hold\\03-Projects\\机器学习与AI应用\\05-计算机视觉\\项目-SD微调.md",
+                           "destination":  "03-Projects\\机器学习与AI应用\\05-计算机视觉\\项目-SD微调.md"
+                       },
+                       {
+                           "source":  ".recovery-hold\\03-Projects\\机器学习与AI应用\\05-计算机视觉\\项目-ViT实现.md",
+                           "destination":  "03-Projects\\机器学习与AI应用\\05-计算机视觉\\项目-ViT实现.md"
+                       },
+                       {
+                           "source":  ".recovery-hold\\03-Projects\\机器学习与AI应用\\05-计算机视觉\\项目-医学分割.md",
+                           "destination":  "03-Projects\\机器学习与AI应用\\05-计算机视觉\\项目-医学分割.md"
+                       },
+                       {
+                           "source":  ".recovery-hold\\03-Projects\\机器学习与AI应用\\05-计算机视觉\\项目-图像搜索.md",
+                           "destination":  "03-Projects\\机器学习与AI应用\\05-计算机视觉\\项目-图像搜索.md"
+                       },
+                       {
+                           "source":  ".recovery-hold\\03-Projects\\机器学习与AI应用\\05-计算机视觉\\项目-姿态估计.md",
+                           "destination":  "03-Projects\\机器学习与AI应用\\05-计算机视觉\\项目-姿态估计.md"
+                       },
+                       {
+                           "source":  ".recovery-hold\\03-Projects\\机器学习与AI应用\\05-计算机视觉\\项目-模型部署.md",
+                           "destination":  "03-Projects\\机器学习与AI应用\\05-计算机视觉\\项目-模型部署.md"
+                       },
+                       {
+                           "source":  ".recovery-hold\\03-Projects\\机器学习与AI应用\\05-计算机视觉\\项目-自定义检测.md",
+                           "destination":  "03-Projects\\机器学习与AI应用\\05-计算机视觉\\项目-自定义检测.md"
+                       },
+                       {
+                           "source":  ".recovery-hold\\03-Projects\\机器学习与AI应用\\05-计算机视觉\\项目-自监督.md",
+                           "destination":  "03-Projects\\机器学习与AI应用\\05-计算机视觉\\项目-自监督.md"
+                       },
+                       {
+                           "source":  ".recovery-hold\\03-Projects\\机器学习与AI应用\\05-计算机视觉\\项目-视频分析.md",
+                           "destination":  "03-Projects\\机器学习与AI应用\\05-计算机视觉\\项目-视频分析.md"
+                       },
+                       {
+                           "source":  ".recovery-hold\\03-Projects\\机器学习与AI应用\\05-计算机视觉\\项目-边缘部署.md",
+                           "destination":  "03-Projects\\机器学习与AI应用\\05-计算机视觉\\项目-边缘部署.md"
+                       },
+                       {
+                           "source":  ".recovery-hold\\03-Projects\\机器学习与AI应用\\05-计算机视觉\\项目-风格迁移.md",
+                           "destination":  "03-Projects\\机器学习与AI应用\\05-计算机视觉\\项目-风格迁移.md"
+                       },
+                       {
+                           "source":  ".recovery-hold\\03-Projects\\机器学习与AI应用\\08-NLP全栈\\项目-多模态搜索.md",
+                           "destination":  "03-Projects\\机器学习与AI应用\\08-NLP全栈\\项目-多模态搜索.md"
+                       },
+                       {
+                           "source":  ".recovery-hold\\03-Projects\\机器学习与AI应用\\08-NLP全栈\\项目-文本统计.md",
+                           "destination":  "03-Projects\\机器学习与AI应用\\08-NLP全栈\\项目-文本统计.md"
+                       },
+                       {
+                           "source":  ".recovery-hold\\03-Projects\\机器学习与AI应用\\08-NLP全栈\\项目-文档问答.md",
+                           "destination":  "03-Projects\\机器学习与AI应用\\08-NLP全栈\\项目-文档问答.md"
+                       },
+                       {
+                           "source":  ".recovery-hold\\03-Projects\\机器学习与AI应用\\08-NLP全栈\\项目-智能客服.md",
+                           "destination":  "03-Projects\\机器学习与AI应用\\08-NLP全栈\\项目-智能客服.md"
+                       },
+                       {
+                           "source":  ".recovery-hold\\03-Projects\\机器学习与AI应用\\08-NLP全栈\\项目-正则提取.md",
+                           "destination":  "03-Projects\\机器学习与AI应用\\08-NLP全栈\\项目-正则提取.md"
+                       },
+                       {
+                           "source":  ".recovery-hold\\03-Projects\\机器学习与AI应用\\08-NLP全栈\\项目-知识图谱.md",
+                           "destination":  "03-Projects\\机器学习与AI应用\\08-NLP全栈\\项目-知识图谱.md"
+                       },
+                       {
+                           "source":  ".recovery-hold\\03-Projects\\机器学习与AI应用\\08-NLP全栈\\项目-简单搜索.md",
+                           "destination":  "03-Projects\\机器学习与AI应用\\08-NLP全栈\\项目-简单搜索.md"
+                       },
+                       {
+                           "source":  ".recovery-hold\\03-Projects\\系统与硬件\\11-计算机组成原理\\项目-shell实现.md",
+                           "destination":  "03-Projects\\系统与硬件\\11-计算机组成原理\\项目-shell实现.md"
+                       },
+                       {
+                           "source":  ".recovery-hold\\03-Projects\\系统与硬件\\11-计算机组成原理\\项目-TLB分析.md",
+                           "destination":  "03-Projects\\系统与硬件\\11-计算机组成原理\\项目-TLB分析.md"
+                       },
+                       {
+                           "source":  ".recovery-hold\\03-Projects\\系统与硬件\\11-计算机组成原理\\项目-内存分配器.md",
+                           "destination":  "03-Projects\\系统与硬件\\11-计算机组成原理\\项目-内存分配器.md"
+                       },
+                       {
+                           "source":  ".recovery-hold\\03-Projects\\系统与硬件\\11-计算机组成原理\\项目-分支预测分析.md",
+                           "destination":  "03-Projects\\系统与硬件\\11-计算机组成原理\\项目-分支预测分析.md"
+                       },
+                       {
+                           "source":  ".recovery-hold\\03-Projects\\系统与硬件\\11-计算机组成原理\\项目-层次图.md",
+                           "destination":  "03-Projects\\系统与硬件\\11-计算机组成原理\\项目-层次图.md"
+                       },
+                       {
+                           "source":  ".recovery-hold\\03-Projects\\系统与硬件\\11-计算机组成原理\\项目-并行排序.md",
+                           "destination":  "03-Projects\\系统与硬件\\11-计算机组成原理\\项目-并行排序.md"
+                       },
+                       {
+                           "source":  ".recovery-hold\\03-Projects\\系统与硬件\\11-计算机组成原理\\项目-延迟测试.md",
+                           "destination":  "03-Projects\\系统与硬件\\11-计算机组成原理\\项目-延迟测试.md"
+                       },
+                       {
+                           "source":  ".recovery-hold\\03-Projects\\系统与硬件\\11-计算机组成原理\\项目-性能优化实战.md",
+                           "destination":  "03-Projects\\系统与硬件\\11-计算机组成原理\\项目-性能优化实战.md"
+                       },
+                       {
+                           "source":  ".recovery-hold\\03-Projects\\系统与硬件\\11-计算机组成原理\\项目-性能计算.md",
+                           "destination":  "03-Projects\\系统与硬件\\11-计算机组成原理\\项目-性能计算.md"
+                       },
+                       {
+                           "source":  ".recovery-hold\\03-Projects\\系统与硬件\\11-计算机组成原理\\项目-技术博客.md",
+                           "destination":  "03-Projects\\系统与硬件\\11-计算机组成原理\\项目-技术博客.md"
+                       },
+                       {
+                           "source":  ".recovery-hold\\03-Projects\\系统与硬件\\11-计算机组成原理\\项目-死锁检测器.md",
+                           "destination":  "03-Projects\\系统与硬件\\11-计算机组成原理\\项目-死锁检测器.md"
+                       },
+                       {
+                           "source":  ".recovery-hold\\03-Projects\\系统与硬件\\11-计算机组成原理\\项目-汇编编程.md",
+                           "destination":  "03-Projects\\系统与硬件\\11-计算机组成原理\\项目-汇编编程.md"
+                       },
+                       {
+                           "source":  ".recovery-hold\\03-Projects\\系统与硬件\\11-计算机组成原理\\项目-流水线模拟.md",
+                           "destination":  "03-Projects\\系统与硬件\\11-计算机组成原理\\项目-流水线模拟.md"
+                       },
+                       {
+                           "source":  ".recovery-hold\\03-Projects\\系统与硬件\\11-计算机组成原理\\项目-生产者消费者.md",
+                           "destination":  "03-Projects\\系统与硬件\\11-计算机组成原理\\项目-生产者消费者.md"
+                       },
+                       {
+                           "source":  ".recovery-hold\\03-Projects\\系统与硬件\\11-计算机组成原理\\项目-简易OS.md",
+                           "destination":  "03-Projects\\系统与硬件\\11-计算机组成原理\\项目-简易OS.md"
+                       },
+                       {
+                           "source":  ".recovery-hold\\03-Projects\\系统与硬件\\11-计算机组成原理\\项目-线程安全队列.md",
+                           "destination":  "03-Projects\\系统与硬件\\11-计算机组成原理\\项目-线程安全队列.md"
+                       },
+                       {
+                           "source":  ".recovery-hold\\03-Projects\\系统与硬件\\11-计算机组成原理\\项目-缓存模拟器.md",
+                           "destination":  "03-Projects\\系统与硬件\\11-计算机组成原理\\项目-缓存模拟器.md"
+                       },
+                       {
+                           "source":  ".recovery-hold\\03-Projects\\系统与硬件\\11-计算机组成原理\\项目-调度器模拟.md",
+                           "destination":  "03-Projects\\系统与硬件\\11-计算机组成原理\\项目-调度器模拟.md"
+                       },
+                       {
+                           "source":  ".recovery-hold\\03-Projects\\系统与硬件\\12-信号与系统\\项目-FFT实现.md",
+                           "destination":  "03-Projects\\系统与硬件\\12-信号与系统\\项目-FFT实现.md"
+                       },
+                       {
+                           "source":  ".recovery-hold\\03-Projects\\系统与硬件\\12-信号与系统\\项目-信号分解.md",
+                           "destination":  "03-Projects\\系统与硬件\\12-信号与系统\\项目-信号分解.md"
+                       },
+                       {
+                           "source":  ".recovery-hold\\03-Projects\\系统与硬件\\12-信号与系统\\项目-信号绘制.md",
+                           "destination":  "03-Projects\\系统与硬件\\12-信号与系统\\项目-信号绘制.md"
+                       },
+                       {
+                           "source":  ".recovery-hold\\03-Projects\\系统与硬件\\12-信号与系统\\项目-卷积可视化.md",
+                           "destination":  "03-Projects\\系统与硬件\\12-信号与系统\\项目-卷积可视化.md"
+                       },
+                       {
+                           "source":  ".recovery-hold\\03-Projects\\系统与硬件\\12-信号与系统\\项目-卷积计算.md",
+                           "destination":  "03-Projects\\系统与硬件\\12-信号与系统\\项目-卷积计算.md"
+                       },
+                       {
+                           "source":  ".recovery-hold\\03-Projects\\系统与硬件\\12-信号与系统\\项目-均衡器.md",
+                           "destination":  "03-Projects\\系统与硬件\\12-信号与系统\\项目-均衡器.md"
+                       },
+                       {
+                           "source":  ".recovery-hold\\03-Projects\\系统与硬件\\12-信号与系统\\项目-差分方程.md",
+                           "destination":  "03-Projects\\系统与硬件\\12-信号与系统\\项目-差分方程.md"
+                       },
+                       {
+                           "source":  ".recovery-hold\\03-Projects\\系统与硬件\\12-信号与系统\\项目-快速卷积.md",
+                           "destination":  "03-Projects\\系统与硬件\\12-信号与系统\\项目-快速卷积.md"
+                       },
+                       {
+                           "source":  ".recovery-hold\\03-Projects\\系统与硬件\\12-信号与系统\\项目-性质判断.md",
+                           "destination":  "03-Projects\\系统与硬件\\12-信号与系统\\项目-性质判断.md"
+                       },
+                       {
+                           "source":  ".recovery-hold\\03-Projects\\系统与硬件\\12-信号与系统\\项目-混叠演示.md",
+                           "destination":  "03-Projects\\系统与硬件\\12-信号与系统\\项目-混叠演示.md"
+                       },
+                       {
+                           "source":  ".recovery-hold\\03-Projects\\系统与硬件\\12-信号与系统\\项目-滤波器.md",
+                           "destination":  "03-Projects\\系统与硬件\\12-信号与系统\\项目-滤波器.md"
+                       },
+                       {
+                           "source":  ".recovery-hold\\03-Projects\\系统与硬件\\12-信号与系统\\项目-滤波器分析.md",
+                           "destination":  "03-Projects\\系统与硬件\\12-信号与系统\\项目-滤波器分析.md"
+                       },
+                       {
+                           "source":  ".recovery-hold\\03-Projects\\系统与硬件\\12-信号与系统\\项目-电路分析.md",
+                           "destination":  "03-Projects\\系统与硬件\\12-信号与系统\\项目-电路分析.md"
+                       },
+                       {
+                           "source":  ".recovery-hold\\03-Projects\\系统与硬件\\12-信号与系统\\项目-稳定性.md",
+                           "destination":  "03-Projects\\系统与硬件\\12-信号与系统\\项目-稳定性.md"
+                       },
+                       {
+                           "source":  ".recovery-hold\\03-Projects\\系统与硬件\\12-信号与系统\\项目-系统分析.md",
+                           "destination":  "03-Projects\\系统与硬件\\12-信号与系统\\项目-系统分析.md"
+                       },
+                       {
+                           "source":  ".recovery-hold\\03-Projects\\系统与硬件\\12-信号与系统\\项目-逆变换.md",
+                           "destination":  "03-Projects\\系统与硬件\\12-信号与系统\\项目-逆变换.md"
+                       },
+                       {
+                           "source":  ".recovery-hold\\03-Projects\\系统与硬件\\12-信号与系统\\项目-采样仿真.md",
+                           "destination":  "03-Projects\\系统与硬件\\12-信号与系统\\项目-采样仿真.md"
+                       },
+                       {
+                           "source":  ".recovery-hold\\03-Projects\\系统与硬件\\12-信号与系统\\项目-零极点设计.md",
+                           "destination":  "03-Projects\\系统与硬件\\12-信号与系统\\项目-零极点设计.md"
+                       },
+                       {
+                           "source":  ".recovery-hold\\03-Projects\\系统与硬件\\12-信号与系统\\项目-音频采样.md",
+                           "destination":  "03-Projects\\系统与硬件\\12-信号与系统\\项目-音频采样.md"
+                       },
+                       {
+                           "source":  ".recovery-hold\\03-Projects\\系统与硬件\\12-信号与系统\\项目-频谱分析.md",
+                           "destination":  "03-Projects\\系统与硬件\\12-信号与系统\\项目-频谱分析.md"
+                       },
+                       {
+                           "source":  ".recovery-hold\\03-Projects\\课程作业\\33门课程完整作业包索引.md",
+                           "destination":  "03-Projects\\课程作业\\33门课程完整作业包索引.md"
+                       },
+                       {
+                           "source":  ".recovery-hold\\03-Projects\\课程作业\\33门课程正式作业索引.md",
+                           "destination":  "03-Projects\\课程作业\\33门课程正式作业索引.md"
+                       },
+                       {
+                           "source":  ".recovery-hold\\03-Projects\\课程作业\\01-社交网络挖掘\\课程作业总表.md",
+                           "destination":  "03-Projects\\课程作业\\01-社交网络挖掘\\课程作业总表.md"
+                       },
+                       {
+                           "source":  ".recovery-hold\\03-Projects\\课程作业\\01-社交网络挖掘\\项目-开放网络结构与链路预测审计.md",
+                           "destination":  "03-Projects\\课程作业\\01-社交网络挖掘\\项目-开放网络结构与链路预测审计.md"
+                       },
+                       {
+                           "source":  ".recovery-hold\\03-Projects\\课程作业\\02-时间序列分析\\课程作业总表.md",
+                           "destination":  "03-Projects\\课程作业\\02-时间序列分析\\课程作业总表.md"
+                       },
+                       {
+                           "source":  ".recovery-hold\\03-Projects\\课程作业\\02-时间序列分析\\项目-滚动预测与区间覆盖率审计.md",
+                           "destination":  "03-Projects\\课程作业\\02-时间序列分析\\项目-滚动预测与区间覆盖率审计.md"
+                       },
+                       {
+                           "source":  ".recovery-hold\\03-Projects\\课程作业\\03-量化金融\\课程作业总表.md",
+                           "destination":  "03-Projects\\课程作业\\03-量化金融\\课程作业总表.md"
+                       },
+                       {
+                           "source":  ".recovery-hold\\03-Projects\\课程作业\\04-离散数学\\课程作业总表.md",
+                           "destination":  "03-Projects\\课程作业\\04-离散数学\\课程作业总表.md"
+                       },
+                       {
+                           "source":  ".recovery-hold\\03-Projects\\课程作业\\04-离散数学\\项目-图论命题证明与反例作品集.md",
+                           "destination":  "03-Projects\\课程作业\\04-离散数学\\项目-图论命题证明与反例作品集.md"
+                       },
+                       {
+                           "source":  ".recovery-hold\\03-Projects\\课程作业\\05-计算机视觉\\课程作业总表.md",
+                           "destination":  "03-Projects\\课程作业\\05-计算机视觉\\课程作业总表.md"
+                       },
+                       {
+                           "source":  ".recovery-hold\\03-Projects\\课程作业\\05-计算机视觉\\项目-CIFAR-10分类与失败样本审计.md",
+                           "destination":  "03-Projects\\课程作业\\05-计算机视觉\\项目-CIFAR-10分类与失败样本审计.md"
+                       },
+                       {
+                           "source":  ".recovery-hold\\03-Projects\\课程作业\\06-常微分方程\\课程作业总表.md",
+                           "destination":  "03-Projects\\课程作业\\06-常微分方程\\课程作业总表.md"
+                       },
+                       {
+                           "source":  ".recovery-hold\\03-Projects\\课程作业\\06-常微分方程\\项目-ODE求解器误差与刚性诊断.md",
+                           "destination":  "03-Projects\\课程作业\\06-常微分方程\\项目-ODE求解器误差与刚性诊断.md"
+                       },
+                       {
+                           "source":  ".recovery-hold\\03-Projects\\课程作业\\07-最优化方法\\课程作业总表.md",
+                           "destination":  "03-Projects\\课程作业\\07-最优化方法\\课程作业总表.md"
+                       },
+                       {
+                           "source":  ".recovery-hold\\03-Projects\\课程作业\\07-最优化方法\\项目-一阶与近端优化收敛审计.md",
+                           "destination":  "03-Projects\\课程作业\\07-最优化方法\\项目-一阶与近端优化收敛审计.md"
+                       },
+                       {
+                           "source":  ".recovery-hold\\03-Projects\\课程作业\\08-NLP全栈\\课程作业总表.md",
+                           "destination":  "03-Projects\\课程作业\\08-NLP全栈\\课程作业总表.md"
+                       },
+                       {
+                           "source":  ".recovery-hold\\03-Projects\\课程作业\\08-NLP全栈\\项目-稀疏检索到Transformer的文本误差审计.md",
+                           "destination":  "03-Projects\\课程作业\\08-NLP全栈\\项目-稀疏检索到Transformer的文本误差审计.md"
+                       },
+                       {
+                           "source":  ".recovery-hold\\03-Projects\\课程作业\\09-高等代数\\课程作业总表.md",
+                           "destination":  "03-Projects\\课程作业\\09-高等代数\\课程作业总表.md"
+                       },
+                       {
+                           "source":  ".recovery-hold\\03-Projects\\课程作业\\09-高等代数\\项目-矩阵分解与数值稳定性闭环.md",
+                           "destination":  "03-Projects\\课程作业\\09-高等代数\\项目-矩阵分解与数值稳定性闭环.md"
+                       },
+                       {
+                           "source":  ".recovery-hold\\03-Projects\\课程作业\\10-数据结构与算法\\课程作业总表.md",
+                           "destination":  "03-Projects\\课程作业\\10-数据结构与算法\\课程作业总表.md"
+                       },
+                       {
+                           "source":  ".recovery-hold\\03-Projects\\课程作业\\10-数据结构与算法\\项目-算法实现、复杂度与随机测试.md",
+                           "destination":  "03-Projects\\课程作业\\10-数据结构与算法\\项目-算法实现、复杂度与随机测试.md"
+                       },
+                       {
+                           "source":  ".recovery-hold\\03-Projects\\课程作业\\11-计算机组成原理\\课程作业总表.md",
+                           "destination":  "03-Projects\\课程作业\\11-计算机组成原理\\课程作业总表.md"
+                       },
+                       {
+                           "source":  ".recovery-hold\\03-Projects\\课程作业\\11-计算机组成原理\\项目-从逻辑门到CPU的分层规格测试.md",
+                           "destination":  "03-Projects\\课程作业\\11-计算机组成原理\\项目-从逻辑门到CPU的分层规格测试.md"
+                       },
+                       {
+                           "source":  ".recovery-hold\\03-Projects\\课程作业\\12-信号与系统\\课程作业总表.md",
+                           "destination":  "03-Projects\\课程作业\\12-信号与系统\\课程作业总表.md"
+                       },
+                       {
+                           "source":  ".recovery-hold\\03-Projects\\课程作业\\12-信号与系统\\项目-采样、卷积与滤波器验证.md",
+                           "destination":  "03-Projects\\课程作业\\12-信号与系统\\项目-采样、卷积与滤波器验证.md"
+                       },
+                       {
+                           "source":  ".recovery-hold\\03-Projects\\课程作业\\13-强化学习\\课程作业总表.md",
+                           "destination":  "03-Projects\\课程作业\\13-强化学习\\课程作业总表.md"
+                       },
+                       {
+                           "source":  ".recovery-hold\\03-Projects\\课程作业\\13-强化学习\\项目-价值学习与策略优化多种子审计.md",
+                           "destination":  "03-Projects\\课程作业\\13-强化学习\\项目-价值学习与策略优化多种子审计.md"
+                       },
+                       {
+                           "source":  ".recovery-hold\\03-Projects\\课程作业\\14-概率图模型\\课程作业总表.md",
+                           "destination":  "03-Projects\\课程作业\\14-概率图模型\\课程作业总表.md"
+                       },
+                       {
+                           "source":  ".recovery-hold\\03-Projects\\课程作业\\14-概率图模型\\项目-结构、推断与采样一致性审计.md",
+                           "destination":  "03-Projects\\课程作业\\14-概率图模型\\项目-结构、推断与采样一致性审计.md"
+                       },
+                       {
+                           "source":  ".recovery-hold\\03-Projects\\课程作业\\15-控制与机器人学\\课程作业总表.md",
+                           "destination":  "03-Projects\\课程作业\\15-控制与机器人学\\课程作业总表.md"
+                       },
+                       {
+                           "source":  ".recovery-hold\\03-Projects\\课程作业\\15-控制与机器人学\\项目-移动机器人定位规划控制闭环.md",
+                           "destination":  "03-Projects\\课程作业\\15-控制与机器人学\\项目-移动机器人定位规划控制闭环.md"
+                       },
+                       {
+                           "source":  ".recovery-hold\\03-Projects\\课程作业\\16-多元统计\\课程作业总表.md",
+                           "destination":  "03-Projects\\课程作业\\16-多元统计\\课程作业总表.md"
+                       },
+                       {
+                           "source":  ".recovery-hold\\03-Projects\\课程作业\\16-多元统计\\项目-高维结构与判别稳定性审计.md",
+                           "destination":  "03-Projects\\课程作业\\16-多元统计\\项目-高维结构与判别稳定性审计.md"
+                       },
+                       {
+                           "source":  ".recovery-hold\\03-Projects\\课程作业\\17-机器学习\\课程作业总表.md",
+                           "destination":  "03-Projects\\课程作业\\17-机器学习\\课程作业总表.md"
+                       },
+                       {
+                           "source":  ".recovery-hold\\03-Projects\\课程作业\\17-机器学习\\项目-表格建模、校准与漂移审计.md",
+                           "destination":  "03-Projects\\课程作业\\17-机器学习\\项目-表格建模、校准与漂移审计.md"
+                       },
+                       {
+                           "source":  ".recovery-hold\\03-Projects\\课程作业\\22-概率论与数理统计\\课程作业总表.md",
+                           "destination":  "03-Projects\\课程作业\\22-概率论与数理统计\\课程作业总表.md"
+                       },
+                       {
+                           "source":  ".recovery-hold\\03-Projects\\课程作业\\22-概率论与数理统计\\项目-抽样分布与检验频率性质模拟.md",
+                           "destination":  "03-Projects\\课程作业\\22-概率论与数理统计\\项目-抽样分布与检验频率性质模拟.md"
+                       },
+                       {
+                           "source":  ".recovery-hold\\03-Projects\\课程作业\\23-图神经网络\\课程作业总表.md",
+                           "destination":  "03-Projects\\课程作业\\23-图神经网络\\课程作业总表.md"
+                       },
+                       {
+                           "source":  ".recovery-hold\\03-Projects\\课程作业\\23-图神经网络\\项目-节点分类与消息传递消融.md",
+                           "destination":  "03-Projects\\课程作业\\23-图神经网络\\项目-节点分类与消息传递消融.md"
+                       },
+                       {
+                           "source":  ".recovery-hold\\03-Projects\\课程作业\\24-随机过程\\课程作业总表.md",
+                           "destination":  "03-Projects\\课程作业\\24-随机过程\\课程作业总表.md"
+                       },
+                       {
+                           "source":  ".recovery-hold\\03-Projects\\课程作业\\24-随机过程\\项目-Markov稳态、混合与队列模拟.md",
+                           "destination":  "03-Projects\\课程作业\\24-随机过程\\项目-Markov稳态、混合与队列模拟.md"
+                       },
+                       {
+                           "source":  ".recovery-hold\\03-Projects\\课程作业\\25-测度论\\课程作业总表.md",
+                           "destination":  "03-Projects\\课程作业\\25-测度论\\课程作业总表.md"
+                       },
+                       {
+                           "source":  ".recovery-hold\\03-Projects\\课程作业\\25-测度论\\项目-可测性与收敛定理证明档案.md",
+                           "destination":  "03-Projects\\课程作业\\25-测度论\\项目-可测性与收敛定理证明档案.md"
+                       },
+                       {
+                           "source":  ".recovery-hold\\03-Projects\\课程作业\\26-实变函数\\课程作业总表.md",
+                           "destination":  "03-Projects\\课程作业\\26-实变函数\\课程作业总表.md"
+                       },
+                       {
+                           "source":  ".recovery-hold\\03-Projects\\课程作业\\26-实变函数\\项目-极限、连续与一致收敛证明作品集.md",
+                           "destination":  "03-Projects\\课程作业\\26-实变函数\\项目-极限、连续与一致收敛证明作品集.md"
+                       },
+                       {
+                           "source":  ".recovery-hold\\03-Projects\\课程作业\\27-泛函分析\\课程作业总表.md",
+                           "destination":  "03-Projects\\课程作业\\27-泛函分析\\课程作业总表.md"
+                       },
+                       {
+                           "source":  ".recovery-hold\\03-Projects\\课程作业\\27-泛函分析\\项目-Banach与Hilbert空间定理链.md",
+                           "destination":  "03-Projects\\课程作业\\27-泛函分析\\项目-Banach与Hilbert空间定理链.md"
+                       },
+                       {
+                           "source":  ".recovery-hold\\03-Projects\\课程作业\\28-数学分析\\课程作业总表.md",
+                           "destination":  "03-Projects\\课程作业\\28-数学分析\\课程作业总表.md"
+                       },
+                       {
+                           "source":  ".recovery-hold\\03-Projects\\课程作业\\28-数学分析\\项目-核心定理与反例闭卷重建.md",
+                           "destination":  "03-Projects\\课程作业\\28-数学分析\\项目-核心定理与反例闭卷重建.md"
+                       },
+                       {
+                           "source":  ".recovery-hold\\03-Projects\\课程作业\\29-运筹学\\课程作业总表.md",
+                           "destination":  "03-Projects\\课程作业\\29-运筹学\\课程作业总表.md"
+                       },
+                       {
+                           "source":  ".recovery-hold\\03-Projects\\课程作业\\29-运筹学\\项目-排程与资源分配求解器报告.md",
+                           "destination":  "03-Projects\\课程作业\\29-运筹学\\项目-排程与资源分配求解器报告.md"
+                       },
+                       {
+                           "source":  ".recovery-hold\\03-Projects\\课程作业\\30-应用回归分析\\课程作业总表.md",
+                           "destination":  "03-Projects\\课程作业\\30-应用回归分析\\课程作业总表.md"
+                       },
+                       {
+                           "source":  ".recovery-hold\\03-Projects\\课程作业\\30-应用回归分析\\项目-回归诊断与样本外解释.md",
+                           "destination":  "03-Projects\\课程作业\\30-应用回归分析\\项目-回归诊断与样本外解释.md"
+                       },
+                       {
+                           "source":  ".recovery-hold\\03-Projects\\课程作业\\31-属性数据分析\\课程作业总表.md",
+                           "destination":  "03-Projects\\课程作业\\31-属性数据分析\\课程作业总表.md"
+                       },
+                       {
+                           "source":  ".recovery-hold\\03-Projects\\课程作业\\31-属性数据分析\\项目-列联表到多类响应建模.md",
+                           "destination":  "03-Projects\\课程作业\\31-属性数据分析\\项目-列联表到多类响应建模.md"
+                       },
+                       {
+                           "source":  ".recovery-hold\\03-Projects\\课程作业\\32-非参数统计\\课程作业总表.md",
+                           "destination":  "03-Projects\\课程作业\\32-非参数统计\\课程作业总表.md"
+                       },
+                       {
+                           "source":  ".recovery-hold\\03-Projects\\课程作业\\32-非参数统计\\项目-重采样、秩检验与核方法比较.md",
+                           "destination":  "03-Projects\\课程作业\\32-非参数统计\\项目-重采样、秩检验与核方法比较.md"
+                       },
+                       {
+                           "source":  ".recovery-hold\\03-Projects\\课程作业\\33-贝叶斯统计\\课程作业总表.md",
+                           "destination":  "03-Projects\\课程作业\\33-贝叶斯统计\\课程作业总表.md"
+                       },
+                       {
+                           "source":  ".recovery-hold\\03-Projects\\课程作业\\33-贝叶斯统计\\项目-层级模型与后验预测审计.md",
+                           "destination":  "03-Projects\\课程作业\\33-贝叶斯统计\\项目-层级模型与后验预测审计.md"
+                       },
+                       {
+                           "source":  ".recovery-hold\\03-Projects\\课程作业\\34-偏微分方程\\课程作业总表.md",
+                           "destination":  "03-Projects\\课程作业\\34-偏微分方程\\课程作业总表.md"
+                       },
+                       {
+                           "source":  ".recovery-hold\\03-Projects\\课程作业\\34-偏微分方程\\项目-制造解驱动的PDE收敛验证.md",
+                           "destination":  "03-Projects\\课程作业\\34-偏微分方程\\项目-制造解驱动的PDE收敛验证.md"
+                       },
+                       {
+                           "source":  ".recovery-hold\\03-Projects\\课程作业\\35-数值分析\\课程作业总表.md",
+                           "destination":  "03-Projects\\课程作业\\35-数值分析\\课程作业总表.md"
+                       },
+                       {
+                           "source":  ".recovery-hold\\03-Projects\\课程作业\\35-数值分析\\项目-浮点、线性系统与迭代稳定性.md",
+                           "destination":  "03-Projects\\课程作业\\35-数值分析\\项目-浮点、线性系统与迭代稳定性.md"
+                       },
+                       {
+                           "source":  ".recovery-hold\\03-Projects\\课程作业\\36-数据挖掘与信息检索\\课程作业总表.md",
+                           "destination":  "03-Projects\\课程作业\\36-数据挖掘与信息检索\\课程作业总表.md"
+                       },
+                       {
+                           "source":  ".recovery-hold\\03-Projects\\课程作业\\36-数据挖掘与信息检索\\项目-稀疏、稠密与混合检索评测.md",
+                           "destination":  "03-Projects\\课程作业\\36-数据挖掘与信息检索\\项目-稀疏、稠密与混合检索评测.md"
+                       },
+                       {
+                           "source":  ".recovery-hold\\03-Projects\\课程作业\\37-复变函数\\课程作业总表.md",
+                           "destination":  "03-Projects\\课程作业\\37-复变函数\\课程作业总表.md"
+                       },
+                       {
+                           "source":  ".recovery-hold\\03-Projects\\课程作业\\37-复变函数\\项目-解析性、留数与域着色验证.md",
+                           "destination":  "03-Projects\\课程作业\\37-复变函数\\项目-解析性、留数与域着色验证.md"
+                       },
+                       {
+                           "source":  ".recovery-hold\\03-Projects\\金融与时序\\07-最优化方法\\项目-DL调参.md",
+                           "destination":  "03-Projects\\金融与时序\\07-最优化方法\\项目-DL调参.md"
+                       },
+                       {
+                           "source":  ".recovery-hold\\03-Projects\\金融与时序\\07-最优化方法\\项目-Lasso.md",
+                           "destination":  "03-Projects\\金融与时序\\07-最优化方法\\项目-Lasso.md"
+                       },
+                       {
+                           "source":  ".recovery-hold\\03-Projects\\金融与时序\\07-最优化方法\\项目-RL实现.md",
+                           "destination":  "03-Projects\\金融与时序\\07-最优化方法\\项目-RL实现.md"
+                       },
+                       {
+                           "source":  ".recovery-hold\\03-Projects\\金融与时序\\07-最优化方法\\项目-优化器对比.md",
+                           "destination":  "03-Projects\\金融与时序\\07-最优化方法\\项目-优化器对比.md"
+                       },
+                       {
+                           "source":  ".recovery-hold\\03-Projects\\金融与时序\\07-最优化方法\\项目-优化对比.md",
+                           "destination":  "03-Projects\\金融与时序\\07-最优化方法\\项目-优化对比.md"
+                       },
+                       {
+                           "source":  ".recovery-hold\\03-Projects\\金融与时序\\07-最优化方法\\项目-优化工具包.md",
+                           "destination":  "03-Projects\\金融与时序\\07-最优化方法\\项目-优化工具包.md"
+                       },
+                       {
+                           "source":  ".recovery-hold\\03-Projects\\金融与时序\\07-最优化方法\\项目-大规模优化.md",
+                           "destination":  "03-Projects\\金融与时序\\07-最优化方法\\项目-大规模优化.md"
+                       },
+                       {
+                           "source":  ".recovery-hold\\03-Projects\\金融与时序\\07-最优化方法\\项目-最小二乘.md",
+                           "destination":  "03-Projects\\金融与时序\\07-最优化方法\\项目-最小二乘.md"
+                       },
+                       {
+                           "source":  ".recovery-hold\\03-Projects\\金融与时序\\07-最优化方法\\项目-组合求解器.md",
+                           "destination":  "03-Projects\\金融与时序\\07-最优化方法\\项目-组合求解器.md"
+                       },
+                       {
+                           "source":  ".recovery-hold\\03-Projects\\金融与时序\\07-最优化方法\\项目-超参优化.md",
+                           "destination":  "03-Projects\\金融与时序\\07-最优化方法\\项目-超参优化.md"
+                       }
+                   ]
+}

@@ -1,0 +1,23 @@
+﻿{
+    "run_id":  "2026-07-31-stage28-output-organization",
+    "note":  "External stage28 pipeline wrote runtime artifacts to vault root during recovery.",
+    "operation_count":  4,
+    "operations":  [
+                       {
+                           "source":  "batch_upgrade_stage25.py",
+                           "destination":  ".\\99-System\\tools\\batch_upgrade_stage25.py"
+                       },
+                       {
+                           "source":  "batch_upgrade_stage28.py",
+                           "destination":  ".\\99-System\\tools\\batch_upgrade_stage28.py"
+                       },
+                       {
+                           "source":  "verify_stage28_final_fast.py",
+                           "destination":  ".\\99-System\\tools\\verify_stage28_final_fast.py"
+                       },
+                       {
+                           "source":  ".\\knowledge_notes_harsh_scores_2026-07-31.csv",
+                           "destination":  ".\\04-Review\\知识库审计\\knowledge_notes_stage28_scores_2026-07-31.csv"
+                       }
+                   ]
+}
