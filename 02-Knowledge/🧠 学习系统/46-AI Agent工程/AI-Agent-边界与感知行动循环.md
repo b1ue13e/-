@@ -6,11 +6,12 @@ created: 2026-08-05
 status: completed
 difficulty: beginner
 concept: [AI Agent, 感知行动循环, 自主性]
-prerequisites: [Python函数, LLM消息]
+prerequisites: [Python编程与NLP工具, Prompt工程-需求-任务规格与结构化输出]
 related: [ReAct, 工具调用, 工作流编排]
 flow: knowledge
 kind: concept
-source: "UC Berkeley CS 194/294-196 Large Language Model Agents F24, LLM agents overview; Hugging Face Agents Course Unit 1"
+source: "UC Berkeley CS 194/294-196 F24 overview; Microsoft AI Agents for Beginners Lessons 1 and 3; Datawhale Hello-Agents Chapters 1-2; Hugging Face Agents Course Unit 1"
+source_urls: ["https://github.com/microsoft/ai-agents-for-beginners/tree/main/01-intro-to-ai-agents", "https://github.com/microsoft/ai-agents-for-beginners/tree/main/03-agentic-design-patterns", "https://github.com/datawhalechina/hello-agents/tree/main/docs/chapter1", "https://github.com/datawhalechina/hello-agents/tree/main/docs/chapter2"]
 anki_deck: "46-AI Agent工程::01-基础"
 anki_tags: [46-AI-Agent工程, Agent循环, 基础]
 ---
@@ -36,8 +37,8 @@ anki_tags: [46-AI-Agent工程, Agent循环, 基础]
 
 ## 3. 学它之前需要哪些前置知识？
 
-1. **[[Python函数]]**：动作最终要落到可调用函数；异常是环境反馈的一种。
-2. **[[LLM消息]]**：模型通过消息读取目标、历史、工具结果和约束。
+1. **[[08-NLP全栈/Python编程与NLP工具|Python 编程与工具]]**：动作最终要落到可调用函数；异常是环境反馈的一种。
+2. **[[45-生成式AI基础与Prompt工程/Prompt工程-需求-任务规格与结构化输出|Prompt 与消息规格]]**：模型通过消息读取目标、历史、工具结果和约束。
 
 ## 4. 用直觉语言解释它
 
@@ -161,15 +162,15 @@ print(result.trace[-1].endswith("correct"))
 ## 9. 相关知识点与 Obsidian 双链建议
 
 ### 上游依赖
-- [[Python函数]]：动作的最小可执行单元。
-- [[LLM消息]]：状态与观察的主要载体。
+- [[08-NLP全栈/Python编程与NLP工具|Python 编程与工具]]：动作的最小可执行单元。
+- [[45-生成式AI基础与Prompt工程/Prompt工程-需求-任务规格与结构化输出|Prompt 与消息规格]]：状态与观察的主要载体。
 
 ### 下游延伸
 - [[AI-Agent-ReAct推理行动范式]]：规定推理与动作如何交替。
 - [[AI-Agent-规划状态与工作流编排]]：把长循环变成可检查状态。
 
 ### 横向关联
-- [[强化学习-马尔可夫决策过程]] ↔ 本知识点：都用状态、动作、转移和回报描述序贯决策。
+- [[13-强化学习/01-基础与本质/🎯 阶段2：马尔可夫决策过程|马尔可夫决策过程]] ↔ 本知识点：都用状态、动作、转移和回报描述序贯决策。
 
 ### 应用场景
 - [[Berkeley-Lab01-Restaurant-Review-Pipeline-知识点映射]]：识别各 Agent 的动作与终止条件。
@@ -249,4 +250,3 @@ print(result.trace[-1].endswith("correct"))
 - AI Agent 的最小闭环是什么？::目标与状态进入策略，策略选择动作，环境返回观察，状态更新，直到终止条件成立。
 - 何时应优先工作流而不是 Agent？::当步骤与分支可预先定义、风险较高或需要低成本高确定性时，优先确定性工作流。
 - Agent 工程为什么强调最小自主性？::自主性扩大动作空间，也扩大错误传播、权限滥用、成本与不可预测性；只开放任务所需的最小自由度。
-

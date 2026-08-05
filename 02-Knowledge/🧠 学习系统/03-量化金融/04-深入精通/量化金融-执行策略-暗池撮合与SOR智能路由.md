@@ -253,7 +253,7 @@ print(f"\n未完成剩余股数: {leftover}")
 - **成交后 5 秒逆向选择漂移 (Post-Trade Slippage)**：评估买入后价格是否快速下跌。
 
 ### 7.5.5
-> 🔓 **作业解锁前置条件**：学完 [[限价订单簿数据与 L1_L2_L3 盘口重建 (Limit Order Book Data & Reconstructing L1_L2_L3)|订单簿数据]] + [[买卖价差及其微观结构拆解 (Bid-Ask Spread & Microstructure Decomposition)|买卖价差]] + [[暗池交易与智能订单路由 SOR (Dark Pools & Smart Order Routing)|暗池与智能订单路由]] 即可正式解锁本 Challenge 实战！
+> 🔓 **作业解锁前置条件**：学完 [[限价订单簿数据与 L1_L2_L3 盘口重建 (Limit Order Book Data & Reconstructing L1_L2_L3)|订单簿数据]] + [[买卖价差及其微观结构拆解 (Bid-Ask Spread & Microstructure Decomposition)|买卖价差]] + [[量化金融-执行策略-暗池撮合与SOR智能路由|暗池与智能订单路由]] 即可正式解锁本 Challenge 实战！
 > 💡 **解锁指引**：理解 L2 盘口深度与暗池 NBBO 中点撮合逻辑后即可解锁 SOR 微秒级延迟对齐。
 
  🧪 拓展实验与李宏毅式实战 Challenge 题 (HW14-暗池中点撮合与智能订单路由 (SOR) 延迟对齐)
@@ -578,9 +578,9 @@ $$ W_i = \Delta t_{max} - \Delta t_i $$
 
 ## 9. 相关知识点与 Obsidian 双链建议
 
-- 上游依赖：[[订单簿与L2微观结构]], [[Almgren-Chriss最优拆单]]
-- 下游延伸：[[高频交易(HFT)基础]] (高频做市商如何反制SOR), [[金融网络延迟与微波架构]]
-- 横向关联：[[订单流支付PFOF]] ↔ [[暗池与ATS]] (散户流与机构流的隐秘处理池)
+- 上游依赖：[[限价订单簿数据与 L1_L2_L3 盘口重建 (Limit Order Book Data & Reconstructing L1_L2_L3)|订单簿与L2微观结构]], [[Almgren-Chriss最优拆单]]
+- 下游延伸：[[高频交易系统架构与模块解耦设计 (High-Frequency Trading System Architecture)|高频交易(HFT)基础]] (高频做市商如何反制SOR), [[低延迟系统设计与 C++_FPGA 极致性能优化 (Low-Latency System Design & C++_FPGA Optimization)|金融网络延迟与微波架构]]
+- 横向关联：[[量化金融-执行策略-暗池撮合与SOR智能路由|订单流支付PFOF]] ↔ [[量化金融-执行策略-暗池撮合与SOR智能路由|暗池与ATS]] (散户流与机构流的隐秘处理池)
 - 应用场景：[[[支线任务] HW14-暗池与SOR智能路由]]
 
 ---
@@ -654,5 +654,5 @@ $$ W_i = \Delta t_{max} - \Delta t_i $$
 
 ## 13. 给 Obsidian 的归档建议
 - **文件夹**：`02-Knowledge/🧠 学习系统/03-量化金融/04-深入精通`
-- **链接**：上游衔接 [[Almgren-Chriss最优拆单]] 的执行层输出，平行链接至 [[订单簿与L2微观结构]]。
+- **链接**：上游衔接 [[Almgren-Chriss最优拆单]] 的执行层输出，平行链接至 [[限价订单簿数据与 L1_L2_L3 盘口重建 (Limit Order Book Data & Reconstructing L1_L2_L3)|订单簿与L2微观结构]]。
 - **标签**：`#量化金融/微观结构` `#暗池` `#SOR` `#高频交易` `#算法交易`

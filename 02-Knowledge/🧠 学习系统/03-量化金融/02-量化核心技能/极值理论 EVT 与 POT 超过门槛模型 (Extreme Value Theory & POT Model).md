@@ -295,7 +295,7 @@ run_evt_pot_lab()
 
 下游延伸
 
-- [[CVaR条件风险价值|压力测试]]：进一步延伸拓展该知识点的应用场景与模型构建。
+- [[量化金融-风险管理-期望损失分解与ES理论|压力测试]]：进一步延伸拓展该知识点的应用场景与模型构建。
 - [[实盘风控]]：进一步延伸拓展该知识点的应用场景与模型构建。
 
 横向关联
@@ -411,7 +411,7 @@ run_evt_pot_lab()
 ## 13. 给 Obsidian 的归档建议
 
 - **适合文件夹**：`02-Knowledge/🧠 学习系统/03-量化金融/02-量化核心技能/`
-- **建议双链**：[[历史模拟法 VaR 与非参数风险度量 (Historical Simulation VaR)|历史模拟VaR]]、[[极值理论 EVT 与 POT 超过门槛模型 (Extreme Value Theory & POT Model)|尾部风险]]、[[实盘风控]]、[[CVaR条件风险价值|压力测试]]
+- **建议双链**：[[历史模拟法 VaR 与非参数风险度量 (Historical Simulation VaR)|历史模拟VaR]]、[[极值理论 EVT 与 POT 超过门槛模型 (Extreme Value Theory & POT Model)|尾部风险]]、[[实盘风控]]、[[量化金融-风险管理-期望损失分解与ES理论|压力测试]]
 - **标签**：`#学习` `#量化金融` `#风控` `#极值理论` `#EVT` `#POT模型` `#广义帕累托` `#GPD` `#黑天鹅`
 
 ---
@@ -442,5 +442,5 @@ run_evt_pot_lab()
 > 在这冰冷的公式背后，是这些天才数学家用一生在华尔街厮杀出来的智慧结晶：
 
 **分形几何之父：Benoit Mandelbrot**
-![分形几何之父：Benoit Mandelbrot](file:///F:/笔记代码/量化金融/quant-for-beginners/notebooks/phase2_intro/Benoit Mandelbrot.jpg)
+![Benoit Mandelbrot](https://raw.githubusercontent.com/datawhalechina/quant-for-beginners/main/notebooks/phase2_intro/Benoit%20Mandelbrot.jpg)
 

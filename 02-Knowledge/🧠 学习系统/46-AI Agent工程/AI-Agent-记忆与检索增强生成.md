@@ -6,11 +6,12 @@ created: 2026-08-05
 status: completed
 difficulty: intermediate
 concept: [Agent记忆, RAG, 上下文管理]
-prerequisites: [向量相似度基础, Agent循环]
+prerequisites: [词向量相似度, AI-Agent-边界与感知行动循环]
 related: [工具调用, 规划, 记忆污染]
 flow: knowledge
 kind: concept
-source: "UC Berkeley CS 194/294-196 F24 RAG lecture; Stanford CS224V F25; Hugging Face Agents Course Unit 3"
+source: "UC Berkeley CS 194/294-196 F24 RAG; Stanford CS224V F25; Microsoft AI Agents for Beginners Lessons 5 and 13; Datawhale Hello-Agents Chapter 8; Hugging Face Agents Course Unit 3"
+source_urls: ["https://github.com/microsoft/ai-agents-for-beginners/tree/main/05-agentic-rag", "https://github.com/microsoft/ai-agents-for-beginners/tree/main/13-agent-memory", "https://github.com/datawhalechina/hello-agents/tree/main/docs/chapter8"]
 anki_deck: "46-AI Agent工程::05-记忆与RAG"
 anki_tags: [46-AI-Agent工程, 记忆, RAG]
 ---
@@ -37,7 +38,7 @@ anki_tags: [46-AI-Agent工程, 记忆, RAG]
 ## 3. 学它之前需要哪些前置知识？
 
 1. **[[AI-Agent-边界与感知行动循环]]**：检索结果是观察，摘要是状态压缩。
-2. **[[向量相似度]]**（待创建）：理解关键词/向量检索只是候选生成，不等于事实正确。
+2. **[[08-NLP全栈/03-深度学习NLP基础/词向量相似度|词向量相似度]]**：理解向量检索只是候选生成，不等于事实正确。
 
 ## 4. 用直觉语言解释它
 
@@ -153,7 +154,7 @@ print(retrieve("good food"))
 - [[AI-Agent-安全威胁建模与系统评测]]：间接注入、RAG 中毒、隐私与引用评测。
 
 ### 横向关联
-- [[信息检索]]（待创建）↔ RAG：召回、排序和相关性评测是基础。
+- [[36-数据挖掘与信息检索/🗺️ 数据挖掘与信息检索学习路径|信息检索]] ↔ RAG：召回、排序和相关性评测是基础。
 
 ### 应用场景
 - [[Berkeley-Lab01-Restaurant-Review-Pipeline-知识点映射]]：评论语料必须按实体检索并保留证据。
@@ -232,4 +233,3 @@ print(retrieve("good food"))
 - RAG 检索结果为何只是候选证据？::相关性分数衡量查询匹配，不保证来源可信、实体一致、内容新鲜或事实正确。
 - Agent 记忆写入前应检查什么？::未来决策价值、来源可信度、隐私与授权、保留期限、可更正和可删除性。
 - RAG 应分哪三层评测？::检索召回与排序、证据归因/引用质量、最终答案正确性与恰当拒答。
-

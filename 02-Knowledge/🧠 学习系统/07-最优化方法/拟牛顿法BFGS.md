@@ -1,138 +1,164 @@
 ---
-title: "拟牛顿法 BFGS 算法 (BFGS Quasi-Newton Method)"
-course: "07-最优化方法"
-tags:
-  - 最优化方法
-  - 拟牛顿法
-  - BFGS
-  - Hessian逆近似
-  - 二阶优化
-  - 割线方程
-type: knowledge_card
-status: completed
-created: 2026-08-01
+type: study
+topic: "拟牛顿法BFGS"
+tags: [学习, 最优化方法]
+created: 2026-08-05
+status: ongoing
+difficulty: advanced
+concept: ["拟牛顿法", "BFGS", "割线方程"]
+prerequisites: ["线搜索与步长策略", "最速下降与收敛分析"]
+related: ["共轭梯度法", "信赖域方法"]
+flow: knowledge
+kind: concept
 ---
+# 拟牛顿法BFGS与L-BFGS
 
-# 拟牛顿法 BFGS 算法 (BFGS Quasi-Newton Method)
-
-## 1. 拟牛顿法 BFGS 算法的定义与核心动机
-
-**拟牛顿法 BFGS 算法 (BFGS Quasi-Newton Method)** 的核心定义是：一种通过仅利用一阶梯度信息维护一个对称正定的**黑塞矩阵逆矩阵近似 $B_k \approx 
-abla^2 f(\mathbf{x}_k)^{-1}$**，以避免显式计算和求逆真实 Hessian 矩阵的无约束二阶凸优化算法。由 Broyden, Fletcher, Goldfarb 和 Shanno 于 1970 年独立共同提出。
-
-**基本性质与核心动机**：标准牛顿法具有超线性（二次）收敛速度，但需要每次迭代计算 $n \times n$ 的 Hessian 矩阵并求解线性方程组，时间复杂度高达 $O(n^3)$。拟牛顿法 BFGS 算法将单次迭代复杂度降低至 $O(n^2)$，且保持了超线性的收敛速率，是无约束非线性最优化中最常用、最稳健的算法。
+## 0. 先判断它值不值得深挖
+- **类别**：A 类（深度学习之前最核心的优化算法）
+- **判断理由**：在无法计算或者计算海森矩阵（Hessian）成本过高时，拟牛顿法（尤其是BFGS及L-BFGS）是首选。它利用一阶梯度的历史信息来近似二阶曲率，实现了超线性收敛。L-BFGS至今仍是大规模非凸优化（如传统机器学习、某些深度学习场景）的标准工具。
 
 ---
-
-## 2. 割线方程与 BFGS 逆矩阵更新公式形式化推导
-
-**割线方程 (Secant Equation) 假设**：
-设当前步迭代变量位移 $\mathbf{s}_k = \mathbf{x}_{k+1} - \mathbf{x}_k$，梯度差值为 $\mathbf{y}_k = \mathbf{g}_{k+1} - \mathbf{g}_k$（其中 $\mathbf{g}_k = 
-abla f(\mathbf{x}_k)$）。
-
-对一阶梯度在 $\mathbf{x}_{k+1}$ 处做一阶泰勒展开：
-$$\mathbf{g}_{k+1} - \mathbf{g}_k \approx 
-abla^2 f(\mathbf{x}_{k+1}) (\mathbf{x}_{k+1} - \mathbf{x}_k) \Rightarrow \mathbf{y}_k = B_{k+1} \mathbf{s}_k$$
-
-设 $H_k = B_k^{-1}$ 为 Hessian 逆矩阵的近似，则割线方程逆矩阵形式为：
-$$H_{k+1} \mathbf{y}_k = \mathbf{s}_k$$
-
-**BFGS 秩-2 逆修正矩阵推导**：
-假设更新量为秩-2 修正 $H_{k+1} = H_k + \Delta H_k = H_k + \alpha \mathbf{u} \mathbf{u}^T + \beta \mathbf{v} \mathbf{v}^T$。代入割线方程并通过 Sherman-Morrison-Woodbury 公式求逆，推导出经典 **BFGS 逆更新公式**：
-
-$$H_{k+1} = \left( \mathbf{I} - \frac{\mathbf{s}_k \mathbf{y}_k^T}{\mathbf{y}_k^T \mathbf{s}_k} 
-ight) H_k \left( \mathbf{I} - \frac{\mathbf{y}_k \mathbf{s}_k^T}{\mathbf{y}_k^T \mathbf{s}_k} 
-ight) + \frac{\mathbf{s}_k \mathbf{s}_k^T}{\mathbf{y}_k^T \mathbf{s}_k}$$
-
-**正定性保持推导**：只要线搜索满足 Wolfe 条件（保证曲率条件 $\mathbf{y}_k^T \mathbf{s}_k > 0$），若 $H_k$ 正定，则推导出的 $H_{k+1}$ 必保持**严格对称正定**，从而保证搜索方向 $\mathbf{d}_k = -H_k \mathbf{g}_k$ 永远是严格下降方向。
+## 1. 这个知识点解决什么问题？
+> **我们遇到了什么麻烦**：
+牛顿法 $x_{k+1} = x_k - (\nabla^2 f(x_k))^{-1} \nabla f(x_k)$ 收敛极快，但需要计算海森矩阵并求逆，单次迭代时间复杂度 $O(n^3)$。当参数量 $n$ 达到上万时，牛顿法直接瘫痪。我们希望有一种方法：只用梯度信息，迭代成本低，但又能捕捉二阶曲率，比梯度下降快。
 
 ---
-
-## 3. 拟牛顿法 BFGS 与梯度下降及标准牛顿法对比
-
-| 维度 | 一阶梯度下降 (GD / Adam) | 标准牛顿法 (Newton's Method) | 拟牛顿法 BFGS 算法 |
-|:---|:---|:---|:---|
-| **用到的阶数信息** | 仅一阶梯度 $
-abla f$ | 一阶梯度 + **二阶 Hessian $
-abla^2 f$** | **仅一阶梯度** (近似二阶) |
-| **单次迭代复杂度** | **$O(n)$** | $O(n^3)$ (求逆 $H^{-1}$) | **$O(n^2)$** (矩阵向量乘法) |
-| **局部收敛速度** | 一阶线性收敛 | **二阶二次收敛** | **超线性收敛** |
-| **搜索方向** | 最速下降方向 $-\mathbf{g}$ | 二阶牛顿方向 $-
-abla^2 f^{-1} \mathbf{g}$ | **拟牛顿方向 $-H_k \mathbf{g}$** |
-| **大规模扩展性** | 极佳 | 极差 | 通过 **L-BFGS** 实现有限内存扩展 |
-
-**局限（误区与反例）**：若步长选择不当破坏了曲率条件 $\mathbf{y}_k^T \mathbf{s}_k \le 0$，BFGS 正定性可能丧失；对超高维参数 ($n > 10^6$)，存储 $n \times n$ 的 $H_k$ 仍会爆内存，必须改用存储最近 $m$ 组向量的 L-BFGS 算法。
-
-关联知识点推荐：[[凸优化与拉格朗日对偶]]、[[梯度下降与Adam优化器]]、[[均方误差MSE与Huber损失]]、[[红黑树]]。
+## 2. 为什么它重要？它有什么用？
+- **连接大图景**：它是最速下降法（只看当前梯度）与牛顿法（完全看真实Hessian）的完美折中。
+- **实际应用场景**：Scipy中的 `scipy.optimize.minimize(method='L-BFGS-B')` 是工业界解决优化问题的“瑞士军刀”。
+- **高频题型/任务**：推导秩2更新公式（Rank-2 Update）、证明BFGS矩阵的正定性遗传、写出L-BFGS的双循环递归代码。
 
 ---
+## 3. 学它之前需要哪些前置知识？
+1. **[[线搜索与步长策略]]**：拟牛顿法通常需要满足 Wolfe 条件的线搜索来保证海森近似矩阵的正定性。
+2. **泰勒展开**：理解割线方程的来源。
 
-## 4. Python 手写 BFGS 算法二阶优化自测断言
+---
+## 4. 用直觉语言解释它
+> «"这东西其实就像……"»
+- **直觉类比/几何图像**：想象你在黑夜中下山，你无法看清脚下大范围的地形（没有Hessian），但你每走一步都能测出当前的坡度（梯度）。如果你记录下前几步的位置和坡度变化，大脑里就能大致勾勒出这座山是陡峭还是平缓（曲率）。拟牛顿法就是“用梯度的变化量来推测曲率”。
+- **为什么很自然**：在一维情况下，二阶导数就是一阶导数的变化率：$f''(x) \approx \frac{f'(x_k) - f'(x_{k-1})}{x_k - x_{k-1}}$。在高维，这就是割线方程。
+- **一句话直觉本质**：用过去的梯度差 $\Delta g$ 和位置差 $\Delta x$ 拼凑出海森矩阵。
 
+---
+## 5. 正式定义、核心公式、符号解释
+### 1. 核心定义与割线方程
+设 $s_k = x_{k+1} - x_k$， $y_k = \nabla f(x_{k+1}) - \nabla f(x_k)$。
+海森矩阵的近似矩阵 $B_{k+1}$ 必须满足**割线方程（Secant Equation）**：
+$$B_{k+1} s_k = y_k$$
+或者其逆矩阵 $H_{k+1} = B_{k+1}^{-1}$ 满足：
+$$H_{k+1} y_k = s_k$$
+
+### 2. 核心公式：BFGS 更新公式
+我们希望 $B_{k+1}$ 尽可能接近 $B_k$（根据某个矩阵范数），且满足割线方程和对称性。推导出的 BFGS 逆矩阵 $H$ 更新公式为：
+$$H_{k+1} = \left(I - \frac{s_k y_k^T}{y_k^T s_k}\right) H_k \left(I - \frac{y_k s_k^T}{y_k^T s_k}\right) + \frac{s_k s_k^T}{y_k^T s_k}$$
+定义 $\rho_k = \frac{1}{y_k^T s_k}$，可简写为：
+$$H_{k+1} = (I - \rho_k s_k y_k^T) H_k (I - \rho_k y_k s_k^T) + \rho_k s_k s_k^T$$
+
+### 3. 符号说明表
+| 符号 | 含义 |
+|---|---|
+| $B_k$ | 第 $k$ 步的海森近似矩阵 |
+| $H_k$ | 第 $k$ 步的海森逆的近似矩阵 ($B_k^{-1}$) |
+| $s_k$ | 位置位移矢量 $x_{k+1} - x_k$ |
+| $y_k$ | 梯度变化矢量 $\nabla f(x_{k+1}) - \nabla f(x_k)$ |
+
+---
+## 6. 推导思路和思想来源
+- **最初困难**：直接求 Hessian 太慢。
+- **第一步：割线条件**。利用泰勒展开 $\nabla f(x_{k+1}) \approx \nabla f(x_k) + \nabla^2 f(x_k)(x_{k+1} - x_k)$，得到 $y_k \approx \nabla^2 f \cdot s_k$。
+- **第二步：最小改动**。割线方程 $B_{k+1} s_k = y_k$ 未知数太多，是一个欠定系统。为了唯一确定 $B_{k+1}$，我们要求它距离 $B_k$ 最近：
+  $$\min_B \|B - B_k\| \quad \text{s.t.} \quad B = B^T, \quad B s_k = y_k$$
+- **第三步：秩2更新（Rank-2 Update）**。为了保持对称且满足要求，需要对矩阵进行秩为2的修正。DFP公式是直接更新 $H$，而 BFGS 公式是先推导出 $B$ 的更新，再利用 Sherman-Morrison-Woodbury (SMW) 公式求逆得到 $H$ 的更新。事实证明，BFGS的数值稳定性远优于DFP。
+
+---
+## 7. 例子：基础 → 中等 → 实际应用
+### 例子 1：正定性条件
+割线方程 $B_{k+1} s_k = y_k$ 要有正定解，必须满足 $s_k^T B_{k+1} s_k = s_k^T y_k > 0$。即**曲率条件** $s_k^T y_k > 0$。
+如果使用满足 Wolfe 条件（特别是曲率条件）的线搜索，这个不等式自然成立，从而保证 $H_k$ 永远是正定的！这是 BFGS 的杀手锏。
+
+### 例子 2：L-BFGS (Limited-memory BFGS) 的思想
+当 $n=10^6$ 时，$H_k$ 需要 1TB 内存。
+**转念**：我们不需要真正存下矩阵 $H_k$。根据更新公式，$H_k$ 完全由初始 $H_0$ 和过去所有的 $(s_i, y_i)$ 唯一确定。如果只保存最近 $m$ 步的 $(s_i, y_i)$（通常 $m \in [5, 20]$），在计算方向 $d_k = -H_k \nabla f_k$ 时，通过一个**双循环递归（Two-loop recursion）算法**，可以直接算出 $H_k \nabla f_k$ 的结果，时间复杂度降为 $O(mn)$，空间复杂度 $O(mn)$。
+
+### 例子 3：L-BFGS 双循环递归伪代码
 ```python
-import numpy as np
-
-def bfgs_optimize(f, grad_f, x0: np.ndarray, max_iter: int = 100) -> tuple:
-    """
-    手写拟牛顿法 BFGS 算法求解无约束极小化 min f(x)
-    H_k 近似 Hessian 逆矩阵
-    """
-    x = x0.copy().astype(float)
-    n = len(x)
-    H = np.eye(n)  # 初始初始化为单位阵
-
-    for k in range(max_iter):
-        g = grad_f(x)
-        if np.linalg.norm(g) < 1e-6:
-            break
-
-        # 搜索方向 d = -H * g
-        d = -H @ g
-
-        # 简易回溯线搜索 (Backtracking Line Search) 满足 Armijo 条件
-        alpha = 1.0
-        c1 = 1e-4
-        while f(x + alpha * d) > f(x) + c1 * alpha * np.dot(g, d):
-            alpha *= 0.5
-
-        x_next = x + alpha * d
-        s = x_next - x
-        g_next = grad_f(x_next)
-        y = g_next - g
-
-        ys = np.dot(y, s)
-        if ys > 1e-10:  # 曲率条件
-            I = np.eye(n)
-            rho = 1.0 / ys
-            H = (I - rho * np.outer(s, y)) @ H @ (I - rho * np.outer(y, s)) + rho * np.outer(s, s)
-
-        x = x_next
-
-    return x, float(f(x))
-
-if __name__ == "__main__":
-    # 二次函数 f(x, y) = (x-3)^2 + 2*(y+1)^2, 最优解 (3.0, -1.0), f_opt = 0.0
-    def f(x): return (x[0] - 3.0)**2 + 2.0 * (x[1] + 1.0)**2
-    def grad_f(x): return np.array([2.0 * (x[0] - 3.0), 4.0 * (x[1] + 1.0)])
-
-    x0 = np.array([0.0, 0.0])
-    x_opt, f_opt = bfgs_optimize(f, grad_f, x0)
-
-    # 自测验证 1: BFGS 收敛位置极高精度断言
-    assert np.allclose(x_opt, [3.0, -1.0], atol=1e-5), f"BFGS 未收敛到最优点: {x_opt}"
-
-    # 自测验证 2: 最优目标值趋近零断言
-    assert abs(f_opt - 0.0) < 1e-8
-
-    print(f"拟牛顿法 BFGS 算法收敛位置: x* = {x_opt.round(4)}, f* = {f_opt:.8f}")
-    print("拟牛顿法 BFGS 算法单元测试与自查验证全部成功！")
+def two_loop_recursion(grad, S, Y, rho, H0_diag):
+    # grad: 当前梯度
+    # S, Y: 存储最近m步的位移和梯度差列表
+    q = grad.copy()
+    m = len(S)
+    alphas = []
+    
+    # 第一次循环 (后向)
+    for i in reversed(range(m)):
+        alpha = rho[i] * np.dot(S[i], q)
+        alphas.append(alpha)
+        q = q - alpha * Y[i]
+        
+    alphas.reverse()
+    
+    # 乘以初始逆Hessian近似
+    r = H0_diag * q
+    
+    # 第二次循环 (前向)
+    for i in range(m):
+        beta = rho[i] * np.dot(Y[i], r)
+        r = r + S[i] * (alphas[i] - beta)
+        
+    return r # 返回 H_k * grad
 ```
 
 ---
+## 8. 常见误区和易混概念
+### 误区 1：BFGS 更新只针对正定矩阵有效？
+**纠正**：理论上，只要保证曲率条件 $s_k^T y_k > 0$ 成立，BFGS就能保持矩阵正定。对于非凸函数，即使真实 Hessian 有负特征值，BFGS维持的正定近似矩阵也能指引目标函数下降，但这使得它更倾向于寻找局部极小值。
 
-## 5. 权威参考文献
-- Nocedal, J., & Wright, S. J. (2006). *Numerical Optimization* (2nd ed.). Springer. Chapter 6 (Quasi-Newton Methods). ISBN: 978-0387303031. DOI: https://doi.org/10.1007/978-0-387-40065-5
-- Broyden, C. G. (1970). The convergence of a class of double-rank minimization algorithms. *Journal of the Institute of Mathematics and its Applications*, 6(1), 76-90. DOI: https://doi.org/10.1093/imamat/6.1.76
-- Fletcher, R. (1970). A new approach to variable metric algorithms. *The Computer Journal*, 13(3), 317-322. DOI: https://doi.org/10.1093/comjnl/13.3.317
-- Goldfarb, D. (1970). A family of variable-metric methods derived by variational means. *Mathematics of Computation*, 24(109), 23-26. DOI: https://doi.org/10.1090/S0025-5718-1970-0258249-6
-- Shanno, D. F. (1970). Conditioning of quasi-Newton methods for function minimization. *Mathematics of Computation*, 24(111), 647-656. DOI: https://doi.org/10.1090/S0025-5718-1970-0274029-X
+### 概念对比表
+| 算法 | 更新核心 | 特点 | 空间复杂度 |
+|---|---|---|---|
+| SR1 | 秩 1 更新 | 不需要线搜索满足特定条件，但不保证正定 | $O(n^2)$ |
+| DFP | 秩 2 更新（H优先） | 历史上第一个拟牛顿法，已被BFGS淘汰 | $O(n^2)$ |
+| BFGS | 秩 2 更新（B优先） | 极其稳定，超线性收敛，当前标准 | $O(n^2)$ |
+| L-BFGS| 不存矩阵只存向量 | 适用于超大规模问题 | $O(mn)$ |
+
+---
+## 9. 相关知识点与 Obsidian 双链建议
+- **上游依赖**：[[牛顿法]]、[[线搜索与步长策略]]（特别是 Wolfe 条件）。
+- **下游延伸**：[[L-BFGS-B算法]]（处理边界约束的扩展）。
+- **横向关联**：与[[共轭梯度法]]（CG）对比。CG不需要存矩阵，空间 $O(n)$，但拟牛顿法通常收敛需要更少的迭代次数，且对条件数不好的问题更鲁棒。
+
+---
+## 10. 闭卷复现任务
+- [ ] 默写出割线方程。
+- [ ] 阐述为什么BFGS需要配合满足Wolfe条件的线搜索。
+- [ ] 描述 L-BFGS 的核心降维思想。
+
+---
+## 11. 自测题：5 道
+> [!question]- 1. 拟牛顿法中的割线方程 $B_{k+1} s_k = y_k$ 是如何推导出来的？
+> 通过对目标函数的梯度进行一阶泰勒展开：$\nabla f(x_{k+1}) \approx \nabla f(x_k) + \nabla^2 f(x_k) (x_{k+1} - x_k)$，定义 $y_k = \nabla f(x_{k+1}) - \nabla f(x_k)$，$s_k = x_{k+1} - x_k$，用 $B_{k+1}$ 替代 $\nabla^2 f(x_k)$ 即可得到。
+
+> [!question]- 2. 为什么 DFP 逐渐被 BFGS 淘汰？
+> 实践和理论都表明，BFGS 对舍入误差的鲁棒性更强。更重要的是，在 BFGS 中，如果线搜索不完美，矩阵近似不会轻易变得奇异，而 DFP 在处理非精确线搜索时容易失效。
+
+> [!question]- 3. 证明曲率条件 $s_k^T y_k > 0$ 是保证 $B_{k+1}$ 正定的必要条件。
+> 如果 $B_{k+1}$ 是正定的，那么对于任意非零向量 $v$，有 $v^T B_{k+1} v > 0$。根据割线方程 $B_{k+1} s_k = y_k$，我们在方程左乘 $s_k^T$，得到 $s_k^T B_{k+1} s_k = s_k^T y_k$。因此必须有 $s_k^T y_k > 0$。
+
+> [!question]- 4. 简述 L-BFGS 的内存复杂度为什么是 $O(mn)$？
+> L-BFGS 不再显式存储 $n \times n$ 的稠密矩阵 $H_k$，而是只保留最近 $m$ 步的向量对 $(s_i, y_i)$。每个向量长度为 $n$，共 $2m$ 个向量，因此内存复杂度为 $O(mn)$。其中 $m$ 通常取 5~20 即可达到很好的效果。
+
+> [!question]- 5. BFGS 收敛速度是什么级别？
+> 对于充分平滑且在极小值点处海森矩阵正定的凸函数，配合适当的线搜索，BFGS 可以达到**超线性收敛**（Superlinear convergence）。即收敛速度介于线性（如梯度下降）和二次（如精确牛顿法）之间。
+
+---
+## 12. 我的主动回忆区
+### 我的闭卷复述
+### 我的推导复现
+### 我的错误与卡点
+### 下次复习日期
+2026-08-12
+
+---
+## 13. 给 Obsidian 的归档建议
+存放到 `07-最优化方法/无约束优化` 文件夹下。在代码实践库中添加 L-BFGS 的 Python 实现链接。

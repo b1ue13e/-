@@ -6,11 +6,12 @@ created: 2026-08-05
 status: completed
 difficulty: intermediate
 concept: [ReAct, 推理行动交替, 轨迹]
-prerequisites: [AI Agent边界, Prompt基础]
+prerequisites: [AI-Agent-边界与感知行动循环, Prompt工程-需求-任务规格与结构化输出]
 related: [工具调用, 规划, Agent评测]
 flow: knowledge
 kind: concept
-source: "UC Berkeley CS 194/294-196 F24 LLM agents overview; Yao et al., ReAct (ICLR 2023)"
+source: "UC Berkeley CS 194/294-196 F24 overview; Datawhale Hello-Agents Chapter 4.2; Yao et al., ReAct (ICLR 2023)"
+source_urls: ["https://github.com/datawhalechina/hello-agents/tree/main/docs/chapter4", "https://arxiv.org/abs/2210.03629"]
 anki_deck: "46-AI Agent工程::02-推理与行动"
 anki_tags: [46-AI-Agent工程, ReAct, 轨迹]
 ---
@@ -37,7 +38,7 @@ ReAct 将任务轨迹组织为推理/决策、动作、观察的循环，使外�
 ## 3. 学它之前需要哪些前置知识？
 
 1. **[[AI-Agent-边界与感知行动循环]]**：ReAct 是闭环的一种具体轨迹格式。
-2. **[[Prompt基础]]**：要规定允许动作、格式和停止规则。
+2. **[[45-生成式AI基础与Prompt工程/Prompt工程-需求-任务规格与结构化输出|Prompt 任务规格]]**：要规定允许动作、格式和停止规则。
 
 ## 4. 用直觉语言解释它
 
@@ -156,7 +157,7 @@ print(events)
 - [[AI-Agent-安全威胁建模与系统评测]]：用轨迹定位攻击与失败。
 
 ### 横向关联
-- [[主动学习]] ↔ ReAct：都围绕“下一次获取哪个信息最有价值”。
+- **待创建先修补丁：主动学习** ↔ ReAct：都围绕“下一次获取哪个信息最有价值”。
 
 ### 应用场景
 - [[AI-Agent-记忆与检索增强生成]]：检索结果成为 Observation。
@@ -235,4 +236,3 @@ print(events)
 - ReAct 的三个交替元素是什么？::面向下一步的决策/推理、外部动作、环境观察。
 - ReAct 为什么优于一次性写完开放任务计划？::它能让每次真实观察修正后续动作，避免在未知环境中基于错误假设继续执行。
 - Observation 为什么不能自动当作可信指令？::观察可能来自恶意网页、污染文档或错误工具；它属于不可信数据层，必须验证与隔离。
-

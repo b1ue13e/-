@@ -1,0 +1,8 @@
+05-计算机视觉/01-底层基石/HOG.md -> True
+05-计算机视觉/02-深度学习内核/ResNet.md -> True
+08-NLP全栈/Transformer架构.md -> True
+17-机器学习/🎯 感知机 (Perceptron).md -> True
+05-计算机视觉/CS231n_模块1_基础分类/K最近邻分类器 (KNN Classifier).md -> True
+--- 实际文件名示例:
+05-计算机视觉 : ['01-底层基石', '02-深度学习内核', '03-视觉核心任务', '04-前沿架构探索', '05-专业深化与工程落地', '18-实战作业说明书', '30-题型笔记', 'CS231n_模块1_基础分类', 'CS231n_模块2_神经网络与反向传播', 'CS231n_模块3_卷积网络与工程细节', 'CS231n_模块4_高级视觉任务', 'LoRA(4.23没学会，待学).md', 'ResNet残差网络.md', 'YOLO目标检测.md', 'k最近邻(kNN).md']
+05-计算机视觉/02-深度学习内核 : ['AlexNet.md', 'AutoAugment.md', 'BatchNorm.md', 'CutMix.md', 'DDP.md', 'DataLoader.md', 'DenseNet.md', 'DiceLoss.md', 'DropConnect.md', 'Dropout.md', 'EfficientNet.md', 'FocalLoss.md', 'GhostNet.md', 'GroupNorm.md', 'InstanceNorm.md']

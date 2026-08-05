@@ -1,0 +1,22 @@
+{
+  "confidence": 0.99,
+  "window": 60,
+  "train_observations": 800,
+  "test_observations": 200,
+  "normal_kupiec": {
+    "observations": 200,
+    "violations": 4,
+    "violation_rate": 0.02,
+    "expected_rate": 0.010000000000000009,
+    "likelihood_ratio": 1.565447830584496,
+    "p_value": 0.21086933252965645
+  },
+  "historical_kupiec": {
+    "observations": 200,
+    "violations": 3,
+    "violation_rate": 0.015,
+    "expected_rate": 0.010000000000000009,
+    "likelihood_ratio": 0.4378496777695666,
+    "p_value": 0.5081621544300663
+  }
+}

@@ -4,8 +4,8 @@ date: 2026-07-31
 type: concept
 course: "03-量化金融"
 importance: "A"
-prerequisites: ["[[微观市场结构]]", "[[限价指令簿LOB]]"]
-related: ["[[算法交易VWAP/TWAP]]", "[[交易成本分析TCA]]"]
+prerequisites: ["[[买卖价差及其微观结构拆解 (Bid-Ask Spread & Microstructure Decomposition)|微观市场结构]]", "[[限价订单簿数据与 L1_L2_L3 盘口重建 (Limit Order Book Data & Reconstructing L1_L2_L3)|限价指令簿LOB]]"]
+related: ["[[TWAP 时间加权平均价格 (Time-Weighted Average Price)|TWAP]]", "[[Implementation Shortfall 执行缺口与 Almgren-Chriss 最优执行模型|交易成本分析TCA]]"]
 status: learning
 tags: [学习, 实战作业, 量化开发, 交易路由, 暗池]
 flow: knowledge
@@ -98,17 +98,58 @@ kind: problem-type
   2. 剩余 700 股，按比例分配给明池 A (280股) 和明池 B (420股)，发 Limit 150.10 订单。
 - **结果**：节省了暗池成交部分 (300股) 跨越价差的成本。
 
-### 例子 2：作业架构代码实现 (中等)
-- **伪代码**：实现 SOR 的 `on_order_received` 事件。
+### 例子 2：确定性路由基线 (中等)
+- **说明**：先用可运行的同步基线验证数量守恒和价格精度，再升级为异步状态机。
 ```python
-def on_order_received(self, parent_order):
-    # Step 1: 尝试暗池
-    dark_order = self.create_child_order(parent_order, venue='DARK', price=self.get_midpoint(), order_type='IOC')
-    self.send_order(dark_order)
-    
-    # 异步等待暗池回调 on_order_filled
-    # 在 on_order_filled 中，若仍有剩余 quantity，则触发 lit_sweep(remaining_qty)
+from dataclasses import dataclass
+from decimal import Decimal
+
+
+@dataclass(frozen=True)
+class Execution:
+    venue: str
+    quantity: int
+    price: Decimal
+
+
+def route_parent_order(quantity, bid, ask, dark_fill, lit_liquidity):
+    if quantity <= 0 or dark_fill < 0:
+        raise ValueError('quantities must be non-negative and parent must be positive')
+    bid, ask = Decimal(bid), Decimal(ask)
+    if bid >= ask:
+        raise ValueError('bid must be below ask')
+
+    executions = []
+    remaining = quantity
+    dark_quantity = min(dark_fill, remaining)
+    if dark_quantity:
+        executions.append(Execution('DARK', dark_quantity, (bid + ask) / 2))
+        remaining -= dark_quantity
+
+    for venue, available in lit_liquidity.items():
+        child_quantity = min(int(available), remaining)
+        if child_quantity:
+            executions.append(Execution(venue, child_quantity, ask))
+            remaining -= child_quantity
+        if remaining == 0:
+            break
+    return executions, remaining
+
+
+executions, unfilled = route_parent_order(
+    quantity=1000,
+    bid='150.00',
+    ask='150.10',
+    dark_fill=300,
+    lit_liquidity={'LIT_A': 280, 'LIT_B': 420},
+)
+assert unfilled == 0
+assert sum(item.quantity for item in executions) == 1000
+assert executions[0].price == Decimal('150.05')
+print(executions)
 ```
+
+> **边界说明**：该基线不模拟网络延迟、部分成交回调或撤单竞争。升级版必须用 `PendingNew/PendingCancel/PartiallyFilled` 等状态处理异步回报，不能把本例当作生产 SOR。
 
 ### 例子 3：实战中的“暗池毒性流动性” (Real-world Pitfall)
 - **实际场景**：某些高频交易机构在暗池中放置“探测单”。当你大单吃掉暗池的流动性时，HFT 立刻感知到你的方向，瞬间撤掉明池的挂单并重新高挂，导致你剩下的单子遭遇巨大的滑点。
@@ -129,12 +170,12 @@ def on_order_received(self, parent_order):
 
 ## 9. 相关知识点与 Obsidian 双链建议
 ### 上游依赖
-- [[限价指令簿LOB]]：这是所有交易所数据结构的基石。
+- [[限价订单簿数据与 L1_L2_L3 盘口重建 (Limit Order Book Data & Reconstructing L1_L2_L3)|限价指令簿LOB]]：这是所有交易所数据结构的基石。
 - [[04-深入精通/交易环境设计|事件驱动回测框架]]：SOR 作业依赖异步事件分发机制。
 
 ### 下游延伸
-- [[VWAP与TWAP算法]]：算法母单切分时间的工具，切分后的子单由 SOR 执行。
-- [[交易成本分析TCA]]：用于赛后评估 SOR 路由引擎干得好不好的量化指标集。
+- [[TWAP 时间加权平均价格 (Time-Weighted Average Price)|VWAP与TWAP算法]]：算法母单切分时间的工具，切分后的子单由 SOR 执行。
+- [[Implementation Shortfall 执行缺口与 Almgren-Chriss 最优执行模型|交易成本分析TCA]]：用于赛后评估 SOR 路由引擎干得好不好的量化指标集。
 
 ---
 

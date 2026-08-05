@@ -121,9 +121,9 @@ $$ \ln(\sigma_t^2) = \omega + \beta \ln(\sigma_{t-1}^2) + \gamma \frac{\epsilon_
 
 ## 9. 相关知识点与 Obsidian 双链建议
 
-- 上游依赖：[[量化金融-GARCH波动率策略|GARCH模型]] (所有衍生模型的基石), [[金融时间序列特征]] (非正态与非对称)
-- 下游延伸：[[波动率微笑]], [[极值理论EVT]] (专门用来对付最极端的尾部)
-- 横向关联：[[期权做市策略]] ↔ [[非对称GARCH]] (做市商的定价武器)
+- 上游依赖：[[量化金融-波动率-GARCH家族模型|GARCH模型]] (所有衍生模型的基石), [[滚动窗口与波动率特征|金融时间序列特征]] (非正态与非对称)
+- 下游延伸：[[隐含波动率与波动率微笑 (Implied Volatility & Volatility Smile)|波动率微笑]], [[极值理论EVT]] (专门用来对付最极端的尾部)
+- 横向关联：[[做市商库存模型与 Avellaneda-Stoikov 框架 (Inventory Models & Avellaneda-Stoikov Framework)|期权做市策略]] ↔ [[非对称 GARCH 模型与杠杆效应 (EGARCH & GJR-GARCH)|非对称GARCH]] (做市商的定价武器)
 - 应用场景：[[[支线任务] HW07-非对称GARCH]]
 
 ---
@@ -201,5 +201,5 @@ $$ \ln(\sigma_t^2) = \omega + \beta \ln(\sigma_{t-1}^2) + \gamma \frac{\epsilon_
 
 ## 13. 给 Obsidian 的归档建议
 - **文件夹**：`02-Knowledge/🧠 学习系统/03-量化金融/02-量化核心技能`
-- **链接**：平行链接至 [[期权隐含波动率偏斜]]，向下引流至专门研究极端的 [[极值理论EVT]]。
+- **链接**：平行链接至 [[隐含波动率与波动率微笑 (Implied Volatility & Volatility Smile)|期权隐含波动率偏斜]]，向下引流至专门研究极端的 [[极值理论EVT]]。
 - **标签**：`#量化金融/时间序列` `#非对称GARCH` `#波动率` `#杠杆效应`

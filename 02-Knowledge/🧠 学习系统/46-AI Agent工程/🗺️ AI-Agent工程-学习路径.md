@@ -7,13 +7,13 @@ status: active
 flow: knowledge
 kind: moc
 source_of_truth: true
-source: "UC Berkeley CS 194/294-196 Large Language Model Agents (Fall 2024)"
+source: "UC Berkeley CS 194/294-196 F24/F25; Microsoft AI Agents for Beginners; Datawhale Hello-Agents"
 ---
 
 # 🗺️ AI Agent 工程学习路径
 
 > [!abstract] 学习结果
-> 从“会调用聊天模型”走到“能设计、实现、测试和约束一个可复现的智能体系统”。课程以 UC Berkeley CS 194/294-196 Fall 2024 为理论主线，以其公开 Lab 01–03 为官方作业验收，以 Stanford CS224V 和 Apache-2.0 的 Hugging Face Agents Course 作公开补充。
+> 从“会调用聊天模型”走到“能设计、实现、测试和约束一个可复现的智能体系统”。课程保留 UC Berkeley CS 194/294-196 Fall 2024 的公开 Lab 作为作业事实主线；Microsoft AI Agents for Beginners 提供生产化能力检查表，Datawhale Hello-Agents 提供中文原理与从零实现路线。三者经去重后落入稳定主题卡，逐章去向见 [[AI-Agent工程-双教材章节覆盖矩阵]]。
 
 ## 0. 使用边界
 
@@ -21,10 +21,14 @@ source: "UC Berkeley CS 194/294-196 Large Language Model Agents (Fall 2024)"
 - **本库教学卡**：均为根据公开一手来源重新组织的原创中文教学内容，不冒充学校原讲义。
 - **框架版本**：框架只是实现手段；先掌握循环、状态、工具契约、评测与安全，再学习 AutoGen、smolagents、LangGraph 等具体 API。
 - **成本与密钥**：所有主题卡都提供可运行的 Python 标准库微型实现；官方 Lab 可能需要模型 API、AutoGen 或在线服务。
+- **融合边界**：不复制两教材长代码或答案；吸收能力目标、对比维度和实践结构，重新组织为本库主题卡、故障注入和迁移任务。
+- **动态规范**：MCP、A2A、框架和云部署会漂移；学习稳定概念，实践前按卡片核验日期重开官方规范。
 
 ## 1. 前置诊断（先做再学）
 
-闭卷回答；任一项不会就先看 [[AI-Agent工程-作业必需与全面知识清单]] 的“前置补给”。
+先确认已具备 Python、基础 ML/DL、LLM/Prompt/RAG；Berkeley F24 官方页明确鼓励类似 CS182/188/189 的机器学习经验。缺少模型与 RAG 基础先走 [[45-生成式AI基础与Prompt工程/🗺️ 生成式AI基础与Prompt工程学习路径|生成式 AI 与 Prompt 工程]]，缺少 ML/DL 再补 [[17-机器学习/🗺️ 机器学习学习路径|机器学习]]。完整 12 周小白节奏、渐隐支架与量规见 [[🧭 AI-Agent工程课程学习与认知支架]]。
+
+闭卷回答；工程题任一项不会先完成 [[AI-Agent-前置-消息JSON异常与单元测试]]：
 
 1. Python 函数如何用类型、异常和测试表达输入输出契约？
 2. system / user / tool 消息承担什么不同职责？
@@ -36,13 +40,24 @@ source: "UC Berkeley CS 194/294-196 Large Language Model Agents (Fall 2024)"
 
 | 阶段 | 核心问题 | 主题卡 | 最小产出 | 对应官方作业 |
 | :--- | :--- | :--- | :--- | :--- |
+| 0. 工程前置 | 如何隔离模型波动并定位错误？ | [[AI-Agent-前置-消息JSON异常与单元测试]] | fake model/tool 与离线测试 | 所有 Lab 前置 |
 | 1. 定义边界 | 什么才是 Agent？何时不该用 Agent？ | [[AI-Agent-边界与感知行动循环]] | 状态机式最小 Agent | Lab 01 前置 |
 | 2. 推理与行动 | 如何把“想”与“做”交替组织？ | [[AI-Agent-ReAct推理行动范式]] | 受限 ReAct 轨迹 | Lab 01 前置 |
 | 3. 可靠用工具 | 如何让模型发出可校验动作？ | [[AI-Agent-工具调用与结构化契约]] | 工具注册表与参数校验 | Lab 01 必需 |
-| 4. 拆解流程 | 如何把长任务变成可恢复工作流？ | [[AI-Agent-规划状态与工作流编排]] | DAG/状态机管线 | Lab 01 必需 |
-| 5. 取得外部证据 | 如何管理上下文、短期状态与长期知识？ | [[AI-Agent-记忆与检索增强生成]] | 可引用的小型 RAG | Lab 01 全面 |
-| 6. 分工协作 | 何时多 Agent 比单 Agent 更合理？ | [[AI-Agent-多智能体协作与消息协议]] | 角色分离评分管线 | Lab 01 必需 |
-| 7. 证明可用 | 如何攻击、保护并量化可靠性？ | [[AI-Agent-安全威胁建模与系统评测]] | 攻防测试矩阵 | Lab 02/03 必需 |
+| 4. 看懂运行时 | 框架替你做了什么，何时不该引入？ | [[AI-Agent-框架选型与最小运行时]] | 标准库 runtime + 选型记录 | Lab 01 前置 |
+| 5. 拆解流程 | 如何把长任务变成可恢复工作流？ | [[AI-Agent-规划状态与工作流编排]] | DAG/状态机管线 | Lab 01 必需 |
+| 6. 装配上下文 | 这一步让模型看到什么、看不到什么？ | [[AI-Agent-上下文工程-选择压缩隔离]] | GSSC 预算与信任分区 | Lab 01 全面 |
+| 7. 取得外部证据 | 如何管理短期状态、长期记忆与知识？ | [[AI-Agent-记忆与检索增强生成]] | 可引用的小型 RAG | Lab 01 全面 |
+| 8. 校验并修正 | 如何发现失败、定向修正并有限停止？ | [[AI-Agent-反思与元认知-校验修正停止]] | 验证器 + 反馈循环 | 全面掌握 |
+| 9. 分工协作 | 何时多 Agent 比单 Agent 更合理？ | [[AI-Agent-多智能体协作与消息协议]] | 角色分离评分管线 | Lab 01 必需 |
+| 10. 跨系统协作 | 工具接入与远程 Agent 委托有何不同？ | [[AI-Agent-协议-MCP与A2A互操作]] | MCP/A2A 边界模拟 | 全面掌握 |
+| 11. 证明可用 | 如何同时量化任务、轨迹、安全与成本？ | [[AI-Agent-评测与基准-任务轨迹成本]]、[[AI-Agent-安全威胁建模与系统评测]] | 四层评测包 | Lab 02/03 必需 |
+| 12. 框架桥梁 | 如何在版本漂移下完成旧官方 Lab？ | [[AI-Agent-框架-AutoGen官方Lab版本补丁]] | AutoGen 0.2 隔离环境与双注册 | Lab 01 必需 |
+| 13. 环境交互 | 如何安全执行代码和网页动作？ | [[AI-Agent-环境交互-代码网页与沙箱执行]] | 沙箱与审批策略 | 全面掌握 |
+| 14. 生产运行 | 如何观察、暂停、恢复与运营？ | [[AI-Agent-可观测性与生产运行-轨迹审批恢复]] | trace、HITL、幂等与恢复 | 结课项目 |
+| 15. 部署与本地运行 | 如何伸缩、路由、烟测并保护本地数据？ | [[AI-Agent-部署与本地运行-伸缩路由烟测]] | smoke/eval gate 与本地优先路由 | 结课项目 |
+| 16. 安全审计 | 如何证明高风险动作没有被篡改或偷换？ | [[AI-Agent-安全审计-加密收据与审批绑定]] | 收据、签名、哈希链、审批 digest | 进阶选修 |
+| 17. 策略改进（选修） | 何时值得训练，怎样防奖励投机？ | [[AI-Agent-Agentic-RL与自改进边界]] | 奖励审计，不强制训练 | 进阶选修 |
 
 ## 3. 官方作业主线
 
@@ -50,44 +65,51 @@ Berkeley 的公开说明给出三份 Lab、任务方向和通过门槛；本库�
 
 | 官方作业 | 官方目标 | 本库映射 |
 | :--- | :--- | :--- |
-| Lab 01 — Restaurant Review Pipeline | 用 AutoGen 构建餐厅评论分析与评分管线；公开测试通过至少 3/4 | [[Berkeley-Lab01-Restaurant-Review-Pipeline-知识点映射]] |
-| Lab 02 — Writing LLM Attacks | 编写攻击提示；隐藏测试至少通过 1/2 | [[Berkeley-Lab02-Writing-LLM-Attacks-知识点映射]] |
-| Lab 03 — Defending Against LLM Attacks | 编写防御提示；隐藏攻击测试至少通过 1/3 | [[Berkeley-Lab03-Defending-Against-LLM-Attacks-知识点映射]] |
+| Lab 01 — Restaurant Review Pipeline | 用 AutoGen 构建餐厅评论分析与评分管线；历史公开门槛 3/4 | [[Berkeley-Lab01-Restaurant-Review-Pipeline-知识点映射]] |
+| Lab 02 — Writing LLM Attacks | 编写攻击提示；历史隐藏门槛 1/2 | [[Berkeley-Lab02-Writing-LLM-Attacks-知识点映射]] |
+| Lab 03 — Defending Against LLM Attacks | 编写防御提示；历史隐藏门槛 1/3 | [[Berkeley-Lab03-Defending-Against-LLM-Attacks-知识点映射]] |
 
 官方总说明：<https://rdi.berkeley.edu/llm-agents-mooc/assets/instructions.pdf>
+
+> 上表数字是 Fall 2024 历史课程事实，不是当前本地 Gate。本课先运行 `03-Projects/46-AI Agent工程/local-acceptance/` 的全量离线测试，再在官方环境仍可用时记录官方结果；绝不把本地测试冒充 Berkeley 成绩。
 
 ## 4. 两条完成路径
 
 ### 最小作业路径（先交出可验收结果）
 
-1. [[AI-Agent-边界与感知行动循环]]
-2. [[AI-Agent-工具调用与结构化契约]]
-3. [[AI-Agent-规划状态与工作流编排]]
-4. [[AI-Agent-多智能体协作与消息协议]]
-5. 完成 Lab 01
+1. [[AI-Agent-前置-消息JSON异常与单元测试]]
+2. [[AI-Agent-边界与感知行动循环]]、[[AI-Agent-工具调用与结构化契约]]
+3. [[AI-Agent-规划状态与工作流编排]]、[[AI-Agent-多智能体协作与消息协议]]
+4. [[AI-Agent-框架-AutoGen官方Lab版本补丁]]
+5. 本地 Agent runtime、恶意证据、有限终止和恢复测试全绿 → 官方 Lab 01
 6. [[AI-Agent-安全威胁建模与系统评测]]
-7. 完成 Lab 02 → Lab 03
+7. 本地攻防回归 → 官方 Lab 02/03
 
 ### 全面掌握路径（不止通过测试）
 
-按 1→7 全部完成，并为每个实验保留：任务定义、数据样例、轨迹、失败分类、指标、成本、随机种子/模型版本和复现实录。
+按阶段 0→16 完成核心主线，并完成 [[AI-Agent工程-双教材渐进实践-知识点映射]] 的 P0–P7 与 [[AI-Agent工程-结课项目]]；阶段 17/P8 为选修。每个实验保留任务定义、数据样例、轨迹、失败分类、指标、成本、随机种子/模型版本和复现实录。
 
 ## 5. 验收门
 
 - [ ] **Gate A · 概念**：能说明 Agent 与工作流、聊天机器人、工具函数的边界。
 - [ ] **Gate B · 实现**：标准库最小 Agent、工具注册表和工作流示例均能运行。
-- [ ] **Gate C · 作业**：按官方测试和提交规范自行完成三份 Lab，不读取他人答案。
+- [ ] **Gate C · 作业**：`python -m unittest -v` 全绿，且测试确实执行工具、handoff、状态、终止、trace、checkpoint 与安全边界；官方环境可用时再按官方规范自行完成三份 Lab，不读取他人答案。
 - [ ] **Gate D · 可靠性**：至少建立 10 个正常测试、5 个异常测试、5 个对抗测试。
 - [ ] **Gate E · 复盘**：能从轨迹定位失败属于模型、工具、编排、数据还是权限层。
+- [ ] **Gate F · 迁移**：换领域和工具后仍通过测试；只改名称或 Prompt 不算迁移。
+- [ ] **Gate G · 部署/审计**：部署 smoke 与离线 eval 分离；高风险动作可验证审批绑定或明确安全失败。
 
 ## 6. 课程资源与治理
 
 - 资源授权、公开性和使用风险：[[AI-Agent工程-开源课程与作业资源索引]]
+- Microsoft/Hello-Agents 逐章去向与去重依据：[[AI-Agent工程-双教材章节覆盖矩阵]]
 - 作业必需知识与全面知识的分层矩阵：[[AI-Agent工程-作业必需与全面知识清单]]
+- 原创渐进实践与故障注入：[[AI-Agent工程-双教材渐进实践-知识点映射]]
+- 学习节奏、渐隐支架与高阶量规：[[🧭 AI-Agent工程课程学习与认知支架]]
+- 原创结课项目：[[AI-Agent工程-结课项目]]
 
 ## 7. 学习记录
 
 | 日期 | 卡片/作业 | 闭卷结果 | 失败样例 | 下一步 |
 | :--- | :--- | :--- | :--- | :--- |
 | | | | | |
-

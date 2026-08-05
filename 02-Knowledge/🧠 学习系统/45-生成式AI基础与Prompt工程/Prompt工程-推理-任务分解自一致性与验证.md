@@ -7,7 +7,7 @@ status: completed
 difficulty: intermediate
 concept: ["任务分解", "自一致性", "外部验证"]
 prerequisites: ["Prompt工程-需求-任务规格与结构化输出", "Prompt工程-上下文学习-示例选择与提示敏感性"]
-related: ["Prompt评测-实验-指标数据集与误差分析", "生成式AI-可靠性-幻觉校准与事实核验", "46-AI Agent工程/Agent推理与规划-任务分解反思与恢复"]
+related: ["Prompt评测-实验-指标数据集与误差分析", "生成式AI-可靠性-幻觉校准与事实核验", "AI-Agent-规划状态与工作流编排"]
 flow: knowledge
 kind: concept
 source: "CMU 17-630 Weeks 3 and 6, Assignment 4; UC Berkeley CS294/194-196 LLM Reasoning lecture"
@@ -124,9 +124,9 @@ print({"answer": winner, "consistency": consistency})
 ## 9. 相关知识点与 Obsidian 双链建议
 
 - **上游**：[[Prompt工程-需求-任务规格与结构化输出]]。
-- **下游**：[[46-AI Agent工程/Agent推理与规划-任务分解反思与恢复|Agent 规划]]。
+- **下游**：[[46-AI Agent工程/AI-Agent-规划状态与工作流编排|Agent 规划与工作流]]。
 - **横向**：[[Prompt增强-RAG-检索生成与可追溯回答]]。
-- **应用**：[[生成式AI与Prompt工程-作业04-Prompt组合]]。
+- **应用**：[[生成式AI与Prompt工程-作业04-推理与任务分解]]。
 
 ## 10. 闭卷复现任务
 
@@ -135,6 +135,11 @@ print({"answer": winner, "consistency": consistency})
 - [ ] 计算多步骤成功率。
 - [ ] 区分自一致性与外部验证。
 - [ ] 设计失败后的重试、回退或人工接管。
+- [ ] 判断一个任务是否值得分解。
+- [ ] 区分模型自检与确定性校验。
+- [ ] 为某一步设置最大重试次数。
+- [ ] 解释分解为什么可能放大累计失败。
+- [ ] 说出一个外部验证的真实应用。
 
 ## 11. 自测题：5 道
 
@@ -183,4 +188,3 @@ print({"answer": winner, "consistency": consistency})
 - 多阶段 Prompt 为什么需要逐步验证？::各步骤错误会传播，端到端成功率近似为各步成功率的乘积。
 - 自一致性解决什么问题？::通过多次独立采样和聚合降低随机推理错误，但不能消除共同偏差。
 - 最可靠的验证器通常是什么？::与任务真值直接相连的外部机制，如程序、单元测试、数据库、规则或人工审核。
-

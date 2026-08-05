@@ -7,7 +7,7 @@ status: completed
 difficulty: intermediate
 concept: [随机图, 优先连接, 配置模型]
 prerequisites: [图与网络基础, 度分布余度与幂律估计, 聚类系数与网络距离]
-related: [小世界与去中心化搜索, 社区发现与模块度, SIR网络流行病模型]
+related: [小世界与去中心化搜索, 社区发现-模块度与谱松弛, SIR网络流行病模型]
 flow: knowledge
 kind: concept
 source: "Stanford CS224W 2017 HW1-Q1, HW2-Q1/Q3.4 and lecture videos 2/3/14"
@@ -59,41 +59,81 @@ BA 在线性优先连接下产生渐近 $P(k)\propto k^{-3}$。
 
 ### 4. 常见变体与适用条件
 - $G(n,m)$ 固定边数；$G(n,p)$ 固定期望边数。
-- stub matching 允许自环/重边；若强行简化会改变度序列。
+- **原始配置多重图**：随机配对全部 stub，允许自环/重边；适合推导 $E[A_{ij}]$ 与自环期望。
+- **HW2-Q1.1(a) 的简单图样本**：一次完整配对若出现任一自环或重边，必须丢弃整张图并重新随机配对；不能只删非法边，也不能把多重边合并，因为二者都会破坏度序列。
+- **HW2-Q1.1(b)(c) 的理论分析**：题目为简化推导，明确允许自环/重边；此处使用原始配置模型口径。
+- **HW2-Q1.2 的双边交换**：只接受不会产生自环/重边的交换，从简单实证图出发保持每个节点度数。
 - NetworkX `watts_strogatz_graph` 与 HW1“环格加 4000 条随机非边”不是同一生成过程。
+
+### 5. HW2 配置模型的精确口径与公式
+设总 stub 数为 $2m=\sum_i d_i$。
+
+1. 节点 $i$ 的任一 stub 与节点 $j$ 的某个 stub 配对的机会给出
+   $$E[X_{ij}]=\frac{d_id_j}{2m-1},\qquad i\ne j,$$
+   其中 $X_{ij}$ 是 $i,j$ 间多重边条数。在稀疏、该期望很小时，存在至少一条边的概率近似 $d_id_j/(2m-1)$；不能在高期望区把“期望条数”直接叫作概率。
+2. 节点 $i$ 内部有 $\binom{d_i}{2}$ 对 stub，每对以 $1/(2m-1)$ 配在一起，因此
+   $$E[L]=\sum_i\frac{\binom{d_i}{2}}{2m-1}
+   =\frac{\sum_i(d_i^2-d_i)}{2(2m-1)}.$$
+   写成经验矩：
+   $$E[L]=\frac{n(\langle d^2\rangle-\langle d\rangle)}{2(n\langle d\rangle-1)}
+   \approx\frac{\langle d^2\rangle-\langle d\rangle}{2\langle d\rangle}.$$
+   当度矩有限时 $E[L]=O(1)$，而边数为 $O(n)$，所以自环占比趋近 0；这不等于自环数必然为 0。
+3. 整图拒绝重采样得到“原始配置模型条件于图为简单”的分布。度序列高度异质时接受率可能很低；此时应报告尝试次数，不能悄悄改成删边。
 
 ## 6. 推导思路和思想来源
 - ER 用独立性建立无结构基线。
 - WS 的少量捷径显著缩短路径，同时大部分局部三角形仍保留。
 - BA 的“增长 + 按度抽样”形成富者愈富。
 - 配置模型通过固定 stub 数严格控制度，适合检验高阶结构是否超出度序列。
+- HW2 特别训练“同一模型的两个口径”：实验抽样要求简单图，概率/期望推导允许非简单图；先读子题条件再选口径。
 
 ## 7. 例子：基础 → 中等 → 实际应用
 ### 例子 1：基础例子（可手算）
 $G(5,0.5)$ 有 $E[m]=0.5\binom52=5$，期望度 2，期望聚类约 0.5。
 
 ### 例子 2：中等例子
-度序列 $(2,2,1,1)$ 有 6 个 stub；一次配对可能产生简单路径，也可能产生自环/重边。拒绝非法配对会改变“均匀抽样”过程，必须说明算法。
+度序列 $(2,2,1,1)$ 有 6 个 stub、$m=3$。原始模型中前两个度为 2 的节点间期望多重边数为 $4/5$；期望自环数为 $[\binom22+\binom22]/5=2/5$。HW2-Q1.1(a) 若出现自环/重边，要拒绝**整张样本**重抽；Q1.1(b)(c) 则保留非简单口径做上述推导。
 
 ### 例子 3：实际应用例子（可运行代码）
 ```python
+import random
 import networkx as nx
 
-n = 200
-er = nx.gnp_random_graph(n, 0.04, seed=7)
-ws = nx.watts_strogatz_graph(n, 8, 0.05, seed=7)
-ba = nx.barabasi_albert_graph(n, 4, seed=7)
-for name, graph in [("ER", er), ("WS", ws), ("BA", ba)]:
-    largest = graph.subgraph(max(nx.connected_components(graph), key=len))
-    print(name, round(nx.average_clustering(graph), 3),
-          round(nx.average_shortest_path_length(largest), 3),
-          max(dict(graph.degree()).values()))
-# 输出随固定 NetworkX 版本确定；比较聚类、路径和最大度，而非追求固定数值。
+def simple_configuration_sample(degrees, seed=7, max_attempts=10_000):
+    rng = random.Random(seed)
+    stubs = [node for node, degree in enumerate(degrees) for _ in range(degree)]
+    if len(stubs) % 2:
+        raise ValueError("度数和必须为偶数")
+    for attempt in range(1, max_attempts + 1):
+        shuffled = stubs.copy()
+        rng.shuffle(shuffled)
+        edges = [tuple(sorted(shuffled[index:index + 2]))
+                 for index in range(0, len(shuffled), 2)]
+        if any(left == right for left, right in edges):
+            continue
+        if len(set(edges)) != len(edges):
+            continue
+        graph = nx.Graph(edges)
+        graph.add_nodes_from(range(len(degrees)))
+        assert [graph.degree(node) for node in range(len(degrees))] == degrees
+        return graph, attempt
+    raise RuntimeError("拒绝采样未在上限内得到简单图")
+
+graph, attempts = simple_configuration_sample([2, 2, 2, 2], seed=7)
+print(sorted(graph.edges()), attempts)
+print([graph.degree(node) for node in graph])
+# 输出为一个 4 节点环的某种标号；度序列严格保持 [2,2,2,2]。
 ```
 
 ## 8. 常见误区和易混概念
 ### 误区 1：度分布相同意味着结构相同
 - **为什么错**：配置模型保度后会破坏三角形、社区和同质性。
+
+### 误区 2：HW2 的配置模型始终允许自环/重边
+- **为什么错**：Q1.1(a) 要求简单图并拒绝整张非法样本；只有 Q1.1(b)(c) 的理论推导明确放宽此限制。
+
+### 误区 3：把非法边删除即可
+- **为什么错**：删除自环或合并多重边会降低相关节点度数，样本不再满足给定度序列。
 
 | 模型 | 保留/机制 | 能解释 | 主要缺陷 |
 | :--- | :--- | :--- | :--- |
@@ -104,7 +144,7 @@ for name, graph in [("ER", er), ("WS", ws), ("BA", ba)]:
 
 ## 9. 相关知识点与 Obsidian 双链建议
 - **上游**：[[度分布余度与幂律估计]]。
-- **下游**：[[../03-社会结构与社区/社区发现与模块度]]、[[../05-传播与影响力/SIR网络流行病模型]]。
+- **下游**：[[../03-社会结构与社区/社区发现-模块度与谱松弛]]、[[../05-传播与影响力/SIR网络流行病模型]]。
 - **横向**：[[小世界与去中心化搜索]]。
 - **应用**：HW1-Q1、HW2-Q1/Q3.4、HW3-Q3。
 
@@ -116,6 +156,8 @@ for name, graph in [("ER", er), ("WS", ws), ("BA", ba)]:
 - [ ] 手算配置模型 stub 数。
 - [ ] 区分 $G(n,p)$ 与 $G(n,m)$。
 - [ ] 解释简化配置图的偏差。
+- [ ] 区分 HW2-Q1.1(a) 与 Q1.1(b)(c) 的口径。
+- [ ] 推导 $E[X_{ij}]$ 与 $E[L]$。
 - [ ] 复现代码。
 - [ ] 为模块度选择空模型。
 - [ ] 为 HW1 明确自写生成过程。
@@ -129,16 +171,20 @@ for name, graph in [("ER", er), ("WS", ws), ("BA", ba)]:
    > [!question]- 多数局部格边保留三角形，少数远程捷径缩短跨区路径。
 4. BA 只加优先连接但不增长会怎样？ #自测题/中等
    > [!question]- 不是标准 BA，无法得到其增长过程推导的幂律结论。
-5. 为什么保度双边交换是更干净的简单图零模型？ #自测题/较难
-   > [!question]- 它保持每个节点度且可避免自环重边，但需足够混合并检查交换链偏差。
+5. 为什么 HW2-Q1.1(a) 不能删除非法边后继续？ #自测题/较难
+   > [!question]- 删除或合并会改变端点度数；应拒绝整张样本，重新排列全部 stub。
 
 ## 12. 我的主动回忆区
 ### 我的闭卷复述
-> 
+> 不看上文，用一句话分别解释 ER、WS、BA、配置模型控制了什么；再说明 HW2 配置模型为何有“实验简单图/理论多重图”两种口径。
 ### 我的推导复现
-> 
+> 从“一个 stub 的伙伴在其余 $2m-1$ 个 stub 中均匀选择”推出 $E[X_{ij}]$ 和 $E[L]$。
 ### 我的错误与卡点
-- 
+- [ ] 我把期望边条数直接当概率 → 回看第 5.1 节。
+- [ ] 我删除非法边而非拒绝整图 → 重写第 7.3 节采样器。
+- [ ] 我混淆 $G(n,p)$ 与 $G(n,m)$ → 回看第 5.4 节。
+### 失败后的回流
+- 模型辨析错：第 8 节；HW2 口径错：第 5 节；代码错：第 7.3 节。
 ### 下次复习日期
 - [ ] 明天
 - [ ] 3 天后
@@ -154,3 +200,4 @@ for name, graph in [("ER", er), ("WS", ws), ("BA", ba)]:
 ## 🃏 Anki 卡片
 - 配置模型为何适合作为度保持零模型？::它固定每个节点的 stub 数，从而固定度序列，并随机化更高阶结构。
 - WS 小世界模型的核心机制是什么？::保留局部规则格产生高聚类，并加入少量远程捷径显著缩短路径。
+- HW2-Q1.1 的配置模型何时拒绝样本？::实验子题 (a) 中整图出现任何自环或重边就全部拒绝重抽；(b)(c) 为理论推导明确允许非简单图。

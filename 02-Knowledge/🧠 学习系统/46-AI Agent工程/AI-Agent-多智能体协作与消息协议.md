@@ -10,7 +10,8 @@ prerequisites: [工具调用, 工作流编排]
 related: [AutoGen, Agent通信, 安全评测]
 flow: knowledge
 kind: concept
-source: "UC Berkeley CS 194/294-196 F24 AutoGen and multi-agent topics; Berkeley Lab 01 public description"
+source: "UC Berkeley CS 194/294-196 F24 multi-agent and Lab 01; Microsoft AI Agents for Beginners Lesson 8; Datawhale Hello-Agents Chapters 1.4 and 13"
+source_urls: ["https://github.com/microsoft/ai-agents-for-beginners/tree/main/08-multi-agent", "https://github.com/datawhalechina/hello-agents/tree/main/docs/chapter1", "https://github.com/datawhalechina/hello-agents/tree/main/docs/chapter13"]
 anki_deck: "46-AI Agent工程::06-多智能体"
 anki_tags: [46-AI-Agent工程, 多智能体, 消息协议]
 ---
@@ -158,7 +159,7 @@ print(aggregator(extractor(start)))
 - [[AI-Agent-安全威胁建模与系统评测]]：跨角色信任、权限与整体指标。
 
 ### 横向关联
-- [[分布式系统-消息传递]]（待创建）↔ 多智能体：都需协议、超时、幂等与故障处理。
+- **待创建先修补丁：分布式系统消息传递** ↔ 多智能体：都需协议、超时、幂等与故障处理。
 
 ### 应用场景
 - [[Berkeley-Lab01-Restaurant-Review-Pipeline-知识点映射]]：AutoGen 是实现，角色协议是本质。
@@ -237,4 +238,3 @@ print(aggregator(extractor(start)))
 - 多智能体应按什么拆分？::按可验证职责、输入输出工件、上下文与最小权限拆分，而不是按人格数量拆分。
 - 为什么多 Agent 质量提高仍可能不划算？::协调、token、延迟和新增故障面可能超过质量收益，必须比较系统效用而非只看成功率。
 - Agent 间为何只共享最小必要状态？::降低 token、隐私泄漏、角色污染、间接注入传播和无关上下文干扰。
-

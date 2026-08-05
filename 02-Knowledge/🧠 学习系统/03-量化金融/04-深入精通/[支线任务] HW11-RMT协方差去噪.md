@@ -4,8 +4,8 @@ date: 2026-07-31
 type: concept
 course: "03-量化金融"
 importance: "A"
-prerequisites: ["[[马科维茨投资组合理论]]", "[[PCA主成分分析]]"]
-related: ["[[实盘策略风控模块]]", "[[高级协方差缩减(Shrinkage)]]"]
+prerequisites: ["[[马科维茨有效前沿|马科维茨投资组合理论]]", "[[PCA主成分分析]]"]
+related: ["[[实盘风控|实盘策略风控模块]]", "[[协方差去噪与随机矩阵理论 RMT (Covariance Denoising & Marchenko-Pastur Law in AFML)|高级协方差缩减(Shrinkage)]]"]
 flow: knowledge
 status: learning
 tags: [学习, 核心概念, 实战作业, 量化金融, RMT]
@@ -106,19 +106,54 @@ $$
 - **操作**：信号特征值只有 2.0。噪音特征值 0.6 和 0.4 都小于 0.8。我们将它们替换为均值 $(0.6 + 0.4)/2 = 0.5$。
 - **结果**：去噪后的特征值为 $\tilde{\lambda} = [2.0, 0.5, 0.5]$。迹依旧是 3（信息总量守恒），但低优特征的随机波动被抹平了。
 
-### 例子 2：中等（Lab 代码架构要求）
-- **接口设计**：
+### 例子 2：中等（可运行的特征值均值截断）
+- **接口设计**：阈值 `lambda_max` 由外部 MP 拟合步骤给出，本函数只负责均值截断与重构。
 ```python
-def get_PCA_denoised_cov(cov_matrix: pd.DataFrame, T: int) -> pd.DataFrame:
-    # 1. cov to corr
-    # 2. eigen decomposition
-    # 3. fit MP distribution to find sigma^2 and lambda_max
-    # 4. mean-clip noise eigenvalues
-    # 5. reconstruct corr, fix diagonal to 1
-    # 6. corr to cov
-    return denoised_cov
+import numpy as np
+import pandas as pd
+
+
+def get_pca_denoised_cov(cov_matrix, lambda_max):
+    cov = np.asarray(cov_matrix, dtype=float)
+    if cov.ndim != 2 or cov.shape[0] != cov.shape[1]:
+        raise ValueError('cov_matrix must be square')
+    if not np.allclose(cov, cov.T, atol=1e-12):
+        raise ValueError('cov_matrix must be symmetric')
+
+    std = np.sqrt(np.diag(cov))
+    if np.any(std <= 0):
+        raise ValueError('all variances must be positive')
+    corr = cov / np.outer(std, std)
+
+    eigenvalues, eigenvectors = np.linalg.eigh(corr)
+    noise = eigenvalues <= lambda_max
+    if noise.any():
+        eigenvalues[noise] = eigenvalues[noise].mean()
+
+    denoised_corr = eigenvectors @ np.diag(eigenvalues) @ eigenvectors.T
+    denoised_corr = (denoised_corr + denoised_corr.T) / 2.0
+    scale = np.sqrt(np.diag(denoised_corr))
+    denoised_corr = denoised_corr / np.outer(scale, scale)
+    np.fill_diagonal(denoised_corr, 1.0)
+    denoised_cov = denoised_corr * np.outer(std, std)
+    return pd.DataFrame(
+        denoised_cov,
+        index=getattr(cov_matrix, 'index', None),
+        columns=getattr(cov_matrix, 'columns', None),
+    )
+
+
+sample_cov = pd.DataFrame([
+    [1.00, 0.99, 0.98],
+    [0.99, 1.00, 0.97],
+    [0.98, 0.97, 1.00],
+])
+denoised = get_pca_denoised_cov(sample_cov, lambda_max=0.10)
+assert np.allclose(np.diag(denoised), np.diag(sample_cov))
+assert np.linalg.cond(denoised) < np.linalg.cond(sample_cov)
+print(f'condition: {np.linalg.cond(sample_cov):.2f} -> {np.linalg.cond(denoised):.2f}')
 ```
-- **测试标准 (Testing Criteria)**：输入一个高度共线性的协方差矩阵，测试其去噪前后的**条件数（Condition Number，即最大特征值除以最小特征值）**。合格的去噪应使条件数从 $10^5$ 级别暴降至 $10^1$ 级别，保证逆矩阵计算极其稳定。
+- **测试标准 (Testing Criteria)**：输入高度共线性的协方差矩阵，验证输出对称、保留原始方差、为正半定，并记录去噪前后的条件数。条件数应在指定样例中改善，但不得预设所有真实数据都能从 $10^5$ 降到 $10^1$。
 
 ### 例子 3：真实的量化应用落地
 - **场景**：计算标普 500 成分股（$N=500$）在过去 2 年（$T=504$）的协方差阵构建最小方差组合。
@@ -145,12 +180,12 @@ def get_PCA_denoised_cov(cov_matrix: pd.DataFrame, T: int) -> pd.DataFrame:
 
 ## 9. 相关知识点与 Obsidian 双链建议
 ### 上游依赖
-- [[马科维茨投资组合理论]]：为什么我们需要对协方差矩阵求逆。
+- [[马科维茨有效前沿|马科维茨投资组合理论]]：为什么我们需要对协方差矩阵求逆。
 - [[PCA主成分分析]]：特征值分解提取主要信息因子的基石。
 
 ### 下游延伸
-- [[高级协方差缩减(Shrinkage)]]：Ledoit-Wolf Shrinkage 等其他替代或互补的协方差处理方案。
-- [[实盘策略风控模块]]：风控系统的实际工程整合。
+- [[协方差去噪与随机矩阵理论 RMT (Covariance Denoising & Marchenko-Pastur Law in AFML)|高级协方差缩减(Shrinkage)]]：Ledoit-Wolf Shrinkage 等其他替代或互补的协方差处理方案。
+- [[实盘风控|实盘策略风控模块]]：风控系统的实际工程整合。
 
 ---
 

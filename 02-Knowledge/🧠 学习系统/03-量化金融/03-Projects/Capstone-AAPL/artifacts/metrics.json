@@ -1,0 +1,12 @@
+{
+  "start_date": "2024-01-02",
+  "end_date": "2024-05-20",
+  "observations": 100,
+  "fast_window": 5,
+  "slow_window": 20,
+  "cost_bps": 10.0,
+  "total_return": -0.03620185895144623,
+  "max_drawdown": -0.04434491370297278,
+  "annualized_volatility": 0.05762524123354717,
+  "total_turnover": 6.0
+}

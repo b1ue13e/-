@@ -5,8 +5,8 @@ type: concept
 course: "03-量化金融"
 importance: "A"
 tags: [学习, 核心概念, 量化实战, 过拟合审计]
-prerequisites: ["[[交叉验证]]", "[[夏普比率]]", "[[多重测试困境]]"]
-related: ["[[实盘策略上架规范]]"]
+prerequisites: ["[[时间序列验证|交叉验证]]", "[[🧠 夏普比率 (Sharpe Ratio)|夏普比率]]", "[[PBO回测过拟合概率与Deflated Sharpe Ratio (Probability of Backtest Overfitting)|多重测试困境]]"]
+related: ["[[实盘风控|实盘策略上架规范]]"]
 status: learning
 flow: knowledge
 kind: concept
@@ -101,14 +101,35 @@ kind: concept
 
 ### 例子 2：中等难度代码架构 (Purging 与 Embargo 边界判定)
 - **场景**：实现索引过滤过滤逻辑。假设测试集的时间范围是 `[test_start, test_end]`。
-- **过滤核心伪代码**：
-  ```python
-  # Purging: 剔除受测试集过去影响的训练样本（考虑标签生成窗口 h）
-  train = train[(train.index < test_start - h) | (train.index > test_end)]
-  
-  # Embargo: 剔除测试集未来的受影响样本（考虑市场余震窗口 e）
-  train = train[(train.index < test_start - h) | (train.index > test_end + e)]
-  ```
+- **过滤核心可运行示例**：
+
+```python
+import pandas as pd
+
+
+def purge_and_embargo(index, test_start, test_end, label_horizon, embargo):
+    """保留与测试标签窗口不重叠、且不落入测试后隔离区的训练日期。"""
+    purge_start = test_start - label_horizon
+    embargo_end = test_end + embargo
+    keep = (index < purge_start) | (index > embargo_end)
+    return index[keep]
+
+
+all_dates = pd.date_range('2025-01-01', periods=20, freq='D')
+filtered = purge_and_embargo(
+    index=all_dates,
+    test_start=pd.Timestamp('2025-01-08'),
+    test_end=pd.Timestamp('2025-01-10'),
+    label_horizon=pd.Timedelta(days=2),
+    embargo=pd.Timedelta(days=2),
+)
+
+assert filtered.max() == pd.Timestamp('2025-01-20')
+assert not filtered.isin(pd.date_range('2025-01-06', '2025-01-12')).any()
+print(filtered)
+```
+
+> **边界说明**：这是日期边界的最小演示，不等同于完整 CPCV。真实任务必须使用每条样本的标签起止时间判断区间是否相交，不能只假设所有标签窗口等长。
 - **评注**：这几行代码是整个过拟合审计实验中最容易写错导致 Bug 的地方。
 
 ### 例子 3：量化实战应用 (PBO 评估矩阵)
@@ -135,16 +156,16 @@ kind: concept
 
 ## 9. 相关知识点与 Obsidian 双链建议
 ### 上游依赖
-- [[交叉验证]]：CPCV 的基础统计学来源。
-- [[夏普比率]]：目标函数的默认评价指标。
-- [[多重测试困境]]：解释了为什么要进行 PBO 测算的根本数学动机。
+- [[时间序列验证|交叉验证]]：CPCV 的基础统计学来源。
+- [[🧠 夏普比率 (Sharpe Ratio)|夏普比率]]：目标函数的默认评价指标。
+- [[PBO回测过拟合概率与Deflated Sharpe Ratio (Probability of Backtest Overfitting)|多重测试困境]]：解释了为什么要进行 PBO 测算的根本数学动机。
 
 ### 下游延伸
-- [[实盘策略上架规范]]：PBO 审计报告是策略从沙盒走向实盘的必查附件。
-- [[Deflated Sharpe Ratio]]：另一种通过降阶夏普比率来惩罚过拟合的统计方法。
+- [[实盘风控|实盘策略上架规范]]：PBO 审计报告是策略从沙盒走向实盘的必查附件。
+- [[PBO回测过拟合概率与Deflated Sharpe Ratio (Probability of Backtest Overfitting)|Deflated Sharpe Ratio]]：另一种通过降阶夏普比率来惩罚过拟合的统计方法。
 
 ### 平级对比
-- [[Walk-Forward Optimization (WFO)]]：传统的非重叠滚动验证方法，与 CPCV 互为对比。
+- [[时间序列验证|Walk-Forward Optimization (WFO)]]：传统的非重叠滚动验证方法，与 CPCV 互为对比。
 
 ---
 
@@ -215,6 +236,6 @@ kind: concept
 ---
 
 ## 13. 给 Obsidian 的归档建议
-- **建议目录**：`F:\-\02-Knowledge\🧠 学习系统\03-量化金融\18-实战作业说明书\`
+- **建议目录**：`03-Projects/03-量化金融/作业映射/`（相对 Obsidian 库根目录）
 - **建议链接**：链接至对应学科的 `🗺️ 学习路径.md` 与主线 MOC。
 - **建议标签**：`#学习 #核心概念 #03-量化金融 #过拟合审计`

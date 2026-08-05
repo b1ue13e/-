@@ -26,7 +26,7 @@ source_url: "https://ocw.mit.edu/courses/14-384-time-series-analysis-fall-2013/p
 
 | MIT 14.384 讲义 | 主题 | 对应笔记卡 | 前置 |
 | :--- | :--- | :--- | :--- |
-| Lec 1 | Stationarity, lag operator, ARMA, covariance structure | [[平稳性]]、[[ARMA模型（深挖笔记）]]、[[自相关函数ACF（深挖笔记）]] | 随机过程基础 |
+| Lec 1 | Stationarity, lag operator, ARMA, covariance structure | [[平稳性]]、[[ARMA模型]]、[[自相关函数ACF]] | 随机过程基础 |
 | Lec 2-3 | Limit theorems, OLS, HAC | [[时间序列参数估计 (OLS, Yule-Walker, MLE)]]、[[动态回归与ARIMAX]] | 渐近理论 |
 | Lec 4-5 | Spectrum, spectrum estimation, information criteria | [[时间序列核心公式清单]]（谱分析为进阶扩展） | 傅里叶基础 |
 | Lec 6 | GMM | 广义矩方法（进阶扩展） | 矩条件 |

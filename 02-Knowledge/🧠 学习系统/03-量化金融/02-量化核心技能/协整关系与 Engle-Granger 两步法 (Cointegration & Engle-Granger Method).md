@@ -150,7 +150,7 @@ EG 两步法：① OLS 回归 $y_t=\alpha+\beta x_t+e_t$；② 对残差 $\hat e
 - [[回测框架与无泄漏实验]]：策略验证
 
 ### 横向关联
-- [[协整关系与Engle-Granger两步法]] ↔ 本卡：细节卡
+- [[协整关系与 Engle-Granger 两步法 (Cointegration & Engle-Granger Method)|协整关系与Engle-Granger两步法]] ↔ 本卡：细节卡
 
 ### 应用场景
 - 配对交易策略
@@ -239,6 +239,6 @@ EG 两步法：① OLS 回归 $y_t=\alpha+\beta x_t+e_t$；② 对残差 $\hat e
 ## 13. 给 Obsidian 的归档建议
 
 - **适合文件夹**：`02-Knowledge/🧠 学习系统/03-量化金融/`
-- **关联已有笔记**：[[协整关系与Engle-Granger两步法]] [[回测框架与无泄漏实验]]
+- **关联已有笔记**：[[协整关系与 Engle-Granger 两步法 (Cointegration & Engle-Granger Method)|协整关系与Engle-Granger两步法]] [[回测框架与无泄漏实验]]
 - **建议标签**：`#学习` `#量化金融`
 - **拆分建议**：不拆分

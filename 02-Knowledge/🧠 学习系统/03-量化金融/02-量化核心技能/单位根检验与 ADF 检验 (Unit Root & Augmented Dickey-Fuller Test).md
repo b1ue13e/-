@@ -204,7 +204,7 @@ if result[1] < 0.05:
 ## 7.5 💥 课本挂载与工业级实战模块 (Textbook Mapping & Production Lab)
 
 ### 7.5.5
-> 🔓 **作业解锁前置条件**：学完 [[收益率与对数收益率]] + [[02-Knowledge/🧠 学习系统/03-量化金融/02-量化核心技能/单位根检验]] 即可正式解锁本 Challenge 实战！
+> 🔓 **作业解锁前置条件**：学完 [[收益率与对数收益率]] + [[单位根检验与 ADF 检验 (Unit Root & Augmented Dickey-Fuller Test)|单位根检验]] 即可正式解锁本 Challenge 实战！
 > 💡 **解锁指引**：理解 单位根检验 的核心定义与基本推导逻辑后即可解锁。
 
  🧪 拓展实验与李宏毅式实战 Challenge 题 (Lab Assignment: 单位根检验 工业级实战 challenge)
@@ -258,8 +258,8 @@ if result[1] < 0.05:
 下游延伸
 
 - [[单位根检验与 ADF 检验 (Unit Root & Augmented Dickey-Fuller Test)|Zivot-Andrews 检验]]：进一步延伸拓展该知识点的应用场景与模型构建。
-- [[02-Knowledge/🧠 学习系统/03-量化金融/02-量化核心技能/协整]]：进一步延伸拓展该知识点的应用场景与模型构建。
-- [[02-Knowledge/🧠 学习系统/03-量化金融/02-量化核心技能/ARIMA模型]]：进一步延伸拓展该知识点的应用场景与模型构建。
+- [[协整关系与 Engle-Granger 两步法 (Cointegration & Engle-Granger Method)|协整]]：进一步延伸拓展该知识点的应用场景与模型构建。
+- [[量化金融-平稳性与单位根检验实战|ARIMA模型]]：进一步延伸拓展该知识点的应用场景与模型构建。
 
 横向关联
 
@@ -369,7 +369,7 @@ if result[1] < 0.05:
 ## 13. 给 Obsidian 的归档建议
 
 - **适合文件夹**：`02-Knowledge/🧠 学习系统/03-量化金融/02-量化核心技能/`
-- **建议双链**：[[ACF 自相关函数与 PACF 偏自相关函数 (Autocorrelation & Partial Autocorrelation Functions)|ACF与PACF]]、[[02-Knowledge/🧠 学习系统/03-量化金融/02-量化核心技能/ARIMA模型]]、[[02-Knowledge/🧠 学习系统/03-量化金融/02-量化核心技能/协整]]
+- **建议双链**：[[ACF 自相关函数与 PACF 偏自相关函数 (Autocorrelation & Partial Autocorrelation Functions)|ACF与PACF]]、[[量化金融-平稳性与单位根检验实战|ARIMA模型]]、[[协整关系与 Engle-Granger 两步法 (Cointegration & Engle-Granger Method)|协整]]
 - **标签**：`#学习` `#量化金融` `#时间序列` `#单位根检验` `#ADF检验` `#伪回归` `#平稳性`
 
 ---

@@ -5,8 +5,8 @@ type: study
 topic: "量化实战作业"
 course: "03-量化金融"
 importance: "A"
-prerequisites: ["[[VaR与CVaR基础]]", "[[肥尾分布]]", "[[GARCH模型实战]]"]
-related: ["[[量化风控系统级部署]]", "[[尾部风险对冲策略]]"]
+prerequisites: ["[[量化金融-风险管理-期望损失分解与ES理论|VaR与CVaR基础]]", "[[极值理论 EVT 与 POT 超过门槛模型 (Extreme Value Theory & POT Model)|肥尾分布]]", "[[量化金融-波动率-GARCH家族模型|GARCH模型实战]]"]
+related: ["[[实盘风控|量化风控系统级部署]]", "[[极值理论 EVT 与 POT 超过门槛模型 (Extreme Value Theory & POT Model)|尾部风险对冲策略]]"]
 status: learning
 flow: knowledge
 tags: [学习, 实战作业, 风控, EVT, 尾部风险]
@@ -132,12 +132,12 @@ $$
 
 ## 9. 相关知识点与 Obsidian 双链建议
 ### 上游依赖
-- [[VaR与CVaR基础]]：极值理论是对 VaR 指标的外推增强。
-- [[GARCH模型实战]]：EVT 数据预处理的必备前置插件。
+- [[量化金融-风险管理-期望损失分解与ES理论|VaR与CVaR基础]]：极值理论是对 VaR 指标的外推增强。
+- [[量化金融-波动率-GARCH家族模型|GARCH模型实战]]：EVT 数据预处理的必备前置插件。
 
 ### 下游延伸
-- [[压力测试与情景分析]]：利用 EVT 拟合出的参数生成极其恶劣的市场情景。
-- [[尾部风险对冲策略]]：根据 EVT 计算出的极值概率，精准购买 OTM 虚值期权进行对冲。
+- [[极值理论 EVT 与 POT 超过门槛模型 (Extreme Value Theory & POT Model)|压力测试与情景分析]]：利用 EVT 拟合出的参数生成极其恶劣的市场情景。
+- [[极值理论 EVT 与 POT 超过门槛模型 (Extreme Value Theory & POT Model)|尾部风险对冲策略]]：根据 EVT 计算出的极值概率，精准购买 OTM 虚值期权进行对冲。
 
 ---
 

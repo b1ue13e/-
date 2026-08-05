@@ -17,6 +17,9 @@ anki_tags: [quant, K02, verified_route]
 ---
 # OHLCV字段清洗与复权
 
+> [!info] 主线导航
+> [[🗺️ 量化金融学习路径|返回路径]] · **Week 1 / K02** · 上一张 [[收益率与对数收益率]] · 下一张 [[时间索引与频率（量化）]]
+
 > **K02 目标**：不靠阅读完成度，而是通过定义、边界、反例和可运行断言证明掌握。
 
 ## 0. 先测再学
@@ -70,8 +73,8 @@ assert raw_return == -0.5  # 拆股反例，不能解释为财富损失
 
 - [[02-Knowledge/🧠 学习系统/03-量化金融/01-夯实基础/收益率与对数收益率]]
 - [[02-Knowledge/🧠 学习系统/03-量化金融/01-夯实基础/时间索引与频率（量化）]]
-- [[02-Knowledge/🧠 学习系统/03-量化金融/03-策略开发与实战/前视偏差]]
-- [[🧩 Qlib 项目知识点—作业—验收路线图]]
+- [[不要骗自己：什么叫前视偏差 (Look-Ahead Bias)]]
+- [[00-课程说明与先修诊断]]
 
 ---
 
@@ -95,4 +98,4 @@ assert raw_return == -0.5  # 拆股反例，不能解释为财富损失
 光看公式没用，跑通代码才是真的！利用下方组件进行交互或直接跑通实盘代码：
 
 ### 💻 实战靶场
-- 👉 [点击打开 Jupyter: 02_你的第一个量化实验](file:///F:/笔记代码/量化金融/quant-for-beginners/notebooks/phase1_intro/02_你的第一个量化实验.ipynb)
+- [打开 Notebook：02 第一个量化实验](https://github.com/datawhalechina/quant-for-beginners/blob/main/notebooks/phase1_intro/02_你的第一个量化实验.ipynb)（扩展材料，见 [[📦 外部实验资产索引]]）

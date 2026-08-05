@@ -380,7 +380,7 @@ $$\boldsymbol{\Sigma}_{shrink} = \delta \mathbf{F} + (1 - \delta) \mathbf{S}$$
 光看公式没用，跑通代码才是真的！利用下方组件进行交互或直接跑通实盘代码：
 
 ### 💻 实战靶场
-- 👉 [点击打开 Jupyter: 04_多标的组合与相关性](file:///F:/笔记代码/量化金融/quant-for-beginners/notebooks/phase2_intro/04_多标的组合与相关性.ipynb)
+- [打开 Notebook：多标的组合与相关性](https://github.com/datawhalechina/quant-for-beginners/blob/main/notebooks/phase2_intro/04_多标的组合与相关性.ipynb)
 
 
 ## 💡 直觉理解 (来自 quant-for-beginners)

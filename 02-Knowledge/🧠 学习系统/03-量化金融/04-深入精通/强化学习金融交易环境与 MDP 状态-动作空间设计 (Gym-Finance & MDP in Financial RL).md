@@ -60,7 +60,7 @@ downstream:
 ## 3. 学它之前需要哪些前置知识？
 
 1. **[[强化学习金融交易环境与 MDP 状态-动作空间设计 (Gym-Finance & MDP in Financial RL)|强化学习]]**：理解 MDP 马尔可夫决策过程五元组 $(S, A, P, R, \gamma)$、状态价值 $V(s)$ 与动作价值 $Q(s, a)$。
-2. **[[下注规模]]**：理解动态仓位 $a_t \in [-1, 1]$ 与 Kelly 公式。
+2. **[[动态下注规模与凯利公式 (Bet Sizing & Kelly Criterion in AFML)|下注规模]]**：理解动态仓位 $a_t \in [-1, 1]$ 与 Kelly 公式。
 3. **最小必要背景（OpenAI Gym / Gymnasium API 规范）**：
    > 标准环境交互循环：
    > `observation, reward, terminated, truncated, info = env.step(action)`
@@ -290,7 +290,7 @@ print(f"获得的单期 Reward: {reward:+.6f} | 结束状态: {term or trunc}")
 - **策略收敛曲线 (Episode Reward Convergence)**：评估 PPO/DQN 训练中 Episode Reward 是否稳定上升。
 
 ### 7.5.5
-> 🔓 **作业解锁前置条件**：学完 [[下注规模]] + [[止损与仓位]] + [[强化学习金融交易环境与 MDP 状态-动作空间设计 (Gym-Finance & MDP in Financial RL)|强化学习金融交易环境设计]] 即可正式解锁本 Challenge 实战！
+> 🔓 **作业解锁前置条件**：学完 [[动态下注规模与凯利公式 (Bet Sizing & Kelly Criterion in AFML)|下注规模]] + [[动态止损机制与风险平价仓位管理 (Stop-Loss Mechanisms & Risk-Parity Position Sizing)|止损与仓位]] + [[强化学习金融交易环境与 MDP 状态-动作空间设计 (Gym-Finance & MDP in Financial RL)|强化学习金融交易环境设计]] 即可正式解锁本 Challenge 实战！
 > 💡 **解锁指引**：掌握马尔可夫决策过程 (MDP) 与实盘交易磨损建模后即可解锁强化学习 Agent 训练。
 
  🧪 拓展实验与李宏毅式实战 Challenge 题 (HW16-Gymnasium 金融 MDP 交易环境设计与 PPO 策略训练)
@@ -341,7 +341,7 @@ print(f"获得的单期 Reward: {reward:+.6f} | 结束状态: {term or trunc}")
 
 上游依赖
 
-- [[下注规模]]：提供基础概念与理论推导支撑。
+- [[动态下注规模与凯利公式 (Bet Sizing & Kelly Criterion in AFML)|下注规模]]：提供基础概念与理论推导支撑。
 - [[交易环境设计]]：提供基础概念与理论推导支撑。
 
 下游延伸
@@ -460,7 +460,7 @@ print(f"获得的单期 Reward: {reward:+.6f} | 结束状态: {term or trunc}")
 ## 13. 给 Obsidian 的归档建议
 
 - **适合文件夹**：`02-Knowledge/🧠 学习系统/03-量化金融/04-深入精通/`
-- **建议双链**：[[强化学习金融交易环境与 MDP 状态-动作空间设计 (Gym-Finance & MDP in Financial RL)|强化学习]]、[[下注规模]]、[[高频 Alpha 信号工程与盘口特征构建 (High-Frequency Signals & Microstructure Features)|高频信号]]、[[高频交易系统架构与模块解耦设计 (High-Frequency Trading System Architecture)|高频系统架构]]
+- **建议双链**：[[强化学习金融交易环境与 MDP 状态-动作空间设计 (Gym-Finance & MDP in Financial RL)|强化学习]]、[[动态下注规模与凯利公式 (Bet Sizing & Kelly Criterion in AFML)|下注规模]]、[[高频 Alpha 信号工程与盘口特征构建 (High-Frequency Signals & Microstructure Features)|高频信号]]、[[高频交易系统架构与模块解耦设计 (High-Frequency Trading System Architecture)|高频系统架构]]
 - **标签**：`#学习` `#量化金融` `#强化学习` `#RL` `#GymFinance` `#MDP` `#状态空间` `#动作空间` `#
 
 ---

@@ -1,0 +1,10 @@
+md count: 19514
+HOG exists: False
+ResNet exists: False
+Traceback (most recent call last):
+  File "<stdin>", line 13, in <module>
+  File "<stdin>", line 13, in <listcomp>
+  File "C:\Users\DELL\AppData\Local\Programs\Python\Python311\Lib\pathlib.py", line 931, in iterdir
+    for name in os.listdir(self):
+                ^^^^^^^^^^^^^^^^
+FileNotFoundError: [WinError 3] 系统找不到指定的路径。: 'F:\\-\\05-计算机视觉'

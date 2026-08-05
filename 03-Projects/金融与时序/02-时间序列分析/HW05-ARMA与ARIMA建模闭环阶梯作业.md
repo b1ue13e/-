@@ -10,6 +10,7 @@ flow: project
 kind: exercise
 tags: [项目, 时间序列, 阶梯作业, ARIMA]
 source_lesson: "[[L05-ARMA与ARIMA建模闭环]]"
+answer_key: "[[HW01-HW09-参考答案与错误诊断#HW05｜ARMA 与 ARIMA 建模闭环]]"
 ---
 
 # HW05｜ARMA 与 ARIMA 建模闭环阶梯作业
@@ -59,6 +60,61 @@ $$
 
 自动选模是对照实验，不是答案生成器。
 
+### 可运行起步代码：有界自动搜索
+
+下面只依赖课程已有的 `numpy`、`pandas` 和 `statsmodels`。先原样运行确认环境，再把合成 `train` 替换为你的训练序列；不要改动最终封存测试段。
+
+```python
+import warnings
+import numpy as np
+import pandas as pd
+from statsmodels.tsa.arima.model import ARIMA
+
+rng = np.random.default_rng(42)
+train = pd.Series(np.cumsum(0.2 + rng.normal(size=120)), name="y")
+
+def bounded_search(series, orders, trend="t"):
+    rows = []
+    for order in orders:
+        try:
+            with warnings.catch_warnings(record=True) as caught:
+                warnings.simplefilter("always")
+                fit = ARIMA(
+                    series,
+                    order=order,
+                    trend=trend,
+                    enforce_stationarity=True,
+                    enforce_invertibility=True,
+                ).fit()
+            rows.append({
+                "order": order,
+                "aicc": float(fit.aicc),
+                "converged": bool(fit.mle_retvals.get("converged", False)),
+                "warning_count": len(caught),
+                "min_ar_root": min(np.abs(fit.arroots), default=np.inf),
+                "min_ma_root": min(np.abs(fit.maroots), default=np.inf),
+            })
+        except (ValueError, np.linalg.LinAlgError) as exc:
+            rows.append({
+                "order": order,
+                "aicc": np.inf,
+                "converged": False,
+                "warning_count": 0,
+                "error": str(exc),
+            })
+    return pd.DataFrame(rows).sort_values(
+        ["converged", "aicc"], ascending=[False, True]
+    )
+
+orders = [(p, 1, q) for p in range(3) for q in range(3) if p + q <= 3]
+ledger = bounded_search(train, orders)
+print(ledger[["order", "aicc", "converged", "warning_count"]].to_string(index=False))
+assert len(ledger) == len(orders)
+# 输出：8 个有界候选；随机种子固定时，8 行均应完成并进入台账
+```
+
+这段代码不是最终建模器：它固定了 $d=1$、趋势与有限搜索空间。提交时必须解释这些设定为何适合你的数据，并把自动结果与人工候选放进同一残差和滚动评估协议。
+
 ## E｜滚动预测验收（20 分）
 
 至少比较：
@@ -94,3 +150,6 @@ $$
 - [FPP3 §9.7 ARIMA modelling](https://otexts.com/fpp3/arima-r.html)
 - [FPP3 Chapter 9 Exercises](https://otexts.com/fpp3/arima-exercises.html)
 
+## 反馈入口
+
+完成并保留原答案后，打开[[HW01-HW09-参考答案与错误诊断#HW05｜ARMA 与 ARIMA 建模闭环|HW05 参考答案与评分锚点]]。

@@ -10,7 +10,7 @@ prerequisites: ["概率的基本概念", "函数与向量的直觉"]
 related: ["Transformer与大语言模型-架构-Transformer工作原理", "生成控制-解码-温度Top-k与Top-p", "生成式AI-可靠性-幻觉校准与事实核验"]
 flow: knowledge
 kind: concept
-source: "CMU 17-630 Week 1; Stanford CS336 Spring 2026 Lecture 1 and Assignment 1"
+source: "MIT OCW 6.7960 Fall 2024 Homework 3 Problem 4; Stanford CS336 Spring 2025 Assignment 1 Sections 2-5"
 anki_deck: "45-生成式AI基础与Prompt工程::模型基础"
 anki_tags: [生成式AI, Token, 条件概率, 小白]
 ---
@@ -127,10 +127,10 @@ print(round(sum(probs.values()), 3))
 
 ## 9. 相关知识点与 Obsidian 双链建议
 
-- **上游**：[[概率论基础]]、[[子词分词(Subword Tokenization)]]。
+- **上游**：[[22-概率论与数理统计/🗺️ 概率论与数理统计学习路径|概率论基础]]、[[08-NLP全栈/子词分词(Subword Tokenization)|子词分词]]。
 - **下游**：[[Transformer与大语言模型-架构-Transformer工作原理]]、[[生成控制-解码-温度Top-k与Top-p]]。
 - **横向**：[[Prompt评测-实验-指标数据集与误差分析]]。
-- **应用**：[[生成式AI与Prompt工程-作业01-问答系统]]。
+- **应用**：[[生成式AI与Prompt工程-作业01-生成模型与Transformer实验]]。
 
 ## 10. 闭卷复现任务
 
@@ -139,6 +139,11 @@ print(round(sum(probs.values()), 3))
 - [ ] 解释 Token 为什么不等于“词”。
 - [ ] 区分参数知识、上下文知识和检索知识。
 - [ ] 说明“高概率”为什么不等于“真实”。
+- [ ] 手算一个三候选 softmax。
+- [ ] 解释上下文窗口与永久记忆的区别。
+- [ ] 说明采样为何使重复调用结果变化。
+- [ ] 区分训练目标和产品目标。
+- [ ] 说出一个必须外接检索或工具的场景。
 
 ## 11. 自测题：5 道
 
@@ -187,4 +192,3 @@ print(round(sum(probs.values()), 3))
 - LLM 生成的最小循环是什么？::根据当前上下文预测下一 Token 的概率分布，解码选出 Token，再把它追加到上下文继续预测。
 - 为什么高概率输出不等于真实事实？::语言模型概率衡量输出与训练分布及上下文的匹配程度，不直接验证现实世界真伪。
 - 参数知识与上下文知识的区别是什么？::参数知识压缩在模型权重中且难追溯；上下文知识由本次输入提供、可替换但受窗口限制。
-

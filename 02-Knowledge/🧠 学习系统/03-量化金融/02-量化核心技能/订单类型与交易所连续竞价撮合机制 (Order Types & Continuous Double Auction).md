@@ -377,7 +377,7 @@ engine.add_limit_order('buy', 101.0, 30) # 触发撮合 30 股 @ 100.0
 ## 13. 给 Obsidian 的归档建议
 
 - **适合文件夹**：`02-Knowledge/🧠 学习系统/03-量化金融/01-夯实基础/`
-- **建议双链**：[[订单类型与交易所连续竞价撮合机制 (Order Types & Continuous Double Auction)|资产类别与交易场所]]、[[限价订单簿数据与 L1_L2_L3 盘口重建 (Limit Order Book Data & Reconstructing L1_L2_L3)|订单簿数据]]、[[滑点模型]]
+- **建议双链**：[[订单类型与交易所连续竞价撮合机制 (Order Types & Continuous Double Auction)|资产类别与交易场所]]、[[限价订单簿数据与 L1_L2_L3 盘口重建 (Limit Order Book Data & Reconstructing L1_L2_L3)|订单簿数据]]、[[Implementation Shortfall 执行缺口与 Almgren-Chriss 最优执行模型|滑点模型]]
 - **标签**：`#学习` `#量化
 
 ---

@@ -6,7 +6,7 @@ tags:
 - 统计基础
 - 教材主线
 created: 2026-04-11
-status: planned
+status: active
 difficulty: intermediate
 concept:
 - 平稳性
@@ -23,31 +23,31 @@ phase: B
 
 # 📊 板块 B：统计基础层
 
-> 对应王燕《时间序列分析基于R》第 2 章，把预处理和基本统计判别补齐。
+> 本板块是 L01–L02 的补充知识地图；必修仍按课程面板推进。
 
 ## 📊 板块进度
 
 ```dataviewjs
-const total = dv.pages('"02-Knowledge/🧠 学习系统/02-时间序列分析/02-统计基础层"').length - 1;
-const completed = dv.pages('"02-Knowledge/🧠 学习系统/02-时间序列分析/02-统计基础层"').where(p => p.status === "completed").length;
+const topics = dv.pages('"02-Knowledge/🧠 学习系统/02-时间序列分析/02-统计基础层"').where(p => p.type === "study");
+const total = topics.length;
+const completed = topics.where(p => p.status === "completed").length;
 const progress = total > 0 ? Math.round((completed / total) * 100) : 0;
 dv.paragraph(`**板块进度: ${progress}%** (${completed}/${total} 模块)`);
 ```
 
-## 📚 对应教材
+## 📚 开放来源与主卡
 
-- 主教材：[[📚 书库/书籍笔记/时间序列分析基于R|时间序列分析基于R]]
-- 对应章节：第 2 章《时间序列的预处理》
-- 重点小节：`2.1 平稳时间序列`、`2.2 时序图与自相关图`、`2.3 平稳性的检验`、`2.4 纯随机性检验`
+- [FPP3 §9.1](https://otexts.com/fpp3/stationarity.html)：平稳与差分。
+- [Penn State STAT 510 Lesson 1](https://online.stat.psu.edu/stat510/Lesson01)：平稳、ACF 与差分。
+- 主卡：[[L01-平稳性与差分]]、[[L02-ACF-PACF与白噪声]]。
 
 ## 📖 学习清单
 
 | 教材位置 | 重点 | 笔记入口 |
 |:---|:---|:---|
-| 2.1 | 平稳时间序列的定义、统计性质、意义 | [[平稳时间序列]] / [[平稳性的统计性质]] |
-| 2.2 | 时序图与自相关图的读法 | [[时序图与自相关图]] / [[自相关函数ACF]] |
-| 2.3 | 平稳性的检验与判断流程 | [[平稳性检验]] / [[02-Knowledge/🧠 学习系统/02-时间序列分析/02-统计基础层/单位根检验|单位根检验]] |
-| 2.4 | 纯随机性与白噪声检验 | [[纯随机性检验]] / [[白噪声]] |
+| L01 | 定义、差分与单位根 | [[L01-平稳性与差分]] / [[单位根检验-ADF-KPSS]] |
+| L02 | ACF、PACF 与白噪声 | [[L02-ACF-PACF与白噪声]] / [[自相关函数ACF]] |
+| 诊断 | 纯随机性与白噪声检验 | [[纯随机性检验]] / [[白噪声]] |
 
 ## ✅ 完成标准
 

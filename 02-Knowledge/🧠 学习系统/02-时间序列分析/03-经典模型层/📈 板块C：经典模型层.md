@@ -6,7 +6,7 @@ tags:
 - 经典模型
 - 教材主线
 created: 2026-04-11
-status: planned
+status: active
 difficulty: intermediate
 concept:
 - ARMA
@@ -24,31 +24,32 @@ phase: C
 
 # 📈 板块 C：经典模型层
 
-> 这个板块把王燕教材第 3 章和第 5 章里的经典模型主干合并起来，先做 ARMA，再走 ARIMA 与 GARCH。
+> 本板块是 L03–L08 的补充知识地图；不与 L00–L09 并行推进。
 
 ## 📊 板块进度
 
 ```dataviewjs
-const total = dv.pages('"02-Knowledge/🧠 学习系统/02-时间序列分析/03-经典模型层"').length - 1;
-const completed = dv.pages('"02-Knowledge/🧠 学习系统/02-时间序列分析/03-经典模型层"').where(p => p.status === "completed").length;
+const topics = dv.pages('"02-Knowledge/🧠 学习系统/02-时间序列分析/03-经典模型层"').where(p => p.type === "study");
+const total = topics.length;
+const completed = topics.where(p => p.status === "completed").length;
 const progress = total > 0 ? Math.round((completed / total) * 100) : 0;
 dv.paragraph(`**板块进度: ${progress}%** (${completed}/${total} 模块)`);
 ```
 
-## 📚 对应教材
+## 📚 开放来源与主卡
 
-- 主教材：[[📚 书库/书籍笔记/时间序列分析基于R|时间序列分析基于R]]
-- 对应章节：第 3 章《平稳时间序列分析》 + 第 5 章中的 `差分运算`、`ARIMA 模型`、`条件异方差模型`
+- ARIMA：[FPP3 Ch.9](https://otexts.com/fpp3/arima.html)。
+- ARCH/GARCH：[Penn State STAT 510 Lesson 11.1](https://online.stat.psu.edu/stat510/Lesson11)。
+- 主课：[[L03-AR模型与均值回归]]至[[L08-残差诊断与纯随机性检验]]。
 
 ## 📖 学习清单
 
 | 教材位置 | 重点 | 笔记入口 |
 |:---|:---|:---|
-| 3.1-3.2 | AR、MA、ARMA 的定义与性质 | [[AR模型]] / [[MA模型]] / [[ARMA模型]] |
-| 3.3 | 平稳序列建模：识别、估计、定阶 | [[模型识别]] / [[参数估计]] / [[AIC与BIC]] |
-| 3.4 | 基于经典模型做预测 | [[预测与评估]] |
-| 5.1-5.2 | 差分运算与 ARIMA 建模 | [[差分运算]] / [[02-Knowledge/🧠 学习系统/02-时间序列分析/03-经典模型层/ARIMA模型|ARIMA模型]] / [[SARIMA模型]] |
-| 5.6 | ARCH/GARCH 族模型 | [[ARCH模型]] / [[02-Knowledge/🧠 学习系统/02-时间序列分析/03-经典模型层/GARCH模型|GARCH模型]] |
+| L03–L04 | AR、MA 与冲击传播 | [[L03-AR模型与均值回归]] / [[L04-MA模型与有限冲击]] |
+| L05–L06 | ARIMA 与 SARIMA | [[L05-ARMA与ARIMA建模闭环]] / [[L06-SARIMA与季节预测]] |
+| L07–L08 | 识别、估计与残差 | [[L07-模型识别与参数估计]] / [[L08-残差诊断与纯随机性检验]] |
+| 扩展 | 条件异方差 | [[GARCH波动率建模]] |
 
 ## ✅ 完成标准
 

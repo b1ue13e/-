@@ -1,5 +1,6 @@
 ---
 title: "Transformer与大语言模型-训练-GPT与自回归语言模型"
+aliases: ["GPT系列"]
 type: study
 topic: "GPT与自回归语言模型"
 course: "生成式AI基础与Prompt工程"
@@ -16,7 +17,7 @@ flow: knowledge
 kind: concept
 template: Obsidian单知识点深度学习模板
 created: 2026-08-02
-source: "Stanford CS336 Spring 2026 Assignment 1 and Lectures 1-3; CMU 10-423 Spring 2026 HW1"
+source: "MIT OCW 6.7960 Fall 2024 Homework 3 Problem 4 DialogueGPT; Stanford CS336 Spring 2025 Assignment 1"
 anki_deck: "45-生成式AI基础与Prompt工程::模型基础"
 anki_tags: [生成式AI, GPT, 自回归语言模型]
 ---
@@ -28,7 +29,7 @@ anki_tags: [生成式AI, GPT, 自回归语言模型]
 ## 0. 先判断它值不值得深挖
 
 - **类别**：**A 类（核心概念，必须深挖）**
-- **判断理由**：GPT 是 Decoder-only 自回归范式的代表，也是现代 LLM（ChatGPT、LLaMA、Qwen）的直接祖先；"zero-shot/few-shot/上下文学习"是第五阶段（[[05-大语言模型与前沿技术/🚀 第五阶段：大语言模型与前沿技术|第五阶段]]）全部内容的地基。虽然 HW01-05 不直接手写 GPT，但没有它就无法理解作业体系之外 90% 的现代 NLP。
+- **判断理由**：GPT 是 Decoder-only 自回归范式的代表；MIT 6.7960 HW3 Problem 4 明确要求实现 DialogueGPT，CS336 A1 则把同一范式扩展到完整训练与生成。它也是 zero-shot、few-shot 与 Prompt 工程的模型地基。
 
 ---
 
@@ -42,7 +43,7 @@ anki_tags: [生成式AI, GPT, 自回归语言模型]
 
 ## 2. 为什么它重要？它有什么用？
 
-- **连接大图景**：GPT-1 证明"生成式预训练 + 微调"可行；GPT-2 证明"不微调也能做任务"（zero-shot）；GPT-3 证明"规模大到一定程度涌现上下文学习"（few-shot）。这条线直接通向 [[检索增强生成RAG]]、Agent 等第五阶段全部内容。
+- **连接大图景**：生成式预训练把任务统一为续写；规模、数据与对齐让模型表现出 zero-shot/few-shot 能力。这条线直接通向 [[Prompt工程-上下文学习-示例选择与提示敏感性]]、[[Prompt增强-RAG-检索生成与可追溯回答]] 与 Agent。
 - **实际应用场景**：聊天助手、代码生成、摘要、翻译、问答、写作；几乎所有 2023 年后的大模型产品。
 - **高频题型/任务**：面试问"GPT 与 BERT 结构差异""自回归 vs 双向""zero-shot/few-shot/ICL 原理""Scaling Laws"（见 [[05-大语言模型与前沿技术/Scaling Laws|Scaling Laws]]）；实践：用 `transformers` 加载 GPT-2 做续写。
 
@@ -98,7 +99,7 @@ $$\mathcal{L}_{\text{ft}} = -\sum_{(x,y)} \log P(y \mid x)$$
 - **GPT-2（2019）**：1.5B，zero-shot 能力（不微调直接做任务），byte-level BPE。
 - **GPT-3（2020）**：175B，few-shot/ICL 涌现；GPT-3.5（InstructGPT，RLHF）→ ChatGPT；GPT-4 多模态。
 - **现代衍生**：LLaMA/Qwen/DeepSeek 等开源 Decoder-only 模型（RoPE 位置编码 + SwiGLU + RMSNorm）。
-- **适用条件**：生成任务、统一任务接口；**限制**：单向（不看右边）、训练/推理成本高（KV Cache 优化见 [[05-大语言模型与前沿技术/KV Cache|KV Cache]]）、幻觉问题（[[检索增强生成RAG]] 是主要缓解手段）。
+- **适用条件**：生成任务、统一任务接口；**限制**：单向因果、训练/逐 Token 推理成本高，并会幻觉；KV Cache 只加速推理，RAG 只增加外部证据，都不自动保证正确。
 
 ---
 
@@ -127,18 +128,27 @@ $$\mathcal{L}_{\text{ft}} = -\sum_{(x,y)} \log P(y \mid x)$$
 - **易错点**：把 ICL 说成"模型学会了新知识"——ICL 是激活已有知识，不是更新权重。
 
 ### 例子 3：实际应用例子（真实场景/代码）
-- **实际价值与转化**：用 `transformers` 加载 GPT-2 做零样本续写（HF Course 的标准练习）：
+- **实际价值与转化**：下面用标准库演示一个可复现的 bigram 自回归生成器，先理解“根据前缀预测下一 Token”，再进入官方 PyTorch 作业：
 ```python
-from transformers import AutoTokenizer, AutoModelForCausalLM
+from collections import Counter, defaultdict
 
-tokenizer = AutoTokenizer.from_pretrained("gpt2")
-model = AutoModelForCausalLM.from_pretrained("gpt2")
+corpus = "我 喜欢 秋天 我 喜欢 写诗 秋天 适合 写诗".split()
+counts: dict[str, Counter[str]] = defaultdict(Counter)
+for current, following in zip(corpus, corpus[1:]):
+    counts[current][following] += 1
 
-prompt = "The capital of France is"
-inputs = tokenizer(prompt, return_tensors="pt")
-out = model.generate(**inputs, max_new_tokens=10, do_sample=False)
-print(tokenizer.decode(out[0], skip_special_tokens=True))
-# 期望输出：... is Paris.（自回归下一步预测）
+def generate(prefix: list[str], steps: int) -> list[str]:
+    output = prefix[:]
+    for _ in range(steps):
+        candidates = counts.get(output[-1])
+        if not candidates:
+            break
+        output.append(candidates.most_common(1)[0][0])
+    return output
+
+result = generate(["我"], 4)
+print(" ".join(result))
+assert result[:3] == ["我", "喜欢", "秋天"]
 ```
 
 ---
@@ -147,7 +157,7 @@ print(tokenizer.decode(out[0], skip_special_tokens=True))
 
 ### 误区 1：以为"GPT 的注意力是双向的，只是被 mask 了"
 - **错误直觉**：GPT 和 BERT 结构一样，只是训练目标不同。
-- **为什么错**：GPT 的 Decoder 用**因果掩码**，每个位置只能看自己及左边——这是结构性的单向；BERT 的 Encoder 无掩码，双向。两者"架构不同 + 目标不同"（见 [[BERT与GPT对比]] 的完整对照表）。
+- **为什么错**：GPT 的 Decoder 用**因果注意力掩码**，每个位置只能看自己及左边；BERT 的 Encoder **没有因果掩码**，注意力可利用双侧上下文，但 BERT 预训练仍通过 MLM 随机遮蔽部分输入 token。两者“注意力可见范围不同 + 训练目标不同”（见 [[BERT与GPT对比]]）。
 - **正确理解**：Encoder（双向、理解）vs Decoder（因果、生成）是两种架构分支。
 
 ### 误区 2：以为"GPT 真的在'理解'或'思考'"
@@ -160,7 +170,7 @@ print(tokenizer.decode(out[0], skip_special_tokens=True))
 | 概念 | 核心问题 | 关键区别 | 典型使用场景 |
 | :--- | :--- | :--- | :--- |
 | GPT（本概念） | 自回归生成 | 因果掩码、单向、LM 目标 | 生成/对话/续写 |
-| BERT | 双向理解 | 无掩码、双向、MLM | 分类/标注/检索 |
+| BERT | 双向上下文编码 | 无因果注意力掩码；预训练使用 MLM token masking | 分类/标注/检索 |
 | T5 | Encoder-Decoder | 文本到文本统一框架 | 翻译、摘要（见 [[04-Transformer与预训练模型/T5\|T5]]） |
 | LLaMA 等开源 LLM | GPT 系优化 | RoPE + SwiGLU + RMSNorm | 本地部署 |
 
@@ -174,8 +184,8 @@ print(tokenizer.decode(out[0], skip_special_tokens=True))
 
 ### 下游延伸
 - [[HuggingFace生态系统]]：`AutoModelForCausalLM` 与 `generate` 的工程封装。
-- [[检索增强生成RAG]]：用外部检索缓解 GPT 的幻觉与知识截止。
-- [[数据集与评测指标]]：困惑度是 LM 的核心评测指标。
+- [[Prompt增强-RAG-检索生成与可追溯回答]]：用外部检索增加可定位证据。
+- [[Prompt评测-实验-指标数据集与误差分析]]：困惑度与任务指标共同评测。
 
 ### 横向关联
 - [[BERT与GPT对比]] ↔ 本知识点：两大范式系统对照（已有笔记）。
@@ -183,8 +193,8 @@ print(tokenizer.decode(out[0], skip_special_tokens=True))
 - [[05-大语言模型与前沿技术/Zero-shot\|Zero-shot]]、[[05-大语言模型与前沿技术/Few-shot\|Few-shot]]、[[05-大语言模型与前沿技术/ICL\|ICL]] ↔ 本知识点：能力涌现的表现形式。
 
 ### 应用场景
-- [[🧭 开源作业体系-NLP全栈|开源作业体系]]：HW05 的对照理解（MinBERT 是 Encoder，GPT 是 Decoder）。
-- [[05-大语言模型与前沿技术/🚀 第五阶段：大语言模型与前沿技术|第五阶段]]：全部内容的入口。
+- [[MIT-6.7960-HW03-逐节知识点映射]]：官方 Problem 4 DialogueGPT 导航。
+- [[Stanford-CS336-A1-逐节知识点映射]]：完整 LM 训练、解码与消融导航。
 
 ---
 
@@ -218,7 +228,7 @@ print(tokenizer.decode(out[0], skip_special_tokens=True))
 
 #### 1. GPT 与 BERT 在注意力上的本质区别是什么？
 > [!question]- 答案解析
-> - **答案**：GPT（Decoder）用因果掩码，每个位置只能看到自己及左侧 token（单向）；BERT（Encoder）无掩码，每个位置看到全部 token（双向）。
+> - **答案**：GPT（Decoder）用因果注意力掩码，每个位置只能看到自己及左侧 token；BERT（Encoder）无因果注意力掩码，可利用双侧上下文，但 MLM 会在输入层随机遮蔽待预测 token。
 > - **解析**：这决定了能力分工：GPT 擅长生成（与推理时自回归一致），BERT 擅长理解（利用双侧上下文）。详见 [[BERT与GPT对比]]。
 > - **易错原因**：以为区别只在训练目标——注意力掩码是结构性差异。
 > - **Obsidian 标签建议**：`#自测题/基础`
@@ -274,7 +284,13 @@ print(tokenizer.decode(out[0], skip_special_tokens=True))
 
 ## 13. 给 Obsidian 的归档建议
 
-- **适合文件夹**：`02-Knowledge/🧠 学习系统/08-NLP全栈/`
-- **关联已有笔记**：[[🧭 开源作业体系-NLP全栈]]、[[BERT与GPT对比]]、[[04-Transformer与预训练模型/GPT-1|GPT-1]]、[[04-Transformer与预训练模型/GPT-2|GPT-2]]、[[04-Transformer与预训练模型/GPT-3|GPT-3]]、[[05-大语言模型与前沿技术/Zero-shot|Zero-shot]]、[[05-大语言模型与前沿技术/Few-shot|Few-shot]]、[[05-大语言模型与前沿技术/ICL|ICL]]、[[05-大语言模型与前沿技术/Scaling Laws|Scaling Laws]]
-- **建议标签**：`#学习` `#NLP全栈` `#GPT` `#LLM` `#概念`
+- **适合文件夹**：`02-Knowledge/🧠 学习系统/45-生成式AI基础与Prompt工程/`
+- **关联已有笔记**：[[MIT-6.7960-HW03-逐节知识点映射]]、[[Stanford-CS336-A1-逐节知识点映射]]、[[Transformer与大语言模型-架构-Transformer工作原理]]、[[Prompt工程-上下文学习-示例选择与提示敏感性]]、[[生成控制-解码-温度Top-k与Top-p]]
+- **建议标签**：`#学习` `#生成式AI` `#GPT` `#LLM` `#概念`
 - **拆分建议**：母卡保留；"prompt 设计实验"可拆题型笔记，"幻觉案例分析"可拆错题笔记。
+
+## 🃏 Anki 卡片
+
+- GPT 自回归训练目标是什么？::最大化每个真实 Token 在其左侧上下文条件下的概率，等价于最小化下一 Token 交叉熵。
+- GPT 训练与生成的主要差别是什么？::训练时可并行计算整段因果预测损失；生成时必须把新 Token 逐步追加并继续预测。
+- 上下文学习为何不等于微调？::上下文学习只通过本次输入改变条件分布，不更新模型参数。

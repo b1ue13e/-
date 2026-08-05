@@ -60,7 +60,7 @@ $$\sigma_t^2 = \omega + \alpha \varepsilon_{t-1}^2 + \beta \sigma_{t-1}^2$$
 
 ## 3. 学它之前需要哪些前置知识？
 
-1. **[[02-Knowledge/🧠 学习系统/03-量化金融/02-量化核心技能/GARCH模型]]**：熟练掌握标准 GARCH(1,1) 方程。
+1. **[[量化金融-波动率-GARCH家族模型|GARCH模型]]**：熟练掌握标准 GARCH(1,1) 方程。
 2. **[[非对称 GARCH 模型与杠杆效应 (EGARCH & GJR-GARCH)|收益率序列的风格化事实]]**：理解波动率聚集（Volatility Clustering）与非对称杠杆效应（Leverage Effect）。
 
 ---
@@ -220,7 +220,7 @@ print(f"\n预测明日波动率: {next_vol*100:.2f}% | 明日 95% EGARCH-VaR: {v
 - **Kupiec 检验 (VaR Backtesting)**：评估基于 EGARCH 的 VaR 穿透率是否精确等于 5%。
 
 ### 7.5.5
-> 🔓 **作业解锁前置条件**：学完 [[02-Knowledge/🧠 学习系统/03-量化金融/02-量化核心技能/GARCH模型]] + [[非对称 GARCH 模型与杠杆效应 (EGARCH & GJR-GARCH)|非对称GARCH模型]] 即可正式解锁本 Challenge 实战！
+> 🔓 **作业解锁前置条件**：学完 [[量化金融-波动率-GARCH家族模型|GARCH模型]] + [[非对称 GARCH 模型与杠杆效应 (EGARCH & GJR-GARCH)|非对称GARCH模型]] 即可正式解锁本 Challenge 实战！
 > 💡 **解锁指引**：掌握标准 GARCH 模型后，进一步解锁股市坏消息引发的非对称杠杆效应拟合。
 
  🧪 拓展实验与李宏毅式实战 Challenge 题 (HW07-EGARCH & GJR-GARCH 杠杆效应与新闻响应曲线)
@@ -271,7 +271,7 @@ print(f"\n预测明日波动率: {next_vol*100:.2f}% | 明日 95% EGARCH-VaR: {v
 
 上游依赖
 
-- [[02-Knowledge/🧠 学习系统/03-量化金融/02-量化核心技能/GARCH模型]]：提供基础概念与理论推导支撑。
+- [[量化金融-波动率-GARCH家族模型|GARCH模型]]：提供基础概念与理论推导支撑。
 - [[非对称 GARCH 模型与杠杆效应 (EGARCH & GJR-GARCH)|收益率序列的风格化事实]]：提供基础概念与理论推导支撑。
 
 下游延伸
@@ -390,7 +390,7 @@ print(f"\n预测明日波动率: {next_vol*100:.2f}% | 明日 95% EGARCH-VaR: {v
 ## 13. 给 Obsidian 的归档建议
 
 - **适合文件夹**：`02-Knowledge/🧠 学习系统/03-量化金融/02-量化核心技能/`
-- **建议双链**：[[02-Knowledge/🧠 学习系统/03-量化金融/02-量化核心技能/GARCH模型]]、[[非对称 GARCH 模型与杠杆效应 (EGARCH & GJR-GARCH)|收益率序列的风格化事实]]、[[历史模拟法 VaR 与非参数风险度量 (Historical Simulation VaR)|历史模拟VaR]]
+- **建议双链**：[[量化金融-波动率-GARCH家族模型|GARCH模型]]、[[非对称 GARCH 模型与杠杆效应 (EGARCH & GJR-GARCH)|收益率序列的风格化事实]]、[[历史模拟法 VaR 与非参数风险度量 (Historical Simulation VaR)|历史模拟VaR]]
 - **标签**：`#学习` `#量化金融` `#时间序列` `#GARCH` `#EGARCH` `#GJRGARCH` `#杠杆效应` `#非对
 
 ---

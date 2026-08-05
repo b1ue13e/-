@@ -1,5 +1,6 @@
 ---
 title: "生成控制-解码-温度Top-k与Top-p"
+aliases: ["文本生成"]
 type: study
 topic: "温度、Top-k 与 Top-p 解码"
 course: "生成式AI基础与Prompt工程"
@@ -16,7 +17,7 @@ flow: knowledge
 kind: concept
 template: Obsidian单知识点深度学习模板
 created: 2026-08-03
-source: "Stanford CS336 Spring 2026 Lecture 10 (Inference); CMU 17-630 Weeks 1-3"
+source: "MIT OCW 6.7960 Fall 2024 Homework 3 Problem 4g; Stanford CS336 Spring 2025 Assignment 1 decoding problem"
 anki_deck: "45-生成式AI基础与Prompt工程::模型基础"
 anki_tags: [生成式AI, 解码, 采样]
 ---
@@ -92,21 +93,32 @@ $$z_{w_t} \leftarrow z_{w_t}/\theta \quad \text{若 } w_t \text{ 已出现过}$$
 ### 例子 2：中等例子（条件判断与多步推理）
 - **题目与完整解答**：beam search 为什么需要长度归一化？—— beam 打分是各 token 对数概率之和（或积），长句自然分低（更多负项），导致 beam 偏爱短句/提前结束。解法：$\text{score} = \frac{1}{T^\alpha}\sum\log P(w_t)$（$\alpha=0.6-1.0$ 长度惩罚），或加 EOS 奖励。
 ### 例子 3：实际应用例子（真实场景/代码）
-- **实际价值与转化**：HuggingFace 的 `generate()` 直接调全部策略：
+- **实际价值与转化**：下面用标准库实现温度与 top-p 过滤，并固定随机种子验证输出；官方 CS336 作业再把它接入语言模型 logits：
 ```python
-from transformers import AutoModelForCausalLM, AutoTokenizer
+import math
+import random
 
-model = AutoModelForCausalLM.from_pretrained("Qwen/Qwen2.5-0.5B")
-tok = AutoTokenizer.from_pretrained("Qwen/Qwen2.5-0.5B")
-ids = tok("写一首关于秋天的诗：", return_tensors="pt")
+def nucleus(tokens: list[str], logits: list[float], temperature: float,
+            top_p: float, seed: int = 0) -> str:
+    if temperature <= 0 or not 0 < top_p <= 1:
+        raise ValueError("temperature > 0 且 0 < top_p <= 1")
+    scaled = [value / temperature for value in logits]
+    maximum = max(scaled)
+    weights = [math.exp(value - maximum) for value in scaled]
+    ranked = sorted(zip(tokens, weights), key=lambda item: item[1], reverse=True)
+    total, kept, cumulative = sum(weights), [], 0.0
+    for token, weight in ranked:
+        kept.append((token, weight))
+        cumulative += weight / total
+        if cumulative >= top_p:
+            break
+    random.seed(seed)
+    return random.choices([item[0] for item in kept],
+                          weights=[item[1] for item in kept], k=1)[0]
 
-# 对话（采样）：温度 0.8 + top-p 0.9 + 重复惩罚 1.1
-out = model.generate(**ids, max_new_tokens=64, do_sample=True,
-                     temperature=0.8, top_p=0.9, repetition_penalty=1.1)
-# 翻译/摘要（确定性）：beam 4 + 长度惩罚
-out2 = model.generate(**ids, num_beams=4, length_penalty=0.6,
-                      no_repeat_ngram_size=3)
-print(tok.decode(out[0], skip_special_tokens=True))
+choice = nucleus(["秋", "风", "雨"], [2.0, 1.0, 0.1], 0.8, 0.9)
+print(choice)
+assert choice in {"秋", "风"}
 ```
 ---
 ## 8. 常见误区和易混概念
@@ -129,9 +141,9 @@ print(tok.decode(out[0], skip_special_tokens=True))
 ---
 ## 9. 相关知识点与 Obsidian 双链建议
 ### 上游依赖
-- [[GPT系列]]：自回归结构。
-- [[Transformer架构]]：softmax 头与因果掩码。
-- [[NLP数学基础]]：概率与困惑度。
+- [[Transformer与大语言模型-训练-GPT与自回归语言模型]]：自回归结构。
+- [[Transformer与大语言模型-架构-Transformer工作原理]]：softmax 头与因果掩码。
+- [[课程前置-概率向量与Softmax最小补丁]]：概率与 softmax。
 ### 下游延伸
 - [[对话系统]]：采样参数是对话质量的直接旋钮。
 - [[提示工程]]：提示与解码参数协同。
@@ -140,7 +152,7 @@ print(tok.decode(out[0], skip_special_tokens=True))
 - [[LLM推理优化]] ↔ 本知识点：KV Cache 加速的正是逐 token 解码。
 - [[数据集与评测指标]] ↔ 本知识点：BLEU/ROUGE 的定义与缺陷。
 ### 应用场景
-- [[🧭 开源作业体系-NLP全栈|开源作业体系]]：HW 文本生成类作业验收。
+- [[MIT-6.7960-HW03-逐节知识点映射]] 与 [[Stanford-CS336-A1-逐节知识点映射]]：官方解码作业导航。
 ---
 ## 10. 闭卷复现任务
 - [ ] 1. 用一句话说清楚文本生成解决什么问题。
@@ -198,7 +210,13 @@ print(tok.decode(out[0], skip_special_tokens=True))
 - [ ] 14 天后
 ---
 ## 13. 给 Obsidian 的归档建议
-- **适合文件夹**：`02-Knowledge/🧠 学习系统/08-NLP全栈/`
-- **关联已有笔记**：[[GPT系列]]、[[Transformer架构]]、[[对话系统]]、[[提示工程]]、[[LLM推理优化]]、[[🧭 开源作业体系-NLP全栈]]
-- **建议标签**：`#学习` `#NLP全栈` `#文本生成` `#解码策略` `#概念`
+- **适合文件夹**：`02-Knowledge/🧠 学习系统/45-生成式AI基础与Prompt工程/`
+- **关联已有笔记**：[[Transformer与大语言模型-训练-GPT与自回归语言模型]]、[[Transformer与大语言模型-架构-Transformer工作原理]]、[[课程前置-概率向量与Softmax最小补丁]]、[[MIT-6.7960-HW03-逐节知识点映射]]、[[Stanford-CS336-A1-逐节知识点映射]]
+- **建议标签**：`#学习` `#生成式AI` `#文本生成` `#解码策略` `#概念`
 - **拆分建议**：母卡保留；"解码参数调优实验"拆实践笔记，"BLEU 缺陷分析"拆错题笔记。
+
+## 🃏 Anki 卡片
+
+- Temperature 如何影响 Token 分布？::用温度缩放 logits；低温使分布更尖锐、更确定，高温使分布更平坦、更随机。
+- Top-k 与 Top-p 的关键区别是什么？::Top-k 固定保留概率最高的 k 个候选；Top-p 保留累计概率达到阈值的动态候选集合。
+- 为什么生成评测必须固定解码参数？::解码会显著改变输出随机性和质量，不固定参数就无法把差异归因于 Prompt。

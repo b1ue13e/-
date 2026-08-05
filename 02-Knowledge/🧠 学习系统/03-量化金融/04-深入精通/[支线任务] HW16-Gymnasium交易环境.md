@@ -8,10 +8,9 @@ flow: practical
 course: "03-量化金融"
 importance: "A"
 tags: [强化学习, Gymnasium, 量化交易, 实战作业]
-prerequisites: ["[[马尔可夫决策过程(MDP)]]", "[[强化学习金融交易环境与 MDP 状态-动作空间设计 (Gym-Finance & MDP in Financial RL)|强化学习基础]]"]
-related: ["[[[支线任务] HW17-Qlib因子研究]]", "[[Stable-Baselines3实战]]"]
-status: learning
-subagent_audit_score: 10.0
+prerequisites: ["[[MDP金融交易环境建模]]", "[[强化学习金融交易环境与 MDP 状态-动作空间设计 (Gym-Finance & MDP in Financial RL)|强化学习基础]]"]
+related: ["[[[支线任务] HW17-Qlib因子研究]]", "[[交易环境设计]]"]
+status: ongoing
 ---
 # HW16-Gymnasium金融RL交易环境作业说明书 实战演练笔记
 
@@ -66,9 +65,9 @@ subagent_audit_score: 10.0
 
 ## 5. 正式定义、核心接口、设计表
 
-### 核心代码架构
-在 Gymnasium 中，我们必须继承 `gymnasium.Env` 并实现以下四个核心抽象方法：
-```python
+### 接口骨架（伪代码，不可直接运行）
+在 Gymnasium 中，需要继承 `gymnasium.Env` 并实现以下核心接口。下方只展示结构，`WINDOW_SIZE`、`FEATURES` 与状态变量尚未定义；可运行的状态转移核心见第 7 节。
+```text
 import gymnasium as gym
 from gymnasium import spaces
 
@@ -81,7 +80,7 @@ class FinancialTradingEnv(gym.Env):
         # 恢复初始状态，返回 obs 和 info
         return obs, info
     def step(self, action):
-        # 执行动作，返回下一步状态及核心四要素
+        # 执行动作，返回 Gymnasium 五元组
         return next_obs, reward, terminated, truncated, info
 ```
 
@@ -98,7 +97,7 @@ class FinancialTradingEnv(gym.Env):
 ## 6. 架构设计与工程动机
 ### 为什么拆分 `terminated` 和 `truncated`？
 在旧版 Gym 中，只有一个 `done` 信号。然而，在金融交易中：
-- `terminated = True` 代表逻辑上的死亡（比如资金归零，爆仓强制平仓）。这改变了状态的真正终点。
+- `terminated = True` 代表逻辑上的死亡或风险阈值触发（比如账户跌破预设清算线）。这改变了状态的真正终点；如果账户价值用指数更新，不能等待它数学上恰好等于 0。
 - `truncated = True` 代表达到时间上限（比如这批回测数据到了最后一天）。环境并没有陷入不可挽回的终态，只是时间到了。
 区分两者对于 Q-learning 和 PPO 中价值函数的 Bootstrap（自举）预估至关重要：截断时不应该将未来期望价值强行设为0。
 
@@ -111,60 +110,75 @@ class FinancialTradingEnv(gym.Env):
 
 ### 例子 1：基础定义（状态与动作空间的设计）
 - **需求**：我们需要一个动作空间只能做多、做空、平仓，且观测窗口为过去 30 天，有 5 个特征的数据。
-- **实现**：
-```python
-self.action_space = spaces.Discrete(3) # 0: 空仓, 1: 做多, 2: 做空
-# 观测包含行情数据 (30x5) 和当前持仓位置 (1x1)
-self.observation_space = spaces.Dict({
-    "market": spaces.Box(low=-np.inf, high=np.inf, shape=(30, 5), dtype=np.float32),
-    "position": spaces.Discrete(3)
-})
-```
+- **动作约定**：`0=空仓`、`1=做多`、`2=做空`。
+- **观测约定**：`market` 形状为 `(30, 5)`，另含标量 `position`；所有特征只能使用当前步及更早数据。
 
-### 例子 2：中等难度（`step` 函数内部逻辑）
-- **任务**：计算考虑到双边万分之五手续费的单步 Reward。
-- **思路**：
+### 例子 2：中等难度（可独立运行的状态转移核心）
+- **任务**：计算考虑到单边万分之五换仓成本的单步对数 Reward。
 ```python
-def step(self, action):
-    # 1. 解析动作，判断是否发生调仓
-    is_trade = (action != self.current_position)
-    
-    # 2. 计算本步无摩擦收益
-    step_return = self.data.iloc[self.current_step]['close_return']
-    raw_reward = step_return * (1 if action == 1 else -1 if action == 2 else 0)
-    
-    # 3. 扣除交易摩擦
-    transaction_cost = 0.0005 if is_trade else 0.0
-    reward = raw_reward - transaction_cost
-    
-    # 4. 状态步进
-    self.current_step += 1
-    self.current_position = action
-    
-    # 5. 判断终止
-    terminated = self.account_value <= 0
-    truncated = self.current_step >= len(self.data) - 1
-    
-    return self._get_obs(), reward, terminated, truncated, {}
+from math import exp, log
+
+
+class FinancialTradingCore:
+    POSITION = {0: 0, 1: 1, 2: -1}
+
+    def __init__(self, prices, fee_rate=0.0005, termination_floor=0.8):
+        if len(prices) < 2 or any(price <= 0 for price in prices):
+            raise ValueError('prices must contain at least two positive values')
+        if not 0.0 < termination_floor <= 1.0:
+            raise ValueError('termination_floor must be in (0, 1]')
+        self.prices = [float(price) for price in prices]
+        self.fee_rate = float(fee_rate)
+        self.termination_floor = float(termination_floor)
+
+    def _get_obs(self):
+        return (self.prices[self.current_step], self.position, self.account_value)
+
+    def reset(self):
+        self.current_step = 0
+        self.position = 0
+        self.account_value = 1.0
+        return self._get_obs(), {}
+
+    def step(self, action):
+        if action not in self.POSITION:
+            raise ValueError('action must be 0, 1, or 2')
+        next_position = self.POSITION[action]
+        turnover = abs(next_position - self.position)
+        next_log_return = log(
+            self.prices[self.current_step + 1] / self.prices[self.current_step]
+        )
+        reward = next_position * next_log_return - turnover * self.fee_rate
+
+        self.position = next_position
+        self.account_value *= exp(reward)
+        self.current_step += 1
+        terminated = self.account_value <= self.termination_floor
+        truncated = self.current_step == len(self.prices) - 1
+        return self._get_obs(), reward, terminated, truncated, {
+            'turnover': turnover,
+            'account_value': self.account_value,
+            'termination_floor': self.termination_floor,
+        }
+
+
+env = FinancialTradingCore([100, 102, 101])
+observation, info = env.reset()
+observation, reward, terminated, truncated, info = env.step(1)
+assert abs(reward - (log(1.02) - 0.0005)) < 1e-12
+assert not terminated and not truncated
+print(observation, reward, info)
+
+crash_env = FinancialTradingCore([100, 60, 61], termination_floor=0.8)
+crash_env.reset()
+_, _, crash_terminated, _, _ = crash_env.step(1)
+assert crash_terminated
 ```
 
 ### 例子 3：实际应用（接入 SB3 进行合规性检查并训练）
-- **应用场景**：在我们写完环境后，必须用 Stable-Baselines3 提供的底层检查工具验证。
-- **代码规范**：
-```python
-from stable_baselines3.common.env_checker import check_env
-from stable_baselines3 import PPO
-
-# 1. 实例化我们的作业环境
-env = FinancialTradingEnv(df_market_data)
-
-# 2. 【核心排错】检查环境是否符合所有 Gymnasium 接口规范！
-check_env(env, warn=True) # 如果此处报错，说明 API 格式不达标
-
-# 3. 开启训练
-model = PPO("MultiInputPolicy", env, verbose=1)
-model.learn(total_timesteps=100000)
-```
+- **当前状态**：本页只验证状态转移核心，尚未提供已测试的 Gymnasium/SB3 适配器，因此 HW16 维持 `ongoing`。
+- **适配任务**：安装并锁定 `gymnasium` 与 `stable-baselines3` 版本；实现 `action_space`、`observation_space`、`reset(seed, options)`；通过 `check_env` 后才能训练。
+- **验收顺序**：先用固定动作序列测试收益、成本、终止与截断，再运行随机策略基线，最后才允许接入 PPO。缺少随机策略基线时，PPO 收益没有可比较意义。
 
 ---
 
@@ -189,12 +203,12 @@ model.learn(total_timesteps=100000)
 
 ## 9. 相关知识点与 Obsidian 双链建议
 ### 上游依赖
-- [[马尔可夫决策过程(MDP)]]：理解环境为何要返回状态、奖励。
-- [[量化回测评价指标]]：指导我们如何在环境里计算夏普比率、最大回撤并作为 Info 字典返回。
+- [[金融MDP设计与奖励函数工程 (Financial MDP & Reward Engineering)|马尔可夫决策过程(MDP)]]：理解环境为何要返回状态、奖励。
+- [[策略评价指标|量化回测评价指标]]：指导我们如何在环境里计算夏普比率、最大回撤并作为 Info 字典返回。
 
 ### 下游延伸
-- [[Stable-Baselines3实战]]：提供验证和训练环境的外部算法库。
-- [[VecEnv向量化环境]]：为了加速训练，如何将单进程 Gymnasium 封装为多进程并发环境。
+- [[金融MDP设计与奖励函数工程 (Financial MDP & Reward Engineering)|Stable-Baselines3实战]]：提供验证和训练环境的外部算法库。
+- [[金融MDP设计与奖励函数工程 (Financial MDP & Reward Engineering)|VecEnv向量化环境]]：为了加速训练，如何将单进程 Gymnasium 封装为多进程并发环境。
 
 ---
 

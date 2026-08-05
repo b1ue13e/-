@@ -281,7 +281,7 @@ def dollar_bars(tick_df: pd.DataFrame, threshold: float) -> pd.DataFrame:
 - [[Almgren-Chriss 最优算法执行轨迹推导 (Almgren-Chriss Optimal Execution)]] ↔ 本概念：最优执行需要精确估计市场冲击，Volume Bars 提供更准确的成交量到达过程建模
 
 ### 应用场景
-- [[量化金融-GARCH波动率策略]]：用 Dollar Bars 替代 Time Bars 作为 GARCH 输入，消除时间柱的波动率聚类伪影
+- [[量化金融-波动率-GARCH家族模型|量化金融-GARCH波动率策略]]：用 Dollar Bars 替代 Time Bars 作为 GARCH 输入，消除时间柱的波动率聚类伪影
 
 ---
 
@@ -513,9 +513,9 @@ Lopez de Prado 提出了更高阶的 **VIB (Volume Imbalance Bars) 交易量失�
 
 ## 9. 相关知识点与 Obsidian 双链建议
 
-- 上游依赖：[[高频数据清洗]], [[金融时间序列特征]]
-- 下游延伸：[[微观不平衡指标(VIB)]], [[强化学习的订单簿状态表示]]
-- 横向关联：[[特征工程-量化应用]] ↔ [[采样引擎]] (重构了最底层的特征形态)
+- 上游依赖：[[Volume Bars与Dollar Bars信息驱动采样 (Information-Driven Bars)|高频数据清洗]], [[滚动窗口与波动率特征|金融时间序列特征]]
+- 下游延伸：[[订单流不平衡 (Order Flow Imbalance, OFI)|微观不平衡指标(VIB)]], [[盘口特征|强化学习的订单簿状态表示]]
+- 横向关联：[[滚动窗口与波动率特征|特征工程-量化应用]] ↔ [[Volume Bars与Dollar Bars信息驱动采样 (Information-Driven Bars)|采样引擎]] (重构了最底层的特征形态)
 - 应用场景：[[[支线任务] HW09-DollarBars采样引擎]]
 
 ---
@@ -589,5 +589,5 @@ Lopez de Prado 提出了更高阶的 **VIB (Volume Imbalance Bars) 交易量失�
 
 ## 13. 给 Obsidian 的归档建议
 - **文件夹**：`02-Knowledge/🧠 学习系统/03-量化金融/04-深入精通`
-- **链接**：平行链接至 [[时间序列特征工程]]，下游通向实战演练 [[[支线任务] HW09-DollarBars采样引擎]]。
+- **链接**：平行链接至 [[滚动窗口与波动率特征|时间序列特征工程]]，下游通向实战演练 [[[支线任务] HW09-DollarBars采样引擎]]。
 - **标签**：`#量化金融/高频数据` `#DollarBars` `#AFML` `#微观结构` `#数据采样`

@@ -29,14 +29,28 @@ template: Obsidian单知识点深度学习模板
 
 ---
 
-## 🎯 作业体系（CS224N Assignments 1-5）
+## 📝 课后理论习题 (Written Assignments & Quizzes)
+
+在进入硬核的编程之前，必须通过理论习题来夯实数学与概念基础：
+
+1. **CS224N 纸笔推导题 (Written Assignments)**：位于每份官方 Assignment PDF 的前半部分。重点训练：
+   - 神经网络基础矩阵求导与反向传播。
+   - RNN 的 BPTT（随时间反向传播）手推。
+   - Attention 机制的计算复杂度与参数量分析。
+   > 验收标准：在 iPad 或草稿纸上独立推导，直至能不看提示复现。
+2. **SLP3 教材课后练习 (Textbook Exercises)**：位于《Speech and Language Processing 3e》每章末尾。重点训练传统统计 NLP 模型的手工演算（如 Viterbi 算法手算、N-gram 概率平滑计算）。
+3. **HF Course 章节测验 (Multiple Choice Quizzes)**：位于 Hugging Face 教程每章末尾，用于检验对工具链 API 及底层 Transformer 机制的陈述性记忆。
+
+---
+
+## 🎯 编程大作业体系 (Coding Assignments 1-5)
 
 | HW | 主题 | 官方 Assignment | 所需知识点（双链） | 验收方式 |
 |:---|:---|:---:|:---|:---|
 | HW01 | Word2Vec 词向量 | Assignment 1（+ A2 的 word2vec 部分） | [[词向量与Word2Vec]]、[[GloVe与稠密向量]]、[[文本预处理]] | 手写 sigmoid/softmax 梯度、实现 naive 与负采样版本的 skip-gram，数值梯度校验通过 |
 | HW02 | 文本分类：TF-IDF / 线性模型 / 神经网络对照 | Assignment 2（依存分析前置的文本表示与分类热身） | [[文本分类与情感分析]]、[[数据集与评测指标]] | 在同一数据集上跑 TF-IDF+逻辑回归 vs MLP vs 微调模型，对比报告 |
 | HW03 | 序列标注 / 依存分析 | Assignment 3（依存句法分析，transition-based parser） | [[循环神经网络RNN]]、[[数据集与评测指标]] | 实现基于 MLP 的 arc-standard 转移解析器，UAS/LAS 达到官方 baseline |
-| HW04 | Seq2Seq / Attention / NMT | Assignment 4（NMT with RNNs + attention） | [[Seq2Seq与注意力机制]]、[[循环神经网络RNN]] | 实现编码器-解码器 + Bahdanau attention + beam search，BLEU 达标 |
+| HW04 | Seq2Seq / Attention / NMT | Assignment 4（NMT with RNNs + attention） | [[Seq2Seq与注意力机制]]、[[循环神经网络RNN]] | 实现编码器-解码器 + Bahdanau attention + beam search（**脚手架**：强烈建议先画出 Beam Size=2 时的搜索树与状态流转矩阵再写代码），BLEU 达标 |
 | HW05 | Transformer / MinBERT 手撕 | Assignment 5（MinBERT / self-attention / fine-tuning） | [[Transformer架构]]、[[Self-Attention自注意力机制]]、[[BERT及其变体]]、[[NLP全栈 - HW05：Transformer 与 MinBERT 从零手撕阶梯作业\|HW05 阶梯作业]] | 从零实现 multi-head self-attention 与 MinBERT，SST-2 微调达标（见阶梯作业 4 档 Rubric） |
 
 > 分层验收原则：HW01 是向量地基（必须先过数值梯度校验）；HW02 是"传统 vs 神经网络"的分水岭对照；HW03-04 是序列建模双璧（标注/句法与翻译）；HW05 是整条链的 Capstone——从零手撕 Transformer 编码器。HW01-04 目前为**规划状态**（官方 PDF 自测），HW05 已有完整阶梯作业可执行。
@@ -58,7 +72,7 @@ template: Obsidian单知识点深度学习模板
 | 应用链 | [[检索增强生成RAG]] | [[05-大语言模型与前沿技术/向量数据库\|向量数据库]]、[[05-大语言模型与前沿技术/RAG Embedding\|RAG Embedding]]、[[05-大语言模型与前沿技术/切分策略\|切分策略]]、[[05-大语言模型与前沿技术/Reranking\|Reranking]]、[[05-大语言模型与前沿技术/混合检索\|混合检索]] |
 
 ### 待补清单（下一批）
-- [ ] LSTM 与门控机制（HW03 进阶，已有 [[03-深度学习NLP基础/GRU vs LSTM\|GRU vs LSTM]] 原子卡可聚合）
+- [ ] LSTM 与门控机制（HW04 前置，已有 [[03-深度学习NLP基础/GRU vs LSTM\|GRU vs LSTM]] 原子卡可聚合）
 - [ ] 机器翻译评测与错误分析（HW04 报告用，可并入 [[数据集与评测指标]]）
 - [ ] 微调与 Trainer 实践卡（HW05 工具链，HF Course Ch.3）
 
@@ -66,14 +80,16 @@ template: Obsidian单知识点深度学习模板
 
 ## ✅ 验收方式与评分
 
-1. **CS224N 原版作业自测**：每份官方 Assignment 的 starter code 跑通 + 数值梯度/单元测试通过为准；实现存档到 `03-Projects/projects-nlp/`。
-2. **Hugging Face Course 每章 Lab**：HF Course 每章末尾的 Lab notebook 全部执行通过（tokenizer → datasets → trainer → evaluation → RAG 逐章推进），作为工程验收。
-3. **报告 Rubric**（每个 HW 完成后交一份 1-2 页报告）：
+1. **中间态架构验收 (Formative Assessment)**：对于涉及复杂网络结构的作业（如 HW04, HW05），在动手写代码前，必须先手写一份“张量维度流转设计图”，明确核心层（如 Q/K/V）的 Input/Output Shape 契约。
+2. **排错指南依赖 (Debugging Heuristics)**：遇到报错（如 Loss 为 NaN，梯度爆炸）时，强制要求先查阅作业专属的排错手册（Failure Modes），严禁盲目试错。
+3. **CS224N 原版作业自测**：每份官方 Assignment 的 starter code 跑通 + 数值梯度/单元测试通过为准；实现存档到 `03-Projects/projects-nlp/`。
+4. **Hugging Face Course 每章 Lab**：HF Course 每章末尾的 Lab notebook 全部执行通过（tokenizer → datasets → trainer → evaluation → RAG 逐章推进），作为工程验收。
+5. **报告 Rubric**（每个 HW 完成后交一份 1-2 页报告）：
    - 方法简述（模型结构、损失、超参）—— 40%
    - 实验对照（baseline vs 实现、消融或对比表）—— 30%
-   - 错误分析（3 个以上典型错误样例 + 归因）—— 20%
+   - 错误分析（3 个以上典型错误样例 + 归因，重点复盘排错指南是否命中）—— 20%
    - 与讲义/教材的对照反思（1 个"课本没讲但作业里踩到"的点）—— 10%
-4. **满分线**：HW01-04 官方测试全过（各 15 分）+ HW05 阶梯作业 4 档达标（20 分）+ 5 份报告（各 4 分）= 100 分。
+6. **满分线**：HW01-04 官方测试全过（各 15 分）+ HW05 阶梯作业 4 档达标（20 分）+ 5 份报告（各 4 分）= 100 分。
 
 ---
 

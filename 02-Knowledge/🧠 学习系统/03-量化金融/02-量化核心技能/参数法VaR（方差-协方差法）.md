@@ -18,6 +18,9 @@ module: 量化核心技能
 ---
 # 参数法VaR（方差-协方差法）
 
+> [!info] 主线导航
+> [[🗺️ 量化金融学习路径|返回路径]] · **Week 6** · 下一张 [[量化金融-风险管理-期望损失分解与ES理论]] · 练习 [[03-Projects/开源课程课后习题/PS03-时间序列与波动率|PS03]] · 实验 [[03-Projects/HW06-DynamicVaR/README|动态 VaR]]
+
 VaR（Value at Risk）：在给定置信水平和持有期下，投资组合可能损失的最大值。参数法假设收益率服从正态分布，是最快速的VaR计算方法。
 
 ---
@@ -66,8 +69,8 @@ $$\text{VaR} = |z_c| \cdot \sigma \cdot V$$
 ## 前后连接
 
 - 前置：[[历史模拟法 VaR 与非参数风险度量 (Historical Simulation VaR)|历史模拟VaR]]、[[参数法VaR（方差-协方差法）|正态分布]]
-- 相关：[[蒙特卡洛模拟法 VaR (Monte Carlo Simulation VaR)|Monte Carlo VaR]]、[[CVaR条件风险价值|CVaR]]、[[极值理论 EVT 与 POT 超过门槛模型 (Extreme Value Theory & POT Model)|尾部风险]]
-- 阶段入口：[[📗 第二阶段：量化核心技能]]
+- 相关：[[蒙特卡洛模拟法 VaR (Monte Carlo Simulation VaR)|Monte Carlo VaR]]、[[量化金融-风险管理-期望损失分解与ES理论|CVaR]]、[[极值理论 EVT 与 POT 超过门槛模型 (Extreme Value Theory & POT Model)|尾部风险]]
+- 阶段入口：[[📚 教材挂载索引|📗 第二阶段：量化核心技能]]
 
 ---
 
@@ -125,7 +128,7 @@ VaR的定义？ :: 在置信水平c下，持有T期的最大可能损失。99% 1
 下游延伸
 
 - [[极值理论 EVT 与 POT 超过门槛模型 (Extreme Value Theory & POT Model)|尾部风险]]：进一步延伸拓展该知识点的应用场景与模型构建。
-- [[CVaR条件风险价值|压力测试]]：进一步延伸拓展该知识点的应用场景与模型构建。
+- [[量化金融-风险管理-期望损失分解与ES理论|压力测试]]：进一步延伸拓展该知识点的应用场景与模型构建。
 
 横向关联
 

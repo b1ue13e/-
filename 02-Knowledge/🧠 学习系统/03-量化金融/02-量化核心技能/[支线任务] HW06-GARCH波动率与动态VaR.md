@@ -7,12 +7,14 @@ flow: knowledge
 course: "03-量化金融"
 importance: "A"
 tags: [学习, 核心概念, 量化金融, GARCH, VaR, 作业说明书]
-prerequisites: ["[[时间序列分析基础]]", "[[历史模拟法VaR]]"]
-related: ["[[期权定价与波动率微笑]]", "[[多因子风险模型]]"]
-status: learning
-subagent_audit_score: 10.0
+prerequisites: ["[[00-零基础补救-数学统计与Python|时间序列分析基础]]", "[[历史模拟法 VaR 与非参数风险度量 (Historical Simulation VaR)|历史模拟法VaR]]"]
+related: ["[[隐含波动率与波动率微笑 (Implied Volatility & Volatility Smile)|期权定价与波动率微笑]]", "[[量化金融-资产定价-多因子模型|多因子风险模型]]"]
+status: ongoing
 ---
 # HW06-GARCH波动率与动态VaR 实战作业说明书
+
+> [!important] 可执行作业包
+> [[03-Projects/Phase2-GARCH/README|Phase 2 GARCH 实验包]] 覆盖条件方差估计与样本外预测；[[03-Projects/HW06-DynamicVaR/README|HW06 动态 VaR 实验包]] 覆盖滚动参数法、历史法 VaR 与 Kupiec 检验。
 
 ---
 
@@ -138,12 +140,12 @@ dynamic_var_99_pct = cond_vol * 2.326
 
 ## 9. 相关知识点与 Obsidian 双链建议
 ### 上游依赖
-- [[时间序列平稳性检验]]：GARCH拟合的前提，如果不平稳会导致参数估计失效。
-- [[极大似然估计MLE]]：底层求解 $\omega, \alpha, \beta$ 参数的优化方法。
+- [[单位根检验与 ADF 检验 (Unit Root & Augmented Dickey-Fuller Test)|时间序列平稳性检验]]：GARCH拟合的前提，如果不平稳会导致参数估计失效。
+- [[极大似然估计|极大似然估计MLE]]：底层求解 $\omega, \alpha, \beta$ 参数的优化方法。
 
 ### 下游延伸
-- [[EGARCH与非对称波动率]]：股票下跌往往比上涨带来更大的波动率，GARCH无法捕捉这种非对称杠杆效应，EGARCH解决了这个问题。
-- [[VaR的回测检验(Kupiec)]]：衡量你本次作业算出来的 VaR 是否靠谱的统计学检验方法。
+- [[非对称 GARCH 模型与杠杆效应 (EGARCH & GJR-GARCH)|EGARCH与非对称波动率]]：股票下跌往往比上涨带来更大的波动率，GARCH无法捕捉这种非对称杠杆效应，EGARCH解决了这个问题。
+- [[参数法VaR（方差-协方差法）|VaR的回测检验(Kupiec)]]：衡量你本次作业算出来的 VaR 是否靠谱的统计学检验方法。
 
 ---
 
@@ -218,5 +220,5 @@ dynamic_var_99_pct = cond_vol * 2.326
 
 ## 13. 给 Obsidian 的归档建议
 - **建议目录**：`02-Knowledge/🧠 学习系统/03-量化金融/18-实战作业说明书/`
-- **建议链接**：链接至对应学科的主线 MOC 及 `[[风险管理与定价]]` 节点。
+- **建议链接**：链接至对应学科的主线 MOC 及 `[[量化金融-风险管理-期望损失分解与ES理论|风险管理与定价]]` 节点。
 - **建议标签**：`#学习 #核心概念 #03-量化金融 #GARCH #风控建模`

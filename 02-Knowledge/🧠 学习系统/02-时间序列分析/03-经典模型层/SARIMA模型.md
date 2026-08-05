@@ -65,13 +65,22 @@ $$
 这些只是生成候选的启发式。应固定 (d,D) 后用 AICc 比较少量候选，并检查参数根和残差。
 
 ```python
+import numpy as np
+import pandas as pd
 from statsmodels.tsa.statespace.sarimax import SARIMAX
+
+rng = np.random.default_rng(65)
+t = np.arange(144)
+y = 30 + 0.05 * t + 4 * np.sin(2 * np.pi * t / 12) + rng.normal(0, 0.8, len(t))
+train = pd.Series(y, index=pd.date_range("2012-01-01", periods=len(y), freq="MS"))
 
 fit = SARIMAX(
     train, order=(1, 1, 1), seasonal_order=(1, 1, 1, 12),
     enforce_stationarity=True, enforce_invertibility=True
 ).fit(disp=False)
 fc = fit.get_forecast(steps=12)
+print("converged:", fit.mle_retvals.get("converged"))
+print("forecast length:", len(fc.predicted_mean))
 ```
 
 ## 3. 严格验收流程

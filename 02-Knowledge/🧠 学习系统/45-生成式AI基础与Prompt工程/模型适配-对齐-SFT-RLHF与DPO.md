@@ -1,5 +1,6 @@
 ---
 title: "模型适配-对齐-SFT-RLHF与DPO"
+aliases: ["指令微调与对齐"]
 type: study
 topic: "SFT、RLHF 与 DPO 对齐"
 course: "生成式AI基础与Prompt工程"
@@ -16,7 +17,7 @@ flow: knowledge
 kind: concept
 template: Obsidian单知识点深度学习模板
 created: 2026-08-03
-source: "Stanford CS336 Spring 2026 Lectures 15-16 and Assignment 5; CMU 10-423 Spring 2026 HW3"
+source: "Stanford CS336 Spring 2025 alignment lectures and public course materials; Stanford CS324 adaptation and risks modules"
 anki_deck: "45-生成式AI基础与Prompt工程::模型适配"
 anki_tags: [生成式AI, SFT, RLHF, DPO, 对齐]
 ---
@@ -25,7 +26,7 @@ anki_tags: [生成式AI, SFT, RLHF, DPO, 对齐]
 ---
 ## 0. 先判断它值不值得深挖
 - **类别**：**A 类（核心概念，必须深挖）**
-- **判断理由**：基座模型只会"续写"，不会"听话"；对齐（SFT → RLHF → DPO）是让 LLM 从"会说话"变成"会干活"的关键工序。面试必问"RLHF 的流程""DPO 为什么不需要奖励模型""对齐税是什么"；[[🧭 开源作业体系-NLP全栈|开源作业体系]] 的项目层也要做指令微调。
+- **判断理由**：基座模型只会续写，不天然遵循人类意图；SFT、RLHF 与 DPO 解释了聊天模型如何获得指令跟随与偏好行为，也帮助判断何时 Prompt 已到边界、需要训练侧适配。
 ---
 ## 1. 这个知识点解决什么问题？
 > **我们遇到了什么麻烦**：
@@ -91,23 +92,24 @@ $$\mathcal{L}_{\text{DPO}} = -\mathbb{E}_{(x,y_w,y_l)}\left[\log\sigma\left(\bet
 ### 例子 2：中等例子（条件判断与多步推理）
 - **题目与完整解答**：为什么 RLHF 必须加 KL 惩罚？—— 无约束时模型会"奖励黑客"：只说评委爱听的空话（如无限重复"好的好的"），或偏离人类语言分布产生退化输出；KL 惩罚 $\beta D_{KL}(\pi_\theta\|\pi_{\text{ref}})$ 把模型钉在参考模型附近，只允许"朝偏好方向小幅移动"——这是"对齐"与"保持能力"的平衡器，也是对齐税的直接来源。
 ### 例子 3：实际应用例子（真实场景/代码）
-- **实际价值与转化**：`trl` 库 DPO 训练几十行：
+- **实际价值与转化**：下面用标准库逐样本计算 DPO 损失，先验证公式、边界与数据 schema；真正训练需另建带 GPU/依赖锁的工程环境：
 ```python
-from datasets import load_dataset
-from trl import DPOTrainer, DPOConfig
-from transformers import AutoModelForCausalLM, AutoTokenizer
+import math
 
-model = AutoModelForCausalLM.from_pretrained("Qwen/Qwen2.5-0.5B-Instruct")
-ref = AutoModelForCausalLM.from_pretrained("Qwen/Qwen2.5-0.5B-Instruct")  # 参考模型
-ds = load_dataset("trl-lib/ultrafeedback_binarized", split="train").select(range(2000))
+def dpo_loss(model_chosen: float, reference_chosen: float,
+             model_rejected: float, reference_rejected: float,
+             beta: float = 0.1) -> float:
+    probabilities = (model_chosen, reference_chosen, model_rejected, reference_rejected)
+    if any(value <= 0.0 for value in probabilities) or beta <= 0.0:
+        raise ValueError("概率与 beta 必须为正")
+    margin = math.log(model_chosen / reference_chosen) - math.log(
+        model_rejected / reference_rejected
+    )
+    return math.log1p(math.exp(-beta * margin))
 
-trainer = DPOTrainer(
-    model=model, ref_model=ref,
-    train_dataset=ds,
-    args=DPOConfig(output_dir="./dpo-out", beta=0.1, per_device_train_batch_size=2),
-    tokenizer=AutoTokenizer.from_pretrained("Qwen/Qwen2.5-0.5B-Instruct"),
-)
-trainer.train()
+loss = dpo_loss(0.4, 0.2, 0.1, 0.3, beta=1.0)
+print(round(loss, 3))
+assert round(loss, 3) == 0.154
 ```
 ---
 ## 8. 常见误区和易混概念
@@ -140,7 +142,7 @@ trainer.train()
 - [[提示工程]] ↔ 本知识点：零成本"软对齐" vs 训练式"硬对齐"。
 - [[参数高效微调PEFT]] ↔ 本知识点：对齐训练的工程手段。
 ### 应用场景
-- [[🧭 开源作业体系-NLP全栈|开源作业体系]]：项目层指令微调与评测。
+- [[Stanford-CS324-Prompt作业逐节导航]]：适配、能力与风险的公开项目结构。
 ---
 ## 10. 闭卷复现任务
 - [ ] 1. 用一句话说清楚对齐解决什么问题。
@@ -198,7 +200,13 @@ trainer.train()
 - [ ] 14 天后
 ---
 ## 13. 给 Obsidian 的归档建议
-- **适合文件夹**：`02-Knowledge/🧠 学习系统/08-NLP全栈/`
-- **关联已有笔记**：[[GPT系列]]、[[参数高效微调PEFT]]、[[提示工程]]、[[Agent与工具使用]]、[[对话系统]]、[[🧭 开源作业体系-NLP全栈]]
-- **建议标签**：`#学习` `#NLP全栈` `#对齐` `#RLHF` `#概念`
+- **适合文件夹**：`02-Knowledge/🧠 学习系统/45-生成式AI基础与Prompt工程/`
+- **关联已有笔记**：[[Transformer与大语言模型-训练-GPT与自回归语言模型]]、[[Prompt工程-方法-指令示例推理与约束]]、[[Prompt评测-实验-指标数据集与误差分析]]、[[Stanford-CS324-Prompt作业逐节导航]]
+- **建议标签**：`#学习` `#生成式AI` `#对齐` `#RLHF` `#概念`
 - **拆分建议**：母卡保留；"DPO 损失手推"拆推导笔记，"对齐评测实验"拆实践笔记。
+
+## 🃏 Anki 卡片
+
+- SFT、RLHF 与 DPO 分别解决什么问题？::SFT 学指令示范，RLHF 用奖励模型和策略优化学习偏好，DPO 直接从偏好对优化策略相对参考模型的概率比。
+- 为什么对齐训练需要参考模型或 KL 约束？::限制策略偏离原模型，降低奖励投机、语言退化和能力遗忘。
+- 何时应先做 Prompt 或 RAG 而不是微调？::要求仍不明确、知识需要频繁更新或外部可检索时，先改规格或接入检索更便宜且可追溯。

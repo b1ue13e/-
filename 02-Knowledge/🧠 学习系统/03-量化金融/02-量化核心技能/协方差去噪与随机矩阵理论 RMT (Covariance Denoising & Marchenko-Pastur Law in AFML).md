@@ -316,7 +316,7 @@ print(f"去噪后矩阵条件数提升 (原始 vs 去噪): {np.linalg.cond(cov_s
 下游延伸
 
 - [[分层风险平价组合 HRP (Hierarchical Risk Parity in AFML)|分层风险平价组合]]：进一步延伸拓展该知识点的应用场景与模型构建。
-- [[因子标准化]]：进一步延伸拓展该知识点的应用场景与模型构建。
+- [[因子预处理：去极值、中性化与标准化 (Factor Preprocessing_ Winsorization, Neutralization & Z-Score)|因子标准化]]：进一步延伸拓展该知识点的应用场景与模型构建。
 
 横向关联
 

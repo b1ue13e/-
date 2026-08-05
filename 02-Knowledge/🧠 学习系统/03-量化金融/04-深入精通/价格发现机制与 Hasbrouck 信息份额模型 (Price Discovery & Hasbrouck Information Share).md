@@ -60,8 +60,8 @@ downstream:
 
 ## 3. 学它之前需要哪些前置知识？
 
-1. **[[02-Knowledge/🧠 学习系统/03-量化金融/02-量化核心技能/协整]]**：理解同一资产在不同市场价格之间的协整关系 $I(1) \to I(0)$。
-2. **[[02-Knowledge/🧠 学习系统/03-量化金融/02-量化核心技能/单位根检验]]**：理解价格原序列为随机游走。
+1. **[[协整关系与 Engle-Granger 两步法 (Cointegration & Engle-Granger Method)|协整]]**：理解同一资产在不同市场价格之间的协整关系 $I(1) \to I(0)$。
+2. **[[单位根检验与 ADF 检验 (Unit Root & Augmented Dickey-Fuller Test)|单位根检验]]**：理解价格原序列为随机游走。
 3. **最小必要背景（向量误差修正模型 VECM）**：
    > 考虑两个市场价格 $\mathbf{P}_t = [P_{1,t}, P_{2,t}]^T$：
    > $$\Delta \mathbf{P}_t = \boldsymbol{\alpha} \boldsymbol{\beta}^T \mathbf{P}_{t-1} + \sum_{i=1}^p \boldsymbol{\Gamma}_i \Delta \mathbf{P}_{t-i} + \boldsymbol{\epsilon}_t$$
@@ -367,7 +367,7 @@ print("VECM 残差协方差矩阵 omega:\n", vecm_res.sigma_u)
 ## 13. 给 Obsidian 的归档建议
 
 - **适合文件夹**：`02-Knowledge/🧠 学习系统/03-量化金融/04-深入精通/`
-- **建议双链**：[[02-Knowledge/🧠 学习系统/03-量化金融/02-量化核心技能/协整]]、[[信息交易模型与 VPIN 毒性订单流度量 (Information-Based Models & VPIN)|信息交易模型]]、[[高频 Alpha 信号工程与盘口特征构建 (High-Frequency Signals & Microstructure Features)|高频信号]]
+- **建议双链**：[[协整关系与 Engle-Granger 两步法 (Cointegration & Engle-Granger Method)|协整]]、[[信息交易模型与 VPIN 毒性订单流度量 (Information-Based Models & VPIN)|信息交易模型]]、[[高频 Alpha 信号工程与盘口特征构建 (High-Frequency Signals & Microstructure Features)|高频信号]]
 - **标签**：`#学习` `#量化金融` `#市场微观结构` `#价格发现` `#Hasbrouck` `#信息份额` `#VECM` `#跨市场套利`
 
 ---

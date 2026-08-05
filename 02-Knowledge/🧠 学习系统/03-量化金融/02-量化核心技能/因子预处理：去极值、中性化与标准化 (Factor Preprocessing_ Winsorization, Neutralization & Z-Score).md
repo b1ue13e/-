@@ -61,7 +61,7 @@ downstream:
 
 ## 3. 学它之前需要哪些前置知识？
 
-1. **[[价值因子]]** / **[[动量因子]]**：理解原始因子的定义与量纲差异。
+1. **[[价值因子与 HML 账面市值比溢价 (Value Factor & HML)|价值因子]]** / **[[趋势跟踪策略框架与 CTA 交易哲学 (Trend-Following Framework & CTA Trading)|动量因子]]**：理解原始因子的定义与量纲差异。
 2. **最小必要背景（中位数绝对偏差 MAD, Median Absolute Deviation）**：
    > 比标准差 $3\sigma$ 更稳健的去极值方法：
    > $$\text{MAD} = \text{Median}(|X_i - \text{Median}(X)|)$$
@@ -212,7 +212,7 @@ print("预处理后因子均值与标准差:", clean_factor.mean(), clean_factor
 ## 7.5 💥 课本挂载与工业级实战模块 (Textbook Mapping & Production Lab)
 
 ### 7.5.5
-> 🔓 **作业解锁前置条件**：学完 [[收益率与对数收益率]] + [[因子标准化]] 即可正式解锁本 Challenge 实战！
+> 🔓 **作业解锁前置条件**：学完 [[收益率与对数收益率]] + [[因子预处理：去极值、中性化与标准化 (Factor Preprocessing_ Winsorization, Neutralization & Z-Score)|因子标准化]] 即可正式解锁本 Challenge 实战！
 > 💡 **解锁指引**：理解 因子标准化 的核心定义与基本推导逻辑后即可解锁。
 
  🧪 拓展实验与李宏毅式实战 Challenge 题 (Lab Assignment: 因子标准化 工业级实战 challenge)
@@ -261,15 +261,15 @@ print("预处理后因子均值与标准差:", clean_factor.mean(), clean_factor
 
 上游依赖
 
-- [[多因子模型]]：提供基础概念与理论推导支撑。
+- [[量化金融-资产定价-多因子模型|多因子模型]]：提供基础概念与理论推导支撑。
 - [[Fama-MacBeth 两步回归法 (Fama-MacBeth Two-Step Regression)|Fama-MacBeth两步回归法]]：提供基础概念与理论推导支撑。
 
 下游延伸
 
-- [[动量因子]]：进一步延伸拓展该知识点的应用场景与模型构建。
-- [[价值因子]]：进一步延伸拓展该知识点的应用场景与模型构建。
-- [[质量因子]]：进一步延伸拓展该知识点的应用场景与模型构建。
-- [[分层回测]]：进一步延伸拓展该知识点的应用场景与模型构建。
+- [[趋势跟踪策略框架与 CTA 交易哲学 (Trend-Following Framework & CTA Trading)|动量因子]]：进一步延伸拓展该知识点的应用场景与模型构建。
+- [[价值因子与 HML 账面市值比溢价 (Value Factor & HML)|价值因子]]：进一步延伸拓展该知识点的应用场景与模型构建。
+- [[质量因子与 QMJ 盈利能力溢价 (Quality Factor & QMJ - Quality Minus Junk)|质量因子]]：进一步延伸拓展该知识点的应用场景与模型构建。
+- [[回测框架与无泄漏实验|分层回测]]：进一步延伸拓展该知识点的应用场景与模型构建。
 
 横向关联
 
@@ -380,7 +380,7 @@ print("预处理后因子均值与标准差:", clean_factor.mean(), clean_factor
 ## 13. 给 Obsidian 的归档建议
 
 - **适合文件夹**：`02-Knowledge/🧠 学习系统/03-量化金融/03-策略开发与实战/`
-- **建议双链**：[[价值因子]]、[[动量因子]]、[[分层回测]]
+- **建议双链**：[[价值因子与 HML 账面市值比溢价 (Value Factor & HML)|价值因子]]、[[趋势跟踪策略框架与 CTA 交易哲学 (Trend-Following Framework & CTA Trading)|动量因子]]、[[回测框架与无泄漏实验|分层回测]]
 - **标签**：`#学习` `#量化金融` `#策略开发` `#多因子选股` `#因子预处理` `#去极值` `#中性化` `#ZScore`
 
 ---

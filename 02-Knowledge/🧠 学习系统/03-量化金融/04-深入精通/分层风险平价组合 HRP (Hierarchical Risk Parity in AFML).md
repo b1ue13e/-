@@ -331,7 +331,7 @@ print(hrp_w.round(4))
 下游延伸
 
 - [[协方差去噪与随机矩阵理论 RMT (Covariance Denoising & Marchenko-Pastur Law in AFML)|协方差去噪与随机矩阵理论]]：进一步延伸拓展该知识点的应用场景与模型构建。
-- [[止损与仓位]]：进一步延伸拓展该知识点的应用场景与模型构建。
+- [[动态止损机制与风险平价仓位管理 (Stop-Loss Mechanisms & Risk-Parity Position Sizing)|止损与仓位]]：进一步延伸拓展该知识点的应用场景与模型构建。
 
 横向关联
 
@@ -443,7 +443,7 @@ print(hrp_w.round(4))
 ## 13. 给 Obsidian 的归档建议
 
 - **适合文件夹**：`02-Knowledge/🧠 学习系统/03-量化金融/03-策略开发与实战/`
-- **建议双链**：[[相关系数、协方差与资产组合分散化 (Covariance, Correlation & Diversification)|马科维茨均值-方差模型]]、[[相关系数、协方差与资产组合分散化 (Covariance, Correlation & Diversification)|相关系数、协方差与分散化]]、[[止损与仓位]]
+- **建议双链**：[[相关系数、协方差与资产组合分散化 (Covariance, Correlation & Diversification)|马科维茨均值-方差模型]]、[[相关系数、协方差与资产组合分散化 (Covariance, Correlation & Diversification)|相关系数、协方差与分散化]]、[[动态止损机制与风险平价仓位管理 (Stop-Loss Mechanisms & Risk-Parity Position Sizing)|止损与仓位]]
 - **
 
 ---

@@ -62,7 +62,7 @@ Purged Group TimeSeries Cross-Validation（净化与隔离交叉验证）是 Mar
 ## 3. 学它之前需要哪些前置知识？
 
 1. **[[样本泄漏]]**：理解机器学习中训练集获取测试集未来信息的概念。
-2. **[[标签设计]]**：理解三重屏障法（Triple-Barrier Method）中每个样本点都有开始时间 $t_{1,i}$ 与结束到期时间 $t_{2,i}$。
+2. **[[Meta-labeling 二级标签与元标注 (Meta-labeling in Financial ML)|标签设计]]**：理解三重屏障法（Triple-Barrier Method）中每个样本点都有开始时间 $t_{1,i}$ 与结束到期时间 $t_{2,i}$。
 3. **最小必要背景（标准 K-Fold CV）**：
    > **$K$-Fold**：将数据集分成 $K$ 份，依次取 1 份作为测试集，剩余 $K-1$ 份作为训练集。但在金融时间序列中不能打乱顺序。
 
@@ -200,7 +200,7 @@ print("净化后有效训练集样本数量:", len(valid_train_idx))
 ## 7.5 💥 课本挂载与工业级实战模块 (Textbook Mapping & Production Lab)
 
 ### 7.5.5
-> 🔓 **作业解锁前置条件**：学完 [[收益率与对数收益率]] + [[Purged CV]] 即可正式解锁本 Challenge 实战！
+> 🔓 **作业解锁前置条件**：学完 [[收益率与对数收益率]] + [[Purged Group TimeSeries Cross-Validation 净化交叉验证 (Purged Group K-Fold CV)|Purged CV]] 即可正式解锁本 Challenge 实战！
 > 💡 **解锁指引**：理解 Purged CV 的核心定义与基本推导逻辑后即可解锁。
 
  🧪 拓展实验与李宏毅式实战 Challenge 题 (Lab Assignment: Purged CV 工业级实战 challenge)
@@ -251,13 +251,13 @@ print("净化后有效训练集样本数量:", len(valid_train_idx))
 上游依赖
 
 - [[金融微观结构采样棒 (Financial Data Bars_ Volume, Dollar & Imbalance Bars in AFML)|金融微观结构采样棒]]：提供基础概念与理论推导支撑。
-- [[标签设计]]：提供基础概念与理论推导支撑。
+- [[Meta-labeling 二级标签与元标注 (Meta-labeling in Financial ML)|标签设计]]：提供基础概念与理论推导支撑。
 - [[样本泄漏]]：提供基础概念与理论推导支撑。
 
 下游延伸
 
-- [[Meta-labeling]]：进一步延伸拓展该知识点的应用场景与模型构建。
-- [[组合过拟合概率PBO]]：进一步延伸拓展该知识点的应用场景与模型构建。
+- [[Meta-labeling 二级标签与元标注 (Meta-labeling in Financial ML)|Meta-labeling]]：进一步延伸拓展该知识点的应用场景与模型构建。
+- [[PBO回测过拟合概率与Deflated Sharpe Ratio (Probability of Backtest Overfitting)|组合过拟合概率PBO]]：进一步延伸拓展该知识点的应用场景与模型构建。
 
 横向关联
 
@@ -365,7 +365,7 @@ print("净化后有效训练集样本数量:", len(valid_train_idx))
 ## 13. 给 Obsidian 的归档建议
 
 - **适合文件夹**：`02-Knowledge/🧠 学习系统/03-量化金融/03-策略开发与实战/`
-- **建议双链**：[[样本泄漏]]、[[标签设计]]、[[Meta-labeli
+- **建议双链**：[[样本泄漏]]、[[Meta-labeling 二级标签与元标注 (Meta-labeling in Financial ML)|标签设计]]、[[Meta-labeli
 
 ---
 

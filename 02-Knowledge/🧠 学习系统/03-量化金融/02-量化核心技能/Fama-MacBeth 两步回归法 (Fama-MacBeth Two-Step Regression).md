@@ -52,7 +52,7 @@ verified_at: 2026-08-03
 
 ## 3. 学它之前需要哪些前置知识？
 
-1. **[[CAPM资本资产定价模型]]**：β 估计与定价。
+1. **[[CAPM 资本资产定价模型|CAPM资本资产定价模型]]**：β 估计与定价。
 2. 截面回归与时间序列回归的区别。
 
 ---
@@ -145,10 +145,10 @@ $$t_k = \frac{\bar\gamma_k}{\hat\sigma_{\gamma_k}/\sqrt{T}},\qquad \hat\sigma_{\
 ## 9. 相关知识点与 Obsidian 双链建议
 
 ### 上游依赖
-- [[CAPM资本资产定价模型]]
+- [[CAPM 资本资产定价模型|CAPM资本资产定价模型]]
 
 ### 下游延伸
-- [[因子模型与Fama-French三因子]]：多因子溢价检验
+- [[Fama-French三因子模型|因子模型与Fama-French三因子]]：多因子溢价检验
 - [[回测框架与无泄漏实验]]：因子验证协议
 
 ### 横向关联
@@ -241,7 +241,7 @@ $$t_k = \frac{\bar\gamma_k}{\hat\sigma_{\gamma_k}/\sqrt{T}},\qquad \hat\sigma_{\
 ## 13. 给 Obsidian 的归档建议
 
 - **适合文件夹**：`02-Knowledge/🧠 学习系统/03-量化金融/`
-- **关联已有笔记**：[[因子模型与Fama-French三因子]] [[CAPM资本资产定价模型]] [[[支线任务] HW03-FamaMacBeth回归]]
+- **关联已有笔记**：[[Fama-French三因子模型|因子模型与Fama-French三因子]] [[CAPM 资本资产定价模型|CAPM资本资产定价模型]] [[[支线任务] HW03-FamaMacBeth回归]]
 - **建议标签**：`#学习` `#量化金融`
 - **拆分建议**：不拆分
 \n\n> ⚔️ **支线实战任务 (Side Quest)**：👉 点击进入 [[[支线任务] HW03-FamaMacBeth回归]] 刷怪通关！\n

@@ -1,5 +1,6 @@
 ---
 title: "Prompt工程-方法-指令示例推理与约束"
+aliases: ["提示工程"]
 type: study
 topic: "Prompt工程方法"
 course: "生成式AI基础与Prompt工程"
@@ -91,23 +92,27 @@ $$P(y \mid x) \approx \prod_{j} P(\text{step}_j \mid \text{step}_{<j}, x) \quad 
 ### 例子 3：实际应用例子（真实场景/代码）
 - **实际价值与转化**：结构化输出 + Self-Consistency 的生产用法：
 ```python
-from openai import OpenAI
-client = OpenAI()
+# 输入：评论与离线模型返回；输出：经 schema 校验的 JSON。真实 API 只需替换 raw。
+import json
+from collections import Counter
 
-prompt = """从评论中提取情感，只输出 JSON：{"sentiment": "positive|negative|neutral", "reason": "..."}
-示例：评论"物流太慢了" -> {"sentiment": "negative", "reason": "物流慢"}
-评论"{review}" ->"""
-ans = client.chat.completions.create(model="gpt-4o-mini",
-    messages=[{"role": "user", "content": prompt}], temperature=0)
-import json; print(json.loads(ans.choices[0].message.content))
+def build_prompt(review: str) -> str:
+    schema = '{"sentiment":"positive|negative|neutral","reason":"..."}'
+    return f"从评论提取情感，只输出满足 {schema} 的 JSON。评论：{review}"
 
-# Self-Consistency：temperature=0.7 采样 5 次，多数投票
-votes = []
-for _ in range(5):
-    r = client.chat.completions.create(model="gpt-4o-mini",
-        messages=[{"role": "user", "content": "池塘荷花…请推理"}], temperature=0.7)
-    votes.append(r.choices[0].message.content)
-print(max(set(votes), key=votes.count))   # 投票取多数
+def parse_result(raw: str) -> dict[str, str]:
+    data = json.loads(raw)
+    if set(data) != {"sentiment", "reason"}:
+        raise ValueError("输出字段不符合契约")
+    if data["sentiment"] not in {"positive", "negative", "neutral"}:
+        raise ValueError("sentiment 越界")
+    return data
+
+print(build_prompt("物流太慢了"))
+raw = '{"sentiment":"negative","reason":"物流慢"}'
+assert parse_result(raw)["sentiment"] == "negative"
+votes = ["2", "2", "3", "2", "3"]
+print(Counter(votes).most_common(1)[0][0])
 ```
 ---
 ## 8. 常见误区和易混概念
@@ -140,7 +145,7 @@ print(max(set(votes), key=votes.count))   # 投票取多数
 - [[指令微调与对齐]] ↔ 本知识点：输入侧 vs 训练侧的"对齐"。
 - [[Agent与工具使用]] ↔ 本知识点：Agent 的思考格式是 CoT 的工程化。
 ### 应用场景
-- [[🧭 开源作业体系-NLP全栈|开源作业体系]]：项目层的 prompt 设计验收。
+- [[Stanford-CS324-Prompt作业逐节导航]]：Prompt 作业逐节导航与授权边界。
 ---
 ## 10. 闭卷复现任务
 - [ ] 1. 用一句话说清楚提示工程解决什么问题。
@@ -198,7 +203,13 @@ print(max(set(votes), key=votes.count))   # 投票取多数
 - [ ] 14 天后
 ---
 ## 13. 给 Obsidian 的归档建议
-- **适合文件夹**：`02-Knowledge/🧠 学习系统/08-NLP全栈/`
-- **关联已有笔记**：[[GPT系列]]、[[文本生成]]、[[Agent与工具使用]]、[[检索增强生成RAG]]、[[指令微调与对齐]]、[[🧭 开源作业体系-NLP全栈]]
-- **建议标签**：`#学习` `#NLP全栈` `#提示工程` `#CoT` `#概念`
+- **适合文件夹**：`02-Knowledge/🧠 学习系统/45-生成式AI基础与Prompt工程/`
+- **关联已有笔记**：[[Transformer与大语言模型-训练-GPT与自回归语言模型]]、[[生成控制-解码-温度Top-k与Top-p]]、[[Prompt增强-RAG-检索生成与可追溯回答]]、[[模型适配-对齐-SFT-RLHF与DPO]]、[[Stanford-CS324-Prompt作业逐节导航]]
+- **建议标签**：`#学习` `#Prompt工程` `#CoT` `#概念`
 - **拆分建议**：母卡保留；"提示模板库"拆参考卡，"幻觉案例分析"拆错题笔记。
+
+## 🃏 Anki 卡片
+
+- Prompt 工程最稳定的四类控制信息是什么？::任务指令、输入与上下文、示例、输出与失败约束。
+- Few-shot 示例的主要作用是什么？::在上下文中具体展示标签语义、决策边界和目标输出格式。
+- Prompt 改写是否有效应如何判断？::在固定数据集、模型和解码参数上进行受控对照，并分析指标、方差、成本和失败类型。

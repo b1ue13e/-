@@ -1,0 +1,19 @@
+{
+  "observations": 500,
+  "train_observations": 300,
+  "validation_observations": 100,
+  "test_observations": 100,
+  "selected_depth": 2,
+  "validation_mse_by_depth": {
+    "2": 2.3678531402942686e-05,
+    "3": 2.393640961934411e-05,
+    "4": 2.4761729776317998e-05
+  },
+  "test_mse": 2.044619023388408e-05,
+  "mean_baseline_mse": 0.00010989285657561206,
+  "feature_importance": {
+    "feature_trend": 0.9881665753128448,
+    "feature_volatility": 0.011833424687155135
+  },
+  "random_state": 42
+}

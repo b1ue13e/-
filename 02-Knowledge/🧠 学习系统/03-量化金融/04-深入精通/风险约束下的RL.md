@@ -4,7 +4,7 @@ date: 2026-07-31
 type: concept
 course: "03-量化金融"
 importance: "A"
-upstream: ["[[强化学习金融交易环境与 MDP 状态-动作空间设计 (Gym-Finance & MDP in Financial RL)|强化学习基础]]", "[[强化学习金融交易环境与 MDP 状态-动作空间设计 (Gym-Finance & MDP in Financial RL)|马尔可夫决策过程 (MDP)]]", "[[CVaR条件风险价值|凸优化]]"]
+upstream: ["[[强化学习金融交易环境与 MDP 状态-动作空间设计 (Gym-Finance & MDP in Financial RL)|强化学习基础]]", "[[强化学习金融交易环境与 MDP 状态-动作空间设计 (Gym-Finance & MDP in Financial RL)|马尔可夫决策过程 (MDP)]]", "[[量化金融-风险管理-期望损失分解与ES理论|凸优化]]"]
 downstream: ["[[02-Knowledge/🧠 学习系统/03-量化金融/04-深入精通/风险约束下的RL|安全强化学习 (Safe RL)]]", "[[高频 Alpha 信号工程与盘口特征构建 (High-Frequency Signals & Microstructure Features)|高频交易策略]]", "[[02-Knowledge/🧠 学习系统/03-量化金融/04-深入精通/风险约束下的RL|CPO算法]]"]
 tags: [学习, 核心概念, RL, 量化金融, 风险管理]
 flow: knowledge
@@ -127,11 +127,11 @@ $$ \max_{\pi} \min_{\lambda \geq 0} \mathcal{L}(\pi, \lambda) = J_R(\pi) - \lamb
 ## 9. 相关知识点与 Obsidian 双链建议
 ### 上游依赖
 - [[强化学习金融交易环境与 MDP 状态-动作空间设计 (Gym-Finance & MDP in Financial RL)|马尔可夫决策过程 (MDP)]]：CMDP 是 MDP 的扩展，加上了 Cost 的期望。
-- [[CVaR条件风险价值|凸优化]]：对偶问题与拉格朗日乘子法是动态调节惩罚项的数学依据。
+- [[量化金融-风险管理-期望损失分解与ES理论|凸优化]]：对偶问题与拉格朗日乘子法是动态调节惩罚项的数学依据。
 
 ### 下游延伸
 - [[02-Knowledge/🧠 学习系统/03-量化金融/04-深入精通/风险约束下的RL|CPO算法 (Constrained Policy Optimization)]]：为了解决拉格朗日乘子法震荡问题，CPO使用信任区域（TRPO）在局部利用二阶泰勒展开，直接在满足风险约束的流形上进行投射更新，是更高级的解法。
-- [[CVaR条件风险价值|金融尾部风险度量]]：VaR与CVaR的计算细节，为CMDP提供具体的风险函数 $C(s,a)$。
+- [[量化金融-风险管理-期望损失分解与ES理论|金融尾部风险度量]]：VaR与CVaR的计算细节，为CMDP提供具体的风险函数 $C(s,a)$。
 
 ---
 

@@ -233,7 +233,7 @@ $$ROE = \text{税收负担} \times \text{利息负担} \times \text{息税前利
 
 下游延伸
 
-- [[质量因子]]：进一步延伸拓展该知识点的应用场景与模型构建。
+- [[质量因子与 QMJ 盈利能力溢价 (Quality Factor & QMJ - Quality Minus Junk)|质量因子]]：进一步延伸拓展该知识点的应用场景与模型构建。
 - [[Beneish M-Score 财务造假模型与 Sloan 应计项因子 (Beneish M-Score & Sloan Accruals)|BeneishMScore与Sloan应计项因子]]：进一步延伸拓展该知识点的应用场景与模型构建。
 
 横向关联
@@ -347,7 +347,7 @@ $$ROE = \text{税收负担} \times \text{利息负担} \times \text{息税前利
 ## 13. 给 Obsidian 的归档建议
 
 - **适合文件夹**：`02-Knowledge/🧠 学习系统/03-量化金融/01-夯实基础/`
-- **建议双链**：[[三大财务报表钩稽关系 (Interrelationship of Financial Statements)|三大报表关系]]、[[Beneish M-Score 财务造假模型与 Sloan 应计项因子 (Beneish M-Score & Sloan Accruals)|利润表与利润质量]]、[[质量因子]]
+- **建议双链**：[[三大财务报表钩稽关系 (Interrelationship of Financial Statements)|三大报表关系]]、[[Beneish M-Score 财务造假模型与 Sloan 应计项因子 (Beneish M-Score & Sloan Accruals)|利润表与利润质量]]、[[质量因子与 QMJ 盈利能力溢价 (Quality Factor & QMJ - Quality Minus Junk)|质量因子]]
 - **标签**：`#学习` `#量化金融` `#财务分析` `#ROE` `#杜邦分析` `#基本面选股`
 
 ---

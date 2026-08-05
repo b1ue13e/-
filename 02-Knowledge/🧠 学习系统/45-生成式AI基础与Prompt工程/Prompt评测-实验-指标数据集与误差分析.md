@@ -1,22 +1,23 @@
 ---
 title: "Prompt评测-实验-指标数据集与误差分析"
+aliases: ["数据集与评测指标"]
 type: study
 topic: "Prompt评测、数据集与误差分析"
 course: "生成式AI基础与Prompt工程"
 importance: "A"
 tags: [学习, 45-生成式AI基础与Prompt工程, Prompt评测, 实验设计]
 upstream: [文本预处理, 概率论基础]
-downstream: [文本分类与情感分析, 词向量与Word2Vec, Seq2Seq与注意力机制, GPT系列]
+downstream: [Prompt工程-上下文学习-示例选择与提示敏感性, Prompt评测-LLMJudge-偏置校准与人工复核, Prompt增强-RAG-检索生成与可追溯回答]
 status: completed
 difficulty: intermediate
 concept: ["模型评估", "评测指标", "数据集"]
 prerequisites: ["混淆矩阵与二分类", "概率论与交叉熵", "文本预处理"]
-related: ["文本分类与情感分析", "词向量与Word2Vec", "Seq2Seq与注意力机制", "GPT系列", "HuggingFace生态系统"]
+related: ["课程前置-Python-JSON测试与实验复现", "Prompt工程-需求-任务规格与结构化输出", "Prompt评测-LLMJudge-偏置校准与人工复核"]
 flow: knowledge
 kind: concept
 template: Obsidian单知识点深度学习模板
 created: 2026-08-02
-source: "CMU 17-630 Weeks 2-6; Stanford CS336 Spring 2026 Lecture 12 and Assignment 3"
+source: "Stanford CS324 Project 1 evaluation structure; Stanford CS336 Spring 2025 assignments; CMU 17-630 public schedule reference"
 anki_deck: "45-生成式AI基础与Prompt工程::评测"
 anki_tags: [Prompt工程, 评测, 实验设计, 误差分析]
 ---
@@ -28,7 +29,7 @@ anki_tags: [Prompt工程, 评测, 实验设计, 误差分析]
 ## 0. 先判断它值不值得深挖
 
 - **类别**：**A 类（核心概念，必须深挖）**
-- **判断理由**：评测是每一份作业的"验收标准"：HW02 分类看 Acc/F1、HW04 翻译看 BLEU、HW05 看 SST-2 Acc、语言模型看困惑度。不会选指标、不会解读指标，作业"过了"还是"没过"都无法判断；GLUE 是预训练模型的标准战场。
+- **判断理由**：评测是每一份作业的验收标准：Prompt 看任务正确率、结构有效率与失败类型，语言模型看损失/困惑度，生成系统还要看事实性、安全性、成本和延迟。不会选指标，改写是否真的更好就无法判断。
 
 ---
 
@@ -42,7 +43,7 @@ anki_tags: [Prompt工程, 评测, 实验设计, 误差分析]
 
 ## 2. 为什么它重要？它有什么用？
 
-- **连接大图景**：HW02 的 F1 报告、HW04 的 BLEU 验收、HW05 的 SST-2 Acc 与 GLUE 基准、[[GPT系列]] 的困惑度——评测贯穿全部作业与论文阅读；[[HuggingFace生态系统]] 的 `evaluate` 库就是指标工程化。
+- **连接大图景**：评测贯穿 CS324 Prompt 实验、MIT 6.7960 训练曲线、CS336 消融和本课 RAG/安全作业；指标只是汇总，逐样本错误分类才支持下一轮改进。
 - **实际应用场景**：模型选型（对比不同 checkpoint）、论文实验、上线前验收（准确率+错误分析）、LLM 评测（GLUE/MMLU/人工偏好）。
 - **高频题型/任务**：手算 F1/BLEU；解释"准确率在类别不平衡时的失效"；困惑度与交叉熵的关系；GLUE 包含哪些任务（SST-2/MNLI/QQP 等）。
 
@@ -129,9 +130,9 @@ $$\text{ROUGE-L} = \frac{(1+\beta^2)R_{\text{lcs}}P_{\text{lcs}}}{\beta^2 R_{\te
 - **🤔 追问**：候选改成 "the cat is on the mat"（c=6）？—— $p_1=1$，$c=r$ → BP=1 → BLEU-1=1.0。完全匹配得满分。
 
 ### 例子 3：实际应用例子（真实场景/代码）
-- **实际价值与转化**：HW04 的 BLEU 验收脚本与 HF `evaluate` 库（HW05 L1 档的 `compute_metrics`）。代码形态：
+- **实际价值与转化**：下面用标准库同时计算准确率与正类 F1，任何模型输出都可先落盘再调用：
 ```python
-# 手写 F1（HW02 报告用）
+# 输入：二分类预测与标签；输出：accuracy 与正类 F1。
 def f1(preds, labels):
     tp = sum(p == 1 and l == 1 for p, l in zip(preds, labels))
     fp = sum(p == 1 and l == 0 for p, l in zip(preds, labels))
@@ -140,11 +141,11 @@ def f1(preds, labels):
     r = tp / (tp + fn) if tp + fn else 0
     return 2 * p * r / (p + r) if p + r else 0
 
-# 用 evaluate 库（HW05）
-from evaluate import load
-bleu = load("bleu")
-print(bleu.compute(predictions=["the cat is on the mat"],
-                   references=[["the cat is on the mat"]]))   # {'bleu': 1.0}
+predictions = [1, 0, 1, 1]
+labels = [1, 0, 0, 1]
+accuracy = sum(p == y for p, y in zip(predictions, labels)) / len(labels)
+print({"accuracy": accuracy, "f1": f1(predictions, labels)})
+assert round(accuracy, 2) == 0.75
 ```
 
 ---
@@ -165,11 +166,11 @@ print(bleu.compute(predictions=["the cat is on the mat"],
 
 | 概念 | 核心问题 | 关键区别 | 典型使用场景 |
 | :--- | :--- | :--- | :--- |
-| Acc/F1（本概念） | 分类质量 | 混淆矩阵派生 | HW02 分类、SST-2 |
+| Acc/F1（本概念） | 分类质量 | 混淆矩阵派生 | Prompt 分类与安全判定 |
 | PPL | LM 不确定性 | 交叉熵指数化 | 语言模型（HW 外） |
-| BLEU | 翻译忠实度 | n-gram 精确率+BP | HW04 NMT 验收 |
+| 结构有效率 | 输出能否被程序消费 | schema 通过比例 | JSON/工具调用 |
 | ROUGE | 摘要覆盖度 | n-gram/LCS 召回 | 摘要评测 |
-| GLUE | 综合理解力 | 9 任务打包 | 预训练模型对比（HW05） |
+| 端到端成功率 | 整条系统链路是否成功 | 严格任务级判定 | RAG/Agent 工作流 |
 
 ---
 
@@ -180,18 +181,18 @@ print(bleu.compute(predictions=["the cat is on the mat"],
 - [[01-基础准备/交叉熵|交叉熵]]：PPL 的数学基础。
 
 ### 下游延伸
-- [[文本分类与情感分析]]：HW02 用 Acc/F1 验收。
-- [[Seq2Seq与注意力机制]]：HW04 用 BLEU 验收。
-- [[GPT系列]]：PPL 是 LM 的核心指标。
+- [[Prompt工程-需求-任务规格与结构化输出]]：结构有效率与任务正确率分开验收。
+- [[Prompt评测-LLMJudge-偏置校准与人工复核]]：主观指标需要量规、盲化与人工复核。
+- [[Transformer与大语言模型-训练-GPT与自回归语言模型]]：PPL 是语言模型的核心指标。
 
 ### 横向关联
 - [[01-基础准备/困惑度|困惑度]] ↔ 本知识点：PPL 的原子卡。
 - [[02-传统NLP方法/N-gram定义|N-gram]] ↔ 本知识点：BLEU/ROUGE 的计量单位。
-- [[HuggingFace生态系统]] ↔ 本知识点：`evaluate` 库是指标工程化。
+- [[课程前置-Python-JSON测试与实验复现]] ↔ 本知识点：保存逐样本结果和可复现配置。
 
 ### 应用场景
-- [[🧭 开源作业体系-NLP全栈|开源作业体系]]：各 HW 验收指标总表。
-- [[📋 知识点卡清单|知识点卡清单]]：NLG 评测卡（卡 14）的前置。
+- [[Stanford-CS324-Prompt作业逐节导航]]：官方 Prompt 作业的评测交付结构。
+- [[生成式AI与Prompt工程-作业03-Prompt受控实验]]：本课原创受控实验。
 
 ---
 
@@ -207,7 +208,7 @@ print(bleu.compute(predictions=["the cat is on the mat"],
 - [ ] 7. 手算一个二分类的 P/R/F1。
 - [ ] 8. 说出两个常见误区。
 - [ ] 9. 说出它与 PPL、BLEU、ROUGE、GLUE 的关系。
-- [ ] 10. 说出 HW02/HW04/HW05 各自用哪个指标验收。
+- [ ] 10. 为分类、结构化输出、RAG 和安全任务各选一个主指标与一个护栏指标。
 
 ---
 
@@ -281,7 +282,13 @@ print(bleu.compute(predictions=["the cat is on the mat"],
 
 ## 13. 给 Obsidian 的归档建议
 
-- **适合文件夹**：`02-Knowledge/🧠 学习系统/08-NLP全栈/`
-- **关联已有笔记**：[[🧭 开源作业体系-NLP全栈]]、[[01-基础准备/困惑度|困惑度]]、[[01-基础准备/交叉熵|交叉熵]]、[[02-传统NLP方法/N-gram定义|N-gram]]、[[HuggingFace生态系统]]、[[02-传统NLP方法/NER评估|NER评估]]
-- **建议标签**：`#学习` `#NLP全栈` `#评测` `#指标` `#概念`
+- **适合文件夹**：`02-Knowledge/🧠 学习系统/45-生成式AI基础与Prompt工程/`
+- **关联已有笔记**：[[课程前置-Python-JSON测试与实验复现]]、[[Prompt工程-需求-任务规格与结构化输出]]、[[Prompt评测-LLMJudge-偏置校准与人工复核]]、[[Stanford-CS324-Prompt作业逐节导航]]
+- **建议标签**：`#学习` `#Prompt工程` `#评测` `#指标` `#概念`
 - **拆分建议**：母卡保留；"BLEU 平滑实现"可拆题型笔记，"F1 踩坑（宏/微平均）"可拆错题笔记。
+
+## 🃏 Anki 卡片
+
+- Prompt 受控实验的最小要求是什么？::固定数据集、模型版本、解码参数和评分规则，每次只改变一个待研究因素。
+- 为什么只报告平均分不够？::平均分会掩盖方差、子群失败、最差情况和系统性错误类型。
+- Prompt 错误分析至少应记录什么？::失败样本、预期与实际输出、错误类别、可能原因以及对应修复假设。

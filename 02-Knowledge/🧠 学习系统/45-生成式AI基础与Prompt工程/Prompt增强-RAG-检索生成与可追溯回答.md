@@ -1,12 +1,13 @@
 ---
 title: "Prompt增强-RAG-检索生成与可追溯回答"
+aliases: ["检索增强生成RAG"]
 type: study
 topic: "检索增强生成与可追溯回答"
 course: "生成式AI基础与Prompt工程"
 importance: "A"
 tags: [学习, 45-生成式AI基础与Prompt工程, RAG, 检索增强]
 upstream: [GPT系列, 词向量与Word2Vec, 数据集与评测指标]
-downstream: [05-大语言模型与前沿技术/🚀 第五阶段：大语言模型与前沿技术]
+downstream: [Prompt评测-实验-指标数据集与误差分析, Prompt工程-安全-提示注入与分层防护]
 status: completed
 difficulty: intermediate
 concept: ["检索增强生成", "信息检索", "大语言模型应用"]
@@ -28,7 +29,7 @@ anki_tags: [Prompt工程, RAG, 检索, 可追溯]
 ## 0. 先判断它值不值得深挖
 
 - **类别**：**A 类（核心概念，必须深挖）**
-- **判断理由**：RAG 是第五阶段（[[05-大语言模型与前沿技术/🚀 第五阶段：大语言模型与前沿技术|第五阶段]]）最核心的应用技术，也是 HF Course 最后一章（Ch.11）的 Lab 内容与本路径"项目-文档问答"（见 [[项目-文档问答]]）的技术底座。LLM 幻觉与知识截止两大痛点都靠它缓解，面试/实战双高频。
+- **判断理由**：RAG 是本课程“增强、评测与可靠性”阶段的核心技术，也是文档问答与可追溯回答的技术底座。LLM 幻觉与知识截止不能仅靠 Prompt 缓解，必须引入外部证据与拒答边界。
 
 ---
 
@@ -36,13 +37,13 @@ anki_tags: [Prompt工程, RAG, 检索, 可追溯]
 
 > **我们遇到了什么麻烦**：
 > GPT 类模型有两个致命缺陷：①**知识截止**——训练数据只到某个时间点，问"昨天的新闻"它不知道；②**幻觉**——不知道时会一本正经编造，且无法追溯来源；③**私有知识**——公司的内部文档、个人笔记，模型从未见过。
-> 重新训练/微调模型来注入新知识成本极高（数据收集 + 训练 + 部署）。RAG 的回答：**不更新模型，只更新"外部知识库"**——先从一个文档库中检索出与问题相关的片段，再把片段拼进 prompt 让模型"基于这些材料回答"。知识更新 = 更新文档库，零训练成本。
+> 重新训练/微调模型来注入新知识成本极高（数据收集 + 训练 + 部署）。RAG 的回答：**不更新模型参数，改为更新外部知识库**——先从文档库中检索相关片段，再把片段拼进 prompt 让模型基于材料回答。它省去模型参数训练，但仍有文档清洗、切块、向量化、索引、重排、在线推理、评测和运维成本，不能称为“零成本”。
 
 ---
 
 ## 2. 为什么它重要？它有什么用？
 
-- **连接大图景**：RAG 是"LLM + 检索"的组合范式，衔接 [[GPT系列]]（生成器）、[[词向量与Word2Vec]]（稠密检索）、[[HuggingFace生态系统]]（嵌入模型与 pipeline）；第五阶段的大量主题（[[05-大语言模型与前沿技术/向量数据库|向量数据库]]、[[05-大语言模型与前沿技术/RAG Embedding|RAG Embedding]]、[[05-大语言模型与前沿技术/切分策略|切分策略]]、[[05-大语言模型与前沿技术/Reranking|Reranking]]）都是它的子组件。
+- **连接大图景**：RAG 是“LLM + 检索”的组合范式，衔接 [[Transformer与大语言模型-训练-GPT与自回归语言模型]]（生成器）、切分、稀疏/稠密检索、向量索引、重排、引用和事实核验。
 - **实际应用场景**：企业知识库问答（客服、内部 Wiki）、文档问答（本路径的 [[项目-文档问答]]）、搜索引擎增强、法律/医疗合规问答、代码库问答。
 - **高频题型/任务**：HF Course Ch.11 的 RAG Lab；面试问"RAG 流程三步""chunk 大小怎么选""为什么用向量检索而不是关键词""检索质量差怎么办（Rerank/混合检索）""如何评估 RAG 系统"。
 
@@ -129,25 +130,37 @@ $$\text{score} = \lambda \cdot \text{BM25}(q, d_i) + (1-\lambda)\cdot \text{sim}
 ### 例子 3：实际应用例子（真实场景/代码）
 - **实际价值与转化**：HF Course Ch.11 的 RAG Lab + 本路径 [[项目-文档问答]] 的技术底座。代码形态：
 ```python
-from sentence_transformers import SentenceTransformer
-import chromadb
+# 输入：文档与查询；输出：可定位证据和受约束回答 Prompt。仅用标准库。
+import re
 
-# 1) 索引：切块 → 嵌入 → 入库
-embedder = SentenceTransformer("BAAI/bge-small-zh-v1.5")
-client = chromadb.Client(); col = client.create_collection("docs")
-chunks = ["退货政策：签收后 7 天内可无理由退货", "退款将在 3-5 个工作日原路返回", "食品类商品不支持退货"]
-col.add(ids=[str(i) for i in range(len(chunks))], embeddings=embedder.encode(chunks).tolist(), documents=chunks)
+documents = {
+    "policy#1": "退货政策：签收后 7 天内可无理由退货",
+    "policy#2": "退款将在 3-5 个工作日原路返回",
+    "policy#3": "食品类商品不支持退货",
+}
 
-# 2) 检索：查询嵌入 → top-k
-q = "可以退换货吗？"
-hits = col.query(query_embeddings=embedder.encode([q]).tolist(), n_results=2)
+def terms(text: str) -> set[str]:
+    terms_found = set(re.findall(r"[a-z0-9]+", text.casefold()))
+    for sequence in re.findall(r"[\u4e00-\u9fff]+", text):
+        terms_found.update(sequence[index:index + 2]
+                           for index in range(max(1, len(sequence) - 1)))
+    return terms_found
 
-# 3) 生成：拼 prompt → LLM
-prompt = f"""基于以下资料回答问题，若资料不足请说明：
-{chr(10).join(hits['documents'][0])}
+def retrieve(query: str, top_k: int = 2) -> list[tuple[str, str]]:
+    query_terms = terms(query)
+    ranked = sorted(
+        documents.items(),
+        key=lambda item: len(query_terms & terms(item[1])),
+        reverse=True,
+    )
+    return [item for item in ranked[:top_k] if query_terms & terms(item[1])]
 
-问题：{q}"""
-# answer = llm(prompt)   # 用 OpenAI/本地模型
+query = "退货政策是什么？"
+evidence = retrieve(query)
+context = "\n".join(f"[{source}] {text}" for source, text in evidence)
+prompt = f"仅根据证据回答；证据不足则回答不知道。\n{context}\n问题：{query}"
+print(prompt)
+assert evidence and evidence[0][0] == "policy#1"
 ```
 
 ---
@@ -194,7 +207,7 @@ prompt = f"""基于以下资料回答问题，若资料不足请说明：
 - [[项目-文档问答]] ↔ 本知识点：本路径的项目落地。
 
 ### 应用场景
-- [[🧭 开源作业体系-NLP全栈|开源作业体系]]：HF Course Ch.11 的 RAG Lab 验收。
+- [[📚 开源名校教材与作业索引|课程资源索引]]：RAG 公开资源与本课程作业边界。
 - [[📋 知识点卡清单|知识点卡清单]]：卡 13（检索增强生成 RAG）的教材位置。
 
 ---
@@ -285,7 +298,13 @@ prompt = f"""基于以下资料回答问题，若资料不足请说明：
 
 ## 13. 给 Obsidian 的归档建议
 
-- **适合文件夹**：`02-Knowledge/🧠 学习系统/08-NLP全栈/`
-- **关联已有笔记**：[[🧭 开源作业体系-NLP全栈]]、[[05-大语言模型与前沿技术/向量数据库|向量数据库]]、[[05-大语言模型与前沿技术/RAG Embedding|RAG Embedding]]、[[05-大语言模型与前沿技术/切分策略|切分策略]]、[[05-大语言模型与前沿技术/Reranking|Reranking]]、[[05-大语言模型与前沿技术/混合检索|混合检索]]、[[项目-文档问答]]、[[GPT系列]]
-- **建议标签**：`#学习` `#NLP全栈` `#RAG` `#检索增强` `#概念`
+- **适合文件夹**：`02-Knowledge/🧠 学习系统/45-生成式AI基础与Prompt工程/`
+- **关联已有笔记**：[[📚 开源名校教材与作业索引]]、[[Transformer与大语言模型-训练-GPT与自回归语言模型]]、[[Prompt评测-实验-指标数据集与误差分析]]、[[生成式AI-可靠性-幻觉校准与事实核验]]
+- **建议标签**：`#学习` `#Prompt工程` `#RAG` `#检索增强` `#概念`
 - **拆分建议**：母卡保留；"RAG 调参实验（chunk/k/λ）"可拆题型笔记，"检索失败案例分析"可拆错题笔记。
+
+## 🃏 Anki 卡片
+
+- RAG 的三个基本阶段是什么？::索引阶段切块并建立表示，查询阶段检索相关证据，生成阶段基于证据回答并引用来源。
+- RAG 为什么不能完全消除幻觉？::检索可能漏召回或返回错误证据，生成器也可能忽略、误解或超出证据回答。
+- RAG 评测为什么要分开检索与生成？::只有分开测 Recall@k 等检索指标和答案支持率，才能定位错误来自找错资料还是用错资料。

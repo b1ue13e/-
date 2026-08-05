@@ -312,13 +312,13 @@ print(dollar_bars_df.head())
 上游依赖
 
 - [[限价订单簿数据与 L1_L2_L3 盘口重建 (Limit Order Book Data & Reconstructing L1_L2_L3)|订单簿数据]]：提供基础概念与理论推导支撑。
-- [[标签设计]]：提供基础概念与理论推导支撑。
+- [[Meta-labeling 二级标签与元标注 (Meta-labeling in Financial ML)|标签设计]]：提供基础概念与理论推导支撑。
 
 下游延伸
 
-- [[Purged CV]]：进一步延伸拓展该知识点的应用场景与模型构建。
-- [[Meta-labeling]]：进一步延伸拓展该知识点的应用场景与模型构建。
-- [[02-Knowledge/🧠 学习系统/03-量化金融/03-策略开发与实战/特征工程-量化应用|特征工程]]：进一步延伸拓展该知识点的应用场景与模型构建。
+- [[Purged Group TimeSeries Cross-Validation 净化交叉验证 (Purged Group K-Fold CV)|Purged CV]]：进一步延伸拓展该知识点的应用场景与模型构建。
+- [[Meta-labeling 二级标签与元标注 (Meta-labeling in Financial ML)|Meta-labeling]]：进一步延伸拓展该知识点的应用场景与模型构建。
+- [[滚动窗口与波动率特征|特征工程]]：进一步延伸拓展该知识点的应用场景与模型构建。
 
 横向关联
 
@@ -434,7 +434,7 @@ Tick 3: $10.5 \text{元} \times 2000 \text{股} = 21,000 \text{元}$。
 ## 13. 给 Obsidian 的归档建议
 
 - **适合文件夹**：`02-Knowledge/🧠 学习系统/03-量化金融/03-策略开发与实战/`
-- **建议双链**：[[限价订单簿数据与 L1_L2_L3 盘口重建 (Limit Order Book Data & Reconstructing L1_L2_L3)|订单簿数据]]、[[标签设计]]、[[Purged CV]]、[[Meta-labeling]]
+- **建议双链**：[[限价订单簿数据与 L1_L2_L3 盘口重建 (Limit Order Book Data & Reconstructing L1_L2_L3)|订单簿数据]]、[[Meta-labeling 二级标签与元标注 (Meta-labeling in Financial ML)|标签设计]]、[[Purged Group TimeSeries Cross-Validation 净化交叉验证 (Purged Group K-Fold CV)|Purged CV]]、[[Meta-labeling 二级标签与元标注 (Meta-labeling in Financial ML)|Meta-labeling]]
 - **标签**：`#学习` `#量化金融` `#金融机器学习` `#AFML` `#采样棒` `#VolumeBars` `#DollarBars` `#IID分布`
 
 ---

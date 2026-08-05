@@ -1,13 +1,16 @@
 ---
-type: study
+type: reference
 topic: "Deep Gaussian Processes (DGP)"
 created: 2026-04-17
-status: ongoing
+status: planned
 difficulty: advanced
 concept: ["深度高斯过程", "高斯过程", "非参数贝叶斯"]
 prerequisites: ["高斯过程回归", "核函数", "变分推断"]
 related: ["高斯过程回归", "诱导点", "不确定性量化"]
 tags: [学习, 时间序列分析, 高斯过程]
+course: "概率机器学习"
+flow: knowledge
+kind: moc
 ---
 
 既然你已经接触到了高斯过程回归（GPR），并有着深厚的深度学习背景，那么 **深度高斯过程（Deep Gaussian Processes, DGPs）** 对你来说将是一个极其兴奋的领域。
@@ -18,7 +21,7 @@ tags: [学习, 时间序列分析, 高斯过程]
 
 ## 1. 为什么要“深”？（打破 GPR 的天花板）
 
-普通的高斯过程（GPR）虽然优雅，但有一个致命的弱点：**它是平稳的（Stationary）**。
+普通 GPR 是否平稳取决于均值函数与核函数；RBF 等平稳核只依赖输入差，但高斯过程也可以使用非平稳核。DGP 的动机是通过函数复合获得更灵活的表示与输入相关不确定性，而不是“所有普通 GP 都平稳”。
 
 如果你的核函数（如 RBF）在全局范围内使用相同的长度刻度 $\ell$，它就很难同时处理那种“一会儿平稳、一会儿剧烈跳变”的数据。
 

@@ -313,7 +313,7 @@ $$P_{issue} = \frac{100,000,000}{1 + 2.40\% \times \frac{90}{360}} = \frac{100,0
 ## 13. 给 Obsidian 的归档建议
 
 - **适合文件夹**：`02-Knowledge/🧠 学习系统/03-量化金融/01-夯实基础/`
-- **建议双链**：[[Beneish M-Score 财务造假模型与 Sloan 应计项因子 (Beneish M-Score & Sloan Accruals)|资产负债表的风险信号]]、[[国债逆回购 (Treasury Reverse Repo)|国债逆回购]]、[[夏普比率]]
+- **建议双链**：[[Beneish M-Score 财务造假模型与 Sloan 应计项因子 (Beneish M-Score & Sloan Accruals)|资产负债表的风险信号]]、[[国债逆回购 (Treasury Reverse Repo)|国债逆回购]]、[[🧠 夏普比率 (Sharpe Ratio)|夏普比率]]
 - **标签**：`#学习` `#量化金融` `#货币市场` `#同业存单` `#Shibor` `#
 
 ---

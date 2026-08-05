@@ -1,7 +1,7 @@
 ---
 tags: [时间序列, 基础认知, 教材主线]
 created: 2026-04-11
-status: ongoing
+status: active
 phase: A
 type: stage
 topic: "板块 A：基础认知层"
@@ -12,31 +12,32 @@ related: ["平稳性", "时序图", "自相关图"]
 ---
 # 🎯 板块 A：基础认知层
 
-> 对应王燕《时间序列分析基于R》第 1 章，先建立“什么是时间序列、为什么它和普通数据不同”的直觉。
+> 本板块是 L00 的补充知识地图；必修起点仍是[[L00-环境与时间索引]]。
 
 ## 📊 板块进度
 
 ```dataviewjs
-const total = dv.pages('"02-Knowledge/🧠 学习系统/02-时间序列分析/01-基础认知层"').length - 1;
-const completed = dv.pages('"02-Knowledge/🧠 学习系统/02-时间序列分析/01-基础认知层"').where(p => p.status === "completed").length;
+const topics = dv.pages('"02-Knowledge/🧠 学习系统/02-时间序列分析/01-基础认知层"').where(p => p.type === "study");
+const total = topics.length;
+const completed = topics.where(p => p.status === "completed").length;
 const progress = total > 0 ? Math.round((completed / total) * 100) : 0;
 dv.paragraph(`**板块进度: ${progress}%** (${completed}/${total} 模块)`);
 ```
 
-## 📚 对应教材
+## 📚 开放来源与主卡
 
-- 主教材：[[📚 书库/书籍笔记/时间序列分析基于R|时间序列分析基于R]]
-- 对应章节：第 1 章《时间序列分析简介》
-- 重点小节：`1.2 时间序列的定义`、`1.3 时间序列分析方法`、`1.4 R 简介`
+- [FPP3 Ch.2–3](https://otexts.com/fpp3/)：时间图、模式与变换。
+- [pandas 时间序列指南](https://pandas.pydata.org/docs/user_guide/timeseries.html)：索引与频率。
+- 主卡：[[L00-环境与时间索引]]、[[时间序列的定义]]、[[时间索引与频率]]。
 
 ## 📖 学习清单
 
 | 教材位置 | 重点 | 笔记入口 |
 |:---|:---|:---|
-| 1.2 | 时间序列的定义、索引、频率、观测单位 | [[时间序列的定义]] / [[时间索引与频率]] |
-| 1.3.1 | 描述性时序分析：先看图、先看结构 | [[描述性时序分析]] |
-| 1.3.2 | 统计时序分析：建模、检验、预测 | [[统计时序分析]] |
-| 1.4.4-1.4.6 | 时间序列数据生成、处理与导出 | [[时间序列数据对象]] / [[时间序列数据处理]] |
+| L00 | 索引、频率、缺失、信息边界 | [[L00-环境与时间索引]] |
+| 基础概念 | 时间序列、截面、面板与观测单位 | [[时间序列的定义]] |
+| 图形描述 | 趋势、季节、异常、方差变化 | [[时间序列结构-趋势季节噪声与ETS分解]] |
+| 执行闭环 | 建模、检验、预测、否决 | [[📚 时间序列课程学习面板]] |
 
 ## ✅ 完成标准
 

@@ -138,8 +138,8 @@ $= 5 + 4 \times [ 7.07 - 1 ] = 5 + 24.28 = 29.28$ 亿元。
 
 ## 9. 相关知识点与 Obsidian 双链建议
 
-- 上游依赖：[[历史模拟法 VaR 与非参数风险度量 (Historical Simulation VaR)|历史模拟VaR]], [[收益率分布与厚尾]]
-- 下游延伸：[[Expected_Shortfall_ES]] (算出了 VaR 后，进一步算超过 VaR 后平均会亏多少)
+- 上游依赖：[[历史模拟法 VaR 与非参数风险度量 (Historical Simulation VaR)|历史模拟VaR]], [[收益率与对数收益率|收益率分布与厚尾]]
+- 下游延伸：[[量化金融-风险管理-期望损失分解与ES理论|Expected_Shortfall_ES]] (算出了 VaR 后，进一步算超过 VaR 后平均会亏多少)
 - 横向关联：[[非对称GARCH模型]] ↔ [[极值理论EVT]] (两者常融合成动态风控框架)
 - 应用场景：[[[支线任务] HW08-EVT极值理论]]
 

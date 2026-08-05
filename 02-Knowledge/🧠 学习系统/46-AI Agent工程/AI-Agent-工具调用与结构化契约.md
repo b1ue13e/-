@@ -6,11 +6,12 @@ created: 2026-08-05
 status: completed
 difficulty: intermediate
 concept: [工具调用, 函数契约, 结构化输出]
-prerequisites: [Python函数, JSON基础, Agent循环]
+prerequisites: [Python编程与NLP工具, Prompt工程-需求-任务规格与结构化输出, AI-Agent-边界与感知行动循环]
 related: [ReAct, 工作流编排, 最小权限]
 flow: knowledge
 kind: concept
-source: "UC Berkeley CS 194/294-196 F24 agent frameworks; Hugging Face Agents Course Unit 1 Tools"
+source: "UC Berkeley CS 194/294-196 F24 frameworks; Microsoft AI Agents for Beginners Lesson 4; Datawhale Hello-Agents Chapters 1 and 7; Hugging Face Agents Course Unit 1 Tools"
+source_urls: ["https://github.com/microsoft/ai-agents-for-beginners/tree/main/04-tool-use", "https://github.com/datawhalechina/hello-agents/tree/main/docs/chapter7"]
 anki_deck: "46-AI Agent工程::03-工具"
 anki_tags: [46-AI-Agent工程, 工具调用, 契约]
 ---
@@ -36,7 +37,7 @@ anki_tags: [46-AI-Agent工程, 工具调用, 契约]
 
 ## 3. 学它之前需要哪些前置知识？
 
-1. **[[Python函数]]**：理解参数、返回值、异常和纯函数。
+1. **[[08-NLP全栈/Python编程与NLP工具|Python 编程与工具]]**：理解参数、返回值、异常和纯函数。
 2. **[[AI-Agent-边界与感知行动循环]]**：工具结果会成为下一轮观察。
 
 ## 4. 用直觉语言解释它
@@ -159,7 +160,7 @@ print(execute({"name": "score_review", "arguments": {"food": 4, "service": 5}}))
 - [[AI-Agent-安全威胁建模与系统评测]]：工具权限和注入攻击面。
 
 ### 横向关联
-- [[API设计]] ↔ 工具调用：都强调稳定契约、错误码和版本控制。
+- **待创建先修补丁：API 设计** ↔ 工具调用：都强调稳定契约、错误码和版本控制。
 
 ### 应用场景
 - [[Berkeley-Lab01-Restaurant-Review-Pipeline-知识点映射]]：评论检索与评分函数是核心工具边界。

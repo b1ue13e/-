@@ -255,7 +255,7 @@ print(f"反解出的精确 IV: {implied_volatility(10.0, 100, 100, 1.0, 0.0):.4%
 下游延伸
 
 - [[高阶希腊字母与衍生品风险对冲 (Higher-Order Greeks_ Vanna, Volga & Charm)|高阶希腊字母与对冲]]：进一步延伸拓展该知识点的应用场景与模型构建。
-- [[量化金融-GARCH波动率策略|波动率聚集]]：进一步延伸拓展该知识点的应用场景与模型构建。
+- [[量化金融-波动率-GARCH家族模型|波动率聚集]]：进一步延伸拓展该知识点的应用场景与模型构建。
 
 横向关联
 
@@ -363,7 +363,7 @@ print(f"反解出的精确 IV: {implied_volatility(10.0, 100, 100, 1.0, 0.0):.4%
 ## 13. 给 Obsidian 的归档建议
 
 - **适合文件夹**：`02-Knowledge/🧠 学习系统/03-量化金融/02-量化核心技能/`
-- **建议双链**：[[Black-Scholes 期权定价模型 (Black-Scholes Option Pricing Model)|Black-Scholes]]、[[高阶希腊字母与衍生品风险对冲 (Higher-Order Greeks_ Vanna, Volga & Charm)|Greeks]]、[[02-Knowledge/🧠 学习系统/03-量化金融/02-量化核心技能/GARCH模型]]
+- **建议双链**：[[Black-Scholes 期权定价模型 (Black-Scholes Option Pricing Model)|Black-Scholes]]、[[高阶希腊字母与衍生品风险对冲 (Higher-Order Greeks_ Vanna, Volga & Charm)|Greeks]]、[[量化金融-波动率-GARCH家族模型|GARCH模型]]
 - **标签**
 
 ---

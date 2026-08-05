@@ -1,5 +1,6 @@
 ---
 title: "Transformer与大语言模型-架构-Transformer工作原理"
+aliases: ["Transformer架构"]
 type: study
 topic: "Transformer工作原理"
 course: "生成式AI基础与Prompt工程"
@@ -16,7 +17,7 @@ flow: knowledge
 kind: concept
 template: Obsidian单知识点深度学习模板
 created: 2026-08-02
-source: "Stanford CS336 Spring 2026 Lectures 1-3 and Assignment 1; CMU 17-630 Week 1"
+source: "MIT OCW 6.7960 Fall 2024 Homework 3 Problems 1-4; Stanford CS336 Spring 2025 Assignment 1 Section 3"
 anki_deck: "45-生成式AI基础与Prompt工程::模型基础"
 anki_tags: [生成式AI, Transformer, 模型原理]
 ---
@@ -28,7 +29,7 @@ anki_tags: [生成式AI, Transformer, 模型原理]
 ## 0. 先判断它值不值得深挖
 
 - **类别**：**A 类（核心概念，必须深挖）**
-- **判断理由**：Transformer（Vaswani et al., 2017, *Attention Is All You Need*）是 HW05 的全部内容——从零手写 Multi-Head Self-Attention 与 MinBERT；也是 BERT/GPT 及一切现代 LLM 的底座。HW05 要求实现并微调，不深挖到"每个矩阵的维度与 mask 位置"就无法通过。
+- **判断理由**：Transformer 是 MIT 6.7960 HW3 与 Stanford CS336 A1 的核心，也是现代 LLM 的底座。两份官方作业都要求理解或实现注意力、mask、FFN 与语言模型，不深挖张量维度就无法通过。
 
 ---
 
@@ -43,9 +44,9 @@ anki_tags: [生成式AI, Transformer, 模型原理]
 
 ## 2. 为什么它重要？它有什么用？
 
-- **连接大图景**：HW05 手写它；[[BERT及其变体]] 是它的 Encoder 栈，[[GPT系列]] 是它的 Decoder 栈；[[HuggingFace生态系统]] 的 `transformers` 库就是围绕它的实现。不理解 Transformer，整个现代 NLP 都是黑盒。
+- **连接大图景**：MIT HW3 和 CS336 A1 手写它；[[Transformer与大语言模型-训练-GPT与自回归语言模型]] 是 Decoder-only 实例。Prompt、RAG 与 Agent 最终都依赖这一上下文计算底座。
 - **实际应用场景**：全部主流 LLM（GPT、BERT、T5、LLaMA、Qwen）；机器翻译（Google 2018 起全线替换 RNN）；图像（ViT）、语音（Whisper）、代码（Codex）的 backbone。
-- **高频题型/任务**：HW05 手写 attention + 位置编码 + 微调；面试必问"为什么除以 $\sqrt{d_k}$""Q/K/V 是什么""位置编码为什么必要""Pre-Norm vs Post-Norm""注意力复杂度 $O(N^2)$ 及优化（FlashAttention）"。
+- **高频题型/任务**：MIT HW3 Problem 2 与 CS336 A1 Section 3 要求实现 attention、位置表示和 block；常考 Q/K/V、因果 mask、Pre/Post-Norm 与 $O(N^2)$ 复杂度。
 
 ---
 
@@ -128,32 +129,38 @@ $$x' = x + \text{Attn}(\text{LN}(x)), \qquad x'' = x' + \text{FFN}(\text{LN}(x')
 
 ### 例子 2：中等例子（条件判断与多步推理）
 - **题目**：为什么解码器需要因果 mask？编码器为什么不需要？
-- **解题思路与完整解答**：解码器做自回归生成，第 $t$ 个位置的输出只能依赖 $<t$ 的 token，否则训练时"偷看未来"、推理时无法复现（推理根本没有未来）。因果 mask 把 $QK^\top$ 的上三角置为 $-\infty$，softmax 后权重为 0。编码器做理解任务（如分类），每个 token 应看到全句上下文（双向），所以不 mask。HW05 的 MinBERT（编码器）不加因果 mask；若手写 GPT 需加。
+- **解题思路与完整解答**：解码器做自回归生成，第 $t$ 个位置只能依赖 $\le t$ 的 token，否则训练时“偷看未来”、推理时无法复现。因果 mask 把 $j>i$ 的得分置为 $-\infty$，softmax 后权重为 0；双向编码器通常不加因果 mask。
 - **易错点**：在编码器里也加因果 mask（会退化成单向，丢双向信息）；或 mask 实现时把对角线也遮掉（应保留当前位置）。
 
 ### 例子 3：实际应用例子（真实场景/代码）
-- **实际价值与转化**：HW05 从零实现后与 `transformers` 库对照验证（输出一致断言）。代码形态：
+- **实际价值与转化**：下面用标准库实现单头缩放点积注意力，便于先验算 MIT HW3/CS336 A1 的核心，再进入 PyTorch 官方环境：
 ```python
-import torch, torch.nn as nn, math
+import math
 
-class MultiHeadSelfAttention(nn.Module):
-    def __init__(self, d_model=768, h=12):
-        super().__init__()
-        self.h, self.dk = h, d_model // h
-        self.Wq = nn.Linear(d_model, d_model); self.Wk = nn.Linear(d_model, d_model)
-        self.Wv = nn.Linear(d_model, d_model); self.Wo = nn.Linear(d_model, d_model)
+def dot(left: list[float], right: list[float]) -> float:
+    return sum(a * b for a, b in zip(left, right))
 
-    def forward(self, x, mask=None):
-        B, N, _ = x.shape
-        Q = self.Wq(x).view(B, N, self.h, self.dk).transpose(1, 2)   # (B, h, N, dk)
-        K = self.Wk(x).view(B, N, self.h, self.dk).transpose(1, 2)
-        V = self.Wv(x).view(B, N, self.h, self.dk).transpose(1, 2)
-        scores = Q @ K.transpose(-2, -1) / math.sqrt(self.dk)        # (B, h, N, N)
-        if mask is not None:
-            scores = scores.masked_fill(mask == 0, -1e9)
-        attn = torch.softmax(scores, dim=-1)
-        out = (attn @ V).transpose(1, 2).reshape(B, N, -1)           # 拼接
-        return self.Wo(out), attn
+def softmax(values: list[float]) -> list[float]:
+    maximum = max(values)
+    weights = [math.exp(value - maximum) for value in values]
+    return [weight / sum(weights) for weight in weights]
+
+def attention(queries, keys, values, causal=False):
+    outputs = []
+    for row, query in enumerate(queries):
+        scores = [dot(query, key) / math.sqrt(len(query)) for key in keys]
+        if causal:
+            scores = [score if column <= row else float("-inf")
+                      for column, score in enumerate(scores)]
+        weights = softmax(scores)
+        outputs.append([sum(weight * value[d] for weight, value in zip(weights, values))
+                        for d in range(len(values[0]))])
+    return outputs
+
+vectors = [[1.0, 0.0], [0.0, 1.0]]
+result = attention(vectors, vectors, vectors, causal=True)
+print([[round(value, 3) for value in row] for row in result])
+assert result[0] == [1.0, 0.0]
 ```
 
 ---
@@ -189,7 +196,7 @@ class MultiHeadSelfAttention(nn.Module):
 
 ### 下游延伸
 - [[BERT及其变体]]：Encoder-only 的预训练实例。
-- [[GPT系列]]：Decoder-only 的自回归实例。
+- [[Transformer与大语言模型-训练-GPT与自回归语言模型]]：Decoder-only 的自回归实例。
 - [[HuggingFace生态系统]]：工程实现与微调工具。
 
 ### 横向关联
@@ -198,8 +205,8 @@ class MultiHeadSelfAttention(nn.Module):
 - [[04-Transformer与预训练模型/QKV\|QKV]]、[[04-Transformer与预训练模型/多头注意力\|多头注意力]]、[[04-Transformer与预训练模型/LayerNorm\|LayerNorm]]、[[04-Transformer与预训练模型/残差连接\|残差连接]]：组件原子卡。
 
 ### 应用场景
-- [[🧭 开源作业体系-NLP全栈|开源作业体系]]：HW05 从零手撕 + 微调验收。
-- [[NLP全栈 - HW05：Transformer 与 MinBERT 从零手撕阶梯作业|HW05 阶梯作业]]：4 档 Rubric 的实操页。
+- [[MIT-6.7960-HW03-逐节知识点映射]]：官方 HW3 Problem 1–4 逐节导航。
+- [[Stanford-CS336-A1-逐节知识点映射]]：官方 A1 Section 3 与 Problem ID 导航。
 
 ---
 
@@ -215,7 +222,7 @@ class MultiHeadSelfAttention(nn.Module):
 - [ ] 7. 手算 2 token 的注意力输出。
 - [ ] 8. 说出两个常见误区。
 - [ ] 9. 说出它与 BERT、GPT、RoPE 的关系。
-- [ ] 10. 说出 HW05 的验收方式（自注意力断言 + SST-2 微调）。
+- [ ] 10. 说出 MIT HW3 与 CS336 A1 对注意力、mask 和 Transformer block 的验收方式。
 
 ---
 
@@ -248,7 +255,7 @@ class MultiHeadSelfAttention(nn.Module):
 #### 3. 何时需要因果 mask？举例说明。
 > [!question]- 答案解析
 > - **答案**：自回归生成类模型（GPT 类解码器、语言模型）需要：第 $t$ 位置不能看到 $>t$ 的 token。理解类模型（BERT 编码器）不需要。
-> - **解析**：实现上把 $QK^\top$ 上三角置 $-\infty$（含 $j>i$ 的元素），softmax 后权重为 0；HW05 的 MinBERT 不加，手写 GPT 要加。
+> - **解析**：实现上把 $QK^\top$ 中 $j>i$ 的元素置 $-\infty$，softmax 后权重为 0；双向编码器通常不加因果 mask，GPT 必须加。
 > - **易错原因**：把对角线也遮掉（当前位置必须可见）；或在编码器误加。
 > - **Obsidian 标签建议**：`#自测题/中等`
 
@@ -289,7 +296,13 @@ class MultiHeadSelfAttention(nn.Module):
 
 ## 13. 给 Obsidian 的归档建议
 
-- **适合文件夹**：`02-Knowledge/🧠 学习系统/08-NLP全栈/`
-- **关联已有笔记**：[[🧭 开源作业体系-NLP全栈]]、[[Self-Attention自注意力机制]]、[[NLP全栈 - HW05：Transformer 与 MinBERT 从零手撕阶梯作业|HW05 阶梯作业]]、[[04-Transformer与预训练模型/QKV|QKV]]、[[04-Transformer与预训练模型/多头注意力|多头注意力]]、[[04-Transformer与预训练模型/LayerNorm|LayerNorm]]、[[04-Transformer与预训练模型/残差连接|残差连接]]、[[04-Transformer与预训练模型/正弦位置编码|正弦位置编码]]、[[04-Transformer与预训练模型/FFN|FFN]]
-- **建议标签**：`#学习` `#NLP全栈` `#Transformer` `#概念`
-- **拆分建议**：母卡保留；"手写 Multi-Head Attention 的维度调试"可拆错题笔记，"HW05 实现对照 transformers 库"可拆题型笔记。
+- **适合文件夹**：`02-Knowledge/🧠 学习系统/45-生成式AI基础与Prompt工程/`
+- **关联已有笔记**：[[MIT-6.7960-HW03-逐节知识点映射]]、[[Stanford-CS336-A1-逐节知识点映射]]、[[Transformer与大语言模型-训练-GPT与自回归语言模型]]、[[课程前置-概率向量与Softmax最小补丁]]
+- **建议标签**：`#学习` `#生成式AI` `#Transformer` `#概念`
+- **拆分建议**：母卡保留；手写多头注意力的维度调试可在完成 CS336 A1 后拆成错题笔记。
+
+## 🃏 Anki 卡片
+
+- Transformer 自注意力的核心计算是什么？::用查询与键的缩放点积得到权重，再对值向量加权求和，即 softmax(QKᵀ/√dₖ)V。
+- 因果 Mask 解决什么问题？::阻止当前位置访问未来 Token，保证自回归训练与生成的信息条件一致。
+- Transformer 为什么需要位置表示？::纯自注意力对输入排列没有天然顺序感，需要位置编码或旋转位置等机制注入序列顺序。

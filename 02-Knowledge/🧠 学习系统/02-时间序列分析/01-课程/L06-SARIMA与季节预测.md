@@ -3,13 +3,19 @@ type: study
 course: "时间序列分析"
 lesson: 6
 topic: "SARIMA与季节预测"
+created: 2026-08-02
+updated: 2026-08-05
 status: planned
 mastery: 0
 difficulty: advanced
 flow: knowledge
 kind: concept
+concept: ["SARIMA", "季节差分", "季节基线"]
 prerequisites: ["ARMA与ARIMA建模闭环", "差分运算", "季节性"]
-next: ["模型识别", "参数估计", "残差诊断"]
+related: ["L05-ARMA与ARIMA建模闭环", "L07-模型识别与参数估计", "季节性与STL分解"]
+next: ["L07-模型识别与参数估计"]
+anki_deck: "时间序列分析::主线课程"
+anki_tags: ["时间序列分析", "L06", "SARIMA", "季节差分"]
 tags: [学习, 时间序列, 教师式课程, SARIMA, 季节预测]
 sources:
   - title: "Forecasting: Principles and Practice (3rd ed.)"
@@ -150,9 +156,17 @@ $$
 
 ```python
 import numpy as np
+import pandas as pd
 from statsmodels.tsa.statespace.sarimax import SARIMAX
 
-# train 和 test 必须按时间切分；月度数据 m=12
+# 生成可复现的月度序列，再按时间切分；真实项目替换这里的数据即可
+rng = np.random.default_rng(42)
+n = 156
+t = np.arange(n)
+y = 20 + 0.08 * t + 3 * np.sin(2 * np.pi * t / 12) + rng.normal(0, 0.7, n)
+series = pd.Series(y, index=pd.date_range("2010-01-01", periods=n, freq="MS"))
+train, test = series.iloc[:-24], series.iloc[-24:]
+
 fit = SARIMAX(
     train,
     order=(1, 1, 1),
@@ -167,6 +181,7 @@ seasonal_naive = np.resize(np.asarray(train[-12:]), len(test))
 sarima_mae = np.mean(np.abs(np.asarray(test) - sarima_pred))
 naive_mae = np.mean(np.abs(np.asarray(test) - seasonal_naive))
 print({"SARIMA": sarima_mae, "seasonal_naive": naive_mae})
+# 输出示例：两个非负 MAE；具体数值随 statsmodels 版本可能略有差异
 ```
 
 `np.resize` 只适合连续、无缺期、预测起点恰接训练末尾的教学示例。真实项目应保留时间索引并按具体季节位置对齐。
@@ -212,10 +227,16 @@ print({"SARIMA": sarima_mae, "seasonal_naive": naive_mae})
 ## 13. 下一课与作业
 
 - 下一课：[[L07-模型识别与参数估计]]
-- 参考卡：[[SARIMA模型]]、[[差分运算]]、[[季节效应分析]]
+- 参考卡：[[SARIMA模型]]、[[差分运算]]、[[季节性与STL分解]]
 - 正式作业：[[HW06-SARIMA与季节预测阶梯作业]]
-- 课程入口：[[🧑‍🏫 时间序列教师版学习入口]]
+- 课程入口：[[📚 时间序列课程学习面板]]
 
 ## 参考资料
 
 - Hyndman & Athanasopoulos, [FPP3 §9.9 Seasonal ARIMA models](https://otexts.com/fpp3/seasonal-arima.html)。
+
+## 🃏 Anki 卡片
+
+- SARIMA 的普通阶与季节阶分别处理什么？::$p,d,q$ 处理相邻期动态与普通差分；$P,D,Q$ 在周期 $m$ 的倍数滞后上处理季节动态与季节差分
+- 季节差分公式是什么？::$\Delta_m y_t=y_t-y_{t-m}$，比较当前观测与上一个相同季节位置
+- 为什么 SARIMA 必须与 seasonal naïve 比较？::复杂模型只有在相同滚动协议下优于“使用上个季节同位置”的简单基线，才证明额外结构有预测价值

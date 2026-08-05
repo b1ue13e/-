@@ -7,8 +7,8 @@ flow: knowledge
 course: "03-量化金融"
 importance: "A"
 tags: [学习, 核心概念, 实战作业]
-prerequisites: ["[[多因子模型]]", "[[面板数据分析]]", "[[CAPM与APT模型]]"]
-related: ["[[Fama-French三因子模型]]", "[[Newey-West调整]]"]
+prerequisites: ["[[量化金融-资产定价-多因子模型|多因子模型]]", "[[Fama-MacBeth 两步回归法 (Fama-MacBeth Two-Step Regression)|面板数据分析]]", "[[量化金融-资产定价-多因子模型|CAPM与APT模型]]"]
+related: ["[[Fama-French三因子模型]]", "[[Fama-MacBeth 两步回归法 (Fama-MacBeth Two-Step Regression)|Newey-West调整]]"]
 status: learning
 subagent_audit_score: 10.0
 ---
@@ -160,11 +160,11 @@ t_stat = mean_lambda / (std_lambda / np.sqrt(n_periods))
 
 ## 9. 相关知识点与 Obsidian 双链建议
 ### 上游依赖
-- [[CAPM与APT模型]]：提供我们为什么要测算 Beta 和风险溢价的金融理论基础。
-- [[Statsmodels与Pandas基础]]：提供截面分组聚合运算的代码能力。
+- [[量化金融-资产定价-多因子模型|CAPM与APT模型]]：提供我们为什么要测算 Beta 和风险溢价的金融理论基础。
+- [[00-零基础补救-数学统计与Python|Statsmodels与Pandas基础]]：提供截面分组聚合运算的代码能力。
 
 ### 下游延伸
-- [[Newey-West标准误调整]]：处理时序自相关的终极统计学武器。
+- [[Fama-MacBeth 两步回归法 (Fama-MacBeth Two-Step Regression)|Newey-West标准误调整]]：处理时序自相关的终极统计学武器。
 - [[Fama-French三因子模型]]：FMB 回归框架最经典的学术应用实战。
 
 ---

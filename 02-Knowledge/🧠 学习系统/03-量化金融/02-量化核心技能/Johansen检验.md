@@ -149,7 +149,7 @@ $$J_{\max}(r, r+1) = -T \ln(1 - \hat{\lambda}_{r+1})$$
 ## 7.5 💥 课本挂载与工业级实战模块 (Textbook Mapping & Production Lab)
 
 ### 7.5.5
-> 🔓 **作业解锁前置条件**：学完 [[收益率与对数收益率]] + [[公式理解7]] 即可正式解锁本 Challenge 实战！
+> 🔓 **作业解锁前置条件**：学完 [[收益率与对数收益率]] + [[协整关系与 Engle-Granger 两步法 (Cointegration & Engle-Granger Method)|公式理解7]] 即可正式解锁本 Challenge 实战！
 > 💡 **解锁指引**：理解 公式理解7 的核心定义与基本推导逻辑后即可解锁。
 
  🧪 拓展实验与李宏毅式实战 Challenge 题 (Lab Assignment: 公式理解7 工业级实战 challenge)

@@ -127,9 +127,9 @@ $$ W_i = \Delta t_{max} - \Delta t_i $$
 
 ## 9. 相关知识点与 Obsidian 双链建议
 
-- 上游依赖：[[订单簿与L2微观结构]], [[Almgren-Chriss最优拆单]]
-- 下游延伸：[[高频交易(HFT)基础]] (高频做市商如何反制SOR), [[金融网络延迟与微波架构]]
-- 横向关联：[[订单流支付PFOF]] ↔ [[暗池与ATS]] (散户流与机构流的隐秘处理池)
+- 上游依赖：[[限价订单簿数据与 L1_L2_L3 盘口重建 (Limit Order Book Data & Reconstructing L1_L2_L3)|订单簿与L2微观结构]], [[Almgren-Chriss最优拆单]]
+- 下游延伸：[[高频交易系统架构与模块解耦设计 (High-Frequency Trading System Architecture)|高频交易(HFT)基础]] (高频做市商如何反制SOR), [[低延迟系统设计与 C++_FPGA 极致性能优化 (Low-Latency System Design & C++_FPGA Optimization)|金融网络延迟与微波架构]]
+- 横向关联：[[量化金融-执行策略-暗池撮合与SOR智能路由|订单流支付PFOF]] ↔ [[量化金融-执行策略-暗池撮合与SOR智能路由|暗池与ATS]] (散户流与机构流的隐秘处理池)
 - 应用场景：[[[支线任务] HW14-暗池与SOR智能路由]]
 
 ---
@@ -203,5 +203,5 @@ $$ W_i = \Delta t_{max} - \Delta t_i $$
 
 ## 13. 给 Obsidian 的归档建议
 - **文件夹**：`02-Knowledge/🧠 学习系统/03-量化金融/04-深入精通`
-- **链接**：上游衔接 [[Almgren-Chriss最优拆单]] 的执行层输出，平行链接至 [[订单簿与L2微观结构]]。
+- **链接**：上游衔接 [[Almgren-Chriss最优拆单]] 的执行层输出，平行链接至 [[限价订单簿数据与 L1_L2_L3 盘口重建 (Limit Order Book Data & Reconstructing L1_L2_L3)|订单簿与L2微观结构]]。
 - **标签**：`#量化金融/微观结构` `#暗池` `#SOR` `#高频交易` `#算法交易`

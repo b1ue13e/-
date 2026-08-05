@@ -148,11 +148,11 @@ verified_at: 2026-08-03
 - [[收益率定义与对数收益]]
 
 ### 下游延伸
-- [[最优执行-Almgren-Chriss]]：冲击成本模型化
+- [[Almgren-Chriss最优拆单|最优执行-Almgren-Chriss]]：冲击成本模型化
 - [[回测框架与无泄漏实验]]：成本计入回测
 
 ### 横向关联
-- [[Implementation Shortfall]] ↔ 本卡：执行度量
+- [[Implementation Shortfall 执行缺口与 Almgren-Chriss 最优执行模型|Implementation Shortfall]] ↔ 本卡：执行度量
 
 ### 应用场景
 - 高频/执行研究
@@ -241,7 +241,7 @@ verified_at: 2026-08-03
 ## 13. 给 Obsidian 的归档建议
 
 - **适合文件夹**：`02-Knowledge/🧠 学习系统/03-量化金融/`
-- **关联已有笔记**：[[最优执行-Almgren-Chriss]] [[Implementation Shortfall]]
+- **关联已有笔记**：[[Almgren-Chriss最优拆单|最优执行-Almgren-Chriss]] [[Implementation Shortfall 执行缺口与 Almgren-Chriss 最优执行模型|Implementation Shortfall]]
 - **建议标签**：`#学习` `#量化金融`
 - **拆分建议**：不拆分
 \n\n> ⚔️ **支线实战任务 (Side Quest)**：👉 点击进入 [[[支线任务] HW15-盘口队列与挂单概率]] 刷怪通关！\n

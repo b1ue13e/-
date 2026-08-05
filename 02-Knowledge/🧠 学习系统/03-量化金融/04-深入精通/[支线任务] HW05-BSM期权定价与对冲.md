@@ -7,11 +7,14 @@ flow: knowledge
 course: "03-量化金融"
 importance: "A"
 tags: [学习, 核心概念, 量化金融, 期权, Python实战]
-prerequisites: ["[[几何布朗运动]]", "[[Ito引理]]"]
-related: ["[[隐含波动率微笑]]", "[[高级希腊字母对冲]]"]
+prerequisites: ["[[量化金融-随机过程-伊藤引理与随机微分方程|几何布朗运动]]", "[[量化金融-随机过程-伊藤引理与随机微分方程|Ito引理]]"]
+related: ["[[隐含波动率与波动率微笑 (Implied Volatility & Volatility Smile)|隐含波动率微笑]]", "[[高阶希腊字母与衍生品风险对冲 (Higher-Order Greeks_ Vanna, Volga & Charm)|高级希腊字母对冲]]"]
 status: learning
 ---
 # HW05-BSM期权定价与动态对冲作业说明书
+
+> [!important] 可执行作业包
+> [[03-Projects/HW05-BSM/README|HW05 BSM 实验包]] 已提供闭式解、对偶采样蒙特卡洛、离散 Delta 对冲、测试与 JSON 产物。先运行测试，再完成本页推导与扩展任务。
 
 ---
 
@@ -124,12 +127,12 @@ status: learning
 
 ## 9. 相关知识点与 Obsidian 双链建议
 ### 上游依赖
-- [[Monte Carlo Simulation]]：如何生成不带偏误的几何布朗运动路径阵列。
-- [[Risk-Neutral Measure]]：无风险利率 $r$ 作为漂移率的理论基础。
+- [[量化金融-衍生品-蒙特卡洛期权定价与方差缩减|Monte Carlo Simulation]]：如何生成不带偏误的几何布朗运动路径阵列。
+- [[量化金融-随机过程-伊藤引理与随机微分方程|Risk-Neutral Measure]]：无风险利率 $r$ 作为漂移率的理论基础。
 
 ### 下游延伸
-- [[Implied Volatility]]：实盘中 $\sigma$ 是未知的，需要从市场反推。
-- [[Gamma Hedging]]：只对冲 Delta 还不够（容易受到大幅跳空影响），需要引入期权工具对冲二阶导。
+- [[隐含波动率与波动率微笑 (Implied Volatility & Volatility Smile)|Implied Volatility]]：实盘中 $\sigma$ 是未知的，需要从市场反推。
+- [[期权希腊字母 (Option Greeks_ Delta, Gamma, Theta, Vega, Rho)|Gamma Hedging]]：只对冲 Delta 还不够（容易受到大幅跳空影响），需要引入期权工具对冲二阶导。
 
 ---
 
@@ -197,5 +200,5 @@ status: learning
 
 ## 13. 给 Obsidian 的归档建议
 - **建议目录**：`02-Knowledge/🧠 学习系统/03-量化金融/18-实战作业说明书/`
-- **建议链接**：链接至 `🗺️ 量化金融实验大纲.md` 与 `[[Delta对冲]]` 核心卡片。
+- **建议链接**：链接至 `🗺️ 量化金融实验大纲.md` 与 `[[期权希腊字母 (Option Greeks_ Delta, Gamma, Theta, Vega, Rho)|Delta对冲]]` 核心卡片。
 - **建议标签**：`#量化金融 #期权定价 #代码实战 #Python`

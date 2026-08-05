@@ -7,8 +7,8 @@ flow: knowledge
 course: "03-量化金融"
 importance: "A"
 tags: [学习, 核心概念, 量化实战, 引擎开发]
-prerequisites: ["[[Tick Data]]", "[[数据清洗基础]]"]
-related: ["[[Financial Machine Learning]]", "[[特征工程实战]]"]
+prerequisites: ["[[Volume Bars与Dollar Bars信息驱动采样 (Information-Driven Bars)|Tick Data]]", "[[OHLCV字段清洗与复权|数据清洗基础]]"]
+related: ["[[Qlib回测工作流(Qlib Workflow)|Financial Machine Learning]]", "[[滚动窗口与波动率特征|特征工程实战]]"]
 status: learning
 subagent_audit_score: 10.0
 ---
@@ -129,12 +129,12 @@ $$
 
 ## 9. 相关知识点与 Obsidian 双链
 ### 上游依赖
-- [[Tick Data]]：提供本实验的最原始输入格式。
-- [[流式数据处理]]：Python `yield` 关键字与内存优化基础。
+- [[Volume Bars与Dollar Bars信息驱动采样 (Information-Driven Bars)|Tick Data]]：提供本实验的最原始输入格式。
+- [[Volume Bars与Dollar Bars信息驱动采样 (Information-Driven Bars)|流式数据处理]]：Python `yield` 关键字与内存优化基础。
 
 ### 下游延伸
-- [[特征工程实战]]：在 Dollar Bars 的基础上计算 RSI、MACD。
-- [[Fractional Differentiation (分数阶差分)]]：使 Dollar Bars 序列实现平稳性的高级技巧。
+- [[滚动窗口与波动率特征|特征工程实战]]：在 Dollar Bars 的基础上计算 RSI、MACD。
+- [[Volume Bars与Dollar Bars信息驱动采样 (Information-Driven Bars)|Fractional Differentiation (分数阶差分)]]：使 Dollar Bars 序列实现平稳性的高级技巧。
 
 ---
 

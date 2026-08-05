@@ -31,6 +31,9 @@ nav_next: "CAPM 资本资产定价模型"
 
 # GARCH 族波动率模型
 
+> [!info] 主线导航
+> [[🗺️ 量化金融学习路径|返回路径]] · **Week 5** · 前置 [[单位根检验与 ADF 检验 (Unit Root & Augmented Dickey-Fuller Test)]] · 练习 [[03-Projects/开源课程课后习题/PS03-时间序列与波动率|PS03]] · 实验 [[03-Projects/Phase2-GARCH/README|GARCH]]
+
 ---
 
 ## 0. 先判断它值不值得深挖
@@ -88,13 +91,19 @@ GARCH 模型的极大似然估计看起来像天书，但它在实战中的落�
 | **$\omega, \alpha, \beta$** | GARCH 权重参数 | `res.params` | **【模型学习结果】** 电脑通过“极大似然估计”算出来的最佳配比。$\alpha$ 大说明受突发消息影响大；$\beta$ 大说明波动记忆长。 |
 
 ```python
-# [Capstone 项目要求] 我们将提取 AAPL 的日线收益率，喂给 GARCH 模型
+import numpy as np
+import pandas as pd
 
-  # 1. 计算日收益率
-  df['return'] = df['Close'].pct_change()
-  # 2. 计算年化波动率 (标准差 * 根号252)
-  annual_vol = df['return'].std() * np.sqrt(252)
-  ```
+# 最小可运行输入；Capstone 中应替换为经过复权审计的 AAPL 收盘价。
+df = pd.DataFrame({'Close': [100.0, 101.0, 99.5, 102.0, 101.5, 103.0]})
+df['return'] = df['Close'].pct_change()
+annual_vol = df['return'].std(ddof=1) * np.sqrt(252)
+
+assert np.isfinite(annual_vol) and annual_vol > 0
+print(f'annualized_volatility={annual_vol:.4f}')
+```
+
+> **边界说明**：这段代码只计算历史样本波动率，不是在拟合 GARCH。真正的 GARCH 作业必须继续估计 $\omega,\alpha,\beta$，并报告收敛状态与样本外预测误差。
 - **一句话直觉本质**：**GARCH 族 = 把条件方差建成自回归过程；EGARCH 用对数形式捕捉非对称冲击。**
 
 ---
@@ -152,7 +161,10 @@ GARCH(1,1)：$\sigma_t^2=\omega+\alpha\varepsilon_{t-1}^2+\beta\sigma_{t-1}^2$�
 
 ### 例子 3：实际应用例子（真实场景/代码）
 
-- **实际价值与转化**：`arch` 包：`arch_model(ret, vol='EGARCH', p=1, o=1, q=1, dist='t')`；生产：一步前向 $\hat\sigma_{t+1}$ → 动态 VaR；回测 Kupiec 检验。
+> [!important] 可执行实验
+> [[03-Projects/Phase2-GARCH/README|Phase 2 GARCH 实验包]] 已实现 GARCH(1,1) 极大似然估计、冻结时间切分、一步样本外预测、滚动方差基线与 QLIKE，并提供自动测试和产物。
+
+- **实际价值与转化**：先完成实验包中的 Gaussian QMLE 基线，再使用 `arch` 包扩展到 EGARCH、GJR-GARCH 与 t 分布；任何扩展都必须保持同一冻结测试集和基线口径。
 
 ---
 
@@ -176,7 +188,7 @@ GARCH(1,1)：$\sigma_t^2=\omega+\alpha\varepsilon_{t-1}^2+\beta\sigma_{t-1}^2$�
 ## 9. 相关知识点与 Obsidian 双链建议
 
 ### 上游依赖
-- [[Black-Scholes期权定价模型]]（σ 输入）
+- [[Black-Scholes 期权定价模型 (Black-Scholes Option Pricing Model)|Black-Scholes期权定价模型]]（σ 输入）
 
 ### 下游延伸
 - [[EVT极值理论与VaR-CVaR]]：尾部修正
@@ -285,16 +297,16 @@ GARCH(1,1)：$\sigma_t^2=\omega+\alpha\varepsilon_{t-1}^2+\beta\sigma_{t-1}^2$�
 ### 🧪 交互实验室
 > 拖动下方滑块，亲手感受公式中各个参数是如何改变结果的。
 > **样本标准差 (Sample Std Dev)**
-> <iframe src="file:///F:/笔记代码/量化金融/quant-for-beginners/assets/interactive/std-dev-demo.html" width="100%" height="600px" frameborder="0"></iframe>
+> [标准差交互实验源码](https://github.com/datawhalechina/quant-for-beginners/blob/main/assets/interactive/std-dev-demo.html)
 
 > **总体方差 (Population Variance)**
-> <iframe src="file:///F:/笔记代码/量化金融/quant-for-beginners/assets/interactive/population-variance-demo.html" width="100%" height="600px" frameborder="0"></iframe>
+> [总体方差交互实验源码](https://github.com/datawhalechina/quant-for-beginners/blob/main/assets/interactive/population-variance-demo.html)
 
 > **方差修正公式**
-> <iframe src="file:///F:/笔记代码/量化金融/quant-for-beginners/assets/interactive/variance-formulas-demo.html" width="100%" height="600px" frameborder="0"></iframe>
+> [方差公式交互实验源码](https://github.com/datawhalechina/quant-for-beginners/blob/main/assets/interactive/variance-formulas-demo.html)（扩展材料，见 [[📦 外部实验资产索引]]）
 
 ### 💻 实战靶场
-- 👉 [点击打开 Jupyter: 01_理解波动率](file:///F:/笔记代码/量化金融/quant-for-beginners/notebooks/phase2_intro/01_理解波动率.ipynb)
+- [打开 Notebook：理解波动率](https://github.com/datawhalechina/quant-for-beginners/blob/main/notebooks/phase2_intro/01_理解波动率.ipynb)
 
 
 ---
@@ -304,7 +316,7 @@ GARCH(1,1)：$\sigma_t^2=\omega+\alpha\varepsilon_{t-1}^2+\beta\sigma_{t-1}^2$�
 > 在这冰冷的公式背后，是这些天才数学家用一生在华尔街厮杀出来的智慧结晶：
 
 **ARCH模型发明者、诺贝尔奖得主：Robert Engle**
-![ARCH模型发明者、诺贝尔奖得主：Robert Engle](file:///F:/笔记代码/量化金融/quant-for-beginners/notebooks/phase2_intro/Robert Engle.jpg)
+![Robert Engle](https://raw.githubusercontent.com/datawhalechina/quant-for-beginners/main/notebooks/phase2_intro/Robert%20Engle.jpg)
 
 \n
 

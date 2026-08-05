@@ -3,13 +3,19 @@ type: study
 course: "时间序列分析"
 lesson: 5
 topic: "ARMA与ARIMA建模闭环"
+created: 2026-08-02
+updated: 2026-08-05
 status: planned
 mastery: 0
 difficulty: intermediate
 flow: knowledge
 kind: concept
+concept: ["ARIMA", "差分还原", "建模闭环"]
 prerequisites: ["平稳性与差分", "AR模型", "MA模型"]
-next: ["SARIMA模型", "模型识别", "参数估计"]
+related: ["L04-MA模型与有限冲击", "L06-SARIMA与季节预测", "ARIMA模型"]
+next: ["L06-SARIMA与季节预测"]
+anki_deck: "时间序列分析::主线课程"
+anki_tags: ["时间序列分析", "L05", "ARMA", "ARIMA", "建模闭环"]
 tags: [学习, 时间序列, 教师式课程, ARMA, ARIMA]
 sources:
   - title: "Forecasting: Principles and Practice (3rd ed.)"
@@ -192,9 +198,15 @@ for order in candidates:
 - 下一课：[[L06-SARIMA与季节预测]]
 - 参考卡：[[ARMA模型]]、[[ARIMA模型]]、[[模型识别]]、[[参数估计]]
 - 正式作业：[[HW05-ARMA与ARIMA建模闭环阶梯作业]]
-- 课程入口：[[🧑‍🏫 时间序列教师版学习入口]]
+- 课程入口：[[📚 时间序列课程学习面板]]
 
 ## 参考资料
 
 - Hyndman & Athanasopoulos, [FPP3 §9.5 Non-seasonal ARIMA models](https://otexts.com/fpp3/non-seasonal-arima.html)。
 - Hyndman & Athanasopoulos, [FPP3 §9.7 ARIMA modelling](https://otexts.com/fpp3/arima-r.html)。
+
+## 🃏 Anki 卡片
+
+- ARIMA$(p,d,q)$ 的三个阶数分别控制什么？::$p$ 控制差分后序列的 AR 记忆，$d$ 控制普通差分次数，$q$ 控制创新的有限 MA 传播
+- 不同差分阶数的模型为什么不能机械比较 AICc？::差分改变了拟合对象、有效样本和似然口径，应先依据机制与平稳化证据确定差分方案
+- ARIMA 候选的完整验收链是什么？::数据与信息边界、变换/差分、有限候选、估计稳定性、残差诊断、滚动样本外评估、与朴素基线比较

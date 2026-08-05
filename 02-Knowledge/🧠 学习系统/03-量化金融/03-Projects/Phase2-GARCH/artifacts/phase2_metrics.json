@@ -1,0 +1,19 @@
+{
+  "data_mode": "simulated_garch",
+  "return_unit": "percent",
+  "mean_model": "constant estimated on training split only",
+  "training_mean": -0.042113066387600824,
+  "observations": 1500,
+  "train_observations": 1200,
+  "test_observations": 300,
+  "omega": 0.12105169883037131,
+  "alpha": 0.07357286924676185,
+  "beta": 0.8103491071305314,
+  "persistence": 0.8839219763772933,
+  "optimizer_success": true,
+  "optimizer_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+  "negative_log_likelihood": 1717.4751404865947,
+  "garch_qlike": 0.9609887800466723,
+  "rolling_qlike": 1.0064398212769265,
+  "rolling_window": 20
+}

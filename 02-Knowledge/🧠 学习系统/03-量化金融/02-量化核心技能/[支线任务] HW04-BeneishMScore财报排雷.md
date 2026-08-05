@@ -7,8 +7,8 @@ flow: knowledge
 course: "03-量化金融"
 importance: "A"
 tags: [学习, 量化金融, 财报排雷, 作业说明书]
-prerequisites: ["[[财务报表分析]]", "[[Pandas数据处理]]"]
-related: ["[[多因子选股模型]]", "[[风控系统开发]]"]
+prerequisites: ["[[三大财务报表钩稽关系 (Interrelationship of Financial Statements)|财务报表分析]]", "[[Pandas分组聚合与透视表|Pandas数据处理]]"]
+related: ["[[量化金融-资产定价-多因子模型|多因子选股模型]]", "[[实盘风控|风控系统开发]]"]
 status: learning
 subagent_audit_score: 10.0
 ---
@@ -95,20 +95,40 @@ M-Score = -4.84 + 0.920×**DSRI** + 0.528×**GMI** + 0.404×**AQI** + 0.892×**S
 
 ### 例子 2：核心代码段 (中等)
 ```python
-def calc_dsri(df):
-    # df 必须确保已经按 Ticker 分组并按日期(或财报期)排序
-    current_ratio = df['应收账款'] / df['营业收入']
-    prev_ratio = df.groupby('Ticker')['应收账款'].shift(1) / df.groupby('Ticker')['营业收入'].shift(1)
-    
-    dsri = current_ratio / prev_ratio
-    # 工程防御：处理分母为0导致的 inf 以及异常负数
-    dsri = dsri.replace([np.inf, -np.inf], np.nan)
-    return dsri
+import numpy as np
+import pandas as pd
+
+
+def add_dsri(data):
+    required = {'Ticker', 'report_date', '应收账款', '营业收入'}
+    missing = required.difference(data.columns)
+    if missing:
+        raise ValueError(f'missing columns: {sorted(missing)}')
+
+    result = data.sort_values(['Ticker', 'report_date']).reset_index(drop=True).copy()
+    current_ratio = result['应收账款'] / result['营业收入']
+    previous_ratio = current_ratio.groupby(result['Ticker']).shift(1)
+    result['DSRI'] = (current_ratio / previous_ratio).replace(
+        [np.inf, -np.inf], np.nan
+    )
+    return result
+
+
+sample = pd.DataFrame({
+    'Ticker': ['DEMO', 'DEMO'],
+    'report_date': ['2024-12-31', '2025-12-31'],
+    '应收账款': [20.0, 60.0],
+    '营业收入': [100.0, 150.0],
+})
+result = add_dsri(sample)
+assert np.isnan(result.loc[0, 'DSRI'])
+assert np.isclose(result.loc[1, 'DSRI'], 2.0)
+print(result)
 ```
 
 ### 例子 3：实际测试标准与量化应用 (Quant Finance)
-- **工程性能要求**：在作业的自动化评测系统中，我们将输入 `2015-2025` 十年 A 股全市场财报数据。你的代码必须在 **5秒** 内稳定输出每日的 `m_score_signal`，不得超时。
-- **回测验证**：在框架中，将 `M-Score > -1.78` 的股票加入动态黑名单。要求验证你的排雷逻辑能够使沪深300增强策略的历史最大回撤（Max Drawdown）降低至少 2%。
+- **工程性能要求**：记录数据行数、硬件、Python/依赖版本和实际运行时间；没有固定评测环境时不得宣称“必须在 5 秒内完成”。
+- **回测验证**：预先冻结阈值与样本区间，比较加入过滤器前后的覆盖率、换手、收益与最大回撤。过滤器可能改善、无效或恶化结果；不得把“回撤必降 2%”写成验收条件。
 
 ---
 
@@ -129,12 +149,12 @@ def calc_dsri(df):
 
 ## 9. 相关知识点与 Obsidian 双链建议
 ### 上游依赖
-- [[Pandas向量化运算]]：提供十万级面板数据秒级计算的工程核心基础。
-- [[财报三表科目映射]]：Tushare/Wind 接口数据字段与会计科目的对照字典。
+- [[Pandas分组聚合与透视表|Pandas向量化运算]]：提供十万级面板数据秒级计算的工程核心基础。
+- [[三大财务报表钩稽关系 (Interrelationship of Financial Statements)|财报三表科目映射]]：Tushare/Wind 接口数据字段与会计科目的对照字典。
 
 ### 下游延伸
 - [[04-深入精通/交易环境设计|事件驱动回测框架]]：如何将 M-Score 作为一个避险信号（Filter）无缝串接入选股回测流。
-- [[Altman Z-Score破产模型]]：另一个经典的基于财务比率的风控防破产模型，常与 M-Score 并用。
+- [[Beneish M-Score 财务造假模型与 Sloan 应计项因子 (Beneish M-Score & Sloan Accruals)|Altman Z-Score破产模型]]：另一个经典的基于财务比率的风控防破产模型，常与 M-Score 并用。
 
 ---
 

@@ -12,7 +12,7 @@ concept: ["VaR", "参数法", "历史模拟法"]
 prerequisites: ["正态分布", "统计学"]
 related: ["CVaR"]
 upstream: ["[[收益率定义与对数收益]]", "[[历史模拟法 VaR 与非参数风险度量 (Historical Simulation VaR)]]"]
-downstream: ["[[CVaR条件风险价值]]", "[[EVT极值理论与VaR-CVaR]]", "[[蒙特卡洛模拟法 VaR (Monte Carlo Simulation VaR)]]"]
+downstream: ["[[量化金融-风险管理-期望损失分解与ES理论|CVaR条件风险价值]]", "[[EVT极值理论与VaR-CVaR]]", "[[蒙特卡洛模拟法 VaR (Monte Carlo Simulation VaR)]]"]
 flow: knowledge
 kind: concept
 ---
@@ -151,11 +151,11 @@ def calc_historical_var(returns_array, alpha=0.01, portfolio_value=1.0):
 - [[历史模拟法 VaR 与非参数风险度量 (Historical Simulation VaR)]]：原先分散的笔记。
 
 ### 下游延伸
-- [[CVaR条件风险价值]]：解决 VaR 不满足次可加性（无法鼓励分散化）以及尾部盲区的问题。
+- [[量化金融-风险管理-期望损失分解与ES理论|CVaR条件风险价值]]：解决 VaR 不满足次可加性（无法鼓励分散化）以及尾部盲区的问题。
 - [[EVT极值理论与VaR-CVaR]]：专门对尾部极值建模。
 
 ### 横向关联
-- [[压力测试 (Stress Testing)]]：弥补历史法无法预测前所未有危机的缺陷。
+- [[量化金融-风险管理-期望损失分解与ES理论|压力测试 (Stress Testing)]]：弥补历史法无法预测前所未有危机的缺陷。
 
 ### 应用场景
 - [[实盘风控]]：在量化交易引擎中设置触及 VaR 的自动平仓熔断。

@@ -526,9 +526,9 @@ $$ R_t = (\text{Return}_t - \text{Cost}_t) - \lambda \cdot \text{Variance}(\text
 
 ## 9. 相关知识点与 Obsidian 双链建议
 
-- 上游依赖：[[强化学习基础]], [[Almgren-Chriss最优拆单]]
-- 下游延伸：[[PPO在量化中的应用]], [[高频做市商(MM)策略]]
-- 横向关联：[[差分夏普比率(DSR)]] ↔ [[Reward奖励设计]] (最高阶的奖励函数形式)
+- 上游依赖：[[金融MDP设计与奖励函数工程 (Financial MDP & Reward Engineering)|强化学习基础]], [[Almgren-Chriss最优拆单]]
+- 下游延伸：[[金融MDP设计与奖励函数工程 (Financial MDP & Reward Engineering)|PPO在量化中的应用]], [[做市商库存模型与 Avellaneda-Stoikov 框架 (Inventory Models & Avellaneda-Stoikov Framework)|高频做市商(MM)策略]]
+- 横向关联：[[奖励函数设计 (Reward Function Design)|差分夏普比率(DSR)]] ↔ [[金融MDP设计与奖励函数工程 (Financial MDP & Reward Engineering)|Reward奖励设计]] (最高阶的奖励函数形式)
 - 应用场景：[[[支线任务] HW16-Gymnasium交易环境]]
 
 ---
@@ -631,8 +631,8 @@ audit_score: 55
 
 - 审计分数：**55 / 100**
 - 主要问题：虚假完成度字段；断链8个；无可定位来源
-- 原文存档：`F:\-\99-System\🗄️ 归档\量化金融未达标知识卡-2026-08-01\奖励函数设计 (Reward Function Design).md`
-- 可信学习主线：[[🗺️ 量化金融学习路径]]、[[🧩 Qlib 项目知识点—作业—验收路线图]]
+- 原文存档：归档目标当前缺失；恢复后必须登记库内相对链接，不保留本机盘符路径。
+- 可信学习主线：[[00-课程说明与先修诊断|🗺️ 量化金融学习路径]]、[[03-Projects/Capstone-统一标的贯穿实战项目|🧩 Qlib 项目知识点—作业—验收路线图]]
 
 ## 重新纳入条件
 

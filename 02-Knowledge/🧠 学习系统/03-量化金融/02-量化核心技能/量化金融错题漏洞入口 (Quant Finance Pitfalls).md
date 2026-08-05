@@ -11,8 +11,8 @@ tags: [学习, 核心概念, 量化金融, 错题本, 避坑指南, 回测]
 concept: []
 prerequisites: []
 related: []
-upstream: ["[[量化回测框架]]", "[[数据清洗与预处理]]"]
-downstream: ["[[实盘交易系统]]", "[[策略归因分析]]"]
+upstream: ["[[回测框架与无泄漏实验|量化回测框架]]", "[[OHLCV字段清洗与复权|数据清洗与预处理]]"]
+downstream: ["[[实盘风控|实盘交易系统]]", "[[策略评价指标|策略归因分析]]"]
 flow: knowledge
 kind: concept
 subagent_audit_score: 10.0
@@ -92,10 +92,21 @@ $$ S_t = f(\mathcal{F}_{t-1}) $$
 
 ### 例子 1：基础例子 (代码 Bug：未对齐收益率的未来函数)
 - **题目**：指出以下基于均线突破策略的 Pandas 收益计算代码的漏洞并修复。
-  ```python
-  df['signal'] = df['close'] > df['close'].rolling(20).mean() # t日收盘后产生的信号
-  df['return'] = df['signal'] * df['close'].pct_change()      # 计算策略收益
-  ```
+
+```python
+import pandas as pd
+
+df = pd.DataFrame({'close': [100, 101, 102, 101, 103, 104]}, dtype=float)
+df['signal'] = df['close'] > df['close'].rolling(3).mean()
+df['asset_return'] = df['close'].pct_change()
+
+# t 日收盘后生成的信号，只能参与下一交易期的收益。
+df['strategy_return'] = df['signal'].shift(1).fillna(False) * df['asset_return']
+
+assert df.loc[2, 'strategy_return'] == 0.0
+print(df[['close', 'signal', 'asset_return', 'strategy_return']])
+```
+
 - **漏洞分析**：`pct_change()` 默认是当天收盘价相较前一天的涨跌幅（即 $t$ 日收益）。如果 `signal` 也是同一行的值，这意味着你在 $t$ 日收盘**之后**确定的信号，立刻享受了 $t$ 日全天的涨幅！这相当于下午3点闭市后，你假装早上开盘就买了进去。
 - **修复方式**：必须对信号进行滞后（Shift）。由于 $t$ 日收盘后确定的信号，最早只能在 $t+1$ 日开盘或收盘执行，因此它吃到的应该是 $t+1$ 日的收益。
   `df['return'] = df['signal'].shift(1) * df['close'].pct_change()`
@@ -131,12 +142,12 @@ $$ S_t = f(\mathcal{F}_{t-1}) $$
 
 ## 9. 相关知识点与 Obsidian 双链建议
 ### 上游依赖
-- [[数据清洗与预处理]]：确保 Point-in-Time 财务数据与复权行情的准确性。
-- [[量化回测框架]]：理解事件驱动（Event-driven）与向量化（Vectorized）回测底层的不同时间推进机制。
+- [[OHLCV字段清洗与复权|数据清洗与预处理]]：确保 Point-in-Time 财务数据与复权行情的准确性。
+- [[回测框架与无泄漏实验|量化回测框架]]：理解事件驱动（Event-driven）与向量化（Vectorized）回测底层的不同时间推进机制。
 
 ### 下游延伸
-- [[过度拟合与多重检验]]：回测无效的统计学原因，例如 Deflated Sharpe Ratio。
-- [[实盘交易系统]]：实盘引擎的网关会通过强校验来拦截信号逻辑错误。
+- [[策略回测前视偏差与生存者偏差防范审计 (Look-Ahead & Survivorship Bias Audit)|过度拟合与多重检验]]：回测无效的统计学原因，例如 Deflated Sharpe Ratio。
+- [[实盘风控|实盘交易系统]]：实盘引擎的网关会通过强校验来拦截信号逻辑错误。
 
 ---
 

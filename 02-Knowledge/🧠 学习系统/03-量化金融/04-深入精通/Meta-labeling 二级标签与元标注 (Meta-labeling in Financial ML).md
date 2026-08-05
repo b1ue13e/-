@@ -62,8 +62,8 @@ Meta-labeling（元标注）是由 Marcos López de Prado 在《Advances in Fina
 
 ## 3. 学它之前需要哪些前置知识？
 
-1. **[[Purged CV]]**：理解金融时间序列交叉验证中的重叠消除（Purging）与净化（Embargoing）。
-2. **[[标签设计]]**：理解三重屏障法（Triple-Barrier Method）生成止盈、止损与到期标签。
+1. **[[Purged Group TimeSeries Cross-Validation 净化交叉验证 (Purged Group K-Fold CV)|Purged CV]]**：理解金融时间序列交叉验证中的重叠消除（Purging）与净化（Embargoing）。
+2. **[[Meta-labeling 二级标签与元标注 (Meta-labeling in Financial ML)|标签设计]]**：理解三重屏障法（Triple-Barrier Method）生成止盈、止损与到期标签。
 3. **最小必要背景（混淆矩阵 Confusion Matrix）**：
    > - **Precision (精准率)**：TP / (TP + FP)，预测为真里实际真的比例。
    > - **Recall (召回率)**：TP / (TP + FN)，实际为真里被找出来的比例。
@@ -280,7 +280,7 @@ run_metalabeling_production_lab()
 - **过滤后夏普比率提升度 (Sharpe Improvement)**：$\Delta Sharpe = Sharpe_{meta} - Sharpe_{primary}$。
 
 ### 7.5.5
-> 🔓 **作业解锁前置条件**：学完 [[收益率与对数收益率]] + [[Meta-labeling]] 即可正式解锁本 Challenge 实战！
+> 🔓 **作业解锁前置条件**：学完 [[收益率与对数收益率]] + [[Meta-labeling 二级标签与元标注 (Meta-labeling in Financial ML)|Meta-labeling]] 即可正式解锁本 Challenge 实战！
 > 💡 **解锁指引**：理解 Meta-labeling 的核心定义与基本推导逻辑后即可解锁。
 
  🧪 拓展实验与李宏毅式实战 Challenge 题 (Lab Assignment: Meta-labeling 工业级实战 challenge)
@@ -331,14 +331,14 @@ run_metalabeling_production_lab()
 
 上游依赖
 
-- [[Purged CV]]：提供基础概念与理论推导支撑。
-- [[标签设计]]：提供基础概念与理论推导支撑。
+- [[Purged Group TimeSeries Cross-Validation 净化交叉验证 (Purged Group K-Fold CV)|Purged CV]]：提供基础概念与理论推导支撑。
+- [[Meta-labeling 二级标签与元标注 (Meta-labeling in Financial ML)|标签设计]]：提供基础概念与理论推导支撑。
 - [[树模型基线]]：提供基础概念与理论推导支撑。
 
 下游延伸
 
-- [[下注规模]]：进一步延伸拓展该知识点的应用场景与模型构建。
-- [[止损与仓位]]：进一步延伸拓展该知识点的应用场景与模型构建。
+- [[动态下注规模与凯利公式 (Bet Sizing & Kelly Criterion in AFML)|下注规模]]：进一步延伸拓展该知识点的应用场景与模型构建。
+- [[动态止损机制与风险平价仓位管理 (Stop-Loss Mechanisms & Risk-Parity Position Sizing)|止损与仓位]]：进一步延伸拓展该知识点的应用场景与模型构建。
 
 横向关联
 
@@ -450,7 +450,7 @@ run_metalabeling_production_lab()
 ## 13. 给 Obsidian 的归档建议
 
 - **适合文件夹**：`02-Knowledge/🧠 学习系统/03-量化金融/03-策略开发与实战/`
-- **建议双链**：[[Purged CV]]、[[下注规模]]、[[标签设计]]
+- **建议双链**：[[Purged Group TimeSeries Cross-Validation 净化交叉验证 (Purged Group K-Fold CV)|Purged CV]]、[[动态下注规模与凯利公式 (Bet Sizing & Kelly Criterion in AFML)|下注规模]]、[[Meta-labeling 二级标签与元标注 (Meta-labeling in Financial ML)|标签设计]]
 - **标签**：`#学习` `#量化金融` `#金融机器学习` `#MetaLabeling` `#AFML` `#下注规模`
 
 ---

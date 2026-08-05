@@ -365,7 +365,7 @@ print(f"1000万组合 95% 条件 VaR (CVaR): {cvar_95:.2f} 元")
 ## 13. 给 Obsidian 的归档建议
 
 - **适合文件夹**：`02-Knowledge/🧠 学习系统/03-量化金融/02-量化核心技能/`
-- **建议双链**：[[蒙特卡洛模拟法 VaR (Monte Carlo Simulation VaR)|Monte Carlo VaR]]、[[极值理论 EVT 与 POT 超过门槛模型 (Extreme Value Theory & POT Model)|尾部风险]]、[[CVaR条件风险价值|压力测试]]
+- **建议双链**：[[蒙特卡洛模拟法 VaR (Monte Carlo Simulation VaR)|Monte Carlo VaR]]、[[极值理论 EVT 与 POT 超过门槛模型 (Extreme Value Theory & POT Model)|尾部风险]]、[[量化金融-风险管理-期望损失分解与ES理论|压力测试]]
 - **标签**：`#学习` `#量化金融` `#风控` `#VaR` `#历史模拟法` `#风险价值` `#肥尾风险` `#巴塞尔协议`
 
 ---

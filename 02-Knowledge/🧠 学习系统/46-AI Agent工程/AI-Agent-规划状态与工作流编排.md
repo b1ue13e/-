@@ -10,7 +10,8 @@ prerequisites: [Agent循环, 工具调用]
 related: [多智能体, 可观测性, 失败恢复]
 flow: knowledge
 kind: concept
-source: "UC Berkeley CS 194/294-196 F24 agent frameworks and StateFlow reading; Berkeley Lab 01 public description"
+source: "UC Berkeley CS 194/294-196 F24 StateFlow and Lab 01; Microsoft AI Agents for Beginners Lesson 7; Datawhale Hello-Agents Chapters 4.3 and 7"
+source_urls: ["https://github.com/microsoft/ai-agents-for-beginners/tree/main/07-planning-design", "https://github.com/datawhalechina/hello-agents/tree/main/docs/chapter4", "https://github.com/datawhalechina/hello-agents/tree/main/docs/chapter7"]
 anki_deck: "46-AI Agent工程::04-规划编排"
 anki_tags: [46-AI-Agent工程, 规划, 状态机]
 ---
@@ -117,7 +118,7 @@ def aggregate(state: State) -> None:
     ratings = state.data["ratings"]
     state.data["score"] = sum(ratings) / len(ratings)
 
-NODES: dict[str, tuple[set[str], Callable[[State], None]]] = {
+NODES: dict[str, tuple[set[str], Callable[..., None]]] = {
     "extract": (set(), extract),
     "aggregate": ({"extract"}, aggregate),
 }
@@ -169,7 +170,7 @@ print(run(State({"reviews": ["food:5", "service:3"]})).data)
 - [[AI-Agent-安全威胁建模与系统评测]]：状态、轨迹与回归门禁。
 
 ### 横向关联
-- [[有向无环图]] ↔ 工作流：拓扑排序决定可执行顺序。
+- **待创建先修补丁：有向无环图** ↔ 工作流：拓扑排序决定可执行顺序。
 
 ### 应用场景
 - [[Berkeley-Lab01-Restaurant-Review-Pipeline-知识点映射]]：将官方任务重建为可测试阶段。
@@ -248,4 +249,3 @@ print(run(State({"reviews": ["food:5", "service:3"]})).data)
 - 工作流节点 Ready 的条件是什么？::所有前驱节点完成，并且该节点的 guard 条件为真。
 - 为什么模型生成的计划不能直接执行？::计划可能包含未知工具、非法依赖、越权动作或超预算步骤，必须经过结构、权限和可行性校验。
 - 工作流恢复的事实边界是什么？::已持久化且确认提交的副作用与节点状态；恢复时不能仅凭模型记忆猜测是否执行过。
-

@@ -1,6 +1,6 @@
 ---
-title: "主线-机器学习与AI应用"
-type: moc
+topic: "主线-机器学习与AI应用"
+type: index
 kind: moc
 flow: knowledge
 track: "机器学习与AI应用"

@@ -52,7 +52,7 @@ verified_at: 2026-08-03
 
 ## 3. 学它之前需要哪些前置知识？
 
-1. **[[市场微观结构与买卖价差]]**：冲击成本来源。
+1. **[[买卖价差及其微观结构拆解 (Bid-Ask Spread & Microstructure Decomposition)|市场微观结构与买卖价差]]**：冲击成本来源。
 2. 布朗运动与效用函数直觉。
 
 ---
@@ -148,13 +148,13 @@ $$\min E[\text{cost}]+\lambda\,\text{Var}[\text{cost}]$$
 ## 9. 相关知识点与 Obsidian 双链建议
 
 ### 上游依赖
-- [[市场微观结构与买卖价差]]（冲击来源）
+- [[买卖价差及其微观结构拆解 (Bid-Ask Spread & Microstructure Decomposition)|市场微观结构与买卖价差]]（冲击来源）
 
 ### 下游延伸
 - 无（执行层终端）
 
 ### 横向关联
-- [[Implementation Shortfall]] ↔ 本卡：执行评估
+- [[Implementation Shortfall 执行缺口与 Almgren-Chriss 最优执行模型|Implementation Shortfall]] ↔ 本卡：执行评估
 
 ### 应用场景
 - 机构执行算法设计
@@ -243,6 +243,6 @@ $$\min E[\text{cost}]+\lambda\,\text{Var}[\text{cost}]$$
 ## 13. 给 Obsidian 的归档建议
 
 - **适合文件夹**：`02-Knowledge/🧠 学习系统/03-量化金融/`
-- **关联已有笔记**：[[市场微观结构与买卖价差]] [[Implementation Shortfall]]
+- **关联已有笔记**：[[买卖价差及其微观结构拆解 (Bid-Ask Spread & Microstructure Decomposition)|市场微观结构与买卖价差]] [[Implementation Shortfall 执行缺口与 Almgren-Chriss 最优执行模型|Implementation Shortfall]]
 - **建议标签**：`#学习` `#量化金融`
 - **拆分建议**：不拆分

@@ -52,7 +52,7 @@ verified_at: 2026-08-03
 
 ## 3. 学它之前需要哪些前置知识？
 
-1. **[[CAPM资本资产定价模型]]**：单因子定价与 Alpha。
+1. **[[CAPM 资本资产定价模型|CAPM资本资产定价模型]]**：单因子定价与 Alpha。
 2. **[[收益率定义与对数收益]]**：超额收益。
 
 ---
@@ -148,15 +148,15 @@ SMB（Small Minus Big）：每月按市值中位数分大小两组，SMB = 小�
 ## 9. 相关知识点与 Obsidian 双链建议
 
 ### 上游依赖
-- [[CAPM资本资产定价模型]]（嵌套检验：三因子 vs CAPM 用 GRS 检验）
+- [[CAPM 资本资产定价模型|CAPM资本资产定价模型]]（嵌套检验：三因子 vs CAPM 用 GRS 检验）
 
 ### 下游延伸
-- [[Fama-MacBeth两步回归]]：因子溢价显著性检验
+- [[Fama-MacBeth 两步回归法 (Fama-MacBeth Two-Step Regression)|Fama-MacBeth两步回归]]：因子溢价显著性检验
 - [[回测框架与无泄漏实验]]：因子策略验证
 
 ### 横向关联
-- [[APT套利定价理论]] ↔ 本卡：多因子理论框架
-- [[Fama-MacBeth两步回归]] ↔ 本卡：因子收益估计
+- [[量化金融-资产定价-多因子模型|APT套利定价理论]] ↔ 本卡：多因子理论框架
+- [[Fama-MacBeth 两步回归法 (Fama-MacBeth Two-Step Regression)|Fama-MacBeth两步回归]] ↔ 本卡：因子收益估计
 
 ### 应用场景
 - 因子选股与业绩归因
@@ -245,6 +245,6 @@ SMB（Small Minus Big）：每月按市值中位数分大小两组，SMB = 小�
 ## 13. 给 Obsidian 的归档建议
 
 - **适合文件夹**：`02-Knowledge/🧠 学习系统/03-量化金融/`
-- **关联已有笔记**：[[CAPM资本资产定价模型]] [[Fama-MacBeth两步回归]] [[APT套利定价理论]]
+- **关联已有笔记**：[[CAPM 资本资产定价模型|CAPM资本资产定价模型]] [[Fama-MacBeth 两步回归法 (Fama-MacBeth Two-Step Regression)|Fama-MacBeth两步回归]] [[量化金融-资产定价-多因子模型|APT套利定价理论]]
 - **建议标签**：`#学习` `#量化金融` `#因子模型`
 - **拆分建议**：不拆分

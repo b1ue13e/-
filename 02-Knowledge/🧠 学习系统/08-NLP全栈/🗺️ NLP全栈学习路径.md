@@ -71,7 +71,7 @@ dv.paragraph(`**总体进度: ${totalProgress}%** | 已完成: ${totalCompleted}
 | ⬜ | [[词向量与Word2Vec]] | CBOW、Skip-gram、负采样、层次Softmax | [新建](obsidian://new?file=🧠%20学习系统/08-NLP全栈/03-深度学习NLP基础/词向量与Word2Vec.md) |
 | ⬜ | [[GloVe与稠密向量]] | 共现矩阵分解、全局统计、向量空间 | [新建](obsidian://new?file=🧠%20学习系统/08-NLP全栈/03-深度学习NLP基础/GloVe与稠密向量.md) |
 | ⬜ | [[循环神经网络RNN]] | RNN结构、BPTT、梯度消失/爆炸 | [新建](obsidian://new?file=🧠%20学习系统/08-NLP全栈/03-深度学习NLP基础/循环神经网络RNN.md) |
-| ⬜ | [[LSTM与GRU]] | 门控机制、长程依赖、变体比较 | [新建](obsidian://new?file=🧠%20学习系统/08-NLP全栈/03-深度学习NLP基础/LSTM与GRU.md) |
+| ⬜ | [[LSTM与GRU在时序中的应用]] | 门控机制、长程依赖、变体比较 | [新建](obsidian://new?file=🧠%20学习系统/08-NLP全栈/03-深度学习NLP基础/LSTM与GRU.md) |
 | ⬜ | [[Seq2Seq与注意力机制]] | 编码器-解码器、Bahdanau注意力、Luong注意力 | [新建](obsidian://new?file=🧠%20学习系统/08-NLP全栈/03-深度学习NLP基础/Seq2Seq与注意力机制.md) |
 | ⬜ | [[CNN在NLP中的应用]] | TextCNN、卷积特征、池化操作 | [新建](obsidian://new?file=🧠%20学习系统/08-NLP全栈/03-深度学习NLP基础/CNN在NLP中的应用.md) |
 
@@ -243,3 +243,14 @@ dv.table(
 - [ ] Datasets & Tokenizers
 - [ ] Fine-tuning a pre-trained model (Trainer API & Keras)
 - [ ] Sharing models and custom datasets
+
+---
+
+## 🗓️ 碎片化复盘与计划占位 (整合区)
+
+本模块用于替代原有的零散计划占位文件，后续可直接在下方挂载相关日计划链接，避免索引碎片化：
+
+- **代码实践**: 核心定义 / 公式推导 / 典型题目实践。 关联日计划：*待自动挂载*
+- **课程复盘**: 阶段性回顾与错题反思。 关联日计划：*待自动挂载*
+- **项目实践**: 项目级别的验证与验收。 关联日计划：*待自动挂载*
+- **课程任务挂载**: 具体课程布置的任务锚点。 关联日计划：*待自动挂载*

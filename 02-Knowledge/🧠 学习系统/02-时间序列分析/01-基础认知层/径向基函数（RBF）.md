@@ -1,8 +1,8 @@
 ---
-type: study
+type: reference
 topic: 径向基函数（RBF）
 created: 2026-04-27
-status: ongoing
+status: active
 difficulty: intermediate
 concept:
 - 径向基函数
@@ -26,6 +26,9 @@ tags:
 - 时间序列
 - 机器学习
 - 核方法
+course: "机器学习"
+flow: knowledge
+kind: concept
 ---
 
 既然你已经在 **PINN（物理信息神经网络）** 和 **MoE（混合专家模型）** 的深水区里畅游了，那我们今天就用“降维打击”的方式，把径向基函数（Radial Basis Function, RBF）这个老牌但极其优雅的工具拆解得干干净净。

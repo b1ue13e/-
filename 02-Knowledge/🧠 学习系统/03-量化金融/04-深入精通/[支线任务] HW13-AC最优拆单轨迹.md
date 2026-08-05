@@ -8,8 +8,8 @@ flow: practical
 course: "03-量化金融"
 importance: "A"
 tags: [学习, 量化金融, 算法交易, 市场微观结构, 实战作业]
-prerequisites: ["[[TWAP与VWAP算法]]", "[[市场冲击模型]]"]
-related: ["[[强化学习在最优执行中的应用]]"]
+prerequisites: ["[[TWAP 时间加权平均价格 (Time-Weighted Average Price)|TWAP与VWAP算法]]", "[[市场冲击成本模型与平方根法则 (Market Impact Models & Square-Root Law)|市场冲击模型]]"]
+related: ["[[金融MDP设计与奖励函数工程 (Financial MDP & Reward Engineering)|强化学习在最优执行中的应用]]"]
 status: in-progress
 ---
 # HW13-AC最优拆单轨迹作业说明书 核心实战笔记
@@ -150,14 +150,14 @@ def calculate_ac_trajectory(X, T, N_steps, risk_aversion, sigma, eta):
 
 ### 🟢 上游依赖 (Prerequisites)
 - [[买卖价差及其微观结构拆解 (Bid-Ask Spread & Microstructure Decomposition)|市场微观结构]]：理解什么是限价订单簿 (LOB) 和市场冲击 (Market Impact)。
-- [[效用函数与均值方差分析]]：理解为什么目标函数要写成 $\mathbb{E} + \lambda \mathbb{V}ar$。
+- [[量化金融-动态最优化-3-Merton最优消费问题应用|效用函数与均值方差分析]]：理解为什么目标函数要写成 $\mathbb{E} + \lambda \mathbb{V}ar$。
 
 ### 🔴 下游延伸 (Next Steps)
-- [[VWAP算法实现]]：将时间均匀分布升级为按成交量分布。
-- [[基于强化学习的拆单(RL Execution)]]：利用 DDPG 等算法替代解析公式解，处理非线性冲击。
+- [[VWAP 成交量加权平均价格 (Volume-Weighted Average Price)|VWAP算法实现]]：将时间均匀分布升级为按成交量分布。
+- [[Almgren-Chriss最优拆单|基于强化学习的拆单(RL Execution)]]：利用 DDPG 等算法替代解析公式解，处理非线性冲击。
 
 ### 🟡 平行对比 (Lateral)
-- [[Kelly公式(凯利公式)]]：凯利公式决定“买多少”，而 AC 模型决定“怎么买”。
+- [[动态下注规模与凯利公式 (Bet Sizing & Kelly Criterion in AFML)|Kelly公式(凯利公式)]]：凯利公式决定“买多少”，而 AC 模型决定“怎么买”。
 
 ---
 

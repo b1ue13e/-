@@ -2,26 +2,27 @@
 type: index
 topic: "量化金融全栈终极框架 (Academic + AFML + HFT)"
 created: 2026-08-04
+updated: 2026-08-05
 status: active
 difficulty: beginner
 concept: ["数学金融", "金融机器学习", "微观结构", "高频交易"]
-prerequisites: ["无要求（包含新手村引导）"]
-related: []
+prerequisites: ["完成量化金融课程说明与先修诊断"]
+related: ["量化金融课程说明与先修诊断", "Capstone-统一标的贯穿实战项目"]
 tags: [索引, 量化金融, 终极框架, MOC, 渐进式学习]
 flow: knowledge
 kind: moc
 ---
 
-# 🗺️ 量化金融全栈终极框架 (Academic + AFML + HFT)
+# 🗺️ 量化金融全栈知识地图 (Academic + AFML + HFT)
 
-> **导读**：欢迎来到量化金融的终极武库。
-> 为了防止信息过载，本指南采用了 **“任务驱动”** 与 **“渐进式展开”** 设计。每一个折叠面板后，不再是冰冷的知识点列表，而是明确的“通关目标”、“实战大作业”和“知识救生圈”。
->
-> 🧗‍♂️ **如果是零基础小白，请只在 【Level 0】 停留，直到你完成第一次回测再往下走！**
+> [!important] 本页职责：查阅地图
+> 正式学习、当前位置和下一步统一返回 [[🗺️ 量化金融学习路径]]。本页只展示全量知识资产，不代表全部内容都是必修，也不用于替代 Week 0-9。
+
+> **使用方式**：需要查找下游主题、作业或选修内容时再使用本页。随机控制、强化学习与 HFT 属于完成 Week 9 后的选修区。
 
 ---
 
-## 🌳 量化通关技能树 (Dataview 自动化引擎)
+## 🌳 量化学习技能树 (Dataview 自动化引擎)
 
 > **🚀 提示**：下表由 Dataview 自动扫描全库生成。未来新增课程，只需在卡片头部加上 `nav_level: 11` 即可自动并入技能树！
 
@@ -35,14 +36,14 @@ WHERE nav_level != null
 SORT nav_level ASC
 ```
 
-## 🐣 Level 0: 新手启蒙村 (小白从这里开始) 🎖️ `[Lv.1 量化探索者]` -> `[Lv.2 策略设计师]`
+## Level 0：基础研究协议
 
-> **🎯 本阶段目标**：建立量化的基本信仰，感受数据律动，获得第一口“赚钱幻觉”的多巴胺，不要一上来就推微积分！
-> **⚔️ 验收标准**：写出不到 20 行代码的均线回测，并明白为什么回测赚钱实盘会亏。
+> **本阶段目标**：依次通过 K01-K06，能用可运行断言说明收益口径、数据口径、时间协议、面板运算、滚动特征与样本泄漏边界。
+> **验收标准**：完成 [[03-Projects/Capstone-AAPL/README|AAPL Phase 1 无泄漏基线]]，测试全绿，并解释为什么演示回测结果不能证明未来盈利。
 
 ### 0.1 认知建立：我们为什么坐在这里？
 - [[量化金融-启蒙-主观交易与量化交易的本质区别]]
-- [[为什么均线交叉在震荡市会被来回打脸 (Whipsaw Effect)]] (待补)
+- 待创建：均线交叉在震荡市的 Whipsaw 效应（不计入当前必修清单）
 
 ### 0.2 实操初探：第一行代码与防坑指南
 - [[最大回撤]]
@@ -62,6 +63,7 @@ SORT nav_level ASC
 
 ### 0.3 避坑与错题集
 - [[量化金融错题漏洞入口 (Quant Finance Pitfalls)]]
+- [[量化金融-Level0-累计交错测验]]
 
 ---
 
@@ -75,7 +77,7 @@ SORT nav_level ASC
 
 > **🎯 本阶段目标**：掌握量化世界里的经典物理定律（定价公式与风险模型）。
 > **⚔️ 关底大作业**：完成 [[[支线任务] HW01-CAPM与Alpha检验]] 与 [[[支线任务] HW05-BSM期权定价与对冲]]。
-> **🆘 补底捷径**：如果卡在微积分和线性代数，请暂时退出，前往 `[[09-高等代数]]` 的【矩阵基本运算】补课。
+> **🆘 补底捷径**：如果卡在线性代数，先前往 [[02-Knowledge/🧠 学习系统/09-高等代数/🗺️ 高等代数学习路径|高等代数学习路径]]；微积分补底尚未纳入本路径正式清单。
 
 ### 1.1 资产定价与因子投资 (为什么会有超额收益？)
 - [[🧠 夏普比率 (Sharpe Ratio)]]
@@ -104,12 +106,11 @@ SORT nav_level ASC
 - [[量化金融-平稳性与单位根检验实战]]
 - [[ACF 自相关函数与 PACF 偏自相关函数 (Autocorrelation & Partial Autocorrelation Functions)]]
 - [[单位根检验与 ADF 检验 (Unit Root & Augmented Dickey-Fuller Test)]]
-- [[量化金融-时间序列-协整检验与统计套利]]
 - [[配对交易与统计套利 (Pairs Trading & Statistical Arbitrage)]]
 - [[均值回归策略 (Mean-Reversion Trading Strategy)]]
 - [[趋势跟踪策略框架与 CTA 交易哲学 (Trend-Following Framework & CTA Trading)]]
 
-### 1.3 波动率、极值与风险管理 (如何测量深渊的深度？)
+### 1.3 波动率、极值与风险管理
 - [[非对称GARCH模型]]
 - [[EVT极值理论与VaR-CVaR]]
 - [[参数法VaR（方差-协方差法）]]
@@ -141,7 +142,7 @@ SORT nav_level ASC
 <summary>👉 点击展开 (难度：研究生 - Quant Researcher) 🎖️ <code>[Lv.5 组合分析师]</code> -> <code>[Lv.6 机器学习炼丹师]</code></summary>
 <br>
 
-> **🎯 本阶段目标**：抛弃学术界天真的假设，用现代机器学习手段榨取数据里的非线性 Alpha，同时极力避免把噪声当成信号（过拟合）。
+> **🎯 本阶段目标**：在冻结数据和验证协议后建立非线性基线，并用严格的样本外评估区分信号、噪声与过拟合。
 > **⚔️ 关底大作业**：完成 [[[支线任务] HW12-CPCV与PBO过拟合审计]]。
 > **🆘 补底捷径**：如果你发现这部分概念难以理解，强烈建议先阅读 Lopez de Prado 的《Advances in Financial Machine Learning》。
 
@@ -162,7 +163,7 @@ SORT nav_level ASC
 - [[Purged Group TimeSeries Cross-Validation 净化交叉验证 (Purged Group K-Fold CV)]]
 - [[策略回测前视偏差与生存者偏差防范审计 (Look-Ahead & Survivorship Bias Audit)]]
 
-### 2.4 高阶组合优化 (别再全仓梭哈了)
+### 2.4 高阶组合优化
 - [[HRP分层风险平价]]
 - [[Marchenko-Pastur定理]]
 - [[量化金融-资产定价-马科维茨组合与协方差矩阵正定化]]
@@ -181,7 +182,7 @@ SORT nav_level ASC
 <summary>👉 点击展开 (难度：核心机房工程师 - 算法交易员) 🎖️ <code>[Lv.7 极速算法师]</code></summary>
 <br>
 
-> **🎯 本阶段目标**：进入毫秒级的微观战场，研究交易所的匹配引擎，像做市商一样双向报价薅羊毛，或者大单建仓时不被别人发现（冲击成本）。
+> **🎯 本阶段目标**：理解交易所撮合、订单簿、做市库存风险和大额执行的冲击成本；没有合法逐笔数据时只做机制学习，不声称存在可交易 Alpha。
 > **⚔️ 关底大作业**：完成 [[[支线任务] HW15-盘口队列与挂单概率]] 与 [[[支线任务] HW13-AC最优拆单轨迹]]。
 > **🆘 补底捷径**：卡在随机控制推导？退回到 [[量化金融-动态最优化-1-贝尔曼方程直觉与离散推导]] 看故事。
 
@@ -208,12 +209,12 @@ SORT nav_level ASC
 - [[市场冲击成本模型与平方根法则 (Market Impact Models & Square-Root Law)]]
 - [[跨市场排队优先权与挂单成交概率 (Queue Position & Fill Probability in High-Frequency Trading)]]
 
-### 3.4 极速系统架构 (天下武功唯快不破)
+### 3.4 低延迟系统架构
 - [[实盘风控]]
 - [[高频交易系统架构与模块解耦设计 (High-Frequency Trading System Architecture)]]
 - [[低延迟系统设计与 C++_FPGA 极致性能优化 (Low-Latency System Design & C++_FPGA Optimization)]]
 
-### 3.5 动态最优化与强化学习 (让机器自动进化)
+### 3.5 动态最优化与强化学习
 - [[金融MDP设计与奖励函数工程 (Financial MDP & Reward Engineering)]]
 - [[RL 交易实验常见题型]]
 - [[交易环境设计]]

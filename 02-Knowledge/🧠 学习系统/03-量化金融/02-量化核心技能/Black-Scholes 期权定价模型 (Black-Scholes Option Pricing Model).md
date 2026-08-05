@@ -11,11 +11,14 @@ stage: "📘 第二阶段：量化核心技能"
 tags: [学习, 量化金融]
 concept: ["期权定价", "Black-Scholes", "Greeks", "风险中性"]
 prerequisites: ["收益率定义与对数收益", "随机过程（几何布朗运动）"]
-related: ["GARCH族波动率模型", "HW05-BSM期权定价与动态对冲"]
+related: ["量化金融-波动率-GARCH家族模型", "[支线任务] HW05-BSM期权定价与对冲"]
 upstream: ["收益率定义与对数收益"]
-downstream: ["GARCH族波动率模型"]
+downstream: ["量化金融-波动率-GARCH家族模型"]
 flow: knowledge
 kind: concept
+source: "Hull, Options, Futures, and Other Derivatives, Chapters 13-19"
+anki_deck: "量化金融::衍生品定价"
+anki_tags: [量化金融, Black-Scholes, 期权定价]
 sources: 
 - title: "Options, Futures, and Other Derivatives (Hull)"
 url: "书库本地资源"
@@ -26,6 +29,9 @@ verified_at: 2026-08-03
 ---
 
 # Black-Scholes 期权定价模型
+
+> [!info] 主线导航
+> [[🗺️ 量化金融学习路径|返回路径]] · **Week 7** · 前置 [[量化金融-随机过程-伊藤引理与随机微分方程]] · 练习 [[03-Projects/开源课程课后习题/PS05-随机微积分与SDE|PS05]] · 实验 [[03-Projects/HW05-BSM/README|HW05]]
 
 ---
 
@@ -95,11 +101,149 @@ BS PDE：$\dfrac{\partial V}{\partial t}+\frac{1}{2}\sigma^2 S^2\dfrac{\partial^
 
 ## 6. 推导思路和思想来源
 
-- **最初困难**：期权收益非线性，贴现期望依赖风险偏好。
-- **直接方法局限**：真实概率下的期望贴现不可观测（需风险溢价）。
-- **关键"转念"**：Black-Scholes (1973) 构造"股票+期权"的自融资组合，Delta 对冲消除随机项 → 组合变成无风险 → 用无风险利率贴现；伊藤引理处理随机项。
-- **推导主线与动机**：对冲后 PDE 不含风险偏好 → 风险中性测度下 $E^*[e^{-rT}\max(S_T-K,0)]$ 解析积分。
-- **为什么自然得到此结论**：可复制 ⇒ 唯一价格；对冲消除风险 ⇒ 定价与偏好无关。
+### 6.1 从标的随机过程出发
+
+假设无分红股票满足几何布朗运动：
+
+$$
+dS=\mu S\,dt+\sigma S\,dW,
+$$
+
+其中 $\mu$ 是真实世界预期收益率。设期权价值为 $V(S,t)$，且 $V$ 对 $t$ 一阶可微、对 $S$ 二阶可微。由伊藤引理：
+
+$$
+dV=\left(V_t+\mu S V_S+\frac12\sigma^2S^2V_{SS}\right)dt
++\sigma S V_S\,dW.
+$$
+
+这里的困难是 $dW$ 带来随机风险，而 $\mu$ 也不能从无套利条件直接观察。
+
+### 6.2 构造 Delta 对冲组合
+
+构造持有一份期权、做空 $\Delta$ 股股票的自融资组合：
+
+$$
+\Pi=V-\Delta S,\qquad d\Pi=dV-\Delta\,dS.
+$$
+
+在一次无穷小再平衡区间内取 $\Delta=V_S$。代入 $dV$ 与 $dS$：
+
+$$
+\begin{aligned}
+d\Pi
+&=\left(V_t+\mu S V_S+\frac12\sigma^2S^2V_{SS}\right)dt
+  +\sigma S V_SdW \\
+&\quad -V_S\left(\mu Sdt+\sigma SdW\right) \\
+&=\left(V_t+\frac12\sigma^2S^2V_{SS}\right)dt.
+\end{aligned}
+$$
+
+$\mu$ 项和 $dW$ 项同时被消掉，因此组合在该瞬间无风险。无套利要求它只能赚取无风险利率：
+
+$$
+d\Pi=r\Pi\,dt=r(V-SV_S)dt.
+$$
+
+比较两个 $d\Pi$，移项得到 Black–Scholes PDE：
+
+$$
+\boxed{V_t+\frac12\sigma^2S^2V_{SS}+rSV_S-rV=0}.
+$$
+
+**关键转念**：不是先猜投资者要求多少风险溢价，而是先用 $\Delta=V_S$ 消掉风险。正因为 $\mu$ 被消去，定价公式不依赖个人风险偏好。
+
+### 6.3 加入终值条件并得到闭式解
+
+欧式看涨期权到期支付为：
+
+$$
+V(S,T)=\max(S-K,0).
+$$
+
+同一 PDE 也可写成风险中性期望：
+
+$$
+C_0=e^{-rT}\mathbb E^{\mathbb Q}[\max(S_T-K,0)],
+$$
+
+且风险中性测度下
+
+$$
+\ln S_T\sim\mathcal N\left(\ln S_0+\left(r-\frac12\sigma^2\right)T,\;\sigma^2T\right).
+$$
+
+令
+
+$$
+X=\frac{\ln(S_T/S_0)-(r-\sigma^2/2)T}{\sigma\sqrt T}\sim\mathcal N(0,1).
+$$
+
+事件 $S_T>K$ 等价于 $X>-d_2$。把支付拆成两项：
+
+$$
+\begin{aligned}
+C_0
+&=e^{-rT}\mathbb E^{\mathbb Q}[(S_T-K)\mathbf 1_{\{S_T>K\}}]\\
+&=e^{-rT}\left(
+\mathbb E^{\mathbb Q}[S_T\mathbf 1_{\{S_T>K\}}]
+-K\mathbb Q(S_T>K)
+\right).
+\end{aligned}
+$$
+
+第二项直接由标准正态分布得到：
+
+$$
+\mathbb Q(S_T>K)=\mathbb Q(X>-d_2)=N(d_2).
+$$
+
+第一项写成标准正态密度 $\phi(x)$ 的积分：
+
+$$
+\mathbb E^{\mathbb Q}[S_T\mathbf 1_{\{S_T>K\}}]
+=S_0e^{(r-\sigma^2/2)T}
+\int_{-d_2}^{\infty}e^{\sigma\sqrt T x}\phi(x)\,dx.
+$$
+
+利用配方恒等式
+
+$$
+e^{ax}\phi(x)=e^{a^2/2}\phi(x-a),\qquad a=\sigma\sqrt T,
+$$
+
+可得
+
+$$
+\begin{aligned}
+\mathbb E^{\mathbb Q}[S_T\mathbf 1_{\{S_T>K\}}]
+&=S_0e^{rT}\int_{-d_2}^{\infty}\phi(x-\sigma\sqrt T)\,dx\\
+&=S_0e^{rT}N(d_2+\sigma\sqrt T)\\
+&=S_0e^{rT}N(d_1).
+\end{aligned}
+$$
+
+代回两项并贴现，得到：
+
+$$
+C_0=S_0N(d_1)-Ke^{-rT}N(d_2),
+$$
+
+其中
+
+$$
+d_1=\frac{\ln(S_0/K)+(r+\sigma^2/2)T}{\sigma\sqrt T},
+\qquad
+d_2=d_1-\sigma\sqrt T.
+$$
+
+$N(d_2)$ 可解释为风险中性测度下到期价内概率；$N(d_1)$ 是看涨期权 Delta，不应把两者混为一谈。
+
+### 6.4 推导成立的边界
+
+- 连续对冲、无交易成本与无限流动性是理想化假设；离散调仓会留下 Gamma 风险。
+- 若标的连续分红率为 $q$，公式需改为 $S_0e^{-qT}N(d_1)-Ke^{-rT}N(d_2)$。
+- 美式看跌可能提前行权，不能直接套用欧式闭式解。
+- 波动率微笑说明常数 $\sigma$ 与对数正态尾部在真实市场中并不充分。
 
 ---
 
@@ -109,18 +253,51 @@ BS PDE：$\dfrac{\partial V}{\partial t}+\frac{1}{2}\sigma^2 S^2\dfrac{\partial^
 
 - **题目**：$S_0=100,K=100,T=1,r=5\%,\sigma=20\%$，求 $d_1$。
 - **解题思路**：$d_1=[\ln1+(0.05+0.02)\times1]/(0.2)=0.35$。
-- **最终答案**：$d_1=0.35$，$N(0.35)\approx0.637$。
+- **最终答案**：$d_1=0.35$，$d_2=0.15$，$N(0.35)\approx0.637$。
 - **易错点**：$\sigma^2/2$ 项漏掉。
-- **🤔 追问**：$\sigma$ 增大 $d_1$？（增大，期权更贵）
+- **🤔 追问**：$\sigma$ 增大时 $d_1$ 一定增大吗？不一定；但在其他输入固定时，欧式看涨期权的 Vega 为正，所以期权价格随 $\sigma$ 增大。
 
 ### 例子 2：中等例子（条件判断与多步推理）
 
 - **题目**：隐含波动率微笑说明什么？
-- **完整解答**：不同行权价的隐含 $\sigma$ 不同（期权越虚值越贵），说明市场认为尾部比对数正态厚——BS 假设被违反，但 IV 曲面本身成为交易工具（波动率交易）。
+- **完整解答**：同一到期日的不同行权价反解出不同隐含波动率，说明常数波动率假设不能同时解释全部报价。对股票指数，常见的是低行权价隐含波动率更高的偏斜。这里比较的是**相对 Black–Scholes 基准的隐含波动率**；欧式看涨期权的绝对价格在其他条件固定时仍随行权价上升而不增，不能说“越虚值绝对价格越贵”。
 
 ### 例子 3：实际应用例子（真实场景/代码）
 
-- **实际价值与转化**：`scipy.stats.norm` 手写公式或用 `py_vollib`；生产：用市场期权价反解 IV（二分法/牛顿），监控 IV 曲面变化做波动率策略。
+```python
+from math import exp, log, sqrt
+
+from scipy.stats import norm
+
+
+def black_scholes_call(spot, strike, maturity, rate, volatility):
+    """无分红欧式看涨期权；rate 和 volatility 使用小数。"""
+    if min(spot, strike, maturity, volatility) <= 0:
+        raise ValueError('spot、strike、maturity、volatility 必须为正')
+
+    d1 = (
+        log(spot / strike)
+        + (rate + 0.5 * volatility**2) * maturity
+    ) / (volatility * sqrt(maturity))
+    d2 = d1 - volatility * sqrt(maturity)
+    price = spot * norm.cdf(d1) - strike * exp(-rate * maturity) * norm.cdf(d2)
+    return price, d1, d2
+
+
+price, d1, d2 = black_scholes_call(
+    spot=100.0,
+    strike=110.0,
+    maturity=1.0,
+    rate=0.05,
+    volatility=0.20,
+)
+
+assert abs(d2 - (-0.326551)) < 1e-6
+print(f'call={price:.4f}, d1={d1:.6f}, d2={d2:.6f}')
+# 输出：call=6.0401, d1=-0.126551, d2=-0.326551
+```
+
+- **实际价值与转化**：这段代码给出可复核的基准价格。生产系统还必须加入分红、交易日历、报价清洗、隐含波动率反解和数值容差测试。
 
 ---
 
@@ -147,7 +324,7 @@ BS PDE：$\dfrac{\partial V}{\partial t}+\frac{1}{2}\sigma^2 S^2\dfrac{\partial^
 - [[收益率定义与对数收益]]、随机过程
 
 ### 下游延伸
-- [[GARCH族波动率模型]]：σ 的时变建模
+- [[量化金融-波动率-GARCH家族模型]]：$\sigma$ 的时变建模
 
 ### 横向关联
 - [[[支线任务] HW05-BSM期权定价与对冲]] ↔ 本卡：作业实操
@@ -190,30 +367,35 @@ BS PDE：$\dfrac{\partial V}{\partial t}+\frac{1}{2}\sigma^2 S^2\dfrac{\partial^
 > - **答案**：Delta 对冲消除风险，价格由无套利唯一决定。
 > - **解析**：可复制性。
 > - **易错原因**：以为含真实概率。
+> - **Obsidian 标签建议**：`#自测题/基础`
 
 #### 2. $S=100,K=110,T=1,r=5\%,\sigma=20\%$ 的 $d_2$？
 > [!question]- 答案解析
-> - **答案**：$[\ln(0.909)+0.06]/0.2-0.2\approx-0.436$。
-> - **解析**：先 $d_1$ 再减。
+> - **答案**：$d_1=[\ln(100/110)+(0.05+0.20^2/2)]/0.20\approx-0.1266$，所以 $d_2=d_1-0.20\approx-0.3266$。
+> - **解析**：也可直接使用 $d_2=[\ln(S/K)+(r-\sigma^2/2)T]/(\sigma\sqrt T)$ 交叉检查。
 > - **易错原因**：公式记忆错。
+> - **Obsidian 标签建议**：`#自测题/基础`
 
 #### 3. Delta 的用途？
 > [!question]- 答案解析
 > - **答案**：标的价格变动 1 单位时期权价格变动量；对冲比率。
 > - **解析**：$N(d_1)$。
 > - **易错原因**：与 Gamma 混淆。
+> - **Obsidian 标签建议**：`#自测题/中等`
 
 #### 4. 波动率微笑说明？
 > [!question]- 答案解析
-> - **答案**：尾部厚于对数正态，BS 假设失效。
-> - **解析**：IV 曲面。
+> - **答案**：不同行权价反解出的隐含波动率不同，说明常数波动率 BSM 无法同时解释全部报价。
+> - **解析**：这不能单独识别真实分布一定“厚尾”；还可能来自随机波动率、跳跃、流动性和报价摩擦。IV 曲面仍可作为相对定价与风险管理工具。
 > - **易错原因**：以为模型错即无用。
+> - **Obsidian 标签建议**：`#自测题/中等`
 
 #### 5. Delta 对冲为何需动态调整？
 > [!question]- 答案解析
 > - **答案**：Delta 随 $S,t,\sigma$ 变化，需再平衡。
 > - **解析**：离散对冲有误差。
 > - **易错原因**：以为对冲一次完成。
+> - **Obsidian 标签建议**：`#自测题/较难`
 
 ---
 
@@ -236,9 +418,17 @@ BS PDE：$\dfrac{\partial V}{\partial t}+\frac{1}{2}\sigma^2 S^2\dfrac{\partial^
 
 ---
 
+## 🃏 Anki 卡片
+
+- Black-Scholes PDE 如何由 Delta 对冲得到？ :: 对 $V(S,t)$ 使用伊藤引理，构造 $\Pi=V-V_SS$ 消掉 $dW$ 与真实收益率 $\mu$，令无风险组合满足 $d\Pi=r\Pi dt$，整理得 $V_t+\frac12\sigma^2S^2V_{SS}+rSV_S-rV=0$。
+- $N(d_1)$ 与 $N(d_2)$ 分别表示什么？ :: $N(d_1)$ 是无分红欧式看涨期权的 Delta；$N(d_2)$ 可解释为风险中性测度下到期价内概率。
+- Black-Scholes 模型的三个关键失效边界是什么？ :: 离散对冲与交易成本、波动率非常数或价格跳跃、美式期权提前行权。
+
+---
+
 ## 13. 给 Obsidian 的归档建议
 
 - **适合文件夹**：`02-Knowledge/🧠 学习系统/03-量化金融/`
-- **关联已有笔记**：[[[支线任务] HW05-BSM期权定价与对冲]] [[GARCH族波动率模型]]
+- **关联已有笔记**：[[[支线任务] HW05-BSM期权定价与对冲]] [[量化金融-波动率-GARCH家族模型]]
 - **建议标签**：`#学习` `#量化金融`
 - **拆分建议**：不拆分

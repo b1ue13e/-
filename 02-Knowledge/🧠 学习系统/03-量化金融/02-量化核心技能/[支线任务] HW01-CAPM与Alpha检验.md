@@ -6,14 +6,16 @@ topic: "量化实战作业"
 course: "03-量化金融"
 importance: "A"
 tags: [学习, 量化金融, 实战作业, CAPM, Alpha检验, Python]
-prerequisites: ["[[投资学基础]]", "[[Python数据分析]]"]
-related: ["[[[支线任务] HW02-马科维茨有效前沿]]", "[[量化回测框架开发]]"]
-status: active
-subagent_audit_score: 10.0
+prerequisites: ["[[00-课程说明与先修诊断|投资学基础]]", "[[00-零基础补救-数学统计与Python|Python数据分析]]"]
+related: ["[[[支线任务] HW02-马科维茨有效前沿]]", "[[回测框架与无泄漏实验|量化回测框架开发]]"]
+status: ongoing
 flow: knowledge
 kind: problem-type
 ---
 # HW01-CAPM与Alpha检验 作业实战手册
+
+> [!important] 可执行作业包
+> [[03-Projects/HW01-CAPM/README|HW01 CAPM 实验包]] 已提供矩阵 OLS、Alpha/Beta 标准误、冻结测试切分、均值基线、测试与产物。先运行包内测试，再完成本页推导与报告。
 
 ---
 
@@ -33,14 +35,14 @@ kind: problem-type
 
 ## 2. 为什么它重要？(全局视野)
 - **大图景位置**：它是资产定价体系的起点。从单因子（CAPM）到三因子（Fama-French），再到现在的多因子机器学习模型，核心逻辑都是“控制已知风险，寻找未被解释的超额收益”。
-- **实战应用**：基金经理业绩归因、新策略上线的准入测试（Alpha 必须显著大于 0）、对冲基金剥离系统性风险（做空指数，留下纯 Alpha）。
+- **实战应用**：基金经理业绩归因、新策略上线的证据检查（Alpha、经济意义、稳健性和样本外表现共同评估）、对冲基金估计并对冲系统性风险暴露。
 
 ---
 
 ## 3. 前置要求 (Prerequisites)
 ### 最小必要背景 (200 字以内)
 1. **金融基础**：理解无风险利率 $R_f$、市场收益率 $R_m$ 及个股收益率 $R_i$。
-2. **统计学**：理解线性回归（OLS）、T检验（t-statistic）和 P值（$p < 0.05$ 判定显著）。
+2. **统计学**：理解线性回归（OLS）、t 统计量和 p 值；能说明显著性水平必须事先设定，且显著性判断依赖标准误口径与模型假设。
 3. **代码栈**：掌握 Python、Pandas 数据处理，以及 `statsmodels.api` 的 OLS 模块。
 
 ---
@@ -51,9 +53,9 @@ kind: problem-type
 想象你在在一列开往北京的高铁（**市场大盘**）上。
 - **Beta（$\beta$）**：就是火车的速度。如果你乖乖坐在座位上，火车开多快，你相对于地面的速度就有多快。
 - **Alpha（$\alpha$）**：就是你在火车过道上自己往前走的速度。
-- **检验的目的**：别人看到你相对于地面移动得很快（总收益很高），我们需要用测速仪扣除火车的速度（减去 Beta 收益），看看你究竟自己走了没有（检验 Alpha 是否显著大于 0）。如果是负数，说明你不仅没往前走，还在往车尾退！
+- **检验的目的**：别人看到你相对于地面移动得很快（总收益很高），我们需要用测速仪扣除火车的速度（减去 Beta 收益），再估计你自己的移动速度及其不确定性。样本 Alpha 为负只说明该样本中的截距估计为负，不能脱离置信区间、稳健标准误和样本外检验下定论。
 
-**一句话本质**：用线性回归剥离市场趋势（Beta），用 T 检验确实验证超额收益（Alpha）不是运气。
+**一句话本质**：用线性回归估计市场暴露（Beta）与截距（Alpha），再用统计检验量化“观察到的 Alpha 与零有多不相容”，而不是证明它一定来自技能。
 
 ---
 
@@ -68,7 +70,7 @@ kind: problem-type
 |---|---|---|---|
 | $R_{i,t} - R_{f,t}$ | `excess_ret_asset` | 资产超额收益 | 因变量 $Y$，日/月频，需确保对齐 |
 | $R_{m,t} - R_{f,t}$ | `excess_ret_market` | 市场超额收益 | 自变量 $X$，通常用沪深300 |
-| $\alpha_i$ | `model.params['const']` | 真实超额收益 | 必须看 P-value 判断是否显著不为0 |
+| $\alpha_i$ | `model.params['const']` | 样本期回归截距 | 需结合 p 值、置信区间、经济意义和稳健性判断 |
 | $\beta_i$ | `model.params['excess_ret_market']`| 系统性风险暴露 | 衡量与大盘的联动性 |
 | $\epsilon_{i,t}$ | `model.resid` | 残差 | 我们希望它服从均值为0的白噪声 |
 
@@ -78,9 +80,9 @@ kind: problem-type
 本作业的代码实现主线，就是跑通一个稳健的 OLS 回归工作流：
 1. **数据获取与清洗 (Data Fetching)**：获取目标资产（如某只股票或策略净值）和基准（如沪深300）的收盘价，转换为**日收益率** `pct_change()`。
 2. **对齐与合并 (Alignment)**：使用 `pd.merge(how='inner')` 严格对齐交易日，防止日期错位（Look-ahead bias 潜伏区）。
-3. **计算超额 (Excess Returns)**：扣除无风险收益率（本实验统一假设年化 $R_f = 2\%$，转换到日频减去即可）。
+3. **计算超额 (Excess Returns)**：按任务预先声明的无风险利率与复利口径转换到同频，再分别从资产和市场收益中扣除；`2%` 只能是示例参数，不是通用常数。
 4. **OLS 回归与统计检验 (Regression & T-test)**：调用 `sm.OLS(Y, sm.add_constant(X)).fit()`。
-5. **结果解析 (Interpretation)**：提取 $\alpha$ 的值及其 t-stat 和 p-value，判断策略是否有效。
+5. **结果解析 (Interpretation)**：提取 $\alpha$ 的值、置信区间、t 统计量和 p 值；再结合交易成本、多重检验和样本外结果评估证据强度。
 
 ---
 
@@ -95,20 +97,34 @@ kind: problem-type
 - **任务**：用 Statsmodels 跑一遍 Alpha 检验。
 - **代码示例**：
 ```python
+import numpy as np
+import pandas as pd
 import statsmodels.api as sm
-# X, Y 已是序列对象 (Series)
-X_with_const = sm.add_constant(X) # 必须手动加常数项才能截出 Alpha!
-model = sm.OLS(Y, X_with_const).fit()
+
+market_excess = pd.Series(
+    [0.010, -0.008, 0.015, 0.004, -0.012, 0.009, 0.006, -0.003],
+    name='market_excess',
+)
+asset_excess = pd.Series(
+    [0.014, -0.010, 0.020, 0.006, -0.015, 0.013, 0.009, -0.002],
+    name='asset_excess',
+)
+
+X_with_const = sm.add_constant(market_excess.rename('market'))
+model = sm.OLS(asset_excess, X_with_const).fit()
 alpha = model.params['const']
 p_value = model.pvalues['const']
-print(f"Alpha: {alpha:.4f}, P-value: {p_value:.4f}")
+beta = model.params['market']
+
+assert np.isfinite([alpha, beta, p_value]).all()
+print(f"Alpha: {alpha:.6f}, Beta: {beta:.4f}, P-value: {p_value:.4f}")
 ```
-- **解读**：如果没有 `add_constant`，回归线强制过原点，Alpha 会被错误地揉进 Beta 里！
+- **解读**：如果没有 `add_constant`，回归线会被强制过原点，Alpha 会被错误地揉进 Beta。p 值必须结合预先声明的显著性水平、自由度、标准误口径和模型假设解释，不能单凭阈值宣称策略有效。
 
 ### 例子 3：量化工业界真实应用
 - **场景**：你在开发一个“动量反转策略”，回测年化收益率达到 30%。但在上线前，风控部门要求做 CAPM 检验。
 - **过程**：你拉取了策略过去 5 年的每日净值，与中证 500 指数进行回归。结果发现 $\beta = 1.5, \alpha = -0.01$，且 p-value = 0.8。
-- **残酷现实**：高收益完全是因为策略在小盘股上加了 1.5 倍的隐形杠杆（Beta高），而真正的选股能力 Alpha 甚至为负。项目被直接毙掉。
+- **解读边界**：该结果提示总收益很可能主要伴随较高的市场暴露，而样本没有提供正 Alpha 的证据；它不能仅凭单因子回归证明“收益完全来自杠杆”。上线决策还要检查多因子归因、稳健标准误、交易成本和样本外表现。
 
 ---
 
@@ -116,19 +132,19 @@ print(f"Alpha: {alpha:.4f}, P-value: {p_value:.4f}")
 > **实验扣分重灾区**
 1. **忘记添加常数项 (`sm.add_constant`)**：导致模型强行认为没有 Alpha，计算出的 Beta 失真。
 2. **收益率未对齐 (Look-ahead Bias)**：用今天的收盘价去回归明天的市场行情，导致 Alpha 虚高得离谱。
-3. **频率未年化**：回归出来的 Alpha 通常是**日频**或**月频**。汇报时，必须乘以 252 或 12 进行年化，否则老板会觉得你策略收益太低（0.01% / 日）。
-4. **只看 $\alpha$ 大小，不看 P-value**：算出来 $\alpha$ 很高，但 p-value = 0.4（不显著）。这意味着超额收益是统计上的随机噪音，完全不能用来实盘。
+3. **频率口径混乱**：回归 Alpha 与输入收益同频。小收益下 `daily_alpha * 252` 只是线性近似；复利口径应使用 $(1+\alpha_{daily})^{252}-1$，并明确交易日数。
+4. **把 p 值当策略开关**：较大的 p 值表示现有样本不能拒绝“Alpha 为 0”，不等于已经证明 Alpha 必为 0；较小的 p 值也不证明经济显著、稳健或可交易。
 
 ---
 
 ## 9. 知识链接与 Obsidian 网络
 ### 上游依赖
-- [[资产收益率计算]]：如何正确计算对数收益率与离散收益率。
-- [[统计检验假设与P值]]：深入理解为什么 $p<0.05$ 才能拒绝“不存在Alpha”的原假设。
+- [[收益率与对数收益率|资产收益率计算]]：如何正确计算对数收益率与离散收益率。
+- 待创建：统计检验假设与 p 值（需覆盖显著性水平、检验功效、多重检验与稳健标准误）
 
 ### 下游延伸
 - [[[支线任务] HW02-马科维茨有效前沿]]：当发现 CAPM 无法解释所有 Beta 时，引入市值和价值因子。
-- [[纯Alpha对冲策略]]：根据算出的 $\beta$，在股指期货市场做空对应仓位，留下纯 $\alpha$。
+- [[CAPM 资本资产定价模型|纯Alpha对冲策略]]：根据算出的 $\beta$，在股指期货市场做空对应仓位，留下纯 $\alpha$。
 
 ---
 

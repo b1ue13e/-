@@ -132,9 +132,9 @@ $$ R_t = (\text{Return}_t - \text{Cost}_t) - \lambda \cdot \text{Variance}(\text
 
 ## 9. 相关知识点与 Obsidian 双链建议
 
-- 上游依赖：[[强化学习基础]], [[Almgren-Chriss最优拆单]]
-- 下游延伸：[[PPO在量化中的应用]], [[高频做市商(MM)策略]]
-- 横向关联：[[差分夏普比率(DSR)]] ↔ [[Reward奖励设计]] (最高阶的奖励函数形式)
+- 上游依赖：[[金融MDP设计与奖励函数工程 (Financial MDP & Reward Engineering)|强化学习基础]], [[Almgren-Chriss最优拆单]]
+- 下游延伸：[[金融MDP设计与奖励函数工程 (Financial MDP & Reward Engineering)|PPO在量化中的应用]], [[做市商库存模型与 Avellaneda-Stoikov 框架 (Inventory Models & Avellaneda-Stoikov Framework)|高频做市商(MM)策略]]
+- 横向关联：[[奖励函数设计 (Reward Function Design)|差分夏普比率(DSR)]] ↔ [[金融MDP设计与奖励函数工程 (Financial MDP & Reward Engineering)|Reward奖励设计]] (最高阶的奖励函数形式)
 - 应用场景：[[[支线任务] HW16-Gymnasium交易环境]]
 
 ---

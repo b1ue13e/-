@@ -11,7 +11,7 @@ tags: [学习, 量化金融, 回测, 过拟合, 统计检验]
 concept: ["回测过拟合", "PBO", "Deflated Sharpe Ratio", "多重检验", "样本外验证"]
 prerequisites: ["回测框架与无泄漏实验", "策略评价指标", "CPCV组合净化交叉验证"]
 related: ["CPCV组合净化交叉验证", "样本泄漏", "协方差去噪与随机矩阵理论 RMT"]
-upstream: ["[[回测框架与无泄漏实验]]", "[[策略评价指标]]", "[[CPCV组合净化交叉验证]]"]
+upstream: ["[[回测框架与无泄漏实验]]", "[[策略评价指标]]", "[[PBO回测过拟合概率与Deflated Sharpe Ratio (Probability of Backtest Overfitting)|CPCV组合净化交叉验证]]"]
 downstream: ["[[样本泄漏]]"]
 flow: knowledge
 kind: concept
@@ -267,7 +267,7 @@ def cscv_pbo(returns: np.ndarray, n_splits: int = 16, n_trials: int = 100) -> fl
 
 ### 上游依赖
 - [[回测框架与无泄漏实验]]：PBO 计算需要干净的回测数据（无前视偏差）
-- [[CPCV组合净化交叉验证]]：CPCV 是生成 PBO 输入矩阵（多策略 × 多子区间收益）的标准方法
+- [[PBO回测过拟合概率与Deflated Sharpe Ratio (Probability of Backtest Overfitting)|CPCV组合净化交叉验证]]：CPCV 是生成 PBO 输入矩阵（多策略 × 多子区间收益）的标准方法
 
 ### 下游延伸
 - [[样本泄漏]]：PBO 检测不到的过拟合来源之一是特征/标签泄漏
@@ -355,7 +355,7 @@ def cscv_pbo(returns: np.ndarray, n_splits: int = 16, n_trials: int = 100) -> fl
 ## 13. 给 Obsidian 的归档建议
 
 - **适合文件夹**：`02-Knowledge/🧠 学习系统/03-量化金融/02-量化核心技能/`
-- **关联已有笔记**：`[[回测框架与无泄漏实验]]` `[[策略评价指标]]` `[[CPCV组合净化交叉验证]]` `[[样本泄漏]]`
+- **关联已有笔记**：`[[回测框架与无泄漏实验]]` `[[策略评价指标]]` `[[PBO回测过拟合概率与Deflated Sharpe Ratio (Probability of Backtest Overfitting)|CPCV组合净化交叉验证]]` `[[样本泄漏]]`
 - **建议标签**：`#学习` `#量化金融` `#回测` `#过拟合` `#统计检验`
 - **拆分建议**：待积累 5+ CSCV 实战案例后可拆出「CSCV 实战卡」；DSR 的理论推导（极值统计）可拆出独立推导卡
 

@@ -21,8 +21,8 @@ audit_score: 35
 
 - 审计分数：**35 / 100**
 - 主要问题：跨文件高频模板占比2%；文件名与标题疑似错配(0%)；断链4个；无可定位来源；有效正文缺少主题锚点
-- 原文存档：`F:\-\99-System\🗄️ 归档\量化金融未达标知识卡-2026-08-01\🧠 夏普比率 (Sharpe Ratio).md`
-- 可信学习主线：[[🗺️ 量化金融学习路径]]、[[🧩 Qlib 项目知识点—作业—验收路线图]]
+- 原文存档：归档目标当前缺失；恢复后必须登记库内相对链接，不保留本机盘符路径。
+- 可信学习主线：[[00-课程说明与先修诊断|🗺️ 量化金融学习路径]]、[[03-Projects/Capstone-统一标的贯穿实战项目|🧩 Qlib 项目知识点—作业—验收路线图]]
 
 ## 重新纳入条件
 
@@ -44,5 +44,5 @@ audit_score: 35
 ### 🧪 交互实验室
 > 拖动下方滑块，亲手感受公式中各个参数是如何改变结果的。
 > **夏普比率 (Sharpe Ratio)**
-> <iframe src="file:///F:/笔记代码/量化金融/quant-for-beginners/assets/interactive/sharpe-ratio-demo.html" width="100%" height="600px" frameborder="0"></iframe>
+> [夏普比率交互实验源码](https://github.com/datawhalechina/quant-for-beginners/blob/main/assets/interactive/sharpe-ratio-demo.html)（扩展材料，见 [[📦 外部实验资产索引]]）
 

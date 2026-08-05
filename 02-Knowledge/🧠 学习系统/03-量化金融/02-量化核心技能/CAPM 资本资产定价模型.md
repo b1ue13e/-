@@ -31,6 +31,9 @@ nav_next: "量化金融-随机过程-伊藤引理与随机微分方程"
 
 # CAPM 资本资产定价模型
 
+> [!info] 主线导航
+> [[🗺️ 量化金融学习路径|返回路径]] · **Week 4** · 前置 [[相关系数、协方差与资产组合分散化 (Covariance, Correlation & Diversification)]] · 练习 [[03-Projects/开源课程课后习题/PS02-回归与CAPM|PS02]] · 实验 [[03-Projects/HW01-CAPM/README|HW01]]
+
 ---
 
 ## 0. 先判断它值不值得深挖
@@ -57,7 +60,7 @@ nav_next: "量化金融-随机过程-伊藤引理与随机微分方程"
 ## 3. 学它之前需要哪些前置知识？
 
 1. **[[收益率定义与对数收益]]**。
-2. **[[马科维茨组合优化与有效前沿]]**：有效前沿与市场组合（切线组合）。
+2. **[[马科维茨有效前沿|马科维茨组合优化与有效前沿]]**：有效前沿与市场组合（切线组合）。
 
 ---
 
@@ -126,7 +129,7 @@ $$E[R_i]=R_f+\beta_i(E[R_m]-R_f),\qquad \beta_i=\frac{\text{Cov}(R_i,R_m)}{\text
 ### 例子 2：中等例子（条件判断与多步推理）
 
 - **题目**：回归得 $\hat\alpha=0.02$（月频），t=1.2，如何解读？
-- **完整解答**：α 不显著（$|t|<1.96$）→ 不能拒绝 CAPM 定价；显著正 α = 超额收益（技能或模型漏因子）。
+- **完整解答**：若采用双侧 5% 检验、样本足够大且标准误设定恰当，$t=1.2$ 通常不足以拒绝 $\alpha=0$。这只是“当前样本证据不足”，不等于证明 CAPM 正确；即使 α 显著为正，也可能来自技能、遗漏因子、数据挖掘或估计偏差。
 
 ### 例子 3：实际应用例子（真实场景/代码）
 
@@ -154,14 +157,14 @@ $$E[R_i]=R_f+\beta_i(E[R_m]-R_f),\qquad \beta_i=\frac{\text{Cov}(R_i,R_m)}{\text
 ## 9. 相关知识点与 Obsidian 双链建议
 
 ### 上游依赖
-- [[收益率定义与对数收益]]、[[马科维茨组合优化与有效前沿]]
+- [[收益率定义与对数收益]]、[[马科维茨有效前沿|马科维茨组合优化与有效前沿]]
 
 ### 下游延伸
-- [[Fama-MacBeth两步回归]]：因子溢价估计
-- [[因子模型与Fama-French三因子]]：多因子扩展
+- [[Fama-MacBeth 两步回归法 (Fama-MacBeth Two-Step Regression)|Fama-MacBeth两步回归]]：因子溢价估计
+- [[Fama-French三因子模型|因子模型与Fama-French三因子]]：多因子扩展
 
 ### 横向关联
-- [[APT套利定价理论]] ↔ 本卡：无套利定价
+- [[量化金融-资产定价-多因子模型|APT套利定价理论]] ↔ 本卡：无套利定价
 - [[Fama-French三因子模型]] ↔ 本卡：实证挑战
 
 ### 应用场景
@@ -211,9 +214,9 @@ $$E[R_i]=R_f+\beta_i(E[R_m]-R_f),\qquad \beta_i=\frac{\text{Cov}(R_i,R_m)}{\text
 
 #### 3. $\hat\alpha=0.01, t=2.5$ 说明？
 > [!question]- 答案解析
-> - **答案**：显著正 α，存在 CAPM 无法解释的超额收益。
-> - **解析**：定价误差/技能。
-> - **易错原因**：直接判模型错。
+> - **答案**：在预先设定的双侧 5% 检验、标准误有效且没有多重检验校正问题时，可拒绝 $\alpha=0$；样本提供了正截距的统计证据。
+> - **解析**：这说明单因子 CAPM 在该样本中未解释这部分平均收益，但原因可能是遗漏因子、技能、数据挖掘或估计偏差，还需检查置信区间、经济意义和样本外稳定性。
+> - **易错原因**：把一次显著结果直接解释为模型错误或投资技能。
 
 #### 4. β 用月频还是日频？
 > [!question]- 答案解析
@@ -251,7 +254,7 @@ $$E[R_i]=R_f+\beta_i(E[R_m]-R_f),\qquad \beta_i=\frac{\text{Cov}(R_i,R_m)}{\text
 ## 13. 给 Obsidian 的归档建议
 
 - **适合文件夹**：`02-Knowledge/🧠 学习系统/03-量化金融/`
-- **关联已有笔记**：[[Fama-French三因子模型]] [[APT套利定价理论]] [[Fama-MacBeth两步回归]]
+- **关联已有笔记**：[[Fama-French三因子模型]] [[量化金融-资产定价-多因子模型|APT套利定价理论]] [[Fama-MacBeth 两步回归法 (Fama-MacBeth Two-Step Regression)|Fama-MacBeth两步回归]]
 - **建议标签**：`#学习` `#量化金融`
 - **拆分建议**：不拆分
 
@@ -265,10 +268,10 @@ $$E[R_i]=R_f+\beta_i(E[R_m]-R_f),\qquad \beta_i=\frac{\text{Cov}(R_i,R_m)}{\text
 ### 🧪 交互实验室
 > 拖动下方滑块，亲手感受公式中各个参数是如何改变结果的。
 > **Beta**
-> <iframe src="file:///F:/笔记代码/量化金融/quant-for-beginners/assets/interactive/beta-demo.html" width="100%" height="600px" frameborder="0"></iframe>
+> [Beta 交互实验源码](https://github.com/datawhalechina/quant-for-beginners/blob/main/assets/interactive/beta-demo.html)（扩展材料，见 [[📦 外部实验资产索引]]）
 
 ### 💻 实战靶场
-- 👉 [点击打开 Jupyter: 02_夏普比率与Beta](file:///F:/笔记代码/量化金融/quant-for-beginners/notebooks/phase2_intro/02_夏普比率与Beta.ipynb)
+- [打开 Notebook：夏普比率与 Beta](https://github.com/datawhalechina/quant-for-beginners/blob/main/notebooks/phase2_intro/02_夏普比率与Beta.ipynb)
 \n
 
 ---

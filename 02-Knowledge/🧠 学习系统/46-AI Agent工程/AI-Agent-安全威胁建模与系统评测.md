@@ -10,7 +10,8 @@ prerequisites: [工具调用, 工作流状态, RAG]
 related: [红队测试, 最小权限, 可观测性]
 flow: knowledge
 kind: concept
-source: "UC Berkeley CS 194/294-196 F24 safety lecture and Labs 02–03 public description; Berkeley Agentic AI F25 evaluation"
+source: "UC Berkeley CS 194/294-196 F24 safety and Labs 02-03; Berkeley Agentic AI F25 evaluation; Microsoft AI Agents for Beginners Lessons 6 and 18; Datawhale Hello-Agents Chapter 12"
+source_urls: ["https://github.com/microsoft/ai-agents-for-beginners/tree/main/06-building-trustworthy-agents", "https://github.com/microsoft/ai-agents-for-beginners/tree/main/18-securing-ai-agents", "https://github.com/datawhalechina/hello-agents/tree/main/docs/chapter12"]
 anki_deck: "46-AI Agent工程::07-安全评测"
 anki_tags: [46-AI-Agent工程, Agent安全, 评测]
 ---
@@ -159,7 +160,7 @@ print(authorize(ToolRequest("send_email", "external_email")))
 - [[Berkeley-Lab03-Defending-Against-LLM-Attacks-知识点映射]]：防御与回归。
 
 ### 横向关联
-- [[软件测试-威胁建模]]（待创建）↔ Agent 安全：资产、攻击面与缓解措施相同。
+- **待创建先修补丁：软件测试与威胁建模** ↔ Agent 安全：资产、攻击面与缓解措施相同。
 
 ### 应用场景
 - 所有有写权限、私有数据或外部内容的 Agent。
@@ -238,4 +239,3 @@ print(authorize(ToolRequest("send_email", "external_email")))
 - Prompt injection 与 jailbreak 的区别是什么？::Prompt injection 让不可信输入篡改应用控制流；jailbreak 主要试图绕过模型自身行为/内容限制，两者可重叠但威胁目标不同。
 - 为什么 Agent 权限必须在模型外控制？::模型会受歧义、注入和概率错误影响；只有确定性的身份、ACL、schema、sandbox 与审批层能形成强执行边界。
 - Agent 安全评测至少同时报告哪些指标？::正常任务成功率 TSR、攻击成功率 ASR、正常任务误拒率 FRR，以及成本/延迟和工具级安全事件。
-

@@ -10,6 +10,7 @@ flow: project
 kind: exercise
 tags: [项目, 时间序列, 阶梯作业, ACF, PACF]
 source_lesson: "[[L02-ACF-PACF与白噪声]]"
+answer_key: "[[HW01-HW09-参考答案与错误诊断#HW02｜ACF、PACF 与白噪声]]"
 ---
 
 # HW02｜ACF、PACF 与白噪声阶梯作业
@@ -76,3 +77,7 @@ source_lesson: "[[L02-ACF-PACF与白噪声]]"
 
 - [FPP3 §2.8 Autocorrelation](https://otexts.com/fpp3/acf.html)
 - [FPP3 §2.9 White noise](https://otexts.com/fpp3/wn.html)
+
+## 反馈入口
+
+完成并保留原答案后，打开[[HW01-HW09-参考答案与错误诊断#HW02｜ACF、PACF 与白噪声|HW02 参考答案与错误诊断]]。

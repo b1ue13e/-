@@ -1,5 +1,5 @@
 ---
-type: study
+type: index
 topic: "AI Agent工程作业知识矩阵"
 tags: [学习, 46-AI Agent工程, 作业映射]
 created: 2026-08-05
