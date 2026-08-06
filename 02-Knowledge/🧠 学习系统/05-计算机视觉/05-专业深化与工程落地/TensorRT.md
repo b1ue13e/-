@@ -132,7 +132,7 @@ PyTorch 模型 → export ONNX → trtexec --onnx=model.onnx --fp16 --int8 --cal
 | "engine 可跨 GPU 使用" | 不能：绑定 GPU 架构（compute capability）与输入 shape，换卡/换 shape 需重新 build |
 | "TensorRT 自动量化无损失" | 不是：INT8 有精度损失，需校准集 + 精度验证（eval 对比） |
 | "训练模型 = 部署模型" | 不同：部署要导出（ONNX/engine），且推理优化会牺牲灵活性（动态 shape 受限） |
-| 与 [[02-Knowledge/🧠 学习系统/05-计算机视觉/05-专业深化与工程落地/模型量化|模型量化]] 混淆 | 量化是"精度降低"的通用概念（可用 PyTorch QAT/ONNX 量化）；TensorRT 是"GPU 推理优化框架"，INT8 量化是它的一个功能 |
+| 与 [[02-Knowledge/🧠 学习系统/05-计算机视觉/05-专业深化与工程落地/模型量化\|模型量化]] 混淆 | 量化是"精度降低"的通用概念（可用 PyTorch QAT/ONNX 量化）；TensorRT 是"GPU 推理优化框架"，INT8 量化是它的一个功能 |
 
 ## 9. 相关知识点与 Obsidian 双链建议
 

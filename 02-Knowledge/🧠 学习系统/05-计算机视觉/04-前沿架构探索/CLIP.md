@@ -110,7 +110,7 @@ batch $N=4$，图像 $I_1..I_4$、文本 $T_1..T_4$ 配对。对 $I_1$：
 | "CLIP 是生成模型" | 不是：CLIP 是**判别式**对比模型（图文相似度），不生成图像/文本；生成是 Stable Diffusion 等下游利用它的 text encoder |
 | "CLIP 零样本=万能" | 局限明显：细粒度/抽象类别（"真菌种类"）差、对文本拼写敏感（"penguin" vs "penguin" 变形）、数据集存在捷径（ImageNet 上可用背景猜类） |
 | "CLIP 的 text encoder 是 BERT" | 不同：是 Transformer encoder，但用 `[SOS]/[EOS]` token，输出取 `[EOS]` 位置，词表 49408（BPE） |
-| 与 [[02-Knowledge/🧠 学习系统/05-计算机视觉/04-前沿架构探索/🎯 SimCLR 与对比学习 (Contrastive Learning)|SimCLR]] 混淆 | SimCLR 是同模态（图-图）对比，CLIP 是跨模态（图-文）对比；损失同源（InfoNCE）但数据与正样本定义不同 |
+| 与 [[02-Knowledge/🧠 学习系统/05-计算机视觉/04-前沿架构探索/🎯 SimCLR 与对比学习 (Contrastive Learning)\|SimCLR]] 混淆 | SimCLR 是同模态（图-图）对比，CLIP 是跨模态（图-文）对比；损失同源（InfoNCE）但数据与正样本定义不同 |
 | "CLIP 训练数据可复现" | 不可：WebImageText（4 亿对）未公开，官方只给权重；复现需自建图文对数据集 |
 
 ## 9. 相关知识点与 Obsidian 双链建议
