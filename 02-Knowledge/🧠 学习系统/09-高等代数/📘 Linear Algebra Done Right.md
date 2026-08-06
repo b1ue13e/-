@@ -13,7 +13,7 @@ tags:
 - 线性代数
 title: Linear Algebra Done Right
 author: Sheldon Axler
-cover: "[[📚 书库/书籍封面/Linear-Algebra-Done-Right.png]]"
+cover: "[[02-Knowledge/📚 书库/书籍封面/Linear-Algebra-Done-Right.png]]"
 category: 线性代数 / 结构视角
 topics:
 - 向量空间
@@ -31,7 +31,7 @@ related:
 - 高等代数
 - 最优化方法
 - 机器学习
-source_path: 📚 书库/书籍资源/Linear Algebra Done Right 4th ed - Axler.pdf
+source_path: 02-Knowledge/📚 书库/书籍资源/Linear Algebra Done Right 4th ed - Axler.pdf
 ---
 
 # 📘 Linear Algebra Done Right
@@ -40,7 +40,7 @@ source_path: 📚 书库/书籍资源/Linear Algebra Done Right 4th ed - Axler.p
 
 ## 🔗 资源入口
 
-- [[📚 书库/书籍资源/Linear Algebra Done Right 4th ed - Axler.pdf|打开原书]]
+- [[02-Knowledge/📚 书库/书籍资源/Linear Algebra Done Right 4th ed - Axler.pdf|打开原书]]
 - [[🗺️ 高等代数学习路径|进入高等代数学习路径]]
 
 ## 🧭 章节地图

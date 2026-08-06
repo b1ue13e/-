@@ -13,7 +13,7 @@ tags:
 - 数值分析
 title: Numerical Linear Algebra
 author: Lloyd N. Trefethen；David Bau III
-cover: "[[📚 书库/书籍封面/Numerical-Linear-Algebra.png]]"
+cover: "[[02-Knowledge/📚 书库/书籍封面/Numerical-Linear-Algebra.png]]"
 category: 数值线性代数 / 科学计算
 topics:
 - QR分解
@@ -32,7 +32,7 @@ related:
 - 高等代数
 - 最优化方法
 - 数值分析
-source_path: "📚 书库/书籍资源/Numerical Linear Algebra (Lloyd N. Trefethen, David Bau III) (z-library.sk, 1lib.sk, z-lib.sk).pdf"
+source_path: "02-Knowledge/📚 书库/书籍资源/Numerical Linear Algebra (Lloyd N. Trefethen, David Bau III) (z-library.sk, 1lib.sk, z-lib.sk).pdf"
 ---
 
 # 📘 Numerical Linear Algebra
@@ -41,8 +41,8 @@ source_path: "📚 书库/书籍资源/Numerical Linear Algebra (Lloyd N. Trefet
 
 ## 🔗 资源入口
 
-- [[📚 书库/书籍资源/Numerical Linear Algebra (Lloyd N. Trefethen, David Bau III) (z-library.sk, 1lib.sk, z-lib.sk).pdf|打开原书]]
-- [[02-Knowledge/🧠 学习系统/09-高等代数/🗺️ 高等代数学习路径|进入高等代数学习路径]]
+- [[02-Knowledge/📚 书库/书籍资源/Numerical Linear Algebra (Lloyd N. Trefethen, David Bau III) (z-library.sk, 1lib.sk, z-lib.sk).pdf|打开原书]]
+- [[🗺️ 高等代数学习路径|进入高等代数学习路径]]
 
 ## 🧭 章节地图
 
