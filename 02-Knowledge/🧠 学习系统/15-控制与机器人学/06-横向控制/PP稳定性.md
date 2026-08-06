@@ -1,31 +1,90 @@
 ---
 type: study
 topic: "PP稳定性"
+course: "控制与机器人学"
 created: 2026-04-18
-status: ongoing
-difficulty: intermediate
-concept: ["PP稳定性", "Pure Pursuit原理"]
-prerequisites: []
-related: []
-tags: ["学习", "控制与机器人学"]
+updated: 2026-08-07
+status: completed
+difficulty: advanced
+stage_moc: "[[🧭 阶段6-横向控制]]"
+flow: knowledge
+kind: derivation
+concept: ["Pure Pursuit", "稳定性", "前视距离"]
+prerequisites: ["PP算法", "预瞄距离"]
+related: ["预瞄距离", "PP算法"]
+upstream: ["[[06-横向控制/PP算法]]"]
+source: "Pure Pursuit 稳定性分析文献 (Coulter 1992 等)"
+tags: [学习, 控制与机器人学, 横向控制]
 ---
+
 # PP稳定性
 
-> 所属模块：[[🗺️ 控制与机器人学学习路径|控制与机器人学学习路径]]
-> 主教材：`《Autonomous Driving》`
-> 对应阶段：[[🧭 阶段6-横向控制|返回阶段页]]
-> 建议先看：Vehicle Models、Planning、Control、Autonomous Systems
-> 辅助教材：`《Autonomous Driving》`
+## 0. 为什么学它
 
-## 待写提纲
-- 这章/这个知识点在这门课里解决什么问题：
-- 所属主线：Pure Pursuit原理
-- 这张卡要补哪块：稳定性分析
-- 核心定义：
-- 关键方法 / 公式：
-- 一个最小例子：
-- 与前后笔记的关系：
-- 前置：待补
-- 相关：待补
+Pure Pursuit 会不会振荡？答案是：**前视距离 $l_d$ 决定稳定性**。本卡用横向偏差的线性化分析说明 PP 的收敛条件，给出"前视距离选多大"的理论依据。
 
-*创建于：2026-04-18*
+## 1. 核心分析
+
+对直线路径，横向偏差 $e_y$ 的演化（小角度近似）：
+
+**几何关系**：$\alpha\approx\frac{e_y}{l_d}$（前视点偏差 ≈ 横向偏差/前视距离）。
+
+**偏差动态**：$\dot e_y\approx -v\sin\alpha\approx-\frac{v}{l_d}e_y$（负反馈）。
+
+**收敛条件**：$\frac{v}{l_d}>0$ 恒成立 → 直线路径 PP **渐近稳定**，收敛速率 $\lambda=\frac{v}{l_d}$。
+
+**结论**：
+- 前视距离大 → 收敛慢但平滑（抗振荡）；
+- 前视距离小 → 收敛快但易振荡（离散化/噪声下）。
+
+**工程规则**：$l_d$ 随 $v$ 增大（如 $l_d=kv$，$k\approx1\sim3$ 秒），保持稳定且避免切弯。
+
+## 2. 最小可手算例子（概念验证）
+
+**题目**：$v=10$ m/s，$l_d=10$ 与 $l_d=2$，比较收敛速率。
+
+**解**：$\lambda=10/10=1$（1/s，平滑）；$\lambda=10/2=5$（5/s，快速但振荡风险高）。实践取折中并加前视-速度匹配 ✓。
+
+**易错点**：线性化忽略大偏差；离散实现时过小 $l_d$ 会在采样间振荡。
+
+## 3. 常见误区
+
+| 误区 | 正确理解 |
+|:---|:---|
+| PP 无条件稳定 | 连续分析稳定，离散/噪声下小前视会振荡 |
+| 前视越大越好 | 过大切弯（弯道内侧走） |
+| 忽略速度匹配 | $l_d$ 应随 $v$ 增长 |
+
+## 4. 与后续知识连接
+
+- [[预瞄距离]]：整定规则；
+- [[PP算法]]：主流程；
+- [[自适应预瞄]]：前视自适应；
+- [[复杂度对比]]：与其他算法对比。
+
+## 5. 检索练习（闭卷）
+
+1. 推导直线 PP 偏差动态；
+2. 说明收敛条件与速率；
+3. 前视距离的权衡；
+4. 离散实现注意点。
+
+## 6. 通过标准
+
+- 能分析 PP 稳定性；
+- 能理解前视-速度匹配；
+- 能识别离散风险。
+
+## 学完后可以完成
+
+```dataview
+LIST
+FROM "03-Projects/系统与硬件/15-控制与机器人学"
+WHERE contains(requires, this.file.link)
+SORT assignment_level ASC, file.name ASC
+```
+
+## 复习
+
+- 下次复习：3 天后重推动态；
+- 薄弱点写入 [[控制与机器人学错题漏洞入口]]。

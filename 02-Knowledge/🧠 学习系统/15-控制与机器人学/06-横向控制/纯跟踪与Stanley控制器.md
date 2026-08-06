@@ -1,20 +1,21 @@
 ---
 title: "纯跟踪与Stanley控制器"
 date: "2026-08-02"
-type: concept
+type: study
 course: "控制与机器人学"
 importance: "A"
+stage_moc: "[[🧭 阶段6-横向控制]]"
 tags: [学习, 控制与机器人学]
-upstream: [自行车模型, 路径规划Astar与RRT]
-downstream: [轨迹跟踪, MPC深入]
-status: learning
+upstream: ["[[03-移动机器人与车辆模型/自行车模型]]"]
+status: completed
 concept: ["轨迹跟踪", "几何控制", "横向控制"]
 prerequisites: ["自行车模型", "路径规划Astar与RRT"]
 related: ["PID控制器与状态空间法", "状态空间与LQR控制", "卡尔曼滤波KalmanFilter"]
-flow: project
+flow: knowledge
 kind: concept
 template: Obsidian单知识点深度学习模板
 created: 2026-08-02
+updated: 2026-08-07
 ---
 
 # 纯跟踪与Stanley控制器
