@@ -9,7 +9,7 @@ concept: ["可解释性","Saliency Map","CAM","Grad-CAM","模型解释"]
 prerequisites: ["卷积神经网络CNN","反向传播"]
 related: ["Transformer","迁移学习"]
 flow: knowledge
-stage_moc: "[[04-前沿架构探索/🚀 第四阶段：前沿架构探索]]"
+stage_moc: "[[02-Knowledge/🧠 学习系统/05-计算机视觉/04-前沿架构探索/🚀 第四阶段：前沿架构探索]]"
 kind: concept
 source: "CS231n A3讲义"
 anki_deck: "05-计算机视觉::04-前沿架构探索"
@@ -49,7 +49,7 @@ tags: [学习,计算机视觉,可解释性,SaliencyMap,GradCAM]
 
 1. **[[卷积神经网络CNN]]**：理解卷积层、特征图（Feature Map）、全连接层的基本数据流动。
 2. **[[反向传播与计算图]]**：核心！Saliency Map 和 Grad-CAM 都用反向传播，但求导对象不再是权重 $W$，而是输入 $\mathbf{X}$ 或特征图 $\mathbf{A}$。
-3. **[[Softmax与交叉熵损失|Softmax]]**：理解 logit $S_c$ 与 softmax 概率的区别，以及为何可解释性方法通常对 logits 求导（避免 Softmax 饱和导致梯度消失）。
+3. **[[02-Knowledge/🧠 学习系统/05-计算机视觉/02-深度学习内核/Softmax与SVM损失函数|Softmax]]**：理解 logit $S_c$ 与 softmax 概率的区别，以及为何可解释性方法通常对 logits 求导（避免 Softmax 饱和导致梯度消失）。
 
 ---
 
@@ -252,12 +252,12 @@ def apply_colormap(cam, original_image, alpha=0.5):
 ### 上游依赖
 - [[卷积神经网络CNN]]：特征图概念是所有 CAM 类方法的基础。
 - [[反向传播与计算图]]：Grad-CAM 对中间层索求梯度依赖链式法则。
-- [[激活函数CV]]：Guided Backprop 的核心是对 ReLU 反向传播的修改。
+- [[02-Knowledge/🧠 学习系统/05-计算机视觉/02-深度学习内核/激活函数详解]]：Guided Backprop 的核心是对 ReLU 反向传播的修改。
 
 ### 下游延伸
-- [[注意力可视化]]：Transformer 的 Self-Attention 自带可解释性——$\text{softmax}(QK^T/\sqrt{d_k})$ 的注意力权重矩阵本身就是一种"CAM"。
+- 注意力可视化：Transformer 的 Self-Attention 自带可解释性——$\text{softmax}(QK^T/\sqrt{d_k})$ 的注意力权重矩阵本身就是一种"CAM"。
 - [[ViT]]：ViT 的 Attention Rollout 是 Transformer 版本的可解释性方法。
-- [[迁移学习CV]]：Grad-CAM 验证迁移后模型的关注区域是否合理。
+- [[02-Knowledge/🧠 学习系统/05-计算机视觉/03-视觉核心任务/迁移学习与微调]]：Grad-CAM 验证迁移后模型的关注区域是否合理。
 
 ### 横向关联
 - **Saliency Map ↔ 对抗样本**：同一数学引擎 $\partial S_c / \partial \mathbf{X}$ 驱动了相反的目标——前者解释模型，后者愚弄模型。
@@ -369,18 +369,12 @@ def apply_colormap(cam, original_image, alpha=0.5):
 - **建议双链**：
   - [[卷积神经网络CNN]] — 特征图概念来源
   - [[反向传播与计算图]] — 梯度索取的数学基础
-  - [[注意力可视化]] — Transformer 可解释性对应方法
+  - 注意力可视化 — Transformer 可解释性对应方法
   - [[ViT]] — Attention Map 可视化
-  - [[迁移学习CV]] — 验证迁移后关注区域
-  - [[激活函数CV]] — Guided Backprop 依赖 ReLU
+  - [[02-Knowledge/🧠 学习系统/05-计算机视觉/03-视觉核心任务/迁移学习与微调]] — 验证迁移后关注区域
+  - [[02-Knowledge/🧠 学习系统/05-计算机视觉/02-深度学习内核/激活函数详解]] — Guided Backprop 依赖 ReLU
 - **建议标签**：`#学习` `#计算机视觉` `#可解释性` `#SaliencyMap` `#GradCAM` `#CAM`
 - **拆分建议**：当前覆盖 Saliency/CAM/Grad-CAM/Guided Backprop 四条线。若挖深可将 SHAP/LIME/Integrated Gradients 等模型无关方法另开卡片；Grad-CAM 的高级扩展（Score-CAM、Ablation-CAM、Transformer 适配版）也可单独成卡。
-
----
-
-## 🧪 学完本节后可完成的作业
-
-- 配合 [[03-Projects/课程作业/05-计算机视觉/课后作业/🎓 HW04 - 迁移学习与误差分析正式作业说明书|HW04]] 误差分析与可视化
 
 ---
 ---

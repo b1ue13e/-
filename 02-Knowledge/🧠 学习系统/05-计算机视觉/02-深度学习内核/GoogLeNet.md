@@ -20,7 +20,7 @@ related:
   - DenseNet
   - 参数效率
 flow: knowledge
-stage_moc: "[[02-深度学习内核/🧠 第二阶段：深度学习内核]]"
+stage_moc: "[[02-Knowledge/🧠 学习系统/05-计算机视觉/02-深度学习内核/🧠 第二阶段：深度学习内核]]"
 kind: concept
 source: "D2L Ch.8; Szegedy et al. 2015"
 anki_deck: "05-计算机视觉::02-深度学习内核"
@@ -38,9 +38,9 @@ tags:
 
 # GoogLeNet / Inception
 
-> 所属路径：[[../🗺️ 计算机视觉学习路径|计算机视觉学习路径]]
+> 所属路径：[[02-Knowledge/🧠 学习系统/05-计算机视觉/🗺️ 计算机视觉学习路径|计算机视觉学习路径]]
 > 所属阶段：[[🧠 第二阶段：深度学习内核|🧠 第二阶段：深度学习内核（模型本质）]]
-> 教材入口：[[../📚 教材挂载索引|教材挂载索引]]
+> 教材入口：[[02-Knowledge/🧠 学习系统/05-计算机视觉/📚 教材挂载索引|教材挂载索引]]
 > 核心源：D2L Ch.8; Szegedy et al. "Going Deeper with Convolutions" (CVPR 2015); 后续版本 v2–v4 见正文
 
 ---
@@ -101,7 +101,7 @@ tags:
 
 1. **[[02-Knowledge/🧠 学习系统/05-计算机视觉/02-深度学习内核/卷积神经网络CNN|CNN 基础]]**：卷积输出尺寸公式、参数量计算、感受野递推——理解 5×5 比 3×3 贵在哪。
 2. **[[02-Knowledge/🧠 学习系统/05-计算机视觉/02-深度学习内核/VGGNet|VGGNet]]**：GoogLeNet 的同期对手——理解 VGG「全 3×3 堆叠」才能体会 Inception「多分支并行」有多激进。VGG 138M → GoogLeNet 5M 的对比是理解参数效率的绝佳切入点。
-3. **[[02-Knowledge/🧠 学习系统/05-计算机视觉/.归档/空壳文件/AlexNet|AlexNet]]**：2012-2014 年 CNN 演进背景。
+3. **[[02-Knowledge/🧠 学习系统/05-计算机视觉/02-深度学习内核/AlexNet|AlexNet]]**：2012-2014 年 CNN 演进背景。
 4. **[[02-Knowledge/🧠 学习系统/05-计算机视觉/02-深度学习内核/批归一化BatchNorm|Batch Norm]]**（推荐）：理解 Inception v2 为什么训得快 14 倍。
 
 ---
@@ -343,7 +343,7 @@ if __name__ == "__main__":
 ### 上游依赖
 - **[[02-Knowledge/🧠 学习系统/05-计算机视觉/02-深度学习内核/VGGNet|VGGNet]]**：同期对手和思想对照——两者各自的设计 trade-off 是理解 CNN 架构史的关键。
 - **[[02-Knowledge/🧠 学习系统/05-计算机视觉/02-深度学习内核/卷积神经网络CNN|CNN 基础]]**：1×1 卷积为什么合法、通道拼接的含义、池化保持尺寸技巧（kernel=3, stride=1, pad=1）。
-- **[[02-Knowledge/🧠 学习系统/05-计算机视觉/.归档/空壳文件/AlexNet|AlexNet]]**：2012-2014 演进背景。
+- **[[02-Knowledge/🧠 学习系统/05-计算机视觉/02-深度学习内核/AlexNet|AlexNet]]**：2012-2014 演进背景。
 
 ### 下游延伸
 - **[[02-Knowledge/🧠 学习系统/05-计算机视觉/02-深度学习内核/🎯 ResNet (残差网络)|ResNet]]**：Inception v4 + Inception-ResNet 将残差连接引入；ResNet bottleneck（1×1→3×3→1×1）继承自 Inception 降维思想。
@@ -462,7 +462,7 @@ if __name__ == "__main__":
   - [[02-Knowledge/🧠 学习系统/05-计算机视觉/02-深度学习内核/🧠 第二阶段：深度学习内核|第二阶段：深度学习内核]]
   - [[02-Knowledge/🧠 学习系统/05-计算机视觉/02-深度学习内核/卷积神经网络CNN|卷积神经网络 CNN]]
   - [[02-Knowledge/🧠 学习系统/05-计算机视觉/02-深度学习内核/VGGNet|VGGNet]]
-  - [[02-Knowledge/🧠 学习系统/05-计算机视觉/.归档/空壳文件/AlexNet|AlexNet]]
+  - [[02-Knowledge/🧠 学习系统/05-计算机视觉/02-深度学习内核/AlexNet|AlexNet]]
   - [[02-Knowledge/🧠 学习系统/05-计算机视觉/02-深度学习内核/🎯 ResNet (残差网络)|ResNet]]
   - [[02-Knowledge/🧠 学习系统/05-计算机视觉/02-深度学习内核/DenseNet|DenseNet]]
   - [[02-Knowledge/🧠 学习系统/05-计算机视觉/02-深度学习内核/批归一化BatchNorm|BatchNorm]]
@@ -477,12 +477,6 @@ if __name__ == "__main__":
 ---
 
 *创建于：2026-08-06 | 最后更新：2026-08-06*
-
----
-
-## 🧪 学完本节后可完成的作业
-
-- 配合 [[03-Projects/课程作业/05-计算机视觉/课后习题/D2L-Ch8-现代CNN习题册|D2L-Ch8 习题册]]
 
 ---
 ---

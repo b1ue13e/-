@@ -10,7 +10,7 @@ concept: ["LoRA", "低秩适配", "参数高效微调", "PEFT"]
 prerequisites: ["Transformer与自注意力", "迁移学习与微调"]
 related: ["ControlNet", "StableDiffusion", "模型量化"]
 flow: knowledge
-stage_moc: "[[04-前沿架构探索/🚀 第四阶段：前沿架构探索]]"
+stage_moc: "[[02-Knowledge/🧠 学习系统/05-计算机视觉/04-前沿架构探索/🚀 第四阶段：前沿架构探索]]"
 kind: concept
 source: "Hu et al. 2021; 论文补充"
 anki_deck: "05-计算机视觉::04-前沿架构探索"
@@ -19,7 +19,7 @@ tags: [学习, 计算机视觉, LoRA, 微调, PEFT]
 ---
 # LoRA 低秩适配 (Low-Rank Adaptation)
 
-> 所属模块：[[../🗺️ 计算机视觉学习路径|计算机视觉学习路径]]
+> 所属模块：[[02-Knowledge/🧠 学习系统/05-计算机视觉/🗺️ 计算机视觉学习路径|计算机视觉学习路径]]
 > 主教材：Hu et al. 2021 "LoRA: Low-Rank Adaptation of Large Language Models"
 > 对应阶段：[[02-Knowledge/🧠 学习系统/05-计算机视觉/04-前沿架构探索/🚀 第四阶段：前沿架构探索|返回阶段页]]
 > 建议先看：[[Transformer与自注意力]]、[[迁移学习与微调]]
@@ -163,13 +163,6 @@ $$W_{final} = W_0 + B \cdot A$$
 1. LoRA 中矩阵 A 和 B 的初始化策略分别是什么？为什么 B 初始化为 0？（#自测题/基础）
 2. 如果预训练权重 W₀ 维度是 4096×4096，设置 r=8，LoRA 减少了多少倍参数？（#自测题/基础）
 3. 为什么 LoRA 可以在推理时"零成本"合并？（#自测题/中等）
-
----
-
-## 🧪 学完本节后可完成的作业
-
-- 配合 [[03-Projects/课程作业/05-计算机视觉/课后作业/🎓 HW06 - 开放课程项目正式作业说明书|HW06]] 微调方向
-- 配合 [[03-Projects/课程作业/05-计算机视觉/大作业/项目-SD微调|大作业：SD微调]]
 
 ---
 ---

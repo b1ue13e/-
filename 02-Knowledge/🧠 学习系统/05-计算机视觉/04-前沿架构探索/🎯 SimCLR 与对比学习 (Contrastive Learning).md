@@ -20,7 +20,7 @@ related:
   - BYOL
   - 自监督学习
 flow: knowledge
-stage_moc: "[[04-前沿架构探索/🚀 第四阶段：前沿架构探索]]"
+stage_moc: "[[02-Knowledge/🧠 学习系统/05-计算机视觉/04-前沿架构探索/🚀 第四阶段：前沿架构探索]]"
 kind: concept
 source: "CS231n A3"
 anki_deck: "05-计算机视觉::04-前沿架构探索"
@@ -71,8 +71,8 @@ tags:
 
 最小必要背景：
 
-1. **[[02-Knowledge/🧠 学习系统/05-计算机视觉/02-深度学习内核/ResNet|特征提取器 (Backbone)]]**：如 ResNet-50，负责将高维图像 $\mathbf{x}$ 映射为低维特征向量 $\mathbf{h} = f(\mathbf{x})$。
-2. **[[02-Knowledge/🧠 学习系统/05-计算机视觉/02-深度学习内核/交叉熵损失|Softmax 与交叉熵损失]]**：多分类问题中将得分转化为概率并拉近目标类的损失函数。
+1. **[[02-Knowledge/🧠 学习系统/05-计算机视觉/02-深度学习内核/🎯 ResNet (残差网络)|特征提取器 (Backbone)]]**：如 ResNet-50，负责将高维图像 $\mathbf{x}$ 映射为低维特征向量 $\mathbf{h} = f(\mathbf{x})$。
+2. **[[02-Knowledge/🧠 学习系统/05-计算机视觉/02-深度学习内核/Softmax与SVM损失函数|Softmax 与交叉熵损失]]**：多分类问题中将得分转化为概率并拉近目标类的损失函数。
 
 ---
 
@@ -214,14 +214,14 @@ print("SimCLR InfoNCE 损失:", loss.item())
 ## 9. 相关知识点与 Obsidian 双链建议
 
 ### 上游依赖
-- [[02-Knowledge/🧠 学习系统/05-计算机视觉/02-深度学习内核/ResNet|ResNet]]：用作 SimCLR 的特征抽取编码器 Backbone。
-- [[02-Knowledge/🧠 学习系统/05-计算机视觉/02-深度学习内核/交叉熵损失|交叉熵损失]]：InfoNCE 损失函数的数学原型。
+- [[02-Knowledge/🧠 学习系统/05-计算机视觉/02-深度学习内核/🎯 ResNet (残差网络)|ResNet]]：用作 SimCLR 的特征抽取编码器 Backbone。
+- [[02-Knowledge/🧠 学习系统/05-计算机视觉/02-深度学习内核/Softmax与SVM损失函数|交叉熵损失]]：InfoNCE 损失函数的数学原型。
 
 ### 下游延伸
-- [[02-Knowledge/🧠 学习系统/05-计算机视觉/04-前沿架构探索/CLIP|CLIP 多模态]]：将 SimCLR 的“图像-图像”对比学习扩展为“图像-文本”双塔对比学习。
+- [[02-Knowledge/🧠 学习系统/05-计算机视觉/04-前沿架构探索/自监督学习SimCLR与CLIP|CLIP 多模态]]：将 SimCLR 的“图像-图像”对比学习扩展为“图像-文本”双塔对比学习。
 
 ### 横向关联
-- [[02-Knowledge/🧠 学习系统/05-计算机视觉/04-前沿架构探索/MoCo|MoCo]] ↔ [[05-计算机视觉/02-深度学习内核/SimCLR与对比学习|SimCLR]]：两大自监督对比学习巅峰，MoCo 用队列解决大 Batch 显存依赖，SimCLR 端到端极简。
+- [[02-Knowledge/🧠 学习系统/05-计算机视觉/04-前沿架构探索/自监督学习SimCLR与CLIP|MoCo]] ↔ SimCLR：两大自监督对比学习巅峰，MoCo 用队列解决大 Batch 显存依赖，SimCLR 端到端极简。
 
 ---
 
@@ -311,11 +311,6 @@ print("SimCLR InfoNCE 损失:", loss.item())
   - [[05-计算机视觉/02-深
 
 ---
-
-## 🧪 学完本节后可完成的作业
-
-- 配合 [[03-Projects/课程作业/05-计算机视觉/课后作业/🎓 HW06 - 开放课程项目正式作业说明书|HW06]]
-- 配合 [[03-Projects/课程作业/05-计算机视觉/大作业/项目-自监督|大作业：自监督]]
 ---
 
 ## 🔗 知识图谱

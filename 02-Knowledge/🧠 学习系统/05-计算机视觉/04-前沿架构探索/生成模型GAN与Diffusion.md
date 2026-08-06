@@ -9,7 +9,7 @@ concept: ["生成模型","GAN","Diffusion","生成器","判别器","去噪"]
 prerequisites: ["卷积神经网络CNN","反向传播"]
 related: ["VAE","StableDiffusion","自监督学习"]
 flow: knowledge
-stage_moc: "[[04-前沿架构探索/🚀 第四阶段：前沿架构探索]]"
+stage_moc: "[[02-Knowledge/🧠 学习系统/05-计算机视觉/04-前沿架构探索/🚀 第四阶段：前沿架构探索]]"
 kind: concept
 source: "D2L Ch.17; CS231n A3"
 anki_deck: "05-计算机视觉::04-前沿架构探索"
@@ -48,10 +48,10 @@ tags: [学习,计算机视觉,生成模型,GAN,Diffusion]
 最小必要背景：
 
 1. **[[卷积神经网络CNN]]**：GAN 的生成器用转置卷积上采样，判别器用 Strided Conv 下采样；Diffusion 的 U-Net 大量使用卷积与残差块。
-2. **[[反向传播]]与梯度下降**：GAN 交替训练需理解梯度如何从 $D$ 穿过 $G$、何时冻结谁。
-3. **[[Softmax 与交叉熵损失|交叉熵 / BCE 损失]]**：GAN 判别器做二分类——不理解 BCE 就读不懂 minimax 公式。
-4. **[[VAE]]（建议了解）**：VAE 用显式编码-解码 + KL 散度做生成，是理解 GAN 和 Diffusion 的重要参照系——Diffusion 本质是 $T$ 步深度 VAE。
-5. **[[马尔可夫链]]**：Diffusion 的前向与反向过程都是马尔可夫链。
+2. **[[02-Knowledge/🧠 学习系统/05-计算机视觉/02-深度学习内核/反向传播与计算图]]与梯度下降**：GAN 交替训练需理解梯度如何从 $D$ 穿过 $G$、何时冻结谁。
+3. **[[02-Knowledge/🧠 学习系统/05-计算机视觉/02-深度学习内核/Softmax与SVM损失函数|交叉熵 / BCE 损失]]**：GAN 判别器做二分类——不理解 BCE 就读不懂 minimax 公式。
+4. **[[02-Knowledge/🧠 学习系统/05-计算机视觉/04-前沿架构探索/🎯 VAE 变分自编码器 (Variational Autoencoder)]]（建议了解）**：VAE 用显式编码-解码 + KL 散度做生成，是理解 GAN 和 Diffusion 的重要参照系——Diffusion 本质是 $T$ 步深度 VAE。
+5. **[[02-Knowledge/🧠 学习系统/24-随机过程/02-马尔可夫与泊松过程/马尔可夫与泊松过程-应用入口-1]]**：Diffusion 的前向与反向过程都是马尔可夫链。
 
 ---
 
@@ -276,10 +276,10 @@ class DDPM:
 ## 9. 相关知识点与 Obsidian 双链建议
 
 ### 上游
-- [[卷积神经网络CNN]]、[[VAE]]、[[Softmax 与交叉熵损失|BCE]]、[[马尔可夫链]]
+- [[卷积神经网络CNN]]、[[02-Knowledge/🧠 学习系统/05-计算机视觉/04-前沿架构探索/🎯 VAE 变分自编码器 (Variational Autoencoder)]]、[[02-Knowledge/🧠 学习系统/05-计算机视觉/02-深度学习内核/Softmax与SVM损失函数|BCE]]、[[02-Knowledge/🧠 学习系统/24-随机过程/02-马尔可夫与泊松过程/马尔可夫与泊松过程-应用入口-1]]
 
 ### 下游
-- [[StableDiffusion]]（Latent Diffusion + 文本条件）、[[ControlNet]]（空间可控）、[[StyleGAN]]（GAN 最高形态）、[[CycleGAN]]（无配对域翻译）
+- StableDiffusion（Latent Diffusion + 文本条件）、ControlNet（空间可控）、StyleGAN（GAN 最高形态）、CycleGAN（无配对域翻译）
 
 ### 横向
 - [[自监督学习SimCLR与CLIP|CLIP]]：SD 文本条件核心编码器；[[LoRA]]：扩散模型低秩微调
@@ -369,22 +369,16 @@ class DDPM:
 
 - **归档目录**：`04-前沿架构探索/`（已在此）
 - **建议双链**：
-  - [[GAN]] — 可拆分的细节卡（训练技巧、WGAN、LSGAN 等变体）
+  - 生成模型GAN与Diffusion — 可拆分的细节卡（训练技巧、WGAN、LSGAN 等变体）
   - [[🎯 Diffusion 扩散模型 (DDPM)|Diffusion (DDPM)]] — 可拆分的细节卡（完整推导、DDIM 加速）
-  - [[StableDiffusion]] — Diffusion 工业落地形态（Latent Diffusion + 文本条件）
-  - [[VAE]] — 共同参照系
-  - [[ControlNet]] — Diffusion 空间可控生成延伸
+  - StableDiffusion — Diffusion 工业落地形态（Latent Diffusion + 文本条件）
+  - [[02-Knowledge/🧠 学习系统/05-计算机视觉/04-前沿架构探索/🎯 VAE 变分自编码器 (Variational Autoencoder)]] — 共同参照系
+  - ControlNet — Diffusion 空间可控生成延伸
   - [[LoRA]] — 扩散模型低秩微调
   - [[自监督学习SimCLR与CLIP|CLIP]] — Stable Diffusion 文本条件核心编码器
   - [[Transformer与自注意力]] — DiT (Diffusion Transformer) 连接点
 - **建议标签**：`#学习` `#计算机视觉` `#生成模型` `#GAN` `#Diffusion` `#DDPM` `#AIGC`
 - **拆分建议**：本卡为概念主卡，覆盖 GAN 与 Diffusion 的核心对比。后续可拆分 GAN 稳定性专题（WGAN/WGAN-GP）、Diffusion 加速专题（DDIM/DPM-Solver）、Flow Matching 新范式。
-
----
-
-## 🧪 学完本节后可完成的作业
-
-- 配合 [[03-Projects/课程作业/05-计算机视觉/课后习题/D2L-Ch17-生成对抗网络习题册|D2L-Ch17 习题册]]
 
 ---
 ---

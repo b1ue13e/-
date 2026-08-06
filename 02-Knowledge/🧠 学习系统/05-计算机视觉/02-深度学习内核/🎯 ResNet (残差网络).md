@@ -21,7 +21,7 @@ related:
   - Transformer注意力
   - MobileNet
 flow: knowledge
-stage_moc: "[[02-深度学习内核/🧠 第二阶段：深度学习内核]]"
+stage_moc: "[[02-Knowledge/🧠 学习系统/05-计算机视觉/02-深度学习内核/🧠 第二阶段：深度学习内核]]"
 kind: concept
 source: "D2L Ch.8; CS231n A2"
 anki_deck: "05-计算机视觉::02-深度学习内核"
@@ -219,10 +219,10 @@ print("输出维度:", out.shape)  # [2, 128, 16, 16] (降采样且通道扩展�
 
 ### 下游延伸
 - [[02-Knowledge/🧠 学习系统/05-计算机视觉/02-深度学习内核/DenseNet|DenseNet]]：将残差“相加”升级为特征“拼接”的演进架构。
-- [[02-Knowledge/🧠 学习系统/08-NLP全栈/04-Transformer与预训练模型/Transformer注意力|Transformer注意力]]：残差连接在 Transformer 架构中的继承应用。
+- [[02-Knowledge/🧠 学习系统/08-NLP全栈/04-Transformer与预训练模型/08-NLP全栈-Transformer架构|Transformer注意力]]：残差连接在 Transformer 架构中的继承应用。
 
 ### 横向关联
-- [[02-Knowledge/🧠 学习系统/05-计算机视觉/02-深度学习内核/BatchNorm|BatchNorm]] ↔ [[02-Knowledge/🧠 学习系统/05-计算机视觉/02-深度学习内核/ResNet|ResNet]]：BatchNorm 与残差连接共同保障了深层网络的稳定训练。
+- [[02-Knowledge/🧠 学习系统/05-计算机视觉/02-深度学习内核/批归一化BatchNorm|BatchNorm]] ↔ ResNet：BatchNorm 与残差连接共同保障了深层网络的稳定训练。
 
 ---
 
@@ -312,15 +312,10 @@ print("输出维度:", out.shape)  # [2, 128, 16, 16] (降采样且通道扩展�
   - [[02-Knowledge/🧠 学习系统/05-计算机视觉/02-深度学习内核/🧠 第二阶段：深度学习内核|第二阶段：深度学习内核]]
   - [[02-Knowledge/🧠 学习系统/05-计算机视觉/02-深度学习内核/VGGNet|VGGNet]]
   - [[02-Knowledge/🧠 学习系统/05-计算机视觉/02-深度学习内核/梯度流问题|梯度流问题]]
-  - [[02-Knowledge/🧠 学习系统/08-NLP全栈/04-Transformer与预训练模型/Transformer注意力|Transformer注意力]]
+  - [[02-Knowledge/🧠 学习系统/08-NLP全栈/04-Transformer与预训练模型/08-NLP全栈-Transformer架构|Transformer注意力]]
 - **建议标签**：`#学习` `#深度学习` `#计算机视觉` `#ResNet` `#残差网络` `#恒等映射` `#何恺明`
 
 ---
-
-## 🧪 学完本节后可完成的作业
-
-- 可直接完成 [[03-Projects/课程作业/05-计算机视觉/阶段作业/05-计算机视觉-阶段作业-ResNet与YOLO目标检测|阶段作业：ResNet与YOLO]] L3 手撕 ResNet-50
-- 配合 [[03-Projects/课程作业/05-计算机视觉/课后习题/D2L-Ch8-现代CNN习题册|D2L-Ch8 习题册]]
 ---
 
 ## 🔗 知识图谱

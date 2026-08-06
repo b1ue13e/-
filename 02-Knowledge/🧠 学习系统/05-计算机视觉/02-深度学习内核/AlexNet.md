@@ -19,7 +19,7 @@ related:
   - LeNet
   - ResNet
 flow: knowledge
-stage_moc: "[[02-深度学习内核/🧠 第二阶段：深度学习内核]]"
+stage_moc: "[[02-Knowledge/🧠 学习系统/05-计算机视觉/02-深度学习内核/🧠 第二阶段：深度学习内核]]"
 kind: concept
 source: "D2L Ch.8; Krizhevsky et al. 2012"
 anki_deck: "05-计算机视觉::02-深度学习内核"
@@ -37,7 +37,7 @@ tags:
 
 # AlexNet
 
-> 所属模块：[[../🗺️ 计算机视觉学习路径|计算机视觉学习路径]]
+> 所属模块：[[02-Knowledge/🧠 学习系统/05-计算机视觉/🗺️ 计算机视觉学习路径|计算机视觉学习路径]]
 > 对应阶段：[[🧠 第二阶段：深度学习内核|返回阶段页]]
 > 前置知识：[[卷积神经网络CNN]]、[[激活函数详解]]
 > 主教材：D2L Ch.8；Krizhevsky, Sutskever & Hinton, "ImageNet Classification with Deep Convolutional Neural Networks" (NeurIPS 2012)
@@ -82,7 +82,7 @@ AlexNet 解决的问题本质上是：**如何训练一个足够深、足够宽�
 
 1. **[[卷积神经网络CNN]]**：卷积层（卷积核、步长、填充）、池化层（最大池化）、全连接层的基本概念和计算方式。
 2. **[[激活函数详解]]**：Sigmoid、Tanh、ReLU 的数学形式和各自的梯度特性（尤其是 Sigmoid 饱和区导致梯度消失的机理）。
-3. **[[02-Knowledge/🧠 学习系统/05-计算机视觉/02-深度学习内核/Dropout|Dropout]]**：训练时随机丢弃神经元、推理时权重缩放的基本原理。
+3. **[[02-Knowledge/🧠 学习系统/05-计算机视觉/02-深度学习内核/数据增强与正则化|Dropout]]**：训练时随机丢弃神经元、推理时权重缩放的基本原理。
 
 ---
 
@@ -386,12 +386,12 @@ Flatten 前特征图: torch.Size([2, 256, 6, 6])
 ### 上游依赖（前置知识）
 - [[卷积神经网络CNN]]：卷积/池化/全连接的基本原理，理解这些才能看懂 AlexNet 各层的作用。
 - [[激活函数详解]]：Sigmoid → ReLU 的动机（梯度消失问题），是 AlexNet 关键创新的理论基础。
-- [[02-Knowledge/🧠 学习系统/05-计算机视觉/02-深度学习内核/Dropout|Dropout]]：AlexNet 首次在大规模 CNN 中验证了 Dropout 的有效性。
+- [[02-Knowledge/🧠 学习系统/05-计算机视觉/02-深度学习内核/数据增强与正则化|Dropout]]：AlexNet 首次在大规模 CNN 中验证了 Dropout 的有效性。
 
 ### 下游延伸（后续演进）
-- [[02-Knowledge/🧠 学习系统/05-计算机视觉/.归档/空壳文件/VGGNet|VGGNet]]：2014 年，将 AlexNet 的 11×11 和 5×5 大卷积核全部替换为堆叠 3×3 小核，统一设计哲学（更深的直筒网络）。
+- [[02-Knowledge/🧠 学习系统/05-计算机视觉/02-深度学习内核/VGGNet|VGGNet]]：2014 年，将 AlexNet 的 11×11 和 5×5 大卷积核全部替换为堆叠 3×3 小核，统一设计哲学（更深的直筒网络）。
 - [[02-Knowledge/🧠 学习系统/05-计算机视觉/02-深度学习内核/🎯 ResNet (残差网络)|ResNet]]：2015 年，用残差连接解决"更深网络的退化问题"，突破了 AlexNet/VGG 的深度瓶颈。
-- [[02-Knowledge/🧠 学习系统/05-计算机视觉/.归档/空壳文件/GoogLeNet|GoogLeNet (Inception)]]：2014 年，与 VGGNet 同年，引入 Inception 多分支并行模块和全局平均池化替代大 FC 层。
+- [[02-Knowledge/🧠 学习系统/05-计算机视觉/02-深度学习内核/GoogLeNet|GoogLeNet (Inception)]]：2014 年，与 VGGNet 同年，引入 Inception 多分支并行模块和全局平均池化替代大 FC 层。
 
 ### 横向关联
 - [[批归一化BatchNorm|BatchNorm]] ↔ AlexNet：BN (2015) 取代了 AlexNet 中的 LRN，成为训练深层网络的标准组件。
@@ -496,21 +496,15 @@ Flatten 前特征图: torch.Size([2, 256, 6, 6])
   - [[🧠 第二阶段：深度学习内核|第二阶段：深度学习内核]]
   - [[卷积神经网络CNN|卷积神经网络 CNN]]
   - [[激活函数详解|激活函数详解]]
-  - [[02-Knowledge/🧠 学习系统/05-计算机视觉/.归档/空壳文件/LeNet|LeNet]]
-  - [[02-Knowledge/🧠 学习系统/05-计算机视觉/.归档/空壳文件/VGGNet|VGGNet]]
+  - LeNet
+  - [[02-Knowledge/🧠 学习系统/05-计算机视觉/02-深度学习内核/VGGNet|VGGNet]]
   - [[02-Knowledge/🧠 学习系统/05-计算机视觉/02-深度学习内核/🎯 ResNet (残差网络)|ResNet]]
-  - [[02-Knowledge/🧠 学习系统/05-计算机视觉/02-深度学习内核/Dropout|Dropout]]
+  - [[02-Knowledge/🧠 学习系统/05-计算机视觉/02-深度学习内核/数据增强与正则化|Dropout]]
 - **建议标签**：`#学习` `#计算机视觉` `#AlexNet` `#CNN架构` `#ImageNet` `#深度学习`
 
 ---
 
 *创建于：2026-08-06 | 来源：D2L Ch.8; Krizhevsky, Sutskever & Hinton (NeurIPS 2012)*
-
----
-
-## 🧪 学完本节后可完成的作业
-
-- 配合 [[03-Projects/课程作业/05-计算机视觉/课后习题/D2L-Ch8-现代CNN习题册|D2L-Ch8 习题册]]
 
 ---
 ---

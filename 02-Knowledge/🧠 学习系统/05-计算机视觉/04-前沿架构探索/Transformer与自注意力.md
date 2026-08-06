@@ -9,7 +9,7 @@ concept: ["Transformer","自注意力","多头注意力","位置编码","ViT"]
 prerequisites: ["反向传播","Softmax","矩阵乘法"]
 related: ["ViT","SwinTransformer","CLIP","CNN"]
 flow: knowledge
-stage_moc: "[[04-前沿架构探索/🚀 第四阶段：前沿架构探索]]"
+stage_moc: "[[02-Knowledge/🧠 学习系统/05-计算机视觉/04-前沿架构探索/🚀 第四阶段：前沿架构探索]]"
 kind: concept
 source: "CS231n A3; D2L Ch.11"
 anki_deck: "05-计算机视觉::04-前沿架构探索"
@@ -49,9 +49,9 @@ tags: [学习,计算机视觉,Transformer,自注意力,注意力机制]
 
 最小必要背景：
 
-1. **[[Softmax 与交叉熵损失|Softmax 函数]]**：将一组注意力分数转化为概率分布 $\text{softmax}(\mathbf{s})_i = \frac{\exp(s_i)}{\sum_j \exp(s_j)}$。
-2. **[[矩阵乘法与广播|矩阵乘法]]**：理解 $QK^T$ 的批次维度与特征维度的对应关系是掌握 Self-Attention 的核心前提。
-3. **[[LayerNorm|层归一化 (Layer Normalization)]]**：Transformer Encoder 中 Add & Norm 的归一化组件，不同于 CNN 常用的 BatchNorm。
+1. **[[02-Knowledge/🧠 学习系统/05-计算机视觉/02-深度学习内核/Softmax与SVM损失函数|Softmax 函数]]**：将一组注意力分数转化为概率分布 $\text{softmax}(\mathbf{s})_i = \frac{\exp(s_i)}{\sum_j \exp(s_j)}$。
+2. **矩阵乘法**：理解 $QK^T$ 的批次维度与特征维度的对应关系是掌握 Self-Attention 的核心前提。
+3. **[[02-Knowledge/🧠 学习系统/05-计算机视觉/02-深度学习内核/批归一化BatchNorm|层归一化 (Layer Normalization)]]**：Transformer Encoder 中 Add & Norm 的归一化组件，不同于 CNN 常用的 BatchNorm。
 
 ---
 
@@ -283,19 +283,19 @@ class TransformerEncoderBlock(nn.Module):
 ## 9. 相关知识点与 Obsidian 双链建议
 
 ### 上游依赖
-- [[Softmax 与交叉熵损失]]：Softmax 将得分转化为概率分布，是 Attention 的归一化层。
-- [[LayerNorm]]：Transformer 使用的归一化方式，对每个 token 的特征维度归一化。
-- [[残差连接|Residual Connection]]：Add 操作的来源——ResNet 提出的跳跃连接是 Transformer 深层可训练的关键。
+- [[02-Knowledge/🧠 学习系统/05-计算机视觉/02-深度学习内核/Softmax与SVM损失函数]]：Softmax 将得分转化为概率分布，是 Attention 的归一化层。
+- [[02-Knowledge/🧠 学习系统/05-计算机视觉/02-深度学习内核/批归一化BatchNorm]]：Transformer 使用的归一化方式，对每个 token 的特征维度归一化。
+- Residual Connection：Add 操作的来源——ResNet 提出的跳跃连接是 Transformer 深层可训练的关键。
 
 ### 下游延伸
 - [[ViT]] (Vision Transformer)：将图像切割为 patch 序列，直接喂入 Transformer Encoder 做分类。
 - [[SwinTransformer]]：引入窗口注意力和移位窗口，让 Transformer 兼容高分辨率视觉任务。
-- [[DETR]]：用 Transformer Encoder-Decoder + Object Query 做端到端目标检测。
-- [[CLIP]]：双塔 Transformer + Cross-Modal Contrastive Loss 实现图文对齐。
+- [[02-Knowledge/🧠 学习系统/05-计算机视觉/03-视觉核心任务/目标检测RCNN与YOLO]]：用 Transformer Encoder-Decoder + Object Query 做端到端目标检测。
+- [[02-Knowledge/🧠 学习系统/05-计算机视觉/04-前沿架构探索/自监督学习SimCLR与CLIP]]：双塔 Transformer + Cross-Modal Contrastive Loss 实现图文对齐。
 
 ### 横向关联
-- [[CNN]] ↔ Transformer：CNN 的局部归纳偏置 vs Transformer 的全局注意力——前者少数据时泛化好，后者大数据时上限高。现代网络（如 CoAtNet、ConvNeXt）正在融合两者。
-- [[位置编码]] ↔ Self-Attention：位置编码是 Transformer 的空间感知机制——正弦 PE（理论优雅，可外推）vs 可学习 PE（灵活但受训长度限制）vs 相对位置偏置（Swin, T5 使用）。
+- [[02-Knowledge/🧠 学习系统/05-计算机视觉/02-深度学习内核/卷积神经网络CNN]] ↔ Transformer：CNN 的局部归纳偏置 vs Transformer 的全局注意力——前者少数据时泛化好，后者大数据时上限高。现代网络（如 CoAtNet、ConvNeXt）正在融合两者。
+- Transformer与自注意力 ↔ Self-Attention：位置编码是 Transformer 的空间感知机制——正弦 PE（理论优雅，可外推）vs 可学习 PE（灵活但受训长度限制）vs 相对位置偏置（Swin, T5 使用）。
 
 ### 与 CNN 的归纳偏置对比总结
 
@@ -414,21 +414,14 @@ class TransformerEncoderBlock(nn.Module):
 - **建议双链**：
   - [[ViT]] — Transformer 的 CV 分类直接应用
   - [[SwinTransformer]] — 解决二次复杂度与多尺度问题
-  - [[DETR]] — Transformer 用于目标检测
-  - [[CLIP]] — 基于 Transformer 的图文多模态
-  - [[SelfAttention]] — 可拆分的细节卡（核心公式）
-  - [[MultiHeadAttention]] — 可拆分的细节卡（多头机制）
-  - [[位置编码]] — 可拆分的细节卡（PE 变体）
-  - [[CNN]] — 归纳偏置对比的参照物
+  - [[02-Knowledge/🧠 学习系统/05-计算机视觉/03-视觉核心任务/目标检测RCNN与YOLO]] — Transformer 用于目标检测
+  - [[02-Knowledge/🧠 学习系统/05-计算机视觉/04-前沿架构探索/自监督学习SimCLR与CLIP]] — 基于 Transformer 的图文多模态
+  - Transformer与自注意力 — 可拆分的细节卡（核心公式）
+  - Transformer与自注意力 — 可拆分的细节卡（多头机制）
+  - Transformer与自注意力 — 可拆分的细节卡（PE 变体）
+  - [[02-Knowledge/🧠 学习系统/05-计算机视觉/02-深度学习内核/卷积神经网络CNN]] — 归纳偏置对比的参照物
 - **建议标签**：`#学习` `#计算机视觉` `#Transformer` `#自注意力` `#注意力机制` `#ViT`
 - **拆分建议**：当前为 B 类概念主卡，覆盖完整。若后续挖深，可将 Self-Attention 公式推导、位置编码变体（RoPE / ALiBi）、Sparse Attention 优化单独成卡。
-
----
-
-## 🧪 学完本节后可完成的作业
-
-- 配合 [[03-Projects/课程作业/05-计算机视觉/课后习题/D2L-Ch11-注意力机制习题册|D2L-Ch11 习题册]]
-- 配合 [[03-Projects/课程作业/05-计算机视觉/课后作业/🎓 HW06 - 开放课程项目正式作业说明书|HW06]] Transformer 方向
 
 ---
 ---

@@ -9,7 +9,7 @@ concept: ["目标检测","R-CNN","YOLO","IoU","NMS","mAP"]
 prerequisites: ["卷积神经网络CNN","Softmax分类器"]
 related: ["FPN","SSD","FasterRCNN","语义分割"]
 flow: knowledge
-stage_moc: "[[03-视觉核心任务/🎯 第三阶段：视觉核心任务]]"
+stage_moc: "[[02-Knowledge/🧠 学习系统/05-计算机视觉/03-视觉核心任务/🎯 第三阶段：视觉核心任务]]"
 kind: concept
 source: "D2L Ch.14; CS231n A3"
 anki_deck: "05-计算机视觉::03-视觉核心任务"
@@ -19,9 +19,9 @@ tags: [学习,计算机视觉,目标检测,RCNN,YOLO]
 
 # 目标检测基础：R-CNN与YOLO
 
-> 所属模块：[[../🗺️ 计算机视觉学习路径|计算机视觉学习路径]]
+> 所属模块：[[02-Knowledge/🧠 学习系统/05-计算机视觉/🗺️ 计算机视觉学习路径|计算机视觉学习路径]]
 > 对应阶段：[[02-Knowledge/🧠 学习系统/05-计算机视觉/03-视觉核心任务/🎯 第三阶段：视觉核心任务|返回阶段页]]
-> 建议先看：[[卷积神经网络CNN]]、[[Softmax分类器]]
+> 建议先看：[[卷积神经网络CNN]]、[[02-Knowledge/🧠 学习系统/05-计算机视觉/02-深度学习内核/Softmax与SVM损失函数]]
 > 辅助教材：`《动手学深度学习》Ch.14`、`CS231n Assignment 3`
 
 ## 0. 先判断它值不值得深挖
@@ -375,26 +375,26 @@ if __name__ == "__main__":
 
 ### 上游依赖
 - [[卷积神经网络CNN]]：所有检测器的 backbone 特征提取基底。
-- [[Softmax分类器]]：检测分类子任务的标准输出层。
-- [[ResNet残差网络]]：Faster R-CNN 和 YOLOv3+ 最常用 backbone。
+- [[02-Knowledge/🧠 学习系统/05-计算机视觉/02-深度学习内核/Softmax与SVM损失函数]]：检测分类子任务的标准输出层。
+- [[02-Knowledge/🧠 学习系统/05-计算机视觉/02-深度学习内核/🎯 ResNet (残差网络)]]：Faster R-CNN 和 YOLOv3+ 最常用 backbone。
 - [[感受野]]：理解 Anchor 设计和大目标/小目标检测差异的理论基础。
 
 ### 下游延伸
-- [[FasterRCNN]]：RPN 机制、Anchor 设计、RoI Align 的深度专题。
-- [[YOLO目标检测]]：YOLOv1-v8 各版本演进、损失函数变体完整分析。
-- [[FCOS]]：Anchor-Free 检测器——去除 Anchor 先验的最新范式。
-- [[DETR]]：Transformer 检测器——用集合预测替代 NMS 的新思路。
+- 目标检测RCNN与YOLO：RPN 机制、Anchor 设计、RoI Align 的深度专题。
+- 目标检测RCNN与YOLO：YOLOv1-v8 各版本演进、损失函数变体完整分析。
+- 目标检测RCNN与YOLO：Anchor-Free 检测器——去除 Anchor 先验的最新范式。
+- 目标检测RCNN与YOLO：Transformer 检测器——用集合预测替代 NMS 的新思路。
 
 ### 横向关联
-- [[SSD]]：另一经典 One-Stage 检测器，多尺度特征图上做密集 Anchor 预测。
+- 目标检测RCNN与YOLO：另一经典 One-Stage 检测器，多尺度特征图上做密集 Anchor 预测。
 - [[FPN]]（特征金字塔网络）：多尺度特征融合，Faster R-CNN 和 YOLOv3+ 共用基础设施。
-- [[RetinaNet]]：用 Focal Loss 解决 One-Stage 正负样本极度不平衡，使 One-Stage 精度追平 Two-Stage。
-- [[MaskRCNN]]：Faster R-CNN + 分割分支，检测向实例分割的直接延伸。
+- 目标检测RCNN与YOLO：用 Focal Loss 解决 One-Stage 正负样本极度不平衡，使 One-Stage 精度追平 Two-Stage。
+- 目标检测RCNN与YOLO：Faster R-CNN + 分割分支，检测向实例分割的直接延伸。
 
 ### 工具链
 - [[IoU与NMS]]：交并比专题（GIoU、DIoU、CIoU 等改进变体）。
 - [[IoU与NMS]]：非极大值抑制专题（Soft-NMS、Matrix NMS 等）。
-- [[难例挖掘]]：在线难例挖掘 (OHEM) 与 Focal Loss 的联系。
+- 难例挖掘：在线难例挖掘 (OHEM) 与 Focal Loss 的联系。
 
 ### 应用场景
 自动驾驶感知、安防监控、医学影像病灶检测、零售商品识别、遥感目标定位。
@@ -459,10 +459,10 @@ if __name__ == "__main__":
 ## 13. 给 Obsidian 的归档建议
 
 - **适合文件夹**：`05-计算机视觉/03-视觉核心任务/`
-- **关联已有笔记**：[[RCNN]]、[[FastRCNN]]、[[FasterRCNN]]、[[YOLO目标检测]]、[[IoU与NMS]]、[[IoU与NMS]]
+- **关联已有笔记**：目标检测RCNN与YOLO、目标检测RCNN与YOLO、目标检测RCNN与YOLO、目标检测RCNN与YOLO、[[IoU与NMS]]、[[IoU与NMS]]
 - **建议标签**：`#学习` `#计算机视觉` `#目标检测` `#RCNN` `#YOLO`
-- **拆分建议**：此卡定位为"目标检测基础总览"，覆盖从问题定义到评估指标的完整入门链。已有独立深入卡（RCNN.md、FastRCNN.md、FasterRCNN.md、YOLO目标检测.md、IoU.md、NMS.md）可在本卡基础上做专题深挖。若需深入了解 Anchor-Free、DETR 等新范式，建新卡并设本卡为上游。
-- **双链优先**：上游 → [[卷积神经网络CNN]]、[[Softmax分类器]]；下游 → [[FasterRCNN]]、[[YOLO目标检测]]、[[FCOS]]；横向 → [[FPN]]、[[SSD]]、[[RetinaNet]]、[[IoU与NMS]]、[[IoU与NMS]]。
+- **拆分建议**：此卡定位为"目标检测基础总览"，覆盖从问题定义到评估指标的完整入门链。R-CNN 系列、YOLO、SSD、RetinaNet、Anchor-Free（FCOS/CenterNet）、DETR 等专题概念当前均在本卡内覆盖；若后续需要专题深挖，可拆出独立卡并设本卡为上游。
+- **双链优先**：上游 → [[卷积神经网络CNN]]、[[02-Knowledge/🧠 学习系统/05-计算机视觉/02-深度学习内核/Softmax与SVM损失函数]]；下游 → 目标检测RCNN与YOLO、目标检测RCNN与YOLO、目标检测RCNN与YOLO；横向 → [[FPN]]、目标检测RCNN与YOLO、目标检测RCNN与YOLO、[[IoU与NMS]]、[[IoU与NMS]]。
 
 ## 🃏 Anki 卡片
 
@@ -480,14 +480,6 @@ if __name__ == "__main__":
 - Two-Stage 和 One-Stage 的本质区别？::Two-Stage 先提议候选区再分类+回归（分步串行，精度优先）；One-Stage 直接在特征图上回归框和类别（一步到位，速度优先）。
 - YOLOv1 输出张量维度（$S=7, B=2, C=20$）？::$7 \times 7 \times (2 \times 5 + 20) = 7 \times 7 \times 30$，其中每个网格预测 2 个框（每框 5 个值）和 20 类概率。
 - Smooth L1 损失相比 L2 的优势？::对离群点梯度不爆炸——$|x|<1$ 时等价 L2（平滑），$|x|\ge 1$ 时梯度恒为 1（鲁棒），使训练更稳定。
-
----
-
-## 🧪 学完本节后可完成的作业
-
-- 可直接完成 [[03-Projects/课程作业/05-计算机视觉/课后作业/🎓 HW05 - Pascal VOC 最小目标检测工程包正式作业说明书|HW05]]
-- 可直接完成 [[03-Projects/课程作业/05-计算机视觉/阶段作业/05-计算机视觉-阶段作业-ResNet与YOLO目标检测|阶段作业：ResNet与YOLO]] L4 YOLO 检测头
-- 配合 [[03-Projects/课程作业/05-计算机视觉/课后习题/D2L-Ch14-目标检测习题册|D2L-Ch14 习题册]]
 
 ---
 ---

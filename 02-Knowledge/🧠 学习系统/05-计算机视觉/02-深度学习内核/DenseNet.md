@@ -20,7 +20,7 @@ related:
   - EfficientNet
   - ResNet
 flow: knowledge
-stage_moc: "[[02-深度学习内核/🧠 第二阶段：深度学习内核]]"
+stage_moc: "[[02-Knowledge/🧠 学习系统/05-计算机视觉/02-深度学习内核/🧠 第二阶段：深度学习内核]]"
 kind: concept
 source: "D2L Ch.8; Huang et al. 2017"
 anki_deck: "05-计算机视觉::02-深度学习内核"
@@ -38,9 +38,9 @@ tags:
 
 # DenseNet（稠密卷积网络）
 
-> 所属路径：[[../🗺️ 计算机视觉学习路径|计算机视觉学习路径]]
+> 所属路径：[[02-Knowledge/🧠 学习系统/05-计算机视觉/🗺️ 计算机视觉学习路径|计算机视觉学习路径]]
 > 所属阶段：[[🧠 第二阶段：深度学习内核|🧠 第二阶段：深度学习内核（模型本质）]]
-> 教材入口：[[../📚 教材挂载索引|教材挂载索引]]
+> 教材入口：[[02-Knowledge/🧠 学习系统/05-计算机视觉/📚 教材挂载索引|教材挂载索引]]
 > 核心源：D2L Ch.8; Huang et al. "Densely Connected Convolutional Networks" (CVPR 2017 Best Paper)
 
 ---
@@ -424,16 +424,16 @@ Dense Block (6 层, k=32) 参数量: 251,904
 - **[[02-Knowledge/🧠 学习系统/05-计算机视觉/02-深度学习内核/🎯 ResNet (残差网络)|ResNet]]**：DenseNet 的设计出发点——"加法好，但拼接更好；一跳好，但全跳更好"。
 - **[[02-Knowledge/🧠 学习系统/05-计算机视觉/02-深度学习内核/卷积神经网络CNN|CNN]]**：理解卷积层参数量计算和 $1 \times 1$ 卷积的跨通道融合。
 - **[[02-Knowledge/🧠 学习系统/05-计算机视觉/02-深度学习内核/批归一化BatchNorm|BatchNorm]]**：Pre-activation 设计中 BN 居首，稠密连接对归一化的质量更敏感。
-- **[[02-Knowledge/🧠 学习系统/05-计算机视觉/02-深度学习内核/GoogLeNet/Inception|GoogLeNet]]**：Inception 中分支拼接和 $1 \times 1$ 降维是 DenseNet 的先声。
+- **[[02-Knowledge/🧠 学习系统/05-计算机视觉/02-深度学习内核/GoogLeNet|GoogLeNet]]**：Inception 中分支拼接和 $1 \times 1$ 降维是 DenseNet 的先声。
 
 ### 下游延伸
 - **CondenseNet**：2018 年黄高团队改进——在训练阶段学习"哪些连接可以剪掉"，测试时稀疏化稠密连接以降低显存；
-- **[[02-Knowledge/🧠 学习系统/05-计算机视觉/04-前沿架构探索/CSPNet|CSPNet]]**：跨阶段部分连接（Cross Stage Partial），YOLOv4/v5 骨干，核心思想是把 Dense Block 的输入一分为二——一半走稠密连接、一半走直通——大幅降低显存；
+- **CSPNet**：跨阶段部分连接（Cross Stage Partial），YOLOv4/v5 骨干，核心思想是把 Dense Block 的输入一分为二——一半走稠密连接、一半走直通——大幅降低显存；
 - **FC-DenseNet (Tiramisu)**：将 Dense Block 嵌入 U-Net 的编码器-解码器结构，实现医学图像像素级分割。
 
 ### 横向关联
-- **[[02-Knowledge/🧠 学习系统/05-计算机视觉/02-深度学习内核/EfficientNet|EfficientNet]]** ↔ DenseNet：EfficientNet 用 NAS 搜索最优宽度/深度/分辨率比例，而 DenseNet 用增长率 $k$ 作为特征复用效率的手工设计。
-- **[[02-Knowledge/🧠 学习系统/05-计算机视觉/02-深度学习内核/MobileNet|MobileNet]]** ↔ DenseNet：MobileNet 通过深度可分离卷积追求极致轻量，DenseNet 通过稠密连接追求极致参数效率——"轻"与"效"的不同路径，同归殊途。
+- **EfficientNet** ↔ DenseNet：EfficientNet 用 NAS 搜索最优宽度/深度/分辨率比例，而 DenseNet 用增长率 $k$ 作为特征复用效率的手工设计。
+- **MobileNet** ↔ DenseNet：MobileNet 通过深度可分离卷积追求极致轻量，DenseNet 通过稠密连接追求极致参数效率——"轻"与"效"的不同路径，同归殊途。
 - **[[02-Knowledge/🧠 学习系统/05-计算机视觉/04-前沿架构探索/Transformer与自注意力|Transformer]]** ↔ DenseNet：自注意力中的"每个 token 都能 attend 到所有 token"与 DenseNet 中"每层能看到所有前层"有异曲同工之妙——两者都体现了"全连接信息访问"的思想，只是一个在序列维度、一个在深度维度。
 
 ---
@@ -540,17 +540,11 @@ Dense Block (6 层, k=32) 参数量: 251,904
   - [[02-Knowledge/🧠 学习系统/05-计算机视觉/02-深度学习内核/🎯 ResNet (残差网络)|ResNet]]
   - [[02-Knowledge/🧠 学习系统/05-计算机视觉/02-深度学习内核/卷积神经网络CNN|CNN]]
   - [[02-Knowledge/🧠 学习系统/05-计算机视觉/02-深度学习内核/批归一化BatchNorm|BatchNorm]]
-  - [[02-Knowledge/🧠 学习系统/05-计算机视觉/02-深度学习内核/MobileNet|MobileNet]]
-  - [[02-Knowledge/🧠 学习系统/05-计算机视觉/02-深度学习内核/EfficientNet|EfficientNet]]
+  - MobileNet
+  - EfficientNet
   - [[02-Knowledge/🧠 学习系统/05-计算机视觉/04-前沿架构探索/Transformer与自注意力|Transformer]]
 - **建议标签**：`#学习` `#深度学习` `#计算机视觉` `#DenseNet` `#稠密连接` `#特征复用` `#参数效率`
 - **复习节奏**：首次学习后 1/3/7/14 天间隔复习，配合 Section 10 闭卷复现任务自查。
-
----
-
-## 🧪 学完本节后可完成的作业
-
-- 配合 [[03-Projects/课程作业/05-计算机视觉/课后习题/D2L-Ch8-现代CNN习题册|D2L-Ch8 习题册]]
 
 ---
 ---
