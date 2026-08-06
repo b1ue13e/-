@@ -19,6 +19,7 @@ related:
   - Diffusion
   - 生成模型
 flow: knowledge
+upstream: ["[[02-Knowledge/🧠 学习系统/05-计算机视觉/02-深度学习内核/反向传播与计算图]]", "[[02-Knowledge/🧠 学习系统/14-概率图模型/🎯 变分推断 (Variational Inference & ELBO)]]"]
 stage_moc: "[[02-Knowledge/🧠 学习系统/05-计算机视觉/04-前沿架构探索/🚀 第四阶段：前沿架构探索]]"
 kind: concept
 source: "D2L Ch.17; CS231n A3"

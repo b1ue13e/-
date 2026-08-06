@@ -9,6 +9,7 @@ concept: ["目标检测","R-CNN","YOLO","IoU","NMS","mAP"]
 prerequisites: ["卷积神经网络CNN","Softmax分类器"]
 related: ["FPN","SSD","FasterRCNN","语义分割"]
 flow: knowledge
+upstream: ["[[02-Knowledge/🧠 学习系统/05-计算机视觉/02-深度学习内核/卷积神经网络CNN]]", "[[02-Knowledge/🧠 学习系统/05-计算机视觉/02-深度学习内核/Softmax与SVM损失函数]]"]
 stage_moc: "[[02-Knowledge/🧠 学习系统/05-计算机视觉/03-视觉核心任务/🎯 第三阶段：视觉核心任务]]"
 kind: concept
 source: "D2L Ch.14; CS231n A3"

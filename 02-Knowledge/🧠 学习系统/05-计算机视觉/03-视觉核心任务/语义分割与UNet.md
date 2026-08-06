@@ -19,6 +19,7 @@ related:
   - "MaskRCNN"
   - "全景分割"
 flow: knowledge
+upstream: ["[[02-Knowledge/🧠 学习系统/05-计算机视觉/02-深度学习内核/卷积神经网络CNN]]", "[[02-Knowledge/🧠 学习系统/05-计算机视觉/03-视觉核心任务/目标检测RCNN与YOLO]]"]
 stage_moc: "[[02-Knowledge/🧠 学习系统/05-计算机视觉/03-视觉核心任务/🎯 第三阶段：视觉核心任务]]"
 kind: concept
 source: "D2L Ch.14.8-10; CS231n A3"

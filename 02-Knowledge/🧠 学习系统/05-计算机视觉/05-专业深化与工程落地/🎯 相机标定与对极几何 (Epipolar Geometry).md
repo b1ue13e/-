@@ -19,6 +19,7 @@ related:
   - 立体视觉
   - SLAM
 flow: knowledge
+upstream: ["[[02-Knowledge/🧠 学习系统/05-计算机视觉/01-底层基石/线性代数基础CV]]", "[[02-Knowledge/🧠 学习系统/05-计算机视觉/01-底层基石/几何变换CV]]"]
 stage_moc: "[[02-Knowledge/🧠 学习系统/05-计算机视觉/05-专业深化与工程落地/🏭 第五阶段：专业深化与工程落地]]"
 kind: concept
 source: "Szeliski Ch.6; MVG Ch.6-7"

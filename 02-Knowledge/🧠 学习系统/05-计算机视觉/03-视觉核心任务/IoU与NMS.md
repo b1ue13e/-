@@ -9,6 +9,7 @@ concept: ["IoU", "NMS", "目标检测", "边界框", "后处理"]
 prerequisites: ["目标检测RCNN与YOLO"]
 related: ["FPN", "FocalLoss", "FasterRCNN"]
 flow: knowledge
+upstream: ["[[02-Knowledge/🧠 学习系统/05-计算机视觉/03-视觉核心任务/目标检测RCNN与YOLO]]"]
 stage_moc: "[[02-Knowledge/🧠 学习系统/05-计算机视觉/03-视觉核心任务/🎯 第三阶段：视觉核心任务]]"
 kind: concept
 source: "CS231n Lecture 11; D2L Ch.14"

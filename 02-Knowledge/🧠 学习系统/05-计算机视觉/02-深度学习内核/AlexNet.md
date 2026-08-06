@@ -19,6 +19,7 @@ related:
   - LeNet
   - ResNet
 flow: knowledge
+upstream: ["[[02-Knowledge/🧠 学习系统/05-计算机视觉/02-深度学习内核/卷积神经网络CNN]]", "[[02-Knowledge/🧠 学习系统/05-计算机视觉/02-深度学习内核/激活函数详解]]"]
 stage_moc: "[[02-Knowledge/🧠 学习系统/05-计算机视觉/02-深度学习内核/🧠 第二阶段：深度学习内核]]"
 kind: concept
 source: "D2L Ch.8; Krizhevsky et al. 2012"

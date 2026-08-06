@@ -9,6 +9,7 @@ concept: ["自监督学习", "对比学习", "SimCLR", "CLIP", "多模态"]
 prerequisites: ["Transformer", "迁移学习", "CNN"]
 related: ["MoCo", "BYOL", "MAE", "生成模型"]
 flow: knowledge
+upstream: ["[[02-Knowledge/🧠 学习系统/05-计算机视觉/02-深度学习内核/卷积神经网络CNN]]", "[[02-Knowledge/🧠 学习系统/05-计算机视觉/02-深度学习内核/🎯 ResNet (残差网络)]]"]
 stage_moc: "[[02-Knowledge/🧠 学习系统/05-计算机视觉/04-前沿架构探索/🚀 第四阶段：前沿架构探索]]"
 kind: concept
 source: "CS231n A3"

@@ -14,6 +14,7 @@ related:
   - "批归一化BatchNorm"
   - "权重正则化"
 flow: knowledge
+upstream: ["[[02-Knowledge/🧠 学习系统/05-计算机视觉/01-底层基石/梯度下降CV]]", "[[02-Knowledge/🧠 学习系统/05-计算机视觉/02-深度学习内核/反向传播与计算图]]"]
 stage_moc: "[[02-Knowledge/🧠 学习系统/05-计算机视觉/02-深度学习内核/🧠 第二阶段：深度学习内核]]"
 kind: concept
 source: "D2L Ch.12; CS231n L3"

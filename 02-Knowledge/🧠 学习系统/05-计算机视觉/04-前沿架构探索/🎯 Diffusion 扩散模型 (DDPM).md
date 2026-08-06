@@ -20,6 +20,7 @@ related:
   - GAN
   - ControlNet
 flow: knowledge
+upstream: ["[[02-Knowledge/🧠 学习系统/05-计算机视觉/04-前沿架构探索/🎯 VAE 变分自编码器 (Variational Autoencoder)]]", "[[02-Knowledge/🧠 学习系统/05-计算机视觉/04-前沿架构探索/生成模型GAN与Diffusion]]"]
 stage_moc: "[[02-Knowledge/🧠 学习系统/05-计算机视觉/04-前沿架构探索/🚀 第四阶段：前沿架构探索]]"
 kind: concept
 source: "论文+讲义; CS231n A3"

@@ -20,6 +20,7 @@ related:
   - BYOL
   - 自监督学习
 flow: knowledge
+upstream: ["[[02-Knowledge/🧠 学习系统/05-计算机视觉/02-深度学习内核/🎯 ResNet (残差网络)]]", "[[02-Knowledge/🧠 学习系统/05-计算机视觉/02-深度学习内核/Softmax与SVM损失函数]]"]
 stage_moc: "[[02-Knowledge/🧠 学习系统/05-计算机视觉/04-前沿架构探索/🚀 第四阶段：前沿架构探索]]"
 kind: concept
 source: "CS231n A3"

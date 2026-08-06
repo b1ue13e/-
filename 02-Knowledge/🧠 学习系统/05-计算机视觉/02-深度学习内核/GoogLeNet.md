@@ -20,6 +20,7 @@ related:
   - DenseNet
   - 参数效率
 flow: knowledge
+upstream: ["[[02-Knowledge/🧠 学习系统/05-计算机视觉/02-深度学习内核/卷积神经网络CNN]]", "[[02-Knowledge/🧠 学习系统/05-计算机视觉/02-深度学习内核/VGGNet]]", "[[02-Knowledge/🧠 学习系统/05-计算机视觉/02-深度学习内核/AlexNet]]"]
 stage_moc: "[[02-Knowledge/🧠 学习系统/05-计算机视觉/02-深度学习内核/🧠 第二阶段：深度学习内核]]"
 kind: concept
 source: "D2L Ch.8; Szegedy et al. 2015"

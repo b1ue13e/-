@@ -9,6 +9,7 @@ concept: ["Transformer","自注意力","多头注意力","位置编码","ViT"]
 prerequisites: ["反向传播","Softmax","矩阵乘法"]
 related: ["ViT","SwinTransformer","CLIP","CNN"]
 flow: knowledge
+upstream: ["[[02-Knowledge/🧠 学习系统/05-计算机视觉/02-深度学习内核/Softmax与SVM损失函数]]", "[[02-Knowledge/🧠 学习系统/05-计算机视觉/02-深度学习内核/批归一化BatchNorm]]"]
 stage_moc: "[[02-Knowledge/🧠 学习系统/05-计算机视觉/04-前沿架构探索/🚀 第四阶段：前沿架构探索]]"
 kind: concept
 source: "CS231n A3; D2L Ch.11"

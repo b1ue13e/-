@@ -18,6 +18,7 @@ related:
   - "交叉熵损失"
   - "梯度下降优化"
 flow: knowledge
+upstream: ["[[02-Knowledge/🧠 学习系统/05-计算机视觉/02-深度学习内核/kNN与线性分类器]]", "[[02-Knowledge/🧠 学习系统/05-计算机视觉/02-深度学习内核/前向传播]]", "[[02-Knowledge/🧠 学习系统/05-计算机视觉/02-深度学习内核/反向传播与计算图]]"]
 stage_moc: "[[02-Knowledge/🧠 学习系统/05-计算机视觉/02-深度学习内核/🧠 第二阶段：深度学习内核]]"
 kind: concept
 source: "CS231n A1; D2L Ch.4"

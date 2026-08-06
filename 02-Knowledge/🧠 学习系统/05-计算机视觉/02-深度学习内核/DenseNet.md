@@ -20,6 +20,7 @@ related:
   - EfficientNet
   - ResNet
 flow: knowledge
+upstream: ["[[02-Knowledge/🧠 学习系统/05-计算机视觉/02-深度学习内核/🎯 ResNet (残差网络)]]", "[[02-Knowledge/🧠 学习系统/05-计算机视觉/02-深度学习内核/卷积神经网络CNN]]"]
 stage_moc: "[[02-Knowledge/🧠 学习系统/05-计算机视觉/02-深度学习内核/🧠 第二阶段：深度学习内核]]"
 kind: concept
 source: "D2L Ch.8; Huang et al. 2017"

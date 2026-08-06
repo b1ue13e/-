@@ -22,6 +22,7 @@ related:
   - "池化层"
   - "全连接网络"
 flow: knowledge
+upstream: ["[[02-Knowledge/🧠 学习系统/05-计算机视觉/01-底层基石/图像滤波]]", "[[02-Knowledge/🧠 学习系统/05-计算机视觉/02-深度学习内核/感知机]]", "[[02-Knowledge/🧠 学习系统/05-计算机视觉/02-深度学习内核/前向传播]]"]
 stage_moc: "[[02-Knowledge/🧠 学习系统/05-计算机视觉/02-深度学习内核/🧠 第二阶段：深度学习内核]]"
 kind: concept
 source: "CS231n A2; D2L Ch.7"

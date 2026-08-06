@@ -19,6 +19,7 @@ related:
   - "相机标定"
   - "图像滤波"
 flow: knowledge
+upstream: ["[[02-Knowledge/🧠 学习系统/05-计算机视觉/01-底层基石/线性代数基础CV]]", "[[02-Knowledge/🧠 学习系统/05-计算机视觉/01-底层基石/图像表示]]"]
 stage_moc: "[[02-Knowledge/🧠 学习系统/05-计算机视觉/01-底层基石/🏗️ 第一阶段：底层基石]]"
 kind: concept
 source: "Szeliski Ch.6-7"

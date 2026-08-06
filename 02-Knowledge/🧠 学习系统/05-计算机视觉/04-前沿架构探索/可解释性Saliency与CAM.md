@@ -9,6 +9,7 @@ concept: ["可解释性","Saliency Map","CAM","Grad-CAM","模型解释"]
 prerequisites: ["卷积神经网络CNN","反向传播"]
 related: ["Transformer","迁移学习"]
 flow: knowledge
+upstream: ["[[02-Knowledge/🧠 学习系统/05-计算机视觉/02-深度学习内核/卷积神经网络CNN]]", "[[02-Knowledge/🧠 学习系统/05-计算机视觉/02-深度学习内核/反向传播与计算图]]", "[[02-Knowledge/🧠 学习系统/05-计算机视觉/02-深度学习内核/Softmax与SVM损失函数]]"]
 stage_moc: "[[02-Knowledge/🧠 学习系统/05-计算机视觉/04-前沿架构探索/🚀 第四阶段：前沿架构探索]]"
 kind: concept
 source: "CS231n A3讲义"

@@ -19,6 +19,7 @@ related:
   - 立体视觉
   - 点云处理
 flow: knowledge
+upstream: ["[[02-Knowledge/🧠 学习系统/05-计算机视觉/05-专业深化与工程落地/🎯 相机标定与对极几何 (Epipolar Geometry)]]", "[[02-Knowledge/🧠 学习系统/05-计算机视觉/02-深度学习内核/MLP]]"]
 stage_moc: "[[02-Knowledge/🧠 学习系统/05-计算机视觉/05-专业深化与工程落地/🏭 第五阶段：专业深化与工程落地]]"
 kind: concept
 source: "论文补充; CS231n A3"

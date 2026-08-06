@@ -21,6 +21,7 @@ related:
   - Transformer注意力
   - MobileNet
 flow: knowledge
+upstream: ["[[02-Knowledge/🧠 学习系统/05-计算机视觉/02-深度学习内核/VGGNet]]", "[[02-Knowledge/🧠 学习系统/05-计算机视觉/02-深度学习内核/梯度流问题]]"]
 stage_moc: "[[02-Knowledge/🧠 学习系统/05-计算机视觉/02-深度学习内核/🧠 第二阶段：深度学习内核]]"
 kind: concept
 source: "D2L Ch.8; CS231n A2"

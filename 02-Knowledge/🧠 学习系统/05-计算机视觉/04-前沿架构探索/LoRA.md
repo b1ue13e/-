@@ -10,6 +10,7 @@ concept: ["LoRA", "低秩适配", "参数高效微调", "PEFT"]
 prerequisites: ["Transformer与自注意力", "迁移学习与微调"]
 related: ["ControlNet", "StableDiffusion", "模型量化"]
 flow: knowledge
+upstream: ["[[02-Knowledge/🧠 学习系统/05-计算机视觉/04-前沿架构探索/Transformer与自注意力]]", "[[02-Knowledge/🧠 学习系统/05-计算机视觉/03-视觉核心任务/迁移学习与微调]]"]
 stage_moc: "[[02-Knowledge/🧠 学习系统/05-计算机视觉/04-前沿架构探索/🚀 第四阶段：前沿架构探索]]"
 kind: concept
 source: "Hu et al. 2021; 论文补充"

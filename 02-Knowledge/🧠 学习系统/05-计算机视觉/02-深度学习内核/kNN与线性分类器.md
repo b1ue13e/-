@@ -22,6 +22,7 @@ related:
   - "Softmax与SVM损失函数"
   - "图像分类任务与数据管线"
 flow: knowledge
+upstream: ["[[02-Knowledge/🧠 学习系统/05-计算机视觉/02-深度学习内核/前向传播]]", "[[02-Knowledge/🧠 学习系统/05-计算机视觉/01-底层基石/线性代数基础CV]]"]
 stage_moc: "[[02-Knowledge/🧠 学习系统/05-计算机视觉/02-深度学习内核/🧠 第二阶段：深度学习内核]]"
 kind: concept
 source: "CS231n A1; D2L Ch.4"
