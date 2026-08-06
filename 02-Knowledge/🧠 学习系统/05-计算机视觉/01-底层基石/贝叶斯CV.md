@@ -120,6 +120,12 @@ $$\hat{\theta}_{\text{MAP}} = \arg\max_\theta [\log P(D|\theta) + \log P(\theta)
 - 理解 [[02-Knowledge/🧠 学习系统/05-计算机视觉/02-深度学习内核/Softmax与SVM损失函数|Softmax]] 中的概率解释（Softmax 输出 = 后验概率 $P(y|\mathbf{x})$）
 ---
 
+## 学完后可以完成
+
+- 完成卡内自测题与闭卷复现（贝叶斯推断）
+
+> 该卡无直接课后/阶段作业：以卡内自测题与闭卷复现作为形成性验收；如需综合实践，可挂靠 HW06 开放课程项目或 CAP01。
+
 ## 🔗 知识图谱
 
 ```dataview

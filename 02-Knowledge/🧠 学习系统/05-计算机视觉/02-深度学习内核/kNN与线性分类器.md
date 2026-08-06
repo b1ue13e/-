@@ -610,6 +610,11 @@ plt.show()
 ---
 ---
 
+## 学完后可以完成
+
+- [[03-Projects/05-计算机视觉/课后作业/05-计算机视觉-课后作业-01-kNN与Softmax线性分类|HW01]]：实现 kNN 距离矩阵与线性分类基线
+
+> 作业入口由 frontmatter `requires` 维护（唯一事实源），下方 Dataview 反向派生当前卡可完成的全部作业。
 ## 🔗 知识图谱
 
 ```dataview

@@ -222,6 +222,11 @@ def soft_nms(boxes, scores, iou_threshold=0.5, sigma=0.5, method='gaussian'):
 
 ---
 
+## 学完后可以完成
+
+- [[03-Projects/05-计算机视觉/阶段作业/05-计算机视觉-阶段作业-03-目标检测PascalVOC|HW05]]：实现 IoU 与 NMS 并评测
+
+> 作业入口由 frontmatter `requires` 维护（唯一事实源），下方 Dataview 反向派生当前卡可完成的全部作业。
 ## 🔗 知识图谱
 
 ```dataview

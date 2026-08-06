@@ -158,3 +158,9 @@ SORT assignment_level ASC, file.name ASC
 
 - 与 [[02-Knowledge/🧠 学习系统/05-计算机视觉/03-视觉核心任务/目标检测RCNN与YOLO|目标检测总卡]] 并列：它是"Transformer 路线"的代表。
 - 与 [[02-Knowledge/🧠 学习系统/05-计算机视觉/04-前沿架构探索/Transformer与自注意力|Transformer 卡]] 关联：encoder-decoder 结构详解在那里。
+
+## 学完后可以完成
+
+- 可作为 HW06 开放项目『Transformer 检测器』选题（或 HW05 进阶扩展）
+
+> 该卡无直接课后/阶段作业：以卡内自测题与闭卷复现作为形成性验收；如需综合实践，可挂靠 HW06 开放课程项目或 CAP01。

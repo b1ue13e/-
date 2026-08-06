@@ -131,6 +131,12 @@ print(f"Q_nonconvex is convex: {is_convex_quadratic(Q_nonconvex)}")  # False
 - 配合 [[02-Knowledge/🧠 学习系统/05-计算机视觉/02-深度学习内核/优化器SGD到Adam|优化器 SGD→Adam]] 理解凸 vs 非凸对优化器选择的影响
 ---
 
+## 学完后可以完成
+
+- 完成卡内自测题与闭卷复现（凸函数判断）
+
+> 该卡无直接课后/阶段作业：以卡内自测题与闭卷复现作为形成性验收；如需综合实践，可挂靠 HW06 开放课程项目或 CAP01。
+
 ## 🔗 知识图谱
 
 ```dataview

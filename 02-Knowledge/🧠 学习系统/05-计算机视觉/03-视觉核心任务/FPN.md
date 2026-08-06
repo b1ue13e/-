@@ -119,6 +119,11 @@ $$P_\ell = \text{Conv}_{3\times3}(\text{Conv}_{1\times1}(C_\ell) + \text{Upsampl
 ---
 ---
 
+## 学完后可以完成
+
+- [[03-Projects/05-计算机视觉/阶段作业/05-计算机视觉-阶段作业-03-目标检测PascalVOC|HW05]]：理解多尺度特征融合在检测中的作用
+
+> 作业入口由 frontmatter `requires` 维护（唯一事实源），下方 Dataview 反向派生当前卡可完成的全部作业。
 ## 🔗 知识图谱
 
 ```dataview

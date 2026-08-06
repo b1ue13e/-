@@ -158,3 +158,9 @@ SORT assignment_level ASC, file.name ASC
 
 - 与 [[02-Knowledge/🧠 学习系统/05-计算机视觉/04-前沿架构探索/🎯 SimCLR 与对比学习 (Contrastive Learning)|SimCLR 卡]] 对比：同源损失、不同模态。
 - 与 [[02-Knowledge/🧠 学习系统/05-计算机视觉/04-前沿架构探索/生成模型GAN与Diffusion|生成模型卡]] 关联：Stable Diffusion 的 text encoder 是 CLIP。
+
+## 学完后可以完成
+
+- 可作为 HW06 开放项目『CLIP 零样本分类/检索』选题
+
+> 该卡无直接课后/阶段作业：以卡内自测题与闭卷复现作为形成性验收；如需综合实践，可挂靠 HW06 开放课程项目或 CAP01。
