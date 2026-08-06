@@ -1,0 +1,19 @@
+{
+  "id": "HW02",
+  "slug": "hw02_two_layer_backprop",
+  "title": "两层网络与反向传播正确性验证",
+  "stage": "第二阶段：训练正确性与调试",
+  "generated_at": "2026-08-01",
+  "real_data_dir": "F:\\-\\03-Projects\\data\\computer_vision\\hw02_two_layer_backprop",
+  "real_files": [
+    "cifar10_subset.train.npz",
+    "cifar10_subset.val.npz",
+    "network_config.json"
+  ],
+  "smoke_files": [
+    "tiny_batch.smoke.csv",
+    "overfit_batch.smoke.csv"
+  ],
+  "baseline": "两层全连接网络 + 梯度检查",
+  "next_step": "把 smoke batch 换成真实 CIFAR-10 小批量，再补完整网络训练与日志记录。"
+}

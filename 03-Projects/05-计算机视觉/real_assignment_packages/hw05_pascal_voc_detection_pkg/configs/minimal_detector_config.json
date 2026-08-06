@@ -1,0 +1,8 @@
+{
+  "dataset": "pascal-voc-placeholder",
+  "classes": ["cat", "dog", "person"],
+  "metric": "IoU@0.5",
+  "score_threshold": 0.5,
+  "nms_threshold": 0.5,
+  "notes": "Replace this smoke config with a real VOC subset config before formal training."
+}

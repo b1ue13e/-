@@ -1,0 +1,20 @@
+{
+  "id": "HW05",
+  "slug": "hw05_pascal_voc_detection_pkg",
+  "title": "Pascal VOC 最小目标检测工程包",
+  "stage": "第五阶段：检测工程闭环",
+  "generated_at": "2026-08-01",
+  "real_data_dir": "F:\\-\\03-Projects\\data\\computer_vision\\hw05_pascal_voc_detection_pkg",
+  "real_files": [
+    "voc_annotations.train.json",
+    "voc_annotations.val.json",
+    "detection_config.json",
+    "label_map.json"
+  ],
+  "smoke_files": [
+    "train.smoke.csv",
+    "val.smoke.csv"
+  ],
+  "baseline": "最小检测器 + IoU@0.5 评测",
+  "next_step": "把 smoke 标注替换成真实 Pascal VOC 子集，再补正式训练配置、日志导出与可视化产物。"
+}
