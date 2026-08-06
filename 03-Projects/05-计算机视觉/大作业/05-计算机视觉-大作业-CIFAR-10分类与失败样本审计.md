@@ -1,6 +1,7 @@
 ---
 title: "CIFAR-10分类与失败样本审计"
 type: project
+project_type: homework
 topic: "CIFAR-10分类与失败样本审计"
 course: "05-计算机视觉"
 assignment_id: "05-计算机视觉-CAP-01"
@@ -14,7 +15,6 @@ status: planned
 progress: 0%
 flow: project
 kind: project
-project_type: homework
 asset_eligibility: eligible
 eligibility_audited: 2026-07-28
 difficulty_tier: T3

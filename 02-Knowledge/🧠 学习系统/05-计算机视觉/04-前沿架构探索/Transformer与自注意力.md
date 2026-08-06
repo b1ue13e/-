@@ -6,7 +6,7 @@ created: 2026-08-05
 status: ongoing
 difficulty: advanced
 concept: ["Transformer","自注意力","多头注意力","位置编码","ViT"]
-prerequisites: ["反向传播","Softmax","矩阵乘法"]
+prerequisites: ["反向传播与计算图", "Softmax与SVM损失函数", "线性代数基础CV"]
 related: ["ViT","SwinTransformer","CLIP","CNN"]
 flow: knowledge
 upstream: ["[[02-Knowledge/🧠 学习系统/05-计算机视觉/02-深度学习内核/Softmax与SVM损失函数]]", "[[02-Knowledge/🧠 学习系统/05-计算机视觉/02-深度学习内核/批归一化BatchNorm]]"]
