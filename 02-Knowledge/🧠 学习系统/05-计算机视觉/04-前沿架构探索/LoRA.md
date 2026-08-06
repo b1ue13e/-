@@ -10,8 +10,8 @@ concept: ["LoRA", "低秩适配", "参数高效微调", "PEFT"]
 prerequisites: ["Transformer与自注意力", "迁移学习与微调"]
 related: ["ControlNet", "StableDiffusion", "模型量化"]
 flow: knowledge
-upstream: ["[[02-Knowledge/🧠 学习系统/05-计算机视觉/04-前沿架构探索/Transformer与自注意力]]", "[[02-Knowledge/🧠 学习系统/05-计算机视觉/03-视觉核心任务/迁移学习与微调]]"]
-stage_moc: "[[02-Knowledge/🧠 学习系统/05-计算机视觉/04-前沿架构探索/🚀 第四阶段：前沿架构探索]]"
+upstream: ["[[Transformer与自注意力]]", "[[迁移学习与微调]]"]
+stage_moc: "[[🚀 第四阶段：前沿架构探索]]"
 kind: concept
 source: "Hu et al. 2021; 论文补充"
 anki_deck: "05-计算机视觉::04-前沿架构探索"
@@ -20,9 +20,9 @@ tags: [学习, 计算机视觉, LoRA, 微调, PEFT]
 ---
 # LoRA 低秩适配 (Low-Rank Adaptation)
 
-> 所属模块：[[02-Knowledge/🧠 学习系统/05-计算机视觉/🗺️ 计算机视觉学习路径|计算机视觉学习路径]]
+> 所属模块：[[🗺️ 计算机视觉学习路径|计算机视觉学习路径]]
 > 主教材：Hu et al. 2021 "LoRA: Low-Rank Adaptation of Large Language Models"
-> 对应阶段：[[02-Knowledge/🧠 学习系统/05-计算机视觉/04-前沿架构探索/🚀 第四阶段：前沿架构探索|返回阶段页]]
+> 对应阶段：[[🚀 第四阶段：前沿架构探索|返回阶段页]]
 > 建议先看：[[Transformer与自注意力]]、[[迁移学习与微调]]
 > 辅助教材：`Hands-on Machine Learning`
 

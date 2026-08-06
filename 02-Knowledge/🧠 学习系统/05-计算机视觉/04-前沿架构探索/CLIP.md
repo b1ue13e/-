@@ -8,10 +8,10 @@ status: ongoing
 difficulty: advanced
 concept: ["CLIP", "对比学习", "多模态", "零样本分类", "图文对齐"]
 prerequisites: ["Transformer与自注意力", "SimCLR与对比学习", "Softmax与SVM损失函数"]
-upstream: ["[[02-Knowledge/🧠 学习系统/05-计算机视觉/04-前沿架构探索/Transformer与自注意力]]", "[[02-Knowledge/🧠 学习系统/05-计算机视觉/04-前沿架构探索/🎯 SimCLR 与对比学习 (Contrastive Learning)]]", "[[02-Knowledge/🧠 学习系统/05-计算机视觉/02-深度学习内核/Softmax与SVM损失函数]]"]
+upstream: ["[[Transformer与自注意力]]", "[[🎯 SimCLR 与对比学习 (Contrastive Learning)]]", "[[Softmax与SVM损失函数]]"]
 related: ["ViT", "DeiT", "生成模型GAN与Diffusion", "可解释性Saliency与CAM"]
 flow: knowledge
-stage_moc: "[[02-Knowledge/🧠 学习系统/05-计算机视觉/04-前沿架构探索/🚀 第四阶段：前沿架构探索]]"
+stage_moc: "[[🚀 第四阶段：前沿架构探索]]"
 kind: concept
 source: "Radford et al. 2021, Learning Transferable Visual Models From Natural Language Supervision; arXiv:2103.00020; OpenAI CLIP"
 tags: [学习, 计算机视觉, 多模态, CLIP, 零样本]
@@ -42,9 +42,9 @@ tags: [学习, 计算机视觉, 多模态, CLIP, 零样本]
 
 ## 3. 学它之前需要哪些前置知识？
 
-1. **[[02-Knowledge/🧠 学习系统/05-计算机视觉/04-前沿架构探索/Transformer与自注意力|Transformer / 自注意力]]**：CLIP 的 text encoder 是 Transformer，image encoder 可以是 ResNet 或 ViT。
-2. **[[02-Knowledge/🧠 学习系统/05-计算机视觉/04-前沿架构探索/🎯 SimCLR 与对比学习 (Contrastive Learning)|对比学习]]**：InfoNCE 损失、正负样本构造——CLIP 把 SimCLR 的"图像-增强图像"对比扩展为"图像-文本"对比。
-3. **[[02-Knowledge/🧠 学习系统/05-计算机视觉/02-深度学习内核/Softmax与SVM损失函数|Softmax 与交叉熵]]**：对比损失的 softmax 归一化与温度缩放。
+1. **[[Transformer与自注意力|Transformer / 自注意力]]**：CLIP 的 text encoder 是 Transformer，image encoder 可以是 ResNet 或 ViT。
+2. **[[🎯 SimCLR 与对比学习 (Contrastive Learning)|对比学习]]**：InfoNCE 损失、正负样本构造——CLIP 把 SimCLR 的"图像-增强图像"对比扩展为"图像-文本"对比。
+3. **[[Softmax与SVM损失函数|Softmax 与交叉熵]]**：对比损失的 softmax 归一化与温度缩放。
 
 ## 4. 用直觉语言解释它
 
@@ -115,9 +115,9 @@ batch $N=4$，图像 $I_1..I_4$、文本 $T_1..T_4$ 配对。对 $I_1$：
 
 ## 9. 相关知识点与 Obsidian 双链建议
 
-- 上游：[[02-Knowledge/🧠 学习系统/05-计算机视觉/04-前沿架构探索/Transformer与自注意力|Transformer与自注意力]]、[[02-Knowledge/🧠 学习系统/05-计算机视觉/04-前沿架构探索/🎯 SimCLR 与对比学习 (Contrastive Learning)|SimCLR 对比学习]]
-- 平行：[[02-Knowledge/🧠 学习系统/05-计算机视觉/04-前沿架构探索/自监督学习SimCLR与CLIP|自监督学习总卡]]（CLIP 在其中的定位）
-- 下游：[[02-Knowledge/🧠 学习系统/05-计算机视觉/04-前沿架构探索/生成模型GAN与Diffusion|生成模型]]（Stable Diffusion 用 CLIP 文本编码）、[[02-Knowledge/🧠 学习系统/05-计算机视觉/04-前沿架构探索/DeiT|DeiT]]（数据高效训练的另一种路线）
+- 上游：[[Transformer与自注意力]]、[[🎯 SimCLR 与对比学习 (Contrastive Learning)|SimCLR 对比学习]]
+- 平行：[[自监督学习SimCLR与CLIP|自监督学习总卡]]（CLIP 在其中的定位）
+- 下游：[[生成模型GAN与Diffusion|生成模型]]（Stable Diffusion 用 CLIP 文本编码）、[[DeiT]]（数据高效训练的另一种路线）
 
 ```dataview
 LIST
@@ -156,8 +156,8 @@ SORT assignment_level ASC, file.name ASC
 
 ## 13. 给 Obsidian 的归档建议
 
-- 与 [[02-Knowledge/🧠 学习系统/05-计算机视觉/04-前沿架构探索/🎯 SimCLR 与对比学习 (Contrastive Learning)|SimCLR 卡]] 对比：同源损失、不同模态。
-- 与 [[02-Knowledge/🧠 学习系统/05-计算机视觉/04-前沿架构探索/生成模型GAN与Diffusion|生成模型卡]] 关联：Stable Diffusion 的 text encoder 是 CLIP。
+- 与 [[🎯 SimCLR 与对比学习 (Contrastive Learning)|SimCLR 卡]] 对比：同源损失、不同模态。
+- 与 [[生成模型GAN与Diffusion|生成模型卡]] 关联：Stable Diffusion 的 text encoder 是 CLIP。
 
 ## 学完后可以完成
 

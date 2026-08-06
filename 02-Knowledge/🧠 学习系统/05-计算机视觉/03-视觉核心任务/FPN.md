@@ -8,9 +8,9 @@ difficulty: intermediate
 concept: ["FPN", "特征金字塔", "多尺度", "目标检测", "特征融合"]
 prerequisites: ["卷积神经网络CNN", "目标检测RCNN与YOLO", "感受野"]
 related: ["SwinTransformer", "语义分割与UNet", "IoU与NMS"]
-upstream: ["[[02-Knowledge/🧠 学习系统/05-计算机视觉/03-视觉核心任务/目标检测RCNN与YOLO]]"]
+upstream: ["[[目标检测RCNN与YOLO]]"]
 flow: knowledge
-stage_moc: "[[02-Knowledge/🧠 学习系统/05-计算机视觉/03-视觉核心任务/🎯 第三阶段：视觉核心任务]]"
+stage_moc: "[[🎯 第三阶段：视觉核心任务]]"
 kind: concept
 source: "Lin et al. 2017 'Feature Pyramid Networks for Object Detection'; D2L Ch.14"
 tags: [学习, 计算机视觉, FPN, 目标检测, 多尺度]
@@ -18,8 +18,8 @@ tags: [学习, 计算机视觉, FPN, 目标检测, 多尺度]
 
 # FPN 特征金字塔网络 (Feature Pyramid Network)
 
-> 所属模块：[[02-Knowledge/🧠 学习系统/05-计算机视觉/🗺️ 计算机视觉学习路径|计算机视觉学习路径]]
-> 对应阶段：[[02-Knowledge/🧠 学习系统/05-计算机视觉/03-视觉核心任务/🎯 第三阶段：视觉核心任务|第三阶段]]
+> 所属模块：[[🗺️ 计算机视觉学习路径|计算机视觉学习路径]]
+> 对应阶段：[[🎯 第三阶段：视觉核心任务|第三阶段]]
 > 建议先看：[[卷积神经网络CNN]]、[[目标检测RCNN与YOLO]]
 
 ---
@@ -64,7 +64,7 @@ $$P_\ell = \text{Conv}_{3\times3}(\text{Conv}_{1\times1}(C_\ell) + \text{Upsampl
 
 ## 3. 为什么需要 FPN？— 感受野视角
 
-> **交错练习**：回到 [[02-Knowledge/🧠 学习系统/05-计算机视觉/02-深度学习内核/感受野|感受野]]。单一特征图（如 C5，stride=32）的有效感受野约 $\sqrt{\text{理论RF}} \approx 22$ 像素。一个 $16\times16$ 的小物体在此层可能只有 1 个像素的响应 → 几乎无法检测。
+> **交错练习**：回到 [[感受野]]。单一特征图（如 C5，stride=32）的有效感受野约 $\sqrt{\text{理论RF}} \approx 22$ 像素。一个 $16\times16$ 的小物体在此层可能只有 1 个像素的响应 → 几乎无法检测。
 
 | 特征层 | stride | 典型感受野 | 适合物体尺寸 |
 |:---|:---:|:---|:---|
@@ -121,7 +121,7 @@ $$P_\ell = \text{Conv}_{3\times3}(\text{Conv}_{1\times1}(C_\ell) + \text{Upsampl
 
 ## 学完后可以完成
 
-- [[03-Projects/05-计算机视觉/阶段作业/05-计算机视觉-阶段作业-03-目标检测PascalVOC|HW05]]：理解多尺度特征融合在检测中的作用
+- [[05-计算机视觉-阶段作业-03-目标检测PascalVOC|HW05]]：理解多尺度特征融合在检测中的作用
 
 > 作业入口由 frontmatter `requires` 维护（唯一事实源），下方 Dataview 反向派生当前卡可完成的全部作业。
 ## 🔗 知识图谱

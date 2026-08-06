@@ -19,8 +19,8 @@ related:
   - 立体视觉
   - 点云处理
 flow: knowledge
-upstream: ["[[02-Knowledge/🧠 学习系统/05-计算机视觉/05-专业深化与工程落地/🎯 相机标定与对极几何 (Epipolar Geometry)]]", "[[02-Knowledge/🧠 学习系统/05-计算机视觉/02-深度学习内核/MLP]]"]
-stage_moc: "[[02-Knowledge/🧠 学习系统/05-计算机视觉/05-专业深化与工程落地/🏭 第五阶段：专业深化与工程落地]]"
+upstream: ["[[🎯 相机标定与对极几何 (Epipolar Geometry)]]", "[[MLP]]"]
+stage_moc: "[[🏭 第五阶段：专业深化与工程落地]]"
 kind: concept
 source: "论文补充; CS231n A3"
 anki_deck: "05-计算机视觉::05-专业深化与工程落地"
@@ -76,7 +76,7 @@ tags:
 
 最小必要背景：
 
-1. **[[02-Knowledge/🧠 学习系统/05-计算机视觉/05-专业深化与工程落地/🎯 相机标定与对极几何 (Epipolar Geometry)|相机内参与光线生成]]**：根据相机内参 $\mathbf{K}$ 与外参 $[\mathbf{R} \mid \mathbf{t}]$，计算穿过每个像素点 $(u, v)$ 的 3D 光线方程 $\mathbf{r}(t) = \mathbf{o} + t \mathbf{d}$。
+1. **[[🎯 相机标定与对极几何 (Epipolar Geometry)|相机内参与光线生成]]**：根据相机内参 $\mathbf{K}$ 与外参 $[\mathbf{R} \mid \mathbf{t}]$，计算穿过每个像素点 $(u, v)$ 的 3D 光线方程 $\mathbf{r}(t) = \mathbf{o} + t \mathbf{d}$。
 2. **[[MLP|多层感知机 (MLP)]]**：拟合连续多元非线性函数的基石网络。
 
 ---
@@ -227,14 +227,14 @@ def raw2outputs(raw_pred, z_vals, rays_d):
 ## 9. 相关知识点与 Obsidian 双链建议
 
 ### 上游依赖
-- [[02-Knowledge/🧠 学习系统/05-计算机视觉/05-专业深化与工程落地/🎯 相机标定与对极几何 (Epipolar Geometry)]]：COLMAP 位姿估计为 NeRF 提供相机的内外参。
+- [[🎯 相机标定与对极几何 (Epipolar Geometry)]]：COLMAP 位姿估计为 NeRF 提供相机的内外参。
 - [[MLP]]：NeRF 的隐式函数载体。
 
 ### 下游延伸
 - 3D Gaussian Splatting：解决 NeRF 渲染速度慢的显式高斯替代方案。
 
 ### 横向关联
-- [[02-Knowledge/🧠 学习系统/05-计算机视觉/04-前沿架构探索/🎯 Diffusion 扩散模型 (DDPM)]] ↔ NeRF：结合形成 3D 生成模型（如 DreamFusion, Zero123）。
+- [[🎯 Diffusion 扩散模型 (DDPM)]] ↔ NeRF：结合形成 3D 生成模型（如 DreamFusion, Zero123）。
 
 ---
 
@@ -321,7 +321,7 @@ def raw2outputs(raw_pred, z_vals, rays_d):
 
 - **归档目录**：`02-Knowledge/🧠 学习系统/05-计算机视觉/02-深度学习内核/`
 - **建议双链**：
-  - [[02-Knowledge/🧠 学习系统/05-计算机视觉/05-专业深化与工程落地/🎯 相机标定与对极几何 (Epipolar Geometry)]]
+  - [[🎯 相机标定与对极几何 (Epipolar Geometry)]]
   - [[MLP]]
   - [[05-计算机视觉/02-深度学习内核/3DGS|3D Gaussian
 

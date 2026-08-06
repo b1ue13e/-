@@ -57,7 +57,7 @@ tags: [项目, 正式作业, 计算机视觉, 课程验收]
 
 ## 2.1 作业包入口
 
-- [[03-Projects/05-计算机视觉/real_assignment_packages/hw01_cifar10_knn_softmax/README|HW01 真实作业包]]
+- [[README|HW01 真实作业包]]
 
 ## 3. 执行阶段
 

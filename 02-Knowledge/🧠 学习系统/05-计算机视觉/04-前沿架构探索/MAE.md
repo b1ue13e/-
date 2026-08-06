@@ -8,9 +8,9 @@ difficulty: advanced
 concept: ["MAE", "掩码自编码器", "自监督学习", "ViT", "预训练"]
 prerequisites: ["ViT", "自监督学习SimCLR与CLIP"]
 related: ["BEiT", "iBOT", "SimCLR"]
-upstream: ["[[02-Knowledge/🧠 学习系统/05-计算机视觉/04-前沿架构探索/ViT]]"]
+upstream: ["[[ViT]]"]
 flow: knowledge
-stage_moc: "[[02-Knowledge/🧠 学习系统/05-计算机视觉/04-前沿架构探索/🚀 第四阶段：前沿架构探索]]"
+stage_moc: "[[🚀 第四阶段：前沿架构探索]]"
 kind: concept
 source: "He et al. 2022 'Masked Autoencoders Are Scalable Vision Learners'"
 tags: [学习, 计算机视觉, MAE, 自监督, ViT]
@@ -18,8 +18,8 @@ tags: [学习, 计算机视觉, MAE, 自监督, ViT]
 
 # MAE 掩码自编码器 (Masked Autoencoder)
 
-> 所属模块：[[02-Knowledge/🧠 学习系统/05-计算机视觉/🗺️ 计算机视觉学习路径|计算机视觉学习路径]]
-> 对应阶段：[[02-Knowledge/🧠 学习系统/05-计算机视觉/04-前沿架构探索/🚀 第四阶段：前沿架构探索|第四阶段]]
+> 所属模块：[[🗺️ 计算机视觉学习路径|计算机视觉学习路径]]
+> 对应阶段：[[🚀 第四阶段：前沿架构探索|第四阶段]]
 > 建议先看：[[ViT]]、[[自监督学习SimCLR与CLIP]]
 
 ---
@@ -65,7 +65,7 @@ MAE 让 ViT 做同样的事：遮掉大部分 patch → 编码器只看可见 pa
 | **75%** | **最优** | 迫使学习全局语义，训练加速 3× |
 | 90% | 性能下降 | 可见信息太少，重建太难 |
 
-> **交错练习**：回顾 [[02-Knowledge/🧠 学习系统/05-计算机视觉/04-前沿架构探索/自监督学习SimCLR与CLIP|SimCLR 对比学习]]。SimCLR 通过"同一图像的不同增强应相似"来学习。MAE 通过"从部分重建整体"来学习。两种完全不同的自监督范式。
+> **交错练习**：回顾 [[自监督学习SimCLR与CLIP|SimCLR 对比学习]]。SimCLR 通过"同一图像的不同增强应相似"来学习。MAE 通过"从部分重建整体"来学习。两种完全不同的自监督范式。
 
 ---
 
@@ -137,7 +137,7 @@ MAE 用"像素回归"重建被掩 patch；**BEiT**（Bao et al., 2021）与 **iB
 
 ## 🧪 学完本节后可完成的作业
 
-- 配合 [[02-Knowledge/🧠 学习系统/05-计算机视觉/04-前沿架构探索/ViT|ViT]] 理解为什么 MAE 特别适合 ViT 预训练
+- 配合 [[ViT]] 理解为什么 MAE 特别适合 ViT 预训练
 ---
 
 ## 学完后可以完成

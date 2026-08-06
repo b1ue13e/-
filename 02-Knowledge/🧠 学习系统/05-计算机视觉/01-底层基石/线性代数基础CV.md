@@ -9,7 +9,7 @@ concept: ["线性代数", "矩阵运算", "向量空间", "特征值", "SVD"]
 prerequisites: ["高中数学"]
 related: ["图像表示", "几何变换CV", "特征分解CV", "梯度下降"]
 flow: knowledge
-stage_moc: "[[02-Knowledge/🧠 学习系统/05-计算机视觉/01-底层基石/🏗️ 第一阶段：底层基石]]"
+stage_moc: "[[🏗️ 第一阶段：底层基石]]"
 kind: concept
 source: "《Mathematics for Machine Learning》Ch.2-4"
 anki_deck: "05-计算机视觉::01-底层基石"
@@ -19,9 +19,9 @@ tags: [学习, 计算机视觉, 线性代数, 数学基础]
 
 # 线性代数基础（CV视角）
 
-> 所属模块：[[02-Knowledge/🧠 学习系统/05-计算机视觉/🗺️ 计算机视觉学习路径|计算机视觉学习路径]]
+> 所属模块：[[🗺️ 计算机视觉学习路径|计算机视觉学习路径]]
 > 主教材：`《Mathematics for Machine Learning》` Ch.2-4；`《Linear Algebra and Its Applications》` Strang
-> 对应阶段：[[02-Knowledge/🧠 学习系统/05-计算机视觉/01-底层基石/🏗️ 第一阶段：底层基石|返回阶段页]]
+> 对应阶段：[[🏗️ 第一阶段：底层基石|返回阶段页]]
 > 建议先看：[[图像表示]]、NumPy数组CV
 > 辅助教材：`3Blue1Brown - Essence of Linear Algebra`（几何直觉）
 

@@ -8,10 +8,10 @@ status: ongoing
 difficulty: advanced
 concept: ["DeiT", "知识蒸馏", "Vision Transformer", "数据高效训练"]
 prerequisites: ["Transformer与自注意力", "ViT", "数据增强与正则化"]
-upstream: ["[[02-Knowledge/🧠 学习系统/05-计算机视觉/04-前沿架构探索/ViT]]", "[[02-Knowledge/🧠 学习系统/05-计算机视觉/04-前沿架构探索/Transformer与自注意力]]", "[[02-Knowledge/🧠 学习系统/05-计算机视觉/02-深度学习内核/数据增强与正则化]]"]
+upstream: ["[[ViT]]", "[[Transformer与自注意力]]", "[[数据增强与正则化]]"]
 related: ["知识蒸馏", "SwinTransformer", "MAE"]
 flow: knowledge
-stage_moc: "[[02-Knowledge/🧠 学习系统/05-计算机视觉/04-前沿架构探索/🚀 第四阶段：前沿架构探索]]"
+stage_moc: "[[🚀 第四阶段：前沿架构探索]]"
 kind: concept
 source: "Touvron et al. 2021, Training data-efficient image transformers & distillation through attention; arXiv:2012.12877"
 tags: [学习, 计算机视觉, Transformer, DeiT, 知识蒸馏]
@@ -41,9 +41,9 @@ tags: [学习, 计算机视觉, Transformer, DeiT, 知识蒸馏]
 
 ## 3. 学它之前需要哪些前置知识？
 
-1. **[[02-Knowledge/🧠 学习系统/05-计算机视觉/04-前沿架构探索/ViT|ViT 架构]]**：patch 化、位置编码、CLS token、Transformer encoder 层——DeiT 的所有改动都叠加在 ViT 上。
-2. **[[02-Knowledge/🧠 学习系统/05-计算机视觉/04-前沿架构探索/Transformer与自注意力|自注意力机制]]**：Q/K/V 计算、多头、Softmax 加权——蒸馏 token 与 CLS token 的交互依赖它。
-3. **[[02-Knowledge/🧠 学习系统/05-计算机视觉/02-深度学习内核/数据增强与正则化|数据增强]]**：RandAugment/Mixup/CutMix 是 DeiT 训练配方的一半。
+1. **[[ViT|ViT 架构]]**：patch 化、位置编码、CLS token、Transformer encoder 层——DeiT 的所有改动都叠加在 ViT 上。
+2. **[[Transformer与自注意力|自注意力机制]]**：Q/K/V 计算、多头、Softmax 加权——蒸馏 token 与 CLS token 的交互依赖它。
+3. **[[数据增强与正则化|数据增强]]**：RandAugment/Mixup/CutMix 是 DeiT 训练配方的一半。
 
 ## 4. 用直觉语言解释它
 
@@ -117,9 +117,9 @@ tags: [学习, 计算机视觉, Transformer, DeiT, 知识蒸馏]
 
 ## 9. 相关知识点与 Obsidian 双链建议
 
-- 上游：[[02-Knowledge/🧠 学习系统/05-计算机视觉/04-前沿架构探索/ViT|ViT]]、[[02-Knowledge/🧠 学习系统/05-计算机视觉/04-前沿架构探索/Transformer与自注意力|Transformer与自注意力]]、[[02-Knowledge/🧠 学习系统/05-计算机视觉/02-深度学习内核/数据增强与正则化|数据增强与正则化]]
-- 下游：[[02-Knowledge/🧠 学习系统/05-计算机视觉/04-前沿架构探索/SwinTransformer|SwinTransformer]]（层次化替代）、[[02-Knowledge/🧠 学习系统/05-计算机视觉/04-前沿架构探索/MAE|MAE]]（自监督替代路线）
-- 平行：[[02-Knowledge/🧠 学习系统/05-计算机视觉/04-前沿架构探索/Transformer与自注意力|Transformer]] 家族中的纯 CNN 路线（ConvNeXt）与 DeiT 形成"加归纳偏置 vs 教归纳偏置"对比
+- 上游：[[ViT]]、[[Transformer与自注意力]]、[[数据增强与正则化]]
+- 下游：[[SwinTransformer]]（层次化替代）、[[MAE]]（自监督替代路线）
+- 平行：[[Transformer与自注意力|Transformer]] 家族中的纯 CNN 路线（ConvNeXt）与 DeiT 形成"加归纳偏置 vs 教归纳偏置"对比
 
 ```dataview
 LIST
@@ -158,8 +158,8 @@ SORT assignment_level ASC, file.name ASC
 
 ## 13. 给 Obsidian 的归档建议
 
-- 与 [[02-Knowledge/🧠 学习系统/05-计算机视觉/04-前沿架构探索/ViT|ViT]] 放同一阶段目录；引用关系已建。
-- 与 [[02-Knowledge/🧠 学习系统/05-计算机视觉/04-前沿架构探索/MAE|MAE]] 对比阅读：一个教归纳偏置（DeiT），一个自监督学表示（MAE）。
+- 与 [[ViT]] 放同一阶段目录；引用关系已建。
+- 与 [[MAE]] 对比阅读：一个教归纳偏置（DeiT），一个自监督学表示（MAE）。
 
 ## 学完后可以完成
 

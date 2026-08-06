@@ -8,9 +8,9 @@ difficulty: advanced
 concept: ["Swin Transformer", "窗口注意力", "层次化", "移位窗口", "多尺度"]
 prerequisites: ["ViT", "Transformer与自注意力"]
 related: ["FPN", "目标检测RCNN与YOLO", "语义分割与UNet"]
-upstream: ["[[02-Knowledge/🧠 学习系统/05-计算机视觉/04-前沿架构探索/ViT]]"]
+upstream: ["[[ViT]]"]
 flow: knowledge
-stage_moc: "[[02-Knowledge/🧠 学习系统/05-计算机视觉/04-前沿架构探索/🚀 第四阶段：前沿架构探索]]"
+stage_moc: "[[🚀 第四阶段：前沿架构探索]]"
 kind: concept
 source: "Liu et al. 2021 'Swin Transformer: Hierarchical Vision Transformer using Shifted Windows'; ICCV 2021 Best Paper"
 tags: [学习, 计算机视觉, Swin Transformer, ViT, 检测, 分割]
@@ -18,8 +18,8 @@ tags: [学习, 计算机视觉, Swin Transformer, ViT, 检测, 分割]
 
 # Swin Transformer
 
-> 所属模块：[[02-Knowledge/🧠 学习系统/05-计算机视觉/🗺️ 计算机视觉学习路径|计算机视觉学习路径]]
-> 对应阶段：[[02-Knowledge/🧠 学习系统/05-计算机视觉/04-前沿架构探索/🚀 第四阶段：前沿架构探索|第四阶段]]
+> 所属模块：[[🗺️ 计算机视觉学习路径|计算机视觉学习路径]]
+> 对应阶段：[[🚀 第四阶段：前沿架构探索|第四阶段]]
 > 建议先看：[[ViT]]、[[Transformer与自注意力]]
 
 ---
@@ -86,7 +86,7 @@ Layer l+1: ┌─┬─┬─┐     窗口偏移 (shift=3)
 | 推理速度 | 大图慢 | 快（线性复杂度） |
 | 最佳场景 | 分类（ImageNet） | **检测/分割（COCO/ADE20K）** |
 
-> **交错练习**：回到 [[02-Knowledge/🧠 学习系统/05-计算机视觉/02-深度学习内核/感受野|感受野]]。CNN 用 stride 下采样 + 空洞卷积处理多尺度。Swin 用 **patch merging**（拼接相邻 2×2 patch 再线性投影）实现下采样，等效于 CNN 的 stride-2 但保留了 Transformer 的表达能力。
+> **交错练习**：回到 [[感受野]]。CNN 用 stride 下采样 + 空洞卷积处理多尺度。Swin 用 **patch merging**（拼接相邻 2×2 patch 再线性投影）实现下采样，等效于 CNN 的 stride-2 但保留了 Transformer 的表达能力。
 
 ---
 
@@ -141,8 +141,8 @@ x = nn.Linear(384, 192)(x)            # (28, 28, 192)
 
 ## 🧪 学完本节后可完成的作业
 
-- 配合 [[02-Knowledge/🧠 学习系统/05-计算机视觉/03-视觉核心任务/目标检测RCNN与YOLO|目标检测]] 理解 Swin 如何作为检测 backbone 替代 ResNet
-- 配合 [[02-Knowledge/🧠 学习系统/05-计算机视觉/04-前沿架构探索/MAE|MAE]] 理解 Swin 的自监督预训练
+- 配合 [[目标检测RCNN与YOLO|目标检测]] 理解 Swin 如何作为检测 backbone 替代 ResNet
+- 配合 [[MAE]] 理解 Swin 的自监督预训练
 ---
 
 ## 学完后可以完成

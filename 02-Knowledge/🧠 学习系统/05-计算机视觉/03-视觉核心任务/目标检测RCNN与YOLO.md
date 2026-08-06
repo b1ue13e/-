@@ -9,8 +9,8 @@ concept: ["目标检测","R-CNN","YOLO","IoU","NMS","mAP"]
 prerequisites: ["卷积神经网络CNN","Softmax与SVM损失函数"]
 related: ["FPN","SSD","FasterRCNN","语义分割"]
 flow: knowledge
-upstream: ["[[02-Knowledge/🧠 学习系统/05-计算机视觉/02-深度学习内核/卷积神经网络CNN]]", "[[02-Knowledge/🧠 学习系统/05-计算机视觉/02-深度学习内核/Softmax与SVM损失函数]]"]
-stage_moc: "[[02-Knowledge/🧠 学习系统/05-计算机视觉/03-视觉核心任务/🎯 第三阶段：视觉核心任务]]"
+upstream: ["[[卷积神经网络CNN]]", "[[Softmax与SVM损失函数]]"]
+stage_moc: "[[🎯 第三阶段：视觉核心任务]]"
 kind: concept
 source: "D2L Ch.14; CS231n A3"
 anki_deck: "05-计算机视觉::03-视觉核心任务"
@@ -20,9 +20,9 @@ tags: [学习,计算机视觉,目标检测,RCNN,YOLO]
 
 # 目标检测基础：R-CNN与YOLO
 
-> 所属模块：[[02-Knowledge/🧠 学习系统/05-计算机视觉/🗺️ 计算机视觉学习路径|计算机视觉学习路径]]
-> 对应阶段：[[02-Knowledge/🧠 学习系统/05-计算机视觉/03-视觉核心任务/🎯 第三阶段：视觉核心任务|返回阶段页]]
-> 建议先看：[[卷积神经网络CNN]]、[[02-Knowledge/🧠 学习系统/05-计算机视觉/02-深度学习内核/Softmax与SVM损失函数]]
+> 所属模块：[[🗺️ 计算机视觉学习路径|计算机视觉学习路径]]
+> 对应阶段：[[🎯 第三阶段：视觉核心任务|返回阶段页]]
+> 建议先看：[[卷积神经网络CNN]]、[[Softmax与SVM损失函数]]
 > 辅助教材：`《动手学深度学习》Ch.14`、`CS231n Assignment 3`
 
 ## 0. 先判断它值不值得深挖
@@ -387,8 +387,8 @@ if __name__ == "__main__":
 
 ### 上游依赖
 - [[卷积神经网络CNN]]：所有检测器的 backbone 特征提取基底。
-- [[02-Knowledge/🧠 学习系统/05-计算机视觉/02-深度学习内核/Softmax与SVM损失函数]]：检测分类子任务的标准输出层。
-- [[02-Knowledge/🧠 学习系统/05-计算机视觉/02-深度学习内核/🎯 ResNet (残差网络)]]：Faster R-CNN 和 YOLOv3+ 最常用 backbone。
+- [[Softmax与SVM损失函数]]：检测分类子任务的标准输出层。
+- [[🎯 ResNet (残差网络)]]：Faster R-CNN 和 YOLOv3+ 最常用 backbone。
 - [[感受野]]：理解 Anchor 设计和大目标/小目标检测差异的理论基础。
 
 ### 下游延伸
@@ -474,7 +474,7 @@ if __name__ == "__main__":
 - **关联已有笔记**：目标检测RCNN与YOLO、目标检测RCNN与YOLO、目标检测RCNN与YOLO、目标检测RCNN与YOLO、[[IoU与NMS]]、[[IoU与NMS]]
 - **建议标签**：`#学习` `#计算机视觉` `#目标检测` `#RCNN` `#YOLO`
 - **拆分建议**：此卡定位为"目标检测基础总览"，覆盖从问题定义到评估指标的完整入门链。R-CNN 系列、YOLO、SSD、RetinaNet、Anchor-Free（FCOS/CenterNet）、DETR 等专题概念当前均在本卡内覆盖；若后续需要专题深挖，可拆出独立卡并设本卡为上游。
-- **双链优先**：上游 → [[卷积神经网络CNN]]、[[02-Knowledge/🧠 学习系统/05-计算机视觉/02-深度学习内核/Softmax与SVM损失函数]]；下游 → 目标检测RCNN与YOLO、目标检测RCNN与YOLO、目标检测RCNN与YOLO；横向 → [[FPN]]、目标检测RCNN与YOLO、目标检测RCNN与YOLO、[[IoU与NMS]]、[[IoU与NMS]]。
+- **双链优先**：上游 → [[卷积神经网络CNN]]、[[Softmax与SVM损失函数]]；下游 → 目标检测RCNN与YOLO、目标检测RCNN与YOLO、目标检测RCNN与YOLO；横向 → [[FPN]]、目标检测RCNN与YOLO、目标检测RCNN与YOLO、[[IoU与NMS]]、[[IoU与NMS]]。
 
 ## 🃏 Anki 卡片
 
@@ -498,8 +498,8 @@ if __name__ == "__main__":
 
 ## 学完后可以完成
 
-- [[03-Projects/05-计算机视觉/阶段作业/05-计算机视觉-阶段作业-03-目标检测PascalVOC|HW05]]：搭建最小目标检测工程包（R-CNN/YOLO 系）
-- [[03-Projects/05-计算机视觉/阶段作业/05-计算机视觉-阶段作业-03-迁移学习与误差分析|HW04]]：搭建最小目标检测工程包（R-CNN/YOLO 系）
+- [[05-计算机视觉-阶段作业-03-目标检测PascalVOC|HW05]]：搭建最小目标检测工程包（R-CNN/YOLO 系）
+- [[05-计算机视觉-阶段作业-03-迁移学习与误差分析|HW04]]：搭建最小目标检测工程包（R-CNN/YOLO 系）
 
 > 作业入口由 frontmatter `requires` 维护（唯一事实源），下方 Dataview 反向派生当前卡可完成的全部作业。
 ## 🔗 知识图谱

@@ -8,9 +8,9 @@ difficulty: advanced
 concept: ["ViT", "Vision Transformer", "图像分块", "位置编码", "自注意力"]
 prerequisites: ["Transformer与自注意力", "卷积神经网络CNN"]
 related: ["SwinTransformer", "MAE", "DeiT", "CLIP"]
-upstream: ["[[02-Knowledge/🧠 学习系统/05-计算机视觉/04-前沿架构探索/Transformer与自注意力]]"]
+upstream: ["[[Transformer与自注意力]]"]
 flow: knowledge
-stage_moc: "[[02-Knowledge/🧠 学习系统/05-计算机视觉/04-前沿架构探索/🚀 第四阶段：前沿架构探索]]"
+stage_moc: "[[🚀 第四阶段：前沿架构探索]]"
 kind: concept
 source: "Dosovitskiy et al. 2021 'An Image is Worth 16x16 Words'; D2L Ch.11"
 tags: [学习, 计算机视觉, ViT, Transformer, 前沿架构]
@@ -18,8 +18,8 @@ tags: [学习, 计算机视觉, ViT, Transformer, 前沿架构]
 
 # Vision Transformer (ViT)
 
-> 所属模块：[[02-Knowledge/🧠 学习系统/05-计算机视觉/🗺️ 计算机视觉学习路径|计算机视觉学习路径]]
-> 对应阶段：[[02-Knowledge/🧠 学习系统/05-计算机视觉/04-前沿架构探索/🚀 第四阶段：前沿架构探索|第四阶段]]
+> 所属模块：[[🗺️ 计算机视觉学习路径|计算机视觉学习路径]]
+> 对应阶段：[[🚀 第四阶段：前沿架构探索|第四阶段]]
 > 建议先看：[[Transformer与自注意力]]、[[卷积神经网络CNN]]
 
 ---
@@ -139,9 +139,9 @@ print(f"Tokens shape: {tokens.shape}")     # (4, 196, 768) — 196个"单词"
 
 ## 7. 与 CNN 的交错练习
 
-> **回顾** [[02-Knowledge/🧠 学习系统/05-计算机视觉/02-深度学习内核/感受野|感受野]]：CNN 第1层感受野=3×3，需要堆叠深度才能覆盖大物体。ViT 第1层通过自注意力直接拥有**全局感受野**——每个 patch 在第一层就能"看到"所有其他 patch。
+> **回顾** [[感受野]]：CNN 第1层感受野=3×3，需要堆叠深度才能覆盖大物体。ViT 第1层通过自注意力直接拥有**全局感受野**——每个 patch 在第一层就能"看到"所有其他 patch。
 
-> **回顾** [[02-Knowledge/🧠 学习系统/05-计算机视觉/02-深度学习内核/卷积神经网络CNN|CNN]] vs ViT：两者都在学习"从像素提取特征"。CNN 用局部卷积核（局部归纳偏置），ViT 用全局自注意力（弱归纳偏置）。在小数据集上训练时，CNN 通常更优；在大数据集上，ViT 超越 CNN。
+> **回顾** [[卷积神经网络CNN|CNN]] vs ViT：两者都在学习"从像素提取特征"。CNN 用局部卷积核（局部归纳偏置），ViT 用全局自注意力（弱归纳偏置）。在小数据集上训练时，CNN 通常更优；在大数据集上，ViT 超越 CNN。
 
 ---
 
@@ -168,8 +168,8 @@ print(f"Tokens shape: {tokens.shape}")     # (4, 196, 768) — 196个"单词"
 
 ## 🧪 学完本节后可完成的作业
 
-- 配合 [[02-Knowledge/🧠 学习系统/05-计算机视觉/04-前沿架构探索/SwinTransformer|SwinTransformer]] 理解层次化 ViT 的设计动机
-- 配合 [[02-Knowledge/🧠 学习系统/05-计算机视觉/04-前沿架构探索/MAE|MAE]] 理解 ViT 的自监督预训练范式
+- 配合 [[SwinTransformer]] 理解层次化 ViT 的设计动机
+- 配合 [[MAE]] 理解 ViT 的自监督预训练范式
 ---
 
 ## 学完后可以完成

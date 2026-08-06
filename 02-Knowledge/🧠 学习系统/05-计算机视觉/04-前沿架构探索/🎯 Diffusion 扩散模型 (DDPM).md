@@ -20,8 +20,8 @@ related:
   - GAN
   - ControlNet
 flow: knowledge
-upstream: ["[[02-Knowledge/🧠 学习系统/05-计算机视觉/04-前沿架构探索/🎯 VAE 变分自编码器 (Variational Autoencoder)]]", "[[02-Knowledge/🧠 学习系统/05-计算机视觉/04-前沿架构探索/生成模型GAN与Diffusion]]"]
-stage_moc: "[[02-Knowledge/🧠 学习系统/05-计算机视觉/04-前沿架构探索/🚀 第四阶段：前沿架构探索]]"
+upstream: ["[[🎯 VAE 变分自编码器 (Variational Autoencoder)]]", "[[生成模型GAN与Diffusion]]"]
+stage_moc: "[[🚀 第四阶段：前沿架构探索]]"
 kind: concept
 source: "论文+讲义; CS231n A3"
 anki_deck: "05-计算机视觉::04-前沿架构探索"
@@ -74,8 +74,8 @@ tags:
 
 最小必要背景：
 
-1. **[[02-Knowledge/🧠 学习系统/05-计算机视觉/04-前沿架构探索/🎯 VAE 变分自编码器 (Variational Autoencoder)|VAE 与变分下界]]**：扩散模型本质上是一个显式包含 $T$ 个隐步长的超深变分自编码器，目标函数也是由变分下界 (ELBO) 逐步简化推导而来。
-2. **[[02-Knowledge/🧠 学习系统/24-随机过程/02-马尔可夫与泊松过程/马尔可夫与泊松过程-应用入口-1|马尔可夫链 (Markov Chain)]]**：当前状态 $x_t$ 仅依赖于上一时刻状态 $x_{t-1}$ 的离散随机过程。
+1. **[[🎯 VAE 变分自编码器 (Variational Autoencoder)|VAE 与变分下界]]**：扩散模型本质上是一个显式包含 $T$ 个隐步长的超深变分自编码器，目标函数也是由变分下界 (ELBO) 逐步简化推导而来。
+2. **[[马尔可夫与泊松过程-应用入口-1|马尔可夫链 (Markov Chain)]]**：当前状态 $x_t$ 仅依赖于上一时刻状态 $x_{t-1}$ 的离散随机过程。
 
 ---
 
@@ -219,14 +219,14 @@ class MiniDDPM:
 ## 9. 相关知识点与 Obsidian 双链建议
 
 ### 上游依赖
-- [[02-Knowledge/🧠 学习系统/05-计算机视觉/04-前沿架构探索/🎯 VAE 变分自编码器 (Variational Autoencoder)]]：DDPM 的变分下界推导与目标函数简化源泉。
-- [[02-Knowledge/🧠 学习系统/05-计算机视觉/02-深度学习内核/🎯 ResNet (残差网络)]]：DDPM 去噪主干网络 U-Net 中大量使用了 ResNet 残差块。
+- [[🎯 VAE 变分自编码器 (Variational Autoencoder)]]：DDPM 的变分下界推导与目标函数简化源泉。
+- [[🎯 ResNet (残差网络)]]：DDPM 去噪主干网络 U-Net 中大量使用了 ResNet 残差块。
 
 ### 下游延伸
 - LatentDiffusion：Stable Diffusion 核心，将 DDPM 从像素空间移至 VAE 隐空间以大幅加速。
 
 ### 横向关联
-- [[02-Knowledge/🧠 学习系统/05-计算机视觉/04-前沿架构探索/生成模型GAN与Diffusion]] ↔ 🎯 Diffusion 扩散模型 (DDPM)：生成模型两大王者，Diffusion 凭借训练稳定性和多模态可控性超越 GAN。
+- [[生成模型GAN与Diffusion]] ↔ 🎯 Diffusion 扩散模型 (DDPM)：生成模型两大王者，Diffusion 凭借训练稳定性和多模态可控性超越 GAN。
 
 ---
 
@@ -318,8 +318,8 @@ class MiniDDPM:
 
 - **归档目录**：`02-Knowledge/🧠 学习系统/05-计算机视觉/02-深度学习内核/`
 - **建议双链**：
-  - [[02-Knowledge/🧠 学习系统/05-计算机视觉/04-前沿架构探索/🎯 VAE 变分自编码器 (Variational Autoencoder)]]
-  - [[02-Knowledge/🧠 学习系统/05-计算机视觉/02-深度学习内核/🎯 ResNet (残差网络)]]
+  - [[🎯 VAE 变分自编码器 (Variational Autoencoder)]]
+  - [[🎯 ResNet (残差网络)]]
   - LatentDiffusion
 - **建议标签**：`#学习` `#深度学习` `#AIGC` `#Diffusion` `#DDPM` `#扩散模型` `#UNet`
 

@@ -8,10 +8,10 @@ status: ongoing
 difficulty: advanced
 concept: ["DETR", "目标检测", "Transformer", "匈牙利匹配", "集合预测"]
 prerequisites: ["目标检测RCNN与YOLO", "Transformer与自注意力", "IoU与NMS"]
-upstream: ["[[02-Knowledge/🧠 学习系统/05-计算机视觉/03-视觉核心任务/目标检测RCNN与YOLO]]", "[[02-Knowledge/🧠 学习系统/05-计算机视觉/04-前沿架构探索/Transformer与自注意力]]"]
+upstream: ["[[目标检测RCNN与YOLO]]", "[[Transformer与自注意力]]"]
 related: ["FPN", "语义分割与UNet", "SwinTransformer", "DeiT"]
 flow: knowledge
-stage_moc: "[[02-Knowledge/🧠 学习系统/05-计算机视觉/03-视觉核心任务/🎯 第三阶段：视觉核心任务]]"
+stage_moc: "[[🎯 第三阶段：视觉核心任务]]"
 kind: concept
 source: "Carion et al. 2020, End-to-End Object Detection with Transformers (ECCV 2020); arXiv:2005.12872"
 tags: [学习, 计算机视觉, 目标检测, Transformer, DETR]
@@ -42,9 +42,9 @@ tags: [学习, 计算机视觉, 目标检测, Transformer, DETR]
 
 ## 3. 学它之前需要哪些前置知识？
 
-1. **[[02-Knowledge/🧠 学习系统/05-计算机视觉/03-视觉核心任务/目标检测RCNN与YOLO|目标检测基础]]**：检测任务定义（类别 + 边界框）、mAP 评估、传统检测器的问题（Anchor/NMS）。
-2. **[[02-Knowledge/🧠 学习系统/05-计算机视觉/04-前沿架构探索/Transformer与自注意力|Transformer / 自注意力]]**：encoder-decoder 结构、Q/K/V、cross-attention——DETR 的 decoder 用 object queries 做 cross-attention。
-3. **[[02-Knowledge/🧠 学习系统/05-计算机视觉/03-视觉核心任务/IoU与NMS|IoU]]**：二分图匹配的代价函数用 IoU（GIoU）。
+1. **[[目标检测RCNN与YOLO|目标检测基础]]**：检测任务定义（类别 + 边界框）、mAP 评估、传统检测器的问题（Anchor/NMS）。
+2. **[[Transformer与自注意力|Transformer / 自注意力]]**：encoder-decoder 结构、Q/K/V、cross-attention——DETR 的 decoder 用 object queries 做 cross-attention。
+3. **[[IoU与NMS|IoU]]**：二分图匹配的代价函数用 IoU（GIoU）。
 
 ## 4. 用直觉语言解释它
 
@@ -115,9 +115,9 @@ $$
 
 ## 9. 相关知识点与 Obsidian 双链建议
 
-- 上游：[[02-Knowledge/🧠 学习系统/05-计算机视觉/03-视觉核心任务/目标检测RCNN与YOLO|目标检测]]、[[02-Knowledge/🧠 学习系统/05-计算机视觉/04-前沿架构探索/Transformer与自注意力|Transformer与自注意力]]
-- 平行：[[02-Knowledge/🧠 学习系统/05-计算机视觉/03-视觉核心任务/FPN|FPN]]（多尺度特征对比）、[[02-Knowledge/🧠 学习系统/05-计算机视觉/03-视觉核心任务/IoU与NMS|IoU与NMS]]（被替代的后处理）
-- 下游：[[02-Knowledge/🧠 学习系统/05-计算机视觉/03-视觉核心任务/语义分割与UNet|语义分割]]（DETR 同源做 panoptic）
+- 上游：[[目标检测RCNN与YOLO|目标检测]]、[[Transformer与自注意力]]
+- 平行：[[FPN]]（多尺度特征对比）、[[IoU与NMS]]（被替代的后处理）
+- 下游：[[语义分割与UNet|语义分割]]（DETR 同源做 panoptic）
 
 ```dataview
 LIST
@@ -156,8 +156,8 @@ SORT assignment_level ASC, file.name ASC
 
 ## 13. 给 Obsidian 的归档建议
 
-- 与 [[02-Knowledge/🧠 学习系统/05-计算机视觉/03-视觉核心任务/目标检测RCNN与YOLO|目标检测总卡]] 并列：它是"Transformer 路线"的代表。
-- 与 [[02-Knowledge/🧠 学习系统/05-计算机视觉/04-前沿架构探索/Transformer与自注意力|Transformer 卡]] 关联：encoder-decoder 结构详解在那里。
+- 与 [[目标检测RCNN与YOLO|目标检测总卡]] 并列：它是"Transformer 路线"的代表。
+- 与 [[Transformer与自注意力|Transformer 卡]] 关联：encoder-decoder 结构详解在那里。
 
 ## 学完后可以完成
 

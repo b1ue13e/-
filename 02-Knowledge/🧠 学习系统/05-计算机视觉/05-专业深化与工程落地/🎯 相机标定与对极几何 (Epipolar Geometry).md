@@ -19,8 +19,8 @@ related:
   - 立体视觉
   - SLAM
 flow: knowledge
-upstream: ["[[02-Knowledge/🧠 学习系统/05-计算机视觉/01-底层基石/线性代数基础CV]]", "[[02-Knowledge/🧠 学习系统/05-计算机视觉/01-底层基石/几何变换CV]]"]
-stage_moc: "[[02-Knowledge/🧠 学习系统/05-计算机视觉/05-专业深化与工程落地/🏭 第五阶段：专业深化与工程落地]]"
+upstream: ["[[线性代数基础CV]]", "[[几何变换CV]]"]
+stage_moc: "[[🏭 第五阶段：专业深化与工程落地]]"
 kind: concept
 source: "Szeliski Ch.6; MVG Ch.6-7"
 anki_deck: "05-计算机视觉::05-专业深化与工程落地"
@@ -75,8 +75,8 @@ tags:
 
 最小必要背景：
 
-1. **[[02-Knowledge/🧠 学习系统/15-控制与机器人学/02-机器人学基础模型/齐次坐标|齐次坐标 (Homogeneous Coordinates)]]**：将 $n$ 维向量用 $n+1$ 维表示（如 2D 点 $(x, y) \to (x, y, 1)^T$），从而可以用矩阵乘法统一表达平移与透视投影。
-2. **[[02-Knowledge/🧠 学习系统/15-控制与机器人学/02-机器人学基础模型/齐次变换矩阵|向量叉积的反对称矩阵]]**：$\mathbf{a} \times \mathbf{b} = [\mathbf{a}]_{\times} \mathbf{b}$，其中 $[\mathbf{a}]_{\times} = \begin{pmatrix} 0 & -a_z & a_y \\ a_z & 0 & -a_x \\ -a_y & a_x & 0 \end{pmatrix}$。
+1. **[[齐次坐标|齐次坐标 (Homogeneous Coordinates)]]**：将 $n$ 维向量用 $n+1$ 维表示（如 2D 点 $(x, y) \to (x, y, 1)^T$），从而可以用矩阵乘法统一表达平移与透视投影。
+2. **[[齐次变换矩阵|向量叉积的反对称矩阵]]**：$\mathbf{a} \times \mathbf{b} = [\mathbf{a}]_{\times} \mathbf{b}$，其中 $[\mathbf{a}]_{\times} = \begin{pmatrix} 0 & -a_z & a_y \\ a_z & 0 & -a_x \\ -a_y & a_x & 0 \end{pmatrix}$。
 
 ---
 
@@ -214,12 +214,12 @@ print("基础矩阵的秩为:", np.linalg.matrix_rank(F)) # 严格为 2
 ## 9. 相关知识点与 Obsidian 双链建议
 
 ### 上游依赖
-- [[02-Knowledge/🧠 学习系统/15-控制与机器人学/02-机器人学基础模型/齐次坐标|齐次坐标与投影变换]]：透视投影与三维到二维投影的矩阵表达。
-- [[02-Knowledge/🧠 学习系统/05-计算机视觉/01-底层基石/边缘检测|特征匹配]]：提供八点算法所需的像素对应对 $(p_1, p_2)$。
+- [[齐次坐标|齐次坐标与投影变换]]：透视投影与三维到二维投影的矩阵表达。
+- [[边缘检测|特征匹配]]：提供八点算法所需的像素对应对 $(p_1, p_2)$。
 
 ### 下游延伸
-- [[02-Knowledge/🧠 学习系统/05-计算机视觉/05-专业深化与工程落地/🎯 NeRF 神经辐射场 (Neural Radiance Fields)]]：必须利用 COLMAP（基于相机标定与对极几何）算出图像的相机位姿 $\mathbf{R}, \mathbf{t}$。
-- [[02-Knowledge/🧠 学习系统/15-控制与机器人学/10-状态估计/SLAM基础|SLAM]]：前端视觉里程计（VO）利用本质矩阵恢复相机运动。
+- [[🎯 NeRF 神经辐射场 (Neural Radiance Fields)]]：必须利用 COLMAP（基于相机标定与对极几何）算出图像的相机位姿 $\mathbf{R}, \mathbf{t}$。
+- [[SLAM基础|SLAM]]：前端视觉里程计（VO）利用本质矩阵恢复相机运动。
 
 ### 横向关联
 - 单应性矩阵 H ↔ 对极几何 F：当场景点全部在同一平面上时，对极约束退化，必须改用单应性矩阵 $\mathbf{H}$ 求解。
@@ -313,9 +313,9 @@ print("基础矩阵的秩为:", np.linalg.matrix_rank(F)) # 严格为 2
 
 - **归档目录**：`02-Knowledge/🧠 学习系统/05-计算机视觉/02-深度学习内核/`
 - **建议双链**：
-  - [[02-Knowledge/🧠 学习系统/15-控制与机器人学/02-机器人学基础模型/齐次坐标|齐次坐标]]
-  - [[02-Knowledge/🧠 学习系统/05-计算机视觉/05-专业深化与工程落地/🎯 NeRF 神经辐射场 (Neural Radiance Fields)]]
-  - [[02-Knowledge/🧠 学习系统/15-控制与机器人学/10-状态估计/SLAM基础|SLAM]]
+  - [[齐次坐标]]
+  - [[🎯 NeRF 神经辐射场 (Neural Radiance Fields)]]
+  - [[SLAM基础|SLAM]]
 - **建议标签**：`#学习` `#计算机视觉` `#3D视觉` `#相机标定` `#对极几何` `#本质矩阵` `#基础矩阵`
 
 ---

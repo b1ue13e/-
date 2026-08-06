@@ -75,4 +75,4 @@ tags: [作业, 计算机视觉, kNN, Softmax]
 
 - 前置知识卡：`kNN与线性分类器`、`Softmax与SVM损失函数`、`图像分类任务与数据管线`（frontmatter `requires` 为唯一事实源）
 - 完成后进入 [[05-计算机视觉-课后作业-02-两层网络与反向传播|HW02：两层网络与反向传播]]
-- 作业包：[[03-Projects/05-计算机视觉/real_assignment_packages/hw01_cifar10_knn_softmax/README|HW01 真实作业包]]
+- 作业包：[[README|HW01 真实作业包]]

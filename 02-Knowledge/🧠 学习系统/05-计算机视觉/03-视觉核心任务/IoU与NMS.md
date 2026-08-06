@@ -9,8 +9,8 @@ concept: ["IoU", "NMS", "目标检测", "边界框", "后处理"]
 prerequisites: ["目标检测RCNN与YOLO"]
 related: ["FPN", "FocalLoss", "FasterRCNN"]
 flow: knowledge
-upstream: ["[[02-Knowledge/🧠 学习系统/05-计算机视觉/03-视觉核心任务/目标检测RCNN与YOLO]]"]
-stage_moc: "[[02-Knowledge/🧠 学习系统/05-计算机视觉/03-视觉核心任务/🎯 第三阶段：视觉核心任务]]"
+upstream: ["[[目标检测RCNN与YOLO]]"]
+stage_moc: "[[🎯 第三阶段：视觉核心任务]]"
 kind: concept
 source: "CS231n Lecture 11; D2L Ch.14"
 tags: [学习, 计算机视觉, 目标检测, IoU, NMS]
@@ -18,8 +18,8 @@ tags: [学习, 计算机视觉, 目标检测, IoU, NMS]
 
 # IoU 与 NMS (交并比与非极大值抑制)
 
-> 所属模块：[[02-Knowledge/🧠 学习系统/05-计算机视觉/🗺️ 计算机视觉学习路径|计算机视觉学习路径]]
-> 对应阶段：[[02-Knowledge/🧠 学习系统/05-计算机视觉/03-视觉核心任务/🎯 第三阶段：视觉核心任务|第三阶段：视觉核心任务]]
+> 所属模块：[[🗺️ 计算机视觉学习路径|计算机视觉学习路径]]
+> 对应阶段：[[🎯 第三阶段：视觉核心任务|第三阶段：视觉核心任务]]
 > 建议先看：[[目标检测RCNN与YOLO]]
 
 ---
@@ -224,7 +224,7 @@ def soft_nms(boxes, scores, iou_threshold=0.5, sigma=0.5, method='gaussian'):
 
 ## 学完后可以完成
 
-- [[03-Projects/05-计算机视觉/阶段作业/05-计算机视觉-阶段作业-03-目标检测PascalVOC|HW05]]：实现 IoU 与 NMS 并评测
+- [[05-计算机视觉-阶段作业-03-目标检测PascalVOC|HW05]]：实现 IoU 与 NMS 并评测
 
 > 作业入口由 frontmatter `requires` 维护（唯一事实源），下方 Dataview 反向派生当前卡可完成的全部作业。
 ## 🔗 知识图谱

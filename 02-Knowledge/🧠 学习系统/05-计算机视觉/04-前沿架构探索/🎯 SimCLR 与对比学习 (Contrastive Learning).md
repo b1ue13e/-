@@ -20,8 +20,8 @@ related:
   - BYOL
   - 自监督学习
 flow: knowledge
-upstream: ["[[02-Knowledge/🧠 学习系统/05-计算机视觉/02-深度学习内核/🎯 ResNet (残差网络)]]", "[[02-Knowledge/🧠 学习系统/05-计算机视觉/02-深度学习内核/Softmax与SVM损失函数]]"]
-stage_moc: "[[02-Knowledge/🧠 学习系统/05-计算机视觉/04-前沿架构探索/🚀 第四阶段：前沿架构探索]]"
+upstream: ["[[🎯 ResNet (残差网络)]]", "[[Softmax与SVM损失函数]]"]
+stage_moc: "[[🚀 第四阶段：前沿架构探索]]"
 kind: concept
 source: "CS231n A3"
 anki_deck: "05-计算机视觉::04-前沿架构探索"
@@ -72,8 +72,8 @@ tags:
 
 最小必要背景：
 
-1. **[[02-Knowledge/🧠 学习系统/05-计算机视觉/02-深度学习内核/🎯 ResNet (残差网络)|特征提取器 (Backbone)]]**：如 ResNet-50，负责将高维图像 $\mathbf{x}$ 映射为低维特征向量 $\mathbf{h} = f(\mathbf{x})$。
-2. **[[02-Knowledge/🧠 学习系统/05-计算机视觉/02-深度学习内核/Softmax与SVM损失函数|Softmax 与交叉熵损失]]**：多分类问题中将得分转化为概率并拉近目标类的损失函数。
+1. **[[🎯 ResNet (残差网络)|特征提取器 (Backbone)]]**：如 ResNet-50，负责将高维图像 $\mathbf{x}$ 映射为低维特征向量 $\mathbf{h} = f(\mathbf{x})$。
+2. **[[Softmax与SVM损失函数|Softmax 与交叉熵损失]]**：多分类问题中将得分转化为概率并拉近目标类的损失函数。
 
 ---
 
@@ -215,14 +215,14 @@ print("SimCLR InfoNCE 损失:", loss.item())
 ## 9. 相关知识点与 Obsidian 双链建议
 
 ### 上游依赖
-- [[02-Knowledge/🧠 学习系统/05-计算机视觉/02-深度学习内核/🎯 ResNet (残差网络)|ResNet]]：用作 SimCLR 的特征抽取编码器 Backbone。
-- [[02-Knowledge/🧠 学习系统/05-计算机视觉/02-深度学习内核/Softmax与SVM损失函数|交叉熵损失]]：InfoNCE 损失函数的数学原型。
+- [[🎯 ResNet (残差网络)|ResNet]]：用作 SimCLR 的特征抽取编码器 Backbone。
+- [[Softmax与SVM损失函数|交叉熵损失]]：InfoNCE 损失函数的数学原型。
 
 ### 下游延伸
-- [[02-Knowledge/🧠 学习系统/05-计算机视觉/04-前沿架构探索/自监督学习SimCLR与CLIP|CLIP 多模态]]：将 SimCLR 的“图像-图像”对比学习扩展为“图像-文本”双塔对比学习。
+- [[自监督学习SimCLR与CLIP|CLIP 多模态]]：将 SimCLR 的“图像-图像”对比学习扩展为“图像-文本”双塔对比学习。
 
 ### 横向关联
-- [[02-Knowledge/🧠 学习系统/05-计算机视觉/04-前沿架构探索/自监督学习SimCLR与CLIP|MoCo]] ↔ SimCLR：两大自监督对比学习巅峰，MoCo 用队列解决大 Batch 显存依赖，SimCLR 端到端极简。
+- [[自监督学习SimCLR与CLIP|MoCo]] ↔ SimCLR：两大自监督对比学习巅峰，MoCo 用队列解决大 Batch 显存依赖，SimCLR 端到端极简。
 
 ---
 

@@ -8,9 +8,9 @@ difficulty: intermediate
 concept: ["凸集", "凸函数", "梯度下降", "拉格朗日对偶", "KKT条件"]
 prerequisites: ["线性代数基础CV", "梯度下降CV"]
 related: ["优化器SGD到Adam", "Softmax与SVM损失函数"]
-upstream: ["[[02-Knowledge/🧠 学习系统/05-计算机视觉/01-底层基石/梯度下降CV]]"]
+upstream: ["[[梯度下降CV]]"]
 flow: knowledge
-stage_moc: "[[02-Knowledge/🧠 学习系统/05-计算机视觉/01-底层基石/🏗️ 第一阶段：底层基石]]"
+stage_moc: "[[🏗️ 第一阶段：底层基石]]"
 kind: concept
 source: "《Mathematics for Machine Learning》Ch.7; Boyd & Vandenberghe"
 tags: [学习, 计算机视觉, 优化, 凸优化]
@@ -18,8 +18,8 @@ tags: [学习, 计算机视觉, 优化, 凸优化]
 
 # 凸优化 (Convex Optimization)
 
-> 所属模块：[[02-Knowledge/🧠 学习系统/05-计算机视觉/🗺️ 计算机视觉学习路径|计算机视觉学习路径]]
-> 对应阶段：[[02-Knowledge/🧠 学习系统/05-计算机视觉/01-底层基石/🏗️ 第一阶段：底层基石|第一阶段：底层基石]]
+> 所属模块：[[🗺️ 计算机视觉学习路径|计算机视觉学习路径]]
+> 对应阶段：[[🏗️ 第一阶段：底层基石|第一阶段：底层基石]]
 > 建议先看：[[线性代数基础CV]]、[[梯度下降CV]]
 
 ---
@@ -128,7 +128,7 @@ print(f"Q_nonconvex is convex: {is_convex_quadratic(Q_nonconvex)}")  # False
 
 ## 🧪 学完本节后可完成的作业
 
-- 配合 [[02-Knowledge/🧠 学习系统/05-计算机视觉/02-深度学习内核/优化器SGD到Adam|优化器 SGD→Adam]] 理解凸 vs 非凸对优化器选择的影响
+- 配合 [[优化器SGD到Adam|优化器 SGD→Adam]] 理解凸 vs 非凸对优化器选择的影响
 ---
 
 ## 学完后可以完成

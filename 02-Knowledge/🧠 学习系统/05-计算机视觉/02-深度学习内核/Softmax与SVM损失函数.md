@@ -18,8 +18,8 @@ related:
   - "交叉熵损失"
   - "梯度下降优化"
 flow: knowledge
-upstream: ["[[02-Knowledge/🧠 学习系统/05-计算机视觉/02-深度学习内核/kNN与线性分类器]]", "[[02-Knowledge/🧠 学习系统/05-计算机视觉/02-深度学习内核/前向传播]]", "[[02-Knowledge/🧠 学习系统/05-计算机视觉/02-深度学习内核/反向传播与计算图]]"]
-stage_moc: "[[02-Knowledge/🧠 学习系统/05-计算机视觉/02-深度学习内核/🧠 第二阶段：深度学习内核]]"
+upstream: ["[[kNN与线性分类器]]", "[[前向传播]]", "[[反向传播与计算图]]"]
+stage_moc: "[[🧠 第二阶段：深度学习内核]]"
 kind: concept
 source: "CS231n A1; D2L Ch.4"
 anki_deck: "05-计算机视觉::02-深度学习内核"
@@ -74,8 +74,8 @@ tags: [学习, 计算机视觉, Softmax, SVM, 交叉熵, 损失函数, 梯度推
 最小必要背景：
 
 1. **线性分类器**：理解得分函数 $s_j = \mathbf{w}_j^T \mathbf{x} + b_j$，知道什么是得分向量 $\mathbf{s} \in \mathbb{R}^C$（$C$ 个类别的原始得分）。
-2. **[[02-Knowledge/🧠 学习系统/05-计算机视觉/02-深度学习内核/反向传播与计算图|梯度与偏导数基础]]**：知道 $\frac{\partial}{\partial x}\ln x = \frac{1}{x}$，链式法则的基本用法，以及梯度向量 $\nabla_{\mathbf{s}} L$ 的含义。
-3. **[[02-Knowledge/🧠 学习系统/05-计算机视觉/02-深度学习内核/反向传播与计算图|链式法则]]**（建议同步）：理解 $\frac{\partial L}{\partial \mathbf{W}} = \frac{\partial L}{\partial \mathbf{s}} \cdot \frac{\partial \mathbf{s}}{\partial \mathbf{W}}$ 的分层求导思路。
+2. **[[反向传播与计算图|梯度与偏导数基础]]**：知道 $\frac{\partial}{\partial x}\ln x = \frac{1}{x}$，链式法则的基本用法，以及梯度向量 $\nabla_{\mathbf{s}} L$ 的含义。
+3. **[[反向传播与计算图|链式法则]]**（建议同步）：理解 $\frac{\partial L}{\partial \mathbf{W}} = \frac{\partial L}{\partial \mathbf{s}} \cdot \frac{\partial \mathbf{s}}{\partial \mathbf{W}}$ 的分层求导思路。
 
 ---
 
@@ -359,19 +359,19 @@ print(f"SVM Hinge Loss:   {loss_svm.item():.4f}")
 
 ### 上游依赖
 - 线性分类器：理解得分函数 $\mathbf{s} = \mathbf{W}\mathbf{x} + \mathbf{b}$ 的来龙去脉。
-- [[02-Knowledge/🧠 学习系统/05-计算机视觉/02-深度学习内核/反向传播与计算图|梯度与偏导数基础]]：掌握 $\frac{\partial}{\partial s_j}$ 的基本运算法则。
-- [[02-Knowledge/🧠 学习系统/05-计算机视觉/02-深度学习内核/反向传播与计算图|链式法则]]：$\frac{\partial L}{\partial \mathbf{W}} = \frac{\partial L}{\partial \mathbf{s}} \cdot \frac{\partial \mathbf{s}}{\partial \mathbf{W}}$ 的分层求导。
+- [[反向传播与计算图|梯度与偏导数基础]]：掌握 $\frac{\partial}{\partial s_j}$ 的基本运算法则。
+- [[反向传播与计算图|链式法则]]：$\frac{\partial L}{\partial \mathbf{W}} = \frac{\partial L}{\partial \mathbf{s}} \cdot \frac{\partial \mathbf{s}}{\partial \mathbf{W}}$ 的分层求导。
 
 ### 下游延伸
-- [[02-Knowledge/🧠 学习系统/05-计算机视觉/02-深度学习内核/反向传播与计算图|反向传播算法]]：损失函数 $\to$ 输出层误差信号 $\delta^{(L)}$ 是整个反向传播的起点。
+- [[反向传播与计算图|反向传播算法]]：损失函数 $\to$ 输出层误差信号 $\delta^{(L)}$ 是整个反向传播的起点。
 - PyTorch 优化器：loss 计算完成后，`loss.backward()` 触发梯度计算，optimizer 执行参数更新。
 - 交叉熵损失（工程视角）：深入 `nn.CrossEntropyLoss` 的源码实现与数值稳定技巧。
-- [[02-Knowledge/🧠 学习系统/05-计算机视觉/03-视觉核心任务/目标检测RCNN与YOLO|Focal Loss]]：对 Cross-Entropy 的改进——通过 $(1-p_t)^\gamma$ 因子降低易分类样本的权重，解决类别极度不平衡问题。
-- [[02-Knowledge/🧠 学习系统/05-计算机视觉/02-深度学习内核/数据增强与正则化|标签平滑]]：将 one-hot 目标 $\mathbf{y}$ 软化为 $\mathbf{y}' = (1-\epsilon)\mathbf{y} + \epsilon/C$，缓解 Softmax 过度自信。
+- [[目标检测RCNN与YOLO|Focal Loss]]：对 Cross-Entropy 的改进——通过 $(1-p_t)^\gamma$ 因子降低易分类样本的权重，解决类别极度不平衡问题。
+- [[数据增强与正则化|标签平滑]]：将 one-hot 目标 $\mathbf{y}$ 软化为 $\mathbf{y}' = (1-\epsilon)\mathbf{y} + \epsilon/C$，缓解 Softmax 过度自信。
 
 ### 横向关联
 - MSE 损失 ↔ Softmax/CE：为什么分类不用 MSE？（因为 MSE + Softmax 在输出层会产生梯度饱和，收敛极慢）
-- [[02-Knowledge/🧠 学习系统/05-计算机视觉/02-深度学习内核/数据增强与正则化|权重正则化]] ↔ 损失函数：L2 正则化在 SVM 和 Softmax 中的数学形式与调参策略。
+- [[数据增强与正则化|权重正则化]] ↔ 损失函数：L2 正则化在 SVM 和 Softmax 中的数学形式与调参策略。
 
 ---
 
@@ -483,15 +483,15 @@ print(f"SVM Hinge Loss:   {loss_svm.item():.4f}")
 - **归档目录**：`02-Knowledge/🧠 学习系统/05-计算机视觉/02-深度学习内核/`
 - **建议双链**：
   - 线性分类器
-  - [[02-Knowledge/🧠 学习系统/05-计算机视觉/02-深度学习内核/反向传播与计算图|梯度计算基础]]
-  - [[02-Knowledge/🧠 学习系统/05-计算机视觉/02-深度学习内核/反向传播与计算图|反向传播算法]]
+  - [[反向传播与计算图|梯度计算基础]]
+  - [[反向传播与计算图|反向传播算法]]
   - 交叉熵损失（工程视角）
-  - [[02-Knowledge/🧠 学习系统/05-计算机视觉/03-视觉核心任务/目标检测RCNN与YOLO|Focal Loss]]
-  - [[02-Knowledge/🧠 学习系统/05-计算机视觉/02-深度学习内核/数据增强与正则化|标签平滑]]
+  - [[目标检测RCNN与YOLO|Focal Loss]]
+  - [[数据增强与正则化|标签平滑]]
   - MSE 损失
-  - [[02-Knowledge/🧠 学习系统/05-计算机视觉/02-深度学习内核/数据增强与正则化|权重正则化]]
+  - [[数据增强与正则化|权重正则化]]
 - **建议标签**：`#学习` `#深度学习` `#计算机视觉` `#Softmax` `#SVM` `#交叉熵` `#损失函数` `#梯度推导` `#CS231n`
-- **拆分建议**：属于 A 类核心概念主体卡。如后续补充 SVM Loss 梯度推导或 Log-Sum-Exp 的数值分析，可独立为子卡（难度 advanced），用双链从本卡 §6 链接出去。SVM Loss 的 vectorized 实现（Python 手写 + 梯度检查）作为实战作业 HW01 的一部分，在作业说明书 [[03-Projects/05-计算机视觉/课后作业/05-计算机视觉-课后作业-01-kNN与Softmax线性分类|HW01]] 中完成。
+- **拆分建议**：属于 A 类核心概念主体卡。如后续补充 SVM Loss 梯度推导或 Log-Sum-Exp 的数值分析，可独立为子卡（难度 advanced），用双链从本卡 §6 链接出去。SVM Loss 的 vectorized 实现（Python 手写 + 梯度检查）作为实战作业 HW01 的一部分，在作业说明书 [[05-计算机视觉-课后作业-01-kNN与Softmax线性分类|HW01]] 中完成。
 
 ---
 
@@ -503,7 +503,7 @@ print(f"SVM Hinge Loss:   {loss_svm.item():.4f}")
 
 ## 学完后可以完成
 
-- [[03-Projects/05-计算机视觉/课后作业/05-计算机视觉-课后作业-01-kNN与Softmax线性分类|HW01]]：实现 Softmax 损失与梯度、SVM 对比
+- [[05-计算机视觉-课后作业-01-kNN与Softmax线性分类|HW01]]：实现 Softmax 损失与梯度、SVM 对比
 
 > 作业入口由 frontmatter `requires` 维护（唯一事实源），下方 Dataview 反向派生当前卡可完成的全部作业。
 ## 🔗 知识图谱

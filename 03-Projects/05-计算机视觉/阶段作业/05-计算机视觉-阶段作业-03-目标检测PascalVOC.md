@@ -73,4 +73,4 @@ tags: [作业, 计算机视觉, 目标检测, Pascal VOC]
 
 - 前置知识卡：`目标检测RCNN与YOLO`、`IoU与NMS`、`FPN`、`迁移学习与微调`（frontmatter `requires` 为唯一事实源）
 - 完成后进入阶段4-5 的开放课程项目（[[05-计算机视觉-大作业-开放课程项目|大作业：开放课程项目]]）
-- 作业包：[[03-Projects/05-计算机视觉/real_assignment_packages/hw05_pascal_voc_detection_pkg/README|HW05 真实作业包]]
+- 作业包：[[README|HW05 真实作业包]]

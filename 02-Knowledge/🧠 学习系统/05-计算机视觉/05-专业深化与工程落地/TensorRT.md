@@ -8,10 +8,10 @@ status: ongoing
 difficulty: intermediate
 concept: ["TensorRT", "推理优化", "INT8量化", "模型部署", "CUDA"]
 prerequisites: ["模型量化", "卷积神经网络CNN", "优化器SGD到Adam"]
-upstream: ["[[02-Knowledge/🧠 学习系统/05-计算机视觉/05-专业深化与工程落地/模型量化]]", "[[02-Knowledge/🧠 学习系统/05-计算机视觉/02-深度学习内核/卷积神经网络CNN]]"]
+upstream: ["[[模型量化]]", "[[卷积神经网络CNN]]"]
 related: ["ONNXRuntime", "模型剪枝", "知识蒸馏"]
 flow: knowledge
-stage_moc: "[[02-Knowledge/🧠 学习系统/05-计算机视觉/05-专业深化与工程落地/🏭 第五阶段：专业深化与工程落地]]"
+stage_moc: "[[🏭 第五阶段：专业深化与工程落地]]"
 kind: concept
 source: "NVIDIA TensorRT 官方文档（docs.nvidia.com/deeplearning/tensorrt）；Leyuan Wang et al. TensorRT 技术报告"
 tags: [学习, 计算机视觉, TensorRT, 推理优化, 部署]
@@ -43,8 +43,8 @@ tags: [学习, 计算机视觉, TensorRT, 推理优化, 部署]
 
 ## 3. 学它之前需要哪些前置知识？
 
-1. **[[02-Knowledge/🧠 学习系统/05-计算机视觉/05-专业深化与工程落地/模型量化|模型量化]]**：INT8 量化的原理（scale/zero-point、校准集）是 TensorRT INT8 的基础。
-2. **[[02-Knowledge/🧠 学习系统/05-计算机视觉/02-深度学习内核/卷积神经网络CNN|CNN 结构]]**：熟悉 Conv/BN/ReLU 等算子才能理解层融合。
+1. **[[模型量化]]**：INT8 量化的原理（scale/zero-point、校准集）是 TensorRT INT8 的基础。
+2. **[[卷积神经网络CNN|CNN 结构]]**：熟悉 Conv/BN/ReLU 等算子才能理解层融合。
 3. **基本部署概念**：ONNX 中间格式、batch 大小、动态 shape。
 
 ## 4. 用直觉语言解释它
@@ -136,8 +136,8 @@ PyTorch 模型 → export ONNX → trtexec --onnx=model.onnx --fp16 --int8 --cal
 
 ## 9. 相关知识点与 Obsidian 双链建议
 
-- 上游：[[02-Knowledge/🧠 学习系统/05-计算机视觉/05-专业深化与工程落地/模型量化|模型量化]]、[[02-Knowledge/🧠 学习系统/05-计算机视觉/02-深度学习内核/卷积神经网络CNN|CNN]]
-- 平行：[[02-Knowledge/🧠 学习系统/05-计算机视觉/05-专业深化与工程落地/模型剪枝|模型剪枝]]、[[02-Knowledge/🧠 学习系统/05-计算机视觉/03-视觉核心任务/知识蒸馏|知识蒸馏]]（可组合的压缩方法）
+- 上游：[[模型量化]]、[[卷积神经网络CNN|CNN]]
+- 平行：[[模型剪枝]]、[[知识蒸馏]]（可组合的压缩方法）
 - 替代：ONNXRuntime（跨硬件）、OpenVINO（Intel）
 
 ```dataview
@@ -177,7 +177,7 @@ SORT assignment_level ASC, file.name ASC
 
 ## 13. 给 Obsidian 的归档建议
 
-- 与 [[02-Knowledge/🧠 学习系统/05-计算机视觉/05-专业深化与工程落地/模型量化|模型量化卡]] 关联：量化原理在那边，TensorRT 是它的工程落地。
+- 与 [[模型量化|模型量化卡]] 关联：量化原理在那边，TensorRT 是它的工程落地。
 - 阶段5 MOC 中它对应"模型部署 → 推理优化"板块。
 
 ## 学完后可以完成
