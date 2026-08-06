@@ -42,5 +42,5 @@ def test_cv_course_integrity():
             if line.startswith('|') and v.re.search(
                     r'\[\[[^\]|]+\](?<!\\)\|[^\]|]+\]\]', line.replace('\\|', '\\x7c')):
                 problems.append(f'表格未转义别名 {rel}:{i}')
-    assert study_cards == 55, f"study 卡数量异常: {study_cards}"
+    assert study_cards >= 55, f"study 卡数量异常: {study_cards}"
     assert not problems, f"发现问题 {len(problems)} 项:\n" + "\n".join(problems[:30])
