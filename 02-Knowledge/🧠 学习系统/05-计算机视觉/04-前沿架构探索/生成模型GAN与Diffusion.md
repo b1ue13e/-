@@ -245,6 +245,23 @@ class DDPM:
 
 ---
 
+### 7.5 Textual Inversion：用文本向量学习新概念
+
+**问题**：SD/扩散模型只能生成预训练时见过的概念——想生成"我家猫"或某个特定艺术风格，没有对应 token。
+
+**思路（Textual Inversion, Gal et al., 2022）**：不微调模型权重，只学一个**新文本嵌入向量** $v_*$（≈ 新伪 token `<cat-of-mine>`），冻结 U-Net 与 text encoder 其余参数，用少量目标图像（3-5 张）优化：
+
+$$v_* = \arg\min_v \; \mathbb{E}_{z_t, t, \epsilon} \left\lVert \epsilon - \epsilon_\theta(z_t, t, \text{cond}(v)) \right\rVert^2$$
+
+（即标准扩散去噪损失，唯一可训练变量是条件中的文本嵌入。）
+
+**训练后**：输入 prompt `"a photo of <cat-of-mine> in the park"` 就能生成"我家猫在公园"——新概念被"写进"了文本空间，无需修改模型。
+
+**相关方法**：
+- **DreamBooth**：微调整个扩散模型，概念保真度更高但会"遗忘"原模型能力（需 prior preservation）；
+- **LoRA/ControlNet 风格的轻量微调**：控制生成结构/风格；
+- Textual Inversion 最轻量（只学 ~768 维向量），适合风格迁移与个性化，但表达能力有限（无法学复杂姿态）。
+
 ## 8. 常见误区和易混概念
 
 ### 误区 1：GAN 训练到最后，判别器 loss 越小越好

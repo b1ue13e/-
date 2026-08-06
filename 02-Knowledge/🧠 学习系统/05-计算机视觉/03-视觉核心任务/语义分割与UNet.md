@@ -164,7 +164,21 @@ $$W_{out} = (W_{in} - 1) \cdot S - 2P + K$$
 
 现代分割实现首选：先用 `F.interpolate(x, scale_factor=2, mode='bilinear')` 将特征图分辨率翻倍（**无参数，不会引入棋盘效应**），再用标准 $3 \times 3$ 卷积精炼上采样后的特征。这种方式在 nnU-Net 等现代框架中被广泛采用。
 
-### 5.4 损失函数：Dice Loss vs Cross-Entropy
+### 5.4 PSPNet：金字塔池化模块（PPM）
+
+**问题**：FCN/U-Net 用"感受野有限的卷积"聚合上下文，全局场景信息（天空、道路的"整体氛围"）利用不足——常把类似物体混淆（如把"船"错分为"车"，因为局部纹理相似）。
+
+**解决**：在 backbone 末端加入**金字塔池化模块（Pyramid Pooling Module, PPM）**——用 $4$ 种不同池化尺寸（$1\times1, 2\times2, 3\times3, 6\times6$）并行聚合不同范围的上下文，再 $1\times1$ 卷积降维、双线性上采样回原尺寸后**拼接**：
+
+$$\text{out} = \text{Concat}\left[\;f,\; \text{Upsample}_{4\times}(P_{1\times1}),\; \text{Upsample}_{2\times}(P_{2\times2}),\; \text{Upsample}_{\frac43\times}(P_{3\times3}),\; \text{Upsample}(P_{6\times6})\;\right]$$
+
+- 小池化尺寸捕获全局信息（整体场景），大池化尺寸保留局部细节（边缘位置）；
+- 相比 DeepLab 的 ASPP（空洞卷积捕获多尺度上下文），PSPNet 用**池化**实现类似效果，实现更简单；
+- 提升场景解析（PASCAL-Context、ADE20K）的 mIoU 显著（PSPNet 在 ADE20K 上相较 FCN 提升约 +8 mIoU）。
+
+> **与 DeepLab 的关系**：PSPNet（池化多尺度）与 DeepLab（空洞卷积多尺度）是"上下文聚合"的两条并行路线，常被一起比较；现代语义分割主干多融合两者思想。
+
+### 5.5 损失函数：Dice Loss vs Cross-Entropy
 
 #### 逐像素交叉熵（Pixel-wise Cross-Entropy）
 
@@ -198,7 +212,7 @@ $$\mathcal{L} = \alpha \cdot \mathcal{L}_{CE} + (1 - \alpha) \cdot \mathcal{L}_{
 
 $\alpha$ 通常取 0.5，使模型既受益于 CE 的稳定梯度又受益于 Dice 的类别平衡。
 
-### 5.5 符号说明表
+### 5.6 符号说明表
 
 | 符号 | 含义 | 典型值 |
 | :--- | :--- | :--- |

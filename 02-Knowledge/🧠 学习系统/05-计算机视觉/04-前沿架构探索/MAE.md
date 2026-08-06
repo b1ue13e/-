@@ -104,6 +104,16 @@ def mae_forward(imgs, mask_ratio=0.75):
 
 ---
 
+## 5.5 BEiT 与 iBOT：掩码预训练的另两条路线
+
+MAE 用"像素回归"重建被掩 patch；**BEiT**（Bao et al., 2021）与 **iBOT**（Zhou et al., 2021）走"离散 token 预测"路线，与 BERT 的 masked language modeling 更接近：
+
+- **BEiT**：先用一个预训练好的 **dVAE**（离散 VAE，如 8192 个码字）把每个 patch 编码为离散 token；预训练时遮住 patch，用 ViT 预测其 dVAE token——分类任务（判别式重建）而非回归；
+- **iBOT**：把 BEiT 的 tokenizer 换成**在线自蒸馏**（教师网络产生 token 软标签），并加入 [CLS] token 的全局对比损失，同时做 patch 级与图像级自监督，在 ImageNet 线性探针与微调上刷新 SOTA；
+- **共同点**：用**离散表示**作为预测目标 → 学到的特征更适合下游判别任务；而 MAE 的像素回归目标信息密度低，特征偏向低频结构。
+
+**选择**：MAE 实现简单、易复现（无需 tokenizer）；BEiT/iBOT 特征质量更高但依赖额外 tokenizer/教师网络，工程复杂度高。
+
 ## 6. 常见误区
 
 - ❌ "MAE 和 Autoencoder 一样" — 传统 AE 压缩再解压；MAE 是掩码预测（更像 BERT）

@@ -81,6 +81,20 @@ s = \frac{\max(|x|)}{\text{Q}_{\max}}
 $$
 校准集通常是验证集子集（如 500-1000 张），前向收集激活分布，确定每层 scale；entropy calibration 选使 KL 散度最小的阈值。
 
+### 5.5 跨平台推理工具对比（ONNX Runtime / OpenVINO / MNN / NCNN）
+
+TensorRT 是 **NVIDIA GPU 专用**的极致推理引擎；实际部署常按硬件选型：
+
+| 工具 | 平台/硬件 | 特点 | 适用 |
+|:---|:---|:---|:---|
+| **ONNX Runtime** | 跨平台（CPU/GPU/移动端） | 开放标准 ONNX 模型直接推理；CPU 上也有优化；生态最广 | 通用部署、跨框架互转 |
+| **OpenVINO** | Intel CPU/GPU/VPU | Intel 硬件深度优化，CPU 推理显著加速 | Intel 服务器/边缘设备 |
+| **TensorRT** | NVIDIA GPU | 延迟最低、INT8/FP16 支持最好，但 engine 与 GPU 绑定 | GPU 服务器/车端 Orin |
+| **MNN**（阿里） | 移动端（ARM CPU/GPU/NPU） | 移动端性能优化、模型压缩（量化/裁剪） | 手机 App 推理 |
+| **NCNN**（腾讯） | 移动端/嵌入式 | 轻量、无第三方依赖、推理快速 | 手机/嵌入式 Linux |
+
+**选型路径**：先导出 ONNX（通用中间格式）→ 按目标硬件选择推理后端（GPU→TensorRT、Intel CPU→OpenVINO、手机→MNN/NCNN）；量化与算子兼容性（算子不支持时回退到 CPU 实现）是常见坑。
+
 ## 6. 推导思路和思想来源
 
 1. **为什么推理与训练不同**：训练需要反向传播（保留中间激活），推理只有前向（可融合、可低精度）；训练框架优化目标是吞吐（大 batch 训练），推理优化目标是延迟（单 batch 快速响应）。
@@ -171,3 +185,12 @@ SORT assignment_level ASC, file.name ASC
 - 可作为 HW06/CAP01 部署优化扩展（INT8 推理加速）
 
 > 该卡无直接课后/阶段作业：以卡内自测题与闭卷复现作为形成性验收；如需综合实践，可挂靠 HW06 开放课程项目或 CAP01。
+
+## 🔗 知识图谱
+
+```dataview
+LIST
+FROM "02-Knowledge/🧠 学习系统"
+WHERE contains(upstream, this.file.link)
+SORT file.name ASC
+```

@@ -170,7 +170,26 @@ $$\ell_{i,j} = -\log \frac{\exp(\text{sim}(\mathbf{z}_i, \mathbf{z}_j) / \tau)}{
 
 $$\mathcal{L}_{\text{CLIP}} = \frac{1}{2} \left( \underbrace{-\frac{1}{N}\sum_{i=1}^{N} \log \frac{\exp(\mathbf{v}_i \cdot \mathbf{t}_i / \tau)}{\sum_{j=1}^{N} \exp(\mathbf{v}_i \cdot \mathbf{t}_j / \tau)}}_{\text{图像→文本方向}} + \underbrace{-\frac{1}{N}\sum_{i=1}^{N} \log \frac{\exp(\mathbf{t}_i \cdot \mathbf{v}_i / \tau)}{\sum_{j=1}^{N} \exp(\mathbf{t}_i \cdot \mathbf{v}_j / \tau)}}_{\text{文本→图像方向}} \right)$$
 
-### 5.5 Zero-Shot 分类原理
+### 5.5 SimSiam：无负样本、无动量的极简对比学习
+
+SimSiam（Chen & He, 2021）在对比学习谱系上做到"最简"：**只用正样本对，不用负样本、不用动量编码器、不用大 batch**，仅靠一个 **stop-gradient（停止梯度）** 操作就能避免坍塌（所有样本学成同一个向量）。
+
+结构：孪生编码器 $f_\theta$（共享权重）→ 预测头 $h$ 与 stop-gradient 分支：
+
+$$\mathcal{L} = -\frac12 \left[ \text{cos}\left(h(f_\theta(x_1)),\; \text{sg}(f_\theta(x_2))\right) + \text{cos}\left(h(f_\theta(x_2)),\; \text{sg}(f_\theta(x_1))\right) \right]$$
+
+其中 $\text{sg}(\cdot)$ 不传播梯度。直觉：$x_1$ 分支"主动靠近" $x_2$ 的表示（有梯度），而 $x_2$ 分支被冻结——两边交替当"目标"，防止两者同步坍塌。
+
+| 方法 | 负样本 | 动量编码器 | 关键机制 |
+|:---|:---:|:---:|:---|
+| SimCLR | ✅ | ❌ | 大 batch 负样本 |
+| MoCo | ✅ | ✅ | 动态字典队列 |
+| BYOL | ❌ | ✅ | 动量教师 |
+| SimSiam | ❌ | ❌ | stop-gradient |
+
+**与 BYOL 的关系**：SimSiam 去掉动量后仍不坍塌，证明动量只是"锦上添花"而非必要——stop-gradient 才是防止坍塌的核心机制（对称性破缺）。
+
+### 5.6 Zero-Shot 分类原理
 
 CLIP 训练完成后，Zero-Shot 分类不需要任何微调：
 
@@ -180,7 +199,7 @@ CLIP 训练完成后，Zero-Shot 分类不需要任何微调：
 4. 计算余弦相似度：$P(y=k|\mathbf{x}) = \text{softmax}(\mathbf{v} \cdot \mathbf{t}_k / \tau)$
 5. 取最大概率的类别作为预测结果。
 
-### 5.6 符号统一说明表
+### 5.7 符号统一说明表
 
 | 符号 | 含义 | 典型取值 | 备注 |
 | :--- | :--- | :--- | :--- |

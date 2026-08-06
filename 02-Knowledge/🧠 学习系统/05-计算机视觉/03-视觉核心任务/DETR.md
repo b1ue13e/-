@@ -164,3 +164,12 @@ SORT assignment_level ASC, file.name ASC
 - 可作为 HW06 开放项目『Transformer 检测器』选题（或 HW05 进阶扩展）
 
 > 该卡无直接课后/阶段作业：以卡内自测题与闭卷复现作为形成性验收；如需综合实践，可挂靠 HW06 开放课程项目或 CAP01。
+
+## 🔗 知识图谱
+
+```dataview
+LIST
+FROM "02-Knowledge/🧠 学习系统"
+WHERE contains(upstream, this.file.link)
+SORT file.name ASC
+```
