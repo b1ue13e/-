@@ -612,7 +612,6 @@ $$F(u, v) = \sum_{x=0}^{M-1} \sum_{y=0}^{N-1} f(x, y) \cdot e^{-i 2\pi \left(\fr
 - 基础前置，理解频域滤波与 CNN 第一层卷积核的 Gabor-like 模式
 
 ---
----
 
 ## 学完后可以完成
 

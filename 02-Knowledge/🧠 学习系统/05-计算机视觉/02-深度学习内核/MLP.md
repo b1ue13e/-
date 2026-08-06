@@ -160,7 +160,6 @@ with torch.no_grad():
    <details><summary>💡 提示</summary>浅层宽网络需要指数级神经元才能达到深层网络的表达能力。深度 = 参数效率高 = 更好的归纳偏置。</details>
 
 ---
----
 
 ## 学完后可以完成
 

@@ -117,7 +117,6 @@ $$P_\ell = \text{Conv}_{3\times3}(\text{Conv}_{1\times1}(C_\ell) + \text{Upsampl
    <details><summary>💡 提示</summary>Faster R-CNN + FPN 根据 ROI 的尺寸 ($w,h$) 选择性分配：$k = k_0 + \log_2(\sqrt{wh}/224)$。小 ROI → 浅层 P2/P3，大 ROI → 深层 P4/P5。</details>
 
 ---
----
 
 ## 学完后可以完成
 

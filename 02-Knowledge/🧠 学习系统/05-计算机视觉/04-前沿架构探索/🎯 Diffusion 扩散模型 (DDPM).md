@@ -324,7 +324,6 @@ class MiniDDPM:
 - **建议标签**：`#学习` `#深度学习` `#AIGC` `#Diffusion` `#DDPM` `#扩散模型` `#UNet`
 
 ---
----
 
 ## 学完后可以完成
 

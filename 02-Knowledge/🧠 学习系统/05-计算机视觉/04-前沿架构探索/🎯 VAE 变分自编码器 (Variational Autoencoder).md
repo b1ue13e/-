@@ -19,7 +19,7 @@ related:
   - Diffusion
   - 生成模型
 flow: knowledge
-upstream: ["[[反向传播与计算图]]", "[[02-Knowledge/🧠 学习系统/14-概率图模型/🎯 变分推断 (Variational Inference & ELBO)|变分推断 (Variational Inference & ELBO)]]"]
+upstream: ["[[反向传播与计算图]]", "[[02-Knowledge/🧠 学习系统/14-概率图模型/02-推断算法/概率图模型-变分推断与ELBO|变分推断 (Variational Inference & ELBO)]]"]
 stage_moc: "[[🚀 第四阶段：前沿架构探索]]"
 kind: concept
 source: "D2L Ch.17; CS231n A3"
@@ -71,7 +71,7 @@ tags:
 
 最小必要背景：
 
-1. **[[🎯 变分推断 (Variational Inference & ELBO)|KL 散度 (Kullback-Leibler Divergence)]]**：衡量两个概率分布 $q(z)$ 与 $p(z)$ 差异的非对称度量：$\mathcal{D}_{KL}(q \parallel p) = \int q(z) \ln \frac{q(z)}{p(z)} dz \ge 0$。
+1. **[[02-Knowledge/🧠 学习系统/14-概率图模型/02-推断算法/概率图模型-变分推断与ELBO|KL 散度 (Kullback-Leibler Divergence)]]**：衡量两个概率分布 $q(z)$ 与 $p(z)$ 差异的非对称度量：$\mathcal{D}_{KL}(q \parallel p) = \int q(z) \ln \frac{q(z)}{p(z)} dz \ge 0$。
 2. **[[机器学习-反向传播算法|采样算子不可导问题]]**：从随机分布 $z \sim \mathcal{N}(\mu, \sigma^2)$ 中直接抽样的随机过程无法对 $\mu$ 和 $\sigma$ 计算偏导数。
 
 ---
@@ -221,7 +221,7 @@ def vae_loss_function(recon_x, x, mu, logvar):
 ## 9. 相关知识点与 Obsidian 双链建议
 
 ### 上游依赖
-- [[🎯 变分推断 (Variational Inference & ELBO)|变分推断]]：ELBO 证据下界与变分分布逼近的理论来源。
+- [[02-Knowledge/🧠 学习系统/14-概率图模型/02-推断算法/概率图模型-变分推断与ELBO|变分推断]]：ELBO 证据下界与变分分布逼近的理论来源。
 - [[机器学习-反向传播算法|反向传播算法]]：重参数技巧服务的目标（让梯度穿透采样节点）。
 
 ### 下游延伸
@@ -318,12 +318,11 @@ def vae_loss_function(recon_x, x, mu, logvar):
 
 - **归档目录**：`02-Knowledge/🧠 学习系统/17-机器学习/03-正则优化/`
 - **建议双链**：
-  - [[🎯 变分推断 (Variational Inference & ELBO)|变分推断]]
+  - [[02-Knowledge/🧠 学习系统/14-概率图模型/02-推断算法/概率图模型-变分推断与ELBO|变分推断]]
   - [[机器学习-反向传播算法|反向传播算法]]
   - [[🎯 Diffusion 扩散模型 (DDPM)|Diffusion 扩散模型]]
 - **建议标签**：`#学习` `#深度学习` `#生成模型` `#VAE` `#重参数技巧` `#ELBO`
 
----
 ---
 
 ## 学完后可以完成

@@ -399,7 +399,6 @@ $$v_* = \arg\min_v \; \mathbb{E}_{z_t, t, \epsilon} \left\lVert \epsilon - \epsi
 - **拆分建议**：本卡为概念主卡，覆盖 GAN 与 Diffusion 的核心对比。后续可拆分 GAN 稳定性专题（WGAN/WGAN-GP）、Diffusion 加速专题（DDIM/DPM-Solver）、Flow Matching 新范式。
 
 ---
----
 
 ## 学完后可以完成
 

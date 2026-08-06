@@ -669,7 +669,6 @@ results["RMSprop"]      = train_model("RMSprop", optim.RMSprop, lr=0.001, weight
 - **建议标签**：`#学习` `#计算机视觉` `#优化器` `#SGD` `#Adam` `#AdamW` `#Momentum` `#训练优化`
 
 ---
----
 
 ## 学完后可以完成
 

@@ -378,7 +378,6 @@ def apply_colormap(cam, original_image, alpha=0.5):
 - **拆分建议**：当前覆盖 Saliency/CAM/Grad-CAM/Guided Backprop 四条线。若挖深可将 SHAP/LIME/Integrated Gradients 等模型无关方法另开卡片；Grad-CAM 的高级扩展（Score-CAM、Ablation-CAM、Transformer 适配版）也可单独成卡。
 
 ---
----
 
 ## 学完后可以完成
 

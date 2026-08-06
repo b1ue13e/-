@@ -508,7 +508,6 @@ Flatten 前特征图: torch.Size([2, 256, 6, 6])
 *创建于：2026-08-06 | 来源：D2L Ch.8; Krizhevsky, Sutskever & Hinton (NeurIPS 2012)*
 
 ---
----
 
 ## 学完后可以完成
 

@@ -326,7 +326,6 @@ def raw2outputs(raw_pred, z_vals, rays_d):
   - [[05-计算机视觉/02-深度学习内核/3DGS|3D Gaussian
 
 ---
----
 
 ## 学完后可以完成
 

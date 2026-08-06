@@ -513,7 +513,6 @@ def clip_zero_shot(image, class_names, vision_encoder, text_encoder,
 - **建议标签**：`#学习` `#计算机视觉` `#自监督学习` `#对比学习` `#SimCLR` `#CLIP` `#多模态` `#InfoNCE`
 
 ---
----
 
 ## 学完后可以完成
 

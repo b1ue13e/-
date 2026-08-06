@@ -499,7 +499,6 @@ print(f"SVM Hinge Loss:   {loss_svm.item():.4f}")
 *来源：CS231n Assignment 1; 《动手学深度学习》D2L Ch.4*
 
 ---
----
 
 ## 学完后可以完成
 

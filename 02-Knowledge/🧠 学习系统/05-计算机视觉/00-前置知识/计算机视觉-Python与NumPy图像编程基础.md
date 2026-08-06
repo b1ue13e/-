@@ -89,20 +89,23 @@ print(gray[0, 0])        # 10 —— 第 0 行第 0 列像素
 print(gray.mean())       # 平均亮度
 ```
 
-### 例子 2：中等——通道操作与翻转（真实图片用 PIL 读入）
+### 例子 2：中等——通道操作与翻转（用合成图模拟真实读取）
 
 ```python
 import numpy as np
-from PIL import Image
 
-img = np.array(Image.open("F:/-/scratch/example_flower.png"))  # (H, W, 3), uint8
+# 用随机像素模拟一张 64×64 彩色图（真实场景用 PIL：np.array(Image.open("path.png"))）
+img = np.random.randint(0, 256, (64, 64, 3), dtype=np.uint8)  # (H, W, 3), uint8
 # 上下翻转
 flipped = img[::-1]
 # 给所有像素 R 通道加 30（广播），并防溢出回绕
 img_r = img.astype(np.int16)
 img_r[:, :, 0] = np.clip(img_r[:, :, 0] + 30, 0, 255)
 brightened = img_r.astype(np.uint8)
-print(flipped.shape, brightened.shape)
+print(flipped.shape, brightened.shape)  # (64, 64, 3) (64, 64, 3)
+assert flipped.shape == img.shape and brightened.shape == img.shape
+assert brightened.dtype == np.uint8 and brightened.max() <= 255
+print("通道操作与翻转示例通过 ✔")
 ```
 
 ### 例子 3：应用——HW01 里的 kNN 距离矩阵（向量化）

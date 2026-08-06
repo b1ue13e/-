@@ -425,7 +425,6 @@ class TransformerEncoderBlock(nn.Module):
 - **拆分建议**：当前为 B 类概念主卡，覆盖完整。若后续挖深，可将 Self-Attention 公式推导、位置编码变体（RoPE / ALiBi）、Sparse Attention 优化单独成卡。
 
 ---
----
 
 ## 学完后可以完成
 
