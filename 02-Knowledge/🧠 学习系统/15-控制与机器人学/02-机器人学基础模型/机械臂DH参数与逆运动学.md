@@ -1,20 +1,21 @@
 ---
 title: "机械臂DH参数与逆运动学"
 date: "2026-08-03"
-type: concept
+type: study
 course: "控制与机器人学"
 importance: "A"
+stage_moc: "[[🧭 阶段2-机器人学基础模型]]"
 tags: [学习, 控制与机器人学]
-upstream: [齐次变换矩阵, 基本旋转, 旋转矩阵]
-downstream: [几何Jacobian, 速度传递, 奇异位形]
-status: learning
+upstream: ["[[02-机器人学基础模型/齐次变换矩阵]]", "[[02-机器人学基础模型/旋转矩阵]]"]
+status: completed
 concept: ["DH参数", "正运动学", "逆运动学"]
 prerequisites: ["齐次变换矩阵", "基本旋转", "旋转矩阵"]
 related: ["几何Jacobian", "奇异位形", "IK多解", "PUMA560"]
-flow: project
+flow: knowledge
 kind: concept
 template: Obsidian单知识点深度学习模板
 created: 2026-08-03
+updated: 2026-08-07
 ---
 
 # 机械臂DH参数与逆运动学
