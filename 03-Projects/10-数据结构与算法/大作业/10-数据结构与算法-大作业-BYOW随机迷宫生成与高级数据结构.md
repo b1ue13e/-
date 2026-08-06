@@ -1,50 +1,49 @@
 ---
-title: "数据结构与算法-题型-BYOW迷宫与高级数据结构阶梯作业"
-type: problem-type
-kind: problem-type
-flow: knowledge
-assignment_format: problem-set
-stage_id: "02"
-requires: ["[[10-数据结构与算法-图的深度优先搜索DFS]]", "[[10-数据结构与算法-并查集]]"]
-source_type: open_textbook_exercise
-topic: "数据结构与算法作业"
-course: "10-数据结构与算法"
+title: "10-数据结构与算法-大作业-BYOW随机迷宫生成与高级数据结构"
+type: project
+project_type: homework
+course: "数据结构与算法"
+assignment_id: "10-数据结构与算法-大作业-BYOW"
+assignment_level: capstone
+assignment_format: project
+stage_id: "06"
+requires:
+  - "[[10-数据结构与算法-DFS基础]]"
+  - "[[10-数据结构与算法-并查集基础]]"
+  - "[[10-数据结构与算法-红黑树]]"
+source_type: open_source_project_task
 created: 2026-07-29
-updated: 2026-07-29
-date: 2026-07-29
-status: learning
-difficulty: advanced
-importance: A
-concept: ["数据结构", "图算法", "迷宫生成"]
-prerequisites: ["[[02-Knowledge/🧠 学习系统/10-数据结构与算法/🗺️ 数据结构与算法学习路径|DSA学习路径]]"]
-related: ["[[机器学习-题型-李宏毅式分类与深层模型阶梯作业]]"]
-upstream: ["[[02-Knowledge/🧠 学习系统/10-数据结构与算法/🗺️ 数据结构与算法学习路径|数据结构与算法学习路径]]"]
-downstream: []
-tags: [学习, 10-数据结构与算法, 作业, 实战, 阶梯作业]
-aliases: ["CS61B-Proj2-BYOW作业"]
+status: planned
+flow: project
+tags:
+  - 作业
+  - 10-数据结构与算法
+  - 大作业
+  - 迷宫生成
 ---
 
-# 数据结构与算法 - HW02：BYOW 随机迷宫生成与高级数据结构阶梯作业
+# 10-数据结构与算法 - 大作业：BYOW 随机迷宫生成与高级数据结构
 
 > 🎯 **作业目标**：手写红黑树/并查集/线段树，并基于 Java/Python 独立实现带有随机地形、探索光照与交互控制的 2D 迷宫生成引擎 (Build Your Own World)。
 
 ---
 
 ## 1. ⚙️ 环境与 Starter Code 准备
+
 - **Starter Code 路径**：`03-Projects/projects-dsa/hw02_byow.ipynb`
-- **开源标杆仓库**：[sp21.cs61b.org](https://sp21.cs61b.org/) (UC Berkeley CS61B Project 2)
+- **开源标杆仓库**：[UC Berkeley CS61B Project 2 (BYOW)](https://sp21.cs61b.org/)
 - **核心依赖**：`java` / `pytest` / `numpy` / `junit`
 
 ---
 
-## 2. 🎯 阶梯式 Baseline / 难度设计 (4-Tier Difficulty)
+## 2. 🎯 阶梯式难度设计与功能需求
 
-| 梯度级别 | 验收标准 / 功能细节 | 关键实现细节与要求 |
+| 难度层级 | 验收标准 / 功能细节 | 关键实现细节与要求 |
 | :--- | :--- | :--- |
-| 🟢 **L1 - Simple Baseline** | 基础数据结构正确性 100% | 独立手写双向链表、二叉搜索树 (BST) 与快速排序，通过 JUnit 单元测试。 |
-| 🟡 **L2 - Medium Baseline** | 解决 LeetCode Hard 题 | **手撕并查集 (Disjoint Set)** 与 **红黑树 (Red-Black Tree)** 旋转平衡逻辑。 |
-| 🔴 **L3 - Strong Baseline** | **CS61B Proj 2 随机迷宫** | 根据 Seed 随机生成由房间与弯曲走廊相连的 2D 迷宫，支持键盘 WASD 角色探索与 HUD 显示。 |
-| 👑 **L4 - Boss Baseline** | 持久化与线段树优化 | **从零手撕线段树 / 树状数组**，并为迷宫增加视线阻挡 (Line-of-Sight) 与游戏存档/加载系统。 |
+| **基础 (Level 1)** | 基础数据结构正确性 100% | 独立手写双向链表、二叉搜索树 (BST) 与快速排序，通过 JUnit 单元测试。 |
+| **进阶 (Level 2)** | 复杂结构与图算法 | 手撕并查集 (Disjoint Set) 与红黑树 (Red-Black Tree) 旋转平衡逻辑。 |
+| **综合 (Level 3)** | 随机迷宫与世界生成 | 根据 Seed 随机生成由房间与弯曲走廊相连的 2D 迷宫，支持键盘 WASD 角色探索与 HUD 显示。 |
+| **扩展 (Level 4)** | 持久化与线段树优化 | 从零手撕线段树 / 树状数组，并为迷宫增加视线阻挡 (Line-of-Sight) 与游戏存档/加载系统。 |
 
 ---
 
