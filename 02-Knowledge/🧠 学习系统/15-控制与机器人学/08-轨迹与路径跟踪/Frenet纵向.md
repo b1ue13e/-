@@ -11,9 +11,9 @@ tags: ["学习", "控制与机器人学"]
 ---
 # Frenet纵向
 
-> 所属模块：[[../🗺️ 控制与机器人学学习路径|控制与机器人学学习路径]]
+> 所属模块：[[🗺️ 控制与机器人学学习路径|控制与机器人学学习路径]]
 > 主教材：`《Autonomous Driving》`
-> 对应阶段：[[02-Knowledge/🧠 学习系统/15-控制与机器人学/08-轨迹与路径跟踪/🛤️ 阶段8：轨迹与路径跟踪|返回阶段页]]
+> 对应阶段：[[🧭 阶段8-轨迹与路径跟踪|返回阶段页]]
 > 建议先看：Lateral Control、Longitudinal Control、Trajectory Tracking、Planning-Tracking Loop
 > 辅助教材：`《机器人学导论》`
 

@@ -11,9 +11,9 @@ tags: ["学习", "控制与机器人学"]
 ---
 # Smith预估器
 
-> 所属模块：[[../🗺️ 控制与机器人学学习路径|控制与机器人学学习路径]]
+> 所属模块：[[🗺️ 控制与机器人学学习路径|控制与机器人学学习路径]]
 > 主教材：`《Autonomous Driving》`
-> 对应阶段：[[02-Knowledge/🧠 学习系统/15-控制与机器人学/07-纵向控制/↕️ 阶段7：纵向控制|返回阶段页]]
+> 对应阶段：[[🧭 阶段7-纵向控制|返回阶段页]]
 > 建议先看：Vehicle Models、Planning、Control、Autonomous Systems
 > 辅助教材：`《Autonomous Driving》`
 
