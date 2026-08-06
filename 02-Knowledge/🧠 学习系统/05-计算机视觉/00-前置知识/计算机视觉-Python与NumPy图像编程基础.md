@@ -162,6 +162,15 @@ print(dist.shape)  # (10, 500)：第 i 行 = 测试图 i 到所有训练图的�
 
 ---
 
+## 🔗 知识图谱
+
+```dataview
+LIST
+FROM "02-Knowledge/🧠 学习系统"
+WHERE contains(upstream, this.file.link)
+SORT file.name ASC
+```
+
 ## 学完后可以完成
 
 ```dataview

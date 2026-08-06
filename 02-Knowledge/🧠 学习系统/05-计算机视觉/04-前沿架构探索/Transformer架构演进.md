@@ -150,6 +150,15 @@ print(DepthwiseSeparable(96)(x).shape)     # (1, 96, 56, 56)，参数只有 96*7
 3. 用 PyTorch 实现 DepthwiseSeparable（例子 2）并验证输出形状与参数量；
 4. 画一张"ResNet → ViT → Swin/PVT → ConvNeXt/CoAtNet"的演进时间线。
 
+## 🔗 知识图谱
+
+```dataview
+LIST
+FROM "02-Knowledge/🧠 学习系统"
+WHERE contains(upstream, this.file.link)
+SORT file.name ASC
+```
+
 ## 10. 学完后可以完成
 
 ```dataview
