@@ -11,7 +11,9 @@ from pathlib import Path
 
 sys.stdout.reconfigure(encoding="utf-8")
 
-ROOT = Path(__file__).resolve().parent
+# 默认扫描知识库根目录（本文件位于 99-System/tools/ 下，根目录是上两级）；
+# 也可通过 `python scan_frontmatter.py <目录>` 指定扫描根。
+ROOT = Path(sys.argv[1]).resolve() if len(sys.argv) > 1 else Path(__file__).resolve().parent.parent
 SKIP_DIRS = {
     ".git",
     ".obsidian",
@@ -19,9 +21,12 @@ SKIP_DIRS = {
     ".trash",
     ".tmp.drivedownload",
     ".tmp.driveupload",
+    ".recovery-hold",
     "tmp",
+    ".tmp",
+    "__pycache__",
     "tools",
-    " Assistants",
+    "Assistants",
 }
 SKIP_FILES = {"AGENTS.md"}
 FRONTMATTER_RE = re.compile(r"^\ufeff?---\s*\n(.*?)\n---", re.DOTALL)

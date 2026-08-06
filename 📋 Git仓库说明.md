@@ -2,6 +2,7 @@
 type: index
 topic: "Git仓库说明"
 created: 2026-04-29
+updated: 2026-08-06
 status: active
 tags: [说明, Git, Obsidian]
 ---
@@ -10,47 +11,36 @@ tags: [说明, Git, Obsidian]
 
 当前长期使用的 Git 仓库目录是：
 
-- `E:\GitHub\-core`
+- `F:\-`
 
-原始完整仓库目录是：
+远端仓库：
 
-- `E:\GitHub\-`
+- `https://github.com/b1ue13e/-`
 
 ## 你以后应该在哪工作
 
-如果目标是：
+- 持续提交与推送：`F:\-`
+- 日常编辑与整理：`F:\-`（Obsidian 直接打开该文件夹）
 
-- 持续提交
-- 持续推 GitHub
-- 保持仓库轻量可同步
+> 历史文档曾采用 `E:\GitHub\-` 与 `E:\GitHub\-core` 的双仓库方案（核心库只保留笔记、模板、说明页）。当前已收敛为单仓库 `F:\-`，`.gitignore` 负责排除超大 PDF 与本地状态文件，因此不再需要维护两个不同步的仓库。
 
-那么建议你以后直接打开：
+## 内容分布
 
-- `E:\GitHub\-core`
-
-不要再把 `E:\GitHub\-` 当作主 Git 仓库使用。
-
-## 为什么拆成两个库
-
-因为原始仓库里包含很多超大 PDF / 资源文件，GitHub 普通仓库无法稳定推送。
-
-核心仓库只保留：
-
-- 笔记
-- 模板
-- 说明页
-- 必要的 Obsidian 配置
+- 课程知识：`02-Knowledge/🧠 学习系统/<路径>/`
+- 作业与项目：`03-Projects/<路径>/`
+- 系统治理：`99-System/`
+- 书籍/论文：`📚 书库/`、`📚 论文库/`
 
 ## 推送命令
 
 ```powershell
-git add .
+git add <本次修改路径>
 git commit -m "vault update"
 git push origin main
 ```
 
-## 注意
+> 安全约束：禁止无审查的 `git add .`；大批量修改前先做快照或安全提交；破坏性命令（`reset --hard`、`checkout --`）除非用户明确要求否则禁止使用。详见 `AGENTS.md` §7。
 
-`E:\GitHub\-` 和 `E:\GitHub\-core` 不会自动同步。  
-如果你在原始库里改内容，需要手动再整理到核心库。
+## 恢复隔离区
 
+`.recovery-hold/` 是 gitignored 的恢复隔离区。治理中的清退、归档和治理前快照都放入其中；确认内容已合并或安全后再决定是否永久删除。

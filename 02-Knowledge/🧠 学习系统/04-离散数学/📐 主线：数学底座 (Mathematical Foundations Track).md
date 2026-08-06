@@ -1,6 +1,6 @@
 ---
 title: "主线-数学底座"
-type: moc
+type: index
 kind: moc
 flow: knowledge
 track: "数学底座"
