@@ -8,6 +8,7 @@ difficulty: beginner
 concept: ["梯度下降", "优化", "学习率", "SGD", "凸优化"]
 prerequisites: ["线性代数基础", "微积分基础"]
 related: ["反向传播", "损失函数", "学习率调度"]
+upstream: ["[[02-Knowledge/🧠 学习系统/05-计算机视觉/00-前置知识/计算机视觉-微积分与链式法则最小桥接]]"]
 flow: knowledge
 stage_moc: "[[02-Knowledge/🧠 学习系统/05-计算机视觉/01-底层基石/🏗️ 第一阶段：底层基石]]"
 kind: concept
