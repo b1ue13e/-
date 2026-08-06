@@ -19,8 +19,8 @@ related:
   - Diffusion
   - 生成模型
 flow: knowledge
-upstream: ["[[02-Knowledge/🧠 学习系统/05-计算机视觉/02-深度学习内核/反向传播与计算图]]", "[[02-Knowledge/🧠 学习系统/14-概率图模型/🎯 变分推断 (Variational Inference & ELBO)]]"]
-stage_moc: "[[02-Knowledge/🧠 学习系统/05-计算机视觉/04-前沿架构探索/🚀 第四阶段：前沿架构探索]]"
+upstream: ["[[反向传播与计算图]]", "[[02-Knowledge/🧠 学习系统/14-概率图模型/🎯 变分推断 (Variational Inference & ELBO)|变分推断 (Variational Inference & ELBO)]]"]
+stage_moc: "[[🚀 第四阶段：前沿架构探索]]"
 kind: concept
 source: "D2L Ch.17; CS231n A3"
 anki_deck: "05-计算机视觉::04-前沿架构探索"
@@ -71,8 +71,8 @@ tags:
 
 最小必要背景：
 
-1. **[[02-Knowledge/🧠 学习系统/14-概率图模型/🎯 变分推断 (Variational Inference & ELBO)|KL 散度 (Kullback-Leibler Divergence)]]**：衡量两个概率分布 $q(z)$ 与 $p(z)$ 差异的非对称度量：$\mathcal{D}_{KL}(q \parallel p) = \int q(z) \ln \frac{q(z)}{p(z)} dz \ge 0$。
-2. **[[02-Knowledge/🧠 学习系统/17-机器学习/03-正则优化/机器学习-反向传播算法|采样算子不可导问题]]**：从随机分布 $z \sim \mathcal{N}(\mu, \sigma^2)$ 中直接抽样的随机过程无法对 $\mu$ 和 $\sigma$ 计算偏导数。
+1. **[[🎯 变分推断 (Variational Inference & ELBO)|KL 散度 (Kullback-Leibler Divergence)]]**：衡量两个概率分布 $q(z)$ 与 $p(z)$ 差异的非对称度量：$\mathcal{D}_{KL}(q \parallel p) = \int q(z) \ln \frac{q(z)}{p(z)} dz \ge 0$。
+2. **[[机器学习-反向传播算法|采样算子不可导问题]]**：从随机分布 $z \sim \mathcal{N}(\mu, \sigma^2)$ 中直接抽样的随机过程无法对 $\mu$ 和 $\sigma$ 计算偏导数。
 
 ---
 
@@ -221,14 +221,14 @@ def vae_loss_function(recon_x, x, mu, logvar):
 ## 9. 相关知识点与 Obsidian 双链建议
 
 ### 上游依赖
-- [[02-Knowledge/🧠 学习系统/14-概率图模型/🎯 变分推断 (Variational Inference & ELBO)|变分推断]]：ELBO 证据下界与变分分布逼近的理论来源。
-- [[02-Knowledge/🧠 学习系统/17-机器学习/03-正则优化/机器学习-反向传播算法|反向传播算法]]：重参数技巧服务的目标（让梯度穿透采样节点）。
+- [[🎯 变分推断 (Variational Inference & ELBO)|变分推断]]：ELBO 证据下界与变分分布逼近的理论来源。
+- [[机器学习-反向传播算法|反向传播算法]]：重参数技巧服务的目标（让梯度穿透采样节点）。
 
 ### 下游延伸
-- [[02-Knowledge/🧠 学习系统/05-计算机视觉/04-前沿架构探索/🎯 Diffusion 扩散模型 (DDPM)|Diffusion 扩散模型]]：继承了变分下界推导与隐空间分布拟合思想。
+- [[🎯 Diffusion 扩散模型 (DDPM)|Diffusion 扩散模型]]：继承了变分下界推导与隐空间分布拟合思想。
 
 ### 横向关联
-- [[02-Knowledge/🧠 学习系统/05-计算机视觉/04-前沿架构探索/生成模型GAN与Diffusion|GAN]] ↔ VAE：生成模型两大流派，VAE 具备显示概率建模与编码器，GAN 图像细节更清晰但易崩溃。
+- [[生成模型GAN与Diffusion|GAN]] ↔ VAE：生成模型两大流派，VAE 具备显示概率建模与编码器，GAN 图像细节更清晰但易崩溃。
 
 ---
 
@@ -318,9 +318,9 @@ def vae_loss_function(recon_x, x, mu, logvar):
 
 - **归档目录**：`02-Knowledge/🧠 学习系统/17-机器学习/03-正则优化/`
 - **建议双链**：
-  - [[02-Knowledge/🧠 学习系统/14-概率图模型/🎯 变分推断 (Variational Inference & ELBO)|变分推断]]
-  - [[02-Knowledge/🧠 学习系统/17-机器学习/03-正则优化/机器学习-反向传播算法|反向传播算法]]
-  - [[02-Knowledge/🧠 学习系统/05-计算机视觉/04-前沿架构探索/🎯 Diffusion 扩散模型 (DDPM)|Diffusion 扩散模型]]
+  - [[🎯 变分推断 (Variational Inference & ELBO)|变分推断]]
+  - [[机器学习-反向传播算法|反向传播算法]]
+  - [[🎯 Diffusion 扩散模型 (DDPM)|Diffusion 扩散模型]]
 - **建议标签**：`#学习` `#深度学习` `#生成模型` `#VAE` `#重参数技巧` `#ELBO`
 
 ---

@@ -2,57 +2,74 @@
 type: study
 topic: "Z与DTFT"
 created: 2026-04-18
-status: ongoing
+updated: 2026-08-06
+status: completed
 difficulty: intermediate
 concept: ["Z与DTFT", "与Z关系"]
 prerequisites: []
 related: []
 tags: ["学习", "信号与系统"]
+course: "信号与系统"
+flow: knowledge
+stage_moc: "[[🔢 第五阶段：Z变换]]"
+sources:
+  - "Think DSP Ch.10-12"
+  - "Oppenheim §10.2：Relation to DTFT"
+  - "MIT 6.003 Lec 20"
+kind: concept
+
 ---
 # Z与DTFT
 
-> 所属路径：[[../🗺️ 信号与系统学习路径|信号与系统学习路径]]
-> 所属阶段：[[02-Knowledge/🧠 学习系统/12-信号与系统/05-变换篇-Z变换/🔢 第五阶段：Z变换|🔢 第五阶段：Z变换]]
-> 教材入口：[[../📚 教材挂载索引|教材挂载索引]]
+> 所属路径：[[🗺️ 信号与系统学习路径|信号与系统学习路径]]
+> 所属阶段：[[🔢 第五阶段：Z变换]]
+> 教材入口：[[📚 教材挂载索引|教材挂载索引]]
 
 ## 学习定位
-- 模块：与Z关系
-- 这张卡要回答的问题：与Z关系
-- 阶段目标：目标：掌握离散系统的复频域分析，理解数字信号处理的基础。 周期：预计 4-5 周
+- 模块：z 与 DTFT
+- 这张卡要回答的问题：Z 变换与 DTFT 如何对应？
+- 阶段目标：掌握「沿单位圆取值」：DTFT = ZT 在 |z|=1 上，当且仅当单位圆在 ROC 内。
 
-## 对应教材
-- `《Signals and Systems》`：Fourier Series/Transform、Laplace Transform、Z-Transform、Frequency Response
-- `《Discrete-Time Signal Processing》`：Discrete-Time Fourier Transform、Z-Transform、Sampling of Continuous-Time Signals
+## 对应教材（真实出处）
+- Think DSP Ch.10-12
+- Oppenheim §10.2：Relation to DTFT
+- MIT 6.003 Lec 20
 
 ## 一句话定义
-> 
+> 当单位圆 |z|=1 ⊂ ROC 时，DTFT = X(z)|_{z=e^{jΩ}}；DTFT 即 ZT 在单位圆上的那圈。
 
 ## 从学习内容上要抓什么
-- 它的定义 / 研究对象是什么
-- 它为什么会出现在这一阶段、这一模块里
-- 它和前后知识点之间的连接是什么
+- DTFT 是 ZT 在单位圆上的特例。
+- 单位圆不在 ROC（如不稳定）则 DTFT 不存在。
+- 与连续 LT-FT 关系完全类比。
 
 ## 核心内容
 ### 1. 基本定义与直觉
-> 
+z 平面像圆盘，DTFT 只是沿圆周裁下的频谱环；裁得到（ROC 含圆）就有。
 
 ### 2. 公式 / 机制 / 流程
-> 
+$$X(e^{j\Omega})=X(z)\big|_{z=e^{j\Omega}}\quad(|z|=1\in\text{ROC})$$
 
 ### 3. 一个最小例子
-> 
+稳定数字滤波器单位圆在 ROC 内 ⇒ 频率响应 H(e^{jΩ})。
 
 ### 4. 常见误区
-- 
+- 单位圆不在 ROC 时仍取 z=e^{jΩ}。
+- 忽略与连续 LT-FT 的类比。
 
 ## 和其他笔记的关系
-- 前置：待补
-- 相关：待补
-- 返回阶段索引：[[02-Knowledge/🧠 学习系统/12-信号与系统/05-变换篇-Z变换/🔢 第五阶段：Z变换|🔢 第五阶段：Z变换]]
+- 前置：[[DTFT定义]]
+- 前置：[[Z平面]]
+- 相关：[[单位圆上]]
+- 相关：[[离散系统函数]]
+- 相关：[[Z变换ROC]]
+- 返回阶段索引：[[🔢 第五阶段：Z变换]]
 
 ## 最小自测
-- [ ] 我能用自己的话解释“Z与DTFT”
-- [ ] 我能说明它在“与Z关系”里的作用
-- [ ] 我能给出一个例子、公式或应用场景
+> **检索练习 / 通过标准**：合上笔记，能独立复述本节定义、写出核心公式（LaTeX）、指出至少一处常见误区，并独立完成上面的自测题，即视为掌握。
 
-*创建于：2026-04-18*
+- [ ] 说明 ZT 与 DTFT 的关系。
+- [ ] 何时 DTFT 不存在？
+- [ ] 与 LT-FT 类比？
+
+*创建于：2026-04-18 · 更新于：2026-08-06*

@@ -2,58 +2,74 @@
 type: study
 topic: "DFT线性"
 created: 2026-04-18
-status: ongoing
+updated: 2026-08-06
+status: completed
 difficulty: advanced
 concept: ["DFT线性", "线性"]
 prerequisites: []
 related: []
 tags: ["学习", "信号与系统"]
+course: "信号与系统"
+flow: knowledge
+stage_moc: "[[02-Knowledge/🧠 学习系统/12-信号与系统/07-数字篇-DFT与FFT/07-数字篇-DFT与FFT|DFT与FFT]]"
+sources:
+  - "Think DSP Ch.7：DFT"
+  - "Oppenheim §8.2：Properties"
+  - "MIT 6.003 Lec 18"
+kind: concept
+
 ---
 # DFT线性
 
-> 所属路径：[[../🗺️ 信号与系统学习路径|信号与系统学习路径]]
-> 所属阶段：[[02-Knowledge/🧠 学习系统/12-信号与系统/07-数字篇-DFT与FFT/💻 第七阶段：DFT与FFT|💻 第七阶段：DFT与FFT]]
-> 教材入口：[[../📚 教材挂载索引|教材挂载索引]]
+> 所属路径：[[🗺️ 信号与系统学习路径|信号与系统学习路径]]
+> 所属阶段：[[02-Knowledge/🧠 学习系统/12-信号与系统/07-数字篇-DFT与FFT/07-数字篇-DFT与FFT|DFT与FFT]]
+> 教材入口：[[📚 教材挂载索引|教材挂载索引]]
 
 ## 学习定位
-- 模块：线性
-- 这张卡要回答的问题：线性
-- 阶段目标：目标：掌握数字信号处理的核心算法，理解FFT的革命性意义。 周期：预计 4-5 周
+- 模块：DFT 性质
+- 这张卡要回答的问题：DFT 的线性性质如何表述？
+- 阶段目标：掌握 DFT 是线性变换：DFT{a x + b y}=a·DFT{x}+b·DFT{y}。
 
-## 对应教材
-- `《Discrete-Time Signal Processing》`：Discrete-Time Fourier Transform、Z-Transform、Sampling of Continuous-Time Signals
-- `《Discrete-Time Signal Processing》`：Sampling Theorem、DFT、FFT、FIR/IIR Filters
-- `《Digital Signal Processing》`：Filter Design、Fast Algorithms、Spectral Estimation
+## 对应教材（真实出处）
+- Think DSP Ch.7：DFT
+- Oppenheim §8.2：Properties
+- MIT 6.003 Lec 18
 
 ## 一句话定义
-> 
+> DFT 是线性算子：两序列加权之和的 DFT = 各自 DFT 加权之和；前提是同一长度 N（不足补零）。
 
 ## 从学习内容上要抓什么
-- 它的定义 / 研究对象是什么
-- 它为什么会出现在这一阶段、这一模块里
-- 它和前后知识点之间的连接是什么
+- 源于求和线性。
+- 用于把信号拆分量分别求谱再相加。
+- 与连续 FT 线性一致。
 
 ## 核心内容
 ### 1. 基本定义与直觉
-> 
+DFT 像调色盘：两束光的频谱分别算再按比例混，等于先混再算。
 
 ### 2. 公式 / 机制 / 流程
-> 
+$$\mathrm{DFT}\{a x[n]+b y[n]\}=aX[k]+bY[k]$$
 
 ### 3. 一个最小例子
-> 
+x+噪声：DFT 后信号谱与噪声谱线性叠加。
 
 ### 4. 常见误区
-- 
+- 忽略长度 N 需一致（否则要对齐补零）。
+- 系数漏带进频域。
 
 ## 和其他笔记的关系
-- 前置：待补
-- 相关：待补
-- 返回阶段索引：[[02-Knowledge/🧠 学习系统/12-信号与系统/07-数字篇-DFT与FFT/💻 第七阶段：DFT与FFT|💻 第七阶段：DFT与FFT]]
+- 前置：[[DFT频域周期]]
+- 前置：[[线性性质]]
+- 相关：[[DFT时域周期]]
+- 相关：[[卷积关系]]
+- 相关：[[补零]]
+- 返回阶段索引：[[02-Knowledge/🧠 学习系统/12-信号与系统/07-数字篇-DFT与FFT/07-数字篇-DFT与FFT|DFT与FFT]]
 
 ## 最小自测
-- [ ] 我能用自己的话解释“DFT线性”
-- [ ] 我能说明它在“线性”里的作用
-- [ ] 我能给出一个例子、公式或应用场景
+> **检索练习 / 通过标准**：合上笔记，能独立复述本节定义、写出核心公式（LaTeX）、指出至少一处常见误区，并独立完成上面的自测题，即视为掌握。
 
-*创建于：2026-04-18*
+- [ ] 写出 DFT 线性。
+- [ ] 为何要求同长度 N？
+- [ ] 举一个应用。
+
+*创建于：2026-04-18 · 更新于：2026-08-06*

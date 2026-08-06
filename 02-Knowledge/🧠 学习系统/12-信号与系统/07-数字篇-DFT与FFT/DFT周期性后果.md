@@ -2,58 +2,74 @@
 type: study
 topic: "DFT周期性后果"
 created: 2026-04-18
-status: ongoing
+updated: 2026-08-06
+status: completed
 difficulty: advanced
 concept: ["DFT周期性后果", "DFT的隐含周期性"]
 prerequisites: []
 related: ["泄漏后果", "栅栏后果"]
 tags: ["学习", "信号与系统"]
+course: "信号与系统"
+flow: knowledge
+stage_moc: "[[02-Knowledge/🧠 学习系统/12-信号与系统/07-数字篇-DFT与FFT/07-数字篇-DFT与FFT|DFT与FFT]]"
+sources:
+  - "Think DSP Ch.7-8"
+  - "Oppenheim §8"
+  - "MIT 6.003 Lec 18-19"
+kind: concept
+
 ---
 # DFT周期性后果
 
-> 所属路径：[[../🗺️ 信号与系统学习路径|信号与系统学习路径]]
-> 所属阶段：[[02-Knowledge/🧠 学习系统/12-信号与系统/07-数字篇-DFT与FFT/💻 第七阶段：DFT与FFT|💻 第七阶段：DFT与FFT]]
-> 教材入口：[[../📚 教材挂载索引|教材挂载索引]]
+> 所属路径：[[🗺️ 信号与系统学习路径|信号与系统学习路径]]
+> 所属阶段：[[02-Knowledge/🧠 学习系统/12-信号与系统/07-数字篇-DFT与FFT/07-数字篇-DFT与FFT|DFT与FFT]]
+> 教材入口：[[📚 教材挂载索引|教材挂载索引]]
 
 ## 学习定位
-- 模块：DFT的隐含周期性
-- 这张卡要回答的问题：后果
-- 阶段目标：目标：掌握数字信号处理的核心算法，理解FFT的革命性意义。 周期：预计 4-5 周
+- 模块：DFT 隐含周期
+- 这张卡要回答的问题：DFT 的时/频周期性带来哪些关键后果？
+- 阶段目标：系统梳理：圆周卷积（非线性）、频谱折叠、栅栏效应、泄漏都源于隐含周期。
 
-## 对应教材
-- `《Discrete-Time Signal Processing》`：Discrete-Time Fourier Transform、Z-Transform、Sampling of Continuous-Time Signals
-- `《Discrete-Time Signal Processing》`：Sampling Theorem、DFT、FFT、FIR/IIR Filters
-- `《Digital Signal Processing》`：Filter Design、Fast Algorithms、Spectral Estimation
+## 对应教材（真实出处）
+- Think DSP Ch.7-8
+- Oppenheim §8
+- MIT 6.003 Lec 18-19
 
 ## 一句话定义
-> 
+> DFT 双重周期 ⇒ ①时域圆周卷积（线性卷积需补零避免混叠）②频域折叠（k>N/2 为负频）③栅栏（只看 N 点）④截断泄漏。
 
 ## 从学习内容上要抓什么
-- 它的定义 / 研究对象是什么
-- 它为什么会出现在这一阶段、这一模块里
-- 它和前后知识点之间的连接是什么
+- 圆周卷积是周期性的直接结果。
+- 栅栏+泄漏是「有限长+周期」的孪生问题。
+- 理解这些才能正确用 FFT 做卷积/谱估计。
 
 ## 核心内容
 ### 1. 基本定义与直觉
-> 
+把信号黏成环这一假设，既带来了高效的 FFT，也埋下了混叠/泄漏/栅栏三颗「雷」——用前先排雷。
 
 ### 2. 公式 / 机制 / 流程
-> 
+$$\text{周期假设}\Rightarrow\{\text{圆周卷积, 折叠, 栅栏, 泄漏}\}$$
 
 ### 3. 一个最小例子
-> 
+用 FFT 卷积务必零填充到 ≥N+M-1，否则圆周混叠。
 
 ### 4. 常见误区
-- 
+- 用 FFT 直接卷积却未补零⇒圆周混叠。
+- 把栅栏/泄漏当成 FFT 的「误差」而非本质。
 
 ## 和其他笔记的关系
-- 前置：待补
-- 相关：[[泄漏后果]]、[[栅栏后果]]
-- 返回阶段索引：[[02-Knowledge/🧠 学习系统/12-信号与系统/07-数字篇-DFT与FFT/💻 第七阶段：DFT与FFT|💻 第七阶段：DFT与FFT]]
+- 前置：[[DFT时域周期]]
+- 前置：[[DFT频域周期]]
+- 相关：[[循环卷积定义]]
+- 相关：[[栅栏后果]]
+- 相关：[[频谱泄漏原因]]
+- 返回阶段索引：[[02-Knowledge/🧠 学习系统/12-信号与系统/07-数字篇-DFT与FFT/07-数字篇-DFT与FFT|DFT与FFT]]
 
 ## 最小自测
-- [ ] 我能用自己的话解释“DFT周期性后果”
-- [ ] 我能说明它在“DFT的隐含周期性”里的作用
-- [ ] 我能给出一个例子、公式或应用场景
+> **检索练习 / 通过标准**：合上笔记，能独立复述本节定义、写出核心公式（LaTeX）、指出至少一处常见误区，并独立完成上面的自测题，即视为掌握。
 
-*创建于：2026-04-18*
+- [ ] 列举周期性三大后果。
+- [ ] 为何 FFT 卷积要补零？
+- [ ] 栅栏与泄漏有何联系？
+
+*创建于：2026-04-18 · 更新于：2026-08-06*

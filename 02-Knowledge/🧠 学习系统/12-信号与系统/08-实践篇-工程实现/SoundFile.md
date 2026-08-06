@@ -1,56 +1,75 @@
 ---
-type: project
+type: study
 topic: SoundFile
 created: 2026-04-18
-status: active
-tags:
-- 学习
-- 信号与系统
-- 项目
+updated: 2026-08-06
+status: completed
 difficulty: advanced
-concept:
-- 信号与系统
-- 工具库
+concept: 
 prerequisites: []
 related: []
-project_type: 工具库
-progress: 0%
----
+tags: 
+course: "信号与系统"
+flow: knowledge
+stage_moc: "[[🚀 第八阶段：工程实现]]"
+kind: concept
+assessment_exempt: true
+sources:
+  - "Think DSP Ch.1（音频实例）"
+  - "SoundFile / PySoundFile 文档"
+  - "libsndfile"
+assessment_exempt_reason: "软件/环境参考页，非可验收知识点卡"
 
+---
 # SoundFile
 
-> 所属路径：[[../🗺️ 信号与系统学习路径|信号与系统学习路径]]
-> 所属阶段：[[02-Knowledge/🧠 学习系统/12-信号与系统/08-实践篇-工程实现/🚀 第八阶段：工程实现|🚀 第八阶段：工程实现]]
-> 教材入口：[[../📚 教材挂载索引|教材挂载索引]]
+> 所属路径：[[🗺️ 信号与系统学习路径|信号与系统学习路径]]
+> 所属阶段：[[🚀 第八阶段：工程实现]]
+> 教材入口：[[📚 教材挂载索引|教材挂载索引]]
 
-## 项目定位
-- 项目模块：工具库
-- 这次实践要解决的问题：工具库
-- 阶段目标：目标：用代码验证理论，用理论指导实践。 周期：预计 5-6 周
+## 学习定位
+- 模块：Python 工具链
+- 这张卡要回答的问题：SoundFile 在音频信号处理里做什么？
+- 阶段目标：掌握用 soundfile 读写 WAV/FLAC，把真实音频载入为 numpy 数组做处理。
 
-## 对应教材
-- `《Discrete-Time Signal Processing》`：Sampling Theorem、DFT、FFT、FIR/IIR Filters
-- `《Digital Signal Processing》`：Filter Design、Fast Algorithms、Spectral Estimation
+## 对应教材（真实出处）
+- Think DSP Ch.1（音频实例）
+- SoundFile / PySoundFile 文档
+- libsndfile
 
-## 最小交付
-- 一个可以复现的任务定义或实验脚手架
-- 一份数据 / 环境 / 指标说明
-- 一份结果记录或复盘提纲
+## 一句话定义
+> soundfile.read 把音频文件读成 (data, sr) 数组+采样率，write 写回；是 Think DSP 处理真实声音（频谱、滤波、变调）的入口。
 
-## 实施步骤
-- [ ] 明确任务目标与评价指标
-- [ ] 准备数据、工具和实验环境
-- [ ] 跑通一个最小 baseline
-- [ ] 记录结果、问题和下一轮改进点
+## 从学习内容上要抓什么
+- 返回 data(通道×样本) 与采样率 sr。
+- 处理完用 write 存回。
+- 配合 scipy 滤波形成完整流水线。
+
+## 核心内容
+### 1. 基本定义与直觉
+SoundFile 是「声音文件的搬运工」：把硬盘上的 wav 变成能算的数组，算完再搬回去。
+
+### 2. 公式 / 机制 / 流程
+$$import soundfile as sf;\quad data,sr=sf.read('a.wav');\quad sf.write('o.wav',y,sr)$$
+
+### 3. 一个最小例子
+读语音→np.fft 看共振峰→butter 滤波→写回降噪语音。
+
+### 4. 常见误区
+- 忽略多通道维度导致后续处理 shape 错。
+- 写回时采样率与原始不一致。
 
 ## 和其他笔记的关系
-- 前置：待补
-- 相关：待补
-- 返回阶段索引：[[02-Knowledge/🧠 学习系统/12-信号与系统/08-实践篇-工程实现/🚀 第八阶段：工程实现|🚀 第八阶段：工程实现]]
+- 前置：[[SciPy信号]]
+- 前置：[[NumPy信号]]
+- 相关：[[Matplotlib信号]]
+- 相关：[[后续-语音]]
+- 相关：[[抗混叠]]
+- 返回阶段索引：[[🚀 第八阶段：工程实现]]
 
-## 复盘问题
-- [ ] 这个项目验证了哪一个课程概念
-- [ ] 哪一步最卡，原因是什么
-- [ ] 下一步要补哪一张理论卡
+## 最小自测
+- [ ] SoundFile 读出的数据结构？
+- [ ] 如何处理后写回？
+- [ ] 采样率为何重要？
 
-*创建于：2026-04-18*
+*创建于：2026-04-18 · 更新于：2026-08-06*
