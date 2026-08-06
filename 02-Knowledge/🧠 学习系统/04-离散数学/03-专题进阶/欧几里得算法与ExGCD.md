@@ -1,5 +1,6 @@
 ---
 type: study
+course: "离散数学"
 topic: "欧几里得算法与扩展欧几里得算法"
 title: "欧几里得算法与扩展欧几里得算法"
 created: 2026-08-05
@@ -25,6 +26,9 @@ sources:
     source_type: open-courseware
     license: "CC BY-NC-SA 4.0"
     verified_at: 2026-08-05
+stage_moc: "[[02-Knowledge/🧠 学习系统/04-离散数学/03-专题进阶/🧭 阶段3-专题进阶]]"
+upstream: ["[[02-Knowledge/🧠 学习系统/04-离散数学/03-专题进阶/整除与同余]]"]
+---
 ---
 
 # 欧几里得算法与扩展欧几里得算法

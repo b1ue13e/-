@@ -1,5 +1,6 @@
 ---
 type: study
+course: "离散数学"
 topic: "匹配与Hall定理"
 created: 2026-08-05
 status: ongoing
@@ -24,6 +25,9 @@ sources:
     source_type: open-courseware
     license: "CC BY-NC-SA 4.0"
     verified_at: 2026-08-05
+stage_moc: "[[02-Knowledge/🧠 学习系统/04-离散数学/02-核心深化/🧭 阶段2-核心深化]]"
+upstream: ["[[02-Knowledge/🧠 学习系统/04-离散数学/02-核心深化/图论基础-路径连通与欧拉回路]]", "[[02-Knowledge/🧠 学习系统/04-离散数学/01-基础奠基/关系与等价类]]"]
+---
 ---
 
 # 匹配与Hall定理

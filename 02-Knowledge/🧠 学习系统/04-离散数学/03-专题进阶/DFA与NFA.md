@@ -1,5 +1,6 @@
 ---
 type: study
+course: "离散数学"
 topic: "DFA与NFA"
 title: "DFA与NFA"
 created: 2026-08-05
@@ -22,6 +23,9 @@ sources:
   - title: "Introduction to the Theory of Computation (Sipser)"
     locator: "Chapter 1"
     source_type: textbook
+stage_moc: "[[02-Knowledge/🧠 学习系统/04-离散数学/03-专题进阶/🧭 阶段3-专题进阶]]"
+upstream: ["[[02-Knowledge/🧠 学习系统/04-离散数学/01-基础奠基/集合函数与基数]]"]
+---
 ---
 
 # DFA与NFA
