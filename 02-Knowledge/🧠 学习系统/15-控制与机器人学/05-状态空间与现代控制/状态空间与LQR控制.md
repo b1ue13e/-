@@ -1,20 +1,21 @@
 ---
 title: "状态空间与LQR控制"
 date: "2026-08-02"
-type: concept
+type: study
 course: "控制与机器人学"
 importance: "A"
+stage_moc: "[[🧭 阶段5-状态空间与现代控制]]"
 tags: [学习, 控制与机器人学]
-upstream: [PID控制器与状态空间法, 线性代数]
-downstream: [MPC深入, 轨迹跟踪]
-status: learning
+upstream: ["[[05-状态空间与现代控制/PID控制器与状态空间法]]"]
+status: completed
 concept: ["状态空间", "最优控制", "线性系统理论"]
 prerequisites: ["PID控制器与状态空间法", "线性代数", "移动机器人运动学"]
 related: ["纯跟踪与Stanley控制器", "路径规划Astar与RRT", "卡尔曼滤波KalmanFilter"]
-flow: project
+flow: knowledge
 kind: concept
 template: Obsidian单知识点深度学习模板
 created: 2026-08-02
+updated: 2026-08-07
 ---
 
 # 状态空间与LQR控制

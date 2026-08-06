@@ -1,6 +1,10 @@
 ---
 title: "PID 控制器与状态空间法 (PID Controller and State Space Method)"
-course: "15-控制与机器人学"
+course: "控制与机器人学"
+type: study
+stage_moc: "[[🧭 阶段5-状态空间与现代控制]]"
+flow: knowledge
+kind: concept
 tags:
   - 控制与机器人学
   - PID控制器
@@ -8,9 +12,9 @@ tags:
   - 反馈控制
   - 可控性与可观性
   - 极点配置
-type: knowledge_card
 status: completed
 created: 2026-08-01
+updated: 2026-08-07
 ---
 
 # PID 控制器与状态空间法 (PID Controller and State Space Method)

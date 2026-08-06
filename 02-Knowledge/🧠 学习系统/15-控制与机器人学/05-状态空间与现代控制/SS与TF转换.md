@@ -1,31 +1,84 @@
 ---
 type: study
 topic: "SS与TF转换"
+course: "控制与机器人学"
 created: 2026-04-18
-status: ongoing
+updated: 2026-08-07
+status: completed
 difficulty: intermediate
-concept: ["SS与TF转换", "状态空间表示"]
-prerequisites: []
-related: []
-tags: ["学习", "控制与机器人学"]
+stage_moc: "[[🧭 阶段5-状态空间与现代控制]]"
+flow: knowledge
+kind: derivation
+concept: ["状态空间", "传递函数", "转换"]
+prerequisites: ["状态方程", "传递函数"]
+related: ["状态方程", "典范型"]
+upstream: ["[[05-状态空间与现代控制/状态方程]]"]
+source: "Modern Control Engineering (Ogata) Ch.9"
+tags: [学习, 控制与机器人学, 状态空间]
 ---
+
 # SS与TF转换
 
-> 所属模块：[[🗺️ 控制与机器人学学习路径|控制与机器人学学习路径]]
-> 主教材：`《Modern Control Engineering》`
-> 对应阶段：[[🧭 阶段5-状态空间与现代控制|返回阶段页]]
-> 建议先看：Transfer Functions、Time Response、Frequency Response、PID、Root Locus
-> 辅助教材：`Mathematics for Machine Learning`、`《Modern Control Engineering》`
+## 0. 为什么学它
 
-## 待写提纲
-- 这章/这个知识点在这门课里解决什么问题：
-- 所属主线：状态空间表示
-- 这张卡要补哪块：传递函数转换
-- 核心定义：
-- 关键方法 / 公式：
-- 一个最小例子：
-- 与前后笔记的关系：
-- 前置：待补
-- 相关：待补
+经典控制用传递函数、现代控制用状态空间，工程中两者并存。**SS↔TF 转换**让你在两种描述间自由切换：仿真用状态空间、频率分析用传递函数——转换关系是桥梁。
 
-*创建于：2026-04-18*
+## 1. 核心公式
+
+**状态空间 → 传递函数**（零初值拉氏变换）：
+
+$$G(s)=C(sI-A)^{-1}B+D.$$
+
+**传递函数 → 状态空间**：用**能控标准型/能观标准型**（见 [[典范型]]）直接写出 $A,B,C,D$。
+
+**转换不变量**：传递函数的极点 = $A$ 的特征值（特征多项式相同）；但**零极点对消**会让状态空间含不可控/不可观模态（传递函数"看不见"）。
+
+## 2. 最小可手算例子
+
+**题目**：$A=\begin{pmatrix}0&1\\-2&-3\end{pmatrix},B=(0,1)^\top,C=(1,0),D=0$，求 $G(s)$。
+
+**解**：$(sI-A)^{-1}=\frac{1}{(s+1)(s+2)}\begin{pmatrix}s+3&1\\-2&s\end{pmatrix}$；$G(s)=C(sI-A)^{-1}B=\frac{1}{(s+1)(s+2)}$。
+
+**易错点**：矩阵逆计算；$D$ 项勿漏；对消后传递函数丢模态。
+
+## 3. 常见误区
+
+| 误区 | 正确理解 |
+|:---|:---|
+| 转换后信息不丢 | 对消使传递函数丢不可控/不可观模态 |
+| $G(s)$ 极点=A 特征值无条件 | 对消时部分特征值"消失" |
+| 反向转换唯一 | 状态空间不唯一（不同标准型） |
+
+## 4. 与后续知识连接
+
+- [[典范型]]：TF→SS 的标准形式；
+- [[状态方程]]：SS 基础；
+- [[最小实现]]：去掉对消后的最小 SS；
+- [[能控性定义]]：对消与可控性。
+
+## 5. 检索练习（闭卷）
+
+1. 写出 SS→TF 公式；
+2. 完成给定 SS 的 $G(s)$ 计算；
+3. 说明零极点对消的影响；
+4. 解释转换非唯一。
+
+## 6. 通过标准
+
+- 能双向转换；
+- 能识别对消损失；
+- 能理解不变量。
+
+## 学完后可以完成
+
+```dataview
+LIST
+FROM "03-Projects/系统与硬件/15-控制与机器人学"
+WHERE contains(requires, this.file.link)
+SORT assignment_level ASC, file.name ASC
+```
+
+## 复习
+
+- 下次复习：3 天后重做转换；
+- 薄弱点写入 [[控制与机器人学错题漏洞入口]]。
