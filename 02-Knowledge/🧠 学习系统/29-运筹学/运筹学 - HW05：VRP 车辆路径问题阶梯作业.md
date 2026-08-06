@@ -14,7 +14,7 @@ importance: A
 concept: ["车辆路径问题", "约束规划", "组合优化"]
 prerequisites: ["[[约束规划与CP-SAT]]"]
 related: ["[[整数规划与分支定界]]", "[[线性规划与单纯形法]]", "[[🧭 开源作业体系-运筹学]]"]
-upstream: ["[[02-Knowledge/🧠 学习系统/29-运筹学/🗺️ 运筹学学习路径|运筹学学习路径]]"]
+upstream: ["[[🗺️ 运筹学学习路径|运筹学学习路径]]"]
 downstream: []
 tags: [学习, 29-运筹学, 作业, 实战, 阶梯作业]
 aliases: ["OR-HW05-VRP车辆路径作业"]
