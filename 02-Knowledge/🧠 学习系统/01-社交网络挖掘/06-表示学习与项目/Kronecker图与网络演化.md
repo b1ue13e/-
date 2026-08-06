@@ -1,6 +1,7 @@
 ---
 type: study
 topic: "随机 Kronecker 图与网络演化"
+course: "社交网络挖掘"
 tags: [学习, 01-社交网络挖掘, Kronecker图, HW4]
 created: 2026-08-05
 status: completed
@@ -11,6 +12,10 @@ related: [图表示学习-DeepWalk与Node2Vec, 可复现网络挖掘实验]
 flow: knowledge
 kind: derivation
 source: "Stanford CS224W 2017 HW4-Q3.1-Q3.5 and lecture 16"
+source_url: "https://snap.stanford.edu/class/cs224w-2017/handouts.html"
+accessed: 2026-08-06
+license: "课程讲义与题面公开访问但未核验开放再分发许可；link-only"
+assessment_exempt: false
 anki_deck: "社交网络挖掘::表示学习"
 anki_tags: [Kronecker, bit-vector, 期望度, 自环, HW4]
 ---
@@ -220,3 +225,9 @@ assert np.isclose(np.trace(probability), expected_loops)
 - 随机 Kronecker 的单边概率如何由 bit-vector 得到？::$P_{uv}=\prod_b\Theta[u_b,v_b]=\alpha^i\beta^{j+\ell-i}\gamma^{k-\ell-j}$。
 - 权重为 $\ell$ 的节点期望度？::$(\alpha+\beta)^\ell(\beta+\gamma)^{k-\ell}$。
 - 随机 Kronecker 的期望自环数？::$(\alpha+\gamma)^k$，等于 $\operatorname{tr}(\Theta^{\otimes k})$。
+
+## 🧪 学完本节后可完成的作业
+
+- **可立即完成**：[[03-Projects/01-社交网络挖掘/课后作业/社交网络挖掘-课后作业-05-排序边介数Kronecker与谱聚类#3. 随机 Kronecker 图（20 分，Yokila）|课后作业 05 题 3]]。
+- **为什么现在能做**：已覆盖 bit-vector、边概率、期望度、边数与自环的完整推导链。
+- **提交产物**：3.1–3.5 推导、小规模枚举校验与公式边界说明。

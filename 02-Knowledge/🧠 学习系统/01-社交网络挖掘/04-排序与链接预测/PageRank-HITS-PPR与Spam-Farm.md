@@ -1,6 +1,7 @@
 ---
 type: study
 topic: "PageRank HITS PPR 与 Spam Farm"
+course: "社交网络挖掘"
 tags: [学习, 01-社交网络挖掘]
 created: 2026-08-06
 status: ongoing
@@ -11,6 +12,10 @@ related: []
 flow: knowledge
 kind: derivation
 source: "合并自课程内已有笔记；原始来源见各节"
+source_url: "https://snap.stanford.edu/class/cs224w-2017/handouts.html"
+accessed: 2026-08-06
+license: "课程讲义与题面公开访问但未核验开放再分发许可；link-only"
+assessment_exempt: false
 verification_status: "核心公式与示例已合并；Spam Farm 实验需按数据版本复现"
 ---
 
@@ -302,3 +307,9 @@ assert np.allclose([target, booster], feedback @ [target, booster] + injection)
 - Spam Farm 的通用数学形式？::$r_C=\beta M_{CC}r_C+u$，因此 $r_C=(I-\beta M_{CC})^{-1}u$。
 - 为什么单目标反馈环出现 $\beta^2p_0$？::目标把分数传给助推页，助推页再传回目标，经历两次阻尼转移。
 - 联盟是否有利要比较什么？::每个参与者相对独立基线的增量，以及联盟总分相对独立总分的增量。
+
+## 🧪 学完本节后可完成的作业
+
+- **可立即完成**：[[03-Projects/01-社交网络挖掘/课后作业/社交网络挖掘-课后作业-05-排序边介数Kronecker与谱聚类#1. PageRank 主题变体（25 分，Silviana、Poorvi）|课后作业 05 题 1]]。
+- **为什么现在能做**：已覆盖 PPR 线性条件、守恒方程、完整/目标互链 Spam Farm。
+- **提交产物**：每小问可行条件、方程、独立/联盟基线和增量比较。

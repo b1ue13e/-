@@ -1,28 +1,44 @@
 ---
-title: "Fama-MacBeth 两步回归法"
+title: Fama-MacBeth 两步回归法
 type: study
-topic: "Fama-MacBeth 两步回归法"
-created: "2026-08-03"
+topic: Fama-MacBeth 两步回归法
+created: '2026-08-03'
 status: ongoing
 difficulty: advanced
-course: "量化金融"
-importance: "A"
-stage: "📘 第二阶段：量化核心技能"
-tags: [学习, 量化金融]
-concept: ["Fama-MacBeth", "因子溢价", "横截面回归"]
-prerequisites: ["CAPM资本资产定价模型", "多元回归"]
-related: ["因子模型与Fama-French三因子", "HW03-FamaMacBeth回归作业说明书"]
-upstream: ["CAPM资本资产定价模型"]
-downstream: ["因子模型与Fama-French三因子", "回测框架与无泄漏实验"]
+course: 量化金融
+importance: A
+stage: 📘 第二阶段：量化核心技能
+tags:
+- 学习
+- 量化金融
+concept:
+- Fama-MacBeth
+- 因子溢价
+- 横截面回归
+prerequisites:
+- CAPM资本资产定价模型
+- 多元回归
+related:
+- 因子模型与Fama-French三因子
+- HW03-FamaMacBeth回归作业说明书
+upstream:
+- CAPM资本资产定价模型
+downstream:
+- 因子模型与Fama-French三因子
+- 回测框架与无泄漏实验
 flow: knowledge
 kind: concept
-sources: 
-- title: "Fama & MacBeth (1973) Risk, Return, and Equilibrium"
-url: "https://doi.org/10.1086/260061"
-locator: "Sections 2-4"
+sources:
+- title: Fama & MacBeth (1973) Risk, Return, and Equilibrium
+url: https://doi.org/10.1086/260061
+locator: Sections 2-4
 source_type: paper
-license: "journal access"
+license: journal access
 verified_at: 2026-08-03
+source: Fama & MacBeth (1973) Risk, Return, and Equilibrium
+source_url: '[待验证]'
+accessed: '2026-08-06'
+assessment_exempt: false
 ---
 
 # Fama-MacBeth 两步回归法
@@ -152,7 +168,7 @@ $$t_k = \frac{\bar\gamma_k}{\hat\sigma_{\gamma_k}/\sqrt{T}},\qquad \hat\sigma_{\
 - [[回测框架与无泄漏实验]]：因子验证协议
 
 ### 横向关联
-- [[[支线任务] HW03-FamaMacBeth回归]] ↔ 本卡：作业实操
+- [[03-Projects/金融与时序/03-量化金融/课后作业/量化金融-课后作业-03-Fama-MacBeth回归|HW03 Fama-MacBeth回归]] ↔ 本卡：作业实操
 
 ### 应用场景
 - HW03、因子研究
@@ -241,7 +257,13 @@ $$t_k = \frac{\bar\gamma_k}{\hat\sigma_{\gamma_k}/\sqrt{T}},\qquad \hat\sigma_{\
 ## 13. 给 Obsidian 的归档建议
 
 - **适合文件夹**：`02-Knowledge/🧠 学习系统/03-量化金融/`
-- **关联已有笔记**：[[Fama-French三因子模型|因子模型与Fama-French三因子]] [[CAPM 资本资产定价模型|CAPM资本资产定价模型]] [[[支线任务] HW03-FamaMacBeth回归]]
+- **关联已有笔记**：[[Fama-French三因子模型|因子模型与Fama-French三因子]] [[CAPM 资本资产定价模型|CAPM资本资产定价模型]] [[03-Projects/金融与时序/03-量化金融/课后作业/量化金融-课后作业-03-Fama-MacBeth回归|HW03 Fama-MacBeth回归]]
 - **建议标签**：`#学习` `#量化金融`
 - **拆分建议**：不拆分
-\n\n> ⚔️ **支线实战任务 (Side Quest)**：👉 点击进入 [[[支线任务] HW03-FamaMacBeth回归]] 刷怪通关！\n
+\n\n> ⚔️ **专题实战任务**：👉 点击进入 [[03-Projects/金融与时序/03-量化金融/课后作业/量化金融-课后作业-03-Fama-MacBeth回归|HW03 Fama-MacBeth回归]] 刷怪通关！\n
+
+## 🧪 学完本节后可完成的作业
+
+- **可完成**：[[03-Projects/金融与时序/03-量化金融/课后作业/量化金融-课后作业-03-Fama-MacBeth回归|Fama-MacBeth回归]]。
+- **为什么现在能做**：本卡已经提供该任务需要的定义、公式、条件或实现边界；若任务还依赖后续知识，先完成对应阶段 MOC 中排在本卡之后的知识卡。
+- **提交产物**：闭卷定义/推导、一个可复查计算或代码结果、一个失败案例，以及对适用边界的说明。

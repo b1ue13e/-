@@ -1,19 +1,29 @@
 ---
 title: ABS 资产证券化 (Asset-Backed Securities)
-type: concept
-topic: "ABS 资产证券化 (Asset-Backed Securities)"
-created: 2026-07-23
+type: study
+topic: ABS 资产证券化 (Asset-Backed Securities)
+created: '2026-07-23'
 status: ongoing
 difficulty: intermediate
 course: 量化金融
 importance: B
-tags: 
+tags:
+- 学习
+- 量化金融
 concept: []
 prerequisites: []
 related: []
-upstream: 
-downstream: 
+upstream: null
+downstream: null
+kind: concept
+flow: knowledge
+source: 本课程历史知识卡；原始来源 [待验证]
+source_url: https://home.treasury.gov/policy-issues/financing-the-government/interest-rate-statistics/treasury-yield-curve-methodology。用于复核“把现金流
+accessed: '2026-08-06'
+license: link-only；正文为本地学习整理
+assessment_exempt: false
 ---
+
 # ABS 资产证券化 (Asset-Backed Securities)
 
 ---
@@ -159,7 +169,7 @@ $$CF_{pool,t} \longrightarrow \text{服务费/管理费} \longrightarrow \text{�
 > 🔓 **作业解锁前置条件**：学完 [[收益率与对数收益率]] + [[ABS 资产证券化 (Asset-Backed Securities)|ABS]] 即可正式解锁本 Challenge 实战！
 > 💡 **解锁指引**：理解 ABS 的核心定义与基本推导逻辑后即可解锁。
 
- 🧪 拓展实验与李宏毅式实战 Challenge 题 (Lab Assignment: ABS 工业级实战 challenge)
+ 🧪 拓展实验与专题实战练习 (Lab Assignment: ABS 专题实战任务)
 
 本作业参考 **李宏毅 (Hung-yi Lee) 教授 ML 课程作业架构** 设计，设置四个渐进式难度基线 (Baselines)：
 
@@ -338,3 +348,9 @@ $$CF_{pool,t} \longrightarrow \text{服务费/管理费} \longrightarrow \text{�
 - **反例压力测试**：把现金流 waterfall、提前偿还、违约相关性和增信触发条件逐项映射到损失分布。
 - **最小实验**：固定随机种子或冻结原始数据快照，同时保存基线、破坏条件后的对照组、关键中间量与失败日志。
 - **通过标准**：结论必须在样本外仍保持方向一致；若成本、延迟、参数扰动或结构突变使结论反转，就把该情形登记为适用边界而不是删除失败结果。
+
+## 🧪 学完本节后可完成的作业
+
+- **可完成**：[[03-Projects/金融与时序/03-量化金融/课后作业/量化金融-课后作业-08-EVT尾部风险|EVT尾部风险]]。
+- **为什么现在能做**：本卡已经提供该任务需要的定义、公式、条件或实现边界；若任务还依赖后续知识，先完成对应阶段 MOC 中排在本卡之后的知识卡。
+- **提交产物**：闭卷定义/推导、一个可复查计算或代码结果、一个失败案例，以及对适用边界的说明。

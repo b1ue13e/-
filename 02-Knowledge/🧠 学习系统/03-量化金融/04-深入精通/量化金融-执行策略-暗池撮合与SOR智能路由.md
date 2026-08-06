@@ -1,19 +1,29 @@
 ---
 title: 暗池交易与智能订单路由 SOR (Dark Pools & Smart Order Routing)
-type: concept
-topic: "暗池交易与智能订单路由 SOR (Dark Pools & Smart Order Routing)"
-created: 2026-07-23
+type: study
+topic: 暗池交易与智能订单路由 SOR (Dark Pools & Smart Order Routing)
+created: '2026-07-23'
 status: ongoing
 difficulty: intermediate
 course: 量化金融
 importance: A
-tags: 
+tags:
+- 学习
+- 量化金融
 concept: []
 prerequisites: []
 related: []
-upstream: 
-downstream: 
+upstream: null
+downstream: null
+kind: concept
+flow: knowledge
+source: 本课程历史知识卡；原始来源 [待验证]
+source_url: https://english.sse.com.cn/start/trading/mechanism/。用于复核“分别模拟中点成交概率、信息泄露和路由延迟，不能把未成交暗池订单当零成本选项”。
+accessed: '2026-08-06'
+license: link-only；正文为本地学习整理
+assessment_exempt: false
 ---
+
 # 暗池交易与智能订单路由 SOR (Dark Pools & Smart Order Routing)
 
 ---
@@ -211,7 +221,7 @@ def sor_order_router(target_shares, venues_df):
             
     return pd.DataFrame(routed_orders), rem_shares
 
-# 模拟 4 个交易场所（含公开明池与暗池）
+## 模拟 4 个交易场所（含公开明池与暗池）
 venues = pd.DataFrame({
     'venue_name': ['Dark_Pool_A', 'Dark_Pool_B', 'Lit_NASDAQ', 'Lit_NYSE'],
     'type': ['Dark', 'Dark', 'Lit', 'Lit'],
@@ -461,7 +471,7 @@ downstream: ["高频交易(HFT)架构", "HW14-SOR智能路由模拟实战"]
 status: learning
 ---
 
-# 暗池 (Dark Pools) 与 SOR 智能订单路由
+## 暗池 (Dark Pools) 与 SOR 智能订单路由
 
 ## 0. 先判断它值不值得深挖
 **S 类：揭开华尔街“隐形交易”和“光速抢跑”的终极黑盒。**
@@ -579,7 +589,7 @@ $$ W_i = \Delta t_{max} - \Delta t_i $$
 ## 9. 相关知识点与 Obsidian 双链建议
 
 - 上游依赖：[[限价订单簿数据与 L1_L2_L3 盘口重建 (Limit Order Book Data & Reconstructing L1_L2_L3)|订单簿与L2微观结构]], [[Almgren-Chriss最优拆单]]
-- 下游延伸：[[高频交易系统架构与模块解耦设计 (High-Frequency Trading System Architecture)|高频交易(HFT)基础]] (高频做市商如何反制SOR), [[低延迟系统设计与 C++_FPGA 极致性能优化 (Low-Latency System Design & C++_FPGA Optimization)|金融网络延迟与微波架构]]
+- 下游延伸：[[高频交易系统架构与模块解耦设计 (High-Frequency Trading System Architecture)|高频交易(HFT)基础]] (高频做市商如何反制SOR), [[02-Knowledge/🧠 学习系统/03-量化金融/02-量化核心技能/高频交易系统架构与模块解耦设计 (High-Frequency Trading System Architecture)|金融网络延迟与微波架构]]
 - 横向关联：[[量化金融-执行策略-暗池撮合与SOR智能路由|订单流支付PFOF]] ↔ [[量化金融-执行策略-暗池撮合与SOR智能路由|暗池与ATS]] (散户流与机构流的隐秘处理池)
 - 应用场景：[[[支线任务] HW14-暗池与SOR智能路由]]
 
@@ -656,3 +666,9 @@ $$ W_i = \Delta t_{max} - \Delta t_i $$
 - **文件夹**：`02-Knowledge/🧠 学习系统/03-量化金融/04-深入精通`
 - **链接**：上游衔接 [[Almgren-Chriss最优拆单]] 的执行层输出，平行链接至 [[限价订单簿数据与 L1_L2_L3 盘口重建 (Limit Order Book Data & Reconstructing L1_L2_L3)|订单簿与L2微观结构]]。
 - **标签**：`#量化金融/微观结构` `#暗池` `#SOR` `#高频交易` `#算法交易`
+
+## 🧪 学完本节后可完成的作业
+
+- **可完成**：[[03-Projects/金融与时序/03-量化金融/阶段作业/量化金融-阶段作业-04-暗池与智能订单路由|暗池与智能订单路由]]。
+- **为什么现在能做**：本卡已经提供该任务需要的定义、公式、条件或实现边界；若任务还依赖后续知识，先完成对应阶段 MOC 中排在本卡之后的知识卡。
+- **提交产物**：闭卷定义/推导、一个可复查计算或代码结果、一个失败案例，以及对适用边界的说明。

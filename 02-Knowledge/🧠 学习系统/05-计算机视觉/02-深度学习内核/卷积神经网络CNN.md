@@ -1,5 +1,6 @@
 ---
 type: study
+course: "05-计算机视觉"
 topic: "卷积神经网络 CNN (Convolutional Neural Network)"
 created: 2026-08-05
 status: ongoing
@@ -21,6 +22,7 @@ related:
   - "池化层"
   - "全连接网络"
 flow: knowledge
+stage_moc: "[[02-深度学习内核/🧠 第二阶段：深度学习内核]]"
 kind: concept
 source: "CS231n A2; D2L Ch.7"
 anki_deck: "05-计算机视觉::02-深度学习内核"
@@ -618,3 +620,29 @@ if __name__ == "__main__":
   - [[02-Knowledge/🧠 学习系统/05-计算机视觉/04-前沿架构探索/ViT|ViT]]
 - **建议标签**：`#学习` `#深度学习` `#计算机视觉` `#CNN` `#卷积` `#感受野` `#池化` `#权值共享`
 - **复习节奏**：首次学习后 1/3/7/14 天间隔复习，配合 Section 10 闭卷复现任务自查。
+
+---
+
+## 🧪 学完本节后可完成的作业
+
+- 可直接完成 [[03-Projects/课程作业/05-计算机视觉/课后作业/🎓 HW03 - 小型 CNN 与训练工程正式作业说明书|HW03]]
+- 配合 [[03-Projects/课程作业/05-计算机视觉/课后习题/D2L-Ch7-卷积神经网络习题册|D2L-Ch7 习题册]]
+
+---
+---
+
+## 🔗 知识图谱
+
+```dataview
+LIST
+FROM "02-Knowledge/🧠 学习系统"
+WHERE contains(upstream, this.file.link)
+SORT file.name ASC
+```
+
+```dataview
+LIST
+FROM "03-Projects"
+WHERE contains(requires, this.file.link)
+SORT assignment_level ASC, file.name ASC
+```

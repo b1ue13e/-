@@ -1,5 +1,6 @@
 ---
 type: study
+course: "05-计算机视觉"
 topic: "概率分布与贝叶斯推断"
 created: 2026-08-05
 status: ongoing
@@ -8,6 +9,7 @@ concept: ["概率分布", "贝叶斯定理", "高斯分布", "最大似然", "�
 prerequisites: ["高中数学"]
 related: ["图像分类", "Softmax损失", "生成模型VAE"]
 flow: knowledge
+stage_moc: "[[01-底层基石/🏗️ 第一阶段：底层基石]]"
 kind: concept
 source: "《Mathematics for Machine Learning》Ch.6"
 anki_deck: "05-计算机视觉::01-底层基石"
@@ -482,3 +484,28 @@ D. 交叉熵损失和概率建模无关
   - 「高斯过程与贝叶斯优化」专题卡（进阶）
   - 「变分推断入门」专题卡（进阶，VAE 的数学基础）
   - 「概率图模型与 MRF」专题卡（与图像分割联动）
+
+---
+
+## 🧪 学完本节后可完成的作业
+
+- 基础前置，配合 [[03-Projects/课程作业/05-计算机视觉/课后习题/D2L-Ch4-线性分类习题册|D2L-Ch4 习题册]] 中概率相关题
+
+---
+---
+
+## 🔗 知识图谱
+
+```dataview
+LIST
+FROM "02-Knowledge/🧠 学习系统"
+WHERE contains(upstream, this.file.link)
+SORT file.name ASC
+```
+
+```dataview
+LIST
+FROM "03-Projects"
+WHERE contains(requires, this.file.link)
+SORT assignment_level ASC, file.name ASC
+```

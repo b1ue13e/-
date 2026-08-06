@@ -1,5 +1,6 @@
 ---
 type: study
+course: "05-计算机视觉"
 topic: "SIFT特征提取"
 created: "2026-08-05"
 status: ongoing
@@ -19,6 +20,7 @@ related:
   - "HOG"
   - "图像匹配"
 flow: knowledge
+stage_moc: "[[01-底层基石/🏗️ 第一阶段：底层基石]]"
 kind: concept
 source: "Szeliski Ch.7; Lowe 2004论文"
 anki_deck: "05-计算机视觉::01-底层基石"
@@ -525,3 +527,28 @@ print(f"坐标: {kp.pt}, 尺度: {kp.size:.2f}, 方向: {kp.angle:.1f}°, "
 ---
 
 *创建于: 2026-08-05 | 所属概念: SIFT, 特征提取, 尺度不变, 关键点, 描述子 | 来源: Szeliski Ch.7; Lowe 2004论文*
+
+---
+
+## 🧪 学完本节后可完成的作业
+
+- 基础前置，理解传统特征提取与深度学习特征学习的对比
+
+---
+---
+
+## 🔗 知识图谱
+
+```dataview
+LIST
+FROM "02-Knowledge/🧠 学习系统"
+WHERE contains(upstream, this.file.link)
+SORT file.name ASC
+```
+
+```dataview
+LIST
+FROM "03-Projects"
+WHERE contains(requires, this.file.link)
+SORT assignment_level ASC, file.name ASC
+```

@@ -1,5 +1,6 @@
 ---
 type: study
+course: "05-计算机视觉"
 topic: "傅里叶变换（CV视角）"
 created: 2026-08-05
 status: ongoing
@@ -18,6 +19,7 @@ related:
   - "频域滤波"
   - "小波变换"
 flow: knowledge
+stage_moc: "[[01-底层基石/🏗️ 第一阶段：底层基石]]"
 kind: concept
 source: "Szeliski Ch.4; D2L补充"
 anki_deck: "05-计算机视觉::01-底层基石"
@@ -601,3 +603,28 @@ $$F(u, v) = \sum_{x=0}^{M-1} \sum_{y=0}^{N-1} f(x, y) \cdot e^{-i 2\pi \left(\fr
 - **建议标签**：`#学习` `#计算机视觉` `#傅里叶变换` `#频域分析` `#频谱` `#低通滤波` `#高通滤波` `#卷积定理`
 - **复习节奏**：首次学习后 1/3/7/14 天间隔复习，配合 §10 闭卷复现任务自查。建议先用 §7 例子 1 对自己的图像跑一遍"原图 → 幅度谱 → 相位谱"的可视化，形成视觉直觉，再手推一遍卷积定理验证代码（例子 3），最后闭卷完成自测题。**关键检验标准**：不看笔记，能独立画出低通和高通滤波器的频域形状，并解释它们分别对应空间域的什么视觉效果。
 - **拆分建议**：本卡聚焦傅里叶变换本身及其在CV中的基础应用（频谱解读、频域滤波基础、卷积定理）。当学习深入后，可将以下子专题拆为独立卡：(1) **频域滤波设计**——理想/Butterworth/高斯低通高通带通带阻的完整对比（与[[频域滤波]]卡衔接）；(2) **傅里叶变换族**——DFT/DCT/DST/小波的横向对比与各自CV应用场景。
+
+---
+
+## 🧪 学完本节后可完成的作业
+
+- 基础前置，理解频域滤波与 CNN 第一层卷积核的 Gabor-like 模式
+
+---
+---
+
+## 🔗 知识图谱
+
+```dataview
+LIST
+FROM "02-Knowledge/🧠 学习系统"
+WHERE contains(upstream, this.file.link)
+SORT file.name ASC
+```
+
+```dataview
+LIST
+FROM "03-Projects"
+WHERE contains(requires, this.file.link)
+SORT assignment_level ASC, file.name ASC
+```

@@ -1,5 +1,6 @@
 ---
 type: study
+course: "05-计算机视觉"
 topic: "Transformer与自注意力机制"
 created: 2026-08-05
 status: ongoing
@@ -8,6 +9,7 @@ concept: ["Transformer","自注意力","多头注意力","位置编码","ViT"]
 prerequisites: ["反向传播","Softmax","矩阵乘法"]
 related: ["ViT","SwinTransformer","CLIP","CNN"]
 flow: knowledge
+stage_moc: "[[04-前沿架构探索/🚀 第四阶段：前沿架构探索]]"
 kind: concept
 source: "CS231n A3; D2L Ch.11"
 anki_deck: "05-计算机视觉::04-前沿架构探索"
@@ -420,3 +422,29 @@ class TransformerEncoderBlock(nn.Module):
   - [[CNN]] — 归纳偏置对比的参照物
 - **建议标签**：`#学习` `#计算机视觉` `#Transformer` `#自注意力` `#注意力机制` `#ViT`
 - **拆分建议**：当前为 B 类概念主卡，覆盖完整。若后续挖深，可将 Self-Attention 公式推导、位置编码变体（RoPE / ALiBi）、Sparse Attention 优化单独成卡。
+
+---
+
+## 🧪 学完本节后可完成的作业
+
+- 配合 [[03-Projects/课程作业/05-计算机视觉/课后习题/D2L-Ch11-注意力机制习题册|D2L-Ch11 习题册]]
+- 配合 [[03-Projects/课程作业/05-计算机视觉/课后作业/🎓 HW06 - 开放课程项目正式作业说明书|HW06]] Transformer 方向
+
+---
+---
+
+## 🔗 知识图谱
+
+```dataview
+LIST
+FROM "02-Knowledge/🧠 学习系统"
+WHERE contains(upstream, this.file.link)
+SORT file.name ASC
+```
+
+```dataview
+LIST
+FROM "03-Projects"
+WHERE contains(requires, this.file.link)
+SORT assignment_level ASC, file.name ASC
+```

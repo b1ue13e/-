@@ -1,28 +1,39 @@
 ---
-title: "Beneish M-Score 财务造假模型与应计项因子"
+title: Beneish M-Score 财务造假模型与应计项因子
 type: study
-topic: "Beneish M-Score 财务造假模型与应计项因子"
-created: "2026-08-03"
+topic: Beneish M-Score 财务造假模型与应计项因子
+created: '2026-08-03'
 status: ongoing
 difficulty: intermediate
-course: "量化金融"
-importance: "A"
-stage: "📘 第一阶段：夯实基础"
-tags: [学习, 量化金融]
-concept: ["M-Score", "应计项", "财务排雷"]
-prerequisites: ["财务报表基础"]
-related: ["HW04-BeneishMScore财报排雷作业说明书"]
+course: 量化金融
+importance: A
+stage: 📘 第一阶段：夯实基础
+tags:
+- 学习
+- 量化金融
+concept:
+- M-Score
+- 应计项
+- 财务排雷
+prerequisites:
+- 财务报表基础
+related:
+- HW04-BeneishMScore财报排雷作业说明书
 upstream: []
 downstream: []
 flow: knowledge
 kind: concept
-sources: 
-- title: "HW04 作业说明书（本地）"
-url: "03-量化金融/18-实战作业说明书"
-locator: "HW04"
+sources:
+- title: HW04 作业说明书（本地）
+url: 03-量化金融/18-实战作业说明书
+locator: HW04
 source_type: course
-license: "local"
+license: local
 verified_at: 2026-08-03
+source: HW04 作业说明书（本地）
+source_url: '[待验证]'
+accessed: '2026-08-06'
+assessment_exempt: false
 ---
 
 # Beneish M-Score 财务造假模型与应计项因子
@@ -149,7 +160,7 @@ TATA（应计项占总资产）= $\dfrac{\text{净收入}-\text{经营现金流}
 - 因子模型（质量因子）
 
 ### 横向关联
-- [[[支线任务] HW04-BeneishMScore财报排雷]] ↔ 本卡：作业实操
+- [[03-Projects/金融与时序/03-量化金融/课后作业/量化金融-课后作业-04-Beneish-M-Score财报排雷|HW04 Beneish M-Score]] ↔ 本卡：作业实操
 
 ### 应用场景
 - HW04
@@ -238,7 +249,13 @@ TATA（应计项占总资产）= $\dfrac{\text{净收入}-\text{经营现金流}
 ## 13. 给 Obsidian 的归档建议
 
 - **适合文件夹**：`02-Knowledge/🧠 学习系统/03-量化金融/`
-- **关联已有笔记**：[[[支线任务] HW04-BeneishMScore财报排雷]]
+- **关联已有笔记**：[[03-Projects/金融与时序/03-量化金融/课后作业/量化金融-课后作业-04-Beneish-M-Score财报排雷|HW04 Beneish M-Score]]
 - **建议标签**：`#学习` `#量化金融`
 - **拆分建议**：不拆分
-\n\n> ⚔️ **支线实战任务 (Side Quest)**：👉 点击进入 [[[支线任务] HW04-BeneishMScore财报排雷]] 刷怪通关！\n
+\n\n> ⚔️ **专题实战任务**：👉 点击进入 [[03-Projects/金融与时序/03-量化金融/课后作业/量化金融-课后作业-04-Beneish-M-Score财报排雷|HW04 Beneish M-Score]] 刷怪通关！\n
+
+## 🧪 学完本节后可完成的作业
+
+- **可完成**：[[03-Projects/金融与时序/03-量化金融/课后作业/量化金融-课后作业-03-Fama-MacBeth回归|Fama-MacBeth回归]]。
+- **为什么现在能做**：本卡已经提供该任务需要的定义、公式、条件或实现边界；若任务还依赖后续知识，先完成对应阶段 MOC 中排在本卡之后的知识卡。
+- **提交产物**：闭卷定义/推导、一个可复查计算或代码结果、一个失败案例，以及对适用边界的说明。

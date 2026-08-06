@@ -1,13 +1,35 @@
 ---
-title: "CAPM 与资产定价 (Capital Asset Pricing Model)"
+title: CAPM 与资产定价 (Capital Asset Pricing Model)
 date: 2026-08-02
-type: concept
-course: "量化金融"
+type: study
+course: 量化金融
 importance: S
-tags: [量化金融, 资产定价, CAPM, Alpha, Beta]
-upstream: ["收益率与对数收益率", "方差与协方差"]
-downstream: ["Fama-French三因子模型", "马科维茨有效前沿"]
-status: learning
+tags:
+- 量化金融
+- 资产定价
+- CAPM
+- Alpha
+- Beta
+upstream:
+- 收益率与对数收益率
+- 方差与协方差
+downstream:
+- Fama-French三因子模型
+- 马科维茨有效前沿
+status: planned
+kind: concept
+flow: knowledge
+topic: CAPM 与资产定价 (Capital Asset Pricing Model)
+created: '2026-08-06'
+difficulty: intermediate
+concept: []
+prerequisites: []
+related: []
+source: 本课程历史知识卡；原始来源 [待验证]
+source_url: '[待验证]'
+accessed: '2026-08-06'
+license: link-only；正文为本地学习整理
+assessment_exempt: false
 ---
 
 # CAPM 与资产定价 (Capital Asset Pricing Model)
@@ -131,10 +153,10 @@ $E(R_A) = 2\% + 0.5 \times (10\% - 2\%) = 2\% + 4\% = 6\%$。
 
 ## 9. 相关知识点与 Obsidian 双链建议
 
-- 上游依赖：[[马科维茨有效前沿|期望收益与方差]], [[协方差矩阵]]
+- 上游依赖：[[马科维茨有效前沿|期望收益与方差]], [[02-Knowledge/🧠 学习系统/03-量化金融/02-量化核心技能/相关系数、协方差与资产组合分散化 (Covariance, Correlation & Diversification)]]
 - 下游延伸：[[Fama-French三因子模型]] (CAPM 认为世界上只有一个因子 Beta，FF 补充了规模和价值因子), [[CAPM 资本资产定价模型|统计套利与Beta中性]]
-- 横向关联：[[🧠 夏普比率 (Sharpe Ratio)|夏普比率与信息比率]] ↔ [[CAPM 资本资产定价模型|CAPM]] (衡量超额收益的标准化)
-- 应用场景：[[量化金融-资产定价-多因子模型|量化因子评价体系]], [[[支线任务] HW01-CAPM与Alpha检验]]
+- 横向关联：[[02-Knowledge/🧠 学习系统/03-量化金融/03-研究验证与稳健性/策略评价指标|夏普比率与信息比率]] ↔ [[CAPM 资本资产定价模型|CAPM]] (衡量超额收益的标准化)
+- 应用场景：[[量化金融-资产定价-多因子模型|量化因子评价体系]], [[03-Projects/金融与时序/03-量化金融/课后作业/量化金融-课后作业-01-CAPM与Alpha检验|HW01 CAPM与Alpha检验]]
 
 ---
 
@@ -209,3 +231,9 @@ $E(R_A) = 2\% + 0.5 \times (10\% - 2\%) = 2\% + 4\% = 6\%$。
 - **文件夹**：`02-Knowledge/🧠 学习系统/03-量化金融/01-夯实基础`
 - **链接**：平行链接至 [[Fama-French三因子模型]]，向下作为 [[配对交易与统计套利 (Pairs Trading & Statistical Arbitrage)|统计套利与对冲]] 的基础。
 - **标签**：`#量化金融/理论基础` `#CAPM` `#Alpha` `#Beta` `#资产定价`
+
+## 🧪 学完本节后可完成的作业
+
+- **可完成**：[[03-Projects/金融与时序/03-量化金融/课后作业/量化金融-课后作业-01-CAPM与Alpha检验|CAPM与Alpha检验]]。
+- **为什么现在能做**：本卡已经提供该任务需要的定义、公式、条件或实现边界；若任务还依赖后续知识，先完成对应阶段 MOC 中排在本卡之后的知识卡。
+- **提交产物**：闭卷定义/推导、一个可复查计算或代码结果、一个失败案例，以及对适用边界的说明。

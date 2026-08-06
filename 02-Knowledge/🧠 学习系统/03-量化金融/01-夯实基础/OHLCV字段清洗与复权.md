@@ -1,7 +1,7 @@
 ---
 type: study
-topic: "OHLCV字段清洗与复权"
-created: 2026-04-17
+topic: OHLCV字段清洗与复权
+created: '2026-04-17'
 updated: 2026-08-01
 status: planned
 difficulty: intermediate
@@ -9,12 +9,30 @@ course: 量化金融
 note_role: concept
 flow: sprint
 kind: concept
+prerequisites:
+- 收益率与对数收益率
+- Python 基础
+related:
+- 时间索引与频率（量化）
+- 样本泄漏
+assessment_exempt: false
+source: pandas 时间序列文档与 Qlib Data Layer 文档
+source_url: https://qlib.readthedocs.io/en/stable/component/data.html
+accessed: '2026-08-06'
+license: link-only
 sprint_id: 2026-S01-quant
-concept: ["OHLCV字段清洗与复权"]
-tags: [学习, 量化金融]
-anki_deck: "量化金融::Qlib"
-anki_tags: [quant, K02, verified_route]
+concept:
+- OHLCV字段清洗与复权
+tags:
+- 学习
+- 量化金融
+anki_deck: 量化金融::Qlib
+anki_tags:
+- quant
+- K02
+- verified_route
 ---
+
 # OHLCV字段清洗与复权
 
 > [!info] 主线导航
@@ -74,7 +92,7 @@ assert raw_return == -0.5  # 拆股反例，不能解释为财富损失
 - [[02-Knowledge/🧠 学习系统/03-量化金融/01-夯实基础/收益率与对数收益率]]
 - [[02-Knowledge/🧠 学习系统/03-量化金融/01-夯实基础/时间索引与频率（量化）]]
 - [[不要骗自己：什么叫前视偏差 (Look-Ahead Bias)]]
-- [[00-课程说明与先修诊断]]
+- [[02-Knowledge/🧠 学习系统/03-量化金融/00-前置知识/🧭 阶段0-先修诊断与研究协议]]
 
 ---
 
@@ -98,4 +116,19 @@ assert raw_return == -0.5  # 拆股反例，不能解释为财富损失
 光看公式没用，跑通代码才是真的！利用下方组件进行交互或直接跑通实盘代码：
 
 ### 💻 实战靶场
-- [打开 Notebook：02 第一个量化实验](https://github.com/datawhalechina/quant-for-beginners/blob/main/notebooks/phase1_intro/02_你的第一个量化实验.ipynb)（扩展材料，见 [[📦 外部实验资产索引]]）
+- [打开 Notebook：02 第一个量化实验](https://github.com/datawhalechina/quant-for-beginners/blob/main/notebooks/phase1_intro/02_你的第一个量化实验.ipynb)（扩展材料，见 [[02-Knowledge/🧠 学习系统/03-量化金融/00-前置知识/量化金融-外部实验资产索引]]）
+
+## 适用条件与边界
+
+- 复权价格适用于历史收益研究，不等于某个历史时点可成交的原始报价；成交回测必须同时保留调整口径和执行价格口径。
+- `low <= open/close <= high`、成交量非负和交易日唯一性是最小数据契约；无法核验公司行动或停牌含义时，不得静默填充。
+
+## 公式与符号
+
+设原始价格为 $P_t$，调整因子为 $A_t$，复权价格可写为 $P_t^{adj}=A_tP_t$。`O/H/L/C/V` 分别表示开、高、低、收、量；$A_t$ 的来源、版本和生效日期必须写入 manifest。
+
+## 🧪 学完本节后可完成的作业
+
+- **可立即完成**：[[03-Projects/金融与时序/03-量化金融/大作业/量化金融-大作业-AAPL贯穿式量化研究#数据契约|Capstone-AAPL 数据契约]]，让重复日期、倒序、非正价格和拆股错误测试失败。
+- **需结合后续知识**：[[03-Projects/金融与时序/03-量化金融/Qlib因子研究/A01-数据协议与无泄漏审计|A01 数据协议与无泄漏审计]]，补齐可得时点与公告日边界。
+- **提交产物**：字段字典、数据来源/版本、复权事件审计和失败样例。

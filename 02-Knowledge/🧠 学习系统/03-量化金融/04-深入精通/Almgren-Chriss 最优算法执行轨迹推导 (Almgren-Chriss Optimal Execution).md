@@ -1,28 +1,42 @@
 ---
-title: "最优执行：Almgren-Chriss 模型"
+title: 最优执行：Almgren-Chriss 模型
 type: study
-topic: "最优执行：Almgren-Chriss 模型"
-created: "2026-08-03"
+topic: 最优执行：Almgren-Chriss 模型
+created: '2026-08-03'
 status: ongoing
 difficulty: advanced
-course: "量化金融"
-importance: "B"
-stage: "📘 第四阶段：深入精通"
-tags: [学习, 量化金融]
-concept: ["最优执行", "冲击成本", "Almgren-Chriss"]
-prerequisites: ["市场微观结构与买卖价差", "随机过程（布朗运动）"]
-related: ["Implementation Shortfall", "市场微观结构与买卖价差"]
-upstream: ["市场微观结构与买卖价差"]
+course: 量化金融
+importance: B
+stage: 📘 第四阶段：深入精通
+tags:
+- 学习
+- 量化金融
+concept:
+- 最优执行
+- 冲击成本
+- Almgren-Chriss
+prerequisites:
+- 市场微观结构与买卖价差
+- 随机过程（布朗运动）
+related:
+- Implementation Shortfall
+- 市场微观结构与买卖价差
+upstream:
+- 市场微观结构与买卖价差
 downstream: []
 flow: knowledge
 kind: concept
-sources: 
-- title: "Almgren & Chriss (2000) Optimal execution of portfolio transactions"
-url: "书库/讲义"
-locator: "Sections 1-4"
+sources:
+- title: Almgren & Chriss (2000) Optimal execution of portfolio transactions
+url: 书库/讲义
+locator: Sections 1-4
 source_type: paper
-license: "journal access"
+license: journal access
 verified_at: 2026-08-03
+source: Almgren & Chriss (2000) Optimal execution of portfolio transactions
+source_url: '[待验证]'
+accessed: '2026-08-06'
+assessment_exempt: false
 ---
 
 # 最优执行：Almgren-Chriss 模型
@@ -246,3 +260,9 @@ $$\min E[\text{cost}]+\lambda\,\text{Var}[\text{cost}]$$
 - **关联已有笔记**：[[买卖价差及其微观结构拆解 (Bid-Ask Spread & Microstructure Decomposition)|市场微观结构与买卖价差]] [[Implementation Shortfall 执行缺口与 Almgren-Chriss 最优执行模型|Implementation Shortfall]]
 - **建议标签**：`#学习` `#量化金融`
 - **拆分建议**：不拆分
+
+## 🧪 学完本节后可完成的作业
+
+- **可完成**：[[03-Projects/金融与时序/03-量化金融/阶段作业/量化金融-阶段作业-04-Almgren-Chriss最优执行|Almgren-Chriss最优执行]]。
+- **为什么现在能做**：本卡已经提供该任务需要的定义、公式、条件或实现边界；若任务还依赖后续知识，先完成对应阶段 MOC 中排在本卡之后的知识卡。
+- **提交产物**：闭卷定义/推导、一个可复查计算或代码结果、一个失败案例，以及对适用边界的说明。

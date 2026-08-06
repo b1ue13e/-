@@ -1,28 +1,48 @@
 ---
-title: "Fama-French 三因子模型"
+title: Fama-French 三因子模型
 type: study
-topic: "Fama-French 三因子模型"
-created: "2026-08-03"
+topic: Fama-French 三因子模型
+created: '2026-08-03'
 status: ongoing
 difficulty: intermediate
-course: "量化金融"
-importance: "A"
-stage: "📘 第二阶段：量化核心技能"
-tags: [学习, 量化金融, 因子模型]
-concept: ["因子模型", "规模因子", "价值因子", "SMB", "HML"]
-prerequisites: ["CAPM资本资产定价模型", "收益率定义与对数收益"]
-related: ["CAPM资本资产定价模型", "Fama-MacBeth两步回归", "APT套利定价理论"]
-upstream: ["CAPM资本资产定价模型"]
-downstream: ["Fama-MacBeth两步回归", "回测框架与无泄漏实验"]
+course: 量化金融
+importance: A
+stage: 📘 第二阶段：量化核心技能
+tags:
+- 学习
+- 量化金融
+- 因子模型
+concept:
+- 因子模型
+- 规模因子
+- 价值因子
+- SMB
+- HML
+prerequisites:
+- CAPM资本资产定价模型
+- 收益率定义与对数收益
+related:
+- CAPM资本资产定价模型
+- Fama-MacBeth两步回归
+- APT套利定价理论
+upstream:
+- CAPM资本资产定价模型
+downstream:
+- Fama-MacBeth两步回归
+- 回测框架与无泄漏实验
 flow: knowledge
 kind: concept
-sources: 
-- title: "Fama & French (1993) Common risk factors in the returns on stocks and bonds"
-url: "https://doi.org/10.1016/0304-405X(93)90023-5"
-locator: "Section 2-3"
+sources:
+- title: Fama & French (1993) Common risk factors in the returns on stocks and bonds
+url: https://doi.org/10.1016/0304-405X(93)90023-5
+locator: Section 2-3
 source_type: paper
-license: "journal access"
+license: journal access
 verified_at: 2026-08-03
+source: Fama & French (1993) Common risk factors in the returns on stocks and bonds
+source_url: '[待验证]'
+accessed: '2026-08-06'
+assessment_exempt: false
 ---
 
 # Fama-French 三因子模型
@@ -248,3 +268,9 @@ SMB（Small Minus Big）：每月按市值中位数分大小两组，SMB = 小�
 - **关联已有笔记**：[[CAPM 资本资产定价模型|CAPM资本资产定价模型]] [[Fama-MacBeth 两步回归法 (Fama-MacBeth Two-Step Regression)|Fama-MacBeth两步回归]] [[量化金融-资产定价-多因子模型|APT套利定价理论]]
 - **建议标签**：`#学习` `#量化金融` `#因子模型`
 - **拆分建议**：不拆分
+
+## 🧪 学完本节后可完成的作业
+
+- **可完成**：[[03-Projects/金融与时序/03-量化金融/课后作业/量化金融-课后作业-03-Fama-MacBeth回归|Fama-MacBeth回归]]。
+- **为什么现在能做**：本卡已经提供该任务需要的定义、公式、条件或实现边界；若任务还依赖后续知识，先完成对应阶段 MOC 中排在本卡之后的知识卡。
+- **提交产物**：闭卷定义/推导、一个可复查计算或代码结果、一个失败案例，以及对适用边界的说明。

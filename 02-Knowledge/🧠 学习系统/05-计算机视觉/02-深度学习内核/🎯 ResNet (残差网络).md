@@ -1,5 +1,6 @@
 ---
 type: study
+course: "05-计算机视觉"
 topic: "ResNet (残差网络)"
 created: 2026-08-05
 status: ongoing
@@ -20,6 +21,7 @@ related:
   - Transformer注意力
   - MobileNet
 flow: knowledge
+stage_moc: "[[02-深度学习内核/🧠 第二阶段：深度学习内核]]"
 kind: concept
 source: "D2L Ch.8; CS231n A2"
 anki_deck: "05-计算机视觉::02-深度学习内核"
@@ -312,3 +314,27 @@ print("输出维度:", out.shape)  # [2, 128, 16, 16] (降采样且通道扩展�
   - [[02-Knowledge/🧠 学习系统/05-计算机视觉/02-深度学习内核/梯度流问题|梯度流问题]]
   - [[02-Knowledge/🧠 学习系统/08-NLP全栈/04-Transformer与预训练模型/Transformer注意力|Transformer注意力]]
 - **建议标签**：`#学习` `#深度学习` `#计算机视觉` `#ResNet` `#残差网络` `#恒等映射` `#何恺明`
+
+---
+
+## 🧪 学完本节后可完成的作业
+
+- 可直接完成 [[03-Projects/课程作业/05-计算机视觉/阶段作业/05-计算机视觉-阶段作业-ResNet与YOLO目标检测|阶段作业：ResNet与YOLO]] L3 手撕 ResNet-50
+- 配合 [[03-Projects/课程作业/05-计算机视觉/课后习题/D2L-Ch8-现代CNN习题册|D2L-Ch8 习题册]]
+---
+
+## 🔗 知识图谱
+
+```dataview
+LIST
+FROM "02-Knowledge/🧠 学习系统"
+WHERE contains(upstream, this.file.link)
+SORT file.name ASC
+```
+
+```dataview
+LIST
+FROM "03-Projects"
+WHERE contains(requires, this.file.link)
+SORT assignment_level ASC, file.name ASC
+```

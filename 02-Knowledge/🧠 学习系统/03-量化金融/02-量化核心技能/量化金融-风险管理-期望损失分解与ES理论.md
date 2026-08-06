@@ -1,28 +1,46 @@
 ---
-title: "CVaR 条件风险价值与组合风险管理"
+title: CVaR 条件风险价值与组合风险管理
 type: study
-topic: "CVaR 条件风险价值与组合风险管理"
-created: "2026-08-03"
+topic: CVaR 条件风险价值与组合风险管理
+created: '2026-08-03'
 status: ongoing
 difficulty: advanced
-course: "量化金融"
-importance: "B"
-stage: "📘 第二阶段：量化核心技能"
-tags: [学习, 量化金融]
-concept: ["VaR", "CVaR", "风险度量", "压力测试"]
-prerequisites: ["EVT极值理论与VaR-CVaR", "马科维茨组合优化与有效前沿"]
-related: ["EVT极值理论与VaR-CVaR", "历史模拟法VaR", "马科维茨组合优化与有效前沿"]
-upstream: ["GARCH族波动率模型", "EVT极值理论与VaR-CVaR"]
-downstream: ["回测框架与无泄漏实验"]
+course: 量化金融
+importance: B
+stage: 📘 第二阶段：量化核心技能
+tags:
+- 学习
+- 量化金融
+concept:
+- VaR
+- CVaR
+- 风险度量
+- 压力测试
+prerequisites:
+- EVT极值理论与VaR-CVaR
+- 马科维茨组合优化与有效前沿
+related:
+- EVT极值理论与VaR-CVaR
+- 历史模拟法VaR
+- 马科维茨组合优化与有效前沿
+upstream:
+- GARCH族波动率模型
+- EVT极值理论与VaR-CVaR
+downstream:
+- 回测框架与无泄漏实验
 flow: knowledge
 kind: concept
-sources: 
-- title: "Value at Risk (Jorion)"
-url: "书库本地资源"
-locator: "Chapters 2-5, 14"
+sources:
+- title: Value at Risk (Jorion)
+url: 书库本地资源
+locator: Chapters 2-5, 14
 source_type: textbook
-license: "local"
+license: local
 verified_at: 2026-08-03
+source: Value at Risk (Jorion)
+source_url: '[待验证]'
+accessed: '2026-08-06'
+assessment_exempt: false
 ---
 
 # CVaR 条件风险价值与组合风险管理
@@ -245,3 +263,9 @@ GPD 尾部：$\text{CVaR}_q=\dfrac{\text{VaR}_q}{1-\xi}+\dfrac{\sigma-\xi u}{1-\
 - **关联已有笔记**：[[EVT极值理论与VaR-CVaR]] [[历史模拟法 VaR 与非参数风险度量 (Historical Simulation VaR)|历史模拟法VaR]] [[马科维茨有效前沿|马科维茨组合优化与有效前沿]]
 - **建议标签**：`#学习` `#量化金融`
 - **拆分建议**：不拆分
+
+## 🧪 学完本节后可完成的作业
+
+- **可完成**：[[03-Projects/金融与时序/03-量化金融/课后作业/量化金融-课后作业-08-EVT尾部风险|EVT尾部风险]]。
+- **为什么现在能做**：本卡已经提供该任务需要的定义、公式、条件或实现边界；若任务还依赖后续知识，先完成对应阶段 MOC 中排在本卡之后的知识卡。
+- **提交产物**：闭卷定义/推导、一个可复查计算或代码结果、一个失败案例，以及对适用边界的说明。

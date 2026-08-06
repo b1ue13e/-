@@ -1,15 +1,37 @@
 ---
-title: "风险约束下的强化学习"
+title: 风险约束下的强化学习
 date: 2026-07-31
-type: concept
-course: "03-量化金融"
-importance: "A"
-upstream: ["[[强化学习金融交易环境与 MDP 状态-动作空间设计 (Gym-Finance & MDP in Financial RL)|强化学习基础]]", "[[强化学习金融交易环境与 MDP 状态-动作空间设计 (Gym-Finance & MDP in Financial RL)|马尔可夫决策过程 (MDP)]]", "[[量化金融-风险管理-期望损失分解与ES理论|凸优化]]"]
-downstream: ["[[02-Knowledge/🧠 学习系统/03-量化金融/04-深入精通/风险约束下的RL|安全强化学习 (Safe RL)]]", "[[高频 Alpha 信号工程与盘口特征构建 (High-Frequency Signals & Microstructure Features)|高频交易策略]]", "[[02-Knowledge/🧠 学习系统/03-量化金融/04-深入精通/风险约束下的RL|CPO算法]]"]
-tags: [学习, 核心概念, RL, 量化金融, 风险管理]
+type: study
+course: 量化金融
+importance: A
+upstream:
+- '[[强化学习金融交易环境与 MDP 状态-动作空间设计 (Gym-Finance & MDP in Financial RL)|强化学习基础]]'
+- '[[强化学习金融交易环境与 MDP 状态-动作空间设计 (Gym-Finance & MDP in Financial RL)|马尔可夫决策过程 (MDP)]]'
+- '[[量化金融-风险管理-期望损失分解与ES理论|凸优化]]'
+downstream:
+- '[[02-Knowledge/🧠 学习系统/03-量化金融/04-深入精通/风险约束下的RL|安全强化学习 (Safe RL)]]'
+- '[[高频 Alpha 信号工程与盘口特征构建 (High-Frequency Signals & Microstructure Features)|高频交易策略]]'
+- '[[02-Knowledge/🧠 学习系统/03-量化金融/04-深入精通/风险约束下的RL|CPO算法]]'
+tags:
+- 学习
+- 核心概念
+- RL
+- 量化金融
+- 风险管理
 flow: knowledge
-status: learning
+status: planned
 kind: concept
+topic: 风险约束下的强化学习
+created: '2026-08-06'
+difficulty: intermediate
+concept: []
+prerequisites: []
+related: []
+source: 本课程历史知识卡；原始来源 [待验证]
+source_url: https://gymnasium.farama.org/api/env/。用于复核“把收益目标和成本约束分开记录，检查拉格朗日乘子是否只是在训练集上满足约束”。
+accessed: '2026-08-06'
+license: link-only；正文为本地学习整理
+assessment_exempt: false
 ---
 
 # 风险约束下的强化学习
@@ -225,3 +247,9 @@ $$ \max_{\pi} \min_{\lambda \geq 0} \mathcal{L}(\pi, \lambda) = J_R(\pi) - \lamb
 - **反例压力测试**：把收益目标和成本约束分开记录，检查拉格朗日乘子是否只是在训练集上满足约束。
 - **最小实验**：固定随机种子或冻结原始数据快照，同时保存基线、破坏条件后的对照组、关键中间量与失败日志。
 - **通过标准**：结论必须在样本外仍保持方向一致；若成本、延迟、参数扰动或结构突变使结论反转，就把该情形登记为适用边界而不是删除失败结果。
+
+## 🧪 学完本节后可完成的作业
+
+- **可完成**：[[03-Projects/金融与时序/03-量化金融/阶段作业/量化金融-阶段作业-04-金融交易环境与PPO|金融交易环境与PPO]]。
+- **为什么现在能做**：本卡已经提供该任务需要的定义、公式、条件或实现边界；若任务还依赖后续知识，先完成对应阶段 MOC 中排在本卡之后的知识卡。
+- **提交产物**：闭卷定义/推导、一个可复查计算或代码结果、一个失败案例，以及对适用边界的说明。

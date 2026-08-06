@@ -1,19 +1,34 @@
 ---
-title: "Black-Litterman 模型推导"
+title: Black-Litterman 模型推导
 type: study
-topic: "Black-Litterman 模型推导"
-created: "2026-08-04"
+topic: Black-Litterman 模型推导
+created: '2026-08-04'
 status: ongoing
 difficulty: advanced
-course: "MIT 18.S096"
-importance: "A"
-stage: "Chapter 5: Portfolio Optimization"
-tags: [学习, 资产配置, 贝叶斯, Black-Litterman]
-concept: ["Black-Litterman 模型", "贝叶斯更新", "市场均衡"]
-prerequisites: ["马科维茨组合与协方差矩阵正定化", "贝叶斯定理"]
-related: ["[[CAPM 资本资产定价模型]]"]
+course: 量化金融
+importance: A
+stage: 'Chapter 5: Portfolio Optimization'
+tags:
+- 学习
+- 资产配置
+- 贝叶斯
+- Black-Litterman
+concept:
+- Black-Litterman 模型
+- 贝叶斯更新
+- 市场均衡
+prerequisites:
+- 马科维茨组合与协方差矩阵正定化
+- 贝叶斯定理
+related:
+- '[[CAPM 资本资产定价模型]]'
 flow: knowledge
 kind: concept
+source: 本课程历史知识卡；原始来源 [待验证]
+source_url: '[待验证]'
+accessed: '2026-08-06'
+license: link-only；正文为本地学习整理
+assessment_exempt: false
 ---
 
 # Black-Litterman 模型推导
@@ -120,3 +135,9 @@ $$ \mu_{BL} = [(\tau \Sigma)^{-1} + P^T \Omega^{-1} P]^{-1} [(\tau \Sigma)^{-1} 
 - [ ] **证明重建**：说明逆向优化（Reverse Optimization）是如何利用市值权重计算出先验收益 $\Pi$ 的。
 - [ ] **条件变式**：当 $\Omega$ 趋于正无穷（即对主观观点毫无信心）时，证明 $\mu_{BL} = \Pi$。
 - [ ] **直觉说明**：解释为什么用 $\mu_{BL}$ 去跑马科维茨优化器，输出的权重不会像传统马科维茨那样极端？
+
+## 🧪 学完本节后可完成的作业
+
+- **可完成**：[[03-Projects/金融与时序/03-量化金融/课后作业/量化金融-课后作业-02-马科维茨有效前沿|马科维茨有效前沿]]。
+- **为什么现在能做**：本卡已经提供该任务需要的定义、公式、条件或实现边界；若任务还依赖后续知识，先完成对应阶段 MOC 中排在本卡之后的知识卡。
+- **提交产物**：闭卷定义/推导、一个可复查计算或代码结果、一个失败案例，以及对适用边界的说明。

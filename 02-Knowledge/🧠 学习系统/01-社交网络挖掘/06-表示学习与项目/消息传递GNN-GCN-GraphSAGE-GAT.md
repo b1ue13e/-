@@ -1,6 +1,7 @@
 ---
 type: study
 topic: "消息传递 GNN：GCN、GraphSAGE 与 GAT"
+course: "社交网络挖掘"
 tags: [学习, 01-社交网络挖掘, GNN]
 created: 2026-08-05
 status: completed
@@ -11,6 +12,10 @@ related: [可复现网络挖掘实验, 社区发现-模块度与谱松弛]
 flow: knowledge
 kind: concept
 source: "Hamilton GRL Chapters 5-7"
+source_url: "https://www.cs.mcgill.ca/~wlh/grl_book/"
+accessed: 2026-08-06
+license: "GRL 预出版稿公开托管但保留作者与出版方版权；link-only/章节定位"
+assessment_exempt: false
 anki_deck: "社交网络挖掘::表示学习"
 anki_tags: [GNN, GCN, GraphSAGE, GAT]
 ---
@@ -115,3 +120,9 @@ print(H.ravel())
 ## 🃏 Anki 卡片
 - GCN 的归一化传播算子是什么？::$\tilde D^{-1/2}\tilde A\tilde D^{-1/2}$，其中 $\tilde A=A+I$。
 - GraphSAGE 相对 lookup 嵌入的关键优势？::学习共享邻域聚合函数，可为训练未见但有特征和邻居的新节点生成表示。
+
+## 🧪 学完本节后可完成的作业
+
+- **可立即完成最小版本**：[[03-Projects/01-社交网络挖掘/阶段作业/社交网络挖掘-阶段作业-06-表示学习基线与复现#任务 3：最小消息传递基线|阶段作业 06 任务 3]]。
+- **为什么现在能做**：已覆盖归一化邻接、聚合/更新接口、层数与归纳式表示。
+- **提交产物**：1–3 层传播实现、归一化测试、同 split 基线、层数消融与限制。

@@ -10,7 +10,6 @@ flow: project
 kind: exercise
 tags: [项目, 时间序列, 阶梯作业, AR模型]
 source_lesson: "[[L03-AR模型与均值回归]]"
-answer_key: "[[HW01-HW09-参考答案与错误诊断#HW03｜AR 模型与均值回归]]"
 ---
 
 # HW03｜AR 模型与均值回归阶梯作业
@@ -79,7 +78,3 @@ $$y_t=4+0.6y_{t-1}+\varepsilon_t.$$
 
 - [FPP3 §9.3 Autoregressive models](https://otexts.com/fpp3/AR.html)
 - [FPP3 Chapter 9 Exercises](https://otexts.com/fpp3/arima-exercises.html)
-
-## 反馈入口
-
-完成并保留原答案后，打开[[HW01-HW09-参考答案与错误诊断#HW03｜AR 模型与均值回归|HW03 参考答案与错误诊断]]。

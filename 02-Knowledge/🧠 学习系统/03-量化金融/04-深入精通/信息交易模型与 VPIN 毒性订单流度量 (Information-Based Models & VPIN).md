@@ -1,19 +1,29 @@
 ---
 title: 信息交易模型与 VPIN 毒性订单流度量 (Information-Based Models & VPIN)
-type: concept
-topic: "信息交易模型与 VPIN 毒性订单流度量 (Information-Based Models & VPIN)"
-created: 2026-07-23
+type: study
+topic: 信息交易模型与 VPIN 毒性订单流度量 (Information-Based Models & VPIN)
+created: '2026-07-23'
 status: ongoing
 difficulty: intermediate
 course: 量化金融
 importance: A
-tags: 
+tags:
+- 学习
+- 量化金融
 concept: []
 prerequisites: []
 related: []
-upstream: 
-downstream: 
+upstream: null
+downstream: null
+kind: concept
+flow: knowledge
+source: 本课程历史知识卡；原始来源 [待验证]
+source_url: https://english.sse.com.cn/start/trading/mechanism/。用于复核“用订单流符号和成交量构造毒性指标，检查
+accessed: '2026-08-06'
+license: link-only；正文为本地学习整理
+assessment_exempt: false
 ---
+
 # 信息交易模型与 VPIN 毒性订单流度量 (Information-Based Models & VPIN)
 
 ---
@@ -398,3 +408,9 @@ print("VPIN 计算引擎初始化成功。")
 - **反例压力测试**：用订单流符号和成交量构造毒性指标，检查 VPIN 分桶选择与行情波动的共同驱动。
 - **最小实验**：固定随机种子或冻结原始数据快照，同时保存基线、破坏条件后的对照组、关键中间量与失败日志。
 - **通过标准**：结论必须在样本外仍保持方向一致；若成本、延迟、参数扰动或结构突变使结论反转，就把该情形登记为适用边界而不是删除失败结果。
+
+## 🧪 学完本节后可完成的作业
+
+- **可完成**：[[03-Projects/金融与时序/03-量化金融/阶段作业/量化金融-阶段作业-03-信息驱动采样|信息驱动采样]]。
+- **为什么现在能做**：本卡已经提供该任务需要的定义、公式、条件或实现边界；若任务还依赖后续知识，先完成对应阶段 MOC 中排在本卡之后的知识卡。
+- **提交产物**：闭卷定义/推导、一个可复查计算或代码结果、一个失败案例，以及对适用边界的说明。

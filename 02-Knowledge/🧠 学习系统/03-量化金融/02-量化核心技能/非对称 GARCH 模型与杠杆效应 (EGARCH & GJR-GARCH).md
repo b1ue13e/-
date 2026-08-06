@@ -1,19 +1,29 @@
 ---
 title: 非对称 GARCH 模型与杠杆效应 (EGARCH & GJR-GARCH)
-type: concept
-topic: "非对称 GARCH 模型与杠杆效应 (EGARCH & GJR-GARCH)"
-created: 2026-07-23
+type: study
+topic: 非对称 GARCH 模型与杠杆效应 (EGARCH & GJR-GARCH)
+created: '2026-07-23'
 status: ongoing
 difficulty: intermediate
 course: 量化金融
 importance: A
-tags: 
+tags:
+- 学习
+- 量化金融
 concept: []
 prerequisites: []
 related: []
-upstream: 
-downstream: 
+upstream: null
+downstream: null
+kind: concept
+flow: knowledge
+source: 本课程历史知识卡；原始来源 [待验证]
+source_url: https://arch.readthedocs.io/en/latest/univariate/univariate_volatility_modeling.html；参见
+accessed: '2026-08-06'
+license: link-only；正文为本地学习整理
+assessment_exempt: false
 ---
+
 # 非对称 GARCH 模型与杠杆效应 (EGARCH & GJR-GARCH)
 
 ---
@@ -166,7 +176,7 @@ import numpy as np
 import pandas as pd
 from arch import arch_model
 
-# 模拟 1000 天带有杠杆效应的日收益率数据
+## 模拟 1000 天带有杠杆效应的日收益率数据
 np.random.seed(42)
 N = 1000
 returns = np.zeros(N)
@@ -181,14 +191,14 @@ for t in range(1, N):
 
 returns_series = pd.Series(returns * 100) # 转为百分比
 
-# 1. 拟合 EGARCH(1,1) 模型 (o=1, p=1, q=1)
+## 1. 拟合 EGARCH(1,1) 模型 (o=1, p=1, q=1)
 egarch = arch_model(returns_series, vol='EGARCH', p=1, o=1, q=1, dist='Normal')
 res = egarch.fit(disp='off')
 
 print("=== EGARCH(1,1) 模型拟合结果 ===")
 print(res.summary().tables[1])
 
-# 2. 预测下一日 95% EGARCH-VaR
+## 2. 预测下一日 95% EGARCH-VaR
 next_vol = np.sqrt(res.forecast(horizon=1).variance.iloc[-1, 0]) / 100.0
 var_95 = 1.645 * next_vol
 print(f"\n预测明日波动率: {next_vol*100:.2f}% | 明日 95% EGARCH-VaR: {var_95*100:.2f}%")
@@ -223,7 +233,7 @@ print(f"\n预测明日波动率: {next_vol*100:.2f}% | 明日 95% EGARCH-VaR: {v
 > 🔓 **作业解锁前置条件**：学完 [[量化金融-波动率-GARCH家族模型|GARCH模型]] + [[非对称 GARCH 模型与杠杆效应 (EGARCH & GJR-GARCH)|非对称GARCH模型]] 即可正式解锁本 Challenge 实战！
 > 💡 **解锁指引**：掌握标准 GARCH 模型后，进一步解锁股市坏消息引发的非对称杠杆效应拟合。
 
- 🧪 拓展实验与李宏毅式实战 Challenge 题 (HW07-EGARCH & GJR-GARCH 杠杆效应与新闻响应曲线)
+ 🧪 拓展实验与专题实战练习 (HW07-EGARCH & GJR-GARCH 杠杆效应与新闻响应曲线)
 
 本作业参考 **李宏毅 (Hung-yi Lee) 教授 ML 课程作业架构** 设计，设置四个渐进式难度基线 (Baselines)：
 
@@ -412,3 +422,9 @@ print(f"\n预测明日波动率: {next_vol*100:.2f}% | 明日 95% EGARCH-VaR: {v
 - **反例压力测试**：比较正负冲击的新闻冲击曲线，并检验标准化残差是否仍有 ARCH 效应。
 - **最小实验**：固定随机种子或冻结原始数据快照，同时保存基线、破坏条件后的对照组、关键中间量与失败日志。
 - **通过标准**：结论必须在样本外仍保持方向一致；若成本、延迟、参数扰动或结构突变使结论反转，就把该情形登记为适用边界而不是删除失败结果。
+
+## 🧪 学完本节后可完成的作业
+
+- **可完成**：[[03-Projects/金融与时序/03-量化金融/课后作业/量化金融-课后作业-06-GARCH波动率与动态VaR|GARCH波动率与动态VaR]]。
+- **为什么现在能做**：本卡已经提供该任务需要的定义、公式、条件或实现边界；若任务还依赖后续知识，先完成对应阶段 MOC 中排在本卡之后的知识卡。
+- **提交产物**：闭卷定义/推导、一个可复查计算或代码结果、一个失败案例，以及对适用边界的说明。

@@ -1,19 +1,29 @@
 ---
 title: Implementation Shortfall 执行缺口与 Almgren-Chriss 最优执行模型
-type: concept
-topic: "Implementation Shortfall 执行缺口与 Almgren-Chriss 最优执行模型"
-created: 2026-07-23
+type: study
+topic: Implementation Shortfall 执行缺口与 Almgren-Chriss 最优执行模型
+created: '2026-07-23'
 status: ongoing
 difficulty: intermediate
 course: 量化金融
 importance: A
-tags: 
+tags:
+- 学习
+- 量化金融
 concept: []
 prerequisites: []
 related: []
-upstream: 
-downstream: 
+upstream: null
+downstream: null
+kind: concept
+flow: knowledge
+source: 本课程历史知识卡；原始来源 [待验证]
+source_url: '[待验证]'
+accessed: '2026-08-06'
+license: link-only；正文为本地学习整理
+assessment_exempt: false
 ---
+
 # Implementation Shortfall 执行缺口与 Almgren-Chriss 最优执行模型
 
 ---
@@ -195,7 +205,7 @@ def almgren_chriss_trajectory(Total_Size, N_steps, gamma, eta, sigma, lambda_ris
     trade_sizes = -np.diff(x_t)
     return trade_sizes
 
-# 求解 100,000 股在 10 个时间片的最优先快后慢拆单计划
+## 求解 100,000 股在 10 个时间片的最优先快后慢拆单计划
 trades = almgren_chriss_trajectory(100000, 10, gamma=0.1, eta=0.05, sigma=0.02, lambda_risk=1e-5)
 print("Almgren-Chriss 各时间片下单量计划:", np.round(trades))
 ```
@@ -425,7 +435,7 @@ license: "journal access"
 verified_at: 2026-08-03
 ---
 
-# 最优执行：Almgren-Chriss 模型
+## 最优执行：Almgren-Chriss 模型
 
 ---
 
@@ -661,7 +671,7 @@ downstream: ["盘口微观队列与L2数据", "HW13-AC最优拆单实战"]
 status: learning
 ---
 
-# Almgren-Chriss 最优拆单轨迹与变分法
+## Almgren-Chriss 最优拆单轨迹与变分法
 
 ## 0. 先判断它值不值得深挖
 **S 类：券商算法交易 (Algorithmic Trading) 部门的镇山之宝，赚取“执行 Alpha”的核心。**
@@ -870,3 +880,9 @@ AC 模型虽然伟大，但它有一个致命弱点：它假设市场流动性�
 - **文件夹**：`02-Knowledge/🧠 学习系统/03-量化金融/04-深入精通`
 - **链接**：平行链接至 [[金融MDP设计与奖励函数工程 (Financial MDP & Reward Engineering)|强化学习在量化的应用]]，向后链接至 [[[支线任务] HW13-AC最优拆单轨迹]]。
 - **标签**：`#量化金融/算法交易` `#最优拆单` `#变分法` `#冲击成本` `#微观结构`
+
+## 🧪 学完本节后可完成的作业
+
+- **可完成**：[[03-Projects/金融与时序/03-量化金融/阶段作业/量化金融-阶段作业-04-Almgren-Chriss最优执行|Almgren-Chriss最优执行]]。
+- **为什么现在能做**：本卡已经提供该任务需要的定义、公式、条件或实现边界；若任务还依赖后续知识，先完成对应阶段 MOC 中排在本卡之后的知识卡。
+- **提交产物**：闭卷定义/推导、一个可复查计算或代码结果、一个失败案例，以及对适用边界的说明。

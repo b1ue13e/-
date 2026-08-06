@@ -1,5 +1,6 @@
 ---
 type: study
+course: "05-计算机视觉"
 topic: "自监督学习：SimCLR与CLIP"
 created: 2026-08-05
 status: ongoing
@@ -8,6 +9,7 @@ concept: ["自监督学习", "对比学习", "SimCLR", "CLIP", "多模态"]
 prerequisites: ["Transformer", "迁移学习", "CNN"]
 related: ["MoCo", "BYOL", "MAE", "生成模型"]
 flow: knowledge
+stage_moc: "[[04-前沿架构探索/🚀 第四阶段：前沿架构探索]]"
 kind: concept
 source: "CS231n A3"
 anki_deck: "05-计算机视觉::04-前沿架构探索"
@@ -489,3 +491,29 @@ def clip_zero_shot(image, class_names, vision_encoder, text_encoder,
   - [[StableDiffusion]] — CLIP 文本编码器的下游应用
   - [[BLIP]] / [[LLaVA]] — 从 CLIP 走向多模态大模型
 - **建议标签**：`#学习` `#计算机视觉` `#自监督学习` `#对比学习` `#SimCLR` `#CLIP` `#多模态` `#InfoNCE`
+
+---
+
+## 🧪 学完本节后可完成的作业
+
+- 配合 [[03-Projects/课程作业/05-计算机视觉/课后作业/🎓 HW06 - 开放课程项目正式作业说明书|HW06]] 自监督方向
+- 配合 [[03-Projects/课程作业/05-计算机视觉/大作业/项目-CLIP检索|大作业：CLIP检索]]
+
+---
+---
+
+## 🔗 知识图谱
+
+```dataview
+LIST
+FROM "02-Knowledge/🧠 学习系统"
+WHERE contains(upstream, this.file.link)
+SORT file.name ASC
+```
+
+```dataview
+LIST
+FROM "03-Projects"
+WHERE contains(requires, this.file.link)
+SORT assignment_level ASC, file.name ASC
+```

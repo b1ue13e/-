@@ -1,19 +1,29 @@
 ---
 title: ROE 拆解与杜邦分析 (DuPont Analysis)
-type: concept
-topic: "ROE 拆解与杜邦分析 (DuPont Analysis)"
-created: 2026-07-23
+type: study
+topic: ROE 拆解与杜邦分析 (DuPont Analysis)
+created: '2026-07-23'
 status: ongoing
 difficulty: intermediate
 course: 量化金融
 importance: A
-tags: 
+tags:
+- 学习
+- 量化金融
 concept: []
 prerequisites: []
 related: []
-upstream: 
-downstream: 
+upstream: null
+downstream: null
+kind: concept
+flow: knowledge
+source: 本课程历史知识卡；原始来源 [待验证]
+source_url: https://www.sec.gov/about/reports-publications/beginners-guide-financial-statements。用于复核“用利润率、周转率和权益乘数重算
+accessed: '2026-08-06'
+license: link-only；正文为本地学习整理
+assessment_exempt: false
 ---
+
 # ROE 拆解与杜邦分析 (DuPont Analysis)
 
 ---
@@ -182,7 +192,7 @@ $$ROE = \text{税收负担} \times \text{利息负担} \times \text{息税前利
 > 🔓 **作业解锁前置条件**：学完 [[收益率与对数收益率]] + [[ROE 拆解与杜邦分析 (DuPont Analysis)|ROE拆解与杜邦分析]] 即可正式解锁本 Challenge 实战！
 > 💡 **解锁指引**：理解 ROE拆解与杜邦分析 的核心定义与基本推导逻辑后即可解锁。
 
- 🧪 拓展实验与李宏毅式实战 Challenge 题 (Lab Assignment: ROE拆解与杜邦分析 工业级实战 challenge)
+ 🧪 拓展实验与专题实战练习 (Lab Assignment: ROE拆解与杜邦分析 专题实战任务)
 
 本作业参考 **李宏毅 (Hung-yi Lee) 教授 ML 课程作业架构** 设计，设置四个渐进式难度基线 (Baselines)：
 
@@ -369,3 +379,9 @@ $$ROE = \text{税收负担} \times \text{利息负担} \times \text{息税前利
 - **反例压力测试**：用利润率、周转率和权益乘数重算 ROE，并对负权益和一次性损益设置停止解释条件。
 - **最小实验**：固定随机种子或冻结原始数据快照，同时保存基线、破坏条件后的对照组、关键中间量与失败日志。
 - **通过标准**：结论必须在样本外仍保持方向一致；若成本、延迟、参数扰动或结构突变使结论反转，就把该情形登记为适用边界而不是删除失败结果。
+
+## 🧪 学完本节后可完成的作业
+
+- **可完成**：[[03-Projects/金融与时序/03-量化金融/课后作业/量化金融-课后作业-03-Fama-MacBeth回归|Fama-MacBeth回归]]。
+- **为什么现在能做**：本卡已经提供该任务需要的定义、公式、条件或实现边界；若任务还依赖后续知识，先完成对应阶段 MOC 中排在本卡之后的知识卡。
+- **提交产物**：闭卷定义/推导、一个可复查计算或代码结果、一个失败案例，以及对适用边界的说明。

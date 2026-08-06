@@ -1,19 +1,29 @@
 ---
 title: 强化学习金融交易环境与 MDP 状态-动作空间设计 (Gym-Finance & MDP in Financial RL)
-type: concept
-topic: "强化学习金融交易环境与 MDP 状态-动作空间设计 (Gym-Finance & MDP in Financial RL)"
-created: 2026-07-23
+type: study
+topic: 强化学习金融交易环境与 MDP 状态-动作空间设计 (Gym-Finance & MDP in Financial RL)
+created: '2026-07-23'
 status: ongoing
 difficulty: intermediate
 course: 量化金融
 importance: A
-tags: 
+tags:
+- 学习
+- 量化金融
 concept: []
 prerequisites: []
 related: []
-upstream: 
-downstream: 
+upstream: null
+downstream: null
+kind: concept
+flow: knowledge
+source: 本课程历史知识卡；原始来源 [待验证]
+source_url: https://gymnasium.farama.org/api/env/。用于复核“逐事件核对观测时点、动作生效时点、撮合价格和费用入账时点，禁止同
+accessed: '2026-08-06'
+license: link-only；正文为本地学习整理
+assessment_exempt: false
 ---
+
 # 强化学习金融交易环境与 MDP 状态-动作空间设计 (Gym-Finance & MDP in Financial RL)
 
 ---
@@ -253,7 +263,7 @@ class FinancialTradingEnv(gym.Env):
         
         return self._get_observation(), float(reward), terminated, truncated, {}
 
-# 模拟数据验证环境
+## 模拟数据验证环境
 df_mock = pd.DataFrame({'close': 100.0 + np.cumsum(np.random.normal(0, 1.0, 200))})
 env = FinancialTradingEnv(df_mock)
 obs, _ = env.reset()
@@ -483,3 +493,9 @@ print(f"获得的单期 Reward: {reward:+.6f} | 结束状态: {term or trunc}")
 - **最小实验**：固定随机种子或冻结原始数据快照，同时保存基线、破坏条件后的对照组、关键中间量与失败日志。
 - **通过标准**：结论必须在样本外仍保持方向一致；若成本、延迟、参数扰动或结构突变使结论反转，就把该情形登记为适用边界而不是删除失败结果。
 \n\n> ⚔️ **支线实战任务 (Side Quest)**：👉 点击进入 [[[支线任务] HW16-Gymnasium交易环境]] 刷怪通关！\n
+
+## 🧪 学完本节后可完成的作业
+
+- **可完成**：[[03-Projects/金融与时序/03-量化金融/阶段作业/量化金融-阶段作业-04-金融交易环境与PPO|金融交易环境与PPO]]。
+- **为什么现在能做**：本卡已经提供该任务需要的定义、公式、条件或实现边界；若任务还依赖后续知识，先完成对应阶段 MOC 中排在本卡之后的知识卡。
+- **提交产物**：闭卷定义/推导、一个可复查计算或代码结果、一个失败案例，以及对适用边界的说明。

@@ -1,5 +1,6 @@
 ---
 type: study
+course: "05-计算机视觉"
 topic: "Softmax与SVM损失函数"
 created: 2026-08-05
 status: ongoing
@@ -17,6 +18,7 @@ related:
   - "交叉熵损失"
   - "梯度下降优化"
 flow: knowledge
+stage_moc: "[[02-深度学习内核/🧠 第二阶段：深度学习内核]]"
 kind: concept
 source: "CS231n A1; D2L Ch.4"
 anki_deck: "05-计算机视觉::02-深度学习内核"
@@ -494,3 +496,28 @@ print(f"SVM Hinge Loss:   {loss_svm.item():.4f}")
 
 *创建于：2026-07-27*
 *来源：CS231n Assignment 1; 《动手学深度学习》D2L Ch.4*
+
+---
+
+## 🧪 学完本节后可完成的作业
+
+- 可直接完成 [[03-Projects/课程作业/05-计算机视觉/课后作业/🎓 HW01 - CIFAR-10 kNN 与 Softmax 基线正式作业说明书|HW01]] 损失函数与梯度推导部分
+
+---
+---
+
+## 🔗 知识图谱
+
+```dataview
+LIST
+FROM "02-Knowledge/🧠 学习系统"
+WHERE contains(upstream, this.file.link)
+SORT file.name ASC
+```
+
+```dataview
+LIST
+FROM "03-Projects"
+WHERE contains(requires, this.file.link)
+SORT assignment_level ASC, file.name ASC
+```

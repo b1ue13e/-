@@ -1,21 +1,37 @@
 ---
-title: "量化金融错题漏洞入口"
-type: concept
-topic: "量化金融错题漏洞入口 (Quant Finance Pitfalls)"
-created: 2026-07-31
+title: 量化金融错题漏洞入口
+type: index
+topic: 量化金融错题漏洞入口 (Quant Finance Pitfalls)
+created: '2026-07-31'
 status: ongoing
 difficulty: intermediate
-course: "03-量化金融"
-importance: "A"
-tags: [学习, 核心概念, 量化金融, 错题本, 避坑指南, 回测]
+course: 量化金融
+importance: A
+tags:
+- 学习
+- 核心概念
+- 量化金融
+- 错题本
+- 避坑指南
+- 回测
 concept: []
 prerequisites: []
 related: []
-upstream: ["[[回测框架与无泄漏实验|量化回测框架]]", "[[OHLCV字段清洗与复权|数据清洗与预处理]]"]
-downstream: ["[[实盘风控|实盘交易系统]]", "[[策略评价指标|策略归因分析]]"]
+upstream:
+- '[[回测框架与无泄漏实验|量化回测框架]]'
+- '[[02-Knowledge/🧠 学习系统/03-量化金融/01-夯实基础/OHLCV字段清洗与复权|数据清洗与预处理]]'
+downstream:
+- '[[实盘风控|实盘交易系统]]'
+- '[[策略评价指标|策略归因分析]]'
 flow: knowledge
-kind: concept
+kind: moc
 subagent_audit_score: 10.0
+source: 本课程历史知识卡；原始来源 [待验证]
+source_url: '[待验证]'
+accessed: '2026-08-06'
+license: link-only；正文为本地学习整理
+assessment_exempt: true
+assessment_exempt_reason: 错题与弱点聚合页，具体验收在链接的知识卡和作业中完成。
 ---
 
 # 量化金融错题漏洞入口 (Quant Finance Pitfalls)
@@ -100,7 +116,7 @@ df = pd.DataFrame({'close': [100, 101, 102, 101, 103, 104]}, dtype=float)
 df['signal'] = df['close'] > df['close'].rolling(3).mean()
 df['asset_return'] = df['close'].pct_change()
 
-# t 日收盘后生成的信号，只能参与下一交易期的收益。
+## t 日收盘后生成的信号，只能参与下一交易期的收益。
 df['strategy_return'] = df['signal'].shift(1).fillna(False) * df['asset_return']
 
 assert df.loc[2, 'strategy_return'] == 0.0
@@ -142,7 +158,7 @@ print(df[['close', 'signal', 'asset_return', 'strategy_return']])
 
 ## 9. 相关知识点与 Obsidian 双链建议
 ### 上游依赖
-- [[OHLCV字段清洗与复权|数据清洗与预处理]]：确保 Point-in-Time 财务数据与复权行情的准确性。
+- [[02-Knowledge/🧠 学习系统/03-量化金融/01-夯实基础/OHLCV字段清洗与复权|数据清洗与预处理]]：确保 Point-in-Time 财务数据与复权行情的准确性。
 - [[回测框架与无泄漏实验|量化回测框架]]：理解事件驱动（Event-driven）与向量化（Vectorized）回测底层的不同时间推进机制。
 
 ### 下游延伸

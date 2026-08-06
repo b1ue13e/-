@@ -1,5 +1,6 @@
 ---
 type: study
+course: "05-计算机视觉"
 topic: "线性代数基础（CV视角）"
 created: 2026-08-05
 status: ongoing
@@ -8,6 +9,7 @@ concept: ["线性代数", "矩阵运算", "向量空间", "特征值", "SVD"]
 prerequisites: ["高中数学"]
 related: ["图像表示", "几何变换CV", "特征分解CV", "梯度下降"]
 flow: knowledge
+stage_moc: "[[01-底层基石/🏗️ 第一阶段：底层基石]]"
 kind: concept
 source: "《Mathematics for Machine Learning》Ch.2-4"
 anki_deck: "05-计算机视觉::01-底层基石"
@@ -656,3 +658,28 @@ D. $(32, 10)$ 和 $(10, 784)$
 - **建议标签**：`#学习` `#计算机视觉` `#线性代数` `#数学基础` `#矩阵运算` `#SVD` `#特征值`
 - **拆分建议**：本卡聚焦线性代数基础概念与 CV 映射关系，内容完整不拆分。若需更深入的纯数学推导（如 Cayley-Hamilton 定理、Jordan 标准型、广义特征值问题），建议新建「矩阵分析进阶」卡——但 CV 视角下本卡覆盖的内容已足够支撑后续全部学习。
 - **Anki 导入备注**：anki_deck 已设为 `05-计算机视觉::01-底层基石`，建议将 §10 闭卷复现任务和 §11 自测题转化为 Anki 卡片；每个核心公式（$A = U\Sigma V^T$、$\frac{\partial J}{\partial W} = X^T(XW-Y)$、im2col 维度关系）单独制卡。
+
+---
+
+## 🧪 学完本节后可完成的作业
+
+- 基础前置，配合 [[03-Projects/课程作业/05-计算机视觉/课后习题/D2L-Ch4-线性分类习题册|D2L-Ch4 线性分类习题册]] 中数学基础题
+
+---
+---
+
+## 🔗 知识图谱
+
+```dataview
+LIST
+FROM "02-Knowledge/🧠 学习系统"
+WHERE contains(upstream, this.file.link)
+SORT file.name ASC
+```
+
+```dataview
+LIST
+FROM "03-Projects"
+WHERE contains(requires, this.file.link)
+SORT assignment_level ASC, file.name ASC
+```

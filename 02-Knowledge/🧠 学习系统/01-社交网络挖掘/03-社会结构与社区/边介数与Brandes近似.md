@@ -1,6 +1,7 @@
 ---
 type: study
 topic: "边介数与 Brandes 近似"
+course: "社交网络挖掘"
 tags: [学习, 01-社交网络挖掘, 边介数, Brandes, HW4]
 created: 2026-08-05
 status: completed
@@ -11,6 +12,10 @@ related: [社区发现-模块度与谱松弛, 社区发现-模块度与谱松弛
 flow: knowledge
 kind: derivation
 source: "Stanford CS224W 2017 HW4-Q2; NCM Chapter 3"
+source_url: "https://snap.stanford.edu/class/cs224w-2017/handouts.html"
+accessed: 2026-08-06
+license: "课程讲义与题面默认 link-only；教材只作章节定位"
+assessment_exempt: false
 anki_deck: "社交网络挖掘::社会结构"
 anki_tags: [边介数, Brandes, 最短路DAG, HW4]
 ---
@@ -208,3 +213,9 @@ print(single_source_edge_dependencies(graph, 0))
 - Brandes 的边依赖递推是什么？::$\delta_s(v,w)=\frac{\sigma_s(v)}{\sigma_s(w)}(1+\delta_s(w))$，并把该值累加到 $v$ 的节点依赖。
 - 为什么边介数近似乘 $n/k$？::均匀源点的单源贡献期望为全源总和的 $1/n$，$k$ 个样本和乘 $n/k$ 恢复总体量级。
 - 节点介数与边介数最关键区别？::求和对象分别是经过节点与经过边的最短路份额；Girvan–Newman 使用边介数。
+
+## 🧪 学完本节后可完成的作业
+
+- **可立即完成**：[[03-Projects/01-社交网络挖掘/课后作业/社交网络挖掘-课后作业-05-排序边介数Kronecker与谱聚类#2. 近似边介数中心性（25 分，Anunay、Praty）|课后作业 05 题 2]]。
+- **为什么现在能做**：已覆盖 BFS DAG、路径计数、边依赖和逐边抽样停止。
+- **提交产物**：小图手算、精确/近似曲线、每边样本数、capped 状态与计时。

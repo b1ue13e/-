@@ -1,38 +1,53 @@
 ---
-title: "GARCH 族波动率模型"
+title: GARCH 族波动率模型
 type: study
-topic: "GARCH 族波动率模型"
-created: "2026-08-03"
+topic: GARCH 族波动率模型
+created: '2026-08-03'
 status: ongoing
 difficulty: advanced
-course: "量化金融"
-importance: "A"
-stage: "📘 第二阶段：量化核心技能"
-tags: [学习, 量化金融]
-concept: ["GARCH", "EGARCH", "杠杆效应"]
-prerequisites: ["收益率定义与对数收益", "时间序列分析（GARCH 基础）"]
-related: ["EVT极值理论与VaR-CVaR", "HW06-GARCH波动率与动态VaR", "HW07-非对称GARCH杠杆效应"]
-upstream: ["Black-Scholes期权定价模型"]
-downstream: ["EVT极值理论与VaR-CVaR"]
+course: 量化金融
+importance: A
+stage: 📘 第二阶段：量化核心技能
+tags:
+- 学习
+- 量化金融
+concept:
+- GARCH
+- EGARCH
+- 杠杆效应
+prerequisites:
+- 收益率定义与对数收益
+- 时间序列分析（GARCH 基础）
+related:
+- EVT极值理论与VaR-CVaR
+- HW06-GARCH波动率与动态VaR
+- HW07-非对称GARCH杠杆效应
+upstream:
+- Black-Scholes期权定价模型
+downstream:
+- EVT极值理论与VaR-CVaR
 flow: knowledge
 kind: concept
-sources: 
-- title: "Analysis of Financial Time Series (Tsay)"
-url: "书库本地资源"
-locator: "Chapter 3"
+sources:
+- title: Analysis of Financial Time Series (Tsay)
+url: 书库本地资源
+locator: Chapter 3
 source_type: textbook
-license: "local"
+license: local
 verified_at: 2026-08-03
 nav_level: 8
-nav_prev: "回测框架与无泄漏实验"
-nav_next: "CAPM 资本资产定价模型"
+nav_prev: 回测框架与无泄漏实验
+nav_next: CAPM 资本资产定价模型
+source: Analysis of Financial Time Series (Tsay)
+source_url: https://github.com/datawhalechina/quant-for-beginners/blob/main/assets/interactive/std-dev-demo.html
+accessed: '2026-08-06'
+assessment_exempt: false
 ---
-
 
 # GARCH 族波动率模型
 
 > [!info] 主线导航
-> [[🗺️ 量化金融学习路径|返回路径]] · **Week 5** · 前置 [[单位根检验与 ADF 检验 (Unit Root & Augmented Dickey-Fuller Test)]] · 练习 [[03-Projects/开源课程课后习题/PS03-时间序列与波动率|PS03]] · 实验 [[03-Projects/Phase2-GARCH/README|GARCH]]
+> [[🗺️ 量化金融学习路径|返回路径]] · **Week 5** · 前置 [[单位根检验与 ADF 检验 (Unit Root & Augmented Dickey-Fuller Test)]] · 练习 [[03-Projects/金融与时序/03-量化金融/课后作业/量化金融-课后作业-03-时间序列与波动率|PS03]] · 实验 [[03-Projects/金融与时序/03-量化金融/课后作业/量化金融-课后作业-06-GARCH波动率与动态VaR|GARCH]]
 
 ---
 
@@ -94,7 +109,7 @@ GARCH 模型的极大似然估计看起来像天书，但它在实战中的落�
 import numpy as np
 import pandas as pd
 
-# 最小可运行输入；Capstone 中应替换为经过复权审计的 AAPL 收盘价。
+## 最小可运行输入；Capstone 中应替换为经过复权审计的 AAPL 收盘价。
 df = pd.DataFrame({'Close': [100.0, 101.0, 99.5, 102.0, 101.5, 103.0]})
 df['return'] = df['Close'].pct_change()
 annual_vol = df['return'].std(ddof=1) * np.sqrt(252)
@@ -162,7 +177,7 @@ GARCH(1,1)：$\sigma_t^2=\omega+\alpha\varepsilon_{t-1}^2+\beta\sigma_{t-1}^2$�
 ### 例子 3：实际应用例子（真实场景/代码）
 
 > [!important] 可执行实验
-> [[03-Projects/Phase2-GARCH/README|Phase 2 GARCH 实验包]] 已实现 GARCH(1,1) 极大似然估计、冻结时间切分、一步样本外预测、滚动方差基线与 QLIKE，并提供自动测试和产物。
+> [[03-Projects/金融与时序/03-量化金融/课后作业/量化金融-课后作业-06-GARCH波动率与动态VaR|Phase 2 GARCH 实验包]] 已实现 GARCH(1,1) 极大似然估计、冻结时间切分、一步样本外预测、滚动方差基线与 QLIKE，并提供自动测试和产物。
 
 - **实际价值与转化**：先完成实验包中的 Gaussian QMLE 基线，再使用 `arch` 包扩展到 EGARCH、GJR-GARCH 与 t 分布；任何扩展都必须保持同一冻结测试集和基线口径。
 
@@ -194,7 +209,7 @@ GARCH(1,1)：$\sigma_t^2=\omega+\alpha\varepsilon_{t-1}^2+\beta\sigma_{t-1}^2$�
 - [[EVT极值理论与VaR-CVaR]]：尾部修正
 
 ### 横向关联
-- [[[支线任务] HW06-GARCH波动率与动态VaR]] [[[支线任务] HW07-非对称GARCH]] ↔ 本卡：作业
+- [[03-Projects/金融与时序/03-量化金融/课后作业/量化金融-课后作业-06-GARCH波动率与动态VaR|HW06 GARCH与动态VaR]] [[03-Projects/金融与时序/03-量化金融/课后作业/量化金融-课后作业-07-非对称GARCH|HW07 非对称GARCH]] ↔ 本卡：作业
 
 ### 应用场景
 - HW06/07
@@ -283,7 +298,7 @@ GARCH(1,1)：$\sigma_t^2=\omega+\alpha\varepsilon_{t-1}^2+\beta\sigma_{t-1}^2$�
 ## 13. 给 Obsidian 的归档建议
 
 - **适合文件夹**：`02-Knowledge/🧠 学习系统/03-量化金融/`
-- **关联已有笔记**：[[EVT极值理论与VaR-CVaR]] [[[支线任务] HW06-GARCH波动率与动态VaR]]
+- **关联已有笔记**：[[EVT极值理论与VaR-CVaR]] [[03-Projects/金融与时序/03-量化金融/课后作业/量化金融-课后作业-06-GARCH波动率与动态VaR|HW06 GARCH与动态VaR]]
 - **建议标签**：`#学习` `#量化金融`
 - **拆分建议**：不拆分
 
@@ -303,7 +318,7 @@ GARCH(1,1)：$\sigma_t^2=\omega+\alpha\varepsilon_{t-1}^2+\beta\sigma_{t-1}^2$�
 > [总体方差交互实验源码](https://github.com/datawhalechina/quant-for-beginners/blob/main/assets/interactive/population-variance-demo.html)
 
 > **方差修正公式**
-> [方差公式交互实验源码](https://github.com/datawhalechina/quant-for-beginners/blob/main/assets/interactive/variance-formulas-demo.html)（扩展材料，见 [[📦 外部实验资产索引]]）
+> [方差公式交互实验源码](https://github.com/datawhalechina/quant-for-beginners/blob/main/assets/interactive/variance-formulas-demo.html)（扩展材料，见 [[02-Knowledge/🧠 学习系统/03-量化金融/00-前置知识/量化金融-外部实验资产索引]]）
 
 ### 💻 实战靶场
 - [打开 Notebook：理解波动率](https://github.com/datawhalechina/quant-for-beginners/blob/main/notebooks/phase2_intro/01_理解波动率.ipynb)
@@ -321,12 +336,17 @@ GARCH(1,1)：$\sigma_t^2=\omega+\alpha\varepsilon_{t-1}^2+\beta\sigma_{t-1}^2$�
 \n
 
 ---
-\n\n> ⚔️ **支线实战任务 (Side Quest)**：👉 点击进入 [[[支线任务] HW06-GARCH波动率与动态VaR]] 刷怪通关！\n\n> 🧭 **自动导航 (Dataview Engine)**
+\n\n> ⚔️ **专题实战任务**：👉 点击进入 [[03-Projects/金融与时序/03-量化金融/课后作业/量化金融-课后作业-06-GARCH波动率与动态VaR|HW06 GARCH与动态VaR]] 刷怪通关！\n\n> 🧭 **自动导航 (Dataview Engine)**
 
 ```dataview
 TABLE WITHOUT ID 
   "⬅️ [[" + nav_prev + "]]" AS "上一课", 
-  "🏠 [[🗺️ 量化金融全栈终极框架 (Academic + AFML + HFT)|回到主干]]" AS "主菜单", 
-  "➡️ [[" + nav_next + "]]" AS "下一课"
+  "🏠 [[02-Knowledge/🧠 学习系统/03-量化金融/04-深入精通/量化金融-全栈资产地图|回到主干]]" AS "主菜单", 
 WHERE file.path = this.file.path
 ```
+
+## 🧪 学完本节后可完成的作业
+
+- **可完成**：[[03-Projects/金融与时序/03-量化金融/课后作业/量化金融-课后作业-06-GARCH波动率与动态VaR|GARCH波动率与动态VaR]]。
+- **为什么现在能做**：本卡已经提供该任务需要的定义、公式、条件或实现边界；若任务还依赖后续知识，先完成对应阶段 MOC 中排在本卡之后的知识卡。
+- **提交产物**：闭卷定义/推导、一个可复查计算或代码结果、一个失败案例，以及对适用边界的说明。

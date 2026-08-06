@@ -1,23 +1,51 @@
 ---
 type: study
-topic: "金融 MDP 设计与奖励函数工程"
-created: 2026-08-04
+topic: 金融 MDP 设计与奖励函数工程
+created: '2026-08-04'
 status: ongoing
 difficulty: advanced
-course: "03-量化金融"
-importance: "A"
-stage: "📗 第二阶段：量化核心技能"
-tags: [学习, 量化金融, 强化学习, MDP, 奖励工程, FinRL]
-concept: ["金融MDP", "状态空间设计", "奖励函数工程", "交易环境", "Gymnasium"]
-prerequisites: ["MDP与贝尔曼方程", "Q-Learning算法", "PPO近端策略优化", "回测框架与无泄漏实验"]
-related: ["Almgren-Chriss 最优算法执行轨迹推导", "策略评价指标"]
-upstream: ["[[MDP与贝尔曼方程]]", "[[PPO近端策略优化]]", "[[回测框架与无泄漏实验]]"]
+course: 量化金融
+importance: A
+stage: 📗 第二阶段：量化核心技能
+tags:
+- 学习
+- 量化金融
+- 强化学习
+- MDP
+- 奖励工程
+- FinRL
+concept:
+- 金融MDP
+- 状态空间设计
+- 奖励函数工程
+- 交易环境
+- Gymnasium
+prerequisites:
+- MDP与贝尔曼方程
+- Q-Learning算法
+- PPO近端策略优化
+- 回测框架与无泄漏实验
+related:
+- Almgren-Chriss 最优算法执行轨迹推导
+- 策略评价指标
+upstream:
+- '[[MDP与贝尔曼方程]]'
+- '[[PPO近端策略优化]]'
+- '[[回测框架与无泄漏实验]]'
 downstream: []
 flow: knowledge
 kind: concept
-source: "FinRL (AI4Finance), Gymnasium documentation, Sutton & Barto Reinforcement Learning Ch.3"
-anki_deck: "量化金融::策略开发"
-anki_tags: ["量化金融", "强化学习", "MDP", "奖励工程"]
+source: FinRL (AI4Finance), Gymnasium documentation, Sutton & Barto Reinforcement Learning Ch.3
+anki_deck: 量化金融::策略开发
+anki_tags:
+- 量化金融
+- 强化学习
+- MDP
+- 奖励工程
+source_url: '[待验证]'
+accessed: '2026-08-06'
+license: link-only；正文为本地学习整理
+assessment_exempt: false
 ---
 
 # 金融 MDP 设计与奖励函数工程
@@ -404,7 +432,7 @@ downstream: ["PPO/DQN交易实战", "HW16-RL交易环境 Gym 搭建"]
 status: learning
 ---
 
-# MDP 与量化交易环境重构 (RL 视角)
+## MDP 与量化交易环境重构 (RL 视角)
 
 ## 0. 先判断它值不值得深挖
 **S 类：将整个金融世界降维成“游戏机”的终极黑客技术。**
@@ -528,8 +556,8 @@ $$ R_t = (\text{Return}_t - \text{Cost}_t) - \lambda \cdot \text{Variance}(\text
 
 - 上游依赖：[[金融MDP设计与奖励函数工程 (Financial MDP & Reward Engineering)|强化学习基础]], [[Almgren-Chriss最优拆单]]
 - 下游延伸：[[金融MDP设计与奖励函数工程 (Financial MDP & Reward Engineering)|PPO在量化中的应用]], [[做市商库存模型与 Avellaneda-Stoikov 框架 (Inventory Models & Avellaneda-Stoikov Framework)|高频做市商(MM)策略]]
-- 横向关联：[[奖励函数设计 (Reward Function Design)|差分夏普比率(DSR)]] ↔ [[金融MDP设计与奖励函数工程 (Financial MDP & Reward Engineering)|Reward奖励设计]] (最高阶的奖励函数形式)
-- 应用场景：[[[支线任务] HW16-Gymnasium交易环境]]
+- 横向关联：[[02-Knowledge/🧠 学习系统/03-量化金融/04-深入精通/风险约束下的RL|差分夏普比率(DSR)]] ↔ [[金融MDP设计与奖励函数工程 (Financial MDP & Reward Engineering)|Reward奖励设计]] (最高阶的奖励函数形式)
+- 应用场景：[[03-Projects/金融与时序/03-量化金融/阶段作业/量化金融-阶段作业-04-金融交易环境与PPO|阶段4 金融交易环境]]
 
 ---
 
@@ -603,43 +631,11 @@ $$ R_t = (\text{Return}_t - \text{Cost}_t) - \lambda \cdot \text{Variance}(\text
 
 ## 13. 给 Obsidian 的归档建议
 - **文件夹**：`02-Knowledge/🧠 学习系统/03-量化金融/04-深入精通`
-- **链接**：向下直接链接至底层代码实现篇 [[[支线任务] HW16-Gymnasium交易环境]]。
+- **链接**：向下连接至 [[03-Projects/金融与时序/03-量化金融/阶段作业/量化金融-阶段作业-04-金融交易环境与PPO|金融交易环境与 PPO]]。
 - **标签**：`#量化金融/强化学习` `#MDP` `#Reward设计` `#状态空间` `#最优控制`
 
+## 🧪 学完本节后可完成的作业
 
-<!-- 自动合并自：奖励函数设计 (Reward Function Design) -->
----
-type: index
-topic: "奖励函数设计 (Reward Function Design)：质量隔离页"
-created: 2026-08-01
-status: ongoing
-difficulty: intermediate
-tags: [量化金融, 质量隔离, 待重建]
-concept: []
-prerequisites: []
-related: []
-flow: review
-updated: 2026-08-01
-quality_gate: failed
-triage_decision: merged
-canonical: "[[04-深入精通/风险约束下的RL]]"
-audit_score: 55
----
-# ⛔ 奖励函数设计 (Reward Function Design)：当前不可作为学习材料
-
-> 本路径保留用于维持旧链接稳定；原知识卡未通过严格质量闸门，已从活跃知识资产中隔离。
-
-- 审计分数：**55 / 100**
-- 主要问题：虚假完成度字段；断链8个；无可定位来源
-- 原文存档：归档目标当前缺失；恢复后必须登记库内相对链接，不保留本机盘符路径。
-- 可信学习主线：[[00-课程说明与先修诊断|🗺️ 量化金融学习路径]]、[[03-Projects/Capstone-统一标的贯穿实战项目|🧩 Qlib 项目知识点—作业—验收路线图]]
-
-## 重新纳入条件
-
-只有在补齐可定位权威来源、贴题正反例、可运行验证、成立条件、失效边界并通过复审后，才可恢复为 `type: study`。
-
-## 处理结论
-
-- 决策：**合并，不重建第二张主卡**。
-- 唯一主卡：[[04-深入精通/风险约束下的RL]]
-- 理由：主题已由内容更完整、路径更清晰的主卡覆盖；继续维护两份会造成检索竞争与重复复习。
+- **可完成**：[[03-Projects/金融与时序/03-量化金融/阶段作业/量化金融-阶段作业-04-金融交易环境与PPO|金融交易环境与 PPO]]。
+- **为什么现在能做**：本卡已定义状态、动作、奖励、终止条件和风险约束，可据此实现并审计交易环境。
+- **提交产物**：环境契约、朴素策略基线、时间泄漏失败测试、奖励分解和风险约束消融。

@@ -15,6 +15,8 @@ source_sections: ["Ensemble Learning", "工程扩展阅读"]
 learning_objectives: ["说明 CatBoost 在“模块3：树模型工程增强”里解决的具体问题", "把 CatBoost 对应回 Ensemble Learning", "用一个最小例子或代表题解释 CatBoost 的作用"]
 deliverables: ["一句话定义或项目目标", "一个最小例子/代表题/最小实验", "一条易错点或跨路径连接", "能比较主流树模型家族的强项、代价与适用场景。"]
 tags: ["机器学习", "学习"]
+stage_moc: "[[🌲 第四阶段：树与集成]]"
+upstream: ["[[LightGBM]]"]
 ---
 # CatBoost
 

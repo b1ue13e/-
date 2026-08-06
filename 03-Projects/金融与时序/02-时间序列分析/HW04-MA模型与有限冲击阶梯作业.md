@@ -10,7 +10,6 @@ flow: project
 kind: exercise
 tags: [项目, 时间序列, 阶梯作业, MA模型]
 source_lesson: "[[L04-MA模型与有限冲击]]"
-answer_key: "[[HW01-HW09-参考答案与错误诊断#HW04｜MA 模型与有限冲击]]"
 ---
 
 # HW04｜MA 模型与有限冲击阶梯作业
@@ -55,7 +54,3 @@ answer_key: "[[HW01-HW09-参考答案与错误诊断#HW04｜MA 模型与有限�
 
 - [FPP3 §9.4 Moving average models](https://otexts.com/fpp3/MA.html)
 - [FPP3 Chapter 9 Exercises](https://otexts.com/fpp3/arima-exercises.html)
-
-## 反馈入口
-
-完成并保留原答案后，打开[[HW01-HW09-参考答案与错误诊断#HW04｜MA 模型与有限冲击|HW04 参考答案与错误诊断]]。

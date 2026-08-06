@@ -1,7 +1,7 @@
 ---
 type: study
-topic: "Pandas分组聚合与透视表"
-created: 2026-04-18
+topic: Pandas分组聚合与透视表
+created: '2026-04-18'
 updated: 2026-08-01
 status: planned
 difficulty: intermediate
@@ -9,12 +9,30 @@ course: 量化金融
 note_role: concept
 flow: sprint
 kind: concept
+prerequisites:
+- 时间索引与频率（量化）
+- Pandas 基础
+related:
+- 滚动窗口与波动率特征
+- 因子预处理
+assessment_exempt: false
+source: pandas GroupBy 与 Reshaping 文档
+source_url: https://pandas.pydata.org/docs/user_guide/groupby.html
+accessed: '2026-08-06'
+license: link-only
 sprint_id: 2026-S01-quant
-concept: ["Pandas分组聚合与透视表"]
-tags: [学习, 量化金融]
-anki_deck: "量化金融::Qlib"
-anki_tags: [quant, K04, verified_route]
+concept:
+- Pandas分组聚合与透视表
+tags:
+- 学习
+- 量化金融
+anki_deck: 量化金融::Qlib
+anki_tags:
+- quant
+- K04
+- verified_route
 ---
+
 # Pandas分组聚合与透视表
 
 > [!info] 主线导航
@@ -74,7 +92,7 @@ assert lag.iloc[3] == 20
 - [[02-Knowledge/🧠 学习系统/03-量化金融/01-夯实基础/时间索引与频率（量化）]]
 - [[02-Knowledge/🧠 学习系统/03-量化金融/01-夯实基础/滚动窗口与波动率特征]]
 - [[因子预处理：去极值、中性化与标准化 (Factor Preprocessing_ Winsorization, Neutralization & Z-Score)]]
-- [[00-课程说明与先修诊断]]
+- [[02-Knowledge/🧠 学习系统/03-量化金融/00-前置知识/🧭 阶段0-先修诊断与研究协议]]
 
 ---
 
@@ -84,6 +102,21 @@ assert lag.iloc[3] == 20
 **Pandas 分组聚合与透视表**必须先写明一行代表“证券×日期”还是“订单×事件”，再决定 `groupby` 的键。机制上，`transform` 返回与原表等长的组内统计量，适合中性化和标准化；`agg` 改变粒度，适合生成截面或月度面板；`pivot_table` 会聚合重复键，不能当作无损 reshape。最小复现实验要刻意放入重复证券日、缺失行业和两种排序，断言聚合前后金额或成交量守恒。
 
 失效边界包括把未来行业分类回填到历史、用默认均值吞掉重复键、以及在分组后丢失时间排序。**Pandas 分组聚合与透视表**只有在键唯一性、空值策略、排序和输出粒度均被断言时才通过；否则即使表格形状正确，也可能已经发生样本泄漏或重复计数。
+
+## 适用条件与边界
+
+- `transform` 保持原行数，`agg` 改变粒度，`pivot_table` 会聚合重复键；选择 API 前必须先声明行粒度和键的唯一性。
+- 缺失分组键、排序不稳定或把未来分类回填到历史都会改变统计含义，不能仅凭输出形状正确判定通过。
+
+## 公式与符号
+
+对分组 $g$ 的均值为 $\bar{x}_g=|g|^{-1}\sum_{i\in g}x_i$；`groupby(keys)` 中 `keys` 定义经济对象，`transform` 返回与输入同长的组内统计量，`agg` 返回每组一行的汇总表。
+
+## 🧪 学完本节后可完成的作业
+
+- **可立即完成**：[[03-Projects/金融与时序/03-量化金融/课后作业/量化金融-课后作业-01-线性代数与概率基础#题 4|PS01 题 4]]，用分组聚合验证协方差与权重汇总不发生跨资产污染。
+- **需结合后续知识**：[[03-Projects/金融与时序/03-量化金融/大作业/量化金融-大作业-AAPL贯穿式量化研究|Capstone-AAPL Phase 1]]，在多资产面板上通过分组与时间排序测试。
+- **提交产物**：输入/输出粒度说明、最小样例、重复键和缺失键失败案例。
 
 <!-- quant-route-reasoning-v4 -->
 ### 定义—推导—对比复核

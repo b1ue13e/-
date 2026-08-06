@@ -1,21 +1,38 @@
 ---
 type: study
-topic: "LoRA"
+course: "05-计算机视觉"
+topic: "LoRA低秩适配"
 created: 2026-04-18
+updated: 2026-08-06
 status: ongoing
 difficulty: advanced
-concept: ["LoRA", "可控生成"]
-prerequisites: ["ControlNet"]
-related: []
-tags: ["学习", "计算机视觉"]
+concept: ["LoRA", "低秩适配", "参数高效微调", "PEFT"]
+prerequisites: ["Transformer与自注意力", "迁移学习与微调"]
+related: ["ControlNet", "StableDiffusion", "模型量化"]
+flow: knowledge
+stage_moc: "[[04-前沿架构探索/🚀 第四阶段：前沿架构探索]]"
+kind: concept
+source: "Hu et al. 2021; 论文补充"
+anki_deck: "05-计算机视觉::04-前沿架构探索"
+anki_tags: ["计算机视觉", "LoRA", "微调"]
+tags: [学习, 计算机视觉, LoRA, 微调, PEFT]
 ---
-# LoRA(4.23没学会，待学)
+# LoRA 低秩适配 (Low-Rank Adaptation)
 
 > 所属模块：[[../🗺️ 计算机视觉学习路径|计算机视觉学习路径]]
-> 主教材：`《Deep Learning》`
+> 主教材：Hu et al. 2021 "LoRA: Low-Rank Adaptation of Large Language Models"
 > 对应阶段：[[02-Knowledge/🧠 学习系统/05-计算机视觉/04-前沿架构探索/🚀 第四阶段：前沿架构探索|返回阶段页]]
-> 建议先看：Feedforward Nets、Regularization、Optimization、Representation Learning、CNN Basics
-> 辅助教材：`Hands-on Machine Learning`、`《Deep Learning》`
+> 建议先看：[[Transformer与自注意力]]、[[迁移学习与微调]]
+> 辅助教材：`Hands-on Machine Learning`
+
+---
+
+## 0. 先判断它值不值得深挖
+
+- **类别**：**A 类（核心概念）** — LoRA 是当前大模型微调的事实标准，从 LLM 到 Stable Diffusion 都在用。
+- **一句话本质**：冻结预训练权重，只训练两个低秩矩阵的乘积作为权重增量，参数减少 200+ 倍。
+
+---
 
 既然我们刚刚拆解了**矩阵的秩**，那么理解 **LoRA （Low-Rank Adaptation， 低秩自适应）** 就变得顺理成章了。 如果说秩是矩阵的“灵魂”，那么 LoRA 就是在微调庞大模型时，通过捕捉这个“灵魂”来精准手术的**针灸术**。
 
@@ -130,4 +147,45 @@ $$W_{final} = W_0 + B \cdot A$$
 
 **金句：** **大模型就像一座金矿，LoRA 就是那把通往特定矿脉的、最省力的钥匙。**
 
-*创建于：2026-04-18*
+---
+
+## 常见误区
+
+- ❌ "LoRA 只能用于 LLM" — Stable Diffusion、ViT 等视觉模型同样适用
+- ❌ "秩 r 越大越好" — 超过内在维度后只会过拟合，r=8~16 通常足够
+- ❌ "LoRA 推理时会变慢" — 推理前可将 BA 合并回 W₀，零额外延迟
+- ❌ "LoRA 替代了全量微调的所有场景" — 当任务与预训练分布差异极大时，全量微调仍有优势
+
+---
+
+## 自测题
+
+1. LoRA 中矩阵 A 和 B 的初始化策略分别是什么？为什么 B 初始化为 0？（#自测题/基础）
+2. 如果预训练权重 W₀ 维度是 4096×4096，设置 r=8，LoRA 减少了多少倍参数？（#自测题/基础）
+3. 为什么 LoRA 可以在推理时"零成本"合并？（#自测题/中等）
+
+---
+
+## 🧪 学完本节后可完成的作业
+
+- 配合 [[03-Projects/课程作业/05-计算机视觉/课后作业/🎓 HW06 - 开放课程项目正式作业说明书|HW06]] 微调方向
+- 配合 [[03-Projects/课程作业/05-计算机视觉/大作业/项目-SD微调|大作业：SD微调]]
+
+---
+---
+
+## 🔗 知识图谱
+
+```dataview
+LIST
+FROM "02-Knowledge/🧠 学习系统"
+WHERE contains(upstream, this.file.link)
+SORT file.name ASC
+```
+
+```dataview
+LIST
+FROM "03-Projects"
+WHERE contains(requires, this.file.link)
+SORT assignment_level ASC, file.name ASC
+```

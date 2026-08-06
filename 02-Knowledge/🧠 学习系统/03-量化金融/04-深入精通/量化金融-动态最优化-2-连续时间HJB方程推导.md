@@ -1,22 +1,36 @@
 ---
-title: "贝尔曼方程 2：连续时间与 HJB 偏微分方程推导"
+title: 贝尔曼方程 2：连续时间与 HJB 偏微分方程推导
 type: study
-topic: "HJB方程推导"
-created: "2026-08-04"
+topic: HJB方程推导
+created: '2026-08-04'
 status: ongoing
 difficulty: advanced
-course: "MIT 15.450"
-importance: "A"
-stage: "Chapter 11: Dynamic Programming"
-tags: [学习, 动态规划, HJB方程, 随机过程]
-concept: ["HJB 方程", "伊藤引理与泰勒展开"]
-prerequisites: ["[[量化金融-动态最优化-1-贝尔曼方程直觉与离散推导]]", "[[量化金融-随机过程-伊藤引理与随机微分方程]]"]
-related: ["[[量化金融-动态最优化-3-Merton最优消费问题应用]]"]
+course: 量化金融
+importance: A
+stage: 'Chapter 11: Dynamic Programming'
+tags:
+- 学习
+- 动态规划
+- HJB方程
+- 随机过程
+concept:
+- HJB 方程
+- 伊藤引理与泰勒展开
+prerequisites:
+- '[[量化金融-动态最优化-1-贝尔曼方程直觉与离散推导]]'
+- '[[量化金融-随机过程-伊藤引理与随机微分方程]]'
+related:
+- '[[量化金融-动态最优化-3-Merton最优消费问题应用]]'
 flow: knowledge
 kind: derivation
+source: 本课程历史知识卡；原始来源 [待验证]
+source_url: '[待验证]'
+accessed: '2026-08-06'
+license: link-only；正文为本地学习整理
+assessment_exempt: false
 ---
 
-# 贝尔曼方程 2：连续时间与 HJB 偏微分方程推导
+# HJB方程推导
 
 ---
 
@@ -98,3 +112,9 @@ $$ - \frac{\partial V}{\partial t} = \max_u \left\{ U + \frac{\partial V}{\parti
 - [ ] 2. 在推导中，$dW$ 项是怎么消失的？
 - [ ] 3. 独立默写从离散极限到 HJB 偏微分方程的完整四步推导。
 - [ ] 4. 解释 HJB 方程等号右侧三项各自的经济学直觉。
+
+## 🧪 学完本节后可完成的作业
+
+- **可完成**：[[03-Projects/金融与时序/03-量化金融/阶段作业/量化金融-阶段作业-04-金融交易环境与PPO|金融交易环境与PPO]]。
+- **为什么现在能做**：本卡已经提供该任务需要的定义、公式、条件或实现边界；若任务还依赖后续知识，先完成对应阶段 MOC 中排在本卡之后的知识卡。
+- **提交产物**：闭卷定义/推导、一个可复查计算或代码结果、一个失败案例，以及对适用边界的说明。

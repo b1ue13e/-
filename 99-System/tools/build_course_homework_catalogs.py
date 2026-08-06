@@ -424,11 +424,19 @@ ROLE_EVIDENCE = {
 def capstone_path(catalog: CourseCatalog) -> str:
     if catalog.code == "03":
         return (
-            "02-Knowledge/🧠 学习系统/03-量化金融/18-实战作业说明书/"
-            "HW17-Qlib因子研究与成本敏感回测作业说明书"
+            "03-Projects/金融与时序/03-量化金融/"
+            "HW17：Qlib 因子研究与成本敏感回测"
         )
     course_dir = PROJECT_ROOT / f"{catalog.code}-{catalog.course}"
     matches = sorted(course_dir.glob("项目-*.md"))
+    if not matches:
+        matches = sorted(course_dir.glob("大作业/项目-*.md"))
+    # If multiple matches (e.g. many project proposals in 大作业/), filter by local topic
+    if len(matches) > 1 and catalog.local_topics:
+        topic_keywords = catalog.local_topics[0].split()
+        filtered = [m for m in matches if any(kw in m.stem for kw in topic_keywords if len(kw) >= 4)]
+        if len(filtered) == 1:
+            matches = filtered
     if len(matches) != 1:
         raise RuntimeError(f"{course_dir}: expected one capstone, found {len(matches)}")
     return matches[0].relative_to(ROOT).with_suffix("").as_posix()

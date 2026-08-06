@@ -1,5 +1,6 @@
 ---
 type: study
+course: "05-计算机视觉"
 topic: "可解释性：Saliency Map与CAM"
 created: 2026-08-05
 status: ongoing
@@ -8,6 +9,7 @@ concept: ["可解释性","Saliency Map","CAM","Grad-CAM","模型解释"]
 prerequisites: ["卷积神经网络CNN","反向传播"]
 related: ["Transformer","迁移学习"]
 flow: knowledge
+stage_moc: "[[04-前沿架构探索/🚀 第四阶段：前沿架构探索]]"
 kind: concept
 source: "CS231n A3讲义"
 anki_deck: "05-计算机视觉::04-前沿架构探索"
@@ -373,3 +375,28 @@ def apply_colormap(cam, original_image, alpha=0.5):
   - [[激活函数CV]] — Guided Backprop 依赖 ReLU
 - **建议标签**：`#学习` `#计算机视觉` `#可解释性` `#SaliencyMap` `#GradCAM` `#CAM`
 - **拆分建议**：当前覆盖 Saliency/CAM/Grad-CAM/Guided Backprop 四条线。若挖深可将 SHAP/LIME/Integrated Gradients 等模型无关方法另开卡片；Grad-CAM 的高级扩展（Score-CAM、Ablation-CAM、Transformer 适配版）也可单独成卡。
+
+---
+
+## 🧪 学完本节后可完成的作业
+
+- 配合 [[03-Projects/课程作业/05-计算机视觉/课后作业/🎓 HW04 - 迁移学习与误差分析正式作业说明书|HW04]] 误差分析与可视化
+
+---
+---
+
+## 🔗 知识图谱
+
+```dataview
+LIST
+FROM "02-Knowledge/🧠 学习系统"
+WHERE contains(upstream, this.file.link)
+SORT file.name ASC
+```
+
+```dataview
+LIST
+FROM "03-Projects"
+WHERE contains(requires, this.file.link)
+SORT assignment_level ASC, file.name ASC
+```

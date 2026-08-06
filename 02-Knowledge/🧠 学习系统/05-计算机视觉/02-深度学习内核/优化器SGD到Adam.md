@@ -1,5 +1,6 @@
 ---
 type: study
+course: "05-计算机视觉"
 topic: "优化器：从SGD到AdamW"
 created: 2026-08-06
 status: ongoing
@@ -13,6 +14,7 @@ related:
   - "批归一化BatchNorm"
   - "权重正则化"
 flow: knowledge
+stage_moc: "[[02-深度学习内核/🧠 第二阶段：深度学习内核]]"
 kind: concept
 source: "D2L Ch.12; CS231n L3"
 anki_deck: "05-计算机视觉::02-深度学习内核"
@@ -664,3 +666,28 @@ results["RMSprop"]      = train_model("RMSprop", optim.RMSprop, lr=0.001, weight
   - [[02-Knowledge/🧠 学习系统/05-计算机视觉/02-深度学习内核/权重正则化|权重正则化]]
   - [[02-Knowledge/🧠 学习系统/05-计算机视觉/02-深度学习内核/混合精度|混合精度训练]]
 - **建议标签**：`#学习` `#计算机视觉` `#优化器` `#SGD` `#Adam` `#AdamW` `#Momentum` `#训练优化`
+
+---
+
+## 🧪 学完本节后可完成的作业
+
+- 配合 [[03-Projects/课程作业/05-计算机视觉/课后作业/🎓 HW02 - 两层网络与反向传播正确性验证正式作业说明书|HW02]] 和 [[03-Projects/课程作业/05-计算机视觉/课后作业/🎓 HW03 - 小型 CNN 与训练工程正式作业说明书|HW03]]
+
+---
+---
+
+## 🔗 知识图谱
+
+```dataview
+LIST
+FROM "02-Knowledge/🧠 学习系统"
+WHERE contains(upstream, this.file.link)
+SORT file.name ASC
+```
+
+```dataview
+LIST
+FROM "03-Projects"
+WHERE contains(requires, this.file.link)
+SORT assignment_level ASC, file.name ASC
+```

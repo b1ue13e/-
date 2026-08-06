@@ -1,6 +1,7 @@
 ---
 type: study
 topic: "社交网络挖掘数学与 Python 前置诊断"
+course: "社交网络挖掘"
 tags: [学习, 01-社交网络挖掘, 前置诊断, Python, 数学]
 created: 2026-08-05
 status: completed
@@ -11,6 +12,10 @@ related: [图与网络基础, PageRank-HITS-PPR与Spam-Farm, 社区发现-模块
 flow: knowledge
 kind: problem-type
 source: "Course-authored diagnostic aligned to Stanford CS224W 2017 HW0-HW4 prerequisites"
+source_url: "https://snap.stanford.edu/class/cs224w-2017/handouts.html"
+accessed: 2026-08-06
+license: "本地原创诊断；外部课程讲义仅用于先修范围定位，link-only"
+assessment_exempt: false
 anki_deck: "社交网络挖掘::开始这里"
 anki_tags: [前置诊断, Python, 概率, 线性代数]
 ---
@@ -169,7 +174,7 @@ print(values)
 
 ## 13. 给 Obsidian 的归档建议
 - 文件夹：`01-图与网络基础/`
-- 关联：[[🚦 零基础启动与学习契约]]
+- 关联：[[../🗺️ 社交网络挖掘学习路径]]
 - 标签：`#前置诊断` `#小白启动`
 - 拆分建议：只在某模块补给超过一张完整主题卡时再拆分。
 
@@ -177,3 +182,9 @@ print(values)
 - 前置诊断的三模块是什么？::Python、概率统计、线性代数；分别对应实现、随机模型与矩阵/谱方法。
 - 为什么诊断关键题不能被总分抵消？::关键题代表后续任务的硬依赖，失败会直接阻断图遍历、概率解释或矩阵计算。
 - 什么是校准差？::答前信心映射的预计正确率与实际正确率之差，用来识别过度或不足自信。
+
+## 🧪 学完本节后可完成的作业
+
+- **可立即完成**：[[03-Projects/01-社交网络挖掘/阶段作业/社交网络挖掘-阶段作业-01-图数据契约与连通性审计#环境与复现|阶段作业 01 环境 smoke test]]。
+- **为什么现在能做**：诊断已定位 Python、概率和线性代数的硬依赖；失败项应先回补再开课。
+- **提交产物**：诊断首测/复测、环境版本输出、未通过模块的回补计划。

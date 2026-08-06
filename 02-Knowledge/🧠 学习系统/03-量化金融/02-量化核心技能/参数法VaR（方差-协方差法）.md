@@ -1,25 +1,35 @@
 ---
 type: study
 topic: “参数法VaR”
-created: 2026-04-18
+created: '2026-04-18'
 status: ongoing
 difficulty: intermediate
-course: “量化金融”
+course: 量化金融
 stage: 第二阶段：量化核心技能
-tags: 
-concept: 
-prerequisites: 
-related: 
-upstream: 
-downstream: 
+tags:
+- 学习
+- 量化金融
+concept: []
+prerequisites: []
+related: []
+upstream: null
+downstream: null
 mastery: 1
 note_role: concept
 module: 量化核心技能
+kind: concept
+flow: knowledge
+source: 本课程历史知识卡；原始来源 [待验证]
+source_url: https://www.bis.org/basel_framework/chapter/MAR/33.htm。用于复核“用正态基准、厚尾分布和波动率突变三组数据比较覆盖率，明确线性与正态假设何时失效”。
+accessed: '2026-08-06'
+license: link-only；正文为本地学习整理
+assessment_exempt: false
 ---
-# 参数法VaR（方差-协方差法）
+
+# “参数法VaR”
 
 > [!info] 主线导航
-> [[🗺️ 量化金融学习路径|返回路径]] · **Week 6** · 下一张 [[量化金融-风险管理-期望损失分解与ES理论]] · 练习 [[03-Projects/开源课程课后习题/PS03-时间序列与波动率|PS03]] · 实验 [[03-Projects/HW06-DynamicVaR/README|动态 VaR]]
+> [[🗺️ 量化金融学习路径|返回路径]] · **Week 6** · 下一张 [[量化金融-风险管理-期望损失分解与ES理论]] · 练习 [[03-Projects/金融与时序/03-量化金融/课后作业/量化金融-课后作业-03-时间序列与波动率|PS03]] · 实验 [[03-Projects/金融与时序/03-量化金融/课后作业/量化金融-课后作业-06-GARCH波动率与动态VaR|动态 VaR]]
 
 VaR（Value at Risk）：在给定置信水平和持有期下，投资组合可能损失的最大值。参数法假设收益率服从正态分布，是最快速的VaR计算方法。
 
@@ -70,7 +80,7 @@ $$\text{VaR} = |z_c| \cdot \sigma \cdot V$$
 
 - 前置：[[历史模拟法 VaR 与非参数风险度量 (Historical Simulation VaR)|历史模拟VaR]]、[[参数法VaR（方差-协方差法）|正态分布]]
 - 相关：[[蒙特卡洛模拟法 VaR (Monte Carlo Simulation VaR)|Monte Carlo VaR]]、[[量化金融-风险管理-期望损失分解与ES理论|CVaR]]、[[极值理论 EVT 与 POT 超过门槛模型 (Extreme Value Theory & POT Model)|尾部风险]]
-- 阶段入口：[[📚 教材挂载索引|📗 第二阶段：量化核心技能]]
+- 阶段入口：[[02-Knowledge/🧠 学习系统/03-量化金融/📚 教材挂载索引|📗 第二阶段：量化核心技能]]
 
 ---
 
@@ -94,7 +104,7 @@ VaR的定义？ :: 在置信水平c下，持有T期的最大可能损失。99% 1
 > 🔓 **作业解锁前置条件**：学完 [[收益率与对数收益率]] + [[参数法VaR（方差-协方差法）|参数法VaR]] 即可正式解锁本 Challenge 实战！
 > 💡 **解锁指引**：理解 参数法VaR 的核心定义与基本推导逻辑后即可解锁。
 
- 🧪 拓展实验与李宏毅式实战 Challenge 题 (Lab Assignment: 参数法VaR 工业级实战 challenge)
+ 🧪 拓展实验与专题实战练习 (Lab Assignment: 参数法VaR 专题实战任务)
 
 本作业参考 **李宏毅 (Hung-yi Lee) 教授 ML 课程作业架构** 设计，设置四个渐进式难度基线 (Baselines)：
 
@@ -170,3 +180,9 @@ var_loss = value * (z * sigma - mu)
 assert 46_000 < var_loss < 47_000
 print(round(var_loss, 2))  # 约 46,526：这是损失口径，不是收益分位数
 ```
+
+## 🧪 学完本节后可完成的作业
+
+- **可完成**：[[03-Projects/金融与时序/03-量化金融/课后作业/量化金融-课后作业-02-马科维茨有效前沿|马科维茨有效前沿]]。
+- **为什么现在能做**：本卡已经提供该任务需要的定义、公式、条件或实现边界；若任务还依赖后续知识，先完成对应阶段 MOC 中排在本卡之后的知识卡。
+- **提交产物**：闭卷定义/推导、一个可复查计算或代码结果、一个失败案例，以及对适用边界的说明。

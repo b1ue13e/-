@@ -1,5 +1,6 @@
 ---
 type: study
+course: "05-计算机视觉"
 topic: "几何变换与特征提取"
 created: 2026-08-05
 status: ongoing
@@ -18,6 +19,7 @@ related:
   - "相机标定"
   - "图像滤波"
 flow: knowledge
+stage_moc: "[[01-底层基石/🏗️ 第一阶段：底层基石]]"
 kind: concept
 source: "Szeliski Ch.6-7"
 anki_deck: "05-计算机视觉::01-底层基石"
@@ -493,3 +495,28 @@ print(f"HOG 特征维度: {hog_features.shape[0]}")  # 3780
   - [[HOG|HOG（独立卡）]]
 - **建议标签**：`#学习` `#计算机视觉` `#几何变换` `#仿射变换` `#透视变换` `#齐次坐标` `#HOG` `#特征提取`
 - **复习节奏**：首次学习后 1/3/7/14 天间隔复习。建议先手算 Section 7 例子 1 的矩阵乘法（手写验证），再运行 OpenCV 代码（Section 7 例子 2-3），最后闭卷完成 Section 10 的复现任务。HOG 的维度计算公式必须能独立推导（面试高频）。
+
+---
+
+## 🧪 学完本节后可完成的作业
+
+- 配合 [[03-Projects/课程作业/05-计算机视觉/课后习题/D2L-Ch13-计算机视觉习题册|D2L-Ch13 习题册]] 数据增广题
+
+---
+---
+
+## 🔗 知识图谱
+
+```dataview
+LIST
+FROM "02-Knowledge/🧠 学习系统"
+WHERE contains(upstream, this.file.link)
+SORT file.name ASC
+```
+
+```dataview
+LIST
+FROM "03-Projects"
+WHERE contains(requires, this.file.link)
+SORT assignment_level ASC, file.name ASC
+```

@@ -1,111 +1,79 @@
-﻿#!/usr/bin/env python3
-"""Audit the canonical quant-finance learning execution chain."""
+#!/usr/bin/env python3
 from __future__ import annotations
-
-import os
-import re
-import sys
-from collections import defaultdict
+import re, sys
 from pathlib import Path
-
 sys.stdout.reconfigure(encoding="utf-8")
-ROOT = Path(__file__).resolve().parents[2]
-QUANT = ROOT / "02-Knowledge" / "🧠 学习系统" / "03-量化金融"
-PROJECT = ROOT / "03-Projects" / "金融与时序" / "03-量化金融" / "Qlib因子研究"
-KEY_PAGES = [
-    QUANT / "🧩 Qlib 项目知识点—作业—验收路线图.md",
-    QUANT / "🚀 Qlib项目执行入口.md",
-    QUANT / "🧠 量化金融李宏毅式实战作业总索引.md",
-    QUANT / "🗺️ 量化金融学习路径.md",
-    ROOT / "01-Active Sprint" / "🚀 Active Sprint.md",
-    ROOT / "99-System" / "🗓️ 计划执行系统" / "周计划" / "2026-Sprint1-量化金融冲刺计划.md",
-    PROJECT / "00-Qlib项目总看板.md",
-]
-SKIP_DIRS = {".git", ".obsidian", ".recovery-hold", ".tmp", "tmp", "🗄️ 归档", "书籍资源", ".venv", "site-packages"}
-LINK_RE = re.compile(r"(?<!!)\[\[([^\]]+)\]\]")
+ROOT=Path(__file__).resolve().parents[2]
+COURSE=ROOT/"02-Knowledge"/"🧠 学习系统"/"03-量化金融"
+PROJECT=ROOT/"03-Projects"/"金融与时序"/"03-量化金融"
+STAGES=["00-前置知识","01-夯实基础","02-量化核心技能","03-研究验证与稳健性","04-深入精通"]
+LINK_RE=re.compile(r"\[\[([^\]]+)\]\]")
 
+def files(root):
+    return [p for p in root.rglob("*.md") if ".recovery-hold" not in p.parts]
 
-def markdown_files() -> list[Path]:
-    paths: list[Path] = []
-    for dirpath, dirnames, filenames in os.walk(ROOT):
-        dirnames[:] = [d for d in dirnames if d not in SKIP_DIRS and not d.startswith(".tmp")]
-        for filename in filenames:
-            if filename.endswith(".md"):
-                paths.append(Path(dirpath) / filename)
-    return paths
+def clean(raw):
+    return raw.replace("\\|","|").split("|",1)[0].split("#",1)[0].strip()
 
+def resolve(source,raw,stems):
+    target=clean(raw)
+    if not target or "\${" in target or "<%" in target:
+        return True
+    candidate=Path(*target.replace("\\","/").split("/"))
+    if candidate.suffix.lower()!=".md":
+        candidate=candidate.with_suffix(".md")
+    if (source.parent/candidate).exists() or (ROOT/candidate).exists():
+        return True
+    return "/" not in target and Path(target).stem in stems
 
-def audit_links(pages: list[Path], all_md: list[Path]) -> list[str]:
-    errors: list[str] = []
-    stems: dict[str, list[Path]] = defaultdict(list)
-    for path in all_md:
-        stems[path.stem].append(path)
-    for path in pages:
-        text = path.read_text(encoding="utf-8-sig")
-        for match in LINK_RE.finditer(text):
-            target = match.group(1).split("|", 1)[0].split("#", 1)[0].strip().replace("\\", "/").rstrip("/")
-            if not target:
-                continue
-            direct = []
-            for base in (path.parent, ROOT):
-                candidate = base.joinpath(*target.split("/"))
-                if candidate.suffix.lower() not in {".md", ".pdf"}:
-                    candidate = candidate.with_suffix(".md")
-                if candidate.exists():
-                    direct.append(candidate)
-            name = Path(target).name.removesuffix(".md")
-            if not direct and not stems.get(name):
-                errors.append(f"broken link in {path.relative_to(ROOT)}: {target}")
-            if "/" not in target and len(stems.get(name, [])) > 1:
-                errors.append(f"ambiguous basename link in {path.relative_to(ROOT)}: {target}")
-    return errors
-
-
-def main() -> int:
-    errors: list[str] = []
-    for path in KEY_PAGES:
-        if not path.exists():
-            errors.append(f"missing key page: {path.relative_to(ROOT)}")
-    for name in [
-        "A01-数据协议与无泄漏审计.md",
-        "A02-E0等权与指数基线.md",
-        "A03-E1简单连续因子.md",
-        "A04-E2-Qlib-LightGBM.md",
-        "A05-成本与稳健性审计.md",
-        "A06-复现报告与答辩.md",
-        "Quant-Factor-And-Arbitrage-Engine.md",
-    ]:
-        if not (PROJECT / name).exists():
-            errors.append(f"missing project page: {name}")
-
-    if all(path.exists() for path in KEY_PAGES):
-        errors.extend(audit_links(KEY_PAGES, markdown_files()))
-
-    route = QUANT / "🧩 Qlib 项目知识点—作业—验收路线图.md"
-    if route.exists():
-        rows = re.findall(r"^\| K(\d{2}) \|", route.read_text(encoding="utf-8-sig"), re.MULTILINE)
-        expected = [f"{i:02d}" for i in range(1, 29)]
-        if rows != expected:
-            errors.append(f"K rows are not exactly K01-K28: {rows}")
-
-    for path in [KEY_PAGES[0], KEY_PAGES[1], KEY_PAGES[4], KEY_PAGES[6]]:
-        if path.exists() and "K01" not in path.read_text(encoding="utf-8-sig"):
-            errors.append(f"current K pointer missing K01: {path.relative_to(ROOT)}")
-
-    stale_days = list(QUANT.glob("20??-??-?? *日计划.md"))
-    if stale_days:
-        errors.append(f"stale day plans in knowledge folder: {len(stale_days)}")
-    if (QUANT / "🚀 Active Sprint.md").exists():
-        errors.append("duplicate Active Sprint remains in quant folder")
-
+def main():
+    errors=[]
+    route=COURSE/"🗺️ 量化金融学习路径.md"
+    source=COURSE/"📚 教材挂载索引.md"
+    homework=PROJECT/"🧭 课程作业总索引.md"
+    for p in (route,source,homework):
+        if not p.exists(): errors.append(f"missing canonical page: {p.relative_to(ROOT)}")
+    scoped=files(COURSE)+files(PROJECT)
+    stems={p.stem for p in files(ROOT)}
+    for stage in STAGES:
+        directory=COURSE/stage
+        mocs=list(directory.glob("🧭*.md"))
+        if len(mocs)!=1:
+            errors.append(f"{stage} must contain exactly one stage MOC; found {len(mocs)}")
+            continue
+        text=mocs[0].read_text(encoding="utf-8-sig")
+        if "## 阶段验收与作业" not in text: errors.append(f"{mocs[0].relative_to(ROOT)} missing stage assessment")
+        for card in directory.glob("*.md"):
+            if not card.name.startswith("🧭") and card.stem not in text:
+                errors.append(f"{mocs[0].relative_to(ROOT)} omits {card.name}")
+    route_text=route.read_text(encoding="utf-8-sig") if route.exists() else ""
+    for week in range(10):
+        if not re.search(rf"(?m)^\|\s*{week}\s*\|",route_text): errors.append(f"learning path missing Week {week} row")
+    if not re.search(r"阶段\s*3",route_text) or "03-研究验证与稳健性" not in route_text: errors.append("learning path missing formal stage 3")
+    if source.exists():
+        text=source.read_text(encoding="utf-8-sig")
+        if "## 多源课程融合自评" not in text: errors.append("source index missing multi-source self-assessment")
+        match=re.search(r"\|\s*\*\*总分\*\*\s*\|\s*\*\*(\d+)\*\*",text)
+        if not match or int(match.group(1))<85: errors.append("multi-source self-assessment must be at least 85")
+    for name in ("课后作业","阶段作业","大作业"):
+        directory=PROJECT/name
+        if not directory.is_dir() or not list(directory.glob("*.md")): errors.append(f"missing assignment directory: {name}")
+    forbidden=("李宏毅式","李宏毅-CMU模式","4-Tier","Boss Baseline","阶梯作业","[支线任务]")
+    for p in scoped:
+        text=p.read_text(encoding="utf-8-sig")
+        for term in forbidden:
+            if term in text: errors.append(f"forbidden legacy label in {p.relative_to(ROOT)}: {term}")
+        if p.parent.name in {"课后作业","阶段作业","大作业"} and p.name!="MIT-OCW-18S096-来源与作答说明.md":
+            for field in ("course:","source_type:","license:"):
+                if field not in text: errors.append(f"assignment metadata incomplete: {p.relative_to(ROOT)} {field}")
+        for raw in LINK_RE.findall(text):
+            if not resolve(p,raw,stems): errors.append(f"broken link: {p.relative_to(ROOT)} -> {clean(raw)}")
     if errors:
         print(f"Quant route audit failed with {len(errors)} issue(s):")
-        for error in errors:
-            print(f"- {error}")
+        for error in errors: print(f"- {error}")
         return 1
-    print("Quant route audit passed: canonical links, K01-K28, A01-A06, current pointer, and folder hygiene are consistent.")
+    print("Quant route audit passed: five stages, Week 0-9, MOC coverage, assignments, sources, and links are consistent.")
     return 0
 
-
-if __name__ == "__main__":
+if __name__=="__main__":
     raise SystemExit(main())

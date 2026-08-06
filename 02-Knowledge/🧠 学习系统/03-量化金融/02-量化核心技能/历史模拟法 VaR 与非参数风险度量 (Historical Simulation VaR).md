@@ -1,22 +1,31 @@
 ---
 title: 历史模拟法 VaR 与非参数风险度量 (Historical Simulation VaR)
-type: concept
+type: study
 topic: 历史模拟VaR
-created: '{date}'
+created: '2026-08-06'
 status: ongoing
 difficulty: intermediate
 course: 量化金融
 importance: A
-tags: 
+tags:
+- 学习
+- 量化金融
 concept: []
 prerequisites: []
 related: []
-upstream: 
-downstream: 
+upstream: null
+downstream: null
 date: 2026-07-23
+kind: concept
+flow: knowledge
+source: 本课程历史知识卡；原始来源 [待验证]
+source_url: https://www.bis.org/basel_framework/chapter/MAR/33.htm。用于复核“保留损益重估的非线性，并对窗口长度、危机样本权重和缺失行情做覆盖率比较”。
+accessed: '2026-08-06'
+license: link-only；正文为本地学习整理
+assessment_exempt: false
 ---
 
-# 历史模拟法 VaR 与非参数风险度量 (Historical Simulation VaR)
+# 历史模拟VaR
 
 ---
 
@@ -168,21 +177,21 @@ $$\mathbf{\text{VaR}_{1-\alpha} = - \Delta V_{(\lfloor N \cdot \alpha \rfloor)}}
 import numpy as np
 import pandas as pd
 
-# 模拟 3 只股票过去 500 天收益率 (带有肥尾)
+## 模拟 3 只股票过去 500 天收益率 (带有肥尾)
 np.random.seed(42)
 returns = pd.DataFrame(np.random.standard_t(df=4, size=(500, 3)) * 0.015, columns=['A', 'B', 'C'])
 weights = np.array([0.4, 0.3, 0.3])
 portfolio_value = 10000000 # 1000 万组合
 
-# 计算伪历史组合日收益率
+## 计算伪历史组合日收益率
 port_returns = returns.dot(weights)
 port_pnl = portfolio_value * port_returns
 
-# 计算 95% 与 99% 历史模拟 VaR
+## 计算 95% 与 99% 历史模拟 VaR
 var_95 = -np.percentile(port_pnl, 5)
 var_99 = -np.percentile(port_pnl, 1)
 
-# 计算条件 VaR (Expected Shortfall / CVaR)
+## 计算条件 VaR (Expected Shortfall / CVaR)
 cvar_95 = -port_pnl[port_pnl <= -var_95].mean()
 
 print(f"1000万组合 95% 历史模拟 VaR: {var_95:.2f} 元")
@@ -199,7 +208,7 @@ print(f"1000万组合 95% 条件 VaR (CVaR): {cvar_95:.2f} 元")
 > 🔓 **作业解锁前置条件**：学完 [[收益率与对数收益率]] + [[历史模拟法 VaR 与非参数风险度量 (Historical Simulation VaR)|历史模拟VaR]] 即可正式解锁本 Challenge 实战！
 > 💡 **解锁指引**：理解 历史模拟VaR 的核心定义与基本推导逻辑后即可解锁。
 
- 🧪 拓展实验与李宏毅式实战 Challenge 题 (Lab Assignment: 历史模拟VaR 工业级实战 challenge)
+ 🧪 拓展实验与专题实战练习 (Lab Assignment: 历史模拟VaR 专题实战任务)
 
 本作业参考 **李宏毅 (Hung-yi Lee) 教授 ML 课程作业架构** 设计，设置四个渐进式难度基线 (Baselines)：
 
@@ -387,3 +396,9 @@ print(f"1000万组合 95% 条件 VaR (CVaR): {cvar_95:.2f} 元")
 - **反例压力测试**：保留损益重估的非线性，并对窗口长度、危机样本权重和缺失行情做覆盖率比较。
 - **最小实验**：固定随机种子或冻结原始数据快照，同时保存基线、破坏条件后的对照组、关键中间量与失败日志。
 - **通过标准**：结论必须在样本外仍保持方向一致；若成本、延迟、参数扰动或结构突变使结论反转，就把该情形登记为适用边界而不是删除失败结果。
+
+## 🧪 学完本节后可完成的作业
+
+- **可完成**：[[03-Projects/金融与时序/03-量化金融/课后作业/量化金融-课后作业-08-EVT尾部风险|EVT尾部风险]]。
+- **为什么现在能做**：本卡已经提供该任务需要的定义、公式、条件或实现边界；若任务还依赖后续知识，先完成对应阶段 MOC 中排在本卡之后的知识卡。
+- **提交产物**：闭卷定义/推导、一个可复查计算或代码结果、一个失败案例，以及对适用边界的说明。

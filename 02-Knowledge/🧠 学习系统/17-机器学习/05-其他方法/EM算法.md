@@ -15,6 +15,9 @@ source_sections: ["第7章"]
 learning_objectives: ["说明 EM算法 在“模块2：贝叶斯与似然方法”里解决的具体问题", "把 EM算法 对应回 第7章", "用一个最小例子或代表题解释 EM算法 的作用"]
 deliverables: ["一句话定义或项目目标", "一个最小例子/代表题/最小实验", "一条易错点或跨路径连接", "能说明贝叶斯决策、MLE 和 EM 的位置分工。"]
 tags: ["机器学习", "学习"]
+aliases: ["🎯 EM 算法 (Expectation-Maximization)"]
+stage_moc: "[[🧩 第五阶段：其他方法]]"
+upstream: ["[[极大似然估计]]"]
 ---
 # EM算法
 
@@ -63,3 +66,26 @@ tags: ["机器学习", "学习"]
 - 返回阶段页：[[🧩 第五阶段：其他方法|🧩 第五阶段：其他方法]]
 
 *创建于：2026-04-18*
+
+---
+
+## 历史版本补充内容（合并自同名旧卡，待复核）
+
+## 0. 先判断它值不值得深挖
+
+
+- **类别**：**A 类（核心概念，必须深挖）**
+- **判断理由**：EM 算法（期望极大算法 / Dempster et al. 1977）是含有**隐变量 (Latent Variables)** 的概率模型参数估计通用求解框架。由于隐变量未被观测，直接极大化似然函数陷入非凸与对数求和的困境。EM 算法通过 E 步（求隐变量后验期望 Q 函数）与 M 步（极大化 Q 函数）交替迭代，保证了似然函数的单调增加与收敛。
+
+---
+
+## 1. E 步与 M 步交替迭代
+
+
+- **E 步 (Expectation Step)**：基于当前参数估计值 $\boldsymbol{\theta}^{(t)}$，计算隐变量 $\mathbf{Z}$ 的条件后验分布，并求对数似然在 $\mathbf{Z}$ 上的期望 Q 函数：
+  $$Q(\boldsymbol{\theta}, \boldsymbol{\theta}^{(t)}) = \sum_{\mathbf{Z}} P(\mathbf{Z} \mid \mathbf{X}, \boldsymbol{\theta}^{(t)}) \ln P(\mathbf{X}, \mathbf{Z} \mid \boldsymbol{\theta})$$
+- **M 步 (Maximization Step)**：寻找能使 Q 函数最大化的新参数 $\boldsymbol{\theta}^{(t+1)}$：
+  $$\boldsymbol{\theta}^{(t+1)} = \arg\max_{\boldsymbol{\theta}} Q(\boldsymbol{\theta}, \boldsymbol{\theta}^{(t)})$$
+
+---
+

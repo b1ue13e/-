@@ -1,5 +1,6 @@
 ---
 type: study
+course: "05-计算机视觉"
 topic: "目标检测基础：R-CNN与YOLO"
 created: 2026-08-05
 status: ongoing
@@ -8,6 +9,7 @@ concept: ["目标检测","R-CNN","YOLO","IoU","NMS","mAP"]
 prerequisites: ["卷积神经网络CNN","Softmax分类器"]
 related: ["FPN","SSD","FasterRCNN","语义分割"]
 flow: knowledge
+stage_moc: "[[03-视觉核心任务/🎯 第三阶段：视觉核心任务]]"
 kind: concept
 source: "D2L Ch.14; CS231n A3"
 anki_deck: "05-计算机视觉::03-视觉核心任务"
@@ -390,8 +392,8 @@ if __name__ == "__main__":
 - [[MaskRCNN]]：Faster R-CNN + 分割分支，检测向实例分割的直接延伸。
 
 ### 工具链
-- [[IoU]]：交并比专题（GIoU、DIoU、CIoU 等改进变体）。
-- [[NMS]]：非极大值抑制专题（Soft-NMS、Matrix NMS 等）。
+- [[IoU与NMS]]：交并比专题（GIoU、DIoU、CIoU 等改进变体）。
+- [[IoU与NMS]]：非极大值抑制专题（Soft-NMS、Matrix NMS 等）。
 - [[难例挖掘]]：在线难例挖掘 (OHEM) 与 Focal Loss 的联系。
 
 ### 应用场景
@@ -457,10 +459,10 @@ if __name__ == "__main__":
 ## 13. 给 Obsidian 的归档建议
 
 - **适合文件夹**：`05-计算机视觉/03-视觉核心任务/`
-- **关联已有笔记**：[[RCNN]]、[[FastRCNN]]、[[FasterRCNN]]、[[YOLO目标检测]]、[[IoU]]、[[NMS]]
+- **关联已有笔记**：[[RCNN]]、[[FastRCNN]]、[[FasterRCNN]]、[[YOLO目标检测]]、[[IoU与NMS]]、[[IoU与NMS]]
 - **建议标签**：`#学习` `#计算机视觉` `#目标检测` `#RCNN` `#YOLO`
 - **拆分建议**：此卡定位为"目标检测基础总览"，覆盖从问题定义到评估指标的完整入门链。已有独立深入卡（RCNN.md、FastRCNN.md、FasterRCNN.md、YOLO目标检测.md、IoU.md、NMS.md）可在本卡基础上做专题深挖。若需深入了解 Anchor-Free、DETR 等新范式，建新卡并设本卡为上游。
-- **双链优先**：上游 → [[卷积神经网络CNN]]、[[Softmax分类器]]；下游 → [[FasterRCNN]]、[[YOLO目标检测]]、[[FCOS]]；横向 → [[FPN]]、[[SSD]]、[[RetinaNet]]、[[IoU]]、[[NMS]]。
+- **双链优先**：上游 → [[卷积神经网络CNN]]、[[Softmax分类器]]；下游 → [[FasterRCNN]]、[[YOLO目标检测]]、[[FCOS]]；横向 → [[FPN]]、[[SSD]]、[[RetinaNet]]、[[IoU与NMS]]、[[IoU与NMS]]。
 
 ## 🃏 Anki 卡片
 
@@ -478,3 +480,30 @@ if __name__ == "__main__":
 - Two-Stage 和 One-Stage 的本质区别？::Two-Stage 先提议候选区再分类+回归（分步串行，精度优先）；One-Stage 直接在特征图上回归框和类别（一步到位，速度优先）。
 - YOLOv1 输出张量维度（$S=7, B=2, C=20$）？::$7 \times 7 \times (2 \times 5 + 20) = 7 \times 7 \times 30$，其中每个网格预测 2 个框（每框 5 个值）和 20 类概率。
 - Smooth L1 损失相比 L2 的优势？::对离群点梯度不爆炸——$|x|<1$ 时等价 L2（平滑），$|x|\ge 1$ 时梯度恒为 1（鲁棒），使训练更稳定。
+
+---
+
+## 🧪 学完本节后可完成的作业
+
+- 可直接完成 [[03-Projects/课程作业/05-计算机视觉/课后作业/🎓 HW05 - Pascal VOC 最小目标检测工程包正式作业说明书|HW05]]
+- 可直接完成 [[03-Projects/课程作业/05-计算机视觉/阶段作业/05-计算机视觉-阶段作业-ResNet与YOLO目标检测|阶段作业：ResNet与YOLO]] L4 YOLO 检测头
+- 配合 [[03-Projects/课程作业/05-计算机视觉/课后习题/D2L-Ch14-目标检测习题册|D2L-Ch14 习题册]]
+
+---
+---
+
+## 🔗 知识图谱
+
+```dataview
+LIST
+FROM "02-Knowledge/🧠 学习系统"
+WHERE contains(upstream, this.file.link)
+SORT file.name ASC
+```
+
+```dataview
+LIST
+FROM "03-Projects"
+WHERE contains(requires, this.file.link)
+SORT assignment_level ASC, file.name ASC
+```

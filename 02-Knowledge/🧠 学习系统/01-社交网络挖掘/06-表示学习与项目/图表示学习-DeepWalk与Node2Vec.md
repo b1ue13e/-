@@ -1,6 +1,7 @@
 ---
 type: study
 topic: "图表示学习：DeepWalk 与 Node2Vec"
+course: "社交网络挖掘"
 tags: [学习, 01-社交网络挖掘, 图表示学习]
 created: 2026-08-05
 status: completed
@@ -11,6 +12,10 @@ related: [消息传递GNN-GCN-GraphSAGE-GAT, 可复现网络挖掘实验]
 flow: knowledge
 kind: concept
 source: "Hamilton GRL Chapter 3; Stanford CS224W 2017 lecture 20"
+source_url: "https://www.cs.mcgill.ca/~wlh/grl_book/"
+accessed: 2026-08-06
+license: "GRL 预出版稿公开托管但保留作者与出版方版权；link-only/章节定位"
+assessment_exempt: false
 anki_deck: "社交网络挖掘::表示学习"
 anki_tags: [DeepWalk, Node2Vec, 嵌入]
 ---
@@ -112,3 +117,9 @@ print([round(p, 3) for p in probs])
 ## 🃏 Anki 卡片
 - DeepWalk 的核心转换是什么？::把随机游走当作句子、节点当作单词，用 Skip-gram 学习共现嵌入。
 - Node2Vec 中 $q<1$ 的效果？::鼓励走向与上一步距离更远的节点，形成 DFS-like 外扩。
+
+## 🧪 学完本节后可完成的作业
+
+- **可立即完成**：[[03-Projects/01-社交网络挖掘/阶段作业/社交网络挖掘-阶段作业-06-表示学习基线与复现#任务 2：随机游走嵌入|阶段作业 06 任务 2]]。
+- **为什么现在能做**：已覆盖游走语料、窗口共现、DeepWalk 与 Node2Vec 偏置。
+- **提交产物**：固定游走、共现/SVD 嵌入、参数对照、多 split 结果与失败案例。

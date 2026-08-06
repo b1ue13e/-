@@ -1,5 +1,6 @@
 ---
 type: study
+course: "05-计算机视觉"
 topic: "梯度下降与优化基础"
 created: 2026-08-05
 status: ongoing
@@ -8,6 +9,7 @@ concept: ["梯度下降", "优化", "学习率", "SGD", "凸优化"]
 prerequisites: ["线性代数基础", "微积分基础"]
 related: ["反向传播", "损失函数", "学习率调度"]
 flow: knowledge
+stage_moc: "[[01-底层基石/🏗️ 第一阶段：底层基石]]"
 kind: concept
 source: "D2L Ch.12; 《Mathematics for ML》"
 anki_deck: "05-计算机视觉::01-底层基石"
@@ -453,3 +455,29 @@ print(f"无动量终点: {path_no_mom[-1]}, 有动量终点: {path_mom[-1]}")
 - **建议标签**：`#学习` `#计算机视觉` `#梯度下降` `#优化` `#数学底座`
 - **拆分建议**：本卡聚焦梯度下降基础原理；动量/Adam/Nesterov 等进阶内容建议单独成卡（如"优化器对比"或"自适应优化方法"）
 - **Anki 导入备注**：anki_deck 已设为 `05-计算机视觉::01-底层基石`，建议用第 10/11 节的题目生成 Anki 卡片
+
+---
+
+## 🧪 学完本节后可完成的作业
+
+- 可完成 [[03-Projects/课程作业/05-计算机视觉/课后作业/🎓 HW01 - CIFAR-10 kNN 与 Softmax 基线正式作业说明书|HW01]] 中 SGD 实现部分
+- 配合 [[03-Projects/课程作业/05-计算机视觉/课后作业/🎓 HW02 - 两层网络与反向传播正确性验证正式作业说明书|HW02]] 理解优化器行为
+
+---
+---
+
+## 🔗 知识图谱
+
+```dataview
+LIST
+FROM "02-Knowledge/🧠 学习系统"
+WHERE contains(upstream, this.file.link)
+SORT file.name ASC
+```
+
+```dataview
+LIST
+FROM "03-Projects"
+WHERE contains(requires, this.file.link)
+SORT assignment_level ASC, file.name ASC
+```

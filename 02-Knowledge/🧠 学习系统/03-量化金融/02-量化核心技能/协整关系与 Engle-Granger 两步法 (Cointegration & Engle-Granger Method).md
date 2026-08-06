@@ -1,28 +1,43 @@
 ---
-title: "协整与统计套利"
+title: 协整与统计套利
 type: study
-topic: "协整与统计套利"
-created: "2026-08-03"
+topic: 协整与统计套利
+created: '2026-08-03'
 status: ongoing
 difficulty: advanced
-course: "量化金融"
-importance: "B"
-stage: "📘 第三阶段：策略开发与实战"
-tags: [学习, 量化金融]
-concept: ["协整", "Engle-Granger", "统计套利", "价差"]
-prerequisites: ["收益率定义与对数收益", "单位根检验"]
-related: ["协整关系与Engle-Granger两步法"]
-upstream: ["收益率定义与对数收益"]
-downstream: ["回测框架与无泄漏实验"]
+course: 量化金融
+importance: B
+stage: 📘 第三阶段：策略开发与实战
+tags:
+- 学习
+- 量化金融
+concept:
+- 协整
+- Engle-Granger
+- 统计套利
+- 价差
+prerequisites:
+- 收益率定义与对数收益
+- 单位根检验
+related:
+- 协整关系与Engle-Granger两步法
+upstream:
+- 收益率定义与对数收益
+downstream:
+- 回测框架与无泄漏实验
 flow: knowledge
 kind: concept
-sources: 
-- title: "Analysis of Financial Time Series (Tsay)"
-url: "书库本地资源"
-locator: "Chapter 8"
+sources:
+- title: Analysis of Financial Time Series (Tsay)
+url: 书库本地资源
+locator: Chapter 8
 source_type: textbook
-license: "local"
+license: local
 verified_at: 2026-08-03
+source: Analysis of Financial Time Series (Tsay)
+source_url: '[待验证]'
+accessed: '2026-08-06'
+assessment_exempt: false
 ---
 
 # 协整与统计套利
@@ -242,3 +257,9 @@ EG 两步法：① OLS 回归 $y_t=\alpha+\beta x_t+e_t$；② 对残差 $\hat e
 - **关联已有笔记**：[[协整关系与 Engle-Granger 两步法 (Cointegration & Engle-Granger Method)|协整关系与Engle-Granger两步法]] [[回测框架与无泄漏实验]]
 - **建议标签**：`#学习` `#量化金融`
 - **拆分建议**：不拆分
+
+## 🧪 学完本节后可完成的作业
+
+- **可完成**：[[03-Projects/金融与时序/03-量化金融/课后作业/量化金融-课后作业-06-GARCH波动率与动态VaR|GARCH波动率与动态VaR]]。
+- **为什么现在能做**：本卡已经提供该任务需要的定义、公式、条件或实现边界；若任务还依赖后续知识，先完成对应阶段 MOC 中排在本卡之后的知识卡。
+- **提交产物**：闭卷定义/推导、一个可复查计算或代码结果、一个失败案例，以及对适用边界的说明。

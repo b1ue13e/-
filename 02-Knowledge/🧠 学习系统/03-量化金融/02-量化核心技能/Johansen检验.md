@@ -1,7 +1,7 @@
 ---
-title: "Johansen 检验：协整秩、迹统计量与最大特征值统计量"
+title: Johansen 检验：协整秩、迹统计量与最大特征值统计量
 date: '2026-07-24'
-type: concept
+type: study
 course: 量化金融
 importance: B
 tags:
@@ -11,8 +11,24 @@ upstream:
 - '[[Black-Scholes 期权定价模型 (Black-Scholes Option Pricing Model)|Black-Scholes]]'
 downstream:
 - '[[高阶希腊字母与衍生品风险对冲 (Higher-Order Greeks_ Vanna, Volga & Charm)|Greeks]]'
-status: learning
+status: planned
+kind: concept
+flow: knowledge
+topic: Johansen 检验：协整秩、迹统计量与最大特征值统计量
+created: '2026-08-06'
+difficulty: intermediate
+concept: []
+prerequisites: []
+related: []
+source: 本课程历史知识卡；原始来源 [待验证]
+source_url: https://www.statsmodels.org/stable/vector_ar.html；配套定位为
+accessed: '2026-08-06'
+license: link-only；正文为本地学习整理
+assessment_exempt: false
 ---
+
+# Johansen 检验：协整秩、迹统计量与最大特征值统计量
+
 广义特征值和对数似然比检验的数学公式初看像是一堆无意义的符号，但如果把它拆解开，你会发现这两个统计量其实是**两个不同风格的“侦探”**——一个喜欢大包大揽的“全局扫荡官”，另一个是步步为营的“精准狙击手”。
 
 它们的核心任务只有一个：**帮你在多只股票中，数出到底存在几条真正的“绳子”（协整向量）。**
@@ -152,7 +168,7 @@ $$J_{\max}(r, r+1) = -T \ln(1 - \hat{\lambda}_{r+1})$$
 > 🔓 **作业解锁前置条件**：学完 [[收益率与对数收益率]] + [[协整关系与 Engle-Granger 两步法 (Cointegration & Engle-Granger Method)|公式理解7]] 即可正式解锁本 Challenge 实战！
 > 💡 **解锁指引**：理解 公式理解7 的核心定义与基本推导逻辑后即可解锁。
 
- 🧪 拓展实验与李宏毅式实战 Challenge 题 (Lab Assignment: 公式理解7 工业级实战 challenge)
+ 🧪 拓展实验与专题实战练习 (Lab Assignment: 公式理解7 专题实战任务)
 
 本作业参考 **李宏毅 (Hung-yi Lee) 教授 ML 课程作业架构** 设计，设置四个渐进式难度基线 (Baselines)：
 
@@ -228,3 +244,9 @@ result = coint_johansen(np.column_stack([y, x]), det_order=0, k_ar_diff=1)
 assert result.lr1[0] > result.cvt[0, 1]  # 5% 下至少拒绝 r=0
 print(result.lr1, result.cvt[:, 1])
 ```
+
+## 🧪 学完本节后可完成的作业
+
+- **可完成**：[[03-Projects/金融与时序/03-量化金融/课后作业/量化金融-课后作业-06-GARCH波动率与动态VaR|GARCH波动率与动态VaR]]。
+- **为什么现在能做**：本卡已经提供该任务需要的定义、公式、条件或实现边界；若任务还依赖后续知识，先完成对应阶段 MOC 中排在本卡之后的知识卡。
+- **提交产物**：闭卷定义/推导、一个可复查计算或代码结果、一个失败案例，以及对适用边界的说明。

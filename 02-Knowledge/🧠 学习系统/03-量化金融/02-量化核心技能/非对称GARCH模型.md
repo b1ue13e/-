@@ -1,13 +1,35 @@
 ---
-title: "非对称 GARCH 模型 (EGARCH & GJR-GARCH)"
+title: 非对称 GARCH 模型 (EGARCH & GJR-GARCH)
 date: 2026-08-02
-type: concept
-course: "量化金融"
+type: study
+course: 量化金融
 importance: A
-tags: [量化金融, 波动率建模, EGARCH, 杠杆效应, 时间序列]
-upstream: ["GARCH模型", "收益率与对数收益率"]
-downstream: ["极值理论EVT", "下注规模"]
-status: learning
+tags:
+- 量化金融
+- 波动率建模
+- EGARCH
+- 杠杆效应
+- 时间序列
+upstream:
+- GARCH模型
+- 收益率与对数收益率
+downstream:
+- 极值理论EVT
+- 下注规模
+status: planned
+kind: concept
+flow: knowledge
+topic: 非对称 GARCH 模型 (EGARCH & GJR-GARCH)
+created: '2026-08-06'
+difficulty: intermediate
+concept: []
+prerequisites: []
+related: []
+source: 本课程历史知识卡；原始来源 [待验证]
+source_url: '[待验证]'
+accessed: '2026-08-06'
+license: link-only；正文为本地学习整理
+assessment_exempt: false
 ---
 
 # 非对称 GARCH 模型 (EGARCH & GJR-GARCH)
@@ -124,7 +146,7 @@ $$ \ln(\sigma_t^2) = \omega + \beta \ln(\sigma_{t-1}^2) + \gamma \frac{\epsilon_
 - 上游依赖：[[量化金融-波动率-GARCH家族模型|GARCH模型]] (所有衍生模型的基石), [[滚动窗口与波动率特征|金融时间序列特征]] (非正态与非对称)
 - 下游延伸：[[隐含波动率与波动率微笑 (Implied Volatility & Volatility Smile)|波动率微笑]], [[极值理论EVT]] (专门用来对付最极端的尾部)
 - 横向关联：[[做市商库存模型与 Avellaneda-Stoikov 框架 (Inventory Models & Avellaneda-Stoikov Framework)|期权做市策略]] ↔ [[非对称 GARCH 模型与杠杆效应 (EGARCH & GJR-GARCH)|非对称GARCH]] (做市商的定价武器)
-- 应用场景：[[[支线任务] HW07-非对称GARCH]]
+- 应用场景：[[03-Projects/金融与时序/03-量化金融/课后作业/量化金融-课后作业-07-非对称GARCH|HW07 非对称GARCH]]
 
 ---
 
@@ -203,3 +225,9 @@ $$ \ln(\sigma_t^2) = \omega + \beta \ln(\sigma_{t-1}^2) + \gamma \frac{\epsilon_
 - **文件夹**：`02-Knowledge/🧠 学习系统/03-量化金融/02-量化核心技能`
 - **链接**：平行链接至 [[隐含波动率与波动率微笑 (Implied Volatility & Volatility Smile)|期权隐含波动率偏斜]]，向下引流至专门研究极端的 [[极值理论EVT]]。
 - **标签**：`#量化金融/时间序列` `#非对称GARCH` `#波动率` `#杠杆效应`
+
+## 🧪 学完本节后可完成的作业
+
+- **可完成**：[[03-Projects/金融与时序/03-量化金融/课后作业/量化金融-课后作业-06-GARCH波动率与动态VaR|GARCH波动率与动态VaR]]。
+- **为什么现在能做**：本卡已经提供该任务需要的定义、公式、条件或实现边界；若任务还依赖后续知识，先完成对应阶段 MOC 中排在本卡之后的知识卡。
+- **提交产物**：闭卷定义/推导、一个可复查计算或代码结果、一个失败案例，以及对适用边界的说明。

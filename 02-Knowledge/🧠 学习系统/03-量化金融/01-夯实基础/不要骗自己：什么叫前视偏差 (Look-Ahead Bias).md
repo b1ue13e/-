@@ -1,25 +1,38 @@
 ---
-title: "不要骗自己：什么叫前视偏差 (Look-Ahead Bias)"
+title: 不要骗自己：什么叫前视偏差 (Look-Ahead Bias)
 type: study
-topic: "量化回测陷阱"
-created: "2026-08-04"
+topic: 量化回测陷阱
+created: '2026-08-04'
 status: ongoing
 difficulty: beginner
-importance: "A"
-stage: "Level 0"
-tags: [学习, 量化入门, 前视偏差, 未来函数]
-concept: ["前视偏差 (Look-Ahead Bias)", "未来函数"]
-prerequisites: ["[[手写第一个均线策略与回测评价指标]]"]
-related: ["[[策略回测前视偏差与生存者偏差防范审计 (Look-Ahead & Survivorship Bias Audit)]]"]
+importance: A
+stage: Level 0
+tags:
+- 学习
+- 量化入门
+- 前视偏差
+- 未来函数
+concept:
+- 前视偏差 (Look-Ahead Bias)
+- 未来函数
+prerequisites:
+- '[[手写第一个均线策略与回测评价指标]]'
+related:
+- '[[策略回测前视偏差与生存者偏差防范审计 (Look-Ahead & Survivorship Bias Audit)]]'
 flow: knowledge
 kind: concept
 nav_level: 4
-nav_prev: "数据排雷指南：复权、生存者偏差与未来函数"
-nav_next: "手写第一个均线策略与回测评价指标"
+nav_prev: 数据排雷指南：复权、生存者偏差与未来函数
+nav_next: 手写第一个均线策略与回测评价指标
+course: 量化金融
+source: 本课程历史知识卡；原始来源 [待验证]
+source_url: '[待验证]'
+accessed: '2026-08-06'
+license: link-only；正文为本地学习整理
+assessment_exempt: false
 ---
 
-
-# 不要骗自己：什么叫前视偏差 (Look-Ahead Bias)
+# 量化回测陷阱
 
 ---
 
@@ -77,7 +90,7 @@ nav_next: "手写第一个均线策略与回测评价指标"
 恭喜！你已经完成了【Level 0：新手启蒙村】的所有修炼。你了解了量化的本质，学会了回测，知道了最大的坑。
 你现在有资格离开新手村，去挑战真正的华尔街机房理论了。
 
-你可以返回 **[[🗺️ 量化金融全栈终极框架 (Academic + AFML + HFT)]]**，打开高级折叠面板，挑选你感兴趣的数学武器：
+你可以返回 **[[02-Knowledge/🧠 学习系统/03-量化金融/04-深入精通/量化金融-全栈资产地图]]**，打开高级折叠面板，挑选你感兴趣的数学武器：
 - 想学资产怎么定价？👉 前往 **Pillar 1**
 - 想学机器学习怎么抓非线性信号？👉 前往 **Pillar 2**
 - 想学毫秒级的盘口搏杀？👉 前往 **Pillar 3**
@@ -89,7 +102,12 @@ nav_next: "手写第一个均线策略与回测评价指标"
 ```dataview
 TABLE WITHOUT ID 
   "⬅️ [[" + nav_prev + "]]" AS "上一课", 
-  "🏠 [[🗺️ 量化金融全栈终极框架 (Academic + AFML + HFT)|回到主干]]" AS "主菜单", 
-  "➡️ [[" + nav_next + "]]" AS "下一课"
+  "🏠 [[02-Knowledge/🧠 学习系统/03-量化金融/04-深入精通/量化金融-全栈资产地图|回到主干]]" AS "主菜单", 
 WHERE file.path = this.file.path
 ```
+
+## 🧪 学完本节后可完成的作业
+
+- **可完成**：[[03-Projects/金融与时序/03-量化金融/大作业/量化金融-大作业-Qlib因子研究与成本敏感回测|Capstone 综合迁移任务]]。
+- **为什么现在能做**：本卡已经提供该任务需要的定义、公式、条件或实现边界；若任务还依赖后续知识，先完成对应阶段 MOC 中排在本卡之后的知识卡。
+- **提交产物**：闭卷定义/推导、一个可复查计算或代码结果、一个失败案例，以及对适用边界的说明。

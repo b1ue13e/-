@@ -1,21 +1,41 @@
 ---
-title: "期权 Greeks 与动态对冲"
+title: 期权 Greeks 与动态对冲
 type: study
-topic: "期权 Greeks 与动态对冲"
-created: "2026-08-04"
+topic: 期权 Greeks 与动态对冲
+created: '2026-08-04'
 status: ongoing
 difficulty: intermediate
-course: "03-量化金融"
-importance: "A"
-stage: "📘 第三阶段：期权与衍生品"
-tags: [学习, 期权定价, 对冲, Greeks]
-concept: ["Delta对冲", "Gamma", "Theta", "Vega", "动态对冲"]
-prerequisites: ["Black-Scholes 期权定价模型", "泰勒展开"]
-related: ["隐含波动率与波动率微笑", "高阶希腊字母与衍生品风险对冲 (Higher-Order Greeks_ Vanna, Volga & Charm)"]
-upstream: ["[[Black-Scholes 期权定价模型 (Black-Scholes Option Pricing Model)]]"]
-downstream: ["[[高阶希腊字母与衍生品风险对冲 (Higher-Order Greeks_ Vanna, Volga & Charm)]]"]
+course: 量化金融
+importance: A
+stage: 📘 第三阶段：期权与衍生品
+tags:
+- 学习
+- 期权定价
+- 对冲
+- Greeks
+concept:
+- Delta对冲
+- Gamma
+- Theta
+- Vega
+- 动态对冲
+prerequisites:
+- Black-Scholes 期权定价模型
+- 泰勒展开
+related:
+- 隐含波动率与波动率微笑
+- 高阶希腊字母与衍生品风险对冲 (Higher-Order Greeks_ Vanna, Volga & Charm)
+upstream:
+- '[[Black-Scholes 期权定价模型 (Black-Scholes Option Pricing Model)]]'
+downstream:
+- '[[高阶希腊字母与衍生品风险对冲 (Higher-Order Greeks_ Vanna, Volga & Charm)]]'
 flow: knowledge
 kind: concept
+source: 本课程历史知识卡；原始来源 [待验证]
+source_url: '[待验证]'
+accessed: '2026-08-06'
+license: link-only；正文为本地学习整理
+assessment_exempt: false
 ---
 
 # 期权 Greeks 与动态对冲
@@ -142,4 +162,10 @@ $$ \Delta_{\Pi} = \sum_{i} w_i \Delta_i $$
 - [ ] 3. 什么是 Delta 中性？为什么要动态维护？
 - [ ] 4. 说明为什么 Gamma 对冲必须使用期权而不能用正股。
 - [ ] 5. 用泰勒展开解释期权价格变动的四大因素。
-\n\n> ⚔️ **支线实战任务 (Side Quest)**：👉 点击进入 [[[支线任务] HW05-BSM期权定价与对冲]] 刷怪通关！\n
+\n\n> ⚔️ **专题实战任务**：👉 点击进入 [[03-Projects/金融与时序/03-量化金融/课后作业/量化金融-课后作业-05-Black-Scholes定价与对冲|HW05 Black-Scholes]] 刷怪通关！\n
+
+## 🧪 学完本节后可完成的作业
+
+- **可完成**：[[03-Projects/金融与时序/03-量化金融/课后作业/量化金融-课后作业-05-Black-Scholes定价与对冲|Black-Scholes定价与对冲]]。
+- **为什么现在能做**：本卡已经提供该任务需要的定义、公式、条件或实现边界；若任务还依赖后续知识，先完成对应阶段 MOC 中排在本卡之后的知识卡。
+- **提交产物**：闭卷定义/推导、一个可复查计算或代码结果、一个失败案例，以及对适用边界的说明。

@@ -1,5 +1,6 @@
 ---
 type: study
+course: "05-计算机视觉"
 topic: "相机标定与对极几何 (Epipolar Geometry)"
 created: 2026-08-05
 status: ongoing
@@ -18,6 +19,7 @@ related:
   - 立体视觉
   - SLAM
 flow: knowledge
+stage_moc: "[[05-专业深化与工程落地/🏭 第五阶段：专业深化与工程落地]]"
 kind: concept
 source: "Szeliski Ch.6; MVG Ch.6-7"
 anki_deck: "05-计算机视觉::05-专业深化与工程落地"
@@ -314,3 +316,26 @@ print("基础矩阵的秩为:", np.linalg.matrix_rank(F)) # 严格为 2
   - [[NeRF 神经辐射场]]
   - [[15-控制与机器人学/SLAM|SLAM]]
 - **建议标签**：`#学习` `#计算机视觉` `#3D视觉` `#相机标定` `#对极几何` `#本质矩阵` `#基础矩阵`
+
+---
+
+## 🧪 学完本节后可完成的作业
+
+- 配合 [[03-Projects/课程作业/05-计算机视觉/大作业/项目-NeRF|大作业：NeRF]] 和 [[03-Projects/课程作业/05-计算机视觉/大作业/项目-视频分析|大作业：视频分析]]
+---
+
+## 🔗 知识图谱
+
+```dataview
+LIST
+FROM "02-Knowledge/🧠 学习系统"
+WHERE contains(upstream, this.file.link)
+SORT file.name ASC
+```
+
+```dataview
+LIST
+FROM "03-Projects"
+WHERE contains(requires, this.file.link)
+SORT assignment_level ASC, file.name ASC
+```

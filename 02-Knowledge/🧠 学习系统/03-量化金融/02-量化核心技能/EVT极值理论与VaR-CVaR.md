@@ -1,28 +1,45 @@
 ---
-title: "EVT 极值理论与 VaR/CVaR"
+title: EVT 极值理论与 VaR/CVaR
 type: study
-topic: "EVT 极值理论与 VaR/CVaR"
-created: "2026-08-03"
+topic: EVT 极值理论与 VaR/CVaR
+created: '2026-08-03'
 status: ongoing
 difficulty: advanced
-course: "量化金融"
-importance: "A"
-stage: "📘 第二阶段：量化核心技能"
-tags: [学习, 量化金融]
-concept: ["EVT", "VaR", "CVaR", "广义帕累托分布"]
-prerequisites: ["GARCH族波动率模型", "概率统计"]
-related: ["CVaR条件风险价值", "历史模拟法VaR", "HW08-EVT极值理论"]
-upstream: ["GARCH族波动率模型"]
-downstream: ["组合风险管理"]
+course: 量化金融
+importance: A
+stage: 📘 第二阶段：量化核心技能
+tags:
+- 学习
+- 量化金融
+concept:
+- EVT
+- VaR
+- CVaR
+- 广义帕累托分布
+prerequisites:
+- GARCH族波动率模型
+- 概率统计
+related:
+- CVaR条件风险价值
+- 历史模拟法VaR
+- HW08-EVT极值理论
+upstream:
+- GARCH族波动率模型
+downstream:
+- 组合风险管理
 flow: knowledge
 kind: concept
-sources: 
-- title: "Value at Risk (Jorion)"
-url: "书库本地资源"
-locator: "Chapters 14"
+sources:
+- title: Value at Risk (Jorion)
+url: 书库本地资源
+locator: Chapters 14
 source_type: textbook
-license: "local"
+license: local
 verified_at: 2026-08-03
+source: Value at Risk (Jorion)
+source_url: '[待验证]'
+accessed: '2026-08-06'
+assessment_exempt: false
 ---
 
 # EVT 极值理论与 VaR/CVaR
@@ -150,7 +167,7 @@ $$\text{VaR}_q = u+\frac{\sigma}{\xi}\left[\left(\frac{n}{N_u}(1-q)\right)^{-\xi
 - [[量化金融-风险管理-期望损失分解与ES理论|CVaR条件风险价值]]：期望损失
 
 ### 横向关联
-- [[[支线任务] HW08-EVT极值理论]] ↔ 本卡：作业
+- [[03-Projects/金融与时序/03-量化金融/课后作业/量化金融-课后作业-08-EVT尾部风险|HW08 EVT尾部风险]] ↔ 本卡：作业
 - [[历史模拟法 VaR 与非参数风险度量 (Historical Simulation VaR)|历史模拟法VaR]] ↔ 本卡：对照方法
 
 ### 应用场景
@@ -240,10 +257,10 @@ $$\text{VaR}_q = u+\frac{\sigma}{\xi}\left[\left(\frac{n}{N_u}(1-q)\right)^{-\xi
 ## 13. 给 Obsidian 的归档建议
 
 - **适合文件夹**：`02-Knowledge/🧠 学习系统/03-量化金融/`
-- **关联已有笔记**：[[量化金融-波动率-GARCH家族模型|GARCH族波动率模型]] [[量化金融-风险管理-期望损失分解与ES理论|CVaR条件风险价值]] [[[支线任务] HW08-EVT极值理论]]
+- **关联已有笔记**：[[量化金融-波动率-GARCH家族模型|GARCH族波动率模型]] [[量化金融-风险管理-期望损失分解与ES理论|CVaR条件风险价值]] [[03-Projects/金融与时序/03-量化金融/课后作业/量化金融-课后作业-08-EVT尾部风险|HW08 EVT尾部风险]]
 - **建议标签**：`#学习` `#量化金融`
 - **拆分建议**：不拆分
-\n\n> ⚔️ **支线实战任务 (Side Quest)**：👉 点击进入 [[[支线任务] HW08-EVT极值理论]] 刷怪通关！\n
+\n\n> ⚔️ **专题实战任务**：👉 点击进入 [[03-Projects/金融与时序/03-量化金融/课后作业/量化金融-课后作业-08-EVT尾部风险|HW08 EVT尾部风险]] 刷怪通关！\n
 
 <!-- 自动合并自：极值理论EVT -->
 ---
@@ -258,7 +275,7 @@ downstream: ["下注规模"]
 status: learning
 ---
 
-# 极值理论与 GPD 分布 (Extreme Value Theory)
+## 极值理论与 GPD 分布 (Extreme Value Theory)
 
 ## 0. 先判断它值不值得深挖
 **A 类：对付“百年一遇黑天鹅”的唯一数学武器。**
@@ -389,7 +406,7 @@ $= 5 + 4 \times [ 7.07 - 1 ] = 5 + 24.28 = 29.28$ 亿元。
 - 上游依赖：[[历史模拟法 VaR 与非参数风险度量 (Historical Simulation VaR)|历史模拟VaR]], [[收益率与对数收益率|收益率分布与厚尾]]
 - 下游延伸：[[量化金融-风险管理-期望损失分解与ES理论|Expected_Shortfall_ES]] (算出了 VaR 后，进一步算超过 VaR 后平均会亏多少)
 - 横向关联：[[非对称GARCH模型]] ↔ [[极值理论EVT]] (两者常融合成动态风控框架)
-- 应用场景：[[[支线任务] HW08-EVT极值理论]]
+- 应用场景：[[03-Projects/金融与时序/03-量化金融/课后作业/量化金融-课后作业-08-EVT尾部风险|HW08 EVT尾部风险]]
 
 ---
 
@@ -465,3 +482,9 @@ $= 5 + 4 \times [ 7.07 - 1 ] = 5 + 24.28 = 29.28$ 亿元。
 - **文件夹**：`02-Knowledge/🧠 学习系统/03-量化金融/02-量化核心技能`
 - **链接**：上游紧接 [[非对称GARCH模型]]，构成完整的两阶段风控闭环。
 - **标签**：`#量化金融/风险管理` `#极值理论` `#GPD` `#黑天鹅` `#尾部风险`
+
+## 🧪 学完本节后可完成的作业
+
+- **可完成**：[[03-Projects/金融与时序/03-量化金融/课后作业/量化金融-课后作业-08-EVT尾部风险|EVT尾部风险]]。
+- **为什么现在能做**：本卡已经提供该任务需要的定义、公式、条件或实现边界；若任务还依赖后续知识，先完成对应阶段 MOC 中排在本卡之后的知识卡。
+- **提交产物**：闭卷定义/推导、一个可复查计算或代码结果、一个失败案例，以及对适用边界的说明。

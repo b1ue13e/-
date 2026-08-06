@@ -1,8 +1,8 @@
 ---
-type: concept
+type: study
 topic: 跨市场排队优先权与挂单概率
-created: '{date}'
-status: learning
+created: '2026-08-06'
+status: planned
 difficulty: intermediate
 concept: []
 prerequisites: []
@@ -28,9 +28,16 @@ upstream:
 downstream:
 - '[[高频 Alpha 信号工程与盘口特征构建 (High-Frequency Signals & Microstructure Features)|高频信号]]'
 - '[[高频交易系统架构与模块解耦设计 (High-Frequency Trading System Architecture)|高频系统架构]]'
+kind: concept
+flow: knowledge
+source: 本课程历史知识卡；原始来源 [待验证]
+source_url: https://english.sse.com.cn/start/trading/mechanism/。用于复核“模拟撤单、部分成交和跨市场延迟，检查
+accessed: '2026-08-06'
+license: link-only；正文为本地学习整理
+assessment_exempt: false
 ---
 
-# 跨市场排队优先权与挂单成交概率 (Queue Position & Fill Probability in High-Frequency Trading)
+# 跨市场排队优先权与挂单概率
 
 ---
 
@@ -222,7 +229,7 @@ def estimate_fill_probability(queue_pos, trade_rate_per_sec, cancel_rate_per_sec
     fill_prob = stats.norm.cdf(z_score)
     return fill_prob
 
-# 评估一个排在第 8,000 股位置的限价单在 2 秒内的成交概率
+## 评估一个排在第 8,000 股位置的限价单在 2 秒内的成交概率
 q0 = 8000
 lambda_t = 2500  # 2500 股/秒吃单
 lambda_c = 3000  # 3000 股/秒撤单
@@ -430,7 +437,7 @@ print(f"决策建议: {'✅ 保持挂单 (成交概率高)' if p_fill > 0.70 els
 ## 13. 给 Obsidian 的归档建议
 
 - **适合文件夹**：`02-Knowledge/🧠 学习系统/03-量化金融/04-深入精通/`
-- **建议双链**：[[限价订单簿数据与 L1_L2_L3 盘口重建 (Limit Order Book Data & Reconstructing L1_L2_L3)|订单簿数据]]、[[买卖价差及其微观结构拆解 (Bid-Ask Spread & Microstructure Decomposition)|买卖价差]]、[[高频 Alpha 信号工程与盘口特征构建 (High-Frequency Signals & Microstructure Features)|高频信号]]、[[高频
+- **建议双链**：[[限价订单簿数据与 L1_L2_L3 盘口重建 (Limit Order Book Data & Reconstructing L1_L2_L3)|订单簿数据]]、[[买卖价差及其微观结构拆解 (Bid-Ask Spread & Microstructure Decomposition)|买卖价差]]、[[高频 Alpha 信号工程与盘口特征构建 (High-Frequency Signals & Microstructure Features)|高频信号]]、[[高频交易系统架构与模块解耦设计 (High-Frequency Trading System Architecture)|高频系统架构]]
 
 ---
 
@@ -451,3 +458,9 @@ print(f"决策建议: {'✅ 保持挂单 (成交概率高)' if p_fill > 0.70 els
 - **反例压力测试**：模拟撤单、部分成交和跨市场延迟，检查 fill probability 是否只在乐观队列假设下成立。
 - **最小实验**：固定随机种子或冻结原始数据快照，同时保存基线、破坏条件后的对照组、关键中间量与失败日志。
 - **通过标准**：结论必须在样本外仍保持方向一致；若成本、延迟、参数扰动或结构突变使结论反转，就把该情形登记为适用边界而不是删除失败结果。
+
+## 🧪 学完本节后可完成的作业
+
+- **可完成**：[[03-Projects/金融与时序/03-量化金融/阶段作业/量化金融-阶段作业-04-盘口队列与挂单概率|盘口队列与挂单概率]]。
+- **为什么现在能做**：本卡已经提供该任务需要的定义、公式、条件或实现边界；若任务还依赖后续知识，先完成对应阶段 MOC 中排在本卡之后的知识卡。
+- **提交产物**：闭卷定义/推导、一个可复查计算或代码结果、一个失败案例，以及对适用边界的说明。

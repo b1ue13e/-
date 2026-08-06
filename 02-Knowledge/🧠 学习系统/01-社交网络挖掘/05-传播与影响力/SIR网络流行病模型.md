@@ -1,6 +1,7 @@
 ---
 type: study
 topic: "SIR 网络流行病模型"
+course: "社交网络挖掘"
 tags: [学习, 01-社交网络挖掘, SIR, 流行病]
 created: 2026-08-05
 status: completed
@@ -11,6 +12,10 @@ related: [阈值模型与网络级联, 影响力最大化与贪心算法, 社区
 flow: knowledge
 kind: concept
 source: "NCM Chapter 21; Stanford CS224W 2017 HW3-Q3"
+source_url: "https://www.cs.cornell.edu/home/kleinber/networks-book/"
+accessed: 2026-08-06
+license: "教材与课程题面默认 link-only；未核验开放再分发许可"
+assessment_exempt: false
 anki_deck: "社交网络挖掘::传播影响力"
 anki_tags: [SIR, 疫情, 蒙特卡洛, HW3]
 ---
@@ -125,3 +130,9 @@ print(0 <= sir_once(nx.path_graph(8), 0) <= 1)
 ## 🃏 Anki 卡片
 - SIR 中有 $m$ 个感染邻居时本轮感染概率？::$1-(1-\beta)^m$。
 - SIR 同步更新为何要用轮初状态？::避免本轮刚感染的节点立即继续传播，从而改变模型定义和时间尺度。
+
+## 🧪 学完本节后可完成的作业
+
+- **可立即完成**：[[03-Projects/01-社交网络挖掘/课后作业/社交网络挖掘-课后作业-04-幂律传播与影响力#3. 疾病传播的 SIR 模型（30 分，Poorvi、Praty）|课后作业 04 题 3]]。
+- **为什么现在能做**：已覆盖感染概率、同步状态机、种子策略和条件/无条件指标。
+- **提交产物**：小图测试、多 seed 仿真、疫情率、两类规模、统计检验与限制。

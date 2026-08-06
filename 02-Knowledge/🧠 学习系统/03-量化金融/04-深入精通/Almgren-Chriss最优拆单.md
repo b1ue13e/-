@@ -1,13 +1,37 @@
 ---
-title: "Almgren-Chriss 最优拆单轨迹与变分法"
+title: Almgren-Chriss 最优拆单轨迹与变分法
 date: 2026-08-02
-type: concept
-course: "量化金融"
+type: study
+course: 量化金融
 importance: S
-tags: [量化金融, 算法交易, 拆单算法, TWAP, VWAP, 变分法, 滑点]
-upstream: ["滑点模型", "交易成本"]
-downstream: ["盘口微观队列与L2数据", "HW13-AC最优拆单实战"]
-status: learning
+tags:
+- 量化金融
+- 算法交易
+- 拆单算法
+- TWAP
+- VWAP
+- 变分法
+- 滑点
+upstream:
+- 滑点模型
+- 交易成本
+downstream:
+- 盘口微观队列与L2数据
+- HW13-AC最优拆单实战
+status: planned
+kind: concept
+flow: knowledge
+topic: Almgren-Chriss 最优拆单轨迹与变分法
+created: '2026-08-06'
+difficulty: intermediate
+concept: []
+prerequisites: []
+related: []
+source: 本课程历史知识卡；原始来源 [待验证]
+source_url: '[待验证]'
+accessed: '2026-08-06'
+license: link-only；正文为本地学习整理
+assessment_exempt: false
 ---
 
 # Almgren-Chriss 最优拆单轨迹与变分法
@@ -219,3 +243,9 @@ AC 模型虽然伟大，但它有一个致命弱点：它假设市场流动性�
 - **文件夹**：`02-Knowledge/🧠 学习系统/03-量化金融/04-深入精通`
 - **链接**：平行链接至 [[金融MDP设计与奖励函数工程 (Financial MDP & Reward Engineering)|强化学习在量化的应用]]，向后链接至 [[[支线任务] HW13-AC最优拆单轨迹]]。
 - **标签**：`#量化金融/算法交易` `#最优拆单` `#变分法` `#冲击成本` `#微观结构`
+
+## 🧪 学完本节后可完成的作业
+
+- **可完成**：[[03-Projects/金融与时序/03-量化金融/阶段作业/量化金融-阶段作业-04-Almgren-Chriss最优执行|Almgren-Chriss最优执行]]。
+- **为什么现在能做**：本卡已经提供该任务需要的定义、公式、条件或实现边界；若任务还依赖后续知识，先完成对应阶段 MOC 中排在本卡之后的知识卡。
+- **提交产物**：闭卷定义/推导、一个可复查计算或代码结果、一个失败案例，以及对适用边界的说明。

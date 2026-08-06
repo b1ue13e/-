@@ -1,7 +1,7 @@
 ---
 title: 均值回归策略 (Mean-Reversion Trading Strategy)
 date: 2026-07-23
-type: concept
+type: study
 course: 量化金融
 importance: A
 tags:
@@ -20,8 +20,22 @@ upstream:
 downstream:
 - '[[动态下注规模与凯利公式 (Bet Sizing & Kelly Criterion in AFML)|下注规模]]'
 - '[[动态止损机制与风险平价仓位管理 (Stop-Loss Mechanisms & Risk-Parity Position Sizing)|止损与仓位]]'
-status: learning
+status: planned
+kind: concept
+flow: knowledge
+topic: 均值回归策略 (Mean-Reversion Trading Strategy)
+created: '2026-08-06'
+difficulty: intermediate
+concept: []
+prerequisites: []
+related: []
+source: 本课程历史知识卡；原始来源 [待验证]
+source_url: https://www.statsmodels.org/stable/vector_ar.html；配套定位为
+accessed: '2026-08-06'
+license: link-only；正文为本地学习整理
+assessment_exempt: false
 ---
+
 # 均值回归策略 (Mean-Reversion Trading Strategy)
 
 ---
@@ -180,19 +194,19 @@ $$Z_t = \frac{X_t - \mu_w}{\sigma_w}$$
 import numpy as np
 import pandas as pd
 
-# 模拟 200 天均值回归价格序列
+## 模拟 200 天均值回归价格序列
 np.random.seed(42)
 prices = pd.Series(100 + np.cumsum(np.random.normal(0, 1, 200)))
 
-# 计算 20 日滚动均值与标准差
+## 计算 20 日滚动均值与标准差
 window = 20
 rolling_mean = prices.rolling(window).mean()
 rolling_std = prices.rolling(window).std()
 
-# 计算 Z-Score
+## 计算 Z-Score
 z_score = (prices - rolling_mean) / rolling_std
 
-# 生成交易信号
+## 生成交易信号
 signals = pd.Series(0, index=prices.index)
 signals[z_score < -2.0] = 1   # 超卖做多
 signals[z_score > 2.0] = -1   # 超买做空
@@ -210,7 +224,7 @@ print("策略多头开仓次数:", (signals == 1).sum())
 > 🔓 **作业解锁前置条件**：学完 [[收益率与对数收益率]] + [[均值回归策略 (Mean-Reversion Trading Strategy)|均值回归策略]] 即可正式解锁本 Challenge 实战！
 > 💡 **解锁指引**：理解 均值回归策略 的核心定义与基本推导逻辑后即可解锁。
 
- 🧪 拓展实验与李宏毅式实战 Challenge 题 (Lab Assignment: 均值回归策略 工业级实战 challenge)
+ 🧪 拓展实验与专题实战练习 (Lab Assignment: 均值回归策略 专题实战任务)
 
 本作业参考 **李宏毅 (Hung-yi Lee) 教授 ML 课程作业架构** 设计，设置四个渐进式难度基线 (Baselines)：
 
@@ -397,3 +411,9 @@ print("策略多头开仓次数:", (signals == 1).sum())
 - **反例压力测试**：先验证价差平稳和半衰期，再用滚动参数与止损检验均值漂移下的失效速度。
 - **最小实验**：固定随机种子或冻结原始数据快照，同时保存基线、破坏条件后的对照组、关键中间量与失败日志。
 - **通过标准**：结论必须在样本外仍保持方向一致；若成本、延迟、参数扰动或结构突变使结论反转，就把该情形登记为适用边界而不是删除失败结果。
+
+## 🧪 学完本节后可完成的作业
+
+- **可完成**：[[03-Projects/金融与时序/03-量化金融/大作业/量化金融-大作业-Qlib因子研究与成本敏感回测|Qlib因子研究与成本敏感回测]]。
+- **为什么现在能做**：本卡已经提供该任务需要的定义、公式、条件或实现边界；若任务还依赖后续知识，先完成对应阶段 MOC 中排在本卡之后的知识卡。
+- **提交产物**：闭卷定义/推导、一个可复查计算或代码结果、一个失败案例，以及对适用边界的说明。

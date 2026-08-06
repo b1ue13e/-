@@ -1,5 +1,6 @@
 ---
 type: study
+course: "05-计算机视觉"
 topic: "语义分割与U-Net"
 created: 2026-08-05
 status: ongoing
@@ -18,6 +19,7 @@ related:
   - "MaskRCNN"
   - "全景分割"
 flow: knowledge
+stage_moc: "[[03-视觉核心任务/🎯 第三阶段：视觉核心任务]]"
 kind: concept
 source: "D2L Ch.14.8-10; CS231n A3"
 anki_deck: "05-计算机视觉::03-视觉核心任务"
@@ -104,7 +106,7 @@ tags: [学习, 计算机视觉, 语义分割, UNet, FCN]
 1. **[[卷积神经网络CNN]]**：理解卷积层、池化层、通道维度、特征图空间分辨率、感受野递推——分割的编码器就是标准的 CNN backbone，这些概念是基础中的基础。
 2. **[[目标检测RCNN与YOLO|目标检测基础]]**：理解"分类+定位"耦合问题的本质，以及为什么检测的框级输出不够细粒度——分割是检测的自然延伸（从框到像素掩码）。
 3. **[[交叉熵损失]]**：语义分割最基础的逐像素分类损失就是 Cross-Entropy——理解它才能理解 Dice Loss 解决了什么问题。
-4. **[[IoU]]**：交并比是 mIoU 的核心组件——理解 IoU 才能理解分割的评价逻辑。
+4. **[[IoU与NMS]]**：交并比是 mIoU 的核心组件——理解 IoU 才能理解分割的评价逻辑。
 
 ---
 
@@ -467,7 +469,7 @@ def combined_loss(pred, target, alpha=0.5):
 ### 横向关联
 - **[[FPN]]（特征金字塔）↔ U-Net**：都引入了跨层级连接——FPN 用逐元素相加（横向连接），U-Net 用通道拼接（跳跃连接）。FPN 服务于检测的多尺度特征，U-Net 服务于分割的空间精度恢复。
 - **[[FCN]] ↔ U-Net**：FCN 是分割范式的"原型机"（证明可行），U-Net 是"工程优化版"（使其好用）——理解 FC 的 $1 \times 1$ 卷积替换才能理解 U-Net 为什么需要编码器-解码器对称。
-- **[[IoU]] ↔ 语义分割**：分类看 Accuracy，检测看 mAP，分割看 **mIoU**——三个任务、三种核心指标，来源皆为混淆矩阵的不同衍生。
+- **[[IoU与NMS]] ↔ 语义分割**：分类看 Accuracy，检测看 mAP，分割看 **mIoU**——三个任务、三种核心指标，来源皆为混淆矩阵的不同衍生。
 - **[[DiceLoss|Dice Loss]] ↔ 语义分割**：Dice Loss 是为解决分割中类别不平衡而生的损失函数——它与 mIoU 优化目标直接对齐（Dice ≈ F1 = IoU 的一种形式）。
 
 ---
@@ -570,7 +572,7 @@ def combined_loss(pred, target, alpha=0.5):
   - [[MaskRCNN分割|Mask R-CNN]]
   - [[全景分割定义|全景分割]]
   - [[FPN]]
-  - [[IoU]]
+  - [[IoU与NMS]]
   - [[DiceLoss|Dice Loss]]
 - **建议标签**：`#学习` `#计算机视觉` `#语义分割` `#UNet` `#FCN` `#编码器-解码器` `#跳跃连接` `#DiceLoss`
 - **复习节奏**：首次学习后 1/3/7/14 天间隔复习，配合 Section 10 闭卷复现任务自查。建议在复习时手写 U-Net 的 PyTorch 代码（Section 7 例子 3），这是检验理解的最有效方式。
@@ -578,3 +580,28 @@ def combined_loss(pred, target, alpha=0.5):
   - **FCN 详解卡**：聚焦全卷积化改造的数学原理和 FCN-32s/16s/8s 的跳跃融合策略；
   - **U-Net 代码卡**：仅保留 PyTorch 实现 + 各变体（Attention U-Net, nnU-Net）；
   - **分割损失函数卡**：CE / Dice / Focal / Tversky / Boundary Loss 的系统对比。
+
+---
+
+## 🧪 学完本节后可完成的作业
+
+- 配合 [[03-Projects/课程作业/05-计算机视觉/课后习题/D2L-Ch14-目标检测习题册|D2L-Ch14 习题册]] 分割部分
+
+---
+---
+
+## 🔗 知识图谱
+
+```dataview
+LIST
+FROM "02-Knowledge/🧠 学习系统"
+WHERE contains(upstream, this.file.link)
+SORT file.name ASC
+```
+
+```dataview
+LIST
+FROM "03-Projects"
+WHERE contains(requires, this.file.link)
+SORT assignment_level ASC, file.name ASC
+```

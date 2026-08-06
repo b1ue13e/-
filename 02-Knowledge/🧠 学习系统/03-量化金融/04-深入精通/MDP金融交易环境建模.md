@@ -1,13 +1,35 @@
 ---
-title: "MDP 与量化交易环境重构 (RL 视角)"
+title: MDP 与量化交易环境重构 (RL 视角)
 date: 2026-08-02
-type: concept
-course: "量化金融"
+type: study
+course: 量化金融
 importance: S
-tags: [量化金融, 强化学习, MDP, 算法交易, 奖励函数设定]
-upstream: ["强化学习基础", "Almgren-Chriss最优拆单"]
-downstream: ["PPO/DQN交易实战", "HW16-RL交易环境 Gym 搭建"]
-status: learning
+tags:
+- 量化金融
+- 强化学习
+- MDP
+- 算法交易
+- 奖励函数设定
+upstream:
+- 强化学习基础
+- Almgren-Chriss最优拆单
+downstream:
+- PPO/DQN交易实战
+- HW16-RL交易环境 Gym 搭建
+status: planned
+kind: concept
+flow: knowledge
+topic: MDP 与量化交易环境重构 (RL 视角)
+created: '2026-08-06'
+difficulty: intermediate
+concept: []
+prerequisites: []
+related: []
+source: 本课程历史知识卡；原始来源 [待验证]
+source_url: '[待验证]'
+accessed: '2026-08-06'
+license: link-only；正文为本地学习整理
+assessment_exempt: false
 ---
 
 # MDP 与量化交易环境重构 (RL 视角)
@@ -134,7 +156,7 @@ $$ R_t = (\text{Return}_t - \text{Cost}_t) - \lambda \cdot \text{Variance}(\text
 
 - 上游依赖：[[金融MDP设计与奖励函数工程 (Financial MDP & Reward Engineering)|强化学习基础]], [[Almgren-Chriss最优拆单]]
 - 下游延伸：[[金融MDP设计与奖励函数工程 (Financial MDP & Reward Engineering)|PPO在量化中的应用]], [[做市商库存模型与 Avellaneda-Stoikov 框架 (Inventory Models & Avellaneda-Stoikov Framework)|高频做市商(MM)策略]]
-- 横向关联：[[奖励函数设计 (Reward Function Design)|差分夏普比率(DSR)]] ↔ [[金融MDP设计与奖励函数工程 (Financial MDP & Reward Engineering)|Reward奖励设计]] (最高阶的奖励函数形式)
+- 横向关联：[[02-Knowledge/🧠 学习系统/03-量化金融/04-深入精通/风险约束下的RL|差分夏普比率(DSR)]] ↔ [[金融MDP设计与奖励函数工程 (Financial MDP & Reward Engineering)|Reward奖励设计]] (最高阶的奖励函数形式)
 - 应用场景：[[[支线任务] HW16-Gymnasium交易环境]]
 
 ---
@@ -211,3 +233,9 @@ $$ R_t = (\text{Return}_t - \text{Cost}_t) - \lambda \cdot \text{Variance}(\text
 - **文件夹**：`02-Knowledge/🧠 学习系统/03-量化金融/04-深入精通`
 - **链接**：向下直接链接至底层代码实现篇 [[[支线任务] HW16-Gymnasium交易环境]]。
 - **标签**：`#量化金融/强化学习` `#MDP` `#Reward设计` `#状态空间` `#最优控制`
+
+## 🧪 学完本节后可完成的作业
+
+- **可完成**：[[03-Projects/金融与时序/03-量化金融/阶段作业/量化金融-阶段作业-04-金融交易环境与PPO|金融交易环境与PPO]]。
+- **为什么现在能做**：本卡已经提供该任务需要的定义、公式、条件或实现边界；若任务还依赖后续知识，先完成对应阶段 MOC 中排在本卡之后的知识卡。
+- **提交产物**：闭卷定义/推导、一个可复查计算或代码结果、一个失败案例，以及对适用边界的说明。

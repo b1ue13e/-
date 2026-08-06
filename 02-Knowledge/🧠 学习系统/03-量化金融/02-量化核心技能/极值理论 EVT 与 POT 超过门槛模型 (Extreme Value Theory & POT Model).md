@@ -1,19 +1,29 @@
 ---
 title: 极值理论 EVT 与 POT 超过门槛模型 (Extreme Value Theory & POT Model)
-type: concept
-topic: "极值理论 EVT 与 POT 超过门槛模型 (Extreme Value Theory & POT Model)"
-created: 2026-07-23
+type: study
+topic: 极值理论 EVT 与 POT 超过门槛模型 (Extreme Value Theory & POT Model)
+created: '2026-07-23'
 status: ongoing
 difficulty: intermediate
 course: 量化金融
 importance: A
-tags: 
+tags:
+- 学习
+- 量化金融
 concept: []
 prerequisites: []
 related: []
-upstream: 
-downstream: 
+upstream: null
+downstream: null
+kind: concept
+flow: knowledge
+source: 本课程历史知识卡；原始来源 [待验证]
+source_url: https://www.bis.org/basel_framework/chapter/MAR/33.htm。用于复核“用阈值稳定图与参数稳定性选
+accessed: '2026-08-06'
+license: link-only；正文为本地学习整理
+assessment_exempt: false
 ---
+
 # 极值理论 EVT 与 POT 超过门槛模型 (Extreme Value Theory & POT Model)
 
 ---
@@ -243,7 +253,7 @@ run_evt_pot_lab()
 > 🔓 **作业解锁前置条件**：学完 [[历史模拟法 VaR 与非参数风险度量 (Historical Simulation VaR)|历史模拟VaR]] + [[参数法VaR（方差-协方差法）|参数法VaR]] + [[极值理论 EVT 与 POT 超过门槛模型 (Extreme Value Theory & POT Model)|尾部风险]] + [[极值理论 EVT 与 POT 超过门槛模型 (Extreme Value Theory & POT Model)|极值理论与POT模型]] 即可正式解锁本 Challenge 实战！
 > 💡 **解锁指引**：理解分位数 VaR 的缺陷与肥尾损失分布后即可解锁 POT 极值外推。
 
- 🧪 拓展实验与李宏毅式实战 Challenge 题 (HW08-EVT 广义帕累托分布 (GPD) 极端黑天鹅尾部外推)
+ 🧪 拓展实验与专题实战练习 (HW08-EVT 广义帕累托分布 (GPD) 极端黑天鹅尾部外推)
 
 本作业参考 **李宏毅 (Hung-yi Lee) 教授 ML 课程作业架构** 设计，设置四个渐进式难度基线 (Baselines)：
 
@@ -444,3 +454,8 @@ run_evt_pot_lab()
 **分形几何之父：Benoit Mandelbrot**
 ![Benoit Mandelbrot](https://raw.githubusercontent.com/datawhalechina/quant-for-beginners/main/notebooks/phase2_intro/Benoit%20Mandelbrot.jpg)
 
+## 🧪 学完本节后可完成的作业
+
+- **可完成**：[[03-Projects/金融与时序/03-量化金融/课后作业/量化金融-课后作业-08-EVT尾部风险|EVT尾部风险]]。
+- **为什么现在能做**：本卡已经提供该任务需要的定义、公式、条件或实现边界；若任务还依赖后续知识，先完成对应阶段 MOC 中排在本卡之后的知识卡。
+- **提交产物**：闭卷定义/推导、一个可复查计算或代码结果、一个失败案例，以及对适用边界的说明。

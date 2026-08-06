@@ -1,28 +1,44 @@
 ---
-title: "市场微观结构与买卖价差"
+title: 市场微观结构与买卖价差
 type: study
-topic: "市场微观结构与买卖价差"
-created: "2026-08-03"
+topic: 市场微观结构与买卖价差
+created: '2026-08-03'
 status: ongoing
 difficulty: advanced
-course: "量化金融"
-importance: "B"
-stage: "📘 第四阶段：深入精通"
-tags: [学习, 量化金融]
-concept: ["微观结构", "买卖价差", "订单簿", "冲击成本"]
-prerequisites: ["收益率定义与对数收益"]
-related: ["最优执行-Almgren-Chriss", "Implementation Shortfall"]
-upstream: ["收益率定义与对数收益"]
-downstream: ["最优执行-Almgren-Chriss", "回测框架与无泄漏实验"]
+course: 量化金融
+importance: B
+stage: 📘 第四阶段：深入精通
+tags:
+- 学习
+- 量化金融
+concept:
+- 微观结构
+- 买卖价差
+- 订单簿
+- 冲击成本
+prerequisites:
+- 收益率定义与对数收益
+related:
+- 最优执行-Almgren-Chriss
+- Implementation Shortfall
+upstream:
+- 收益率定义与对数收益
+downstream:
+- 最优执行-Almgren-Chriss
+- 回测框架与无泄漏实验
 flow: knowledge
 kind: concept
-sources: 
-- title: "Market Microstructure Theory (O'Hara)"
-url: "书库本地资源"
-locator: "Chapters 1-3"
+sources:
+- title: Market Microstructure Theory (O'Hara)
+url: 书库本地资源
+locator: Chapters 1-3
 source_type: textbook
-license: "local"
+license: local
 verified_at: 2026-08-03
+source: Market Microstructure Theory (O'Hara)
+source_url: '[待验证]'
+accessed: '2026-08-06'
+assessment_exempt: false
 ---
 
 # 市场微观结构与买卖价差
@@ -245,3 +261,9 @@ verified_at: 2026-08-03
 - **建议标签**：`#学习` `#量化金融`
 - **拆分建议**：不拆分
 \n\n> ⚔️ **支线实战任务 (Side Quest)**：👉 点击进入 [[[支线任务] HW15-盘口队列与挂单概率]] 刷怪通关！\n
+
+## 🧪 学完本节后可完成的作业
+
+- **可完成**：[[03-Projects/金融与时序/03-量化金融/阶段作业/量化金融-阶段作业-04-盘口队列与挂单概率|盘口队列与挂单概率]]。
+- **为什么现在能做**：本卡已经提供该任务需要的定义、公式、条件或实现边界；若任务还依赖后续知识，先完成对应阶段 MOC 中排在本卡之后的知识卡。
+- **提交产物**：闭卷定义/推导、一个可复查计算或代码结果、一个失败案例，以及对适用边界的说明。

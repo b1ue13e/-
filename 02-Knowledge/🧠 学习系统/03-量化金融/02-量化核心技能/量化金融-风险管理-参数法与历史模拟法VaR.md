@@ -1,23 +1,44 @@
 ---
-title: "参数法与历史模拟法 VaR (Value at Risk)"
+title: 参数法与历史模拟法 VaR (Value at Risk)
 type: study
-topic: "量化金融-风险管理-参数法与历史模拟法VaR"
-created: 2026-08-04
+topic: 量化金融-风险管理-参数法与历史模拟法VaR
+created: '2026-08-04'
 status: ongoing
 difficulty: intermediate
-course: "03-量化金融"
-importance: "A"
-tags: [学习, 核心概念, 量化金融, VaR, 风控]
-concept: ["VaR", "参数法", "历史模拟法"]
-prerequisites: ["正态分布", "统计学"]
-related: ["CVaR"]
-upstream: ["[[收益率定义与对数收益]]", "[[历史模拟法 VaR 与非参数风险度量 (Historical Simulation VaR)]]"]
-downstream: ["[[量化金融-风险管理-期望损失分解与ES理论|CVaR条件风险价值]]", "[[EVT极值理论与VaR-CVaR]]", "[[蒙特卡洛模拟法 VaR (Monte Carlo Simulation VaR)]]"]
+course: 量化金融
+importance: A
+tags:
+- 学习
+- 核心概念
+- 量化金融
+- VaR
+- 风控
+concept:
+- VaR
+- 参数法
+- 历史模拟法
+prerequisites:
+- 正态分布
+- 统计学
+related:
+- CVaR
+upstream:
+- '[[收益率定义与对数收益]]'
+- '[[历史模拟法 VaR 与非参数风险度量 (Historical Simulation VaR)]]'
+downstream:
+- '[[量化金融-风险管理-期望损失分解与ES理论|CVaR条件风险价值]]'
+- '[[EVT极值理论与VaR-CVaR]]'
+- '[[蒙特卡洛模拟法 VaR (Monte Carlo Simulation VaR)]]'
 flow: knowledge
 kind: concept
+source: 本课程历史知识卡；原始来源 [待验证]
+source_url: '[待验证]'
+accessed: '2026-08-06'
+license: link-only；正文为本地学习整理
+assessment_exempt: false
 ---
 
-# 参数法与历史模拟法 VaR (Value at Risk)
+# 量化金融-风险管理-参数法与历史模拟法VaR
 
 ---
 
@@ -242,3 +263,9 @@ def calc_historical_var(returns_array, alpha=0.01, portfolio_value=1.0):
 - **关联已有笔记**：`[[EVT极值理论与VaR-CVaR]]`
 - **建议标签**：`#学习` `#核心概念` `#VaR` `#风控`
 - **拆分建议**：保持完整。
+
+## 🧪 学完本节后可完成的作业
+
+- **可完成**：[[03-Projects/金融与时序/03-量化金融/课后作业/量化金融-课后作业-08-EVT尾部风险|EVT尾部风险]]。
+- **为什么现在能做**：本卡已经提供该任务需要的定义、公式、条件或实现边界；若任务还依赖后续知识，先完成对应阶段 MOC 中排在本卡之后的知识卡。
+- **提交产物**：闭卷定义/推导、一个可复查计算或代码结果、一个失败案例，以及对适用边界的说明。

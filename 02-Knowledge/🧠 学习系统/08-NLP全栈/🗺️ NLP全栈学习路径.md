@@ -1,256 +1,116 @@
 ---
-type: index
+type: study
 topic: NLP 全栈学习路径
-created: 2026-04-11
-status: active
-tags:
-- 学习路径
-- NLP
-- 自然语言处理
-- 大语言模型
-- LLM
-description: 从数学基础到LLM前沿的完整NLP全栈学习路线图
+course: NLP全栈
+flow: knowledge
+kind: moc
+assessment_exempt: true
+assessment_exempt_reason: 阶段导航
+status: ongoing
 ---
 
 # 🗺️ NLP 全栈学习路径
 
-> "语言是思维的载体，NLP 是让机器理解人类思维的桥梁。"
+## 🎯 课程目标
+本课程旨在帮助学习者从零开始构建自然语言处理（NLP）的全栈知识体系，覆盖从数学基础、传统机器学习方法，到深度学习模型、Transformer 及现代大规模语言模型（LLM）的完整技术演进链路。学完本课程后，学习者将具备独立完成文本分类、检索问答、大模型微调和部署等全栈 NLP 任务的能力。
 
-```dataviewjs
-// 学习进度统计
-const stage1 = dv.pages('"02-Knowledge/🧠 学习系统/08-NLP全栈/01-基础准备"').where(p => p.status === "completed").length;
-const stage1Total = dv.pages('"02-Knowledge/🧠 学习系统/08-NLP全栈/01-基础准备"').length;
-const stage2 = dv.pages('"02-Knowledge/🧠 学习系统/08-NLP全栈/02-传统NLP方法"').where(p => p.status === "completed").length;
-const stage2Total = dv.pages('"02-Knowledge/🧠 学习系统/08-NLP全栈/02-传统NLP方法"').length;
-const stage3 = dv.pages('"02-Knowledge/🧠 学习系统/08-NLP全栈/03-深度学习NLP基础"').where(p => p.status === "completed").length;
-const stage3Total = dv.pages('"02-Knowledge/🧠 学习系统/08-NLP全栈/03-深度学习NLP基础"').length;
-const stage4 = dv.pages('"02-Knowledge/🧠 学习系统/08-NLP全栈/04-Transformer与预训练模型"').where(p => p.status === "completed").length;
-const stage4Total = dv.pages('"02-Knowledge/🧠 学习系统/08-NLP全栈/04-Transformer与预训练模型"').length;
-const stage5 = dv.pages('"02-Knowledge/🧠 学习系统/08-NLP全栈/05-大语言模型与前沿技术"').where(p => p.status === "completed").length;
-const stage5Total = dv.pages('"02-Knowledge/🧠 学习系统/08-NLP全栈/05-大语言模型与前沿技术"').length;
-const stage6 = dv.pages('"02-Knowledge/🧠 学习系统/08-NLP全栈/06-专业方向深入"').where(p => p.status === "completed").length;
-const stage6Total = dv.pages('"02-Knowledge/🧠 学习系统/08-NLP全栈/06-专业方向深入"').length;
+## 🚦 最低前置要求
+- **数学基础**：具备基本的微积分（求导、偏导）、线性代数（矩阵乘法）和概率论（条件概率、贝叶斯定理）知识。
+- **编程基础**：熟练使用 Python，掌握 Numpy、Pandas 等数据处理工具库。
 
-const totalCompleted = stage1 + stage2 + stage3 + stage4 + stage5 + stage6;
-const totalNotes = stage1Total + stage2Total + stage3Total + stage4Total + stage5Total + stage6Total;
-const totalProgress = totalNotes > 0 ? Math.round((totalCompleted / totalNotes) * 100) : 0;
+## 📚 官方主教材与资源
+- **主教材**：[Speech and Language Processing (3e draft)](https://web.stanford.edu/~jurafsky/slp3/)
+- **验收源**：Stanford CS224N
+- **实践指南**：Hugging Face Course
+详见 [[📚 教材挂载索引]]。
 
-dv.paragraph(`**总体进度: ${totalProgress}%** | 已完成: ${totalCompleted} / ${totalNotes} 主题`);
-```
+## 🧭 阶段顺序与学习目标
 
----
+本课程严格遵循“教材定义知识主线 → 官方课程验收 → 开源软件实验”的原则，拆分为以下6个顺序阶段：
 
-## 📚 阶段1：基础准备
+### 📚 阶段1：基础准备
+- **学习目标**：掌握 NLP 的核心数学基础与必备的编程数据结构工具。
+- **知识卡清单**：
+  - [[01-基础准备/NLP全栈-NLP数学基础|NLP数学基础]]
+  - [[01-基础准备/NLP全栈-Python编程与NLP工具|Python编程与NLP工具]]
+  - [[01-基础准备/NLP全栈-语言学基础|语言学基础]]
+  - [[03-深度学习NLP基础/NLP全栈-数据集与评测指标|数据集与评测指标]]
+- **阶段作业与验收**：[[NLP全栈-课后作业-01-数学与编程基础]]，要求能手写基础推导并跑通简单正则提取。
+- **阶段衔接**：完成作业后进入阶段2。
 
-| 状态 | 主题 | 核心概念 | 操作 |
-|:---:|:---|:---|:---:|
-| ⬜ | [[NLP数学基础]] | 线性代数、概率论、信息论基础 | [新建](obsidian://new?file=🧠%20学习系统/08-NLP全栈/01-基础准备/NLP数学基础.md) |
-| ⬜ | [[Python编程与NLP工具]] | NLTK、spaCy、正则表达式、文本处理 | [新建](obsidian://new?file=🧠%20学习系统/08-NLP全栈/01-基础准备/Python编程与NLP工具.md) |
-| ⬜ | [[语言学基础]] | 语音、词汇、句法、语义学基础 | [新建](obsidian://new?file=🧠%20学习系统/08-NLP全栈/01-基础准备/语言学基础.md) |
-| ⬜ | [[数据集与评测指标]] | 语料库、F1、BLEU、ROUGE、困惑度 | [新建](obsidian://new?file=🧠%20学习系统/08-NLP全栈/01-基础准备/数据集与评测指标.md) |
+### 📜 阶段2：传统NLP方法
+- **学习目标**：理解词袋模型、TF-IDF、N-gram 及隐马尔可夫模型等传统文本建模手段。
+- **知识卡清单**：
+  - [[02-传统NLP方法/NLP全栈-文本预处理|文本预处理]]
+  - [[02-传统NLP方法/NLP全栈-文本表示方法|文本表示方法]]
+  - [[02-传统NLP方法/NLP全栈-统计机器学习|统计机器学习]]
+  - [[02-传统NLP方法/NLP全栈-序列标注|序列标注]]
+  - [[02-传统NLP方法/NLP全栈-主题模型|主题模型]]
+  - [[02-传统NLP方法/NLP全栈-句法分析|句法分析]]
+- **阶段作业与验收**：[[NLP全栈-课后作业-02-传统方法实战]]。建立 TF-IDF/BM25 基线。
+- **阶段衔接**：完成阶段作业测试后进入阶段3。
 
----
+### 🧠 阶段3：深度学习NLP基础
+- **学习目标**：掌握词向量（Word2Vec, GloVe）和基于 RNN/CNN 的深度序列建模。
+- **知识卡清单**：
+  - [[03-深度学习NLP基础/NLP全栈-词向量与Word2Vec|词向量与Word2Vec]]
+  - [[03-深度学习NLP基础/NLP全栈-GloVe与稠密向量|GloVe与稠密向量]]
+  - [[03-深度学习NLP基础/NLP全栈-循环神经网络RNN|循环神经网络RNN]]
+  - [[03-深度学习NLP基础/NLP全栈-Seq2Seq与注意力机制|Seq2Seq与注意力机制]]
+  - [[03-深度学习NLP基础/NLP全栈-CNN在NLP中的应用|CNN在NLP中的应用]]
+- **阶段作业与验收**：[[NLP全栈-课后作业-03-深度学习探索]]。完成词向量的训练与评估，跑通分类模型。
+- **阶段衔接**：掌握 Seq2Seq 和 Attention 原理后，进入阶段4。
 
-## 📜 阶段2：传统NLP方法
+### ⚡ 阶段4：Transformer与预训练模型
+- **学习目标**：彻底吃透 Transformer 架构，并理解 BERT, GPT 等预训练范式。
+- **知识卡清单**：
+  - [[04-Transformer与预训练模型/NLP全栈-Transformer架构|Transformer架构]]
+  - [[04-Transformer与预训练模型/NLP全栈-BERT及其变体|BERT及其变体]]
+  - [[04-Transformer与预训练模型/NLP全栈-GPT系列|GPT系列]]
+  - [[04-Transformer与预训练模型/NLP全栈-其他预训练模型|其他预训练模型]]
+  - [[04-Transformer与预训练模型/NLP全栈-HuggingFace生态系统|HuggingFace生态系统]]
+- **阶段作业与验收**：[[NLP全栈-课后作业-04-大模型与架构实操]]。微调 Transformer 文本模型并完成误差分类。
+- **阶段衔接**：完成 Transformer 代码实操后，进入阶段5。
 
-| 状态 | 主题 | 核心概念 | 操作 |
-|:---:|:---|:---|:---:|
-| ⬜ | [[文本预处理]] | 分词、归一化、停用词、词干提取 | [新建](obsidian://new?file=🧠%20学习系统/08-NLP全栈/02-传统NLP方法/文本预处理.md) |
-| ⬜ | [[文本表示方法]] | One-hot、TF-IDF、n-gram、共现矩阵 | [新建](obsidian://new?file=🧠%20学习系统/08-NLP全栈/02-传统NLP方法/文本表示方法.md) |
-| ⬜ | [[统计机器学习]] | Naive Bayes、SVM、CRF、最大熵 | [新建](obsidian://new?file=🧠%20学习系统/08-NLP全栈/02-传统NLP方法/统计机器学习.md) |
-| ⬜ | [[序列标注]] | HMM、MEMM、CRF、BIO标注 | [新建](obsidian://new?file=🧠%20学习系统/08-NLP全栈/02-传统NLP方法/序列标注.md) |
-| ⬜ | [[主题模型]] | LSA、LDA、pLSA、文档主题分布 | [新建](obsidian://new?file=🧠%20学习系统/08-NLP全栈/02-传统NLP方法/主题模型.md) |
-| ⬜ | [[句法分析]] | 上下文无关文法、PCFG、依存句法 | [新建](obsidian://new?file=🧠%20学习系统/08-NLP全栈/02-传统NLP方法/句法分析.md) |
+### 🚀 阶段5：大语言模型与前沿技术
+- **学习目标**：掌握 PEFT 微调技术、Prompt 提示工程、RAG 检索增强及 Agent 机制。
+- **知识卡清单**：
+  - [[05-大语言模型与前沿技术/NLP全栈-参数高效微调PEFT|参数高效微调PEFT]]
+  - [[05-大语言模型与前沿技术/NLP全栈-指令微调与对齐|指令微调与对齐]]
+  - [[05-大语言模型与前沿技术/NLP全栈-提示工程|提示工程]]
+  - [[05-大语言模型与前沿技术/NLP全栈-检索增强生成RAG|检索增强生成RAG]]
+  - [[05-大语言模型与前沿技术/NLP全栈-Agent与工具使用|Agent与工具使用]]
+  - [[05-大语言模型与前沿技术/NLP全栈-LLM推理优化|LLM推理优化]]
+- **阶段作业与验收**：[[NLP全栈-课后作业-05-生成与前沿技术]]。要求部署并微调本地 LLM 模型。
+- **阶段衔接**：验收通过后进入最后一阶，针对特定任务深耕。
 
----
+### 🎯 阶段6：专业方向深入
+- **学习目标**：将所有前置能力综合运用于信息抽取、机器翻译、对话系统等多模态和专业下游任务。
+- **知识卡清单**：
+  - [[06-专业方向深入/NLP全栈-信息抽取|信息抽取]]
+  - [[06-专业方向深入/NLP全栈-文本生成|文本生成]]
+  - [[06-专业方向深入/NLP全栈-对话系统|对话系统]]
+  - [[06-专业方向深入/NLP全栈-问答系统|问答系统]]
+  - [[05-大语言模型与前沿技术/NLP全栈-多模态NLP|多模态NLP]]
+  - [[03-深度学习NLP基础/NLP全栈-文本分类与情感分析|文本分类与情感分析]]
+- **阶段作业与验收**：大作业级别，包括但不限于智能客服、文档问答系统的开发。
+- **阶段衔接**：完成并答辩结课。
 
-## 🧠 阶段3：深度学习NLP基础
+## 🏆 验收标准与 Capstone 结课项目
 
-| 状态 | 主题 | 核心概念 | 操作 |
-|:---:|:---|:---|:---:|
-| ⬜ | [[词向量与Word2Vec]] | CBOW、Skip-gram、负采样、层次Softmax | [新建](obsidian://new?file=🧠%20学习系统/08-NLP全栈/03-深度学习NLP基础/词向量与Word2Vec.md) |
-| ⬜ | [[GloVe与稠密向量]] | 共现矩阵分解、全局统计、向量空间 | [新建](obsidian://new?file=🧠%20学习系统/08-NLP全栈/03-深度学习NLP基础/GloVe与稠密向量.md) |
-| ⬜ | [[循环神经网络RNN]] | RNN结构、BPTT、梯度消失/爆炸 | [新建](obsidian://new?file=🧠%20学习系统/08-NLP全栈/03-深度学习NLP基础/循环神经网络RNN.md) |
-| ⬜ | [[LSTM与GRU在时序中的应用]] | 门控机制、长程依赖、变体比较 | [新建](obsidian://new?file=🧠%20学习系统/08-NLP全栈/03-深度学习NLP基础/LSTM与GRU.md) |
-| ⬜ | [[Seq2Seq与注意力机制]] | 编码器-解码器、Bahdanau注意力、Luong注意力 | [新建](obsidian://new?file=🧠%20学习系统/08-NLP全栈/03-深度学习NLP基础/Seq2Seq与注意力机制.md) |
-| ⬜ | [[CNN在NLP中的应用]] | TextCNN、卷积特征、池化操作 | [新建](obsidian://new?file=🧠%20学习系统/08-NLP全栈/03-深度学习NLP基础/CNN在NLP中的应用.md) |
-
----
-
-## ⚡ 阶段4：Transformer与预训练模型
-
-| 状态 | 主题 | 核心概念 | 操作 |
-|:---:|:---|:---|:---:|
-| ⬜ | [[Transformer架构]] | Self-Attention、多头注意力、位置编码 | [新建](obsidian://new?file=🧠%20学习系统/08-NLP全栈/04-Transformer与预训练模型/Transformer架构.md) |
-| ⬜ | [[BERT及其变体]] | MLM、NSP、RoBERTa、ALBERT、DistilBERT | [新建](obsidian://new?file=🧠%20学习系统/08-NLP全栈/04-Transformer与预训练模型/BERT及其变体.md) |
-| ⬜ | [[GPT系列]] | 自回归LM、GPT-1/2/3、生成能力 | [新建](obsidian://new?file=🧠%20学习系统/08-NLP全栈/04-Transformer与预训练模型/GPT系列.md) |
-| ⬜ | [[其他预训练模型]] | XLNet、T5、ELECTRA、DeBERTa | [新建](obsidian://new?file=🧠%20学习系统/08-NLP全栈/04-Transformer与预训练模型/其他预训练模型.md) |
-| ⬜ | [[参数高效微调PEFT]] | Adapter、Prompt Tuning、LoRA、Prefix Tuning | [新建](obsidian://new?file=🧠%20学习系统/08-NLP全栈/04-Transformer与预训练模型/参数高效微调PEFT.md) |
-| ⬜ | [[HuggingFace生态系统]] | Transformers库、Datasets、Tokenizers、Trainer | [新建](obsidian://new?file=🧠%20学习系统/08-NLP全栈/04-Transformer与预训练模型/HuggingFace生态系统.md) |
-
----
-
-## 🚀 阶段5：大语言模型与前沿技术
-
-| 状态 | 主题 | 核心概念 | 操作 |
-|:---:|:---|:---|:---:|
-| ⬜ | [[Scaling Laws]] | 规模效应、涌现能力、计算最优训练 | [新建](obsidian://new?file=🧠%20学习系统/08-NLP全栈/05-大语言模型与前沿技术/Scaling%20Laws.md) |
-| ⬜ | [[指令微调与对齐]] | Instruction Tuning、SFT、RLHF、DPO | [新建](obsidian://new?file=🧠%20学习系统/08-NLP全栈/05-大语言模型与前沿技术/指令微调与对齐.md) |
-| ⬜ | [[提示工程]] | Zero/Few-shot、CoT、ToT、AutoPrompt | [新建](obsidian://new?file=🧠%20学习系统/08-NLP全栈/05-大语言模型与前沿技术/提示工程.md) |
-| ⬜ | [[检索增强生成RAG]] | 向量检索、稠密表示、RAG架构、多跳推理 | [新建](obsidian://new?file=🧠%20学习系统/08-NLP全栈/05-大语言模型与前沿技术/检索增强生成RAG.md) |
-| ⬜ | [[Agent与工具使用]] | ReAct、Toolformer、Function Calling、多Agent | [新建](obsidian://new?file=🧠%20学习系统/08-NLP全栈/05-大语言模型与前沿技术/Agent与工具使用.md) |
-| ⬜ | [[LLM推理优化]] | KV Cache、量化、投机解码、PagedAttention | [新建](obsidian://new?file=🧠%20学习系统/08-NLP全栈/05-大语言模型与前沿技术/LLM推理优化.md) |
-
----
-
-## 🎯 阶段6：专业方向深入
-
-| 状态 | 主题 | 核心概念 | 操作 |
-|:---:|:---|:---|:---:|
-| ⬜ | [[信息抽取]] | NER、关系抽取、事件抽取、UIE | [新建](obsidian://new?file=🧠%20学习系统/08-NLP全栈/06-专业方向深入/信息抽取.md) |
-| ⬜ | [[文本生成]] | 可控生成、文本摘要、机器翻译、风格迁移 | [新建](obsidian://new?file=🧠%20学习系统/08-NLP全栈/06-专业方向深入/文本生成.md) |
-| ⬜ | [[对话系统]] | 任务型对话、开放域聊天、多轮管理、情感对话 | [新建](obsidian://new?file=🧠%20学习系统/08-NLP全栈/06-专业方向深入/对话系统.md) |
-| ⬜ | [[问答系统]] | 阅读理解、KBQA、开放域问答、多文档QA | [新建](obsidian://new?file=🧠%20学习系统/08-NLP全栈/06-专业方向深入/问答系统.md) |
-| ⬜ | [[多模态NLP]] | 视觉-语言模型、图文检索、VQA、文档理解 | [新建](obsidian://new?file=🧠%20学习系统/08-NLP全栈/06-专业方向深入/多模态NLP.md) |
-| ⬜ | [[文本分类与情感分析]] | 情感分类、意图识别、立场检测、讽刺检测 | [新建](obsidian://new?file=🧠%20学习系统/08-NLP全栈/06-专业方向深入/文本分类与情感分析.md) |
+- **综合大作业**：基于 TF-IDF/BM25 构建基础版检索问答，逐步重构为 Transformer 双塔匹配，并最终迭代为完整的 RAG 问答链路。
+- **验收要求**：
+  - 代码：提供可复现的输入、随机种子及运行步骤。
+  - 方法：实现与理论一致，具备最小规模测试。
+  - 实验：需保留失败案例并进行至少一次消融实验。
 
 ---
 
-## 🗺️ 索引二：横向知识地图
-
-| 维度 | 核心技术 | 代表模型/方法 | 入口 |
-|:---|:---|:---|:---|
-| **🔢 数学基础** | 线性代数、概率论、信息论 | SVD、贝叶斯、熵 | [[知识地图/🔢 数学基础维度\|查看]] |
-| **📜 传统方法** | 分词、文本表示、统计ML | HMM、CRF、LDA | [[知识地图/📜 传统方法维度\|查看]] |
-| **🧠 深度学习** | 词向量、序列模型、Seq2Seq | Word2Vec、LSTM、Attention | [[知识地图/🧠 深度学习维度\|查看]] |
-| **⚡ Transformer** | 自注意力、预训练模型、PEFT | BERT、GPT、LoRA | [[知识地图/⚡ Transformer维度\|查看]] |
-| **🚀 LLM前沿** | 大模型理论、提示工程、RAG | ChatGPT、RAG系统 | [[知识地图/🚀 LLM前沿维度\|查看]] |
-| **🎯 专业应用** | 信息抽取、生成、对话、多模态 | UIE、可控生成、VLM | [[知识地图/🎯 专业应用维度\|查看]] |
-
----
-
-## 🎯 当前学习重点
-
-```dataviewjs
-dv.table(
-    ["笔记", "阶段", "更新日期", "状态"],
-    dv.pages('"02-Knowledge/🧠 学习系统/08-NLP全栈"')
-        .where(p => !p.file.path.includes("🗺️"))
-        .sort(p => p.file.mtime, 'desc')
-        .limit(5)
-        .map(p => {
-            let stage = "-";
-            if (p.file.path.includes("01-")) stage = "📚 基础";
-            else if (p.file.path.includes("02-")) stage = "📜 传统";
-            else if (p.file.path.includes("03-")) stage = "🧠 深度";
-            else if (p.file.path.includes("04-")) stage = "⚡ Trans";
-            else if (p.file.path.includes("05-")) stage = "🚀 LLM";
-            else if (p.file.path.includes("06-")) stage = "🎯 专业";
-            return [p.file.link, stage, p.file.mtime.toFormat("MM-dd"), p.status || "ongoing"];
-        })
-);
-```
-
----
-
-## 📚 推荐学习资源
-
-### 经典教材
-
-| 书名 | 作者 | 特点 | 适用阶段 |
-|:---|:---|:---|:---:|
-| 《Speech and Language Processing》| Jurafsky & Martin | NLP圣经，免费在线 | 全阶段 |
-| 《Neural Network Methods for NLP》| Yoav Goldberg | 深度学习NLP | 阶段3-4 |
-| 《Natural Language Processing with PyTorch》| Rao & McMahan | 实战导向 | 阶段3-5 |
-
-### 在线资源
-
-| 资源 | 类型 | 说明 |
-|:---|:---|:---|
-| Stanford CS224n | 课程 | 深度学习NLP经典 |
-| Hugging Face | 平台 | 模型、数据集、教程 |
-| LangChain文档 | 文档 | Agent/RAG开发 |
-
-- 想按阶段直接找教材，或者看哪些主教材还没下载：[[02-Knowledge/🧠 学习系统/08-NLP全栈/📚 教材挂载索引|进入教材挂载索引]]
-
----
-
-## 🔗 知识连接索引
-
-| 本路径概念 | 关联路径 | 关联概念 |
-|:---|:---|:---|
-| 数学基础 | [[🗺️ 机器学习学习路径\|机器学习]] | 线性代数、概率统计、信息论 |
-| 深度学习基础 | [[🗺️ 机器学习学习路径\|机器学习]] | 神经网络、反向传播、梯度下降 |
-| Transformer | [[🗺️ 计算机视觉学习路径\|计算机视觉]] | Vision Transformer、多模态融合 |
-| 优化算法 | [[🗺️ 最优化方法学习路径\|最优化方法]] | Adam、学习率调度、训练优化 |
-| 注意力机制 | [[🗺️ 计算机视觉学习路径\|计算机视觉]] | 自注意力、空间注意力 |
-| 强化学习对齐 | [[🗺️ 强化学习学习路径\|强化学习]] | RLHF、PPO、策略优化 |
-| 词向量表示 | [[🗺️ 社交网络挖掘学习路径\|社交网络挖掘]] | 网络嵌入、节点表示学习 |
-| 主题模型 | [[🗺️ 概率图模型学习路径\|概率图模型]] | LDA、概率生成模型 |
-| 多模态NLP | [[🗺️ 计算机视觉学习路径\|计算机视觉]] | CLIP、视觉-语言预训练 |
-
----
-
-## 🎓 课程挂载补充
-
-| 课程 | 路径内落点 | 备注 |
-|:---|:---|:---|
-| 自然语言处理 | [[🗺️ NLP全栈学习路径\|本路径总览]] | 已存在主路径 |
-| 自然语言处理前沿课题研究 | [[06-专业方向深入/🎯 第六阶段：专业方向深入\|阶段6]] | 对应前沿专题、RAG、多模态与新范式 |
-| 计算语言学 | [[01-基础准备/📚 第一阶段：基础准备\|阶段1]] | 作为语言学底层与形式化表示入口 |
-| 语音信号数字处理 | [[01-基础准备/📚 第一阶段：基础准备\|阶段1]] / [[02-Knowledge/🧠 学习系统/12-信号与系统/🗺️ 信号与系统学习路径\|信号与系统]] | 跨 NLP 与信号处理双路径挂载 |
-| 神经与认知计算 | [[06-专业方向深入/🎯 第六阶段：专业方向深入\|阶段6]] | 对应认知建模、神经表征与语言理解 |
-
----
-
-## 🔗 快速导航
-
-### 纵向路线
-- [[01-基础准备/📚 第一阶段：基础准备\|📚 第一阶段：基础准备]]
-- [[02-传统NLP方法/📜 第二阶段：传统NLP方法\|📜 第二阶段：传统NLP方法]]
-- [[03-深度学习NLP基础/🧠 第三阶段：深度学习NLP基础\|🧠 第三阶段：深度学习NLP基础]]
-- [[04-Transformer与预训练模型/⚡ 第四阶段：Transformer与预训练模型\|⚡ 第四阶段：Transformer与预训练模型]]
-- [[05-大语言模型与前沿技术/🚀 第五阶段：大语言模型与前沿技术\|🚀 第五阶段：大语言模型与前沿技术]]
-- [[06-专业方向深入/🎯 第六阶段：专业方向深入\|🎯 第六阶段：专业方向深入]]
-- [[02-Knowledge/🧠 学习系统/08-NLP全栈/📚 教材挂载索引|📚 教材挂载索引]]
-
-### 横向知识地图
-- [[知识地图/🗺️ 横向知识地图\|🗺️ 横向知识地图总览]]
-
-### 关联路径
-- [[🗺️ 机器学习学习路径\|机器学习]]
-- [[🗺️ 计算机视觉学习路径\|计算机视觉]]
-- [[🗺️ 最优化方法学习路径\|最优化方法]]
-- [[🗺️ 强化学习学习路径\|强化学习]]
-
----
-
-*路线图更新：2026-04-14*
-
-## 🏫 开源名校作业体系挂载
-
-### 1. Stanford CS224N (深度学习与自然语言处理)
-这是 NLP 领域的经典标杆课程，注重数学推导和代码实现。
-- [ ] **Assignment 1**: Word Vectors -> 对应 [[词向量与Word2Vec]] 和 [[GloVe与稠密向量]]
-- [ ] **Assignment 2**: word2vec 实现 + softmax 分类 -> 对应 [[词向量与Word2Vec]] 与 [[文本分类与情感分析]]（本体系重构为 HW02 文本分类）
-- [ ] **Assignment 3**: Dependency Parser（MLP-based arc-standard）-> 对应 [[句法分析]]（本体系重构为 HW03 序列标注/依存分析）
-- [ ] **Assignment 4**: Neural Machine Translation with RNNs and Attention -> 对应 [[Seq2Seq与注意力机制]]
-- [ ] **Assignment 5**: Neural Machine Translation with Transformers -> 对应 [[Transformer架构]]
-
-### 2. Hugging Face Course
-侧重于现代 NLP 工程实战和 Transformers 库的熟练使用。
-- [ ] NLP Pipeline & Models
-- [ ] Datasets & Tokenizers
-- [ ] Fine-tuning a pre-trained model (Trainer API & Keras)
-- [ ] Sharing models and custom datasets
-
----
-
-## 🗓️ 碎片化复盘与计划占位 (整合区)
-
-本模块用于替代原有的零散计划占位文件，后续可直接在下方挂载相关日计划链接，避免索引碎片化：
-
-- **代码实践**: 核心定义 / 公式推导 / 典型题目实践。 关联日计划：*待自动挂载*
-- **课程复盘**: 阶段性回顾与错题反思。 关联日计划：*待自动挂载*
-- **项目实践**: 项目级别的验证与验收。 关联日计划：*待自动挂载*
-- **课程任务挂载**: 具体课程布置的任务锚点。 关联日计划：*待自动挂载*
+## 快速导航
+- [[01-基础准备/🧭 阶段1-基础准备|阶段1-基础准备]]
+- [[02-传统NLP方法/🧭 阶段2-传统NLP方法|阶段2-传统NLP方法]]
+- [[03-深度学习NLP基础/🧭 阶段3-深度学习NLP基础|阶段3-深度学习NLP基础]]
+- [[04-Transformer与预训练模型/🧭 阶段4-Transformer与预训练模型|阶段4-Transformer与预训练模型]]
+- [[05-大语言模型与前沿技术/🧭 阶段5-大语言模型与前沿技术|阶段5-大模型技术]]
+- [[06-专业方向深入/🧭 阶段6-专业方向深入|阶段6-专业方向]]
+- [[03-Projects/08-NLP全栈/🧭 课程作业总索引|课程作业总索引]]

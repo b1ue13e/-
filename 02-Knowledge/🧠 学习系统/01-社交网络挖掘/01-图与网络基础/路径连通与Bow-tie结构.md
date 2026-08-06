@@ -1,6 +1,7 @@
 ---
 type: study
 topic: "路径连通与 Bow-tie 结构"
+course: "社交网络挖掘"
 tags: [学习, 01-社交网络挖掘]
 created: 2026-08-06
 status: ongoing
@@ -11,6 +12,10 @@ related: []
 flow: knowledge
 kind: concept
 source: "合并自课程内已有笔记；原始来源见各节"
+source_url: "https://snap.stanford.edu/class/cs224w-2017/handouts.html"
+accessed: 2026-08-06
+license: "课程讲义与题面默认 link-only；原论文按其页面条款使用"
+assessment_exempt: false
 verification_status: "概念与示例已合并；抽样实验需按数据版本复现"
 ---
 
@@ -343,7 +348,7 @@ print([len(part) for part in regions], ecdf(sizes), reachability_rate(graph, 500
 
 ### 9. 相关知识点与 Obsidian 双链建议
 - 上游：[[路径连通与Bow-tie结构]]。
-- 横向：[[../02-网络结构与生成模型/HW1-结构生成与去中心化搜索实验]]。
+- 横向：[[../02-网络结构与生成模型/小世界与去中心化搜索]]。
 - 下游：[[../03-社会结构与社区/边介数与Brandes近似]]。
 - 作业：CS224W 2017 HW1-Q2.1–Q2.4。
 
@@ -392,3 +397,9 @@ print([len(part) for part in regions], ecdf(sizes), reachability_rate(graph, 500
 ### 🃏 Anki 卡片
 - Bow-tie 抽样为什么同时做前向和后向 BFS？::两种覆盖分别测“我能到谁”和“谁能到我”，组合后区分 SCC、IN、OUT 等方向角色。
 - 有向可达率的抽样单位？::均匀有序节点对 $(s,t)$；全图与最大 WCC 必须分别定义抽样框。
+
+## 🧪 学完本节后可完成的作业
+
+- **可立即完成**：[[03-Projects/01-社交网络挖掘/课后作业/社交网络挖掘-课后作业-02-结构生成与去中心化搜索#2. 非 Web 网络的 Bow-tie 结构（30 分，Silviana、Ziyi）|课后作业 02 题 2]]。
+- **为什么现在能做**：已覆盖前向/反向 BFS、WCC/SCC、Bow-tie 区域与有序对可达率。
+- **提交产物**：区域集合、守恒检查、ECDF、抽样框与标准误。

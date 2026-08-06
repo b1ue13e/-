@@ -1,5 +1,6 @@
 ---
 type: study
+course: "05-计算机视觉"
 topic: "GoogLeNet与Inception模块"
 created: 2026-08-06
 status: ongoing
@@ -19,6 +20,7 @@ related:
   - DenseNet
   - 参数效率
 flow: knowledge
+stage_moc: "[[02-深度学习内核/🧠 第二阶段：深度学习内核]]"
 kind: concept
 source: "D2L Ch.8; Szegedy et al. 2015"
 anki_deck: "05-计算机视觉::02-深度学习内核"
@@ -475,3 +477,28 @@ if __name__ == "__main__":
 ---
 
 *创建于：2026-08-06 | 最后更新：2026-08-06*
+
+---
+
+## 🧪 学完本节后可完成的作业
+
+- 配合 [[03-Projects/课程作业/05-计算机视觉/课后习题/D2L-Ch8-现代CNN习题册|D2L-Ch8 习题册]]
+
+---
+---
+
+## 🔗 知识图谱
+
+```dataview
+LIST
+FROM "02-Knowledge/🧠 学习系统"
+WHERE contains(upstream, this.file.link)
+SORT file.name ASC
+```
+
+```dataview
+LIST
+FROM "03-Projects"
+WHERE contains(requires, this.file.link)
+SORT assignment_level ASC, file.name ASC
+```

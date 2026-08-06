@@ -10,7 +10,6 @@ flow: project
 kind: exercise
 tags: [项目, 时间序列, 阶梯作业, SARIMA, 季节预测]
 source_lesson: "[[L06-SARIMA与季节预测]]"
-answer_key: "[[HW01-HW09-参考答案与错误诊断#HW06｜SARIMA 与季节预测]]"
 ---
 
 # HW06｜SARIMA 与季节预测阶梯作业
@@ -99,6 +98,3 @@ $$
 - [FPP3 §9.9 Seasonal ARIMA models](https://otexts.com/fpp3/seasonal-arima.html)
 - [FPP3 Chapter 9 Exercises](https://otexts.com/fpp3/arima-exercises.html)
 
-## 反馈入口
-
-完成并保留原答案后，打开[[HW01-HW09-参考答案与错误诊断#HW06｜SARIMA 与季节预测|HW06 参考答案与评分锚点]]。

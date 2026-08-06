@@ -1,5 +1,6 @@
 ---
 type: study
+course: "05-计算机视觉"
 topic: "NeRF 神经辐射场 (Neural Radiance Fields)"
 created: 2026-08-05
 status: ongoing
@@ -18,6 +19,7 @@ related:
   - 立体视觉
   - 点云处理
 flow: knowledge
+stage_moc: "[[05-专业深化与工程落地/🏭 第五阶段：专业深化与工程落地]]"
 kind: concept
 source: "论文补充; CS231n A3"
 anki_deck: "05-计算机视觉::05-专业深化与工程落地"
@@ -321,3 +323,26 @@ def raw2outputs(raw_pred, z_vals, rays_d):
   - [[相机标定与对极几何]]
   - [[MLP]]
   - [[05-计算机视觉/02-深度学习内核/3DGS|3D Gaussian
+
+---
+
+## 🧪 学完本节后可完成的作业
+
+- 配合 [[03-Projects/课程作业/05-计算机视觉/大作业/项目-NeRF|大作业：NeRF三维重建]]
+---
+
+## 🔗 知识图谱
+
+```dataview
+LIST
+FROM "02-Knowledge/🧠 学习系统"
+WHERE contains(upstream, this.file.link)
+SORT file.name ASC
+```
+
+```dataview
+LIST
+FROM "03-Projects"
+WHERE contains(requires, this.file.link)
+SORT assignment_level ASC, file.name ASC
+```

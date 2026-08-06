@@ -7,6 +7,7 @@ flow: knowledge
 kind: moc
 created: 2026-08-03
 related: [PCA主成分分析]
+stage_moc: "[[🌱 第一阶段：基础概念]]"
 ---
 
 # PCA 主成分分析

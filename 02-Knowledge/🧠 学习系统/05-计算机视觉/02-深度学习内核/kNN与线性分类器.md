@@ -1,5 +1,6 @@
 ---
 type: study
+course: "05-计算机视觉"
 topic: "kNN与线性分类器"
 created: "2026-08-05"
 status: ongoing
@@ -21,6 +22,7 @@ related:
   - "Softmax与SVM损失函数"
   - "图像分类任务与数据管线"
 flow: knowledge
+stage_moc: "[[02-深度学习内核/🧠 第二阶段：深度学习内核]]"
 kind: concept
 source: "CS231n A1; D2L Ch.4"
 anki_deck: "05-计算机视觉::02-深度学习内核"
@@ -603,3 +605,29 @@ plt.show()
 ---
 
 *创建于: 2026-08-05 | 所属概念: kNN, 线性分类器, 图像分类, 参数化模型 | 来源: CS231n A1; D2L Ch.4*
+
+---
+
+## 🧪 学完本节后可完成的作业
+
+- 可直接完成 [[03-Projects/课程作业/05-计算机视觉/课后作业/🎓 HW01 - CIFAR-10 kNN 与 Softmax 基线正式作业说明书|HW01]]
+- 配合 [[03-Projects/课程作业/05-计算机视觉/课后习题/D2L-Ch4-线性分类习题册|D2L-Ch4 习题册]]
+
+---
+---
+
+## 🔗 知识图谱
+
+```dataview
+LIST
+FROM "02-Knowledge/🧠 学习系统"
+WHERE contains(upstream, this.file.link)
+SORT file.name ASC
+```
+
+```dataview
+LIST
+FROM "03-Projects"
+WHERE contains(requires, this.file.link)
+SORT assignment_level ASC, file.name ASC
+```

@@ -1,5 +1,6 @@
 ---
 type: study
+course: "05-计算机视觉"
 topic: "VAE 变分自编码器 (Variational Autoencoder)"
 created: 2026-08-05
 status: ongoing
@@ -18,6 +19,7 @@ related:
   - Diffusion
   - 生成模型
 flow: knowledge
+stage_moc: "[[04-前沿架构探索/🚀 第四阶段：前沿架构探索]]"
 kind: concept
 source: "D2L Ch.17; CS231n A3"
 anki_deck: "05-计算机视觉::04-前沿架构探索"
@@ -319,3 +321,26 @@ def vae_loss_function(recon_x, x, mu, logvar):
   - [[02-Knowledge/🧠 学习系统/17-机器学习/03-正则优化/反向传播算法|反向传播算法]]
   - [[05-计算机视觉/02-深度学习内核/Diffusion 扩散模型|Diffusion 扩散模型]]
 - **建议标签**：`#学习` `#深度学习` `#生成模型` `#VAE` `#重参数技巧` `#ELBO`
+
+---
+
+## 🧪 学完本节后可完成的作业
+
+- 配合 [[03-Projects/课程作业/05-计算机视觉/课后习题/D2L-Ch17-生成对抗网络习题册|D2L-Ch17 习题册]]
+---
+
+## 🔗 知识图谱
+
+```dataview
+LIST
+FROM "02-Knowledge/🧠 学习系统"
+WHERE contains(upstream, this.file.link)
+SORT file.name ASC
+```
+
+```dataview
+LIST
+FROM "03-Projects"
+WHERE contains(requires, this.file.link)
+SORT assignment_level ASC, file.name ASC
+```

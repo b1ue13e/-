@@ -1,6 +1,7 @@
 ---
 type: study
 topic: "随机网络模型：ER、WS、BA 与配置模型"
+course: "社交网络挖掘"
 tags: [学习, 01-社交网络挖掘, 随机图, 生成模型]
 created: 2026-08-05
 status: completed
@@ -11,6 +12,10 @@ related: [小世界与去中心化搜索, 社区发现-模块度与谱松弛, SI
 flow: knowledge
 kind: concept
 source: "Stanford CS224W 2017 HW1-Q1, HW2-Q1/Q3.4 and lecture videos 2/3/14"
+source_url: "https://snap.stanford.edu/class/cs224w-2017/handouts.html"
+accessed: 2026-08-06
+license: "课程讲义与题面公开访问但未核验开放再分发许可；link-only"
+assessment_exempt: false
 anki_deck: "社交网络挖掘::网络结构"
 anki_tags: [社交网络挖掘, ER, WS, BA, 配置模型]
 ---
@@ -201,3 +206,9 @@ print([graph.degree(node) for node in graph])
 - 配置模型为何适合作为度保持零模型？::它固定每个节点的 stub 数，从而固定度序列，并随机化更高阶结构。
 - WS 小世界模型的核心机制是什么？::保留局部规则格产生高聚类，并加入少量远程捷径显著缩短路径。
 - HW2-Q1.1 的配置模型何时拒绝样本？::实验子题 (a) 中整图出现任何自环或重边就全部拒绝重抽；(b)(c) 为理论推导明确允许非简单图。
+
+## 🧪 学完本节后可完成的作业
+
+- **可立即完成**：[[03-Projects/01-社交网络挖掘/课后作业/社交网络挖掘-课后作业-03-配置模型结构平衡与级联#1. 配置模型（25 分，Praty、Ziyi）|课后作业 03 题 1]]。
+- **为什么现在能做**：已区分 ER/WS/BA/配置机制，以及简单图与多重图的题面口径。
+- **提交产物**：stub matching、双边交换、度序列断言、聚类曲线与接受率。

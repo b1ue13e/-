@@ -15,10 +15,11 @@ STUDY_ROOT = ROOT / "02-Knowledge" / "🧠 学习系统"
 PROJECT_ROOT = ROOT / "03-Projects" / "课程作业"
 INDEX_PATH = PROJECT_ROOT / "33门课程正式作业索引.md"
 QLIB_PATH = (
-    STUDY_ROOT
+    ROOT
+    / "03-Projects"
+    / "金融与时序"
     / "03-量化金融"
-    / "18-实战作业说明书"
-    / "HW17-Qlib因子研究与成本敏感回测作业说明书.md"
+    / "HW17：Qlib 因子研究与成本敏感回测.md"
 )
 COURSE_PATTERN = re.compile(r"^(0[1-9]|1[0-7]|2[2-9]|3[0-7])-(.+)$")
 FORMAL_COURSE_DIRS = {
@@ -61,7 +62,7 @@ PLACEHOLDER_PATTERN = re.compile(r"\b(?:TODO|TBD)\b|待补|待完善", re.I)
 
 
 def parse_frontmatter(path: Path) -> tuple[dict, str]:
-    text = path.read_text(encoding="utf-8", errors="strict")
+    text = path.read_text(encoding="utf-8-sig", errors="strict").replace("\r\n", "\n")
     if not text.startswith("---\n"):
         return {}, text
     parts = text.split("---", 2)

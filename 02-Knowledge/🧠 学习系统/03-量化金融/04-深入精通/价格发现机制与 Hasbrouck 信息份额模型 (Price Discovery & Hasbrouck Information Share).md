@@ -1,19 +1,29 @@
 ---
 title: 价格发现机制与 Hasbrouck 信息份额模型 (Price Discovery & Hasbrouck Information Share)
-type: concept
-topic: "价格发现机制与 Hasbrouck 信息份额模型 (Price Discovery & Hasbrouck Information Share)"
-created: 2026-07-23
+type: study
+topic: 价格发现机制与 Hasbrouck 信息份额模型 (Price Discovery & Hasbrouck Information Share)
+created: '2026-07-23'
 status: ongoing
 difficulty: intermediate
 course: 量化金融
 importance: A
-tags: 
+tags:
+- 学习
+- 量化金融
 concept: []
 prerequisites: []
 related: []
-upstream: 
-downstream: 
+upstream: null
+downstream: null
+kind: concept
+flow: knowledge
+source: 本课程历史知识卡；原始来源 [待验证]
+source_url: https://english.sse.com.cn/start/trading/mechanism/。用于复核“在共同趋势成立后再估计信息份额，并对变量排序和残差协方差分解做敏感性分析”。
+accessed: '2026-08-06'
+license: link-only；正文为本地学习整理
+assessment_exempt: false
 ---
+
 # 价格发现机制与 Hasbrouck 信息份额模型 (Price Discovery & Hasbrouck Information Share)
 
 ---
@@ -174,7 +184,7 @@ import numpy as np
 import pandas as pd
 from statsmodels.tsa.vector_ar.vecm import VECM
 
-# 模拟两个强协整价格序列 P1 (领头) 与 P2 (跟随)
+## 模拟两个强协整价格序列 P1 (领头) 与 P2 (跟随)
 np.random.seed(42)
 common_trend = np.cumsum(np.random.normal(0, 1, 1000))
 P1 = common_trend + np.random.normal(0, 0.2, 1000) # 快速领头
@@ -182,7 +192,7 @@ P2 = np.roll(common_trend, 2) + np.random.normal(0, 0.5, 1000) # 滞后 2 个 Ti
 
 df = pd.DataFrame({'P1': P1, 'P2': P2}).dropna()
 
-# 拟合 1 阶阶 VECM 模型
+## 拟合 1 阶阶 VECM 模型
 model = VECM(df, k_ar_diff=1, coint_rank=1)
 vecm_res = model.fit()
 
@@ -389,3 +399,9 @@ print("VECM 残差协方差矩阵 omega:\n", vecm_res.sigma_u)
 - **反例压力测试**：在共同趋势成立后再估计信息份额，并对变量排序和残差协方差分解做敏感性分析。
 - **最小实验**：固定随机种子或冻结原始数据快照，同时保存基线、破坏条件后的对照组、关键中间量与失败日志。
 - **通过标准**：结论必须在样本外仍保持方向一致；若成本、延迟、参数扰动或结构突变使结论反转，就把该情形登记为适用边界而不是删除失败结果。
+
+## 🧪 学完本节后可完成的作业
+
+- **可完成**：[[03-Projects/金融与时序/03-量化金融/阶段作业/量化金融-阶段作业-04-盘口队列与挂单概率|盘口队列与挂单概率]]。
+- **为什么现在能做**：本卡已经提供该任务需要的定义、公式、条件或实现边界；若任务还依赖后续知识，先完成对应阶段 MOC 中排在本卡之后的知识卡。
+- **提交产物**：闭卷定义/推导、一个可复查计算或代码结果、一个失败案例，以及对适用边界的说明。

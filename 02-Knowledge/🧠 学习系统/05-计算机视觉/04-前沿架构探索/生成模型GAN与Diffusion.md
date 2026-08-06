@@ -1,5 +1,6 @@
 ---
 type: study
+course: "05-计算机视觉"
 topic: "生成模型：GAN与Diffusion"
 created: 2026-08-05
 status: ongoing
@@ -8,6 +9,7 @@ concept: ["生成模型","GAN","Diffusion","生成器","判别器","去噪"]
 prerequisites: ["卷积神经网络CNN","反向传播"]
 related: ["VAE","StableDiffusion","自监督学习"]
 flow: knowledge
+stage_moc: "[[04-前沿架构探索/🚀 第四阶段：前沿架构探索]]"
 kind: concept
 source: "D2L Ch.17; CS231n A3"
 anki_deck: "05-计算机视觉::04-前沿架构探索"
@@ -377,3 +379,28 @@ class DDPM:
   - [[Transformer与自注意力]] — DiT (Diffusion Transformer) 连接点
 - **建议标签**：`#学习` `#计算机视觉` `#生成模型` `#GAN` `#Diffusion` `#DDPM` `#AIGC`
 - **拆分建议**：本卡为概念主卡，覆盖 GAN 与 Diffusion 的核心对比。后续可拆分 GAN 稳定性专题（WGAN/WGAN-GP）、Diffusion 加速专题（DDIM/DPM-Solver）、Flow Matching 新范式。
+
+---
+
+## 🧪 学完本节后可完成的作业
+
+- 配合 [[03-Projects/课程作业/05-计算机视觉/课后习题/D2L-Ch17-生成对抗网络习题册|D2L-Ch17 习题册]]
+
+---
+---
+
+## 🔗 知识图谱
+
+```dataview
+LIST
+FROM "02-Knowledge/🧠 学习系统"
+WHERE contains(upstream, this.file.link)
+SORT file.name ASC
+```
+
+```dataview
+LIST
+FROM "03-Projects"
+WHERE contains(requires, this.file.link)
+SORT assignment_level ASC, file.name ASC
+```

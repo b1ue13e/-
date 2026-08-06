@@ -1,5 +1,6 @@
 ---
 type: study
+course: "05-计算机视觉"
 topic: "批归一化与训练优化 (Batch Normalization)"
 created: 2026-08-05
 status: ongoing
@@ -14,6 +15,7 @@ related:
   - "GroupNorm"
   - "ResNet残差网络"
 flow: knowledge
+stage_moc: "[[02-深度学习内核/🧠 第二阶段：深度学习内核]]"
 kind: concept
 source: "CS231n A2; D2L Ch.8"
 anki_deck: "05-计算机视觉::02-深度学习内核"
@@ -456,3 +458,28 @@ with torch.no_grad():
   - [[02-Knowledge/🧠 学习系统/05-计算机视觉/02-深度学习内核/梯度流问题|梯度流问题]]
   - [[02-Knowledge/🧠 学习系统/05-计算机视觉/02-深度学习内核/权重正则化|权重正则化]]
 - **建议标签**：`#学习` `#深度学习` `#计算机视觉` `#BatchNorm` `#批归一化` `#训练优化` `#归一化层`
+
+---
+
+## 🧪 学完本节后可完成的作业
+
+- 可直接完成 [[03-Projects/课程作业/05-计算机视觉/课后作业/🎓 HW03 - 小型 CNN 与训练工程正式作业说明书|HW03]] BatchNorm 实现与 train/eval 模式切换
+
+---
+---
+
+## 🔗 知识图谱
+
+```dataview
+LIST
+FROM "02-Knowledge/🧠 学习系统"
+WHERE contains(upstream, this.file.link)
+SORT file.name ASC
+```
+
+```dataview
+LIST
+FROM "03-Projects"
+WHERE contains(requires, this.file.link)
+SORT assignment_level ASC, file.name ASC
+```

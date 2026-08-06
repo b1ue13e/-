@@ -1,7 +1,7 @@
 ---
 title: TWAP 时间加权平均价格 (Time-Weighted Average Price)
 date: 2026-07-23
-type: concept
+type: study
 course: 量化金融
 importance: B
 tags:
@@ -17,8 +17,22 @@ upstream:
 - '[[市场冲击成本模型与平方根法则 (Market Impact Models & Square-Root Law)|冲击成本模型]]'
 downstream:
 - '[[Almgren-Chriss 最优算法执行轨迹推导 (Almgren-Chriss Optimal Execution)|Almgren-Chriss最优执行轨迹推导]]'
-status: learning
+status: planned
+kind: concept
+flow: knowledge
+topic: TWAP 时间加权平均价格 (Time-Weighted Average Price)
+created: '2026-08-06'
+difficulty: intermediate
+concept: []
+prerequisites: []
+related: []
+source: 本课程历史知识卡；原始来源 [待验证]
+source_url: '[待验证]'
+accessed: '2026-08-06'
+license: link-only；正文为本地学习整理
+assessment_exempt: false
 ---
+
 # TWAP 时间加权平均价格 (Time-Weighted Average Price)
 
 ---
@@ -177,7 +191,7 @@ def generate_twap_schedule(total_quantity, duration_minutes, interval_minutes=1)
     
     return schedule
 
-# 需在 60 分钟内买入 100,000 股，每 5 分钟下一次单 (12 个时间片)
+## 需在 60 分钟内买入 100,000 股，每 5 分钟下一次单 (12 个时间片)
 schedule = generate_twap_schedule(100000, 60, interval_minutes=5)
 print("TWAP 12 个时间片的拆单计划:", schedule)
 ```
@@ -374,3 +388,9 @@ print("TWAP 12 个时间片的拆单计划:", schedule)
 - **反例压力测试**：在不同成交量曲线和波动率曲线下对比等时切片，确认 TWAP 的基准适用边界。
 - **最小实验**：固定随机种子或冻结原始数据快照，同时保存基线、破坏条件后的对照组、关键中间量与失败日志。
 - **通过标准**：结论必须在样本外仍保持方向一致；若成本、延迟、参数扰动或结构突变使结论反转，就把该情形登记为适用边界而不是删除失败结果。
+
+## 🧪 学完本节后可完成的作业
+
+- **可完成**：[[03-Projects/金融与时序/03-量化金融/阶段作业/量化金融-阶段作业-04-Almgren-Chriss最优执行|Almgren-Chriss最优执行]]。
+- **为什么现在能做**：本卡已经提供该任务需要的定义、公式、条件或实现边界；若任务还依赖后续知识，先完成对应阶段 MOC 中排在本卡之后的知识卡。
+- **提交产物**：闭卷定义/推导、一个可复查计算或代码结果、一个失败案例，以及对适用边界的说明。
