@@ -1,5 +1,0 @@
-epoch,stage,train_loss,val_loss,val_accuracy,learning_rate,elapsed_minutes,notes
-1,frozen,1.245,1.102,0.610,0.001000,2.5,head warmup
-2,frozen,1.083,0.964,0.655,0.001000,2.4,stable improvement
-1,finetune,0.982,0.841,0.702,0.000100,4.1,unfreeze last block
-2,finetune,0.901,0.790,0.731,0.000100,4.0,class dog improves

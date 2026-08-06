@@ -1,4 +1,0 @@
-image_id,split,class_name,gt_count,pred_count,tp,fp,fn,best_iou,score_threshold,note
-2007_000001,val,cat,1,1,1,0,0,0.78,0.50,correct detection
-2007_000002,val,dog,1,2,1,1,0,0.63,0.50,one extra false positive
-2007_000003,val,person,1,0,0,0,1,0.00,0.50,missed due to occlusion

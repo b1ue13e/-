@@ -1,8 +1,0 @@
-{
-  "dataset": "cifar10-transfer-placeholder",
-  "backbone": "resnet18",
-  "freeze_strategy": "all_backbone",
-  "finetune_strategy": "last_block_and_head",
-  "metric": "accuracy",
-  "notes": "This is a teacher-side protocol template, not a finished experiment config."
-}
