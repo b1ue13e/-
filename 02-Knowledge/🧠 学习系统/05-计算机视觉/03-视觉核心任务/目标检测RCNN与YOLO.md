@@ -6,7 +6,7 @@ created: 2026-08-05
 status: ongoing
 difficulty: intermediate
 concept: ["目标检测","R-CNN","YOLO","IoU","NMS","mAP"]
-prerequisites: ["卷积神经网络CNN","Softmax分类器"]
+prerequisites: ["卷积神经网络CNN","Softmax与SVM损失函数"]
 related: ["FPN","SSD","FasterRCNN","语义分割"]
 flow: knowledge
 upstream: ["[[02-Knowledge/🧠 学习系统/05-计算机视觉/02-深度学习内核/卷积神经网络CNN]]", "[[02-Knowledge/🧠 学习系统/05-计算机视觉/02-深度学习内核/Softmax与SVM损失函数]]"]
