@@ -95,6 +95,19 @@ def main():
         for lk in re.findall(r'\[\[([^\]]+)\]\]', up):
             if not resolve(lk, os.path.dirname(path)):
                 issues.append(f'[upstream死链] {rel}: {lk}')
+        # 正文 wikilink 可解析性（跳过 frontmatter 与代码围栏；处理 \\| 转义）
+        body = content.split('---', 2)[2] if content.startswith('---') else content
+        in_fence = False
+        for i, line in enumerate(body.split('\n'), 1):
+            if re.match(r'^\s*(```|~~~)', line):
+                in_fence = not in_fence
+                continue
+            if in_fence:
+                continue
+            for raw in re.findall(r'\[\[([^\]]+)\]\]', line):
+                target = re.sub(r'\\\|.*$', '', raw).split('#')[0].strip().removesuffix('.md')
+                if not resolve(target, os.path.dirname(path)):
+                    issues.append(f'[正文死链] {rel}:{i} [[{raw[:60]}]]')
         # 空壳检测：<1500 字节
         if os.path.getsize(path) < 1500:
             issues.append(f'[疑似空壳] {rel}: {os.path.getsize(path)} 字节')
