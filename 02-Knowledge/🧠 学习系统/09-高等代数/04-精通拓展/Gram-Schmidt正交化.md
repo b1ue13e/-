@@ -2,64 +2,158 @@
 type: study
 topic: "Gram-Schmidt正交化"
 course: "高等代数"
-stage: "🌟 第三阶段：进阶提升"
-module: "模块1：内积与正交结构"
-created: 2026-04-18
+created: 2026-08-06
 status: ongoing
-difficulty: advanced
-concept: ["Gram-Schmidt正交化"]
-prerequisites: ["长度与角度"]
-related: ["正交补", "正交变换"]
-source_textbook: ["高等代数（第5版）", "Linear Algebra Done Right"]
-source_sections: ["第7章", "Inner Product Spaces"]
-learning_objectives: ["说明 Gram-Schmidt正交化 在“模块1：内积与正交结构”里解决的具体问题", "把 Gram-Schmidt正交化 对应回 第7章", "用一个最小例子或代表题解释 Gram-Schmidt正交化 的作用"]
-deliverables: ["一句话定义或项目目标", "一个最小例子/代表题/最小实验", "一条易错点或跨路径连接", "能解释内积空间里长度、角度、投影的意义，并完成一次正交化过程。"]
-tags: ["高等代数", "学习"]
+difficulty: intermediate
+concept: ["Gram-Schmidt", "标准正交基", "QR分解前置", "正交化算法"]
+stage_moc: "[[🚀 第四阶段：内积空间与谱理论]]"
+upstream: ["[[正交投影与正交分解]]"]
+flow: knowledge
+kind: concept
+source: "Hefferon Linear Algebra Ch.6 §6.4 + MIT 18.06SC Lec 17；参考高等代数（第5版）"
+source_url: "https://hefferon.net/linearalgebra/"
+accessed: 2026-08-06
+license: "CC BY-SA 4.0（Hefferon）；MIT OCW（18.06SC）"
+tags: [高等代数, 线性代数, Gram-Schmidt]
 ---
-# Gram-Schmidt正交化
 
-> 所属路径：[[🗺️ 高等代数学习路径|高等代数学习路径]]
-> 所属阶段：[[🌟 第三阶段：进阶提升|返回阶段页]]
-> 所属模块：`模块1：内积与正交结构`
+# Gram-Schmidt 正交化
 
-## 为什么学
-- 这张卡位于“模块1：内积与正交结构”，用来解决：为什么长度、角度、投影和正交化会改变你看待空间的方式？
-- 它是你从 [[长度与角度]] 走向 [[正交补]]、[[正交变换]] 的桥梁。
+> **核心问题**：给一组线性无关的向量，怎么造出一组"同样张成、但两两垂直且单位长"的向量？——Gram-Schmidt 算法。
 
-## 教材定位
-- 主教材：`高等代数（第5版）`、`Linear Algebra Done Right`
-- 对应章节：第7章；Inner Product Spaces
-- 阶段入口：[[🌟 第三阶段：进阶提升|🌟 第三阶段：进阶提升]]
+## 0. 先判断它值不值得深挖
 
-## 必须掌握
-- 用自己的话定义 `Gram-Schmidt正交化`，并说清它的边界。
-- 解释 `Gram-Schmidt正交化` 为什么是“为什么长度、角度、投影和正交化会改变你看待空间的方式？”这条问题链的一部分。
-- 说明它和同阶段相邻概念的区别与联系。
+| 分类 | 评估 |
+|:--|:--|
+| 价值等级 | **A** — 正交化是"换坐标系"的核心算法，QR 分解（4.6）的直接来源 |
+| 理由 | 每个内积空间都有正交基（由 G-S 构造）；$P=QQ^T$、最小二乘、QR 全部依赖它 |
+| 投入建议 | 必须能手算 G-S（含归一化）、理解"减去投影"的几何，并联系 QR |
 
-## 关键问题
-- Gram-Schmidt正交化 在“模块1：内积与正交结构”这条主线里具体负责哪一步？
-- 如果忽略 Gram-Schmidt正交化，为什么长度、角度、投影和正交化会改变你看待空间的方式？ 会在哪一步断掉？
-- Gram-Schmidt正交化 和相邻概念的边界是什么？
+## 1. 这个知识点解决什么问题？
 
-## 最小例子
-- 场景：
-- 输入：
-- 关键一步：
-- 结论：
+正交基的坐标 = 投影系数（4.3），计算极简；但任意基通常不正交。本卡给出**算法**：从任意无关组 $\mathbf{v}_1,\dots,\mathbf{v}_k$ 出发，依次"减去在前面的正交方向上的投影"，得到正交组，再归一化。保证 $\operatorname{span}\{\mathbf{q}_1,\dots,\mathbf{q}_i\}=\operatorname{span}\{\mathbf{v}_1,\dots,\mathbf{v}_i\}$ 对每个 $i$ 成立。
 
-## 练习与输出
-- [ ] 写 3-5 行自己的定义或项目目标。
-- [ ] 补一个最小例子、例题、推导片段或实验记录。
-- [ ] 记录一个易错点，或补一条跨路径连接。
+## 2. 它为什么重要？它有什么用？
 
-## 完成标准
-- [ ] 能解释内积空间里长度、角度、投影的意义，并完成一次正交化过程。
-- [ ] 能独立解释这张卡在本阶段中的位置。
-- [ ] 能把教材章节和这张卡一一对应。
+- **正交基存在性**：任何有限维内积空间有 ONB——理论基石。
+- **QR 分解**：$A=QR$，$R$ 上三角（4.6）——数值线性代数主力。
+- **简化投影**：ONB 下 $P=QQ^T$（4.4 特例）。
+- **应用**：多项式正交化（Legendre）、数值稳定性（修正 G-S）、特征值迭代（Arnoldi/Lanczos）。
 
-## 前后连接
-- 前置：[[长度与角度]]
-- 相关：[[正交补]]、[[正交变换]]
-- 返回阶段页：[[🌟 第三阶段：进阶提升|🌟 第三阶段：进阶提升]]
+## 3. 学它之前需要哪些前置知识？
 
-*创建于：2026-04-18*
+1. [[正交投影与正交分解|正交投影与正交分解]]：投影公式。
+2. [[正交与正交补|正交与正交补]]：正交性。
+3. [[线性无关与线性相关|线性无关]]（阶段 I）：无关组假设。
+
+## 4. 定义复述
+
+### 4.1 经典 Gram-Schmidt
+
+输入：线性无关组 $\mathbf{v}_1,\dots,\mathbf{v}_k$。输出：正交组 $\mathbf{w}_1,\dots,\mathbf{w}_k$（后归一化 $\mathbf{q}_i=\mathbf{w}_i/\lVert\mathbf{w}_i\rVert$）。
+
+$$\mathbf{w}_1=\mathbf{v}_1,\qquad \mathbf{w}_i=\mathbf{v}_i-\sum_{j=1}^{i-1}\frac{\langle\mathbf{v}_i,\mathbf{w}_j\rangle}{\lVert\mathbf{w}_j\rVert^2}\mathbf{w}_j$$
+
+即：从 $\mathbf{v}_i$ 中减去它在前面每个 $\mathbf{w}_j$ 方向上的投影。
+
+### 4.2 例子（$\mathbb{R}^2$）
+
+$\mathbf{v}_1=(1,1)$，$\mathbf{v}_2=(1,0)$：
+- $\mathbf{w}_1=(1,1)$；
+- $\mathbf{w}_2=(1,0)-\frac{1}{2}(1,1)=(\tfrac12,-\tfrac12)$；
+- 归一化：$\mathbf{q}_1=(\frac1{\sqrt2},\frac1{\sqrt2})$，$\mathbf{q}_2=(\frac1{\sqrt2},-\frac1{\sqrt2})$。
+
+验证：$\langle\mathbf{q}_1,\mathbf{q}_2\rangle=\frac12-\frac12=0$ ✓。
+
+### 4.3 修正 Gram-Schmidt（数值稳定版）
+
+在第 $i$ 步内先对每个 $j<i$ 逐次减去投影并立即更新 $\mathbf{v}_i$（避免浮点误差累积），数学上等价。
+
+## 5. 直觉与图像
+
+- 每步 = "把 $\mathbf{v}_i$ 从已建好的正交墙里'剥离'出垂直分量"。
+- 先投影、再相减、最后归一化——"削去已有方向，留下新方向"。
+- 数值上：修正版相当于"每次减一点点"，经典版"一次减很多"更易损失正交性。
+
+> **一句话本质**：G-S = 逐向量"减去对已有正交方向的投影"，把任意无关组变成同张成的 ONB。
+
+## 6. 定理陈述与证明重建
+
+### 定理：G-S 输出是正交组且张成不变
+
+**前提**：$\mathbf{v}_1,\dots,\mathbf{v}_k$ 线性无关；**结论**：$\mathbf{w}_i$ 两两正交，$\operatorname{span}\{\mathbf{w}_1,\dots,\mathbf{w}_i\}=\operatorname{span}\{\mathbf{v}_1,\dots,\mathbf{v}_i\}$ 对每个 $i$。
+
+**证明主线（归纳）**：
+- $i=1$ 平凡；假设前 $i-1$ 个已正交且张成不变；
+- $\mathbf{w}_i$ 是 $\mathbf{v}_i$ 减去在前 $i-1$ 个 $\mathbf{w}_j$ 上的投影，故 $\mathbf{w}_i\in\operatorname{span}\{\mathbf{v}_1,\dots,\mathbf{v}_i\}$ 且 $\operatorname{span}$ 保持（可逆三角变换）；
+- 正交性：$\langle\mathbf{w}_i,\mathbf{w}_j\rangle=\langle\mathbf{v}_i,\mathbf{w}_j\rangle-\sum_{j'}\frac{\langle\mathbf{v}_i,\mathbf{w}_{j'}\rangle}{\lVert\mathbf{w}_{j'}\rVert^2}\langle\mathbf{w}_{j'},\mathbf{w}_j\rangle=\langle\mathbf{v}_i,\mathbf{w}_j\rangle-\frac{\langle\mathbf{v}_i,\mathbf{w}_j\rangle}{\lVert\mathbf{w}_j\rVert^2}\lVert\mathbf{w}_j\rVert^2=0$。$\square$
+
+**关键"转念"**：减去"投影"正是为了制造"垂直"——$\langle\mathbf{v}-\operatorname{proj}_W\mathbf{v},W\rangle=0$ 是 4.4 的构造回放。
+
+### 定理：QR 分解（G-S 的矩阵形式，4.6 详证）
+
+$A=QR$：$Q$ 的列 = $\mathbf{q}_i$，$R_{ij}=\langle\mathbf{v}_j,\mathbf{q}_i\rangle$（$i\le j$），上三角。
+
+## 7. 经典反例库
+
+### 反例 1：输入线性相关会中途出零
+
+$\mathbf{v}_2=2\mathbf{v}_1$ 时 $\mathbf{w}_2=\mathbf{0}$，归一化失败——G-S 要求输入无关。
+
+### 反例 2：经典版数值不稳定
+
+$\mathbf{v}_1=(1,10^{-8})$，$\mathbf{v}_2=(1,0)$（浮点下）：经典版 $\mathbf{w}_2$ 的小分量被吃掉，正交性严重损失——修正版逐个减投影可缓解。
+
+### 反例 3：$\mathbf{w}_i$ 的顺序影响结果
+
+G-S 与输入顺序有关：交换 $\mathbf{v}_1,\mathbf{v}_2$ 会得到不同的 ONB（但张成相同）——"正交化结果依赖顺序"。
+
+## 8. 条件变式
+
+| 变式方向 | 具体变化 | 影响 |
+|:--|:--|:--|
+| 弱化：输入相关 | 输出零向量 | 需先剔除相关 |
+| 加强：归一化 | ONB | $P=QQ^T$ 成立 |
+| 换空间：函数空间 | Legendre 多项式 | 正交多项式理论 |
+| 换视角：QR | $A=QR$ | 4.6 数值算法 |
+| 修正：逐次减法 | 数值稳定 | 修正 G-S |
+
+## 9. 相关知识点与 Obsidian 双链建议
+
+- [[正交投影与正交分解|正交投影与正交分解]] — 上游
+- [[QR分解|QR 分解]] — 下游：矩阵形式
+- [[正交矩阵|正交矩阵]] — 横向：$Q$ 的性质
+- [[最小二乘法|最小二乘法]] — 横向：QR 解法
+- [[长度角度与Cauchy-Schwarz不等式|Cauchy-Schwarz]] — 横向：投影公式
+
+## 10. 闭卷验收（数学模式）
+
+- [ ] **算法默写**：G-S 递推公式；修正版区别。
+- [ ] **证明**：输出正交且张成不变（归纳）。
+- [ ] **计算**：对 $\mathbb{R}^3$ 三向量手算 G-S。
+- [ ] **反例**：线性相关输入；数值不稳定。
+
+## 11. 分级习题
+
+| 等级 | 题目 | 来源 |
+|:--|:--|:--|
+| ★ | 对 $(1,1)$、$(1,0)$ 做 G-S 并归一化 | Hefferon §6.4 |
+| ★★★ | 证明：$R$ 上三角且 $A=QR$ 中 $Q$ 的列由 G-S 给出 | MIT 18.06 Lec 17 |
+| ★★★ | 用 G-S 将 $\{1,x,x^2\}$（$\mathcal{P}_2$，标准积分内积）正交化，得前三个 Legendre 多项式 | 高等代数（第5版） |
+| ★★★★ | 证明修正 G-S 与经典 G-S 数学等价（归纳） | Trefethen & Bau |
+
+## 12. 我的主动回忆区
+
+> 不看上文：写 G-S 公式；手算一次；解释"减去投影造垂直"；说明经典与修正版差别。
+
+## 13. 学完后可以完成
+
+```dataview
+LIST
+FROM "03-Projects"
+WHERE contains(requires, this.file.link)
+SORT assignment_level ASC, file.name ASC
+```
+
+---
+*创建于：2026-08-06 | 来源：Hefferon Ch.6 §6.4 + MIT 18.06SC Lec 17 + 高等代数（第5版）；旧空壳（Gram-Schmidt正交化）于 2026-08-06 重写*

@@ -1,108 +1,173 @@
 ---
-title: "奇异值分解 SVD (Singular Value Decomposition)"
-course: "09-高等代数"
-tags:
-  - 高等代数
-  - 矩阵论
-  - 奇异值分解
-  - SVD
-  - 正交变换
-  - 低秩近似
-type: knowledge_card
-status: completed
-created: 2026-08-01
+type: study
+topic: "奇异值分解(SVD)"
+course: "高等代数"
+created: 2026-08-06
+status: ongoing
+difficulty: advanced
+concept: ["奇异值分解", "奇异值", "左奇异向量", "右奇异向量", "Eckart-Young定理"]
+stage_moc: "[[🚀 第四阶段：内积空间与谱理论]]"
+upstream: ["[[实对称矩阵与谱定理]]", "[[正交矩阵与正交变换]]"]
+flow: knowledge
+kind: concept
+source: "Hefferon Linear Algebra Ch.6（延伸）+ MIT 18.06SC Lec 29；参考 Trefethen & Bau"
+source_url: "https://hefferon.net/linearalgebra/"
+accessed: 2026-08-06
+license: "CC BY-SA 4.0（Hefferon）；MIT OCW（18.06SC）"
+tags: [高等代数, 线性代数, SVD, 奇异值]
 ---
 
-# 奇异值分解 SVD (Singular Value Decomposition)
+# 奇异值分解（SVD）
 
-## 1. 奇异值分解 SVD 的定义与几何意义
+> **核心问题**：任意（包括长方形）矩阵的"终极分解"是什么？——$A=U\Sigma V^T$。
 
-**奇异值分解 SVD (Singular Value Decomposition)** 的核心定义是：将任意 $m \times n$ 实矩阵 $A$ 唯一因子分解为正交矩阵 $U$、对角矩阵 $\Sigma$ 和正交矩阵 $V^T$ 乘积的矩阵谱分解算法。由 Beltrami (1873) 和 Jordan (1874) 最初提出，并由 Eckart & Young (1936) 推广至矩阵近似。
+## 0. 先判断它值不值得深挖
 
-**基本性质与几何意义**：
-1. **任意矩阵通用性**：与仅适用于方阵的特征值分解不同，奇异值分解 SVD 适用于任何形状的长方形矩阵；
-2. **三步几何变换**：将 $n$ 维空间中的单位超球体先进行旋转/反射 ($V^T$)，再沿主轴按奇异值 $\sigma_i$ 缩放 ($\Sigma$)，最后在 $m$ 维空间中再次旋转/反射 ($U$)；
-3. **最佳低秩近似 (Eckart-Young 定理)**：截取前 $k$ 个最大奇异值构造的矩阵 $A_k = U_k \Sigma_k V_k^T$ 是原矩阵在 F-范数与 2-范数意义下的最佳 $k$-阶低秩逼近。
+| 分类 | 评估 |
+|:--|:--|
+| 价值等级 | **A** — SVD 是线性代数最重要的单一定理，适用于一切矩阵 |
+| 理由 | 秩、范数、伪逆、低秩逼近、PCA 全部以 SVD 为内核；数值线性代数基石 |
+| 投入建议 | 必须能证明 SVD（用 $A^TA$ 谱定理）、理解几何意义、应用 Eckart-Young |
 
----
+## 1. 这个知识点解决什么问题？
 
-## 2. 奇异值 decomposition 形式化推导与 Eckart-Young 定理
+特征分解只对（可对角化的）方阵有效。**SVD** 对任意 $m\times n$ 矩阵 $A$ 给出 $A=U\Sigma V^T$：$U,V$ 正交，$\Sigma$ 对角（奇异值 $\sigma_1\ge\cdots\ge\sigma_r>0$）。构造：$A^TA$ 是对称半正定，谱定理 ⟹ $V\Lambda V^T$；奇异值 $\sigma_i=\sqrt{\lambda_i}$，$U$ 由 $\mathbf{u}_i=A\mathbf{v}_i/\sigma_i$ 补全。它回答"矩阵在不同方向上的伸缩"——**矩阵的完整几何**。
 
-**矩阵分解假设**：
-设 $A \in \mathbb{R}^{m \times n}$，秩为 $r \le \min(m, n)$。
+## 2. 它为什么重要？它有什么用？
 
-**推导过程（与对称阵 $A^T A$ / $A A^T$ 特征分解联系）**：
-1. 构造对称半正定矩阵 $A^T A \in \mathbb{R}^{n \times n}$，其特征分解为：
-$$A^T A = V \Lambda V^T, \quad \text{其中 } V = [\mathbf{v}_1, \dots, \mathbf{v}_n]$$
-特征值为 $\lambda_1 \ge \lambda_2 \ge \dots \ge \lambda_r > 0 = \dots = 0$；
-2. 定义奇异值为 $\sigma_i = \sqrt{\lambda_i} > 0 \; (i=1,\dots,r)$。构造 $\mathbf{u}_i = \frac{1}{\sigma_i} A \mathbf{v}_i \in \mathbb{R}^m$；
-3. 验证 $\mathbf{u}_i$ 的正交性：
-$$\mathbf{u}_i^T \mathbf{u}_j = \frac{1}{\sigma_i \sigma_j} \mathbf{v}_i^T A^T A \mathbf{v}_j = \frac{1}{\sigma_i \sigma_j} \mathbf{v}_i^T (\lambda_j \mathbf{v}_j) = \frac{\lambda_j}{\sigma_i \sigma_j} \delta_{ij} = \delta_{ij}$$
-4. **矩阵标准分解式**：扩充 $\mathbf{u}_i$ 与 $\mathbf{v}_j$ 构成完备正交基 $U \in \mathbb{R}^{m \times m}, V \in \mathbb{R}^{n \times n}$，则：
-$$A = U \Sigma V^T$$
-5. **因此**，$A A^T = U \Sigma \Sigma^T U^T$，即左奇异向量 $U$ 是 $A A^T$ 的特征向量，右奇异向量 $V$ 是 $A^T A$ 的特征向量。
+- **秩揭示**：$\operatorname{rank}A$ = 非零奇异值个数；$\lVert A\rVert_2=\sigma_1$；$\lVert A\rVert_F=\sqrt{\sum\sigma_i^2}$。
+- **低秩逼近**：Eckart-Young——截断 SVD 是最佳 $k$ 秩逼近。
+- **伪逆**：$A^\dagger=V\Sigma^{-1}U^T$——最小二乘的统一解。
+- **PCA/降维**：数据矩阵的 SVD（4.12）。
+- **应用**：图像压缩、推荐系统（SVD++）、搜索引擎（LSI）、条件数 $\kappa=\sigma_1/\sigma_r$。
 
----
+## 3. 学它之前需要哪些前置知识？
 
-## 3. 奇异值分解 SVD 与 特征值分解 (EVD) 对比
+1. [[实对称矩阵与谱定理|实对称矩阵与谱定理]]：$A^TA$ 的正交对角化。
+2. [[正交矩阵与正交变换|正交矩阵与正交变换]]：$U,V$ 性质。
+3. [[正定矩阵与二次型|半正定]]：$A^TA\succeq0$。
 
-| 维度 | 奇异值分解 SVD | 特征值分解 EVD |
-|:---|:---|:---|
-| **适用矩阵范围** | **任意 $m \times n$ 实/复矩阵** | 仅适用于 $n \times n$ 方阵（且需可对角化） |
-| **分解形式** | $A = U \Sigma V^T$ (左右两个不同正交阵) | $A = P \Lambda P^{-1}$ (同一个特征向量矩阵) |
-| **向量正交性** | **$U, V$ 必为正交矩阵** | 仅在 $A$ 为对称阵时特征向量才正交 |
-| **对角元素含义** | 奇异值 $\sigma_i \ge 0$ (实数且非负) | 特征值 $\lambda_i$ (可为复数或负数) |
-| **工程应用** | 图像压缩、推荐系统 (SVD++)、PCA | 动力系统 stability、解微分方程组 |
+## 4. 定义复述
 
-**局限（误区与反例）**：奇异值不等于特征值（仅对对称半正定阵两者重合）；对大规模稀疏矩阵，全量 SVD 计算复杂度为 $O(m n \min(m, n))$，实践中采用随机化 SVD (Randomized SVD) 或 Lanczos 迭代法加速。
+### 4.1 SVD（约化形式）
 
-关联知识点推荐：[[特征值与特征向量]]、[[主成分分析PCA]]、[[凸优化与拉格朗日对偶]]、[[快速傅里叶变换FFT]]。
+$A\in\mathbb{R}^{m\times n}$（$m\ge n$），$\operatorname{rank}A=r$：
 
----
+$$A=U\Sigma V^T$$
 
-## 4. Python Numpy 矩阵 SVD 重构与低秩近似自测断言
+- $U\in\mathbb{R}^{m\times r}$：左奇异向量（$C(A)$ 的 ONB）；
+- $V\in\mathbb{R}^{n\times r}$：右奇异向量（$C(A^T)$ 的 ONB）；
+- $\Sigma=\operatorname{diag}(\sigma_1,\dots,\sigma_r)$，$\sigma_1\ge\cdots\ge\sigma_r>0$。
 
-```python
-import numpy as np
+（全形式扩充 $U,V$ 到 $\mathbb{R}^m,\mathbb{R}^n$ 的正交基，$\Sigma$ 补零块。）
 
-def svd_low_rank_approx(A: np.ndarray, k: int) -> np.ndarray:
-    """手动对矩阵 A 进行 k-阶低秩 SVD 近似重构"""
-    U, S, Vt = np.linalg.svd(A, full_matrices=False)
-    # 截取前 k 个奇异值
-    Uk = U[:, :k]
-    Sk = np.diag(S[:k])
-    Vtk = Vt[:k, :]
-    return Uk @ Sk @ Vtk
+### 4.2 构造（核心推导）
 
-if __name__ == "__main__":
-    np.random.seed(42)
-    # 构造 5x4 秩为 2 的测试矩阵
-    U_true = np.linalg.qr(np.random.randn(5, 2))[0]
-    V_true = np.linalg.qr(np.random.randn(4, 2))[0]
-    S_true = np.array([10.0, 3.0])
-    A = U_true @ np.diag(S_true) @ V_true.T
+1. $A^TA\in\mathbb{R}^{n\times n}$ 对称半正定，谱定理：$A^TA=V\Lambda V^T$，$\lambda_1\ge\cdots\ge\lambda_n\ge0$；
+2. $\sigma_i=\sqrt{\lambda_i}$（$i\le r$），$\sigma_i=0$（$i>r$）；
+3. $\mathbf{u}_i=\dfrac{1}{\sigma_i}A\mathbf{v}_i$（$i\le r$）——验证正交：$\langle\mathbf{u}_i,\mathbf{u}_j\rangle=\frac{1}{\sigma_i\sigma_j}\mathbf{v}_i^TA^TA\mathbf{v}_j=\frac{\lambda_j}{\sigma_i\sigma_j}\delta_{ij}=\delta_{ij}$；
+4. 扩充为 $\mathbb{R}^m$ 的 ONB（$r<m$ 时补 $N(A^T)$ 基）。
 
-    # 1. 检验全量 SVD 分解
-    U, S, Vt = np.linalg.svd(A, full_matrices=False)
-    assert np.allclose(S[:2], [10.0, 3.0]), "奇异值分解结果与真实奇异值不符"
+### 4.3 几何意义
 
-    # 2. k=2 低秩重构断言 (应 100% 精确还原 A)
-    A_rec = svd_low_rank_approx(A, k=2)
-    assert np.allclose(A, A_rec, atol=1e-5), "k=2 时 SVD 应该完全重构矩阵 A"
+$A$ 把单位球映为椭球：$V^T$（旋转）→ $\Sigma$（沿轴伸缩 $\sigma_i$）→ $U$（旋转）。$\sigma_i$ = 椭球半轴长。
 
-    # 3. k=1 截断低秩误差断言
-    A_k1 = svd_low_rank_approx(A, k=1)
-    err = np.linalg.norm(A - A_k1, ord='fro')
-    assert abs(err - 3.0) < 1e-4, f"F-范数截断误差应等于被忽略的奇异值 3.0, 实际: {err}"
+## 5. 直觉与图像
 
-    print(f"奇异值分解 SVD 计算成功! 奇异值: {S.round(2)}")
-    print(f"k=1 低秩近似 Frobenius 范数残差: {err:.4f} (符合理论值 3.0)")
-    print("奇异值分解 SVD 单元测试与自查验证全部成功！")
+- SVD = "任何矩阵都可以拆成 旋转-伸缩-旋转"：$V^T$ 先摆正、$\Sigma$ 逐轴缩放、$U$ 再摆到输出空间。
+- 奇异值 = "矩阵在各方向上的放大倍数"——最大奇异值 = 最大放大（谱范数）。
+- SVD 对长方形矩阵也成立——"特征分解做不到的，SVD 全能做"。
+
+> **一句话本质**：$A=U\Sigma V^T$ = 任意矩阵的"旋转×伸缩×旋转"分解；奇异值 = 伸缩倍数 = 矩阵的完整谱信息。
+
+## 6. 定理陈述与证明重建
+
+### 定理 1：SVD 存在性
+
+**证明主线**：由 4.2 构造直接给出 $A=U_r\Sigma_rV_r^T$；$r<m$ 时用 Gram-Schmidt 把 $U$ 扩充为 $\mathbb{R}^m$ 正交基、$\Sigma$ 补零行，$A=U\Sigma V^T$ 仍成立（补的部分贡献为零）。$\square$
+
+**关键"转念"**：**一切从 $A^TA$ 出发**——对称半正定的谱定理给 $V$ 和 $\sigma$，$U$ 是"推出来的"。
+
+### 定理 2：Eckart-Young 定理（低秩逼近）
+
+$A_k=U_k\Sigma_kV_k^T$（截取前 $k$ 个奇异值）满足
+
+$$\lVert A-A_k\rVert_2=\sigma_{k+1}=\min_{\operatorname{rank}B\le k}\lVert A-B\rVert_2,\qquad \lVert A-A_k\rVert_F=\sqrt{\sum_{i>k}\sigma_i^2}=\min_{\operatorname{rank}B\le k}\lVert A-B\rVert_F$$
+
+**证明主线**（要点，2-范数）：$\lVert A-A_k\rVert_2=\sigma_{k+1}$（直接算）；对任意 $\operatorname{rank}B\le k$，$\dim N(B)\ge n-k$，而 $V_{k+1}$ 张成 $(k+1)$ 维子空间与 $N(B)$ 有交，取单位 $\mathbf{z}$ 在交中：$\lVert A-B\rVert_2\ge\lVert(A-B)\mathbf{z}\rVert=\lVert A\mathbf{z}\rVert\ge\sigma_{k+1}$（$A\mathbf{z}$ 的范数 ≥ 第 $k+1$ 个奇异值方向的贡献）。$\square$
+
+**关键"转念"**：用**维数 + 交**论证（$N(B)\cap\operatorname{span}\{\mathbf{v}_1,\dots,\mathbf{v}_{k+1}\}\neq\{\mathbf{0}\}$）把"任何低秩逼近都不如截断 SVD"变成必然。
+
+### 定理 3：SVD 与四个基本子空间
+
+- $C(A)=\operatorname{span}\{\mathbf{u}_1,\dots,\mathbf{u}_r\}$，$N(A^T)=\operatorname{span}\{\mathbf{u}_{r+1},\dots,\mathbf{u}_m\}$；
+- $C(A^T)=\operatorname{span}\{\mathbf{v}_1,\dots,\mathbf{v}_r\}$，$N(A)=\operatorname{span}\{\mathbf{v}_{r+1},\dots,\mathbf{v}_n\}$。
+
+## 7. 经典反例库
+
+### 反例 1：奇异值 ≠ 特征值（一般矩阵）
+
+$A=\begin{bmatrix}1&1\\0&0\end{bmatrix}$：奇异值 $\sqrt2,0$；特征值 $1,0$——仅对称半正定时两者重合。
+
+### 反例 2：$U,V$ 不唯一
+
+$\sigma_i=\sigma_j$ 时对应奇异向量可旋转（如 $A=I$：任意正交 $U,V$）——分解不唯一但 $\Sigma$ 唯一（降序排列）。
+
+### 反例 3：$\lVert A\rVert_2=\sigma_1$ 不是 $\max|a_{ij}|$
+
+$\begin{bmatrix}1&1\\1&1\end{bmatrix}$：$\sigma_1=2$，但最大元是 1——谱范数看奇异值不看元素。
+
+### 反例 4：$AA^T$ 与 $A^TA$ 的非零特征值相同
+
+$\operatorname{rank}$ 相同的矩阵对：$AA^T=U\Sigma^2U^T$、$A^TA=V\Sigma^2V^T$——非零特征值都是 $\sigma_i^2$。
+
+## 8. 条件变式
+
+| 变式方向 | 具体变化 | 影响 |
+|:--|:--|:--|
+| 弱化：复矩阵 | $U^HU=I$ | 复 SVD |
+| 加强：$A$ 对称 | $U=V=Q$ | 退化为谱分解 |
+| 换视角：范数 | $\lVert A\rVert_2=\sigma_1$、$\lVert A\rVert_F$ | 矩阵范数（数值） |
+| 应用：伪逆 | $A^\dagger=V\Sigma^{-1}U^T$ | 最小二乘统一解 |
+| 随机化 | Randomized SVD | 大数据 |
+
+## 9. 相关知识点与 Obsidian 双链建议
+
+- [[实对称矩阵与谱定理|实对称矩阵与谱定理]]、[[正交矩阵与正交变换|正交矩阵]] — 上游
+- [[低秩逼近与PCA|低秩逼近与 PCA]] — 下游：Eckart-Young 应用
+- [[最小二乘法|最小二乘法]] — 横向：伪逆解
+- [[矩阵范数|矩阵范数]]（数值）— 横向：$\sigma_1$、$\sum\sigma_i^2$
+- [[伪逆|伪逆]]（数值）— 横向：$V\Sigma^{-1}U^T$
+
+## 10. 闭卷验收（数学模式）
+
+- [ ] **定义默写**：$A=U\Sigma V^T$ 与构造步骤。
+- [ ] **证明**：SVD 存在性；Eckart-Young（交论证）。
+- [ ] **计算**：给 $2\times2$ 手算 SVD。
+- [ ] **反例**：奇异值 vs 特征值；$U,V$ 不唯一。
+- [ ] **应用**：范数、伪逆、低秩逼近公式。
+
+## 11. 分级习题
+
+| 等级 | 题目 | 来源 |
+|:--|:--|:--|
+| ★ | 手算 $\begin{bmatrix}3&0\\0&2\end{bmatrix}$ 与 $\begin{bmatrix}1&1\\1&1\end{bmatrix}$ 的 SVD | MIT 18.06 Lec 29 |
+| ★★ | 证明：$\lVert A\rVert_2=\sigma_1$，$\lVert A\rVert_F^2=\sum\sigma_i^2$ | Trefethen & Bau |
+| ★★★ | 证明 Eckart-Young（2-范数，用维数+交） | Trefethen & Bau |
+| ★★★★ | 用 SVD 给出最小二乘解 $\hat{\mathbf{x}}=V\Sigma^{-1}U^T\mathbf{b}$ 并说明与正规方程关系 | 高等代数（第5版） |
+
+## 12. 我的主动回忆区
+
+> 不看上文：写 SVD 与构造；几何意义；Eckart-Young；$\lVert A\rVert_2$；伪逆公式。
+
+## 13. 学完后可以完成
+
+```dataview
+LIST
+FROM "03-Projects"
+WHERE contains(requires, this.file.link)
+SORT assignment_level ASC, file.name ASC
 ```
 
 ---
-
-## 5. 权威参考文献
-- Strang, G. (2016). *Introduction to Linear Algebra* (5th ed.). Wellesley-Cambridge Press. Chapter 7 (Singular Value Decomposition). ISBN: 978-0980232776. URL: math.mit.edu/linearalgebra/
-- Golub, G. H., & Van Loan, C. F. (2013). *Matrix Computations* (4th ed.). Johns Hopkins University Press. Chapter 2.4 (The Singular Value Decomposition). ISBN: 978-1421407944.
-- Eckart, C., & Young, G. (1936). The approximation of one matrix by another of lower rank. *Psychometrika*, 1(3), 211-218. DOI: https://doi.org/10.1007/BF02288367
+*创建于：2026-08-06 | 来源：Hefferon Ch.6 延伸 + MIT 18.06SC Lec 29 + Trefethen & Bau；旧卡（奇异值分解(SVD)、奇异值性质）合并/重写于 2026-08-06*
