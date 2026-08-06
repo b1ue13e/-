@@ -8,7 +8,7 @@ status: ongoing
 difficulty: advanced
 concept: ["CLIP", "对比学习", "多模态", "零样本分类", "图文对齐"]
 prerequisites: ["Transformer与自注意力", "SimCLR与对比学习", "Softmax与SVM损失函数"]
-upstream: ["[[02-Knowledge/🧠 学习系统/05-计算机视觉/04-前沿架构探索/Transformer与自注意力]]", "[[02-Knowledge/🧠 学习系统/05-计算机视觉/04-前沿架构探索/🎯 SimCLR 与对比学习 (Contrastive Learning)]]"]
+upstream: ["[[02-Knowledge/🧠 学习系统/05-计算机视觉/04-前沿架构探索/Transformer与自注意力]]", "[[02-Knowledge/🧠 学习系统/05-计算机视觉/04-前沿架构探索/🎯 SimCLR 与对比学习 (Contrastive Learning)]]", "[[02-Knowledge/🧠 学习系统/05-计算机视觉/02-深度学习内核/Softmax与SVM损失函数]]"]
 related: ["ViT", "DeiT", "生成模型GAN与Diffusion", "可解释性Saliency与CAM"]
 flow: knowledge
 stage_moc: "[[02-Knowledge/🧠 学习系统/05-计算机视觉/04-前沿架构探索/🚀 第四阶段：前沿架构探索]]"
