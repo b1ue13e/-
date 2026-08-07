@@ -6,9 +6,9 @@ created: 2026-08-06
 status: completed
 difficulty: intermediate
 concept: ["PVT", "ConvNeXt", "CoAtNet", "CNN-Transformer 融合", "金字塔结构"]
-prerequisites: ["ViT", "Swin", "CNN 基础"]
-related: ["Transformer与自注意力", "ViT", "SwinTransformer", "DeiT"]
-upstream: ["[[计算机视觉-ViT]]", "[[计算机视觉-SwinTransformer]]", "[[卷积神经网络CNN]]"]
+prerequisites: ["Transformer 基础", "CNN 基础"]
+related: ["Transformer与自注意力", "计算机视觉-ViT", "计算机视觉-SwinTransformer", "DeiT"]
+upstream: ["[[Transformer与自注意力]]", "[[卷积神经网络CNN]]"]
 flow: knowledge
 stage_moc: "[[🧭 阶段4-前沿架构探索]]"
 kind: concept
