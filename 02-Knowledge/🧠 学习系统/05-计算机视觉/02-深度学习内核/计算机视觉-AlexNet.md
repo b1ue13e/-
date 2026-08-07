@@ -20,7 +20,7 @@ related:
   - ResNet
 flow: knowledge
 upstream: ["[[卷积神经网络CNN]]", "[[激活函数详解]]"]
-stage_moc: "[[🧠 第二阶段：深度学习内核]]"
+stage_moc: "[[🧭 阶段2-深度学习内核]]"
 kind: concept
 source: "D2L Ch.8; Krizhevsky et al. 2012"
 anki_deck: "05-计算机视觉::02-深度学习内核"
@@ -39,7 +39,7 @@ tags:
 # AlexNet
 
 > 所属模块：[[🗺️ 计算机视觉学习路径|计算机视觉学习路径]]
-> 对应阶段：[[🧠 第二阶段：深度学习内核|返回阶段页]]
+> 对应阶段：[[🧭 阶段2-深度学习内核|返回阶段页]]
 > 前置知识：[[卷积神经网络CNN]]、[[激活函数详解]]
 > 主教材：D2L Ch.8；Krizhevsky, Sutskever & Hinton, "ImageNet Classification with Deep Convolutional Neural Networks" (NeurIPS 2012)
 
@@ -390,9 +390,9 @@ Flatten 前特征图: torch.Size([2, 256, 6, 6])
 - [[数据增强与正则化|Dropout]]：AlexNet 首次在大规模 CNN 中验证了 Dropout 的有效性。
 
 ### 下游延伸（后续演进）
-- [[VGGNet]]：2014 年，将 AlexNet 的 11×11 和 5×5 大卷积核全部替换为堆叠 3×3 小核，统一设计哲学（更深的直筒网络）。
-- [[🎯 ResNet (残差网络)|ResNet]]：2015 年，用残差连接解决"更深网络的退化问题"，突破了 AlexNet/VGG 的深度瓶颈。
-- [[GoogLeNet|GoogLeNet (Inception)]]：2014 年，与 VGGNet 同年，引入 Inception 多分支并行模块和全局平均池化替代大 FC 层。
+- [[计算机视觉-VGGNet]]：2014 年，将 AlexNet 的 11×11 和 5×5 大卷积核全部替换为堆叠 3×3 小核，统一设计哲学（更深的直筒网络）。
+- [[计算机视觉-ResNet|ResNet]]：2015 年，用残差连接解决"更深网络的退化问题"，突破了 AlexNet/VGG 的深度瓶颈。
+- [[计算机视觉-GoogLeNet|GoogLeNet (Inception)]]：2014 年，与 VGGNet 同年，引入 Inception 多分支并行模块和全局平均池化替代大 FC 层。
 
 ### 横向关联
 - [[批归一化BatchNorm|BatchNorm]] ↔ AlexNet：BN (2015) 取代了 AlexNet 中的 LRN，成为训练深层网络的标准组件。
@@ -494,12 +494,12 @@ Flatten 前特征图: torch.Size([2, 256, 6, 6])
 
 - **归档目录**：`02-Knowledge/🧠 学习系统/05-计算机视觉/02-深度学习内核/`
 - **建议双链**：
-  - [[🧠 第二阶段：深度学习内核|第二阶段：深度学习内核]]
+  - [[🧭 阶段2-深度学习内核|第二阶段：深度学习内核]]
   - [[卷积神经网络CNN|卷积神经网络 CNN]]
   - [[激活函数详解|激活函数详解]]
   - LeNet
-  - [[VGGNet]]
-  - [[🎯 ResNet (残差网络)|ResNet]]
+  - [[计算机视觉-VGGNet]]
+  - [[计算机视觉-ResNet|ResNet]]
   - [[数据增强与正则化|Dropout]]
 - **建议标签**：`#学习` `#计算机视觉` `#AlexNet` `#CNN架构` `#ImageNet` `#深度学习`
 

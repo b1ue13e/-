@@ -10,7 +10,7 @@ prerequisites: ["反向传播与计算图", "Softmax与SVM损失函数", "线性
 related: ["ViT","SwinTransformer","CLIP","CNN"]
 flow: knowledge
 upstream: ["[[Softmax与SVM损失函数]]", "[[批归一化BatchNorm]]"]
-stage_moc: "[[🚀 第四阶段：前沿架构探索]]"
+stage_moc: "[[🧭 阶段4-前沿架构探索]]"
 kind: concept
 source: "CS231n A3; D2L Ch.11"
 anki_deck: "05-计算机视觉::04-前沿架构探索"
@@ -289,8 +289,8 @@ class TransformerEncoderBlock(nn.Module):
 - Residual Connection：Add 操作的来源——ResNet 提出的跳跃连接是 Transformer 深层可训练的关键。
 
 ### 下游延伸
-- [[ViT]] (Vision Transformer)：将图像切割为 patch 序列，直接喂入 Transformer Encoder 做分类。
-- [[SwinTransformer]]：引入窗口注意力和移位窗口，让 Transformer 兼容高分辨率视觉任务。
+- [[计算机视觉-ViT]] (Vision Transformer)：将图像切割为 patch 序列，直接喂入 Transformer Encoder 做分类。
+- [[计算机视觉-SwinTransformer]]：引入窗口注意力和移位窗口，让 Transformer 兼容高分辨率视觉任务。
 - [[目标检测RCNN与YOLO]]：用 Transformer Encoder-Decoder + Object Query 做端到端目标检测。
 - [[自监督学习SimCLR与CLIP]]：双塔 Transformer + Cross-Modal Contrastive Loss 实现图文对齐。
 
@@ -413,8 +413,8 @@ class TransformerEncoderBlock(nn.Module):
 
 - **归档目录**：`04-前沿架构探索/`（已在此）
 - **建议双链**：
-  - [[ViT]] — Transformer 的 CV 分类直接应用
-  - [[SwinTransformer]] — 解决二次复杂度与多尺度问题
+  - [[计算机视觉-ViT]] — Transformer 的 CV 分类直接应用
+  - [[计算机视觉-SwinTransformer]] — 解决二次复杂度与多尺度问题
   - [[目标检测RCNN与YOLO]] — Transformer 用于目标检测
   - [[自监督学习SimCLR与CLIP]] — 基于 Transformer 的图文多模态
   - Transformer与自注意力 — 可拆分的细节卡（核心公式）

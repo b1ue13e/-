@@ -8,9 +8,9 @@ difficulty: intermediate
 concept: ["PVT", "ConvNeXt", "CoAtNet", "CNN-Transformer 融合", "金字塔结构"]
 prerequisites: ["ViT", "Swin", "CNN 基础"]
 related: ["Transformer与自注意力", "ViT", "SwinTransformer", "DeiT"]
-upstream: ["[[ViT]]", "[[SwinTransformer]]", "[[卷积神经网络CNN]]"]
+upstream: ["[[计算机视觉-ViT]]", "[[计算机视觉-SwinTransformer]]", "[[卷积神经网络CNN]]"]
 flow: knowledge
-stage_moc: "[[🚀 第四阶段：前沿架构探索]]"
+stage_moc: "[[🧭 阶段4-前沿架构探索]]"
 kind: concept
 source: "PVT（Wang et al. 2021）；ConvNeXt（Liu et al. 2022）；CoAtNet（Dai et al. 2021）"
 accessed: 2026-08-06
@@ -38,7 +38,7 @@ tags: [学习, 计算机视觉, Transformer, 架构演进]
 
 ## 3. 学它之前需要哪些前置知识？
 
-- ViT 与 Swin：[[ViT]]、[[SwinTransformer]]；
+- ViT 与 Swin：[[计算机视觉-ViT]]、[[计算机视觉-SwinTransformer]]；
 - 注意力：[[Transformer与自注意力]]；
 - CNN 基础：[[卷积神经网络CNN]]。
 

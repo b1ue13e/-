@@ -10,7 +10,7 @@ prerequisites: ["卷积神经网络CNN","反向传播"]
 related: ["Transformer","迁移学习"]
 flow: knowledge
 upstream: ["[[卷积神经网络CNN]]", "[[反向传播与计算图]]", "[[Softmax与SVM损失函数]]"]
-stage_moc: "[[🚀 第四阶段：前沿架构探索]]"
+stage_moc: "[[🧭 阶段4-前沿架构探索]]"
 kind: concept
 source: "CS231n A3讲义"
 anki_deck: "05-计算机视觉::04-前沿架构探索"
@@ -257,7 +257,7 @@ def apply_colormap(cam, original_image, alpha=0.5):
 
 ### 下游延伸
 - 注意力可视化：Transformer 的 Self-Attention 自带可解释性——$\text{softmax}(QK^T/\sqrt{d_k})$ 的注意力权重矩阵本身就是一种"CAM"。
-- [[ViT]]：ViT 的 Attention Rollout 是 Transformer 版本的可解释性方法。
+- [[计算机视觉-ViT]]：ViT 的 Attention Rollout 是 Transformer 版本的可解释性方法。
 - [[迁移学习与微调]]：Grad-CAM 验证迁移后模型的关注区域是否合理。
 
 ### 横向关联
@@ -371,7 +371,7 @@ def apply_colormap(cam, original_image, alpha=0.5):
   - [[卷积神经网络CNN]] — 特征图概念来源
   - [[反向传播与计算图]] — 梯度索取的数学基础
   - 注意力可视化 — Transformer 可解释性对应方法
-  - [[ViT]] — Attention Map 可视化
+  - [[计算机视觉-ViT]] — Attention Map 可视化
   - [[迁移学习与微调]] — 验证迁移后关注区域
   - [[激活函数详解]] — Guided Backprop 依赖 ReLU
 - **建议标签**：`#学习` `#计算机视觉` `#可解释性` `#SaliencyMap` `#GradCAM` `#CAM`

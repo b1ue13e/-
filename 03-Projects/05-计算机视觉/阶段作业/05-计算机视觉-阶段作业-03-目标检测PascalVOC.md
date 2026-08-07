@@ -7,7 +7,7 @@ assignment_id: "05-计算机视觉-HW05"
 assignment_level: stage
 assignment_format: project
 stage_id: "03"
-requires: ["[[目标检测RCNN与YOLO]]", "[[IoU与NMS]]", "[[FPN]]", "[[迁移学习与微调]]"]
+requires: ["[[目标检测RCNN与YOLO]]", "[[IoU与NMS]]", "[[计算机视觉-FPN]]", "[[迁移学习与微调]]"]
 source_type: official_assignment
 source_url: "https://cs231n.stanford.edu/2025/assignments.html"
 source_course: "Stanford CS231n 2025 / D2L Detection"

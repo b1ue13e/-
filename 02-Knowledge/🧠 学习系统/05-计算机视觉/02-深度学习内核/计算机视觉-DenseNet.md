@@ -20,8 +20,8 @@ related:
   - EfficientNet
   - ResNet
 flow: knowledge
-upstream: ["[[🎯 ResNet (残差网络)]]", "[[卷积神经网络CNN]]"]
-stage_moc: "[[🧠 第二阶段：深度学习内核]]"
+upstream: ["[[计算机视觉-ResNet]]", "[[卷积神经网络CNN]]"]
+stage_moc: "[[🧭 阶段2-深度学习内核]]"
 kind: concept
 source: "D2L Ch.8; Huang et al. 2017"
 anki_deck: "05-计算机视觉::02-深度学习内核"
@@ -40,7 +40,7 @@ tags:
 # DenseNet（稠密卷积网络）
 
 > 所属路径：[[🗺️ 计算机视觉学习路径|计算机视觉学习路径]]
-> 所属阶段：[[🧠 第二阶段：深度学习内核|🧠 第二阶段：深度学习内核（模型本质）]]
+> 所属阶段：[[🧭 阶段2-深度学习内核|🧠 第二阶段：深度学习内核（模型本质）]]
 > 教材入口：[[02-Knowledge/🧠 学习系统/05-计算机视觉/📚 教材挂载索引|教材挂载索引]]
 > 核心源：D2L Ch.8; Huang et al. "Densely Connected Convolutional Networks" (CVPR 2017 Best Paper)
 
@@ -91,10 +91,10 @@ DenseNet 转念一想：**与其相加（覆盖），不如拼接（保留）！
 
 最小必要背景：
 
-1. **[[🎯 ResNet (残差网络)|ResNet 残差网络]]**：理解残差连接 $y = F(x) + x$ 的设计思路和梯度流分析——DenseNet 正是 ResNet 思想的"激进升级版"（把加法换成拼接、把单跳连接变成全跳连接）。
+1. **[[计算机视觉-ResNet|ResNet 残差网络]]**：理解残差连接 $y = F(x) + x$ 的设计思路和梯度流分析——DenseNet 正是 ResNet 思想的"激进升级版"（把加法换成拼接、把单跳连接变成全跳连接）。
 2. **[[卷积神经网络CNN|卷积神经网络 CNN]]**：理解卷积层的输入/输出通道、参数量计算、$1 \times 1$ 卷积的通道融合作用。
 3. **[[批归一化BatchNorm|批归一化 BatchNorm]]**：Dense Block 内每一层的标准组成是 BN → ReLU → Conv，BN 是保证稠密连接稳定训练的必备组件。
-4. **[[GoogLeNet|GoogLeNet / Inception]]**：理解 $1 \times 1$ 卷积用于通道降维的思想（Transition Layer 的灵感来源），以及 Inception 中"多路并行拼接"的早期探索。
+4. **[[计算机视觉-GoogLeNet|GoogLeNet / Inception]]**：理解 $1 \times 1$ 卷积用于通道降维的思想（Transition Layer 的灵感来源），以及 Inception 中"多路并行拼接"的早期探索。
 
 ---
 
@@ -422,10 +422,10 @@ Dense Block (6 层, k=32) 参数量: 251,904
 ## 9. 相关知识点与 Obsidian 双链建议
 
 ### 上游依赖
-- **[[🎯 ResNet (残差网络)|ResNet]]**：DenseNet 的设计出发点——"加法好，但拼接更好；一跳好，但全跳更好"。
+- **[[计算机视觉-ResNet|ResNet]]**：DenseNet 的设计出发点——"加法好，但拼接更好；一跳好，但全跳更好"。
 - **[[卷积神经网络CNN|CNN]]**：理解卷积层参数量计算和 $1 \times 1$ 卷积的跨通道融合。
 - **[[批归一化BatchNorm|BatchNorm]]**：Pre-activation 设计中 BN 居首，稠密连接对归一化的质量更敏感。
-- **[[GoogLeNet]]**：Inception 中分支拼接和 $1 \times 1$ 降维是 DenseNet 的先声。
+- **[[计算机视觉-GoogLeNet]]**：Inception 中分支拼接和 $1 \times 1$ 降维是 DenseNet 的先声。
 
 ### 下游延伸
 - **CondenseNet**：2018 年黄高团队改进——在训练阶段学习"哪些连接可以剪掉"，测试时稀疏化稠密连接以降低显存；
@@ -537,8 +537,8 @@ Dense Block (6 层, k=32) 参数量: 251,904
 
 - **归档目录**：`02-Knowledge/🧠 学习系统/05-计算机视觉/02-深度学习内核/`
 - **建议双链**：
-  - [[🧠 第二阶段：深度学习内核|第二阶段：深度学习内核]]
-  - [[🎯 ResNet (残差网络)|ResNet]]
+  - [[🧭 阶段2-深度学习内核|第二阶段：深度学习内核]]
+  - [[计算机视觉-ResNet|ResNet]]
   - [[卷积神经网络CNN|CNN]]
   - [[批归一化BatchNorm|BatchNorm]]
   - MobileNet

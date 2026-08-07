@@ -8,9 +8,9 @@ difficulty: advanced
 concept: ["Swin Transformer", "窗口注意力", "层次化", "移位窗口", "多尺度"]
 prerequisites: ["ViT", "Transformer与自注意力"]
 related: ["FPN", "目标检测RCNN与YOLO", "语义分割与UNet"]
-upstream: ["[[ViT]]"]
+upstream: ["[[计算机视觉-ViT]]"]
 flow: knowledge
-stage_moc: "[[🚀 第四阶段：前沿架构探索]]"
+stage_moc: "[[🧭 阶段4-前沿架构探索]]"
 kind: concept
 source: "Liu et al. 2021 'Swin Transformer: Hierarchical Vision Transformer using Shifted Windows'; ICCV 2021 Best Paper"
 tags: [学习, 计算机视觉, Swin Transformer, ViT, 检测, 分割]
@@ -19,8 +19,8 @@ tags: [学习, 计算机视觉, Swin Transformer, ViT, 检测, 分割]
 # Swin Transformer
 
 > 所属模块：[[🗺️ 计算机视觉学习路径|计算机视觉学习路径]]
-> 对应阶段：[[🚀 第四阶段：前沿架构探索|第四阶段]]
-> 建议先看：[[ViT]]、[[Transformer与自注意力]]
+> 对应阶段：[[🧭 阶段4-前沿架构探索|第四阶段]]
+> 建议先看：[[计算机视觉-ViT]]、[[Transformer与自注意力]]
 
 ---
 
@@ -142,7 +142,7 @@ x = nn.Linear(384, 192)(x)            # (28, 28, 192)
 ## 🧪 学完本节后可完成的作业
 
 - 配合 [[目标检测RCNN与YOLO|目标检测]] 理解 Swin 如何作为检测 backbone 替代 ResNet
-- 配合 [[MAE]] 理解 Swin 的自监督预训练
+- 配合 [[计算机视觉-MAE]] 理解 Swin 的自监督预训练
 ---
 
 ## 学完后可以完成

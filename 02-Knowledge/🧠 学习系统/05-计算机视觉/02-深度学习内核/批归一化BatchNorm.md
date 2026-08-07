@@ -16,7 +16,7 @@ related:
   - "ResNet残差网络"
 flow: knowledge
 upstream: ["[[前向传播]]", "[[反向传播与计算图]]"]
-stage_moc: "[[🧠 第二阶段：深度学习内核]]"
+stage_moc: "[[🧭 阶段2-深度学习内核]]"
 kind: concept
 source: "CS231n A2; D2L Ch.8"
 anki_deck: "05-计算机视觉::02-深度学习内核"
@@ -340,7 +340,7 @@ with torch.no_grad():
 - [[数据增强与正则化|权重正则化]]：BN 自带轻微正则化效果（batch 内噪声），有时可减少 Dropout。
 
 ### 下游延伸
-- [[🎯 ResNet (残差网络)|ResNet]]：BN + 残差连接共同保障深层梯度流动。
+- [[计算机视觉-ResNet|ResNet]]：BN + 残差连接共同保障深层梯度流动。
 - LayerNorm：Transformer 的自注意力机制中替代 BN 的归一化方案。
 
 ### 横向关联
@@ -452,8 +452,8 @@ with torch.no_grad():
 
 - **归档目录**：`02-Knowledge/🧠 学习系统/05-计算机视觉/02-深度学习内核/`
 - **建议双链**：
-  - [[🧠 第二阶段：深度学习内核|第二阶段：深度学习内核]]
-  - [[🎯 ResNet (残差网络)|ResNet残差网络]]
+  - [[🧭 阶段2-深度学习内核|第二阶段：深度学习内核]]
+  - [[计算机视觉-ResNet|ResNet残差网络]]
   - LayerNorm
   - GroupNorm
   - [[梯度流问题]]

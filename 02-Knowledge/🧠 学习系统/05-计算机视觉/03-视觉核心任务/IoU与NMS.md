@@ -10,7 +10,7 @@ prerequisites: ["目标检测RCNN与YOLO"]
 related: ["FPN", "FocalLoss", "FasterRCNN"]
 flow: knowledge
 upstream: ["[[目标检测RCNN与YOLO]]"]
-stage_moc: "[[🎯 第三阶段：视觉核心任务]]"
+stage_moc: "[[🧭 阶段3-视觉核心任务]]"
 kind: concept
 source: "CS231n Lecture 11; D2L Ch.14"
 tags: [学习, 计算机视觉, 目标检测, IoU, NMS]
@@ -19,7 +19,7 @@ tags: [学习, 计算机视觉, 目标检测, IoU, NMS]
 # IoU 与 NMS (交并比与非极大值抑制)
 
 > 所属模块：[[🗺️ 计算机视觉学习路径|计算机视觉学习路径]]
-> 对应阶段：[[🎯 第三阶段：视觉核心任务|第三阶段：视觉核心任务]]
+> 对应阶段：[[🧭 阶段3-视觉核心任务|第三阶段：视觉核心任务]]
 > 建议先看：[[目标检测RCNN与YOLO]]
 
 ---

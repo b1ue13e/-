@@ -20,8 +20,8 @@ related:
   - BYOL
   - 自监督学习
 flow: knowledge
-upstream: ["[[🎯 ResNet (残差网络)]]", "[[Softmax与SVM损失函数]]"]
-stage_moc: "[[🚀 第四阶段：前沿架构探索]]"
+upstream: ["[[计算机视觉-ResNet]]", "[[Softmax与SVM损失函数]]"]
+stage_moc: "[[🧭 阶段4-前沿架构探索]]"
 kind: concept
 source: "CS231n A3"
 anki_deck: "05-计算机视觉::04-前沿架构探索"
@@ -72,7 +72,7 @@ tags:
 
 最小必要背景：
 
-1. **[[🎯 ResNet (残差网络)|特征提取器 (Backbone)]]**：如 ResNet-50，负责将高维图像 $\mathbf{x}$ 映射为低维特征向量 $\mathbf{h} = f(\mathbf{x})$。
+1. **[[计算机视觉-ResNet|特征提取器 (Backbone)]]**：如 ResNet-50，负责将高维图像 $\mathbf{x}$ 映射为低维特征向量 $\mathbf{h} = f(\mathbf{x})$。
 2. **[[Softmax与SVM损失函数|Softmax 与交叉熵损失]]**：多分类问题中将得分转化为概率并拉近目标类的损失函数。
 
 ---
@@ -215,7 +215,7 @@ print("SimCLR InfoNCE 损失:", loss.item())
 ## 9. 相关知识点与 Obsidian 双链建议
 
 ### 上游依赖
-- [[🎯 ResNet (残差网络)|ResNet]]：用作 SimCLR 的特征抽取编码器 Backbone。
+- [[计算机视觉-ResNet|ResNet]]：用作 SimCLR 的特征抽取编码器 Backbone。
 - [[Softmax与SVM损失函数|交叉熵损失]]：InfoNCE 损失函数的数学原型。
 
 ### 下游延伸

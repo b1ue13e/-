@@ -11,7 +11,7 @@ prerequisites: ["模型量化", "卷积神经网络CNN", "优化器SGD到Adam"]
 upstream: ["[[模型量化]]", "[[卷积神经网络CNN]]"]
 related: ["ONNXRuntime", "模型剪枝", "知识蒸馏"]
 flow: knowledge
-stage_moc: "[[🏭 第五阶段：专业深化与工程落地]]"
+stage_moc: "[[🧭 阶段5-专业深化与工程落地]]"
 kind: concept
 source: "NVIDIA TensorRT 官方文档（docs.nvidia.com/deeplearning/tensorrt）；Leyuan Wang et al. TensorRT 技术报告"
 tags: [学习, 计算机视觉, TensorRT, 推理优化, 部署]

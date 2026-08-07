@@ -10,7 +10,7 @@ prerequisites: ["线性代数基础CV", "特征分解CV"]
 related: ["傅里叶变换CV", "图像表示"]
 upstream: ["[[线性代数基础CV]]", "[[特征分解CV]]"]
 flow: knowledge
-stage_moc: "[[🏗️ 第一阶段：底层基石]]"
+stage_moc: "[[🧭 阶段1-底层基石]]"
 kind: concept
 source: "《Mathematics for Machine Learning》Ch.4; Szeliski Ch.3"
 tags: [学习, 计算机视觉, 线性代数, SVD]
@@ -19,7 +19,7 @@ tags: [学习, 计算机视觉, 线性代数, SVD]
 # 奇异值分解 (Singular Value Decomposition, SVD)
 
 > 所属模块：[[🗺️ 计算机视觉学习路径|计算机视觉学习路径]]
-> 对应阶段：[[🏗️ 第一阶段：底层基石|第一阶段：底层基石]]
+> 对应阶段：[[🧭 阶段1-底层基石|第一阶段：底层基石]]
 > 建议先看：[[线性代数基础CV]]、[[特征分解CV]]
 
 ---

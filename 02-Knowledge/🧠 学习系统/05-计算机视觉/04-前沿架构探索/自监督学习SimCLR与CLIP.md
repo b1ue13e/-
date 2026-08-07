@@ -9,8 +9,8 @@ concept: ["自监督学习", "对比学习", "SimCLR", "CLIP", "多模态"]
 prerequisites: ["Transformer", "迁移学习", "CNN"]
 related: ["MoCo", "BYOL", "MAE", "生成模型"]
 flow: knowledge
-upstream: ["[[卷积神经网络CNN]]", "[[🎯 ResNet (残差网络)]]"]
-stage_moc: "[[🚀 第四阶段：前沿架构探索]]"
+upstream: ["[[卷积神经网络CNN]]", "[[计算机视觉-ResNet]]"]
+stage_moc: "[[🧭 阶段4-前沿架构探索]]"
 kind: concept
 source: "CS231n A3"
 anki_deck: "05-计算机视觉::04-前沿架构探索"
@@ -503,11 +503,11 @@ def clip_zero_shot(image, class_names, vision_encoder, text_encoder,
 
 - **归档目录**：`02-Knowledge/🧠 学习系统/05-计算机视觉/04-前沿架构探索/`
 - **建议双链**：
-  - [[🎯 ResNet (残差网络)]] / [[ViT]] — SimCLR 与 CLIP 的特征抽取 Backbone
+  - [[计算机视觉-ResNet]] / [[计算机视觉-ViT]] — SimCLR 与 CLIP 的特征抽取 Backbone
   - [[Transformer与自注意力]] — CLIP 文本编码器的核心架构
   - MoCo — 对比学习两大流派的巅峰对决
   - BYOL — 免负样本对比学习的重要突破
-  - [[MAE]] — 掩码建模，自监督的另一条主线
+  - [[计算机视觉-MAE]] — 掩码建模，自监督的另一条主线
   - StableDiffusion — CLIP 文本编码器的下游应用
   - BLIP / LLaVA — 从 CLIP 走向多模态大模型
 - **建议标签**：`#学习` `#计算机视觉` `#自监督学习` `#对比学习` `#SimCLR` `#CLIP` `#多模态` `#InfoNCE`

@@ -19,7 +19,7 @@ related:
   - "梯度下降优化"
 flow: knowledge
 upstream: ["[[kNN与线性分类器]]", "[[前向传播]]", "[[反向传播与计算图]]"]
-stage_moc: "[[🧠 第二阶段：深度学习内核]]"
+stage_moc: "[[🧭 阶段2-深度学习内核]]"
 kind: concept
 source: "CS231n A1; D2L Ch.4"
 anki_deck: "05-计算机视觉::02-深度学习内核"

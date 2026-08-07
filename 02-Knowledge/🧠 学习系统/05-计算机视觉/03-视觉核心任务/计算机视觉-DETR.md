@@ -11,7 +11,7 @@ prerequisites: ["目标检测RCNN与YOLO", "Transformer与自注意力", "IoU与
 upstream: ["[[目标检测RCNN与YOLO]]", "[[Transformer与自注意力]]"]
 related: ["FPN", "语义分割与UNet", "SwinTransformer", "DeiT"]
 flow: knowledge
-stage_moc: "[[🎯 第三阶段：视觉核心任务]]"
+stage_moc: "[[🧭 阶段3-视觉核心任务]]"
 kind: concept
 source: "Carion et al. 2020, End-to-End Object Detection with Transformers (ECCV 2020); arXiv:2005.12872"
 tags: [学习, 计算机视觉, 目标检测, Transformer, DETR]
@@ -116,7 +116,7 @@ $$
 ## 9. 相关知识点与 Obsidian 双链建议
 
 - 上游：[[目标检测RCNN与YOLO|目标检测]]、[[Transformer与自注意力]]
-- 平行：[[FPN]]（多尺度特征对比）、[[IoU与NMS]]（被替代的后处理）
+- 平行：[[计算机视觉-FPN]]（多尺度特征对比）、[[IoU与NMS]]（被替代的后处理）
 - 下游：[[语义分割与UNet|语义分割]]（DETR 同源做 panoptic）
 
 ```dataview

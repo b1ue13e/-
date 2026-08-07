@@ -11,7 +11,7 @@ prerequisites: ["Transformer与自注意力", "迁移学习与微调"]
 related: ["ControlNet", "StableDiffusion", "模型量化"]
 flow: knowledge
 upstream: ["[[Transformer与自注意力]]", "[[迁移学习与微调]]"]
-stage_moc: "[[🚀 第四阶段：前沿架构探索]]"
+stage_moc: "[[🧭 阶段4-前沿架构探索]]"
 kind: concept
 source: "Hu et al. 2021; 论文补充"
 anki_deck: "05-计算机视觉::04-前沿架构探索"
@@ -22,7 +22,7 @@ tags: [学习, 计算机视觉, LoRA, 微调, PEFT]
 
 > 所属模块：[[🗺️ 计算机视觉学习路径|计算机视觉学习路径]]
 > 主教材：Hu et al. 2021 "LoRA: Low-Rank Adaptation of Large Language Models"
-> 对应阶段：[[🚀 第四阶段：前沿架构探索|返回阶段页]]
+> 对应阶段：[[🧭 阶段4-前沿架构探索|返回阶段页]]
 > 建议先看：[[Transformer与自注意力]]、[[迁移学习与微调]]
 > 辅助教材：`Hands-on Machine Learning`
 

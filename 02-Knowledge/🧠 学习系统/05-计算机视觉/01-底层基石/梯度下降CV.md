@@ -10,7 +10,7 @@ prerequisites: ["线性代数基础", "微积分基础"]
 related: ["反向传播", "损失函数", "学习率调度"]
 upstream: ["[[计算机视觉-微积分与链式法则最小桥接]]"]
 flow: knowledge
-stage_moc: "[[🏗️ 第一阶段：底层基石]]"
+stage_moc: "[[🧭 阶段1-底层基石]]"
 kind: concept
 source: "D2L Ch.12; 《Mathematics for ML》"
 anki_deck: "05-计算机视觉::01-底层基石"
@@ -22,7 +22,7 @@ tags: [学习, 计算机视觉, 梯度下降, 优化]
 
 > 所属模块：[[🗺️ 计算机视觉学习路径|计算机视觉学习路径]]
 > 主教材：Dive into Deep Learning (D2L) Ch.12；《Mathematics for Machine Learning》
-> 对应阶段：[[🏗️ 第一阶段：底层基石|返回阶段页]]
+> 对应阶段：[[🧭 阶段1-底层基石|返回阶段页]]
 > 建议先看：[[线性代数基础CV]]、微积分基础
 > 辅助教材：CS231n Optimization Notes
 

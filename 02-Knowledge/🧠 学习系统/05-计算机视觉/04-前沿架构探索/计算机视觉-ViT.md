@@ -10,7 +10,7 @@ prerequisites: ["Transformer与自注意力", "卷积神经网络CNN"]
 related: ["SwinTransformer", "MAE", "DeiT", "CLIP"]
 upstream: ["[[Transformer与自注意力]]"]
 flow: knowledge
-stage_moc: "[[🚀 第四阶段：前沿架构探索]]"
+stage_moc: "[[🧭 阶段4-前沿架构探索]]"
 kind: concept
 source: "Dosovitskiy et al. 2021 'An Image is Worth 16x16 Words'; D2L Ch.11"
 tags: [学习, 计算机视觉, ViT, Transformer, 前沿架构]
@@ -19,7 +19,7 @@ tags: [学习, 计算机视觉, ViT, Transformer, 前沿架构]
 # Vision Transformer (ViT)
 
 > 所属模块：[[🗺️ 计算机视觉学习路径|计算机视觉学习路径]]
-> 对应阶段：[[🚀 第四阶段：前沿架构探索|第四阶段]]
+> 对应阶段：[[🧭 阶段4-前沿架构探索|第四阶段]]
 > 建议先看：[[Transformer与自注意力]]、[[卷积神经网络CNN]]
 
 ---
@@ -168,8 +168,8 @@ print(f"Tokens shape: {tokens.shape}")     # (4, 196, 768) — 196个"单词"
 
 ## 🧪 学完本节后可完成的作业
 
-- 配合 [[SwinTransformer]] 理解层次化 ViT 的设计动机
-- 配合 [[MAE]] 理解 ViT 的自监督预训练范式
+- 配合 [[计算机视觉-SwinTransformer]] 理解层次化 ViT 的设计动机
+- 配合 [[计算机视觉-MAE]] 理解 ViT 的自监督预训练范式
 ---
 
 ## 学完后可以完成

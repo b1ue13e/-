@@ -10,7 +10,7 @@ prerequisites: ["感知机", "激活函数详解"]
 related: ["反向传播与计算图", "卷积神经网络CNN"]
 upstream: ["[[感知机]]"]
 flow: knowledge
-stage_moc: "[[🧠 第二阶段：深度学习内核]]"
+stage_moc: "[[🧭 阶段2-深度学习内核]]"
 kind: concept
 source: "D2L Ch.5; 《Deep Learning》 Ch.6"
 tags: [学习, 计算机视觉, 深度学习, MLP]
@@ -19,7 +19,7 @@ tags: [学习, 计算机视觉, 深度学习, MLP]
 # 多层感知机 (Multilayer Perceptron, MLP)
 
 > 所属模块：[[🗺️ 计算机视觉学习路径|计算机视觉学习路径]]
-> 对应阶段：[[🧠 第二阶段：深度学习内核|第二阶段]]
+> 对应阶段：[[🧭 阶段2-深度学习内核|第二阶段]]
 > 建议先看：[[感知机]]、[[激活函数详解]]
 
 ---

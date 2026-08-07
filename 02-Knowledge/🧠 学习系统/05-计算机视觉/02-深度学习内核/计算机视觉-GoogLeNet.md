@@ -20,8 +20,8 @@ related:
   - DenseNet
   - 参数效率
 flow: knowledge
-upstream: ["[[卷积神经网络CNN]]", "[[VGGNet]]", "[[AlexNet]]"]
-stage_moc: "[[🧠 第二阶段：深度学习内核]]"
+upstream: ["[[卷积神经网络CNN]]", "[[计算机视觉-VGGNet]]", "[[计算机视觉-AlexNet]]"]
+stage_moc: "[[🧭 阶段2-深度学习内核]]"
 kind: concept
 source: "D2L Ch.8; Szegedy et al. 2015"
 anki_deck: "05-计算机视觉::02-深度学习内核"
@@ -40,7 +40,7 @@ tags:
 # GoogLeNet / Inception
 
 > 所属路径：[[🗺️ 计算机视觉学习路径|计算机视觉学习路径]]
-> 所属阶段：[[🧠 第二阶段：深度学习内核|🧠 第二阶段：深度学习内核（模型本质）]]
+> 所属阶段：[[🧭 阶段2-深度学习内核|🧠 第二阶段：深度学习内核（模型本质）]]
 > 教材入口：[[02-Knowledge/🧠 学习系统/05-计算机视觉/📚 教材挂载索引|教材挂载索引]]
 > 核心源：D2L Ch.8; Szegedy et al. "Going Deeper with Convolutions" (CVPR 2015); 后续版本 v2–v4 见正文
 
@@ -101,8 +101,8 @@ tags:
 最小必要背景：
 
 1. **[[卷积神经网络CNN|CNN 基础]]**：卷积输出尺寸公式、参数量计算、感受野递推——理解 5×5 比 3×3 贵在哪。
-2. **[[VGGNet]]**：GoogLeNet 的同期对手——理解 VGG「全 3×3 堆叠」才能体会 Inception「多分支并行」有多激进。VGG 138M → GoogLeNet 5M 的对比是理解参数效率的绝佳切入点。
-3. **[[AlexNet]]**：2012-2014 年 CNN 演进背景。
+2. **[[计算机视觉-VGGNet]]**：GoogLeNet 的同期对手——理解 VGG「全 3×3 堆叠」才能体会 Inception「多分支并行」有多激进。VGG 138M → GoogLeNet 5M 的对比是理解参数效率的绝佳切入点。
+3. **[[计算机视觉-AlexNet]]**：2012-2014 年 CNN 演进背景。
 4. **[[批归一化BatchNorm|Batch Norm]]**（推荐）：理解 Inception v2 为什么训得快 14 倍。
 
 ---
@@ -342,13 +342,13 @@ if __name__ == "__main__":
 ## 9. 相关知识点与 Obsidian 双链建议
 
 ### 上游依赖
-- **[[VGGNet]]**：同期对手和思想对照——两者各自的设计 trade-off 是理解 CNN 架构史的关键。
+- **[[计算机视觉-VGGNet]]**：同期对手和思想对照——两者各自的设计 trade-off 是理解 CNN 架构史的关键。
 - **[[卷积神经网络CNN|CNN 基础]]**：1×1 卷积为什么合法、通道拼接的含义、池化保持尺寸技巧（kernel=3, stride=1, pad=1）。
-- **[[AlexNet]]**：2012-2014 演进背景。
+- **[[计算机视觉-AlexNet]]**：2012-2014 演进背景。
 
 ### 下游延伸
-- **[[🎯 ResNet (残差网络)|ResNet]]**：Inception v4 + Inception-ResNet 将残差连接引入；ResNet bottleneck（1×1→3×3→1×1）继承自 Inception 降维思想。
-- **[[DenseNet]]**：稠密连接可看作 Inception 在**深度维度**上的推广——每个 Dense Block 内层都在做「多源拼接」。
+- **[[计算机视觉-ResNet|ResNet]]**：Inception v4 + Inception-ResNet 将残差连接引入；ResNet bottleneck（1×1→3×3→1×1）继承自 Inception 降维思想。
+- **[[计算机视觉-DenseNet]]**：稠密连接可看作 Inception 在**深度维度**上的推广——每个 Dense Block 内层都在做「多源拼接」。
 - **轻量级网络（MobileNet / ShuffleNet）**：1×1 bottleneck 是它们的直接祖先。
 
 ### 横向关联
@@ -460,12 +460,12 @@ if __name__ == "__main__":
 
 - **归档目录**：`02-Knowledge/🧠 学习系统/05-计算机视觉/02-深度学习内核/`
 - **建议双链**：
-  - [[🧠 第二阶段：深度学习内核|第二阶段：深度学习内核]]
+  - [[🧭 阶段2-深度学习内核|第二阶段：深度学习内核]]
   - [[卷积神经网络CNN|卷积神经网络 CNN]]
-  - [[VGGNet]]
-  - [[AlexNet]]
-  - [[🎯 ResNet (残差网络)|ResNet]]
-  - [[DenseNet]]
+  - [[计算机视觉-VGGNet]]
+  - [[计算机视觉-AlexNet]]
+  - [[计算机视觉-ResNet|ResNet]]
+  - [[计算机视觉-DenseNet]]
   - [[批归一化BatchNorm|BatchNorm]]
   - [[Transformer与自注意力|Transformer 多头注意力]]
 - **建议标签**：`#学习` `#计算机视觉` `#GoogLeNet` `#Inception` `#1x1卷积` `#多分支网络` `#参数效率`

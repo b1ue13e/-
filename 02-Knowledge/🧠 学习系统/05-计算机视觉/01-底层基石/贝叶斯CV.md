@@ -10,7 +10,7 @@ prerequisites: ["概率分布CV"]
 related: ["梯度下降CV", "kNN与线性分类器"]
 upstream: ["[[概率分布CV]]"]
 flow: knowledge
-stage_moc: "[[🏗️ 第一阶段：底层基石]]"
+stage_moc: "[[🧭 阶段1-底层基石]]"
 kind: concept
 source: "《Mathematics for Machine Learning》Ch.6"
 tags: [学习, 计算机视觉, 概率, 贝叶斯]
@@ -19,7 +19,7 @@ tags: [学习, 计算机视觉, 概率, 贝叶斯]
 # 贝叶斯定理 (Bayes' Theorem)
 
 > 所属模块：[[🗺️ 计算机视觉学习路径|计算机视觉学习路径]]
-> 对应阶段：[[🏗️ 第一阶段：底层基石|第一阶段：底层基石]]
+> 对应阶段：[[🧭 阶段1-底层基石|第一阶段：底层基石]]
 > 建议先看：[[概率分布CV]]
 
 ---

@@ -8,9 +8,9 @@ difficulty: advanced
 concept: ["MAE", "掩码自编码器", "自监督学习", "ViT", "预训练"]
 prerequisites: ["ViT", "自监督学习SimCLR与CLIP"]
 related: ["BEiT", "iBOT", "SimCLR"]
-upstream: ["[[ViT]]"]
+upstream: ["[[计算机视觉-ViT]]"]
 flow: knowledge
-stage_moc: "[[🚀 第四阶段：前沿架构探索]]"
+stage_moc: "[[🧭 阶段4-前沿架构探索]]"
 kind: concept
 source: "He et al. 2022 'Masked Autoencoders Are Scalable Vision Learners'"
 tags: [学习, 计算机视觉, MAE, 自监督, ViT]
@@ -19,8 +19,8 @@ tags: [学习, 计算机视觉, MAE, 自监督, ViT]
 # MAE 掩码自编码器 (Masked Autoencoder)
 
 > 所属模块：[[🗺️ 计算机视觉学习路径|计算机视觉学习路径]]
-> 对应阶段：[[🚀 第四阶段：前沿架构探索|第四阶段]]
-> 建议先看：[[ViT]]、[[自监督学习SimCLR与CLIP]]
+> 对应阶段：[[🧭 阶段4-前沿架构探索|第四阶段]]
+> 建议先看：[[计算机视觉-ViT]]、[[自监督学习SimCLR与CLIP]]
 
 ---
 
@@ -137,7 +137,7 @@ MAE 用"像素回归"重建被掩 patch；**BEiT**（Bao et al., 2021）与 **iB
 
 ## 🧪 学完本节后可完成的作业
 
-- 配合 [[ViT]] 理解为什么 MAE 特别适合 ViT 预训练
+- 配合 [[计算机视觉-ViT]] 理解为什么 MAE 特别适合 ViT 预训练
 ---
 
 ## 学完后可以完成

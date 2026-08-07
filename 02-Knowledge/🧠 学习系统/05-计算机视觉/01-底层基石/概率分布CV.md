@@ -9,7 +9,7 @@ concept: ["概率分布", "贝叶斯定理", "高斯分布", "最大似然", "�
 prerequisites: ["高中数学"]
 related: ["图像分类", "Softmax损失", "生成模型VAE"]
 flow: knowledge
-stage_moc: "[[🏗️ 第一阶段：底层基石]]"
+stage_moc: "[[🧭 阶段1-底层基石]]"
 kind: concept
 source: "《Mathematics for Machine Learning》Ch.6"
 anki_deck: "05-计算机视觉::01-底层基石"

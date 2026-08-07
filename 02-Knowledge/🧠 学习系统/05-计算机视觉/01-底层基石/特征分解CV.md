@@ -10,7 +10,7 @@ prerequisites: ["线性代数基础CV"]
 related: ["SVDCV", "傅里叶变换CV", "梯度下降CV"]
 upstream: ["[[线性代数基础CV]]"]
 flow: knowledge
-stage_moc: "[[🏗️ 第一阶段：底层基石]]"
+stage_moc: "[[🧭 阶段1-底层基石]]"
 kind: concept
 source: "《Mathematics for Machine Learning》Ch.4; Szeliski Ch.3"
 tags: [学习, 计算机视觉, 线性代数, 特征分解]
@@ -19,7 +19,7 @@ tags: [学习, 计算机视觉, 线性代数, 特征分解]
 # 特征分解 (Eigen Decomposition)
 
 > 所属模块：[[🗺️ 计算机视觉学习路径|计算机视觉学习路径]]
-> 对应阶段：[[🏗️ 第一阶段：底层基石|第一阶段：底层基石]]
+> 对应阶段：[[🧭 阶段1-底层基石|第一阶段：底层基石]]
 > 建议先看：[[线性代数基础CV]]
 
 ---
@@ -138,7 +138,7 @@ print(f"Reduced shape: {X_pca.shape}")  # 预期 (100, 2)
 
 ## 🧪 学完本节后可完成的作业
 
-- 理解 [[SVDCV|SVD]] 之前必须先理解特征分解（SVD 是特征分解的推广）
+- 理解 [[计算机视觉-SVD分解|SVD]] 之前必须先理解特征分解（SVD 是特征分解的推广）
 ---
 
 ## 学完后可以完成
