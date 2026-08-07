@@ -60,6 +60,19 @@ x=a^n u[n] (|a|<1) 绝对可和 ⇒ DTFT 存在；x=u[n] 不存在普通 DTFT。
 - 以为所有序列都有普通 DTFT。
 - 与 ZT 的 ROC 含单位圆条件割裂。
 
+## 推导/证明
+**目标**：说明绝对可和 ⇒ DTFT 存在，并对应 ZT 的 ROC 含单位圆。
+
+令 $X(e^{j\Omega})=\sum_{n}x[n]e^{-j\Omega n}$。若 $\sum_n|x[n]|<\infty$，则由三角不等式
+$$\left|\sum_n x[n]e^{-j\Omega n}\right|\le\sum_n|x[n]|\,|e^{-j\Omega n}|=\sum_n|x[n]|<\infty$$
+且对 Ω 一致收敛 ⇒ DTFT 作为普通函数存在。
+
+该条件恰等价于 ZT 的 ROC 包含单位圆 $|z|=1$：把 $z=e^{j\Omega}$ 代入 Z 级数即得 DTFT，级数收敛即单位圆在 ROC 内。
+
+**最小手算**：
+- $x[n]=a^n u[n]\ (|a|<1)$：$\sum|a|^n=1/(1-|a|)<\infty$ ⇒ DTFT 存在，且 ROC $|z|>|a|$ 含单位圆。
+- $x[n]=u[n]$：$\sum 1=\infty$ ⇒ 无普通 DTFT（需借 $2\pi\sum\delta(\Omega-2\pi k)$ 广义谱描述）。
+
 ## 和其他笔记的关系
 - 前置：[[DTFT定义]]
 - 前置：[[DTFT周期性]]
