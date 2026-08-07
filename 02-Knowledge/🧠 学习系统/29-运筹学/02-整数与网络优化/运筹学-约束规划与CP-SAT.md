@@ -127,7 +127,7 @@ for i in range(4):
         model.Add(q[i] != q[j] + (j - i)); model.Add(q[i] != q[j] - (j - i))
 solver = cp_model.CpSolver(); solver.parameters.max_time_in_seconds = 10.0
 status = solver.Solve(model)
-print(solver.StatusName(status), [solver.Value(v) for v in q])  # OPTIMAL [2, 4, 1, 3]
+print(solver.StatusName(status), [solver.Value(v) for v in q])  # OPTIMAL [3, 1, 4, 2]（4-皇后有多解，如 [2,4,1,3] 亦合法）
 ```
 - **与 MIP 对照的验收口径**（阶段作业 02）：同一排班问题分别用 CP-SAT 与 SCIP 求解，记录求解时间与最优值；若 MIP 界松卡死，报告"时间上限内 gap 未闭合"——这是 CP vs MIP 对比报告的标准写法。
 
