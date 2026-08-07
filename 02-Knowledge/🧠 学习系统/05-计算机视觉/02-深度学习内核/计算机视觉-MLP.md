@@ -3,7 +3,7 @@ type: study
 course: "05-计算机视觉"
 topic: "多层感知机 (MLP)"
 created: 2026-08-06
-status: planned
+status: ongoing
 difficulty: intermediate
 concept: ["MLP", "隐藏层", "万能近似定理", "非线性激活", "XOR"]
 prerequisites: ["感知机", "激活函数详解"]

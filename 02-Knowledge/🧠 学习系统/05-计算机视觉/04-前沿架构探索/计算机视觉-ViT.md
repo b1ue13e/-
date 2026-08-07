@@ -3,7 +3,7 @@ type: study
 course: "05-计算机视觉"
 topic: "Vision Transformer (ViT)"
 created: 2026-08-06
-status: planned
+status: ongoing
 difficulty: advanced
 concept: ["ViT", "Vision Transformer", "图像分块", "位置编码", "自注意力"]
 prerequisites: ["Transformer与自注意力", "卷积神经网络CNN"]

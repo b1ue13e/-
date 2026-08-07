@@ -3,7 +3,7 @@ type: study
 course: "05-计算机视觉"
 topic: "奇异值分解 (SVD)"
 created: 2026-08-06
-status: planned
+status: ongoing
 difficulty: intermediate
 concept: ["SVD", "奇异值", "低秩近似", "图像压缩", "伪逆"]
 prerequisites: ["线性代数基础CV", "特征分解CV"]

@@ -3,7 +3,7 @@ type: study
 course: "05-计算机视觉"
 topic: "凸优化 (Convex Optimization)"
 created: 2026-08-06
-status: planned
+status: ongoing
 difficulty: intermediate
 concept: ["凸集", "凸函数", "梯度下降", "拉格朗日对偶", "KKT条件"]
 prerequisites: ["线性代数基础CV", "梯度下降CV"]

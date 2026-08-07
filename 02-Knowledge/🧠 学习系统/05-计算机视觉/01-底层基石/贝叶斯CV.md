@@ -3,7 +3,7 @@ type: study
 course: "05-计算机视觉"
 topic: "贝叶斯定理 (Bayes' Theorem)"
 created: 2026-08-06
-status: planned
+status: ongoing
 difficulty: intermediate
 concept: ["贝叶斯定理", "先验", "似然", "后验", "贝叶斯推断"]
 prerequisites: ["概率分布CV"]

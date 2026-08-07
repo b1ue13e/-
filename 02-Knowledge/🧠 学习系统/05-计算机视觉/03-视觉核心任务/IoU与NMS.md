@@ -3,7 +3,7 @@ type: study
 course: "05-计算机视觉"
 topic: "IoU 与 NMS (交并比与非极大值抑制)"
 created: 2026-08-06
-status: planned
+status: ongoing
 difficulty: intermediate
 concept: ["IoU", "NMS", "目标检测", "边界框", "后处理"]
 prerequisites: ["目标检测RCNN与YOLO"]

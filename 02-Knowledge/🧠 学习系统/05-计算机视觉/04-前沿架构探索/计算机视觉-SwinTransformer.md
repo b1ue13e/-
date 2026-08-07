@@ -3,7 +3,7 @@ type: study
 course: "05-计算机视觉"
 topic: "Swin Transformer"
 created: 2026-08-06
-status: planned
+status: ongoing
 difficulty: advanced
 concept: ["Swin Transformer", "窗口注意力", "层次化", "移位窗口", "多尺度"]
 prerequisites: ["ViT", "Transformer与自注意力"]

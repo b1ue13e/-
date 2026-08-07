@@ -3,7 +3,7 @@ type: study
 course: "05-计算机视觉"
 topic: "特征分解 (Eigen Decomposition)"
 created: 2026-08-06
-status: planned
+status: ongoing
 difficulty: intermediate
 concept: ["特征值", "特征向量", "对角化", "PCA", "谱分解"]
 prerequisites: ["线性代数基础CV"]

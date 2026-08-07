@@ -3,7 +3,7 @@ type: study
 course: "05-计算机视觉"
 topic: "MAE 掩码自编码器 (Masked Autoencoder)"
 created: 2026-08-06
-status: planned
+status: ongoing
 difficulty: advanced
 concept: ["MAE", "掩码自编码器", "自监督学习", "ViT", "预训练"]
 prerequisites: ["ViT", "自监督学习SimCLR与CLIP"]

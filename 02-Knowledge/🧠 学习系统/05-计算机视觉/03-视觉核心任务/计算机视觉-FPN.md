@@ -3,7 +3,7 @@ type: study
 course: "05-计算机视觉"
 topic: "FPN 特征金字塔网络 (Feature Pyramid Network)"
 created: 2026-08-06
-status: planned
+status: ongoing
 difficulty: intermediate
 concept: ["FPN", "特征金字塔", "多尺度", "目标检测", "特征融合"]
 prerequisites: ["卷积神经网络CNN", "目标检测RCNN与YOLO", "感受野"]
