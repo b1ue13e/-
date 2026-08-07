@@ -1,31 +1,72 @@
 ---
-type: study
-topic: "避障MPC"
-created: 2026-04-18
-status: ongoing
-difficulty: advanced
-concept: ["避障MPC", "车辆MPC设计"]
-prerequisites: []
-related: []
-tags: ["学习", "控制与机器人学"]
+title: "避障MPC"
+type: concept
+course: "15-控制与机器人学"
+stage_moc: "[[🧭 阶段9-MPC深入]]"
+flow: knowledge
+kind: concept
+importance: "A"
+status: completed
+created: 2026-08-07
+updated: 2026-08-07
+tags: [学习, 控制与机器人学, MPC]
+upstream:
+  - "[[状态硬约束]]"
+  - "[[横向避障]]"
+concept: ["避障约束", "凸分解"]
+prerequisites: ["状态硬约束", "横向避障", "MPC代价函数"]
+related: ["横向MPC设计", "松弛变量", "碰撞检测"]
 ---
+
 # 避障MPC
 
-> 所属模块：[[🗺️ 控制与机器人学学习路径|控制与机器人学学习路径]]
-> 主教材：`《Autonomous Driving》`
-> 对应阶段：[[🧭 阶段9-MPC深入|返回阶段页]]
-> 建议先看：Lateral Control、Longitudinal Control、Trajectory Tracking、Planning-Tracking Loop
+> **一句话**:把"别撞障碍物"写进 MPC 约束——但避障区域非凸,需要凸分解/混合整数/软约束等技巧,这是 MPC 最有挑战的约束类型。
 
+## 问题:避障约束非凸
 
-## 待写提纲
-- 这章/这个知识点在这门课里解决什么问题：
-- 所属主线：车辆MPC设计
-- 这张卡要补哪块：车辆MPC设计
-- 核心定义：
-- 关键方法 / 公式：
-- 一个最小例子：
-- 与前后笔记的关系：
-- 前置：待补
-- 相关：待补
+障碍物占用区域是"挖洞"——可行域 $s \notin [s^- , s^+]$(非凸),而 QP 要求凸约束。直接加会破坏凸性。
 
-*创建于：2026-04-18*
+## 工程处理方法
+
+### 1. 约束凸化(避障凸分解)
+对每个障碍,用半空间近似:
+
+$$a_i^\top \mathbf{x} \le b_i \quad \text{(选一个安全方向)}$$
+
+决策:选左侧绕行 or 右侧绕行(决策层给出)→ 该方向约束为凸 → QP。
+
+### 2. 混合整数 MPC(MIQP)
+引入二元变量 $\delta_i$ 表示绕行方向:
+
+$$a_i^\top \mathbf{x} \le b_i + M(1-\delta_i)$$
+
+求解混合整数二次规划(计算重,车辆实时困难)。
+
+### 3. 软约束避障
+距离惩罚进代价:
+
+$$J_{obs} = \sum_k \rho \cdot \max(0, d_{safe} - \text{dist}(\mathbf{x}_k, obs))$$
+
+### 4. 轨迹库 + MPC 筛选
+规划层生成多条安全轨迹,MPC 只跟踪安全候选(见[[轨迹采样]])。
+
+## 对比
+
+| 方法 | 实时性 | 最优性 | 工程成熟度 |
+|:---|:---|:---|:---|
+| 凸化 + 决策方向 | ✅ | 中 | 高(主流) |
+| MIQP | ❌ 重 | 高 | 低 |
+| 软约束 | ✅ | 低 | 中 |
+| 轨迹库 + MPC | ✅ | 中 | 高 |
+
+## 动态障碍
+
+- 预测障碍未来位置(见[[碰撞检测]])
+- 时空避障约束:每步不同约束集
+- 不确定性 → 保守膨胀
+
+## 自检
+
+- [ ] 避障约束为什么非凸?
+- [ ] 凸化避障的工程流程?
+- [ ] 各种避障 MPC 方法的取舍?

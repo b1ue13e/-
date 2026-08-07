@@ -1,31 +1,62 @@
 ---
-type: study
-topic: "一阶QP"
-created: 2026-04-18
-status: ongoing
-difficulty: advanced
-concept: ["一阶QP", "QP求解算法"]
-prerequisites: []
-related: []
-tags: ["学习", "控制与机器人学"]
+title: "一阶QP"
+type: concept
+course: "15-控制与机器人学"
+stage_moc: "[[🧭 阶段9-MPC深入]]"
+flow: knowledge
+kind: concept
+importance: "B"
+status: completed
+created: 2026-08-07
+updated: 2026-08-07
+tags: [学习, 控制与机器人学, MPC]
+upstream:
+  - "[[QP标准形式]]"
+concept: ["一阶方法", "梯度投影"]
+prerequisites: ["QP标准形式", "QP Hessian"]
+related: ["内点法", "有效集法", "OSQP", "早期终止"]
 ---
+
 # 一阶QP
 
-> 所属模块：[[🗺️ 控制与机器人学学习路径|控制与机器人学学习路径]]
-> 主教材：`《Autonomous Driving》`
-> 对应阶段：[[🧭 阶段9-MPC深入|返回阶段页]]
-> 建议先看：Lateral Control、Longitudinal Control、Trajectory Tracking、Planning-Tracking Loop
+> **一句话**:一阶 QP 方法只做矩阵-向量乘法与投影——迭代简单、可提前终止、天然适配 MPC 的实时需求,是现代嵌入式求解器的核心。
 
+## 思想
 
-## 待写提纲
-- 这章/这个知识点在这门课里解决什么问题：
-- 所属主线：QP求解算法
-- 这张卡要补哪块：一阶方法
-- 核心定义：
-- 关键方法 / 公式：
-- 一个最小例子：
-- 与前后笔记的关系：
-- 前置：待补
-- 相关：待补
+对 QP 的 KKT 条件做**不动点迭代**,每次迭代只涉及:
 
-*创建于：2026-04-18*
+1. 梯度计算:$z \leftarrow z - \alpha (Hz + g)$(可预分解)
+2. 约束投影:$z \leftarrow \text{proj}_{[l,u]}(z)$(盒约束)
+
+## 代表性方法
+
+| 方法 | 原理 | 特点 |
+|:---|:---|:---|
+| 投影梯度 | 梯度下降 + 投影 | 最简单,收敛慢 |
+| FISTA/加速梯度 | Nesterov 加速 | 收敛 $O(1/k^2)$ |
+| ADMM | 拆分成子问题交替 | OSQP 基础(见[[OSQP]]) |
+| PGD(预条件梯度) | 对角预条件加速 | 收敛更快 |
+
+## 为什么适合 MPC
+
+| 需求 | 一阶方法优势 |
+|:---|:---|
+| 实时性 | 迭代成本低(矩阵-向量积) |
+| 时限内求解 | 可任意提前终止(见[[早期终止]]) |
+| 热启动 | 上次解作初值,快速收敛(见[[热启动]]) |
+| 嵌入式 | 内存小、实现简单 |
+
+## 与二阶方法对比
+
+| 维度 | 一阶 | 二阶(内点) |
+|:---|:---|:---|
+| 每步成本 | 低 | 高(解线性系统) |
+| 收敛速度 | 慢(线性) | 快(超线性) |
+| 精度 | 中 | 高 |
+| 实时 MPC | 主流 | 大时域场景 |
+
+## 自检
+
+- [ ] 一阶 QP 的迭代结构?
+- [ ] 为什么一阶方法适合实时 MPC?
+- [ ] 与内点法的对比?

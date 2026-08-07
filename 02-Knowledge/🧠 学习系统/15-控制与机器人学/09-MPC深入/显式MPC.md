@@ -1,31 +1,64 @@
 ---
-type: study
-topic: "显式MPC"
-created: 2026-04-18
-status: ongoing
-difficulty: advanced
-concept: ["显式MPC", "实时MPC技术"]
-prerequisites: ["早期终止"]
-related: []
-tags: ["学习", "控制与机器人学"]
+title: "显式MPC"
+type: concept
+course: "15-控制与机器人学"
+stage_moc: "[[🧭 阶段9-MPC深入]]"
+flow: knowledge
+kind: concept
+importance: "B"
+status: completed
+created: 2026-08-07
+updated: 2026-08-07
+tags: [学习, 控制与机器人学, MPC]
+upstream:
+  - "[[QP标准形式]]"
+concept: ["离线求解", "分片仿射"]
+prerequisites: ["QP标准形式", "MPC稳定性"]
+related: ["热启动", "MPC代码生成", "有效集法"]
 ---
+
 # 显式MPC
 
-> 所属模块：[[🗺️ 控制与机器人学学习路径|控制与机器人学学习路径]]
-> 主教材：`《Autonomous Driving》`
-> 对应阶段：[[🧭 阶段9-MPC深入|返回阶段页]]
-> 建议先看：Lateral Control、Longitudinal Control、Trajectory Tracking、Planning-Tracking Loop
+> **一句话**:把 MPC 的在线优化"提前算完"——状态空间被划分成多个区域,每区域预存一个线性反馈律,在线只做查表,计算量降到微秒级。
 
+## 核心思想
 
-## 待写提纲
-- 这章/这个知识点在这门课里解决什么问题：
-- 所属主线：实时MPC技术
-- 这张卡要补哪块：实时MPC技术
-- 核心定义：
-- 关键方法 / 公式：
-- 一个最小例子：
-- 与前后笔记的关系：
-- 前置：[[早期终止]]
-- 相关：待补
+线性 MPC 的优化解是**状态 $\mathbf{x}$ 的分片仿射函数**(由多参数规划性质保证):
 
-*创建于：2026-04-18*
+$$\mathbf{u}^*(\mathbf{x}) = F_i \mathbf{x} + G_i, \quad \mathbf{x} \in \mathcal{R}_i$$
+
+- $\{\mathcal{R}_i\}$:状态空间划分的区域(凸多面体)
+- $F_i, G_i$:每区域预计算的反馈增益
+
+## 离线 vs 在线
+
+| 阶段 | 工作 |
+|:---|:---|
+| 离线 | 多参数二次规划(mp-QP)求解,划分区域 + 存增益 |
+| 在线 | 定位当前 $\mathbf{x}$ 所在区域 → 查表得 $u$ |
+
+## 优缺点
+
+| 优点 | 缺点 |
+|:---|:---|
+| 在线计算微秒级 | 区域数随 $N$、约束、维度**指数爆炸** |
+| 确定性(无迭代) | 只能处理 LTI + 凸约束 |
+| 嵌入式友好 | 存储量大(区域表) |
+| 可验证性 | 参数变化需重新求解 |
+
+## 适用场景
+
+- 采样频率极高(如电力电子 kHz 级)
+- 计算资源极受限(ECU、MCU)
+- 离线离线问题结构长期不变
+
+## 现代变体
+
+- 混合显式 MPC:结合查找表 + 简单在线修正
+- 深度网络近似值函数(替代区域表,见[[非线性预测]])
+
+## 自检
+
+- [ ] 显式 MPC 的分片仿射结构?
+- [ ] 离线/在线如何分工?
+- [ ] 为什么区域数可能爆炸?

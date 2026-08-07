@@ -1,19 +1,25 @@
 ---
-type: stage
-topic: 阶段9：MPC深入
+type: index
+course: "15-控制与机器人学"
+topic: "阶段9：MPC深入"
+stage: 9
+title: "MPC深入"
+stage_moc: "[[🧭 阶段9-MPC深入]]"
+flow: knowledge
+kind: moc
+created: 2026-08-07
+updated: 2026-08-07
+status: completed
+upstream:
+  - "[[🧭 阶段8-轨迹与路径跟踪]]"
+  - "[[🧭 阶段5-状态空间与现代控制]]"
+downstream:
+  - "[[🧭 阶段10-状态估计]]"
 tags:
-- 控制与机器人学
-- MPC
-- 预测控制
-- 优化
-created: 2026-04-11
-status: ongoing
-difficulty: intermediate
-concept: []
-prerequisites: []
-related: []
-phase: 9
-duration: 2-3个月
+  - 控制与机器人学
+  - MPC
+  - 预测控制
+  - 优化
 ---
 
 # 🧭 阶段9-MPC深入
@@ -184,6 +190,17 @@ dv.paragraph(`**阶段进度: ${progress}%** (${completed}/${total} 模块)`);
 | **MPC倒立摆** | 实现MPC控制倒立摆平衡 | MPC基础 | ⬜ | [[项目-MPC倒立摆]] |
 | **车辆轨迹跟踪MPC** | 实现车道保持MPC控制器 | 车辆MPC | ⬜ | [[项目-车辆MPC]] |
 | **实时MPC实现** | 使用OSQP在嵌入式平台实现 | 实时优化 | ⬜ | [[项目-实时MPC]] |
+
+---
+
+## ✅ 阶段验收与作业
+
+| 编号 | 类型 | 内容 | 关联卡 | 状态 |
+|:---|:---|:---|:---|:---:|
+| 阶段作业-09 | 阶段作业 | MPC 推导:预测方程 → QP 标准形式 → 约束处理 → 仿真跟踪 | 预测方程、QP标准形式、约束处理 | ⬜ |
+| 阶段自测 | 自测 | 时域/权重/约束对 MPC 性能影响分析 | 预测时域、MPC代价函数 | ⬜ |
+
+> 作业唯一事实源见 `03-Projects/系统与硬件/15-控制与机器人学/🧭 课程作业总索引.md`,完成后回填状态。
 
 ---
 

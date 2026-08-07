@@ -1,31 +1,68 @@
 ---
-type: study
-topic: "纵向MPC设计"
-created: 2026-04-18
-status: ongoing
-difficulty: advanced
-concept: ["纵向MPC设计", "车辆MPC设计"]
-prerequisites: []
-related: []
-tags: ["学习", "控制与机器人学"]
+title: "纵向MPC设计"
+type: concept
+course: "15-控制与机器人学"
+stage_moc: "[[🧭 阶段9-MPC深入]]"
+flow: knowledge
+kind: concept
+importance: "A"
+status: completed
+created: 2026-08-07
+updated: 2026-08-07
+tags: [学习, 控制与机器人学, MPC]
+upstream:
+  - "[[线性车辆MPC]]"
+  - "[[纵向方程]]"
+concept: ["纵向MPC", "ACC"]
+prerequisites: ["线性车辆MPC", "纵向方程", "MPC代价函数"]
+related: ["横向MPC设计", "联合MPC设计", "MPC跟车"]
 ---
+
 # 纵向MPC设计
 
-> 所属模块：[[🗺️ 控制与机器人学学习路径|控制与机器人学学习路径]]
-> 主教材：`《Autonomous Driving》`
-> 对应阶段：[[🧭 阶段9-MPC深入|返回阶段页]]
-> 建议先看：Lateral Control、Longitudinal Control、Trajectory Tracking、Planning-Tracking Loop
+> **一句话**:纵向 MPC = 在纵向动力学(或跟车误差)模型上做预测——状态含速度/间距,约束加速度与 jerk,实现 ACC 级的速度与车距控制。
 
+## 模型选择
 
-## 待写提纲
-- 这章/这个知识点在这门课里解决什么问题：
-- 所属主线：车辆MPC设计
-- 这张卡要补哪块：纵向MPC
-- 核心定义：
-- 关键方法 / 公式：
-- 一个最小例子：
-- 与前后笔记的关系：
-- 前置：待补
-- 相关：待补
+### 1. 速度控制模型
+$$\dot{v} = a, \quad \dot{a} = j \quad \text{(二阶, jerk 作输入)}$$
 
-*创建于：2026-04-18*
+状态 $[v, a]$,控制 $j$。
+
+### 2. 跟车模型(ACC)
+状态含间距误差(见[[间距误差]]/[[恒定车头时距]]):
+
+$$\dot{e}_s = v_{lead} - v, \quad \dot{v} = a$$
+
+$$\mathbf{x} = [e_s, \dot e_s, a]$$
+
+## 代价与约束
+
+| 项 | 内容 |
+|:---|:---|
+| 代价 | 速度误差、间距误差、加速度 |
+| 约束 | $a_{min} \le a \le a_{max}$(见[[加速度约束]]) |
+| 约束 | $|j| \le j_{max}$(舒适,见[[jerk约束]]) |
+| 安全 | $s_{gap} \ge d_{safe}$(硬约束,见[[状态硬约束]]) |
+| 松弛 | 安全约束冲突时松弛(见[[松弛变量]]) |
+
+## 关键设计细节
+
+| 细节 | 说明 |
+|:---|:---|
+| 扰动模型 | 坡度/阻力补偿(见[[扰动模型]]/[[坡度前馈]]) |
+| 前车预测 | 前车加速度估计或恒速假设 |
+| 终端 | 停车精度时用终端约束 |
+| 增量形式 | 抗饱和(见[[增量MPC]]) |
+
+## 工程性能
+
+- 跟踪精度:$|v - v_{ref}| < 0.5$ km/h
+- 舒适:无冲击加减速
+- 安全:任何前车急刹都不撞(串稳定,见[[串稳定性]])
+
+## 自检
+
+- [ ] 纵向 MPC 的两种模型形态?
+- [ ] 代价与安全约束如何设计?
+- [ ] 扰动模型在纵向 MPC 中的角色?

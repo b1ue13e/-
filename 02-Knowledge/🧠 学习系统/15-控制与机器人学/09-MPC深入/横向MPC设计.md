@@ -1,31 +1,71 @@
 ---
-type: study
-topic: "横向MPC设计"
-created: 2026-04-18
-status: ongoing
-difficulty: advanced
-concept: ["横向MPC设计", "车辆MPC设计"]
-prerequisites: []
-related: []
-tags: ["学习", "控制与机器人学"]
+title: "横向MPC设计"
+type: concept
+course: "15-控制与机器人学"
+stage_moc: "[[🧭 阶段9-MPC深入]]"
+flow: knowledge
+kind: concept
+importance: "A"
+status: completed
+created: 2026-08-07
+updated: 2026-08-07
+tags: [学习, 控制与机器人学, MPC]
+upstream:
+  - "[[线性车辆MPC]]"
+  - "[[横向系统矩阵]]"
+concept: ["横向MPC", "误差模型"]
+prerequisites: ["线性车辆MPC", "横向系统矩阵", "MPC代价函数"]
+related: ["纵向MPC设计", "联合MPC设计", "MPC横向预测"]
 ---
+
 # 横向MPC设计
 
-> 所属模块：[[🗺️ 控制与机器人学学习路径|控制与机器人学学习路径]]
-> 主教材：`《Autonomous Driving》`
-> 对应阶段：[[🧭 阶段9-MPC深入|返回阶段页]]
-> 建议先看：Lateral Control、Longitudinal Control、Trajectory Tracking、Planning-Tracking Loop
+> **一句话**:横向 MPC = 在车辆横向误差模型上做预测控制——状态取横向偏差与航向偏差,约束转向角与转向率,实现精确的轨迹跟踪。
 
+## 模型选择
 
-## 待写提纲
-- 这章/这个知识点在这门课里解决什么问题：
-- 所属主线：车辆MPC设计
-- 这张卡要补哪块：横向MPC
-- 核心定义：
-- 关键方法 / 公式：
-- 一个最小例子：
-- 与前后笔记的关系：
-- 前置：待补
-- 相关：待补
+常用**横向误差模型**(见[[横向系统矩阵]]/[[车辆误差模型]]):
 
-*创建于：2026-04-18*
+状态 $\mathbf{x} = [e_y, \dot e_y, e_\psi, \dot e_\psi]$
+
+$$\dot{\mathbf{x}} = A \mathbf{x} + B_1 \delta + B_2 \dot{\psi}_{des}$$
+
+- $e_y$:横向位置误差
+- $e_\psi$:航向角误差
+- $\delta$:前轮转向角(控制量)
+
+## 离散化与预测
+
+- ZOH 离散化(见[[离散状态空间]])
+- 预测方程展开(见[[预测方程]])
+- 时变速度 $v$(随纵向速度更新矩阵)
+
+## 代价与约束
+
+| 项 | 内容 |
+|:---|:---|
+| 代价 $Q$ | $e_y, e_\psi$ 加权(横向优先) |
+| 代价 $R$ | 转向角 $\delta$ 与转向率 |
+| 约束 | $|\delta| \le \delta_{max}$(见[[输入幅值约束]]) |
+| 约束 | $|\dot\delta| \le \dot\delta_{max}$(见[[输入速率约束]]) |
+| 软约束 | $|e_y|$ 车道边界(见[[状态软约束]]) |
+
+## 关键设计细节
+
+| 细节 | 说明 |
+|:---|:---|
+| 速度依赖 | $A, B$ 随 $v$ 变 → 增益调度或实时重算(见[[增益调度]]) |
+| 前馈 | 参考曲率前馈项 $B_2 \dot\psi_{des}$ |
+| 参考 | 从参考轨迹取 $e_y^{ref}, e_\psi^{ref}$(见[[参考轨迹]]) |
+
+## 性能目标
+
+- 跟踪精度:$e_y$ 稳态 < 10cm(高速)
+- 舒适:$|\delta|$ 平滑
+- 鲁棒:弯道不切弯、无振荡
+
+## 自检
+
+- [ ] 横向 MPC 的状态与模型?
+- [ ] 代价与约束如何设计?
+- [ ] 速度变化如何影响模型?
