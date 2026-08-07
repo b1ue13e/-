@@ -12,6 +12,8 @@ upstream: ["[[概率图模型-EM算法]]", "[[概率图模型-变分推断算法
 concept: ["变分EM", "变分E步", "LDA", "随机变分EM"]
 related: ["概率图模型-EM算法", "概率图模型-变分推断算法"]
 tags: [概率图模型, 变分EM, LDA]
+anki_deck: "概率图模型::03-学习算法"
+anki_tags: [概率图模型, 变分EM, LDA]
 ---
 
 # 概率图模型-变分EM
@@ -164,3 +166,9 @@ SORT file.name ASC
 ```
 
 > 直接下游：阶段 6 的 [[LDA推断]]/[[LDA生成]]、课程 Capstone（EM/VI 部分）。
+
+## 🃏 Anki 卡片
+
+- 变分 EM 的两步::变分 E 步（给定 θ 更新近似后验 q）；M 步（给定 q 最大化 ELBO 更新 θ）——交替提升 ELBO
+- 变分 EM 与标准 EM 的区别::EM 用精确后验 p(z|x,θ)（可计算时）；变分 EM 用变分分布 q(z) 处理不可计算的后验（如 LDA）
+- 变分 EM 收敛目标::联合优化 (q, θ) 最大化 ELBO 下界；LDA 的推断即变分 EM

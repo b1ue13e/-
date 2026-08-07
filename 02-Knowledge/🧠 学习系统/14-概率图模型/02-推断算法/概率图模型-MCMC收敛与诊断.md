@@ -12,6 +12,8 @@ upstream: ["[[概率图模型-Gibbs与MH采样]]"]
 concept: ["burn-in", "自相关", "Gelman-Rubin统计量", "有效样本量"]
 related: ["概率图模型-Gibbs与MH采样", "概率图模型-高级MCMC"]
 tags: [概率图模型, MCMC, 收敛诊断]
+anki_deck: "概率图模型::02-推断算法"
+anki_tags: [概率图模型, MCMC, 收敛诊断]
 ---
 
 # 概率图模型-MCMC收敛与诊断
@@ -177,3 +179,9 @@ SORT file.name ASC
 ```
 
 > 直接下游：阶段作业-02（采样收敛 $\hat R < 1.05$ 硬验收）、课程 Capstone（采样一致性审计）、阶段 6 的 PyMC/NumPyro 实践。
+
+## 🃏 Anki 卡片
+
+- Burn-in 是什么::链从初始点到达近似平稳分布所需的迭代数 B，前 B 个样本应丢弃
+- 自相关高的含义::相邻样本高度相关 → 链探索效率低、有效样本量远小于样本总数
+- 常用收敛诊断::Gelman-Rubin R-hat（多链方差比，≈1 收敛）、有效样本量 ESS、轨迹图目测

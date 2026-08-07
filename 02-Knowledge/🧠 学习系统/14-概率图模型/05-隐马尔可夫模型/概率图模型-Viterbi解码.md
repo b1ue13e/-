@@ -12,6 +12,8 @@ upstream: ["[[概率图模型-隐马尔可夫模型HMM]]", "[[概率图模型-�
 concept: ["Viterbi", "动态规划", "回溯", "最大积"]
 related: ["概率图模型-隐马尔可夫模型HMM", "概率图模型-前向后向算法与BaumWelch"]
 tags: [概率图模型, HMM, Viterbi]
+anki_deck: "概率图模型::05-隐马尔可夫模型"
+anki_tags: [概率图模型, Viterbi, 解码]
 ---
 
 # 概率图模型-Viterbi解码
@@ -171,3 +173,9 @@ SORT file.name ASC
 ```
 
 > 直接下游：[[概率图模型-CRF推断]]（CRF 解码）、阶段 6 的 [[语音解码]]/[[POS-CRF]]、课程 Capstone。
+
+## 🃏 Anki 卡片
+
+- Viterbi 解决的问题::给定观测序列 O 求最优隐状态序列 q*（MAP 解码），对应 HMM 三大问题的"解码"
+- Viterbi 递推式::δ_t(j) = max_i [δ_{t-1}(i) a_{ij}] b_j(o_t)，回溯指针 ψ_t(j) 记录 argmax i 用于恢复路径
+- Viterbi 与前向算法的区别::前向对状态求和（算 P(O|λ) 评估）；Viterbi 对状态取 max（算最优路径解码）
