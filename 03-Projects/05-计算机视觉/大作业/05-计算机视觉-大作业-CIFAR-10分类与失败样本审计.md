@@ -8,7 +8,7 @@ assignment_id: "05-计算机视觉-CAP-01"
 assignment_level: capstone
 assignment_format: project
 source_type: local_integration_task
-stage_id: "05"
+stage_id: "03"
 requires: ["[[卷积神经网络CNN]]", "[[迁移学习与微调]]", "[[图像分类任务与数据管线]]", "[[数据增强与正则化]]"]
 created: 2026-07-28
 updated: 2026-08-06
