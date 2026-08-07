@@ -76,11 +76,6 @@ $$X[k]=E[k]+W_N^k O[k],\quad X[k+N/2]=E[k]-W_N^k O[k],\quad W_N=e^{-j2\pi/N}$$
 
 ## 学完后可以完成
 
-> 以下作业依赖本卡知识点（由作业 `requires` 字段自动派生，可直接点击跳转）：
-
-- [[信号与系统-课后作业-HW04-离散傅里叶变换|HW04-离散傅里叶变换]]
-- [[信号与系统-阶段作业-07-DFT与FFT|07-DFT与FFT]]
-
 ```dataview
 LIST
 FROM "03-Projects/12-信号与系统"

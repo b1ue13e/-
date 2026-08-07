@@ -73,11 +73,6 @@ $$|H(j\omega)|^2=\frac{1}{1+\varepsilon^2 T_N^2(\omega/\omega_c)},\quad T_N\text
 
 ## 学完后可以完成
 
-> 以下作业依赖本卡知识点（由作业 `requires` 字段自动派生，可直接点击跳转）：
-
-- [[信号与系统-课后作业-HW06-Z变换与数字滤波器|HW06-Z变换与数字滤波器]]
-- [[信号与系统-阶段作业-08-工程实践|08-工程实践]]
-
 ```dataview
 LIST
 FROM "03-Projects/12-信号与系统"

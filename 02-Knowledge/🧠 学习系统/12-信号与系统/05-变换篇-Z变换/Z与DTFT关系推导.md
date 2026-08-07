@@ -81,8 +81,6 @@ $$\boxed{\text{DTFT 存在}\;\iff\;\text{单位圆 }|z|=1\subset\text{ROC}\;\iff
 
 ## 学完后可以完成
 
-> 暂无直接依赖本卡的知识点作业（可结合「相关」卡或阶段作业做综合训练）。
-
 ```dataview
 LIST
 FROM "03-Projects/12-信号与系统"
