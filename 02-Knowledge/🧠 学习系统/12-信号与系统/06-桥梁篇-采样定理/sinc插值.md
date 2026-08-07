@@ -60,6 +60,20 @@ $$h_r(t)=\mathrm{sinc}(t/T),\quad x(t)=\sum_n x[n]\,h_r(t-nT)$$
 - 误以为 sinc 可实现（无限长）。
 - 忽略需截断引入的误差。
 
+## 推导/证明
+**目标**：说明 $h_r(t)=\mathrm{sinc}(t/T)$ 是理想重建低通的冲激响应，并验证样本点正交性。
+
+理想重建低通的频率响应为
+$$H_r(\omega)=\begin{cases}T,& |\omega|<\omega_s/2=\pi/T\\ 0,& \text{其它}\end{cases}\quad (\omega_s=2\pi/T)$$
+其冲激响应即逆傅里叶变换（归一化 sinc）：
+$$h_r(t)=\frac{1}{2\pi}\int_{-\pi/T}^{\pi/T}T\,e^{j\omega t}d\omega=T\cdot\frac{\sin(\pi t/T)}{\pi t/T}=\mathrm{sinc}(t/T)$$
+
+重建信号 $x_r(t)=(x_s*h_r)(t)=\sum_n x(nT)\,h_r(t-nT)$。**正交性**：当 $t=mT$ 时
+$$h_r(mT-nT)=\mathrm{sinc}(m-n)=\begin{cases}1,& m=n\\ 0,& m\neq n\end{cases}$$
+故 $x_r(mT)=x(mT)$，且各样本项只在自己格点为 1、其余样本点穿过 0，互不干扰 ⇒ 无限长 sinc 求和精确恢复原信号。
+
+**最小手算**：仅两个样本 $x[0]=3,x[1]=5$，在 $t=0$ 处 $x_r(0)=3\cdot\mathrm{sinc}(0)+5\cdot\mathrm{sinc}(-1)=3\cdot1+5\cdot0=3$；在 $t=T$ 处 $=3\cdot0+5\cdot1=5$，精确还原样本值（实际重建需无限项，此处验证正交抽样性质）。
+
 ## 和其他笔记的关系
 - 前置：[[理想重建]]
 - 前置：[[矩形变换]]
