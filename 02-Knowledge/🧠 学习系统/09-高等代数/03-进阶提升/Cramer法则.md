@@ -1,4 +1,4 @@
----
+﻿---
 type: study
 topic: "Cramer法则"
 course: "高等代数"
@@ -21,7 +21,7 @@ tags: [高等代数, 线性代数, Cramer法则]
 
 > **核心问题**：方阵方程组 $A\mathbf{x}=\mathbf{b}$ 的解，能不能用行列式"一比"就出来？
 
-## 0. 先判断它值不值得深挖
+## 0. 学习边界
 
 | 分类 | 评估 |
 |:--|:--|
@@ -141,3 +141,4 @@ SORT assignment_level ASC, file.name ASC
 
 ---
 *创建于：2026-08-06 | 来源：Hefferon Ch.4 §4.5 + MIT 18.06SC Lec 20 + 高等代数（第5版）；旧卡（Cramer法则）于 2026-08-06 迁移/重写*
+

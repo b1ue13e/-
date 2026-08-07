@@ -1,4 +1,4 @@
----
+﻿---
 type: study
 topic: "Gram-Schmidt正交化"
 course: "高等代数"
@@ -21,7 +21,7 @@ tags: [高等代数, 线性代数, Gram-Schmidt]
 
 > **核心问题**：给一组线性无关的向量，怎么造出一组"同样张成、但两两垂直且单位长"的向量？——Gram-Schmidt 算法。
 
-## 0. 先判断它值不值得深挖
+## 0. 学习边界
 
 | 分类 | 评估 |
 |:--|:--|
@@ -157,3 +157,4 @@ SORT assignment_level ASC, file.name ASC
 
 ---
 *创建于：2026-08-06 | 来源：Hefferon Ch.6 §6.4 + MIT 18.06SC Lec 17 + 高等代数（第5版）；旧空壳（Gram-Schmidt正交化）于 2026-08-06 重写*
+

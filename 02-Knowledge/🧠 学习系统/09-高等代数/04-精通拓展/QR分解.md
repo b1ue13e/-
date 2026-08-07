@@ -1,4 +1,4 @@
----
+﻿---
 type: study
 topic: "QR分解"
 course: "高等代数"
@@ -21,7 +21,7 @@ tags: [高等代数, 线性代数, QR分解]
 
 > **核心问题**：任意矩阵怎么拆成"正交 × 上三角"？——$A=QR$ 及其数值价值。
 
-## 0. 先判断它值不值得深挖
+## 0. 学习边界
 
 | 分类 | 评估 |
 |:--|:--|
@@ -154,3 +154,4 @@ SORT assignment_level ASC, file.name ASC
 
 ---
 *创建于：2026-08-06 | 来源：Hefferon Ch.6 §6.5 + MIT 18.06SC Lec 17 + Trefethen & Bau；旧空壳（QR分解）于 2026-08-06 重写*
+

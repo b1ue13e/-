@@ -1,4 +1,4 @@
----
+﻿---
 type: study
 topic: "LU分解"
 course: "高等代数"
@@ -21,7 +21,7 @@ tags: [高等代数, 线性代数, LU分解]
 
 > **核心问题**：高斯消元的每一步"乘子"能否保存下来，把整个消元过程打包成一个可复用的分解 $A = LU$？
 
-## 0. 先判断它值不值得深挖
+## 0. 学习边界
 
 | 分类 | 评估 |
 |:--|:--|
@@ -160,3 +160,4 @@ SORT assignment_level ASC, file.name ASC
 
 ---
 *创建于：2026-08-06 | 来源：Hefferon Ch.1 + MIT 18.06SC Lec 4 + Trefethen & Bau Lec 20-21（数值补充）*
+
