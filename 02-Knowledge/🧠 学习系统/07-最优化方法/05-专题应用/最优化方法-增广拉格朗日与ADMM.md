@@ -1,49 +1,32 @@
 ---
 type: study
-course: 07-最优化方法
 topic: 增广拉格朗日与ADMM
-created: '2026-08-06'
+course: 07-最优化方法
+created: 2026-08-06
 status: completed
 flow: knowledge
 kind: derivation
-stage_moc: '[[🧭 阶段5-专题应用]]'
+stage_moc: "[[🧭 阶段5-专题应用]]"
+difficulty: advanced
+tags:
+  - 学习
+  - 最优化方法
+concept:
+  - 增广拉格朗日
+  - ADMM
+  - 算子分裂
+prerequisites:
+  - 凸优化与拉格朗日对偶
+  - 强对偶与Slater条件
+related:
+  - 近端梯度与FISTA
+  - 内点法原理
 upstream:
   - '[[最优化方法-近端梯度与FISTA]]'
   - '[[最优化方法-凸优化与拉格朗日对偶]]'
 ---
-﻿---
-
-type: study
-topic: 增广拉格朗日与ADMM
-course: 07-最优化方法
-created: 2026-08-05
-status: ongoing
-stage_moc: '[[🧭 阶段5-专题应用]]'
-flow: knowledge
-kind: concept
-tags:
-- 学习
-- 最优化方法
-difficulty: advanced
-concept:
-- 增广拉格朗日
-- ADMM
-- 算子分裂
-prerequisites:
-- 凸优化与拉格朗日对偶
-- 强对偶与Slater条件
-related:
-- 近端梯度与FISTA
-- 内点法原理
-
----
 
 
-## 0. 学习边界
-- **类别**：A+ 类 (现代大规模优化、分布式优化的绝对基石)
-- **判断理由**：交替方向乘子法（Alternating Direction Method of Multipliers, ADMM）融合了对偶上升法的可分解性和增广拉格朗日方法（ALM）的良好收敛性。在机器学习、信号处理、统计学中的L1正则化问题（如LASSO）、分布式共识优化（Consensus Optimization）中，ADMM是首选框架之一。由于其易于实现并行化与分布式，它是解决大规模数据的现代优化必备技能。
-
----
 ## 1. 这个知识点解决什么问题？
 > **我们遇到了什么麻烦**：
 当我们面对一个带有复杂约束的凸优化问题：$\min f(x) + g(z) \quad \text{s.t. } Ax + Bz = c$ 时：
@@ -102,8 +85,8 @@ ADMM 的迭代 $k \to k+1$ 包含三步：
 增广拉格朗日函数的惩罚项可以合并为：
 $L_\rho = f(x) + g(z) + \frac{\rho}{2} \|Ax + Bz - c + u\|_2^2 - \frac{\rho}{2}\|u\|_2^2$
 **Scaled ADMM 算法步骤**：
-1. $x^{k+1} = \arg\min_x \left( f(x) + \frac{\rho}{2}\|Ax + Bz^k - c + u^k\|_2^2 \r\right)$
-2. $z^{k+1} = \arg\min_z \left( g(z) + \frac{\rho}{2}\|Ax^{k+1} + Bz - c + u^k\|_2^2 \r\right)$
+1. $x^{k+1} = \arg\min_x \left( f(x) + \frac{\rho}{2}\|Ax + Bz^k - c + u^k\|_2^2 \right)$
+2. $z^{k+1} = \arg\min_z \left( g(z) + \frac{\rho}{2}\|Ax^{k+1} + Bz - c + u^k\|_2^2 \right)$
 3. $u^{k+1} = u^k + (Ax^{k+1} + Bz^{k+1} - c)$
 
 ---
@@ -218,31 +201,11 @@ PGD 需要 $f$ 在每一步可微且求梯度，然后对 $g$ 使用近端算子
 ADMM 是将其写为 $f(x) + g(z), x=z$。$x$-update 这一步是解一个含有 $f$ 的近端问题（或二次规划），而不是简单地求梯度（除非进一步做线性化，即 Linearized ADMM）。ADMM 的适用面比 PGD 更广，因为即使 $f$ 也不可微，只要 $f$ 和 $g$ 各自的近端算子容易求，ADMM 就可以工作。
 
 ---
-## 12. 我的主动回忆区
-### 我的闭卷复述
-- (留白)
-### 我的推导复现
-- (留白)
-### 我的错误与卡点
-- (留白)
-### 下次复习日期
-- 2026-08-10
-
----
-## 13. 给 Obsidian 的归档建议
-- 归档路径：`02-Knowledge/🧠 学习系统/07-最优化方法/增广拉格朗日与ADMM.md`
-- 建议将 “软阈值算子推导” 在《近端梯度》卡片中做详细展开，并通过双链关联到本卡片。
 
 ## ⚠️ 常见陷阱与避坑指南
 
 > [!CAUTION]
-> 1. **ADMM 惩罚参数 $
-\rho$ 的选取**：$
-\rho$ 太小会导致约束收敛极其缓慢，$
-\rho$ 太大则会压制目标函数的优化。推荐引入自适应 $
-\rho$ 更新策略（残差平衡法 Residual Balancing）：当原残差 $\|r_k\|_2 > 10 \|s_k\|_2$ 时调大 $
-\rho$，当对偶残差 $\|s_k\|_2 > 10 \|r_k\|_2$ 时调小 $
-\rho$。
+> 1. **ADMM 惩罚参数 $\rho$ 的选取**：$\rho$ 太小会导致约束收敛极其缓慢，$\rho$ 太大则会压制目标函数的优化。推荐引入自适应 $\rho$ 更新策略（残差平衡法 Residual Balancing）：当原残差 $\|r_k\|_2 > 10 \|s_k\|_2$ 时调大 $\rho$，当对偶残差 $\|s_k\|_2 > 10 \|r_k\|_2$ 时调小 $\rho$。
 > 2. **ADMM $x$-update 与 $y$-update 的顺序**：ADMM 是 Gauss-Seidel 类型的交替更新，必须先更新 $x_{k+1}$，再将最新的 $x_{k+1}$ 带入 $y_{k+1}$ 的求解中，最后更新对偶乘子 $u_{k+1}$。不可以并行同步更新 $x, y$（那属于 Jacobi 类型，易发散）。
 
 ## 🃏 Anki 卡片
@@ -250,11 +213,9 @@ ADMM 是将其写为 $f(x) + g(z), x=z$。$x$-update 这一步是解一个含有
 Q: 交替方向乘子法 (ADMM) 的标准问题形式及其三大迭代更新步是什么？
 A: 问题形式：$\min_{x, y} f(x) + g(y), \quad \text{s.t.} \quad A x + B y = c$。
 更新步：
-1) $x_{k+1} = \arg\min_x \left( f(x) + \frac{
-\rho}{2} \|A x + B y_k - c + u_k\|_2^2 
+1) $x_{k+1} = \arg\min_x \left( f(x) + \frac{\rho}{2} \|A x + B y_k - c + u_k\|_2^2 
 \right)$
-2) $y_{k+1} = \arg\min_y \left( g(y) + \frac{
-\rho}{2} \|A x_{k+1} + B y - c + u_k\|_2^2 
+2) $y_{k+1} = \arg\min_y \left( g(y) + \frac{\rho}{2} \|A x_{k+1} + B y - c + u_k\|_2^2 
 \right)$
 3) $u_{k+1} = u_k + A x_{k+1} + B y_{k+1} - c$
 <!-- id: opt-admm-01 -->
@@ -285,5 +246,4 @@ SORT assignment_level ASC, file.name ASC
 ```
 
 
-- [[07-最优化方法-大作业-大规模优化与ADMM并行求解器]]
 
