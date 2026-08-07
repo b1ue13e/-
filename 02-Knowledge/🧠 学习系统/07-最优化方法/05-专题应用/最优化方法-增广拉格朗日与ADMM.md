@@ -102,8 +102,8 @@ ADMM 的迭代 $k \to k+1$ 包含三步：
 增广拉格朗日函数的惩罚项可以合并为：
 $L_\rho = f(x) + g(z) + \frac{\rho}{2} \|Ax + Bz - c + u\|_2^2 - \frac{\rho}{2}\|u\|_2^2$
 **Scaled ADMM 算法步骤**：
-1. $x^{k+1} = \arg\min_x \left( f(x) + \frac{\rho}{2}\|Ax + Bz^k - c + u^k\|_2^2 \right)$
-2. $z^{k+1} = \arg\min_z \left( g(z) + \frac{\rho}{2}\|Ax^{k+1} + Bz - c + u^k\|_2^2 \right)$
+1. $x^{k+1} = \arg\min_x \left( f(x) + \frac{\rho}{2}\|Ax + Bz^k - c + u^k\|_2^2 \r\right)$
+2. $z^{k+1} = \arg\min_z \left( g(z) + \frac{\rho}{2}\|Ax^{k+1} + Bz - c + u^k\|_2^2 \r\right)$
 3. $u^{k+1} = u^k + (Ax^{k+1} + Bz^{k+1} - c)$
 
 ---
@@ -184,8 +184,8 @@ print(f"Non-zero entries in ADMM solution: {np.sum(np.abs(x_admm) > 1e-4)}")
 - [[最优化方法-凸优化与拉格朗日对偶]]
 - [[最优化方法-近端梯度与FISTA]]：软阈值算子的来源。
 ### 下游延伸
-- [[最优化方法-增广拉格朗日与ADMM]]：ADMM 在分布式系统中的扩展（每个机器算本地 loss，全局变量强制共识）。
-- [[最优化方法-增广拉格朗日与ADMM]]：如何自动调整 $\rho$ 参数。
+- [[最优化方法-罚函数法与障碍法]]：ADMM 由增广拉格朗日法演变而来。
+- [[最优化方法-锥规划与半定规划SDP]]：共识 ADMM 在分布式 SDP 中的应用。
 ### 横向关联
 - [[最优化方法-近端梯度与FISTA]]：另一种用于 L1 正则化的高效一阶算法。ADMM 和 FISTA 都是求解稀疏问题的利器。
 
@@ -237,12 +237,12 @@ ADMM 是将其写为 $f(x) + g(z), x=z$。$x$-update 这一步是解一个含有
 
 > [!CAUTION]
 > 1. **ADMM 惩罚参数 $
-ho$ 的选取**：$
-ho$ 太小会导致约束收敛极其缓慢，$
-ho$ 太大则会压制目标函数的优化。推荐引入自适应 $
-ho$ 更新策略（残差平衡法 Residual Balancing）：当原残差 $\|r_k\|_2 > 10 \|s_k\|_2$ 时调大 $
-ho$，当对偶残差 $\|s_k\|_2 > 10 \|r_k\|_2$ 时调小 $
-ho$。
+\rho$ 的选取**：$
+\rho$ 太小会导致约束收敛极其缓慢，$
+\rho$ 太大则会压制目标函数的优化。推荐引入自适应 $
+\rho$ 更新策略（残差平衡法 Residual Balancing）：当原残差 $\|r_k\|_2 > 10 \|s_k\|_2$ 时调大 $
+\rho$，当对偶残差 $\|s_k\|_2 > 10 \|r_k\|_2$ 时调小 $
+\rho$。
 > 2. **ADMM $x$-update 与 $y$-update 的顺序**：ADMM 是 Gauss-Seidel 类型的交替更新，必须先更新 $x_{k+1}$，再将最新的 $x_{k+1}$ 带入 $y_{k+1}$ 的求解中，最后更新对偶乘子 $u_{k+1}$。不可以并行同步更新 $x, y$（那属于 Jacobi 类型，易发散）。
 
 ## 🃏 Anki 卡片
@@ -250,19 +250,19 @@ ho$。
 Q: 交替方向乘子法 (ADMM) 的标准问题形式及其三大迭代更新步是什么？
 A: 问题形式：$\min_{x, y} f(x) + g(y), \quad \text{s.t.} \quad A x + B y = c$。
 更新步：
-1) $x_{k+1} = \grg\min_x \left( f(x) + \frac{
-ho}{2} \|A x + B y_k - c + u_k\|_2^2 
-ight)$
-2) $y_{k+1} = \grg\min_y \left( g(y) + \frac{
-ho}{2} \|A x_{k+1} + B y - c + u_k\|_2^2 
-ight)$
+1) $x_{k+1} = \arg\min_x \left( f(x) + \frac{
+\rho}{2} \|A x + B y_k - c + u_k\|_2^2 
+\right)$
+2) $y_{k+1} = \arg\min_y \left( g(y) + \frac{
+\rho}{2} \|A x_{k+1} + B y - c + u_k\|_2^2 
+\right)$
 3) $u_{k+1} = u_k + A x_{k+1} + B y_{k+1} - c$
 <!-- id: opt-admm-01 -->
 
 Q: ADMM 中的原始残差 (Primal Residual) 与对偶残差 (Dual Residual) 的定义是什么？
 A: 原始残差 $r_{k+1} = A x_{k+1} + B y_{k+1} - c$（量度约束违反程度）；
 对偶残差 $s_{k+1} = 
-ho A^T B (y_{k+1} - y_k)$（量度对偶平稳性误差）。当 $\|r_k\|_2 \le \epsilon_{\text{pri}}$ 且 $\|s_k\|_2 \le \epsilon_{\text{dual}}$ 时算法收敛。
+\rho A^T B (y_{k+1} - y_k)$（量度对偶平稳性误差）。当 $\|r_k\|_2 \le \epsilon_{\text{pri}}$ 且 $\|s_k\|_2 \le \epsilon_{\text{dual}}$ 时算法收敛。
 <!-- id: opt-admm-02 -->
 
 

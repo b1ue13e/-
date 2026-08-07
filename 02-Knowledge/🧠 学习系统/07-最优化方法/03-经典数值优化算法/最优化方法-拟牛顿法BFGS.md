@@ -1,39 +1,20 @@
 ---
 type: study
-topic: 拟牛顿法BFGS
-course: 07-最优化方法
-created: 2026-08-05
+topic: "拟牛顿法BFGS"
+course: "07-最优化方法"
+created: 2026-08-06
 status: completed
-stage_moc: '[[🧭 阶段3-经典数值优化算法]]'
 flow: knowledge
 kind: concept
-tags:
-  - 学习
-  - 最优化方法
+stage_moc: "[[🧭 阶段3-经典数值优化算法]]"
 difficulty: advanced
-concept:
-  - 拟牛顿法
-  - BFGS
-  - 割线方程
-prerequisites:
-  - 线搜索与步长策略
-  - 最速下降与收敛分析
-related:
-  - 共轭梯度法
-  - 信赖域方法
+upstream:
+  - "[[最优化方法-线搜索与步长策略]]"
+  - "[[最优化方法-牛顿法]]"
 ---
-# 拟牛顿法BFGS与L-BFGS
+# 最优化方法-拟牛顿法BFGS
 
-## 0. 学习边界
-- **类别**：A 类（深度学习之前最核心的优化算法）
-- **判断理由**：在无法计算或者计算海森矩阵（Hessian）成本过高时，拟牛顿法（尤其是BFGS及L-BFGS）是首选。它利用一阶梯度的历史信息来近似二阶曲率，实现了超线性收敛。L-BFGS至今仍是大规模非凸优化（如传统机器学习、某些深度学习场景）的标准工具。
 
----
-## 1. 这个知识点解决什么问题？
-> **我们遇到了什么麻烦**：
-牛顿法 $x_{k+1} = x_k - (\nabla^2 f(x_k))^{-1} \nabla f(x_k)$ 收敛极快，但需要计算海森矩阵并求逆，单次迭代时间复杂度 $O(n^3)$。当参数量 $n$ 达到上万时，牛顿法直接瘫痪。我们希望有一种方法：只用梯度信息，迭代成本低，但又能捕捉二阶曲率，比梯度下降快。
-
----
 ## 2. 为什么它重要？它有什么用？
 - **连接大图景**：它是最速下降法（只看当前梯度）与牛顿法（完全看真实Hessian）的完美折中。
 - **实际应用场景**：Scipy中的 `scipy.optimize.minimize(method='L-BFGS-B')` 是工业界解决优化问题的“瑞士军刀”。
@@ -135,8 +116,8 @@ def two_loop_recursion(grad, S, Y, rho, H0_diag):
 
 ---
 ## 9. 相关知识点与 Obsidian 双链建议
-- **上游依赖**：[[最优化方法-拟牛顿法BFGS]]、[[最优化方法-线搜索与步长策略]]（特别是 Wolfe 条件）。
-- **下游延伸**：[[最优化方法-拟牛顿法BFGS]]（处理边界约束的扩展）。
+- **上游依赖**：[[最优化方法-牛顿法]]、[[最优化方法-线搜索与步长策略]]（特别是 Wolfe 条件）。
+- **下游延伸**：[[最优化方法-拟牛顿法L-BFGS]]（大规模低存储版本）。
 - **横向关联**：与[[最优化方法-共轭梯度法]]（CG）对比。CG不需要存矩阵，空间 $O(n)$，但拟牛顿法通常收敛需要更少的迭代次数，且对条件数不好的问题更鲁棒。
 
 ---
@@ -183,9 +164,7 @@ def two_loop_recursion(grad, S, Y, rho, H0_diag):
 ## 🃏 Anki 卡片
 
 Q: 拟牛顿方程 (Secant Equation) 的数学表达式是什么？
-A: $B_{k+1} s_k = y_k$（或 $H_{k+1} y_k = s_k$），其中 $s_k = x_{k+1} - x_k$，$y_k = 
-abla f(x_{k+1}) - 
-abla f(x_k)$。它要求近似 Hessian 阵作用于自变量增量等于梯度增量。
+A: $B_{k+1} s_k = y_k$（或 $H_{k+1} y_k = s_k$），其中 $s_k = x_{k+1} - x_k$，$y_k = \nabla f(x_{k+1}) - \nabla f(x_k)$。它要求近似 Hessian 阵作用于自变量增量等于梯度增量。
 <!-- id: opt-bfgs-01 -->
 
 Q: BFGS 算法相比原始牛顿法 (Newton's Method) 有何核心优势？
@@ -194,15 +173,12 @@ A: 牛顿法需要计算并求解 $n \times n$ 的 Hessian 矩阵及其线性方
 
 
 ---
-
 Q: BFGS 割线方程 (Secant Equation) 的数学表达式是什么？
 A: $B_{k+1} s_k = y_k$ 或 $H_{k+1} y_k = s_k$，其中位移 $s_k = x_{k+1}-x_k$，梯度差 $y_k = g_{k+1}-g_k$。
 <!-- id: opt-bfgs-03 -->
 
 ## 学完后可以完成
 
-### 通过标准
-- [ ] 能够完成核心推导与验证
 
 ```dataview
 LIST
@@ -210,8 +186,3 @@ FROM "03-Projects"
 WHERE contains(requires, this.file.link)
 SORT assignment_level ASC, file.name ASC
 ```
-
-
-- [[07-最优化方法-课后作业-06-经典数值算法实现]]
-- [[07-最优化方法-阶段作业-03-经典数值优化算法对比实验]]
-

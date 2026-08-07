@@ -1,41 +1,16 @@
 ---
 type: study
-course: 07-最优化方法
-topic: 分离超平面与Farkas引理
-created: '2026-08-06'
+topic: "分离超平面与Farkas引理"
+course: "07-最优化方法"
+created: 2026-08-06
 status: completed
 flow: knowledge
-kind: derivation
-stage_moc: '[[🧭 阶段2-凸分析与最优性条件]]'
-upstream:
-  - '[[最优化方法-凸集与凸函数]]'
----
-﻿---
-
-type: study
-topic: 分离超平面与Farkas引理
-course: 07-最优化方法
-created: 2026-08-05
-status: ongoing
-stage_moc: '[[🧭 阶段2-凸分析与最优性条件]]'
-flow: knowledge
 kind: concept
-tags:
-- 学习
-- 最优化方法
+stage_moc: "[[🧭 阶段2-凸分析与最优性条件]]"
+upstream:
+  - "[[最优化方法-凸集与凸函数]]"
 difficulty: advanced
-concept:
-- 分离超平面
-- 支撑超平面
-- Farkas引理
-prerequisites:
-- 凸集与凸函数
-related:
-- 强对偶与Slater条件
-- 凸优化问题标准形式
-
 ---
-
 
 ## 0. 学习边界
 - **类别**：A 类（底层基础数学工具）
@@ -273,15 +248,12 @@ A: 对于矩阵 $A$ 和向量 $b$，以下两个系统有且仅有一个有解�
 
 
 ---
-
 Q: 严格分离超平面定理要求点与闭凸集满足什么关系？
 A: 要求点 $x_0$ 不属于闭凸集 $C$（即 $x_0 \notin C$），则存在超平面严格将点 $x_0$ 与凸集 $C$ 分隔开。
 <!-- id: opt-farkas-03 -->
 
 ## 学完后可以完成
 
-### 通过标准
-- [ ] 能够完成核心推导与验证
 
 ```dataview
 LIST
@@ -289,8 +261,3 @@ FROM "03-Projects"
 WHERE contains(requires, this.file.link)
 SORT assignment_level ASC, file.name ASC
 ```
-
-
-- [[07-最优化方法-课后作业-01-凸集与凸函数]]
-- [[07-最优化方法-阶段作业-02-凸分析与最优性综合实验]]
-

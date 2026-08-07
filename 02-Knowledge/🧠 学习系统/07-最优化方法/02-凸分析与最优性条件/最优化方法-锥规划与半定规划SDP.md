@@ -1,42 +1,16 @@
 ---
 type: study
-course: 07-最优化方法
-topic: 锥规划与半定规划SDP
-created: '2026-08-06'
+topic: "锥规划与半定规划SDP"
+course: "07-最优化方法"
+created: 2026-08-06
 status: completed
 flow: knowledge
 kind: concept
-stage_moc: '[[🧭 阶段2-凸分析与最优性条件]]'
+stage_moc: "[[🧭 阶段2-凸分析与最优性条件]]"
 upstream:
-  - '[[最优化方法-凸优化问题标准形式]]'
-  - '[[最优化方法-强对偶与Slater条件]]'
+  - "[[最优化方法-凸优化问题标准形式]]"
+  - "[[最优化方法-强对偶与Slater条件]]"
 ---
-﻿---
-
-type: study
-topic: 锥规划与半定规划SDP
-course: 07-最优化方法
-created: 2026-08-02
-status: ongoing
-stage_moc: '[[🧭 阶段2-凸分析与最优性条件]]'
-flow: knowledge
-kind: concept
-tags:
-- 学习
-- 最优化方法
-concept:
-- 锥规划
-- 凸优化
-prerequisites:
-- 凸集与凸函数
-- 线性代数
-related:
-- 凸优化与拉格朗日对偶
-- CVXPY建模与求解器
-- 凸集与凸函数
-
----
-
 
 # 锥规划与半定规划SDP
 
@@ -157,7 +131,6 @@ print("SDP 上界:", prob.value, "| 割值:", 0.25 * (W.sum() - z @ W @ z))
 | 对偶锥 $K^*$ | 与 $K$ 内积非负 | 广义不等式的"乘子域" | 对偶可行性（HW04） |
 
 ---
-
 ## 9. 相关知识点与 Obsidian 双链建议
 ### 上游依赖
 - [[最优化方法-凸集与凸函数]]：凸锥是凸集的推广，广义不等式依赖锥的凸性。
@@ -267,15 +240,12 @@ A: 通过引入对称矩阵变量 $X = x x^T$，非凸二次项 $x^T A x = \math
 
 
 ---
-
 Q: 半定规划 (SDP) 中控制矩阵半正定的约束形式是什么？
 A: $F(x) = F_0 + \sum x_i F_i \succeq 0$，表示对称矩阵线性组合必须处于半正定锥中。
 <!-- id: opt-sdp-03 -->
 
 ## 学完后可以完成
 
-### 通过标准
-- [ ] 能够完成核心推导与验证
 
 ```dataview
 LIST
@@ -283,8 +253,3 @@ FROM "03-Projects"
 WHERE contains(requires, this.file.link)
 SORT assignment_level ASC, file.name ASC
 ```
-
-
-- [[07-最优化方法-课后作业-02-问题标准形式与规划]]
-- [[07-最优化方法-阶段作业-02-凸分析与最优性综合实验]]
-

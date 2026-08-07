@@ -1,41 +1,16 @@
 ---
 type: study
-course: 07-最优化方法
-topic: 约束优化-SQP与投影梯度法
-created: '2026-08-06'
+topic: "约束优化-SQP与投影梯度法"
+course: "07-最优化方法"
+created: 2026-08-06
 status: completed
 flow: knowledge
-kind: derivation
-stage_moc: '[[🧭 阶段3-经典数值优化算法]]'
-upstream:
-  - '[[最优化方法-牛顿法]]'
-  - '[[最优化方法-凸优化与拉格朗日对偶]]'
----
-﻿---
-
-type: study
-topic: 约束优化-SQP与投影梯度法
-course: 07-最优化方法
-created: 2026-08-05
-status: ongoing
-stage_moc: '[[🧭 阶段3-经典数值优化算法]]'
-flow: knowledge
 kind: concept
-tags:
-- 学习
-- 最优化方法
+stage_moc: "[[🧭 阶段3-经典数值优化算法]]"
+upstream:
+  - "[[最优化方法-牛顿法]]"
+  - "[[最优化方法-凸优化与拉格朗日对偶]]"
 difficulty: advanced
-concept:
-- SQP
-- 投影梯度法
-- 约束优化
-prerequisites:
-- 线搜索与步长策略
-- 凸优化与拉格朗日对偶
-related:
-- 内点法原理
-- 增广拉格朗日与ADMM
-
 ---
 
 # 约束优化：SQP与投影梯度法
@@ -171,7 +146,7 @@ print("Optimal x:", x_opt) # 应当为 [1.0, 1.0]
 ---
 ## 9. 相关知识点与 Obsidian 双链建议
 - **上游依赖**：[[最优化方法-凸优化与拉格朗日对偶]]、[[最优化方法-拟牛顿法BFGS]]。
-- **下游延伸**：[[最优化方法-约束优化-SQP与投影梯度法]]、[[最优化方法-约束优化-SQP与投影梯度法]]。
+- **下游延伸**：[[最优化方法-罚函数法与障碍法]]、[[最优化方法-内点法原理]]。
 - **横向关联**：与[[最优化方法-内点法原理]]竞争，常常在NLP求解器中提供两种选择。
 
 ---
@@ -222,22 +197,18 @@ A: 在当前迭代点 $x_k$ 处，构造拉格朗日函数的二次近似目标�
 <!-- id: opt-sqp-01 -->
 
 Q: 投影梯度法 (Projected Gradient Descent) 的更新公式及其适用条件是什么？
-A: 更新公式为 $x_{k+1} = \Pi_\Omega \left( x_k - \glpha_k 
-abla f(x_k) 
+A: 更新公式为 $x_{k+1} = \Pi_\Omega \left( x_k - \alpha_k \nabla f(x_k) 
 ight)$。适用条件：可行域 $\Omega$ 必须为闭凸集，且向 $\Omega$ 的欧氏投影算子 $\Pi_\Omega$ 具有闭式解或高度高效的算法。
 <!-- id: opt-sqp-02 -->
 
 
 ---
-
 Q: 序列二次规划 (SQP) 的基本思想是什么？
 A: 在每步迭代中构造并求解拉格朗日函数的二次规划（QP）子问题，直接逼近非线性约束优化的 KKT 点。
 <!-- id: opt-sqp-03 -->
 
 ## 学完后可以完成
 
-### 通过标准
-- [ ] 能够完成核心推导与验证
 
 ```dataview
 LIST
@@ -245,7 +216,3 @@ FROM "03-Projects"
 WHERE contains(requires, this.file.link)
 SORT assignment_level ASC, file.name ASC
 ```
-
-
-- [[07-最优化方法-阶段作业-03-经典数值优化算法对比实验]]
-

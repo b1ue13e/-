@@ -1,42 +1,15 @@
 ---
 type: study
-course: 07-最优化方法
-topic: CVXPY建模与求解器
-created: '2026-08-06'
+topic: "CVXPY建模与求解器"
+course: "07-最优化方法"
+created: 2026-08-06
 status: completed
 flow: knowledge
 kind: concept
-stage_moc: '[[🧭 阶段2-凸分析与最优性条件]]'
+stage_moc: "[[🧭 阶段2-凸分析与最优性条件]]"
 upstream:
-  - '[[最优化方法-凸优化问题标准形式]]'
+  - "[[最优化方法-凸优化问题标准形式]]"
 ---
-﻿---
-
-type: study
-topic: CVXPY建模与求解器
-course: 07-最优化方法
-created: 2026-08-02
-status: ongoing
-stage_moc: '[[🧭 阶段2-凸分析与最优性条件]]'
-flow: knowledge
-kind: concept
-tags:
-- 学习
-- 最优化方法
-concept:
-- 凸优化
-- 数值优化
-prerequisites:
-- 凸集与凸函数
-- Python 基础
-related:
-- 凸优化与拉格朗日对偶
-- 锥规划与半定规划SDP
-- 拟牛顿法BFGS
-- 凸集与凸函数
-
----
-
 
 # CVXPY建模与求解器
 
@@ -166,7 +139,6 @@ print(prob.status, w.value[:3])                     # 必须检查 status
 | `prob.value` vs `status` | 数值 vs 可信度 | status 决定 value 是否可用 | 所有作业验收 |
 
 ---
-
 ## 9. 相关知识点与 Obsidian 双链建议
 ### 上游依赖
 - [[最优化方法-凸集与凸函数]]：DCP 原子与复合规则 = 保凸运算的机器实现。
@@ -282,15 +254,12 @@ A: 原因通常为数值条件数较差或一阶迭代求解器（如 OSQP/SCS�
 
 
 ---
-
 Q: CVXPY 中判断表达式是否满足 DCP（规范凸规划）规则的原则是什么？
 A: 遵从凸组合语法糖规则：凸函数的凸组合与递增凸复合仍为凸函数，非 DCP 结构求解器将拒绝接受。
 <!-- id: opt-cvxpy-03 -->
 
 ## 学完后可以完成
 
-### 通过标准
-- [ ] 能够完成核心推导与验证
 
 ```dataview
 LIST
@@ -298,8 +267,3 @@ FROM "03-Projects"
 WHERE contains(requires, this.file.link)
 SORT assignment_level ASC, file.name ASC
 ```
-
-
-- [[07-最优化方法-课后作业-03-拉格朗日对偶与CVXPY]]
-- [[07-最优化方法-阶段作业-02-凸分析与最优性综合实验]]
-

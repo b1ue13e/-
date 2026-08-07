@@ -1,41 +1,18 @@
 ---
 type: study
-topic: 拟牛顿法L-BFGS
-course: 07-最优化方法
-created: 2026-08-07
+topic: "拟牛顿法L-BFGS"
+course: "07-最优化方法"
+created: 2026-08-06
 status: completed
-stage_moc: "[[🧭 阶段3-经典数值优化算法]]"
 flow: knowledge
-kind: derivation
+kind: concept
+stage_moc: "[[🧭 阶段3-经典数值优化算法]]"
 upstream:
   - "[[最优化方法-拟牛顿法BFGS]]"
   - "[[最优化方法-牛顿法]]"
-tags:
-  - 最优化
-  - 拟牛顿法
-  - L-BFGS
-  - 双循环递归
-  - 大规模优化
 ---
-# 最优化方法 - 拟牛顿法 L-BFGS (Limited-memory BFGS)
+# 最优化方法-拟牛顿法L-BFGS
 
-> **核心地位**：标准 BFGS 算法需要显式存储与更新 $d \times d$ 维的海森逆矩阵近似 $H_k$，在维度 $d > 10^5$ 的大规模机器学习（如逻辑回归、CRF、大模型微调）中存在巨大的 $\mathcal{O}(d^2)$ 内存瓶颈。有限内存拟牛顿法（L-BFGS）通过仅保存最近 $m$ 步的位移向量对 $\{s_i, y_i\}_{i=k-m}^{k-1}$，并配合巧妙的**双循环递归算法（Two-Loop Recursion）**，将每步计算复杂度降至 $\mathcal{O}(m d)$、内存开销降至 $\mathcal{O}(m d)$，成为现代大规模无约束凸优化与非线性优化的工业级标准求解器。
-
----
-
-## §01 算法动机与存储瓶颈
-
-在 $d$ 维无约束最优化问题 $\min_{x \in \mathbb{R}^d} f(x)$ 中：
-- **牛顿法**：迭代 $x_{k+1} = x_k - \nabla^2 f(x_k)^{-1} \nabla f(x_k)$，涉及 $d \times d$ 海森矩阵求解，计算复杂度 $\mathcal{O}(d^3)$。
-- **BFGS 算法**：利用割线方程 $H_{k+1} y_k = s_k$ 进行秩二更新：
-  \[
-  H_{k+1} = (I - \rho_k s_k y_k^\top) H_k (I - \rho_k y_k s_k^\top) + \rho_k s_k s_k^\top, \quad \text{其中 } \rho_k = \frac{1}{y_k^\top s_k}
-  \]
-  虽然避免了矩阵求逆（计算开销 $\mathcal{O}(d^2)$），但仍需保存 $d \times d$ 的密集矩阵 $H_k$。当 $d = 10^6$ 时，$H_k$ 单次存储即需约 8TB 显存/内存！
-
-L-BFGS 的核心思想：**放弃显式维护 $H_k$ 矩阵，仅保留最新的 $m$ 组历史向量对** $s_i = x_{i+1} - x_i$ 与 $y_i = \nabla f(x_{i+1}) - \nabla f(x_i)$ （通常取 $m \in [3, 20]$），直接计算搜索方向 $p_k = -H_k \nabla f(x_k)$。
-
----
 
 ## §02 双循环递归算法 (Two-Loop Recursion) 详细推导
 
@@ -69,7 +46,6 @@ L-BFGS 的核心思想：**放弃显式维护 $H_k$ 矩阵，仅保留最新的 
 ```
 
 ---
-
 ## §03 Python 代码实现 (L-BFGS 双循环求解器)
 
 ```python
@@ -155,7 +131,6 @@ def lbfgs_optimizer(f, grad_f, x0, m=5, max_iters=100, tol=1e-5):
 ```
 
 ---
-
 ## 🎯 知识自测与主动回忆
 
 > [!question]- 1. L-BFGS 的空间和时间复杂度与标准 BFGS 有何根本区别？
@@ -174,7 +149,6 @@ def lbfgs_optimizer(f, grad_f, x0, m=5, max_iters=100, tol=1e-5):
 > **答案**：工程上 $m$ 通常取 3 至 20 之间（如 5 或 10）。增大 $m$ 能够提供更精确的海森曲率估计，但也会线性增加单步点积计算量（$\mathcal{O}(m d)$）与内存开销；当 $m$ 超过一定阈值后，收敛收益边际递减，因此较小且固定的 $m$ 即可达到最优效率。
 
 ---
-
 ## 🃏 Anki 卡片
 
 Q: L-BFGS 如何将拟牛顿法的存储和计算开销从 $\mathcal{O}(d^2)$ 降低到 $\mathcal{O}(m d)$？
@@ -182,20 +156,18 @@ A: 放弃显式保存 $d \times d$ 的海森逆矩阵 $H_k$，仅保留最近 $m
 <!-- id: opt-lbfgs-01 -->
 
 ---
-
 Q: 写出 L-BFGS 双循环递归中基础标量缩放 $\gamma_k$ 的计算公式及作用。
 A: $\gamma_k = \frac{s_{k-1}^\top y_{k-1}}{y_{k-1}^\top y_{k-1}}$。作用是用最新曲率信息缩放初始海森逆矩阵 $H_k^{(0)} = \gamma_k I$，大幅提升搜索方向条件数，使得默认步长 $\alpha=1$ 极易通过 Armijo 线搜索。
 <!-- id: opt-lbfgs-02 -->
 
 ---
-
 Q: L-BFGS 割线方程正定性成立的前置曲率条件是什么？若不满足如何处理？
 A: 曲率条件为 $y_k^\top s_k > 0$。若由于非凸或数值误差导致 $y_k^\top s_k \le 10^{-10}$，则放弃保存当前的向量对 $(s_k, y_k)$（Skip Update），以保证矩阵正定性不被破坏。
 <!-- id: opt-lbfgs-03 -->
 
 ---
-
 ## 学完后可以完成
+
 
 ```dataview
 LIST

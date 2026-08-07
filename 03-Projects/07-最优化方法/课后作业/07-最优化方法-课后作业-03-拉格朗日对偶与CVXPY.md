@@ -12,9 +12,9 @@ requires:
   - "[[最优化方法-CVXPY建模与求解器]]"
   - "[[最优化方法-内点法原理]]"
   - "[[最优化方法-罚函数法与障碍法]]"
-source_type: official_assignment
+source_type: open_textbook_exercise
 created: 2026-08-06
-status: active
+status: ongoing
 flow: project
 tags:
   - 作业

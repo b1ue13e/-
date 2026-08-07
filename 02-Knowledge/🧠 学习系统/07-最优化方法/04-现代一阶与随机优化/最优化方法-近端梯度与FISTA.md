@@ -1,44 +1,19 @@
 ---
 type: study
-course: 07-最优化方法
-topic: 近端梯度与FISTA
-created: '2026-08-06'
+topic: "近端梯度与FISTA"
+course: "07-最优化方法"
+created: 2026-08-06
 status: completed
 flow: knowledge
-kind: derivation
-stage_moc: '[[🧭 阶段4-现代一阶与随机优化]]'
-upstream:
-  - '[[最优化方法-次梯度方法]]'
-  - '[[最优化方法-一阶方法收敛性分析]]'
----
-﻿---
-
-type: study
-topic: 近端梯度与FISTA
-course: 07-最优化方法
-created: 2026-08-05
-status: ongoing
-stage_moc: '[[🧭 阶段4-现代一阶与随机优化]]'
-flow: knowledge
 kind: concept
-tags:
-- 学习
-- 最优化方法
-- 高级优化
+stage_moc: "[[🧭 阶段4-现代一阶与随机优化]]"
+upstream:
+  - "[[最优化方法-次梯度方法]]"
+  - "[[最优化方法-一阶方法收敛性分析]]"
 difficulty: advanced
-concept:
-- 近端算子
-- ISTA
-- FISTA
-- 复合优化
-prerequisites:
-- 次梯度方法
-- 一阶方法收敛性分析
-related:
-- 增广拉格朗日与ADMM
-- SGD与随机优化
-
 ---
+# 最优化方法-近端梯度与FISTA
+
 
 ## 0. 学习边界
 - **类别**：A 类（高级理论与应用核心）
@@ -195,14 +170,14 @@ def fista_lasso(A, b, lmbda, max_iter=1000, tol=1e-6):
 ### 上游依赖
 - [[最优化方法-一阶方法收敛性分析]]
 - [[最优化方法-次梯度方法]]
-- [[最优化方法-近端梯度与FISTA]]
+- [[最优化方法-凸集与凸函数]]
 
 ### 下游延伸
 - [[最优化方法-增广拉格朗日与ADMM]] (用于更复杂的近端算子分解)
-- [[最优化方法-近端梯度与FISTA]]
+- [[最优化方法-在线优化与镜像下降]]
 
 ### 横向关联
-- [[最优化方法-近端梯度与FISTA]]
+- [[最优化方法-凸优化与拉格朗日对偶]]：对偶分解与近端方法的关系。
 
 ---
 ## 10. 闭卷复现任务
@@ -260,7 +235,7 @@ def fista_lasso(A, b, lmbda, max_iter=1000, tol=1e-6):
 ## 🃏 Anki 卡片
 
 Q: 近端算子 (Proximal Operator) $\mathbf{prox}_{\gamma h}(x)$ 的标准数学表达式是什么？
-A: $\mathbf{prox}_{\gamma h}(x) = \grg\min_{y} \left( h(y) + \frac{1}{2\gamma} \|y - x\|_2^2 
+A: $\mathbf{prox}_{\gamma h}(x) = \arg\min_{y} \left( h(y) + \frac{1}{2\gamma} \|y - x\|_2^2 
 ight)$。它在极小化函数 $h(y)$ 的同时惩罚远离 $x$ 的位移。
 <!-- id: opt-prox-01 -->
 
@@ -270,15 +245,12 @@ A: 软阈值算子 (Soft-Thresholding Operator) $S_{\gamma \lambda}(x)$：$[S_{\
 
 
 ---
-
 Q: Lasso 问题 $f(w) = \frac{1}{2}\|Xw - y\|^2 + \lambda \|w\|_1$ 的近端算子（Proximal Operator）显式解是什么？
 A: 软阈值算子（Soft Thresholding）：$\text{prox}_{\gamma \lambda}(u)_i = \text{sign}(u_i) \max(|u_i| - \gamma \lambda, 0)$。
 <!-- id: opt-fista-03 -->
 
 ## 学完后可以完成
 
-### 通过标准
-- [ ] 能够完成核心推导与验证
 
 ```dataview
 LIST
@@ -286,7 +258,3 @@ FROM "03-Projects"
 WHERE contains(requires, this.file.link)
 SORT assignment_level ASC, file.name ASC
 ```
-
-
-- [[07-最优化方法-阶段作业-04-随机优化与近端算法对比实验]]
-

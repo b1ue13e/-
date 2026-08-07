@@ -1,43 +1,16 @@
 ---
 type: study
-course: 07-最优化方法
-topic: 强对偶与Slater条件
-created: '2026-08-06'
+topic: "强对偶与Slater条件"
+course: "07-最优化方法"
+created: 2026-08-06
 status: completed
 flow: knowledge
-kind: derivation
-stage_moc: '[[🧭 阶段2-凸分析与最优性条件]]'
-upstream:
-  - '[[最优化方法-凸优化与拉格朗日对偶]]'
----
-﻿---
-
-type: study
-topic: 强对偶与Slater条件
-course: 07-最优化方法
-created: 2026-08-05
-status: ongoing
-stage_moc: '[[🧭 阶段2-凸分析与最优性条件]]'
-flow: knowledge
 kind: concept
-tags:
-- 学习
-- 最优化方法
+stage_moc: "[[🧭 阶段2-凸分析与最优性条件]]"
+upstream:
+  - "[[最优化方法-凸优化与拉格朗日对偶]]"
 difficulty: advanced
-concept:
-- 强对偶
-- Slater条件
-- 对偶间隙
-prerequisites:
-- 凸集与凸函数
-- 凸优化问题标准形式
-related:
-- 凸优化与拉格朗日对偶
-- 内点法原理
-- KKT条件
-
 ---
-
 
 ## 0. 学习边界
 - **类别**：A 类（核心理论基石）
@@ -229,7 +202,7 @@ print("对偶变量 lambda*:", constraints[0].dual_value)
 ### 下游延伸
 - [[最优化方法-凸优化与拉格朗日对偶]]：强对偶是使得 KKT 条件成为充要条件的前提！
 - [[最优化方法-内点法原理]]：利用对偶间隙来控制算法的收敛进度。
-- [[最优化方法-强对偶与Slater条件]]：依赖于强对偶性。
+- [[最优化方法-锥规划与半定规划SDP]]：强对偶性在锥规划中的推广。
 
 ### 横向关联
 - [[最优化方法-单纯形法与线性规划]]：在线性规划中，只要原问题可行且有界，就一定强对偶。这是因为所有的约束都是仿射的，由精细化 Slater 条件直接保证（Farkas引理也能推导）。
@@ -321,15 +294,12 @@ u)$，当对偶间隙小于 $\epsilon$ 时，可作为原问题已经收敛到 $
 
 
 ---
-
 Q: KKT 最优性条件包含哪四大核心要素？
 A: 1. 站立点条件 (Stationarity)；2. 原问题可行性 (Primal Feasibility)；3. 对偶问题可行性 (Dual Feasibility)；4. 互补松弛性 (Complementary Slackness)。
 <!-- id: opt-kkt-03 -->
 
 ## 学完后可以完成
 
-### 通过标准
-- [ ] 能够完成核心推导与验证
 
 ```dataview
 LIST
@@ -337,8 +307,3 @@ FROM "03-Projects"
 WHERE contains(requires, this.file.link)
 SORT assignment_level ASC, file.name ASC
 ```
-
-
-- [[07-最优化方法-课后作业-03-拉格朗日对偶与CVXPY]]
-- [[07-最优化方法-阶段作业-02-凸分析与最优性综合实验]]
-

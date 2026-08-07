@@ -1,41 +1,18 @@
 ---
 type: study
-topic: SGD与随机优化
-course: 07-最优化方法
-created: 2026-08-05
+topic: "SGD与随机优化"
+course: "07-最优化方法"
+created: 2026-08-06
 status: completed
-stage_moc: '[[🧭 阶段4-现代一阶与随机优化]]'
 flow: knowledge
 kind: concept
-tags:
-  - 学习
-  - 最优化方法
+stage_moc: "[[🧭 阶段4-现代一阶与随机优化]]"
 difficulty: intermediate
-concept:
-  - 随机梯度下降
-  - 小批量SGD
-  - 方差缩减
-prerequisites:
-  - 一阶方法收敛性分析
-  - 最速下降与收敛分析
-related:
-  - Adam与自适应学习率
-  - 近端梯度与FISTA
+upstream:
+  - "[[最优化方法-一阶方法收敛性分析]]"
+  - "[[最优化方法-最速下降与收敛分析]]"
 ---
-## 0. 学习边界
-- **类别**：A 类（核心基石）
-- **判断理由**：在现代机器学习（特别是深度学习）中，数据集规模庞大，计算全梯度代价极高。随机梯度下降 (Stochastic Gradient Descent, SGD) 及其变体是目前训练大规模机器学习模型的最重要、最普遍使用的优化算法。它是所有现代优化算法（如 Adam, RMSProp）的基础。
 
----
-## 1. 这个知识点解决什么问题？
-> **我们遇到了什么麻烦**：
-在经验风险最小化（Empirical Risk Minimization, ERM）问题中，目标函数通常是 $n$ 个样本损失函数的平均值：
-$$ f(x) = \frac{1}{n} \sum_{i=1}^n f_i(x) $$
-当 $n$ 非常大（例如几百万或几十亿）时，计算一次全梯度 $\nabla f(x) = \frac{1}{n} \sum_{i=1}^n \nabla f_i(x)$ 需要遍历整个数据集，计算代价极其昂贵。即使只是走一步更新，也需要耗费大量时间。
-
-SGD 解决的正是“大数据量下的高效优化”问题，通过在每次迭代中只使用一个或一小批样本来估计梯度，从而极大地降低了单次迭代的计算复杂度。
-
----
 ## 2. 为什么它重要？它有什么用？
 - **连接大图景**：它是经典优化方法与机器学习结合的桥梁。经典优化关注如何走得快（如牛顿法），而机器学习优化关注如何在有限算力下获得良好的泛化性能。
 - **实际应用场景**：所有深度学习框架（PyTorch, TensorFlow）的基础优化器。用于训练图像分类器、大型语言模型、推荐系统等。
@@ -54,7 +31,7 @@ SGD 解决的正是“大数据量下的高效优化”问题，通过在每次�
 - **为什么很自然**：因为在大数据集中，数据是存在大量冗余的。随机抽取一个样本计算的梯度，在期望上等于全梯度，因此方向“大体正确”。
 - **一句话直觉本质**：用无偏但有方差的随机梯度代替真实梯度，以空间/方向上的不确定性换取时间上的极高效率。
 
-![GD vs SGD 轨迹对比](assets/sgd_vs_gd.png)
+![[sgd_vs_gd.png|GD vs SGD 轨迹对比]]
 *(注意看红色虚线，虽然单步经常走错方向，但宏观上依然能够抵达深色谷底。)*
 
 ---
@@ -210,10 +187,10 @@ for epoch in range(10):
 ## 9. 相关知识点与 Obsidian 双链建议
 ### 上游依赖
 - [[最优化方法-一阶方法收敛性分析]]
-- [[最优化方法-一阶方法收敛性分析]]
+- [[最优化方法-最速下降与收敛分析]]
 
 ### 下游延伸
-- [[最优化方法-SGD与随机优化]]
+- [[最优化方法-动量法与重球法]]
 - [[最优化方法-Adam与自适应学习率]]
 
 ### 横向关联
@@ -283,24 +260,17 @@ A: 优势：单步计算复杂度从 $\mathcal{O}(N)$ 降至 $\mathcal{O}(B)$ ($
 <!-- id: opt-sgd-01 -->
 
 Q: 方差缩减算法 SVRG (Stochastic Variance Reduced Gradient) 的核心梯度修正公式是什么？
-A: $\tilde{g}_t = 
-abla f_i(x_t) - 
-abla f_i(\tilde{x}) + \mu$，其中 $\tilde{x}$ 是外层快照点，$\mu = 
-abla f(\tilde{x})$ 为全样本梯度均值。该修正保证了 $\mathbb{E}[\tilde{g}_t] = 
-abla f(x_t)$ 且当 $x_t, \tilde{x} \to x^*$ 时方差趋于 0。
+A: $\tilde{g}_t = \nabla f_i(x_t) - \nabla f_i(\tilde{x}) + \mu$，其中 $\tilde{x}$ 是外层快照点，$\mu = \nabla f(\tilde{x})$ 为全样本梯度均值。该修正保证了 $\mathbb{E}[\tilde{g}_t] = \nabla f(x_t)$ 且当 $x_t, \tilde{x} \to x^*$ 时方差趋于 0。
 <!-- id: opt-sgd-02 -->
 
 
 ---
-
 Q: SGD 单样本梯度估计量的无偏性指什么？
 A: 随机选择单样本计算的梯度期望等于全数据集的精确梯度，即 $\mathbb{E}[\nabla f_{i_t}(w)] = \nabla F(w)$。
 <!-- id: opt-sgd-03 -->
 
 ## 学完后可以完成
 
-### 通过标准
-- [ ] 能够完成核心推导与验证
 
 ```dataview
 LIST
@@ -308,8 +278,3 @@ FROM "03-Projects"
 WHERE contains(requires, this.file.link)
 SORT assignment_level ASC, file.name ASC
 ```
-
-
-- [[07-最优化方法-课后作业-07-随机与自适应优化]]
-- [[07-最优化方法-阶段作业-04-随机优化与近端算法对比实验]]
-

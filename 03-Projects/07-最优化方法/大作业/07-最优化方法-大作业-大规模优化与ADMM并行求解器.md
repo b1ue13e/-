@@ -2,14 +2,14 @@
 type: project
 project_type: homework
 course: 07-最优化方法
-assignment_id: 07-最优化方法-大作业-05
+assignment_id: 07-最优化方法-大作业-01
 assignment_level: capstone
 assignment_format: project
 stage_id: '05'
 requires: ["[[最优化方法-增广拉格朗日与ADMM]]", "[[最优化方法-近端梯度与FISTA]]", "[[最优化方法-凸优化与拉格朗日对偶]]"]
 source_type: open_source_project_task
 created: 2026-08-06
-status: active
+status: ongoing
 flow: project
 tags:
   - 作业
@@ -21,7 +21,7 @@ tags:
 
 
 
-# 07-最优化方法-期末 Capstone 大作业：大规模稀疏回归分布式 ADMM 并行求解器
+# 07-最优化方法-大作业-大规模优化与ADMM并行求解器
 
 > **本期末大作业为《07-最优化方法》课程结课 Capstone 项目**，旨在综合运用阶段 01~05 所学的前置线代、凸分析、对偶理论、近端算子与增广拉格朗日乘子法，手写一个**数据并行分块的共识 ADMM (Consensus ADMM) 大规模 Lasso 优化求解器**，并在多进程环境中审计收敛轨迹与加速比。
 
