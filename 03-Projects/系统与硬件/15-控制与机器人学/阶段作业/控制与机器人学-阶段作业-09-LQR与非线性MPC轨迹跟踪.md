@@ -6,7 +6,7 @@ assignment_id: "15-控制与机器人学-阶段作业-09-01"
 assignment_level: stage
 assignment_format: lab
 stage_id: "09"
-requires: ["[[05-状态空间与现代控制/状态空间与LQR控制]]", "[[09-MPC深入/🎯 阶段9：MPC深入]]", "[[05-状态空间与现代控制/🔧 阶段5：状态空间与现代控制]]"]
+requires: ["[[05-状态空间与现代控制/状态空间与LQR控制]]", "[[09-MPC深入/模型预测控制(MPC)]]", "[[09-MPC深入/预测方程]]", "[[09-MPC深入/QP标准形式]]"]
 source_type: open_source_project_task
 adapted_from: "MIT 6.832 Underactuated Robotics (pydrake) 与 PythonRobotics 轨迹跟踪 demo；原文件见 .recovery-hold/2026-08-06 的 HW01 阶梯作业说明"
 source_url: "https://underactuated.csail.mit.edu/"
@@ -47,8 +47,9 @@ tags: [作业, 控制与机器人学, LQR, MPC]
 
 - `requires`（frontmatter 已声明）：
   - [[05-状态空间与现代控制/状态空间与LQR控制]]（阶段 5）
-  - [[09-MPC深入/🎯 阶段9：MPC深入]]（阶段 9 MOC）
-  - [[05-状态空间与现代控制/🔧 阶段5：状态空间与现代控制]]（阶段 5 MOC）
+  - [[09-MPC深入/模型预测控制(MPC)]]（阶段 9 总览卡）
+  - [[09-MPC深入/预测方程]]（阶段 9）
+  - [[09-MPC深入/QP标准形式]]（阶段 9）
 - 正文依赖（已在前序知识卡教授）：状态空间建模、能控性、LQR 代价函数、MPC 预测方程、QP 标准形式。
 - 可选扩展：iLQR / 障碍约束（不设隐性前置）。
 
