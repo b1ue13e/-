@@ -80,6 +80,8 @@ $$|H(e^{j\Omega})|\propto\frac{\prod|e^{j\Omega}-z_k|}{\prod|e^{j\Omega}-p_k|}$$
 
 ## 学完后可以完成
 
+> 暂无直接依赖本卡的知识点作业（可结合「相关」卡或阶段作业做综合训练）。
+
 ```dataview
 LIST
 FROM "03-Projects/12-信号与系统"

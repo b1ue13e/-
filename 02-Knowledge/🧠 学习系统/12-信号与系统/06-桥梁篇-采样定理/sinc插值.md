@@ -93,6 +93,10 @@ $$h_r(mT-nT)=\mathrm{sinc}(m-n)=\begin{cases}1,& m=n\\ 0,& m\neq n\end{cases}$$
 
 ## 学完后可以完成
 
+> 以下作业依赖本卡知识点（由作业 `requires` 字段自动派生，可直接点击跳转）：
+
+- [[信号与系统-阶段作业-06-采样定理|06-采样定理]]
+
 ```dataview
 LIST
 FROM "03-Projects/12-信号与系统"

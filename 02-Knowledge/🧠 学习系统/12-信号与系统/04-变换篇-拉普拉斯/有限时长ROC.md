@@ -79,6 +79,8 @@ $$\text{有限时长可积}\Rightarrow \text{ROC}=\mathbb{C}\ (\text{全平面})
 
 ## 学完后可以完成
 
+> 暂无直接依赖本卡的知识点作业（可结合「相关」卡或阶段作业做综合训练）。
+
 ```dataview
 LIST
 FROM "03-Projects/12-信号与系统"

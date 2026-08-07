@@ -79,6 +79,8 @@ $$s=\sigma+j\omega,\quad X(s)=\int_0^{\infty}x(t)e^{-st}dt$$
 
 ## 学完后可以完成
 
+> 暂无直接依赖本卡的知识点作业（可结合「相关」卡或阶段作业做综合训练）。
+
 ```dataview
 LIST
 FROM "03-Projects/12-信号与系统"
