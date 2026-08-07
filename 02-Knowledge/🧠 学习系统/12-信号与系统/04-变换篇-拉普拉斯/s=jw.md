@@ -60,6 +60,17 @@ $$X(j\omega)=X(s)\big|_{s=j\omega}\quad(\text{若 }j\omega\in\text{ROC})$$
 - 在 jω 轴不在 ROC 时仍令 s=jω（得无意义结果）。
 - 以为 LT 总包含 FT。
 
+## 推导/证明
+**目标**：证明「当 jω 轴 ⊂ ROC 时，$X(j\omega)=X(s)|_{s=j\omega}$」。
+
+由 LT 定义，直接令 $s=j\omega$（即 $\sigma=0$）：
+$$X(s)\Big|_{s=j\omega}=\int_{-\infty}^{\infty}x(t)e^{-j\omega t}dt$$
+这正是傅里叶变换 $X_{\mathrm{FT}}(\omega)$——**前提**是该积分收敛，而这等价于 $s=j\omega$ 落在 ROC 内。
+
+反例（jω 轴不在 ROC）：单位阶跃 $u(t)$ 的 LT 为 $1/s$，ROC 为 $\mathrm{Re}(s)>0$，jω 轴恰在边界、不在 ROC ⇒ $u(t)$ 的 FT 不存在于普通函数意义（需引入 $\pi\delta(\omega)+1/(j\omega)$ 广义函数）。说明 LT 不总包含 FT。
+
+**最小手算**：$x(t)=e^{-t}u(t)$，LT $=1/(s+1)$，ROC $\mathrm{Re}(s)>-1$ 含 jω 轴。令 $s=j\omega$ 得 $X(j\omega)=1/(j\omega+1)$，与直接算 FT 一致。
+
 ## 和其他笔记的关系
 - 前置：[[拉氏傅氏关系]]
 - 前置：[[s域含义]]
