@@ -24,7 +24,7 @@ updated: 2026-08-06
 
 ---
 
-## 0. 先判断它值不值得深挖
+## 0. 学习边界
 
 - **类别**：**A 类（核心概念，必须深挖）**；约束规划（CP）是与 LP/MIP 并列的第三大求解范式，OR-Tools 的 CP-SAT 是工业级实现——[[🧭 课程作业总索引]] 的[[运筹学-阶段作业-02-整数网络综合|阶段作业 02]]（CP vs MIP 对比）、[[运筹学-大作业-01-VRP车辆路径问题|大作业 01]]（VRP）、[[运筹学-大作业-02-排程与资源分配求解器|大作业 02]]（排班）全部建立在它之上。不懂 CP，就无法理解为什么某些问题 CP 几秒解完而 MIP 卡死。
 
@@ -253,3 +253,4 @@ FROM "03-Projects"
 WHERE contains(requires, this.file.link)
 SORT assignment_level ASC, file.name ASC
 ```
+
