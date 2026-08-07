@@ -18,6 +18,10 @@ sources:
   - "MIT 6.003 Lec 20"
 kind: concept
 
+upstream:
+  - "[[DTFT定义]]"
+  - "[[Z变换ROC]]"
+  - "[[Z平面]]"
 ---
 # Z与DTFT
 

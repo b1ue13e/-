@@ -18,6 +18,9 @@ sources:
   - "MIT 6.003 Lec 21"
 kind: concept
 
+upstream:
+  - "[[Z变换ROC]]"
+  - "[[Z平面]]"
 ---
 # Z域极点
 

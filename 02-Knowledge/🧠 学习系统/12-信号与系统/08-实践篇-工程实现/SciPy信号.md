@@ -20,6 +20,9 @@ sources:
   - "MIT 6.003 实验"
 assessment_exempt_reason: "软件/环境参考页，非可验收知识点卡"
 
+upstream:
+  - "[[NumPy信号]]"
+  - "[[巴特沃斯]]"
 ---
 # SciPy信号
 

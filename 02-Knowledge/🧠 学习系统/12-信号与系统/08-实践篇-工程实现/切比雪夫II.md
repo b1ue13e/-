@@ -18,6 +18,9 @@ sources:
   - "scipy.signal.cheby2"
 kind: concept
 
+upstream:
+  - "[[切比雪夫I]]"
+  - "[[巴特沃斯]]"
 ---
 # 切比雪夫II
 

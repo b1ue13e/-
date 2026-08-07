@@ -18,6 +18,8 @@ sources:
   - "MIT 6.003 Lec 15"
 kind: concept
 
+upstream:
+  - "[[ROC定义]]"
 ---
 # 左边信号ROC
 

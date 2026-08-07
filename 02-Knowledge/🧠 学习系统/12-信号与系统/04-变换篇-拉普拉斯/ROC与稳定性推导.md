@@ -16,6 +16,10 @@ kind: derivation
 sources:
   - "Oppenheim §9.2 / §6.3：ROC and stability"
   - "郑君里《信号与系统》下册 §7.4"
+upstream:
+  - "[[ROC定义]]"
+  - "[[极点]]"
+  - "[[稳定系统]]"
 ---
 
 # ROC 与稳定性关系推导

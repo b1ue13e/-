@@ -18,6 +18,9 @@ sources:
   - "MIT 6.003 Lec 15"
 kind: concept
 
+upstream:
+  - "[[s域含义]]"
+  - "[[拉氏傅氏关系]]"
 ---
 # s=jw
 

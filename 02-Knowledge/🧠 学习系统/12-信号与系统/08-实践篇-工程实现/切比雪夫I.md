@@ -16,6 +16,9 @@ kind: concept
 sources:
   - "Oppenheim §11.2：Chebyshev Filters"
   - "Think DSP Ch.11：Chebyshev"
+upstream:
+  - "[[巴特沃斯]]"
+  - "[[双线性变换]]"
 ---
 
 # 切比雪夫I

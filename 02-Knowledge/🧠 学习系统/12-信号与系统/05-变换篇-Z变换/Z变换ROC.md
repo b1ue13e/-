@@ -17,6 +17,9 @@ sources:
   - "Think DSP Ch.10-12：Z Transform / digital filters"
   - "MIT 6.003 Lec 20-22：Z Transform"
   - "Oppenheim §10.1-10.3：The Z-Transform"
+upstream:
+  - "[[拉普拉斯定义]]"
+  - "[[Z平面]]"
 ---
 
 # Z变换ROC

@@ -18,6 +18,9 @@ sources:
   - "MIT 6.003 Lec 15"
 kind: concept
 
+upstream:
+  - "[[拉普拉斯定义]]"
+  - "[[ROC定义]]"
 ---
 # s域含义
 

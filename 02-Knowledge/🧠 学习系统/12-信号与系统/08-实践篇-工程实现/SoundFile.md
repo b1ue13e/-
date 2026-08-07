@@ -20,6 +20,8 @@ sources:
   - "libsndfile"
 assessment_exempt_reason: "软件/环境参考页，非可验收知识点卡"
 
+upstream:
+  - "[[NumPy信号]]"
 ---
 # SoundFile
 

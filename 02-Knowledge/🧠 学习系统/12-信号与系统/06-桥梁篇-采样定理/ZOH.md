@@ -18,6 +18,9 @@ sources:
   - "MIT 6.003 Lec 14"
 kind: concept
 
+upstream:
+  - "[[理想重建]]"
+  - "[[sinc插值]]"
 ---
 # ZOH
 

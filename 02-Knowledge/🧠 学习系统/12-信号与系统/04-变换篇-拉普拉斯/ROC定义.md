@@ -16,6 +16,9 @@ kind: concept
 sources:
   - "MIT 6.003 Lec 15：ROC"
   - "Oppenheim §9.3：Region of Convergence"
+upstream:
+  - "[[拉普拉斯定义]]"
+  - "[[极点]]"
 ---
 
 # ROC定义

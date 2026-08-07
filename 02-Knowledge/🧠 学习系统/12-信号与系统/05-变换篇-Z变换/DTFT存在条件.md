@@ -18,6 +18,9 @@ sources:
   - "MIT 6.003 Lec 18"
 kind: concept
 
+upstream:
+  - "[[DTFT定义]]"
+  - "[[DTFT周期性]]"
 ---
 # DTFT存在条件
 

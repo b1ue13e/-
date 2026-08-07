@@ -17,6 +17,10 @@ sources:
   - "Oppenheim §10.2：Relation to DTFT (proof)"
   - "Think DSP Ch.10：Z transform"
   - "MIT 6.003 Lec 20"
+upstream:
+  - "[[DTFT定义]]"
+  - "[[Z与DTFT]]"
+  - "[[Z变换ROC]]"
 ---
 
 # Z 变换与 DTFT 关系推导

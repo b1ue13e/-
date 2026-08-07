@@ -18,6 +18,10 @@ sources:
   - "MIT 6.003 Lec 18"
 kind: concept
 
+upstream:
+  - "[[DFT时域周期]]"
+  - "[[DFT频域周期]]"
+  - "[[线性性质]]"
 ---
 # DFT线性
 

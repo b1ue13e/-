@@ -16,6 +16,9 @@ kind: concept
 sources:
   - "Oppenheim §10.4：Unilateral Z-Transform"
   - "MIT 6.003 Lec 22：Initial conditions"
+upstream:
+  - "[[Z变换ROC]]"
+  - "[[Z平面]]"
 ---
 
 # 单边Z变换

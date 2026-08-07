@@ -18,6 +18,9 @@ sources:
   - "MIT 6.003 Lec 20"
 kind: concept
 
+upstream:
+  - "[[Z变换ROC]]"
+  - "[[Z平面]]"
 ---
 # 双边Z变换
 

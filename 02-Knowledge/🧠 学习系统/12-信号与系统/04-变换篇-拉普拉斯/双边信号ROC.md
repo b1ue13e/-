@@ -18,6 +18,9 @@ sources:
   - "MIT 6.003 Lec 15"
 kind: concept
 
+upstream:
+  - "[[右边信号ROC]]"
+  - "[[左边信号ROC]]"
 ---
 # 双边信号ROC
 

@@ -20,6 +20,9 @@ sources:
   - "SciPy Lecture Notes"
 assessment_exempt_reason: "软件/环境参考页，非可验收知识点卡"
 
+upstream:
+  - "[[离散信号]]"
+  - "[[线性卷积]]"
 ---
 # NumPy信号
 

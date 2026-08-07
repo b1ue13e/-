@@ -17,6 +17,9 @@ sources:
   - "Think DSP Ch.8：Fast Convolution / FFT"
   - "MIT 6.003 Lec 20：FFT"
   - "Oppenheim §9.1-9.2：Efficient DFT"
+upstream:
+  - "[[Cooley-Tukey]]"
+  - "[[DFT乘积]]"
 ---
 
 # FFT分解

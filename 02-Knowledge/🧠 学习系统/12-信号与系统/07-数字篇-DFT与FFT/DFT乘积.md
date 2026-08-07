@@ -17,6 +17,9 @@ sources:
   - "Think DSP Ch.7：The Discrete Fourier Transform"
   - "MIT 6.003 Lec 17-18：DFT"
   - "Oppenheim §8.1-8.2：Discrete Fourier Transform"
+upstream:
+  - "[[傅里叶变换定义]]"
+  - "[[卷积定理]]"
 ---
 
 # DFT乘积

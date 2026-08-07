@@ -18,6 +18,9 @@ sources:
   - "MIT 6.003 Lec 18"
 kind: concept
 
+upstream:
+  - "[[DFT时域周期]]"
+  - "[[DTFT周期性]]"
 ---
 # DFT频域周期
 

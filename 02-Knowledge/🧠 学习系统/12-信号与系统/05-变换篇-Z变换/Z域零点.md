@@ -18,6 +18,8 @@ sources:
   - "MIT 6.003 Lec 21"
 kind: concept
 
+upstream:
+  - "[[Z域极点]]"
 ---
 # Z域零点
 

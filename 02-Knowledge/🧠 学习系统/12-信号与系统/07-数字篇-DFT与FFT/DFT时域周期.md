@@ -18,6 +18,8 @@ sources:
   - "MIT 6.003 Lec 18"
 kind: concept
 
+upstream:
+  - "[[DFT乘积]]"
 ---
 # DFT时域周期
 

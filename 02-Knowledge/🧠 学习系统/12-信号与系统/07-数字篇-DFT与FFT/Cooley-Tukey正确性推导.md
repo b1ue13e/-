@@ -17,6 +17,10 @@ sources:
   - "Oppenheim §9.3：Cooley-Tukey (derivation)"
   - "Think DSP Ch.8：The Cooley-Tukey algorithm"
   - "MIT 6.003 Lec 20"
+upstream:
+  - "[[Cooley-Tukey]]"
+  - "[[DFT乘积]]"
+  - "[[卷积定理推导]]"
 ---
 
 # Cooley-Tukey 正确性推导

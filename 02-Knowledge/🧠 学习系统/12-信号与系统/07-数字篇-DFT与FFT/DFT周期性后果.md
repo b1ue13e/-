@@ -18,6 +18,10 @@ sources:
   - "MIT 6.003 Lec 18-19"
 kind: concept
 
+upstream:
+  - "[[DFT时域周期]]"
+  - "[[DFT频域周期]]"
+  - "[[循环卷积定义]]"
 ---
 # DFT周期性后果
 

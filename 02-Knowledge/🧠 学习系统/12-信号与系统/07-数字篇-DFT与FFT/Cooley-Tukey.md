@@ -17,6 +17,9 @@ sources:
   - "Think DSP Ch.8：The Cooley-Tukey algorithm"
   - "MIT 6.003 Lec 20：Cooley-Tukey"
   - "Oppenheim §9.3：Cooley-Tukey"
+upstream:
+  - "[[DFT乘积]]"
+  - "[[循环卷积]]"
 ---
 
 # Cooley-Tukey

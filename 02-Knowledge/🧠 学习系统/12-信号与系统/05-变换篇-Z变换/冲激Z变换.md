@@ -18,6 +18,10 @@ sources:
   - "MIT 6.003 Lec 20"
 kind: concept
 
+upstream:
+  - "[[指数Z变换]]"
+  - "[[离散卷积]]"
+  - "[[筛选性质]]"
 ---
 # 冲激Z变换
 

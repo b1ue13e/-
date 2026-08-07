@@ -18,6 +18,9 @@ sources:
   - "MIT 6.003 Lec 20-22"
 kind: concept
 
+upstream:
+  - "[[DTFT定义]]"
+  - "[[复指数信号]]"
 ---
 # Z平面
 

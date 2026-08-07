@@ -18,6 +18,10 @@ sources:
   - "MIT 6.003 Lec 20"
 kind: concept
 
+upstream:
+  - "[[指数Z变换]]"
+  - "[[冲激Z变换]]"
+  - "[[单边Z变换]]"
 ---
 # 阶跃Z变换
 

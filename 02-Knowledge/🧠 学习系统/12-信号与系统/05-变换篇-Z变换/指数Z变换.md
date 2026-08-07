@@ -18,6 +18,9 @@ sources:
   - "MIT 6.003 Lec 20"
 kind: concept
 
+upstream:
+  - "[[Z变换ROC]]"
+  - "[[复指数信号]]"
 ---
 # 指数Z变换
 

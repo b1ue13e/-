@@ -18,6 +18,9 @@ sources:
   - "MIT 6.003 Lec 15"
 kind: concept
 
+upstream:
+  - "[[ROC定义]]"
+  - "[[右边信号ROC]]"
 ---
 # 有限时长ROC
 

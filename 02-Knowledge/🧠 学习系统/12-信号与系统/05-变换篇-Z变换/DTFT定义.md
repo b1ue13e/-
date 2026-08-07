@@ -18,6 +18,9 @@ sources:
   - "MIT 6.003 Lec 18-19"
 kind: concept
 
+upstream:
+  - "[[离散信号]]"
+  - "[[傅里叶变换定义]]"
 ---
 # DTFT定义
 

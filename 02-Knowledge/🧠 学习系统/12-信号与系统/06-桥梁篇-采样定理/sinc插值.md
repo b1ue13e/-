@@ -17,6 +17,9 @@ sources:
   - "Think DSP Ch.6"
   - "Oppenheim §5.4"
   - "MIT 6.003 Lec 14"
+upstream:
+  - "[[理想重建]]"
+  - "[[矩形变换]]"
 ---
 
 # sinc插值

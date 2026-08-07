@@ -18,6 +18,9 @@ sources:
   - "MIT 6.003→6.008"
 kind: concept
 
+upstream:
+  - "[[DFT乘积]]"
+  - "[[巴特沃斯]]"
 ---
 # 后续-DSP
 
