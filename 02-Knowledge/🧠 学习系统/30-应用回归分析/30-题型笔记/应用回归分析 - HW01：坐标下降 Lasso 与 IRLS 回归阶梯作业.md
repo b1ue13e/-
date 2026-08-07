@@ -12,9 +12,9 @@ status: learning
 difficulty: intermediate
 importance: A
 concept: ["应用回归分析", "OLS回归", "Lasso回归", "GLM"]
-prerequisites: ["[[02-Knowledge/🧠 学习系统/22-概率论与数理统计/🗺️ 概率论与数理统计学习路径|概率统计]]"]
+prerequisites: ["[[🗺️ 概率论与数理统计学习路径|概率统计]]"]
 related: ["[[机器学习-题型-李宏毅式分类与深层模型阶梯作业]]"]
-upstream: ["[[02-Knowledge/🧠 学习系统/30-应用回归分析/🗺️ 应用回归分析学习路径|应用回归分析学习路径]]"]
+upstream: ["[[🗺️ 应用回归分析学习路径|应用回归分析学习路径]]"]
 downstream: []
 tags: [学习, 30-应用回归分析, 作业, 实战, 阶梯作业]
 aliases: ["Regression-HW01-Lasso与IRLS作业"]

@@ -1,4 +1,4 @@
----
+﻿---
 title: "Softmax分类器与交叉熵损失 (Softmax & Cross-Entropy Loss)"
 date: 2026-08-03
 type: concept
@@ -14,7 +14,7 @@ status: learning
 
 ---
 
-## 0. 先判断它值不值得深挖
+## 0. 学习边界
 
 - **类别**：**A 类（核心概念，必须深挖）**
 - **判断理由**：它是当今深度学习**最绝对的统治者**，99% 的分类任务（无论是图像分类的 ResNet 还是文本生成的 GPT）最后一层都在使用 Softmax + Cross-Entropy。理解它，等于拿到了通往所有现代神经网络输出层的钥匙。
@@ -146,7 +146,7 @@ Softmax 分类器本质上是将线性层输出的未归一化对数概率 (Logi
 ## 9. 相关知识点与 Obsidian 双链建议
 
 ### 上游依赖
-- [[多类支持向量机损失 (Multiclass SVM Loss)]]：作为对比，Softmax 是 SVM Loss 在概率解释上的终极进化版本。
+- [[多类支持向量机损失 (Multiclass SVM Loss)]]：作为对比，Softmax 是 SVM Loss 在概率解释上的综合进化版本。
 
 ### 下游延伸
 - [[最优化与梯度下降 (Optimization & SGD)]]：拿到了极其简单的梯度 `p - y` 之后，如何传递回网络深处。
@@ -225,3 +225,4 @@ Softmax 分类器本质上是将线性层输出的未归一化对数概率 (Logi
 - **关联已有笔记**：`[[CS231n_Assignment1]]`
 - **建议标签**：`#学习` `#深度学习` `#概念` `#CS231n` `#损失函数` `#Softmax`
 - **拆分建议**：保持单篇原子卡片。
+

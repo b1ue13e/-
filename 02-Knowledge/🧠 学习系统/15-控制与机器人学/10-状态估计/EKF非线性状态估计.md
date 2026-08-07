@@ -2,26 +2,29 @@
 title: "EKF非线性状态估计"
 date: "2026-08-03"
 type: concept
-course: "控制与机器人学"
-importance: "A"
-tags: [学习, 控制与机器人学]
-upstream: [卡尔曼滤波KalmanFilter, 移动机器人运动学与差分驱动]
-downstream: [UKF, 粒子滤波, SLAM]
-status: learning
-concept: ["扩展卡尔曼滤波", "线性化", "状态估计"]
-prerequisites: ["卡尔曼滤波KalmanFilter", "移动机器人运动学与差分驱动", "概率论基础"]
-related: ["移动机器人运动学与差分驱动", "栅格地图与占据栅格", "卡尔曼滤波KalmanFilter"]
-flow: project
+course: "15-控制与机器人学"
+stage_moc: "[[🧭 阶段10-状态估计]]"
+flow: knowledge
 kind: concept
+importance: "A"
+status: completed
+tags: [学习, 控制与机器人学]
+upstream:
+  - "[[卡尔曼滤波KalmanFilter]]"
+  - "[[Jacobian线性化]]"
+concept: ["扩展卡尔曼滤波", "线性化", "状态估计"]
+prerequisites: ["卡尔曼滤波KalmanFilter", "Jacobian线性化"]
+related: ["UKF", "粒子滤波", "SLAM"]
 template: Obsidian单知识点深度学习模板
 created: 2026-08-03
+updated: 2026-08-07
 ---
 
 # EKF非线性状态估计
 
 ---
 
-## 0. 先判断它值不值得深挖
+## 0. 学习边界
 
 - **类别**：**A 类（核心概念，必须深挖）**
 - **判断理由**：HW04（卡尔曼滤波与状态估计）的核心——官方验收 demo 就是 `ekf_localization.py`，验收指标（EKF 定位 RMSE < 0.5 m）直接由本知识点决定；它同时是 *Probabilistic Robotics* 状态估计主线（KF → EKF → UKF → PF）的承上启下环节，也是 [[卡尔曼滤波KalmanFilter]] 从"玩具线性系统"走向"真实机器人"的唯一桥梁。跳过它，HW04 只能复现 demo 不能理解为什么 EKF 能压住里程计漂移。
@@ -248,3 +251,4 @@ $$\hat{x}_k = \hat{x}_k^- + K_k \big(z_k - h(\hat{x}_k^-)\big), \qquad P_k = (I 
 - **关联已有笔记**：[[🧭 课程作业总索引|课程作业总索引]]、[[卡尔曼滤波KalmanFilter]]、[[移动机器人运动学与差分驱动]]、[[里程计]]、[[项目-位姿估计]]、[[项目-KF跟踪]]
 - **建议标签**：`#学习` `#控制与机器人学` `#状态估计` `#概念`
 - **拆分建议**：主卡保持"线性化 + 五公式"一体不拆；若 HW04 调参阶段出现"发散排查"经验，可另拆"EKF 发散调试手册"题型笔记（角度 wrapping、Q 吸收模型误差、观测野值剔除）。
+

@@ -2,11 +2,14 @@
 title: CAPM 资本资产定价模型
 type: study
 topic: CAPM 资本资产定价模型
+aliases:
+- CAPM与资产定价
+- 无风险资产与资本市场线
 created: '2026-08-03'
 status: ongoing
 difficulty: intermediate
 course: 量化金融
-importance: A
+stage_moc: '[[🧭 阶段2-定价时序与风险]]'
 stage: 📘 第一阶段：夯实基础
 tags:
 - 学习
@@ -17,18 +20,15 @@ concept:
 - Beta
 - 证券市场线
 prerequisites:
-- 收益率定义与对数收益
+- 收益率与对数收益率
 - 马科维茨组合优化与有效前沿
 related:
 - Fama-French三因子模型
 - APT套利定价理论
 - Fama-MacBeth两步回归
 upstream:
-- 收益率定义与对数收益
-- 马科维茨组合优化与有效前沿
-downstream:
-- Fama-MacBeth两步回归
-- 因子模型与Fama-French三因子
+  - '[[收益率与对数收益率]]'
+  - '[[马科维茨有效前沿]]'
 flow: knowledge
 kind: concept
 assessment_exempt: false
@@ -38,20 +38,18 @@ accessed: '2026-08-06'
 license: open online lectures; link-only
 verified_at: 2026-08-03
 nav_level: 9
-nav_prev: 量化金融-波动率-GARCH家族模型
-nav_next: 量化金融-随机过程-伊藤引理与随机微分方程
 ---
 
 # CAPM 资本资产定价模型
 
 > [!info] 主线导航
-> [[🗺️ 量化金融学习路径|返回路径]] · **Week 4** · 前置 [[相关系数、协方差与资产组合分散化 (Covariance, Correlation & Diversification)]] · 练习 [[03-Projects/金融与时序/03-量化金融/课后作业/量化金融-课后作业-02-回归与CAPM|PS02]] · 实验 [[03-Projects/金融与时序/03-量化金融/课后作业/量化金融-课后作业-01-CAPM与Alpha检验|HW01]]
+> [[🗺️ 量化金融学习路径|返回路径]] · **Week 4** · 前置 [[相关系数、协方差与资产组合分散化 (Covariance, Correlation & Diversification)]] · 练习 [[量化金融-课后作业-03-回归与CAPM|PS02]] · 实验 [[量化金融-课后作业-03-回归与CAPM|HW01]]
 
 ---
 
-## 0. 先判断它值不值得深挖
+## 0. 学习边界
 
-- **类别**：**A 类（核心概念，必须深挖）**
+- **类别**：**核心主题（核心概念，必须深挖）**
 - **判断理由**：HW01 的直接考查对象（CAPM 与 Alpha 检验）；也是因子模型家族的起点。
 
 ---
@@ -72,7 +70,7 @@ nav_next: 量化金融-随机过程-伊藤引理与随机微分方程
 
 ## 3. 学它之前需要哪些前置知识？
 
-1. **[[收益率定义与对数收益]]**。
+1. **[[收益率与对数收益率]]**。
 2. **[[马科维茨有效前沿|马科维茨组合优化与有效前沿]]**：有效前沿与市场组合（切线组合）。
 
 ---
@@ -170,14 +168,14 @@ $$E[R_i]=R_f+\beta_i(E[R_m]-R_f),\qquad \beta_i=\frac{\text{Cov}(R_i,R_m)}{\text
 ## 9. 相关知识点与 Obsidian 双链建议
 
 ### 上游依赖
-- [[收益率定义与对数收益]]、[[马科维茨有效前沿|马科维茨组合优化与有效前沿]]
+- [[收益率与对数收益率]]、[[马科维茨有效前沿|马科维茨组合优化与有效前沿]]
 
 ### 下游延伸
 - [[Fama-MacBeth 两步回归法 (Fama-MacBeth Two-Step Regression)|Fama-MacBeth两步回归]]：因子溢价估计
 - [[Fama-French三因子模型|因子模型与Fama-French三因子]]：多因子扩展
 
 ### 横向关联
-- [[量化金融-资产定价-多因子模型|APT套利定价理论]] ↔ 本卡：无套利定价
+- [[Fama-French三因子模型|APT套利定价理论]] ↔ 本卡：无套利定价
 - [[Fama-French三因子模型]] ↔ 本卡：实证挑战
 
 ### 应用场景
@@ -264,10 +262,17 @@ $$E[R_i]=R_f+\beta_i(E[R_m]-R_f),\qquad \beta_i=\frac{\text{Cov}(R_i,R_m)}{\text
 
 ---
 
-## 🧪 学完本节后可完成的作业
+## 学完后可以完成
 
-- **可立即完成**：[[03-Projects/金融与时序/03-量化金融/课后作业/量化金融-课后作业-01-CAPM与Alpha检验|HW01 CAPM 真实作业包]]，完成 Alpha/Beta 归因与数据契约检查。
-- **需结合后续知识**：[[03-Projects/金融与时序/03-量化金融/课后作业/量化金融-课后作业-02-回归与CAPM#题 1|PS02 题 1]]，补充 OLS 推导、标准误和市场代理边界。
+```dataview
+LIST
+FROM "03-Projects"
+WHERE contains(requires, this.file.link)
+SORT assignment_level ASC, file.name ASC
+```
+
+
+- **需结合后续知识**：[[量化金融-课后作业-03-回归与CAPM#题 1|PS02 题 1]]，补充 OLS 推导、标准误和市场代理边界。
 - **提交产物**：回归表、Beta/Alpha 解释、基准与无风险利率来源、样本区间和限制说明。
 
 > 历史 `历史专题作业` 页面仅保留为待审查资产；本卡的规范作业入口是上面的真实作业包。
@@ -275,7 +280,7 @@ $$E[R_i]=R_f+\beta_i(E[R_m]-R_f),\qquad \beta_i=\frac{\text{Cov}(R_i,R_m)}{\text
 ## 13. 给 Obsidian 的归档建议
 
 - **适合文件夹**：`02-Knowledge/🧠 学习系统/03-量化金融/`
-- **关联已有笔记**：[[Fama-French三因子模型]] [[量化金融-资产定价-多因子模型|APT套利定价理论]] [[Fama-MacBeth 两步回归法 (Fama-MacBeth Two-Step Regression)|Fama-MacBeth两步回归]]
+- **关联已有笔记**：[[Fama-French三因子模型]] [[Fama-French三因子模型|APT套利定价理论]] [[Fama-MacBeth 两步回归法 (Fama-MacBeth Two-Step Regression)|Fama-MacBeth两步回归]]
 - **建议标签**：`#学习` `#量化金融`
 - **拆分建议**：不拆分
 
@@ -289,18 +294,17 @@ $$E[R_i]=R_f+\beta_i(E[R_m]-R_f),\qquad \beta_i=\frac{\text{Cov}(R_i,R_m)}{\text
 ### 🧪 交互实验室
 > 拖动下方滑块，亲手感受公式中各个参数是如何改变结果的。
 > **Beta**
-> [Beta 交互实验源码](https://github.com/datawhalechina/quant-for-beginners/blob/main/assets/interactive/beta-demo.html)（扩展材料，见 [[02-Knowledge/🧠 学习系统/03-量化金融/00-前置知识/量化金融-外部实验资产索引]]）
+> [Beta 交互实验源码](https://github.com/datawhalechina/quant-for-beginners/blob/main/assets/interactive/beta-demo.html)（扩展材料，见 [[量化金融-外部实验资产索引]]）
 
 ### 💻 实战靶场
 - [打开 Notebook：夏普比率与 Beta](https://github.com/datawhalechina/quant-for-beginners/blob/main/notebooks/phase2_intro/02_夏普比率与Beta.ipynb)
 \n
 
 ---
-\n\n> ⚔️ **专题实战任务**：👉 点击进入 [[03-Projects/金融与时序/03-量化金融/课后作业/量化金融-课后作业-01-CAPM与Alpha检验|HW01 CAPM与Alpha检验]] 刷怪通关！\n\n> 🧭 **自动导航 (Dataview Engine)**
+\n\n> ⚔️ **专题实战任务**：👉 点击进入 [[量化金融-课后作业-03-回归与CAPM|HW01 CAPM与Alpha检验]] 刷怪通关！\n\n> 🧭 **自动导航 (Dataview Engine)**
 
 ```dataview
 TABLE WITHOUT ID 
-  "⬅️ [[" + nav_prev + "]]" AS "上一课", 
-  "🏠 [[02-Knowledge/🧠 学习系统/03-量化金融/04-深入精通/量化金融-全栈资产地图|回到主干]]" AS "主菜单", 
+  "🏠 [[🗺️ 量化金融学习路径|回到主干]]" AS "主菜单",
 WHERE file.path = this.file.path
 ```

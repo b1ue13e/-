@@ -51,9 +51,9 @@ U04 前半段，学生已完成基础 CNN 训练，并开始比较预训练特�
 ## 运行方式
 
 ```bash
-python "f:\-\03-Projects\课程作业\05-计算机视觉\real_assignment_packages\hw04_transfer_learning_error_analysis\starter\run.py" --input-dir "f:\-\03-Projects\data\computer_vision\hw04_transfer_learning_error_analysis" --output-dir "f:\-\03-Projects\课程作业\05-计算机视觉\real_assignment_packages\hw04_transfer_learning_error_analysis\your_outputs"
-python "f:\-\03-Projects\课程作业\05-计算机视觉\real_assignment_packages\hw04_transfer_learning_error_analysis\starter\check_data.py" --input-dir "f:\-\03-Projects\data\computer_vision\hw04_transfer_learning_error_analysis"
-pytest "f:\-\03-Projects\课程作业\05-计算机视觉\real_assignment_packages\hw04_transfer_learning_error_analysis\tests"
+python "F:\-\03-Projects\05-计算机视觉\real_assignment_packages\hw04_transfer_learning_error_analysis\starter\run.py" --input-dir "F:\-\03-Projects\data\computer_vision\hw04_transfer_learning_error_analysis" --output-dir "F:\-\03-Projects\05-计算机视觉\real_assignment_packages\hw04_transfer_learning_error_analysis\your_outputs"
+python "F:\-\03-Projects\05-计算机视觉\real_assignment_packages\hw04_transfer_learning_error_analysis\starter\check_data.py" --input-dir "F:\-\03-Projects\data\computer_vision\hw04_transfer_learning_error_analysis"
+pytest "F:\-\03-Projects\05-计算机视觉\real_assignment_packages\hw04_transfer_learning_error_analysis\tests"
 ```
 
 ## 当前 baseline 定位

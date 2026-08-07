@@ -51,9 +51,9 @@ U05 开始时，学生已完成分类与迁移学习分析，开始进入更完�
 ## 运行方式
 
 ```bash
-python "f:\-\03-Projects\课程作业\05-计算机视觉\real_assignment_packages\hw05_pascal_voc_detection_pkg\starter\run.py" --input-dir "f:\-\03-Projects\data\computer_vision\hw05_pascal_voc_detection_pkg" --output-dir "f:\-\03-Projects\课程作业\05-计算机视觉\real_assignment_packages\hw05_pascal_voc_detection_pkg\your_outputs"
-python "f:\-\03-Projects\课程作业\05-计算机视觉\real_assignment_packages\hw05_pascal_voc_detection_pkg\starter\check_data.py" --input-dir "f:\-\03-Projects\data\computer_vision\hw05_pascal_voc_detection_pkg"
-pytest "f:\-\03-Projects\课程作业\05-计算机视觉\real_assignment_packages\hw05_pascal_voc_detection_pkg\tests"
+python "F:\-\03-Projects\05-计算机视觉\real_assignment_packages\hw05_pascal_voc_detection_pkg\starter\run.py" --input-dir "F:\-\03-Projects\data\computer_vision\hw05_pascal_voc_detection_pkg" --output-dir "F:\-\03-Projects\05-计算机视觉\real_assignment_packages\hw05_pascal_voc_detection_pkg\your_outputs"
+python "F:\-\03-Projects\05-计算机视觉\real_assignment_packages\hw05_pascal_voc_detection_pkg\starter\check_data.py" --input-dir "F:\-\03-Projects\data\computer_vision\hw05_pascal_voc_detection_pkg"
+pytest "F:\-\03-Projects\05-计算机视觉\real_assignment_packages\hw05_pascal_voc_detection_pkg\tests"
 ```
 
 ## 当前 baseline 定位

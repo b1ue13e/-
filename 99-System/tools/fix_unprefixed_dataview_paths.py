@@ -1,6 +1,6 @@
 """Migrate active Dataview source paths to the current knowledge root.
 
-The old vault queried ``🧠 学习系统`` at the repository root. The directory now
+The old vault queried ``02-Knowledge/🧠 学习系统`` at the repository root. The directory now
 lives below ``02-Knowledge``. This tool changes only quoted Dataview-style source
 strings in active Markdown. It is a dry run unless ``--apply`` is supplied.
 """
@@ -18,7 +18,7 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[2]
-OLD_PREFIXES = ('"🧠 学习系统', "'🧠 学习系统")
+OLD_PREFIXES = ('"02-Knowledge/🧠 学习系统', "'02-Knowledge/🧠 学习系统")
 NEW_PREFIXES = ('"02-Knowledge/🧠 学习系统', "'02-Knowledge/🧠 学习系统")
 IGNORED_PARTS = {".git", ".obsidian", ".recovery-hold", ".tmp", "__pycache__"}
 ARCHIVE_PARTS = {"🗄️ 归档"}
@@ -129,7 +129,7 @@ def apply_changes(root: Path, backup_dir: Path, changes: list[dict[str, object]]
     manifest: dict[str, object] = {
         "created": datetime.now().astimezone().isoformat(timespec="seconds"),
         "root": str(root),
-        "old_prefix": "🧠 学习系统",
+        "old_prefix": "02-Knowledge/🧠 学习系统",
         "new_prefix": "02-Knowledge/🧠 学习系统",
         "changed_files": len(changes),
         "replacement_count": sum(int(item["replacements"]) for item in changes),

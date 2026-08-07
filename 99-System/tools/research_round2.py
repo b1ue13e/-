@@ -7,8 +7,8 @@ sys.stdout.reconfigure(encoding='utf-8')
 root_dir = r'f:\-'
 
 # 1. Search Dataview queries with unprefixed paths (without trailing slash requirement)
-# E.g. '🧠 学习系统' or '🗓️ 计划执行系统' or '📚 书库' or '📚 论文库' not preceded by '02-Knowledge/' or '99-System/'
-pattern_dv = re.compile(r'(?<!02-Knowledge/)(?<!02-Knowledge\\)(?<!99-System/)(?<!99-System\\)(🧠 学习系统|🗓️ 计划执行系统|📚 书库|📚 论文库)')
+# E.g. '02-Knowledge/🧠 学习系统' or '99-System/🗓️ 计划执行系统' or '02-Knowledge/📚 书库' or '02-Knowledge/📚 论文库' not preceded by '02-Knowledge/' or '99-System/'
+pattern_dv = re.compile(r'(?<!02-Knowledge/)(?<!02-Knowledge\\)(?<!99-System/)(?<!99-System\\)(02-Knowledge/🧠 学习系统|99-System/🗓️ 计划执行系统|02-Knowledge/📚 书库|02-Knowledge/📚 论文库)')
 
 dv_files = set()
 dv_matches_cnt = 0

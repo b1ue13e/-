@@ -29,7 +29,7 @@ related:
 - 最优化方法
 - 机器学习
 - 概率论与数理统计
-source_path: 📚 书库/书籍资源/Mathematics for Machine Learning (Marc Peter Deisenroth, A.
+source_path: 02-Knowledge/📚 书库/书籍资源/Mathematics for Machine Learning (Marc Peter Deisenroth, A.
   Aldo Faisal etc.) (z-library.sk, 1lib.sk, z-lib.sk).pdf
 ---
 
@@ -40,19 +40,19 @@ source_path: 📚 书库/书籍资源/Mathematics for Machine Learning (Marc Pet
 ## 🔗 资源入口
 
 - [打开原书](<../书籍资源/Mathematics for Machine Learning (Marc Peter Deisenroth, A. Aldo Faisal etc.) (z-library.sk, 1lib.sk, z-lib.sk).pdf>)
-- [[🧠 学习系统/17-机器学习/🗺️ 机器学习学习路径|机器学习]]
-- [[🧠 学习系统/07-最优化方法/🗺️ 最优化方法学习路径|最优化方法]]
-- [[🧠 学习系统/09-高等代数/🗺️ 高等代数学习路径|高等代数]]
+- [[🗺️ 机器学习学习路径|机器学习]]
+- [[🗺️ 最优化方法学习路径|最优化方法]]
+- [[🗺️ 高等代数学习路径|高等代数]]
 
 ## 🧭 章节地图
 
 | 章节 | 章节目标 | 对应路径阶段 | 对应模块 | 代表原子卡 |
 |:---|:---|:---|:---|:---|
-| Chapter 2 Linear Algebra | 把向量、矩阵、秩、投影放回机器学习语境 | [[🧠 学习系统/09-高等代数/01-基础入门/📐 第一阶段：基础入门\|高代阶段1]] | 矩阵运算；向量组与秩 | [[🧠 学习系统/09-高等代数/01-基础入门/矩阵的秩\|矩阵的秩]] |
-| Chapter 3 Analytic Geometry | 理解距离、角度、投影和几何解释 | [[🧠 学习系统/09-高等代数/03-进阶提升/🌟 第三阶段：进阶提升\|高代阶段3]] | 内积与正交结构 | [[🧠 学习系统/09-高等代数/03-进阶提升/长度与角度\|长度与角度]] |
-| Chapter 4 Matrix Decompositions | 把特征分解、SVD 与 PCA 接到数据分析 | [[🧠 学习系统/09-高等代数/04-精通拓展/🚀 第四阶段：精通拓展\|高代阶段4]] | 矩阵分解与应用落点 | [[🧠 学习系统/09-高等代数/04-精通拓展/主成分分析(PCA)\|主成分分析(PCA)]] |
-| Chapter 6 Probability and Distributions | 为统计推断和生成模型补概率底座 | [[🧠 学习系统/22-概率论与数理统计/01-概率基础/🎲 第一阶段：概率基础\|概率统计阶段1]] | 随机变量与分布 | [[🧠 学习系统/22-概率论与数理统计/01-概率基础/概率基础-随机变量与分布-Normal\|Normal]] |
-| Chapter 7 Continuous Optimization | 把梯度、驻点和最优化问题接到 ML 训练 | [[🧠 学习系统/07-最优化方法/01-数学基础/🔧 第一阶段：数学基础\|最优化阶段1]] | 微分与局部近似 | [[🧠 学习系统/07-最优化方法/01-数学基础/梯度优化\|梯度优化]] |
+| Chapter 2 Linear Algebra | 把向量、矩阵、秩、投影放回机器学习语境 | [[02-Knowledge/🧠 学习系统/09-高等代数/01-基础入门/📐 第一阶段：基础入门\|高代阶段1]] | 矩阵运算；向量组与秩 | [[02-Knowledge/🧠 学习系统/09-高等代数/01-基础入门/矩阵的秩\|矩阵的秩]] |
+| Chapter 3 Analytic Geometry | 理解距离、角度、投影和几何解释 | [[02-Knowledge/🧠 学习系统/09-高等代数/03-进阶提升/🌟 第三阶段：进阶提升\|高代阶段3]] | 内积与正交结构 | [[02-Knowledge/🧠 学习系统/09-高等代数/03-进阶提升/长度与角度\|长度与角度]] |
+| Chapter 4 Matrix Decompositions | 把特征分解、SVD 与 PCA 接到数据分析 | [[02-Knowledge/🧠 学习系统/09-高等代数/04-精通拓展/🚀 第四阶段：精通拓展\|高代阶段4]] | 矩阵分解与应用落点 | [[02-Knowledge/🧠 学习系统/09-高等代数/04-精通拓展/主成分分析(PCA)\|主成分分析(PCA)]] |
+| Chapter 6 Probability and Distributions | 为统计推断和生成模型补概率底座 | [[02-Knowledge/🧠 学习系统/22-概率论与数理统计/01-概率基础/🎲 第一阶段：概率基础\|概率统计阶段1]] | 随机变量与分布 | [[02-Knowledge/🧠 学习系统/22-概率论与数理统计/01-概率基础/概率基础-随机变量与分布-Normal\|Normal]] |
+| Chapter 7 Continuous Optimization | 把梯度、驻点和最优化问题接到 ML 训练 | [[02-Knowledge/🧠 学习系统/07-最优化方法/01-数学基础/🔧 第一阶段：数学基础\|最优化阶段1]] | 微分与局部近似 | [[02-Knowledge/🧠 学习系统/07-最优化方法/01-数学基础/梯度优化\|梯度优化]] |
 
 ## 🪜 推荐读法
 

@@ -15,7 +15,7 @@ status: active
 ## 📊 文件统计
 
 ```dataviewjs
-const pdfFolder = app.vault.getAbstractFileByPath("📚 论文库/PDF库");
+const pdfFolder = app.vault.getAbstractFileByPath("02-Knowledge/📚 论文库/PDF库");
 if (pdfFolder && pdfFolder.children) {
     const pdfFiles = pdfFolder.children.filter(f => f.extension === "pdf");
     const totalSize = pdfFiles.reduce((sum, f) => sum + f.stat.size, 0);
@@ -31,7 +31,7 @@ if (pdfFolder && pdfFolder.children) {
 ## 📄 文件列表
 
 ```dataviewjs
-const pdfFolder = app.vault.getAbstractFileByPath("📚 论文库/PDF库");
+const pdfFolder = app.vault.getAbstractFileByPath("02-Knowledge/📚 论文库/PDF库");
 if (pdfFolder && pdfFolder.children) {
     const pdfFiles = pdfFolder.children
         .filter(f => f.extension === "pdf")
@@ -58,4 +58,4 @@ if (pdfFolder && pdfFolder.children) {
 
 ---
 
-*[[📚 论文库/📄 论文主页|返回论文主页]] | [[🏠 主页|返回主页]]*
+*[[📄 论文主页|返回论文主页]] | [[🏠 主页|返回主页]]*

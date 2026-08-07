@@ -4,12 +4,12 @@ from pathlib import Path
 sys.stdout.reconfigure(encoding='utf-8')
 
 VAULT_ROOT = Path("F:/-")
-TS_DIR = VAULT_ROOT / "02-Knowledge" / "🧠 学习系统" / "02-时间序列分析"
-DS_DIR = VAULT_ROOT / "02-Knowledge" / "🧠 学习系统" / "10-数据结构与算法"
+TS_DIR = VAULT_ROOT / "02-Knowledge" / "02-Knowledge/🧠 学习系统" / "02-时间序列分析"
+DS_DIR = VAULT_ROOT / "02-Knowledge" / "02-Knowledge/🧠 学习系统" / "10-数据结构与算法"
 if not TS_DIR.exists():
-    TS_DIR = VAULT_ROOT / "🧠 学习系统" / "02-时间序列分析"
+    TS_DIR = VAULT_ROOT / "02-Knowledge/🧠 学习系统" / "02-时间序列分析"
 if not DS_DIR.exists():
-    DS_DIR = VAULT_ROOT / "🧠 学习系统" / "10-数据结构与算法"
+    DS_DIR = VAULT_ROOT / "02-Knowledge/🧠 学习系统" / "10-数据结构与算法"
 
 print(f"Stage 16: Precise score upgrades for GARCH, FFT, 红黑树, 堆排序...")
 

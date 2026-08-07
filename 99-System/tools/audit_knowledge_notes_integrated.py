@@ -20,7 +20,7 @@ if hasattr(sys.stdout, 'reconfigure'):
     sys.stdout.reconfigure(encoding='utf-8')
 
 VAULT_ROOT = Path(r"F:\-")
-SCAN_ROOT = VAULT_ROOT / "02-Knowledge" / "🧠 学习系统"
+SCAN_ROOT = VAULT_ROOT / "02-Knowledge" / "02-Knowledge/🧠 学习系统"
 OUTPUT_DIR = VAULT_ROOT / "99-System" / "🗄️ 归档" / "知识库审计"
 OUTPUT_MD = OUTPUT_DIR / "knowledge_notes_integrated_audit_2026-07-31.md"
 OUTPUT_CSV = OUTPUT_DIR / "knowledge_notes_integrated_scores_2026-07-31.csv"
@@ -127,7 +127,7 @@ def keyword_groups(text: str, groups: tuple[tuple[str, ...], ...]) -> int:
 def classify_note(path: Path, fm: dict[str, str], body: str) -> str:
     type_val = fm.get("type", "").lower()
     rel = path.relative_to(VAULT_ROOT).as_posix()
-    if type_val in {"study", "knowledge_card", "concept", "study_note"} or "02-Knowledge" in rel or "🧠 学习系统" in rel:
+    if type_val in {"study", "knowledge_card", "concept", "study_note"} or "02-Knowledge" in rel or "02-Knowledge/🧠 学习系统" in rel:
         return "知识卡"
     if type_val == "paper" or "论文库" in rel: return "论文"
     if type_val == "book" or "书库" in rel: return "书籍"

@@ -1,24 +1,24 @@
----
-title: "RLHF-PPO 阶段：从人类反馈到策略优化"
-date: "2026-08-03"
-type: concept
+﻿---
+type: study
+topic: "RLHF 的 PPO 阶段"
 course: "强化学习"
-importance: "A"  # A:核心概念 | B:常用工具 | C:前置背景 | D:边角术语 | E:跳过
-tags: [学习, 强化学习, RLHF, PPO]
-upstream: [PPO近端策略优化, GAE广义优势估计, Actor-Critic架构, 指令微调与对齐]
-downstream: [🧭 开源作业体系-强化学习]
-status: learning
-concept: [RLHF, PPO, 奖励模型]
-prerequisites: [PPO近端策略优化, GAE广义优势估计, Actor-Critic架构]
-related: [指令微调与对齐, DPO直接偏好优化]
-flow: project
+created: 2026-04-18
+status: completed
+stage_moc: "[[🧭 阶段7-PPO]]"
+flow: knowledge
 kind: concept
-template: Obsidian单知识点深度学习模板
-created: 2026-08-03
+difficulty: advanced
+concept: ["RLHF", "PPO", "奖励模型", "KL 惩罚"]
+upstream: ["[[RLHF-PPO]]", "[[PPO近端策略优化]]"]
+tags: [学习, 强化学习]
 ---
+> 所属模块：[[🗺️ 强化学习学习路径|强化学习学习路径]]
+> 主教材：`《Reinforcement Learning》`
+> 对应阶段：[[🧭 阶段7-PPO|返回阶段页]]
+
 # RLHF-PPO 阶段：从人类反馈到策略优化
 ---
-## 0. 先判断它值不值得深挖
+## 0. 学习边界
 - **类别**：**A 类（核心概念，必须深挖）**
 - **判断理由**：RLHF 是 ChatGPT 类大模型"对齐"（Alignment）的标准技术路线，PPO 是其中唯一的强化学习优化环节，是"强化学习 × NLP"交叉的高频考点。本笔记聚焦 RLHF 管线中的 **PPO 阶段**，与 [[PPO近端策略优化]] 互为补充。
 ---
@@ -27,7 +27,7 @@ created: 2026-08-03
 > 预训练语言模型只会"续写"，不一定会"听话"：让它总结、翻译、拒绝有害请求时表现不佳。做了 SFT 后模型学会了回答格式，但 **"什么回答更好"无法用交叉熵直接表达**——正确回答不止一个，好坏是相对偏好而非绝对标签。更糟的是，"人类打分"不可微，直接做梯度上升行不通；即使能算，模型也会钻空子（Reward Hacking）。RLHF 的答案：**先训练一个可微的奖励模型模拟人类偏好，再用 PPO 让策略模型去最大化这个奖励**。
 ---
 ## 2. 为什么它重要？它有什么用？
-- **连接大图景**：不学它，就看不懂 ChatGPT/InstructGPT 的完整训练管线，也看不懂 [[02-Knowledge/🧠 学习系统/08-NLP全栈/指令微调与对齐|指令微调与对齐]] 中"对齐"的 RL 环节；它是 [[🧭 开源作业体系-强化学习]] 中 PPO 项目的进阶应用场景。
+- **连接大图景**：不学它，就看不懂 ChatGPT/InstructGPT 的完整训练管线，也看不懂 [[RLHF-PPO阶段|指令微调与对齐]] 中"对齐"的 RL 环节；它是 [[🧭 课程作业总索引]] 中 PPO 项目的进阶应用场景。
 - **实际应用场景**：大模型对齐（ChatGPT、Claude）、安全对齐（拒绝有害内容）、摘要/翻译的质量偏好优化；Bradley-Terry 同时是推荐系统排序建模的基石。
 - **高频题型/任务**：面试常问"RLHF 四步流程""PPO 在 RLHF 里和标准 PPO 有什么区别""为什么需要参考模型"；项目中常要求复现 InstructGPT 管线或实现奖励模型训练。
 ---
@@ -36,7 +36,7 @@ created: 2026-08-03
 1. **[[PPO近端策略优化]]**：截断概率比率的 on-policy 目标 $L^{CLIP}$、$\epsilon=0.2$ 的 clip 机制——RLHF 的 RL 环节就是它的直接应用。
 2. **[[GAE广义优势估计]]**：用 $\lambda$ 折衷偏差与方差估计优势 $A_t$，RLHF 中用它算"这个 token 比平均水平好多少"。
 3. **[[Actor-Critic架构]]**：Actor 策略网络与环境交互、Critic 价值网络提供基线；RLHF 中 Actor=待对齐的语言模型，Critic=价值头。
-4. **[[02-Knowledge/🧠 学习系统/08-NLP全栈/指令微调与对齐|指令微调与对齐]]**：SFT 的输入输出格式与"指令遵循"问题——RLHF 从 SFT 模型出发。
+4. **[[RLHF-PPO阶段|指令微调与对齐]]**：SFT 的输入输出格式与"指令遵循"问题——RLHF 从 SFT 模型出发。
 ---
 ## 4. 用直觉语言解释它
 > «"这东西其实就像……老师给学生出题打分，教练在旁边规定'每次最多只能改 5% 的答案'，同时请原来的优等生（参考模型）当刹车，防止学生变成专骗老师打分的应试机器。"»
@@ -107,9 +107,9 @@ $$L^{CLIP}(\theta)=\hat{\mathbb{E}}_t\left[\min\left(r_t(\theta)A_t,\ \mathrm{cl
 - [[PPO近端策略优化]]：RLHF 的 RL 环节就是 PPO-Clip 的直接应用，必须先吃透 clip 目标。
 - [[GAE广义优势估计]]：RLHF 中逐 token 优势用 GAE 计算，$\lambda$ 控制偏差-方差折衷。
 - [[Actor-Critic架构]]：策略模型即 Actor，价值头即 Critic，RLHF 复用了这套架构。
-- [[02-Knowledge/🧠 学习系统/08-NLP全栈/指令微调与对齐|指令微调与对齐]]：SFT 是 RLHF 的起点，指令遵循是 RLHF 要解决的核心问题。
+- [[RLHF-PPO阶段|指令微调与对齐]]：SFT 是 RLHF 的起点，指令遵循是 RLHF 要解决的核心问题。
 ### 下游延伸
-- [[🧭 开源作业体系-强化学习]]：PPO 系列项目（项目-PPO实现、项目-MujocoPPO）可扩展为"奖励模型 + KL"的 RLHF 小实验。
+- [[🧭 课程作业总索引]]：PPO 系列项目（项目-PPO实现、项目-MujocoPPO）可扩展为"奖励模型 + KL"的 RLHF 小实验。
 ### 横向关联
 - DPO（直接偏好优化）↔ RLHF：省去奖励模型与 PPO 环节的闭式解对齐，是 RLHF 的轻量替代。
 ### 应用场景
@@ -179,6 +179,26 @@ $$L^{CLIP}(\theta)=\hat{\mathbb{E}}_t\left[\min\left(r_t(\theta)A_t,\ \mathrm{cl
 ---
 ## 13. 给 Obsidian 的归档建议
 - **适合文件夹**：`02-Knowledge/🧠 学习系统/13-强化学习/07-PPO/`
-- **关联已有笔记**：`[[PPO近端策略优化]]`、`[[GAE广义优势估计]]`、`[[Actor-Critic架构]]`、`[[02-Knowledge/🧠 学习系统/08-NLP全栈/指令微调与对齐|指令微调与对齐]]`
+- **关联已有笔记**：`[[PPO近端策略优化]]`、`[[GAE广义优势估计]]`、`[[Actor-Critic架构]]`、`[[RLHF-PPO阶段|指令微调与对齐]]`
 - **建议标签**：`#学习` `#强化学习` `#RLHF` `#PPO` `#概念`
 - **拆分建议**：暂不需拆分；若后续精读 InstructGPT 论文，可另建"论文笔记"，本笔记保持概念定位。
+
+## 闭卷自测
+1. RLHF 的 PPO 阶段整体流程是什么？
+2. 为何要在 RLHF 奖励中加 KL 惩罚？
+3. 奖励模型如何充当 RL 的环境奖励？
+
+## 学完后可以完成
+
+```dataview
+TABLE assignment_level, source_type FROM "03-Projects"
+WHERE contains(requires, this.file.link)
+```
+
+## 相关下游知识
+
+```dataview
+LIST FROM "02-Knowledge/🧠 学习系统"
+WHERE contains(upstream, this.file.link)
+```
+

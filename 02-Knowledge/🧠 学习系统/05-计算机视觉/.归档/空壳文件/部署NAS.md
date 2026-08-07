@@ -11,9 +11,9 @@ tags: ["学习", "计算机视觉"]
 ---
 # 部署NAS
 
-> 所属模块：[[../🗺️ 计算机视觉学习路径|计算机视觉学习路径]]
+> 所属模块：[[🗺️ 计算机视觉学习路径|计算机视觉学习路径]]
 > 主教材：`《Computer Vision: Algorithms and Applications》`、`Hands-on Machine Learning`
-> 对应阶段：[[02-Knowledge/🧠 学习系统/05-计算机视觉/05-专业深化与工程落地/🏭 第五阶段：专业深化与工程落地|返回阶段页]]
+> 对应阶段：[[🏭 第五阶段：专业深化与工程落地|返回阶段页]]
 > 建议先看：3D Vision、Video Analysis、Applications；实验设计、调参、部署前验证、性能比较
 > 辅助教材：`《Computer Vision: Algorithms and Applications》`、`《Computer Vision: Algorithms and Applications》`、`《Multiple View Geometry》`
 

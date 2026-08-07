@@ -32,7 +32,7 @@ tags: [学习, 计算机视觉, BatchNorm, 批归一化, 归一化层, 训练优
 
 ---
 
-## 0. 先判断它值不值得深挖
+## 0. 学习边界
 
 - **类别**：**A 类（核心概念，必须深挖）**
 - **判断理由**：Batch Normalization（BN，批归一化）由 Sergey Ioffe 和 Christian Szegedy 于 2015 年提出，是深度学习训练工程中最具影响力的技术之一。它通过在每个 mini-batch 内对激活值进行标准化，一举解决了深层网络训练中**内部协变量偏移 (Internal Covariate Shift)**、梯度消失/爆炸、对权重初始化极度敏感三大痛点。BN 使得使用高达 10× 的初始学习率成为可能、大幅降低了对 Dropout 的依赖，并成为 ResNet、DenseNet、EfficientNet 等几乎所有 SOTA 架构的标准层。理解 BN 的前向/反向公式、训练/测试模式差异，是掌握现代深度学习训练管线的必修课。
@@ -482,3 +482,4 @@ FROM "03-Projects"
 WHERE contains(requires, this.file.link)
 SORT assignment_level ASC, file.name ASC
 ```
+

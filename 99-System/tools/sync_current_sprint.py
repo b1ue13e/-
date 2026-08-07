@@ -1,4 +1,4 @@
-﻿#!/usr/bin/env python3
+#!/usr/bin/env python3
 """Synchronize derived day/week views from the current Sprint source page.
 
 Storage paths remain unchanged. The Sprint page is the only source of learning

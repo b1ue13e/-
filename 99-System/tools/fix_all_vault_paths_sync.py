@@ -5,87 +5,46 @@ import re
 sys.stdout.reconfigure(encoding='utf-8')
 root_dir = r'f:\-'
 
-# Simple, foolproof replacement:
-# Match '02-Knowledge/🧠 学习系统/' ONLY if the preceding 13 chars are NOT '02-Knowledge/' and NOT '02-Knowledge\'
-def fix_content(text):
-    changed = False
-    
-    # 1. 02-Knowledge/🧠 学习系统/
-    def replace_study(m):
-        start = m.start()
-        prefix = text[max(0, start-13):start]
-        if prefix in ('02-Knowledge/', '02-Knowledge\\'):
-            return m.group(0)
-        return '02-Knowledge/🧠 学习系统/'
-        
-    new_text, n1 = re.subn(r'02-Knowledge/🧠 学习系统/', replace_study, text)
-    if n1 > 0 and new_text != text:
-        changed = True
-        text = new_text
+targets = [
+    (re.compile(r'(?<!02-Knowledge/)(?<!02-Knowledge\\)🧠 学习系统'), '02-Knowledge/🧠 学习系统'),
+    (re.compile(r'(?<!99-System/)(?<!99-System\\)🗓️ 计划执行系统'), '99-System/🗓️ 计划执行系统'),
+    (re.compile(r'(?<!02-Knowledge/)(?<!02-Knowledge\\)📚 书库'), '02-Knowledge/📚 书库'),
+    (re.compile(r'(?<!02-Knowledge/)(?<!02-Knowledge\\)📚 论文库'), '02-Knowledge/📚 论文库'),
+]
 
-    # 2. 99-System/🗓️ 计划执行系统/
-    def replace_sprint(m):
-        start = m.start()
-        prefix = text[max(0, start-10):start]
-        if prefix in ('99-System/', '99-System\\'):
-            return m.group(0)
-        return '99-System/🗓️ 计划执行系统/'
+skip_dirs = {'.git', '.obsidian', '.claude', 'tmp', 'exports', '.recovery-hold'}
+skip_files = {'fix_all_vault_paths_sync.py', 'verify_vault_integrity.py', 'AGENTS.md'}
 
-    new_text, n2 = re.subn(r'99-System/🗓️ 计划执行系统/', replace_sprint, text)
-    if n2 > 0 and new_text != text:
-        changed = True
-        text = new_text
-
-    # 3. 02-Knowledge/📚 书库/
-    def replace_books(m):
-        start = m.start()
-        prefix = text[max(0, start-13):start]
-        if prefix in ('02-Knowledge/', '02-Knowledge\\'):
-            return m.group(0)
-        return '02-Knowledge/📚 书库/'
-
-    new_text, n3 = re.subn(r'02-Knowledge/📚 书库/', replace_books, text)
-    if n3 > 0 and new_text != text:
-        changed = True
-        text = new_text
-
-    # 4. 02-Knowledge/📚 论文库/
-    def replace_papers(m):
-        start = m.start()
-        prefix = text[max(0, start-13):start]
-        if prefix in ('02-Knowledge/', '02-Knowledge\\'):
-            return m.group(0)
-        return '02-Knowledge/📚 论文库/'
-
-    new_text, n4 = re.subn(r'02-Knowledge/📚 论文库/', replace_papers, text)
-    if n4 > 0 and new_text != text:
-        changed = True
-        text = new_text
-
-    return text, changed
-
-skip_dirs = {'.git', '.obsidian', '.claude'}
-modified_count = 0
+modified_files = 0
+total_replacements = 0
 
 for dirpath, dirnames, filenames in os.walk(root_dir):
-    if any(sd in dirpath for sd in skip_dirs):
-        continue
+    dirnames[:] = [d for d in dirnames if d not in skip_dirs and not d.startswith('.')]
     for f in filenames:
-        if f.endswith(('.md', '.py', '.ps1', '.js', '.json', '.base')):
-            abs_p = os.path.join(dirpath, f)
-            if 'fix_all_vault_paths_sync.py' in f or 'debug_path_fix.py' in f:
-                continue
-            try:
-                with open(abs_p, 'r', encoding='utf-8', errors='ignore') as fp:
-                    content = fp.read()
-            except Exception:
-                continue
+        if f in skip_files or not f.endswith(('.md', '.py', '.ps1', '.js', '.json', '.base')):
+            continue
+            
+        abs_p = os.path.join(dirpath, f)
+        try:
+            with open(abs_p, 'r', encoding='utf-8', errors='ignore') as fp:
+                content = fp.read()
+        except Exception:
+            continue
+            
+        new_content = content
+        file_changed = False
+        
+        for pat, rep in targets:
+            if pat.search(new_content):
+                new_content, count = pat.subn(rep, new_content)
+                total_replacements += count
+                file_changed = True
                 
-            new_content, changed = fix_content(content)
-            if changed:
-                with open(abs_p, 'w', encoding='utf-8') as fp:
-                    fp.write(new_content)
-                modified_count += 1
+        if file_changed:
+            with open(abs_p, 'w', encoding='utf-8') as fp:
+                fp.write(new_content)
+            modified_files += 1
 
-print(f"Sync migration completed. Modified {modified_count} files.")
-
+print(f"✅ Full vault path migration complete.")
+print(f"Modified Files: {modified_files}")
+print(f"Total Replacements: {total_replacements}")

@@ -46,7 +46,7 @@ tags:
 
 ---
 
-## 0. 先判断它值不值得深挖
+## 0. 学习边界
 
 - **类别**：**A 类（核心概念，必须深挖）**
 - **判断理由**：NeRF 由 Ben Mildenhall 等人于 ECCV 2020 提出（获最佳论文提名），是**3D 计算机视觉与神经渲染（Neural Rendering）领域的革命性里程碑**。它首次提出用一个简单的多层感知机（MLP）网络去隐式表达整个 3D 场景的连续辐射场，并结合经典**体渲染（Volume Rendering）**，实现了极其惊艳的**新视角合成（Novel View Synthesis）**。NeRF 开创了隐式三维表示的新纪元，直接孕育了后来的 Instant-NGP、3D Gaussian Splatting 及 3D 神经网络生成。
@@ -348,3 +348,4 @@ FROM "03-Projects"
 WHERE contains(requires, this.file.link)
 SORT assignment_level ASC, file.name ASC
 ```
+

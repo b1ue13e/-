@@ -1,31 +1,59 @@
 ---
 type: study
 topic: "MDP-折扣因子"
+course: "强化学习"
 created: 2026-04-18
-status: ongoing
+status: completed
+stage_moc: "[[🧭 阶段2-马尔可夫决策过程]]"
+flow: knowledge
+kind: concept
 difficulty: beginner
-concept: ["MDP-折扣因子", "折扣因子"]
-prerequisites: []
-related: []
-tags: ["学习", "强化学习"]
+concept: ["MDP", "折扣因子"]
+upstream: ["[[奖励函数]]"]
+tags: [学习, 强化学习]
 ---
+
 # MDP-折扣因子
 
-> 所属模块：[[../🗺️ 强化学习学习路径|强化学习学习路径]]
-> 主教材：`《Reinforcement Learning》`
-> 对应阶段：[[02-Knowledge/🧠 学习系统/13-强化学习/02-马尔可夫决策过程/🎯 阶段2：马尔可夫决策过程|返回阶段页]]
-> 建议先看：Bandits、MDPs、Dynamic Programming、Value Functions、TD Learning
-> 辅助教材：`《Algorithms for RL》`
+> 所属模块：[[🧭 阶段2-马尔可夫决策过程]] · 主线：MDP 五元组
+> 前置：[[奖励函数]]
 
-## 待写提纲
-- 这章/这个知识点在这门课里解决什么问题：
-- 所属主线：折扣因子
-- 这张卡要补哪块：折扣因子
-- 核心定义：
-- 关键方法 / 公式：
-- 一个最小例子：
-- 与前后笔记的关系：
-- 前置：待补
-- 相关：待补
+## 动机
 
-*创建于：2026-04-18*
+折扣因子 $\gamma\in[0,1]$ 是 MDP 第五个分量，决定"多看重未来"；它让无限时域的回报收敛，并体现决策者的耐心。
+
+## 正式定义 / 公式
+
+- 回报 $G_t=\sum_{k=0}^{\infty}\gamma^k r_{t+k+1}$。
+- $\gamma\to0$：近视、只管眼前；$\gamma\to1$：重视长远，但方差大、需 $\gamma<1$ 保证无限时域收敛。
+
+## 最小手算例子
+
+$\gamma=0.9$ 时第 10 步奖励权重仅 $0.9^{10}\approx0.35$；$\gamma=0.99$ 时仍有 $0.90$。
+
+## 对比与常见错误
+
+- **$\gamma=1$ 用于无限时域**：回报可能发散，须改用有限时域或平均奖励。
+- **$\gamma$ 过大**：学习慢、方差大、易发散。
+
+## 闭卷自测
+- 为何无限时域必须用 $\gamma<1$？
+- $\gamma$ 大小分别带来什么利弊？
+
+## 学完后可以完成
+
+```dataview
+LIST
+FROM "03-Projects"
+WHERE contains(requires, this.file.link)
+SORT assignment_level ASC, file.name ASC
+```
+
+## 相关下游知识
+
+```dataview
+LIST
+FROM "02-Knowledge/🧠 学习系统"
+WHERE contains(upstream, this.file.link)
+SORT file.name ASC
+```

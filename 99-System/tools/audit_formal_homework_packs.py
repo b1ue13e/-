@@ -11,7 +11,7 @@ import yaml
 
 sys.stdout.reconfigure(encoding="utf-8")
 ROOT = Path(__file__).resolve().parents[2]
-STUDY_ROOT = ROOT / "02-Knowledge" / "🧠 学习系统"
+STUDY_ROOT = ROOT / "02-Knowledge" / "02-Knowledge/🧠 学习系统"
 PROJECT_ROOT = ROOT / "03-Projects" / "课程作业"
 INDEX_PATH = PROJECT_ROOT / "33门课程正式作业索引.md"
 QLIB_PATH = (

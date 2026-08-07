@@ -22,7 +22,7 @@ tags: [学习,计算机视觉,可解释性,SaliencyMap,GradCAM]
 
 ---
 
-## 0. 先判断它值不值得深挖
+## 0. 学习边界
 
 - **类别**：**A 类（核心概念，必须深挖）**
 - **判断理由**：深度学习长期被诟病为"黑盒"。Saliency Map（Simonyan et al., 2014）是输入梯度法鼻祖；CAM（Zhou et al., 2016）首次实现"不额外标注，CNN 自动定位关键区域"；Grad-CAM（Selvaraju et al., 2017）将 CAM 推广到任意架构，成为工业标配。从医疗 AI 合规到模型调试，不懂这些方法就无法回答"模型凭什么这么判断"。
@@ -400,3 +400,4 @@ FROM "03-Projects"
 WHERE contains(requires, this.file.link)
 SORT assignment_level ASC, file.name ASC
 ```
+

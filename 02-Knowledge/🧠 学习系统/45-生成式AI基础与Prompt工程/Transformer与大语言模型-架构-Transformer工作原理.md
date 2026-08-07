@@ -1,4 +1,4 @@
----
+﻿---
 title: "Transformer与大语言模型-架构-Transformer工作原理"
 aliases: ["Transformer架构"]
 type: study
@@ -26,7 +26,7 @@ anki_tags: [生成式AI, Transformer, 模型原理]
 
 ---
 
-## 0. 先判断它值不值得深挖
+## 0. 学习边界
 
 - **类别**：**A 类（核心概念，必须深挖）**
 - **判断理由**：Transformer 是 MIT 6.7960 HW3 与 Stanford CS336 A1 的核心，也是现代 LLM 的底座。两份官方作业都要求理解或实现注意力、mask、FFN 与语言模型，不深挖张量维度就无法通过。
@@ -54,7 +54,7 @@ anki_tags: [生成式AI, Transformer, 模型原理]
 
 1. **[[Seq2Seq与注意力机制]]**：注意力打分-加权范式是 Self-Attention 的直接前身。
 2. **[[Self-Attention自注意力机制]]**：缩放点积注意力公式与 mask 的完整推导（已有笔记，本卡复用其结论）。
-3. **残差连接与 LayerNorm**：深层网络训练的稳定器（见 [[04-Transformer与预训练模型/LayerNorm|LayerNorm]]、[[04-Transformer与预训练模型/残差连接|残差连接]]）。
+3. **残差连接与 LayerNorm**：深层网络训练的稳定器（见 [[LayerNorm]]、[[残差连接]]）。
 
 ---
 
@@ -103,7 +103,7 @@ $$x' = x + \text{Attn}(\text{LN}(x)), \qquad x'' = x' + \text{FFN}(\text{LN}(x')
 - **Encoder-only**（BERT）：双向自注意力，适合理解类任务（分类、NER）。
 - **Decoder-only**（GPT）：因果掩码自注意力，适合生成（自回归 LM）。
 - **Encoder-Decoder**（T5、原始 Transformer）：机器翻译等转换任务。
-- **Pre-Norm vs Post-Norm**：现代模型用 Pre-Norm（LN 在残差之前）训练更稳（见 [[04-Transformer与预训练模型/PrePostNorm|PrePostNorm]]）。
+- **Pre-Norm vs Post-Norm**：现代模型用 Pre-Norm（LN 在残差之前）训练更稳（见 [[PrePostNorm]]）。
 - **限制条件**：$O(N^2)$ 注意力复杂度；位置编码外推问题（RoPE/ALiBi 缓解，见 [[🎯 RoPE 旋转位置编码 (Rotary Position Embedding)|RoPE]]）；训练对学习率 warmup 与初始化敏感。
 
 ---
@@ -306,3 +306,4 @@ assert result[0] == [1.0, 0.0]
 - Transformer 自注意力的核心计算是什么？::用查询与键的缩放点积得到权重，再对值向量加权求和，即 softmax(QKᵀ/√dₖ)V。
 - 因果 Mask 解决什么问题？::阻止当前位置访问未来 Token，保证自回归训练与生成的信息条件一致。
 - Transformer 为什么需要位置表示？::纯自注意力对输入排列没有天然顺序感，需要位置编码或旋转位置等机制注入序列顺序。
+

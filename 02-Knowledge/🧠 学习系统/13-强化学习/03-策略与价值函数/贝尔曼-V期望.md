@@ -1,31 +1,50 @@
 ---
 type: study
 topic: "贝尔曼-V期望"
+course: "强化学习"
 created: 2026-04-18
-status: ongoing
+status: completed
+stage_moc: "[[🧭 阶段3-策略与价值函数]]"
+flow: knowledge
+kind: concept
 difficulty: intermediate
-concept: ["贝尔曼-V期望", "贝尔曼期望方程"]
-prerequisites: []
-related: []
-tags: ["学习", "强化学习"]
+concept: ["贝尔曼-V期望", "贝尔曼期望方程（V）"]
+upstream: ["[[V函数-公式]]"]
+tags: [学习, 强化学习]
 ---
+
 # 贝尔曼-V期望
 
-> 所属模块：[[../🗺️ 强化学习学习路径|强化学习学习路径]]
-> 主教材：`《Reinforcement Learning》`、`《Algorithms for RL》`
-> 对应阶段：[[02-Knowledge/🧠 学习系统/13-强化学习/03-策略与价值函数/📊 阶段3：策略与价值函数|返回阶段页]]
-> 建议先看：Bandits、MDPs、Dynamic Programming、Value Functions、TD Learning；MDPs、Policy Evaluation、Policy Improvement、Approximation Theory
-> 辅助教材：`机器学习（周志华）`
+> 所属模块：[[🗺️ 强化学习学习路径|强化学习学习路径]]
+> 主教材：`《Reinforcement Learning》`
+> 对应阶段：[[🧭 阶段3-策略与价值函数|返回阶段页]]
 
-## 待写提纲
-- 这章/这个知识点在这门课里解决什么问题：
-- 所属主线：贝尔曼期望方程
-- 这张卡要补哪块：V的期望方程
-- 核心定义：
-- 关键方法 / 公式：
-- 一个最小例子：
-- 与前后笔记的关系：
-- 前置：待补
-- 相关：待补
+## 动机
+V^π(s) 的递归形式能否写成一个统一方程？这就是贝尔曼期望方程——它把"一步转移"和"剩余价值"连起来，是 DP/TD 的理论基础。
 
-*创建于：2026-04-18*
+## 正式定义 / 公式
+V^π(s) = Σ_a π(a|s) Σ_{s'} P(s'|s,a) [ R(s,a,s') + γ V^π(s') ]
+对动作按策略加权，对下一状态按转移加权，取"奖励+折扣后续价值"的期望。
+
+## 最小手算例子
+2 状态 MDP：V(s1)=1·1·[1+0.9·V(s2)]=1+0.9·0=1。✓（与「V函数-定义」一致）
+
+## 对比与常见错误
+- 常见错误：把 V^π(s') 写成 V*(s')——期望方程用的是当前策略的 V^π，不是最优 V*。
+
+## 闭卷自测
+1. 默写贝尔曼期望方程（V）。
+2. 方程里"期望"对哪些随机变量取？
+## 学完后可以完成
+
+```dataview
+TABLE assignment_level, source_type FROM "03-Projects"
+WHERE contains(requires, this.file.link)
+```
+
+## 相关下游知识
+
+```dataview
+LIST FROM "02-Knowledge/🧠 学习系统"
+WHERE contains(upstream, this.file.link)
+```

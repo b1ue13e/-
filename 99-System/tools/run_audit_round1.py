@@ -10,10 +10,10 @@ if hasattr(sys.stdout, 'reconfigure'):
     sys.stdout.reconfigure(encoding='utf-8')
 
 VAULT_ROOT = Path("F:/-")
-KNOWLEDGE_DIR = VAULT_ROOT / "02-Knowledge" / "🧠 学习系统"
+KNOWLEDGE_DIR = VAULT_ROOT / "02-Knowledge" / "02-Knowledge/🧠 学习系统"
 
 if not KNOWLEDGE_DIR.exists():
-    KNOWLEDGE_DIR = VAULT_ROOT / "🧠 学习系统"
+    KNOWLEDGE_DIR = VAULT_ROOT / "02-Knowledge/🧠 学习系统"
 
 audit_results = []
 course_stats = defaultdict(lambda: {"total": 0, "sum_score": 0, "scores": []})

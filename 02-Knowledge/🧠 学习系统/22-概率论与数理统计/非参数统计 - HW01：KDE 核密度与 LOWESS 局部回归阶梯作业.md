@@ -12,9 +12,9 @@ status: learning
 difficulty: intermediate
 importance: A
 concept: ["非参数统计", "秩和检验", "KDE核密度", "LOWESS回归"]
-prerequisites: ["[[02-Knowledge/🧠 学习系统/22-概率论与数理统计/🗺️ 概率论与数理统计学习路径|概率统计]]"]
+prerequisites: ["[[🗺️ 概率论与数理统计学习路径|概率统计]]"]
 related: ["[[应用回归分析-题型-坐标下降Lasso与IRLS回归阶梯作业]]"]
-upstream: ["[[02-Knowledge/🧠 学习系统/32-非参数统计/🗺️ 非参数统计学习路径|非参数统计学习路径]]"]
+upstream: ["[[🗺️ 非参数统计学习路径|非参数统计学习路径]]"]
 downstream: []
 tags: [学习, 32-非参数统计, 作业, 实战, 阶梯作业]
 aliases: ["Nonpar-HW01-KDE与LOWESS作业"]

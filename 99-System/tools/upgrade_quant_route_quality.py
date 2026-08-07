@@ -6,7 +6,7 @@ import re
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
-Q = ROOT / "02-Knowledge" / "🧠 学习系统" / "03-量化金融"
+Q = ROOT / "02-Knowledge" / "02-Knowledge/🧠 学习系统" / "03-量化金融"
 MARKER = "<!-- quant-route-quality-v2 -->"
 FENCE = chr(96) * 3
 

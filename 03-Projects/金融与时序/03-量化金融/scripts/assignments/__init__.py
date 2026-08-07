@@ -1,0 +1,1 @@
+"""Shared assignment support modules."""

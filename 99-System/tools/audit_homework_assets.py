@@ -17,7 +17,7 @@ import yaml
 
 sys.stdout.reconfigure(encoding="utf-8")
 ROOT = Path(__file__).resolve().parents[2]
-STUDY_ROOT = ROOT / "02-Knowledge" / "🧠 学习系统"
+STUDY_ROOT = ROOT / "02-Knowledge" / "02-Knowledge/🧠 学习系统"
 FORMAL_PROJECT_ROOT = ROOT / "03-Projects" / "课程作业"
 COURSE_PATTERN = re.compile(r"^(?:0[1-9]|1[0-7]|2[2-9]|3[0-7])-")
 NON_FORMAL_DIRS = {"04-前沿架构探索", "05-专业深化与工程落地"}

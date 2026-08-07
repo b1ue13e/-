@@ -24,7 +24,7 @@ tags: [学习, 计算机视觉, 目标检测, IoU, NMS]
 
 ---
 
-## 0. 先判断它值不值得深挖
+## 0. 学习边界
 
 - **类别**：**A 类（核心概念）** — IoU 和 NMS 是目标检测的"度量衡"和"筛子"。无论 R-CNN 还是 YOLO，都离不开这两个操作。
 
@@ -242,3 +242,4 @@ FROM "03-Projects"
 WHERE contains(requires, this.file.link)
 SORT assignment_level ASC, file.name ASC
 ```
+

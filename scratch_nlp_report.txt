@@ -1,0 +1,87 @@
+=== KNOWLEDGE CARDS BY STAGE ===
+Stage [00-前置知识]: 3 study cards, 1 MOCs/index files
+Stage [01-基础准备]: 4 study cards, 1 MOCs/index files
+Stage [02-传统NLP方法]: 8 study cards, 1 MOCs/index files
+Stage [03-深度学习NLP基础]: 8 study cards, 1 MOCs/index files
+Stage [04-Transformer与预训练模型]: 10 study cards, 1 MOCs/index files
+Stage [05-大语言模型与前沿技术]: 9 study cards, 1 MOCs/index files
+Stage [06-专业方向深入]: 5 study cards, 1 MOCs/index files
+Stage [📚 教材挂载索引.md]: 0 study cards, 1 MOCs/index files
+Stage [🗺️ 08-NLP全栈学习路径.md]: 0 study cards, 1 MOCs/index files
+
+Total Study Cards: 47
+Total Stage MOCs/Indexes: 9
+Average Study Card Length: 4267.4 chars
+
+=== ASSIGNMENT BREAKDOWN ===
+Total Assignment Files: 13
+
+Assignment: 大作业\08-NLP全栈-大作业-稀疏检索到Transformer文本误差审计.md
+  Id: "08-NLP全栈-HW04" | Level: capstone | Format: project | SourceType: local_integration_task
+  Requires count: 3
+  Sources lines: ['source_type: local_integration_task', 'source: "Stanford CS224n Capstone & RAG System Lab"']
+
+Assignment: 课后作业\08-NLP全栈-课后作业-01-词向量与文本表征.md
+  Id: "08-NLP全栈-HW01" | Level: lesson | Format: lab | SourceType: official_assignment
+  Requires count: 3
+  Sources lines: ['source_type: official_assignment', 'source: "Stanford CS224n: Natural Language Processing with Deep Learning"']
+
+Assignment: 课后作业\08-NLP全栈-课后作业-02-子词分词与BPE算法.md
+  Id: "08-NLP全栈-HW02" | Level: lesson | Format: lab | SourceType: open_source_project_task
+  Requires count: 2
+  Sources lines: ['source_type: open_source_project_task', 'source: "Hugging Face Tokenizers & MinGPT Tokenizer Labs"']
+
+Assignment: 课后作业\08-NLP全栈-课后作业-03-RoPE旋转位置编码与注意力掩码.md
+  Id: "08-NLP全栈-HW03" | Level: lesson | Format: lab | SourceType: open_source_project_task
+  Requires count: 2
+  Sources lines: ['source_type: open_source_project_task', 'source: "Meta LLaMA Architecture & RoPE Reference Repo"']
+
+Assignment: 课后作业\08-NLP全栈-课后作业-04-LoRA参数高效微调算子.md
+  Id: "08-NLP全栈-HW04" | Level: lesson | Format: lab | SourceType: open_source_project_task
+  Requires count: 1
+  Sources lines: ['source_type: open_source_project_task', 'source: "Hugging Face PEFT & Microsoft LoRA Official Paper Repo"']
+
+Assignment: 课后作业\08-NLP全栈-课后作业-05-传统NLP与序列标注实战.md
+  Id: "08-NLP全栈-HW05" | Level: lesson | Format: lab | SourceType: official_assignment
+  Requires count: 9
+  Sources lines: ['source_type: official_assignment', 'source: "Stanford CS224n & NLTK Traditional NLP Assignment"']
+
+Assignment: 课后作业\08-NLP全栈-课后作业-06-文本分类与评测指标.md
+  Id: "08-NLP全栈-HW06" | Level: lesson | Format: lab | SourceType: official_assignment
+  Requires count: 8
+  Sources lines: ['requires: ["[[08-NLP全栈-CNN在NLP中的应用]]", "[[08-NLP全栈-数据集与评测指标]]", "[[08-NLP全栈-文本分类与情感分析]]", "[[08-NLP全栈-BERT与GPT对比]]", "[[08-NLP全栈-GPT系列]]", "[[08-NLP全栈-HuggingFace生态系统]]", "[[08-NLP全栈-其他预训练模型]]", "[[08-NLP全栈-提示工程]]"]', 'source_type: official_assignment']
+
+Assignment: 质量审计\课程严苛审计.md
+  Id: None | Level: None | Format: None | SourceType: None
+  Requires count: 0
+  Sources lines: ['| **2. 名校开源作业真实度** | **19** / 20 | ≥ 16 | ✅ | 100% (10/10) 作业均包含 Stanford CS224n 与 Hugging Face 官方溯源 URL。 |', '| 2. 元数据溯源 URL 缺失 | ✅ **0 项** | 10 份作业 YAML 中 `source` 和 `source_url` 全部填齐并校验有效。 |']
+
+Assignment: 质量审计\课程重构执行清单.md
+  Id: None | Level: None | Format: None | SourceType: None
+  Requires count: 0
+  Sources lines: ['- **作业维度**：10 份作业（6 课后 + 3 阶段 + 1 大作业），100% 来自 Stanford CS224n / HuggingFace 等官方源并提供 URL']
+
+Assignment: 阶段作业\08-NLP全栈-阶段作业-01-RNN与Seq2Seq注意力.md
+  Id: "08-NLP全栈-HW02" | Level: stage | Format: lab | SourceType: official_assignment
+  Requires count: 3
+  Sources lines: ['source_type: official_assignment', 'source: "Stanford CS224n Assignment 3: Dependency Parsing & NMT RNN"']
+
+Assignment: 阶段作业\08-NLP全栈-阶段作业-02-Transformer与MinBERT实现.md
+  Id: "08-NLP全栈-HW03" | Level: stage | Format: project | SourceType: official_assignment
+  Requires count: 3
+  Sources lines: ['source_type: official_assignment', 'source: "Stanford CS224n Assignment 5: MinBERT and Downstream Tasks"']
+
+Assignment: 阶段作业\08-NLP全栈-阶段作业-03-大模型微调对齐与推理评估.md
+  Id: "08-NLP全栈-HW07" | Level: stage | Format: project | SourceType: official_assignment
+  Requires count: 14
+  Sources lines: ['source_type: official_assignment', 'source: "Hugging Face Alignment Handbook & CS224n LLM Lab"']
+
+Assignment: 🧭 课程作业总索引.md
+  Id: None | Level: None | Format: None | SourceType: None
+  Requires count: 0
+  Sources lines: ['| 规模层级 (`assignment_level`) | 规范作业文件名 | 核心考核技能 | 开源名校来源 |', '| **课后作业 1** (`lesson`) | [[课后作业/08-NLP全栈-课后作业-01-词向量与文本表征\\|01-词向量与文本表征]] | TF-IDF 矩阵、Skip-Gram Negative Sampling 与余弦相似度 | Stanford CS224n Assignment 1 |']
+
+=== SUMMARY OF ASSIGNMENT SOURCES ===
+Levels: {'capstone': 1, 'lesson': 6, 'None': 3, 'stage': 3}
+Source Types: {'local_integration_task': 1, 'official_assignment': 6, 'open_source_project_task': 3, 'None': 3}
+Unique cards referenced across all requires: 47

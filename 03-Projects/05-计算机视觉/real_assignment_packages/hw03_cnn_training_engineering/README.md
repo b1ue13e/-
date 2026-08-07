@@ -50,9 +50,9 @@ U03 结束后，学生刚完成卷积、池化、数据增强和最小训练循�
 ## 运行方式
 
 ```bash
-python "f:\-\03-Projects\课程作业\05-计算机视觉\real_assignment_packages\hw03_cnn_training_engineering\starter\run.py" --input-dir "f:\-\03-Projects\data\computer_vision\hw03_cnn_training_engineering" --output-dir "f:\-\03-Projects\课程作业\05-计算机视觉\real_assignment_packages\hw03_cnn_training_engineering\your_outputs"
-python "f:\-\03-Projects\课程作业\05-计算机视觉\real_assignment_packages\hw03_cnn_training_engineering\starter\check_data.py" --input-dir "f:\-\03-Projects\data\computer_vision\hw03_cnn_training_engineering"
-pytest "f:\-\03-Projects\课程作业\05-计算机视觉\real_assignment_packages\hw03_cnn_training_engineering\tests"
+python "F:\-\03-Projects\05-计算机视觉\real_assignment_packages\hw03_cnn_training_engineering\starter\run.py" --input-dir "F:\-\03-Projects\data\computer_vision\hw03_cnn_training_engineering" --output-dir "F:\-\03-Projects\05-计算机视觉\real_assignment_packages\hw03_cnn_training_engineering\your_outputs"
+python "F:\-\03-Projects\05-计算机视觉\real_assignment_packages\hw03_cnn_training_engineering\starter\check_data.py" --input-dir "F:\-\03-Projects\data\computer_vision\hw03_cnn_training_engineering"
+pytest "F:\-\03-Projects\05-计算机视觉\real_assignment_packages\hw03_cnn_training_engineering\tests"
 ```
 
 ## 当前 baseline 定位

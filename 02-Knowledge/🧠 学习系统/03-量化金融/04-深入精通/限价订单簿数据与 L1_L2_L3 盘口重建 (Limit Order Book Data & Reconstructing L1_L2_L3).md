@@ -6,19 +6,14 @@ created: '2026-07-23'
 status: ongoing
 difficulty: intermediate
 course: 量化金融
-importance: A
+stage_moc: '[[🧭 阶段4-微观结构执行与强化学习]]'
 tags:
 - 学习
 - 量化金融
-concept: []
-prerequisites: []
-related: []
-upstream: null
-downstream: null
 kind: concept
 flow: knowledge
-source: 本课程历史知识卡；原始来源 [待验证]
-source_url: https://english.sse.com.cn/start/trading/mechanism/。用于复核“用消息序列而非快照猜测重建
+source: "Shanghai Stock Exchange 官方交易机制；正文为本地教学重写"
+source_url: "https://english.sse.com.cn/start/trading/mechanism/"
 accessed: '2026-08-06'
 license: link-only；正文为本地学习整理
 assessment_exempt: false
@@ -28,9 +23,9 @@ assessment_exempt: false
 
 ---
 
-## 0. 先判断它值不值得深挖
+## 0. 学习边界
 
-**分类：A 类（核心概念，必须深挖）**
+**学习定位：核心主题。**
 
 **理由：**
 限价订单簿（Limit Order Book, LOB）是现代化电子连续竞价交易所（如上交所、深交所、CME、Binance）的“心脏”。所有的资产价格变化本质上全是由 LOB 内部买卖单的撮合与排队引起的。在量化高频交易、做市策略、最优执行与微观结构研究中，深入理解 Level-1（买一卖一快照）、Level-2（多档买卖挂单快照）与 Level-3（逐笔委托与逐笔成交逐笔重建）的底层数据结构，是高频量化架构师与研究员的绝对基本功。
@@ -213,7 +208,7 @@ print(f"五档深度不平衡度 OBI_5: {(total_bid_depth - total_ask_depth) / (
 > 🔓 **作业解锁前置条件**：学完 [[收益率与对数收益率]] + [[限价订单簿数据与 L1_L2_L3 盘口重建 (Limit Order Book Data & Reconstructing L1_L2_L3)|订单簿数据]] 即可正式解锁本 Challenge 实战！
 > 💡 **解锁指引**：理解 订单簿数据 的核心定义与基本推导逻辑后即可解锁。
 
- 🧪 拓展实验与李宏毅式实战 Challenge 题 (Lab Assignment: 订单簿数据 工业级实战 challenge)
+ 🧪 专题实战练习（订单簿数据专题实战任务）
 
 本作业参考 **李宏毅 (Hung-yi Lee) 教授 ML 课程作业架构** 设计，设置四个渐进式难度基线 (Baselines)：
 
@@ -266,8 +261,8 @@ print(f"五档深度不平衡度 OBI_5: {(total_bid_depth - total_ask_depth) / (
 下游延伸
 
 - [[订单流不平衡 (Order Flow Imbalance, OFI)|订单流不平衡]]：进一步延伸拓展该知识点的应用场景与模型构建。
-- [[盘口特征]]：进一步延伸拓展该知识点的应用场景与模型构建。
-- [[金融微观结构采样棒 (Financial Data Bars_ Volume, Dollar & Imbalance Bars in AFML)|金融微观结构采样棒]]：进一步延伸拓展该知识点的应用场景与模型构建。
+- [[订单流不平衡 (Order Flow Imbalance, OFI)]]：进一步延伸拓展该知识点的应用场景与模型构建。
+- [[Volume Bars与Dollar Bars信息驱动采样 (Information-Driven Bars)|金融微观结构采样棒]]：进一步延伸拓展该知识点的应用场景与模型构建。
 
 横向关联
 
@@ -379,7 +374,7 @@ print(f"五档深度不平衡度 OBI_5: {(total_bid_depth - total_ask_depth) / (
 ## 13. 给 Obsidian 的归档建议
 
 - **适合文件夹**：`02-Knowledge/🧠 学习系统/03-量化金融/04-深入精通/`
-- **建议双链**：[[订单类型与交易所连续竞价撮合机制 (Order Types & Continuous Double Auction)|订单类型与成交机制]]、[[订单流不平衡 (Order Flow Imbalance, OFI)|订单流不平衡]]、[[高频交易系统架构与模块解耦设计 (High-Frequency Trading System Architecture)|低延迟设计]]
+- **建议双链**：[[订单类型与交易所连续竞价撮合机制 (Order Types & Continuous Double Auction)|订单类型与成交机制]]、[[订单流不平衡 (Order Flow Imbalance, OFI)|订单流不平衡]]、[[限价订单簿数据与 L1_L2_L3 盘口重建 (Limit Order Book Data & Reconstructing L1_L2_L3)|低延迟设计]]
 - **标签**：`#学习` `#量化金融` `#高频交易` `#订单簿数据` `#L2行情` `#L3逐笔` `#
 
 ---
@@ -402,8 +397,15 @@ print(f"五档深度不平衡度 OBI_5: {(total_bid_depth - total_ask_depth) / (
 - **最小实验**：固定随机种子或冻结原始数据快照，同时保存基线、破坏条件后的对照组、关键中间量与失败日志。
 - **通过标准**：结论必须在样本外仍保持方向一致；若成本、延迟、参数扰动或结构突变使结论反转，就把该情形登记为适用边界而不是删除失败结果。
 
-## 🧪 学完本节后可完成的作业
+## 学完后可以完成
 
-- **可完成**：[[03-Projects/金融与时序/03-量化金融/阶段作业/量化金融-阶段作业-03-信息驱动采样|信息驱动采样]]。
+```dataview
+LIST
+FROM "03-Projects"
+WHERE contains(requires, this.file.link)
+SORT assignment_level ASC, file.name ASC
+```
+
+
 - **为什么现在能做**：本卡已经提供该任务需要的定义、公式、条件或实现边界；若任务还依赖后续知识，先完成对应阶段 MOC 中排在本卡之后的知识卡。
 - **提交产物**：闭卷定义/推导、一个可复查计算或代码结果、一个失败案例，以及对适用边界的说明。

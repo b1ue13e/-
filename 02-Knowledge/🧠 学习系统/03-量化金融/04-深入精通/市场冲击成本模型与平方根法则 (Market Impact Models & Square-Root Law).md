@@ -4,9 +4,6 @@ topic: 冲击成本模型
 created: '2026-08-06'
 status: planned
 difficulty: intermediate
-concept: []
-prerequisites: []
-related: []
 tags:
 - 学习
 - 量化金融
@@ -20,18 +17,14 @@ tags:
 title: 市场冲击成本模型与平方根法则 (Market Impact Models & Square-Root Law)
 date: 2026-07-23
 course: 量化金融
-importance: A
+stage_moc: '[[🧭 阶段4-微观结构执行与强化学习]]'
 upstream:
-- '[[买卖价差及其微观结构拆解 (Bid-Ask Spread & Microstructure Decomposition)|买卖价差]]'
-- '[[限价订单簿数据与 L1_L2_L3 盘口重建 (Limit Order Book Data & Reconstructing L1_L2_L3)|订单簿数据]]'
-downstream:
-- '[[Almgren-Chriss 最优算法执行轨迹推导 (Almgren-Chriss Optimal Execution)|Almgren-Chriss最优执行轨迹推导]]'
-- '[[Implementation Shortfall 执行缺口与 Almgren-Chriss 最优执行模型|Implementation Shortfall]]'
-- '[[VWAP 成交量加权平均价格 (Volume-Weighted Average Price)|VWAP]]'
+  - '[[买卖价差及其微观结构拆解 (Bid-Ask Spread & Microstructure Decomposition)|买卖价差]]'
+  - '[[限价订单簿数据与 L1_L2_L3 盘口重建 (Limit Order Book Data & Reconstructing L1_L2_L3)|订单簿数据]]'
 kind: concept
 flow: knowledge
-source: 本课程历史知识卡；原始来源 [待验证]
-source_url: '[待验证]'
+source: "Almgren and Chriss, Optimal Execution of Portfolio Transactions"
+source_url: https://doi.org/10.21314/JOR.2001.041
 accessed: '2026-08-06'
 license: link-only；正文为本地学习整理
 assessment_exempt: false
@@ -41,12 +34,12 @@ assessment_exempt: false
 
 ---
 
-## 0. 先判断它值不值得深挖
+## 0. 学习边界
 
-**分类：A 类（核心概念，必须深挖）**
+**学习定位：核心主题。**
 
 **理由：**
-市场冲击成本模型（Market Impact Model，以 Almgren-Chriss 2000 拆解与 Kyle-Obizhaeva 平方根法则 Square-Root Law 为代表）是衡量大额交易对市场价格造成二次伤害的物理量。在量化对冲基金（如 Citadel、AQR、Two Sigma）中，忽略市场冲击成本的容量计算与策略回测，是导致“回测圣杯、实盘破产”的首要元凶。精确建模暂态冲击（Temporary Impact）与永久冲击（Permanent Impact）是计算策略最大资金容量（Capacity）的终极门槛。
+市场冲击成本模型（Market Impact Model，以 Almgren-Chriss 拆解与平方根关系为代表）用于描述交易规模、交易速率和市场流动性如何影响成交价格。若回测忽略冲击成本，容量分析和样本外结果会被高估；因此需要区分暂态冲击（Temporary Impact）与永久冲击（Permanent Impact），并对参数做敏感性检查。
 
 ---
 
@@ -230,7 +223,7 @@ for r, imp in zip(q_ratios[::5], impacts[::5]):
 > 🔓 **作业解锁前置条件**：学完 [[收益率与对数收益率]] + [[市场冲击成本模型与平方根法则 (Market Impact Models & Square-Root Law)|冲击成本模型]] 即可正式解锁本 Challenge 实战！
 > 💡 **解锁指引**：理解 冲击成本模型 的核心定义与基本推导逻辑后即可解锁。
 
- 🧪 拓展实验与李宏毅式实战 Challenge 题 (Lab Assignment: 冲击成本模型 工业级实战 challenge)
+ 🧪 专题实战练习（冲击成本模型专题实战任务）
 
 本作业参考 **李宏毅 (Hung-yi Lee) 教授 ML 课程作业架构** 设计，设置四个渐进式难度基线 (Baselines)：
 
@@ -255,7 +248,7 @@ for r, imp in zip(q_ratios[::5], impacts[::5]):
 ### 误区 1：把暂态冲击（Temporary Impact）当成永久冲击（Permanent Impact）
 
 错误直觉：“单子下完后价格回落了，说明刚才买贵的部分全都是暂态冲击，没造成真正伤害。”  
-为什么错：单子下完后价格回落的部分确实是暂态冲击，但你已经**以高价完成了买入成交**，这部分真金白银的滑点损耗已经实实在在从你的账户里扣除了！  
+为什么错：单子下完后价格回落的部分确实是暂态冲击，但你已经**以高价完成了买入成交**，这部分实际交易的滑点损耗已经实实在在从你的账户里扣除了！
 正确理解：**暂态冲击发生在成交当下，直接拉高了你的实际成交均价；永久冲击则抬高了未来的价格中枢。两者的危害都极其巨大。**
 
 ### 概念对比：暂态冲击 vs 永久冲击
@@ -281,7 +274,7 @@ for r, imp in zip(q_ratios[::5], impacts[::5]):
 
 下游延伸
 
-- [[Almgren-Chriss 最优算法执行轨迹推导 (Almgren-Chriss Optimal Execution)|Almgren-Chriss最优执行轨迹推导]]：进一步延伸拓展该知识点的应用场景与模型构建。
+- [[Implementation Shortfall 执行缺口与 Almgren-Chriss 最优执行模型|Almgren-Chriss最优执行轨迹推导]]：进一步延伸拓展该知识点的应用场景与模型构建。
 - [[Implementation Shortfall 执行缺口与 Almgren-Chriss 最优执行模型|Implementation Shortfall]]：进一步延伸拓展该知识点的应用场景与模型构建。
 - [[VWAP 成交量加权平均价格 (Volume-Weighted Average Price)|VWAP]]：进一步延伸拓展该知识点的应用场景与模型构建。
 
@@ -363,7 +356,7 @@ for r, imp in zip(q_ratios[::5], impacts[::5]):
 
 > [!question]- 答案解析
 > **解析**：
-> 1. **病态策略**：RL Agent 会发现在盘口无限高频地发射巨额市价单吃单（Market Sweeping），因为没有冲击成本惩罚，Agent 会肆无忌惮地利用极其微小的微观无效性套利，策略实盘立刻爆仓。
+> 1. **病态策略**：若 RL 环境没有冲击成本惩罚，Agent 可能偏好不现实的高频大额市价单。加入成本、库存和限额后重新运行，并把不满足约束的轨迹判为失败。
 > 2. **修复方法**：在 Gym 环境的 `step()` 函数中，每次 Agent 下单成交时，动态计算 $P_{exec} = P_{mid} \cdot (1 + \text{sign}(Q) \cdot Y \sigma \sqrt{Q / ADV})$，将平方根冲击成本显式扣减在 Reward 和实际成交价中。  
 > **Obsidian 标签**：`#自测题/RL环境冲击成本`
 
@@ -418,8 +411,15 @@ for r, imp in zip(q_ratios[::5], impacts[::5]):
 - **最小实验**：固定随机种子或冻结原始数据快照，同时保存基线、破坏条件后的对照组、关键中间量与失败日志。
 - **通过标准**：结论必须在样本外仍保持方向一致；若成本、延迟、参数扰动或结构突变使结论反转，就把该情形登记为适用边界而不是删除失败结果。
 
-## 🧪 学完本节后可完成的作业
+## 学完后可以完成
 
-- **可完成**：[[03-Projects/金融与时序/03-量化金融/阶段作业/量化金融-阶段作业-04-Almgren-Chriss最优执行|Almgren-Chriss最优执行]]。
+```dataview
+LIST
+FROM "03-Projects"
+WHERE contains(requires, this.file.link)
+SORT assignment_level ASC, file.name ASC
+```
+
+
 - **为什么现在能做**：本卡已经提供该任务需要的定义、公式、条件或实现边界；若任务还依赖后续知识，先完成对应阶段 MOC 中排在本卡之后的知识卡。
 - **提交产物**：闭卷定义/推导、一个可复查计算或代码结果、一个失败案例，以及对适用边界的说明。

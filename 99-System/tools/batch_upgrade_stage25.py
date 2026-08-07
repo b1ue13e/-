@@ -4,8 +4,8 @@ from pathlib import Path
 sys.stdout.reconfigure(encoding='utf-8')
 
 VAULT_ROOT = Path("F:/-")
-ML_DIR = VAULT_ROOT / "02-Knowledge" / "🧠 学习系统" / "17-机器学习"
-if not ML_DIR.exists(): ML_DIR = VAULT_ROOT / "🧠 学习系统" / "17-机器学习"
+ML_DIR = VAULT_ROOT / "02-Knowledge" / "02-Knowledge/🧠 学习系统" / "17-机器学习"
+if not ML_DIR.exists(): ML_DIR = VAULT_ROOT / "02-Knowledge/🧠 学习系统" / "17-机器学习"
 
 print(f"Stage 25: Upgrading BP, Reg L1/L2, and SVM to 80+ in {ML_DIR}...")
 

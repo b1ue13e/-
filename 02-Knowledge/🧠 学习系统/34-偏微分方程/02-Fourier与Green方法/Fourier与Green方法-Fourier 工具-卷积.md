@@ -14,7 +14,7 @@ tags: ["学习", "偏微分方程", "Fourier 工具"]
 > 所属阶段：[[🔍 第二阶段：Fourier与Green方法|🔍 第2阶段：Fourier与Green方法]]
 
 ## 学习定位
-- 路径：[[../🗺️ 偏微分方程学习路径|偏微分方程学习路径]]
+- 路径：[[🗺️ 偏微分方程学习路径|偏微分方程学习路径]]
 - 阶段：[[🔍 第二阶段：Fourier与Green方法|🔍 第2阶段：Fourier与Green方法]]
 - 模块：Fourier 工具
 - 建议先学：[[Fourier与Green方法-Fourier 工具-频域解法]]

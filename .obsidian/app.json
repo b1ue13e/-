@@ -42,5 +42,8 @@
   "defaultViewMode": "source",
   "readableLineLength": true,
   "propertiesInDocument": "hidden",
-  "livePreview": true
+  "livePreview": true,
+  "userIgnoreFilters": [
+    "^02-Knowledge/📚 书库/书籍资源"
+  ]
 }

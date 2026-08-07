@@ -45,7 +45,7 @@ tags:
 
 ---
 
-## 0. 先判断它值不值得深挖
+## 0. 学习边界
 
 - **类别**：**A 类（核心概念，必须深挖）**
 - **判断理由**：SimCLR 由 Ting Chen、Geoffrey Hinton 等人于 2020 年提出，是**自监督学习（Self-Supervised Learning, SSL）与对比学习（Contrastive Learning）**领域的划时代突破。它证明了：**不需要任何人工标注标签，仅靠数据增强与对比损失（InfoNCE），神经网络就能学到超越有监督预训练的顶级通用特征表征！** 不搞懂 SimCLR，就无法真正理解后来的 MoCo、MAE 以及多模态对齐基石 CLIP。
@@ -334,3 +334,4 @@ FROM "03-Projects"
 WHERE contains(requires, this.file.link)
 SORT assignment_level ASC, file.name ASC
 ```
+

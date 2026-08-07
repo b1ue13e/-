@@ -12,9 +12,9 @@ status: learning
 difficulty: intermediate
 importance: A
 concept: ["多元统计", "PCA", "Fisher LDA", "EM算法"]
-prerequisites: ["[[02-Knowledge/🧠 学习系统/22-概率论与数理统计/🗺️ 概率论与数理统计学习路径|概率统计]]"]
+prerequisites: ["[[🗺️ 概率论与数理统计学习路径|概率统计]]"]
 related: ["[[机器学习-题型-李宏毅式分类与深层模型阶梯作业]]"]
-upstream: ["[[02-Knowledge/🧠 学习系统/17-机器学习/01-基础概念/🌱 第一阶段：基础概念|多元统计学习路径]]"]
+upstream: ["[[🌱 第一阶段：基础概念|多元统计学习路径]]"]
 downstream: []
 tags: [学习, 16-多元统计, 作业, 实战, 阶梯作业]
 aliases: ["MVA-HW01-PCA与EM聚类作业"]

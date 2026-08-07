@@ -45,7 +45,7 @@ tags: [学习, 计算机视觉, CNN, 卷积, 图像处理, 特征提取]
 
 ---
 
-## 0. 先判断它值不值得深挖
+## 0. 学习边界
 
 - **类别**：**A 类（核心概念，必须深挖）**
 - **判断理由**：卷积神经网络（CNN）是过去十年计算机视觉领域最核心的架构范式。从 LeNet-5（1998）到手写数字识别，到 AlexNet（2012）引爆 ImageNet 竞赛的深度学习革命，再到 VGG、ResNet、EfficientNet 等 SOTA 分类网络的骨干——一切现代视觉系统的特征提取器都以卷积层为基本单元。即便在 Vision Transformer（ViT）崛起的今天，**卷积的局部感受野与权值共享两大归纳偏置**仍是理解视觉模型设计的起点。CS231n 将 CNN 列为 Assignment 2 的核心实现任务，要求从零手写卷积前向/反向传播；《动手学深度学习》以整个第 7 章展开现代 CNN 架构。**不理解卷积层的数学本质和计算特性，就无法真正理解任何视觉 backbone。**
@@ -645,3 +645,4 @@ FROM "03-Projects"
 WHERE contains(requires, this.file.link)
 SORT assignment_level ASC, file.name ASC
 ```
+

@@ -1,4 +1,4 @@
----
+﻿---
 type: study
 topic: "PyTorch 张量、自动微分与训练循环"
 tags: [学习, 45-生成式AI基础与Prompt工程, PyTorch, 自动微分]
@@ -18,7 +18,7 @@ anki_tags: [PyTorch, Tensor, Autograd, 训练循环]
 
 # 深度学习工程：PyTorch 张量、自动微分与训练循环
 
-## 0. 先判断它值不值得深挖
+## 0. 学习边界
 
 - **类别**：A 类（MIT HW1/HW5 和 CS336 A1 的代码先修）。
 - **判断理由**：只懂公式仍会在 batch 维、梯度清零、训练/评估模式和 checkpoint 上失败。本卡给出从纯函数到 PyTorch 的最短工程链。
@@ -267,3 +267,4 @@ A: 清梯度、前向、算损失、反向、参数更新；验证另行切换 e
 
 Q: `model.eval()` 为什么不能替代 `torch.no_grad()`？
 A: eval 只改变 dropout/BN 等模块行为，不会停止构建自动微分图。
+

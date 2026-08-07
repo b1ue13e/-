@@ -44,7 +44,7 @@ tags:
 
 ---
 
-## 0. 先判断它值不值得深挖
+## 0. 学习边界
 
 - **类别**：**A 类（核心概念，必须深挖）**
 - **判断理由**：VGGNet 由牛津大学 Visual Geometry Group（VGG）的 Karen Simonyan 与 Andrew Zisserman 于 2014 年提出，斩获 ILSVRC 2014 定位任务冠军和分类任务亚军。它用一句极其优雅的设计哲学——「**全部使用 3×3 小卷积核，通过堆叠深度换取表达能力**」——终结了 AlexNet 时代「大卷积核（11×11、5×5）+ 小卷积核混搭」的杂乱设计范式，为后续所有现代 CNN（ResNet、DenseNet、EfficientNet、ConvNeXt）确立了统一的「**3×3 卷积是基本原子单元**」的铁律。
@@ -590,3 +590,4 @@ FROM "03-Projects"
 WHERE contains(requires, this.file.link)
 SORT assignment_level ASC, file.name ASC
 ```
+

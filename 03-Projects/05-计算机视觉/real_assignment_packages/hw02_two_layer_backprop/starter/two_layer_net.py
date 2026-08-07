@@ -110,6 +110,88 @@ def numeric_gradient_w2_00(params: dict[str, list], batch: list[tuple[list[float
     return (plus_loss - minus_loss) / (2 * eps)
 
 
+def numeric_gradient(
+    params: dict[str, list],
+    param_name: str,
+    index: tuple[int, ...],
+    batch: list[tuple[list[float], int]],
+    eps: float = 1e-5,
+) -> float:
+    """通用中心差分：对 params[param_name][index] 扰动后计算数值梯度。
+
+    - param_name: 'W1' / 'b1' / 'W2' / 'b2'（字典键）；
+    - index: 标量元素索引，如 (0, 0) 表示 W2[0][0]；向量参数用 (i,) 表示 b1[i]；
+    - 返回 (loss(W+e) - loss(W-e)) / (2·eps)。
+    """
+    if len(index) == 1:
+        target = params[param_name][index[0]]
+    else:
+        target = params[param_name][index[0]][index[1]]
+
+    plus = deepcopy(params)
+    minus = deepcopy(params)
+    if len(index) == 1:
+        plus[param_name][index[0]] = target + eps
+        minus[param_name][index[0]] = target - eps
+    else:
+        plus[param_name][index[0]][index[1]] = target + eps
+        minus[param_name][index[0]][index[1]] = target - eps
+
+    plus_loss, _ = loss_and_grads(plus, batch)
+    minus_loss, _ = loss_and_grads(minus, batch)
+    return (plus_loss - minus_loss) / (2 * eps)
+
+
+def gradient_check_table(
+    params: dict[str, list], batch: list[tuple[list[float], int]], eps: float = 1e-5
+) -> list[dict[str, float]]:
+    """对全部参数元素做一次梯度检查，返回相对误差表（Q5 验收对象）。
+
+    相对误差：|num - an| / max(1, |num|, |an|)；全部元素应 < 1e-4（eps=1e-5 时）。
+    """
+    _, an_grads = loss_and_grads(params, batch)
+    rows: list[dict[str, float]] = []
+    for name in ("W1", "b1", "W2", "b2"):
+        param = params[name]
+        if isinstance(param[0], list):  # 矩阵参数
+            for i in range(len(param)):
+                for j in range(len(param[i])):
+                    num = numeric_gradient(params, name, (i, j), batch, eps)
+                    an = an_grads[name][i][j]
+                    denom = max(1.0, abs(num), abs(an))
+                    rows.append(
+                        {
+                            "param": name,
+                            "index": f"[{i}][{j}]",
+                            "analytic": round(an, 8),
+                            "numeric": round(num, 8),
+                            "relative_error": round(abs(num - an) / denom, 8),
+                        }
+                    )
+        else:  # 向量参数
+            for i in range(len(param)):
+                num = numeric_gradient(params, name, (i,), batch, eps)
+                an = an_grads[name][i]
+                denom = max(1.0, abs(num), abs(an))
+                rows.append(
+                    {
+                        "param": name,
+                        "index": f"[{i}]",
+                        "analytic": round(an, 8),
+                        "numeric": round(num, 8),
+                        "relative_error": round(abs(num - an) / denom, 8),
+                    }
+                )
+    return rows
+
+
+def max_gradient_error(
+    params: dict[str, list], batch: list[tuple[list[float], int]], eps: float = 1e-5
+) -> float:
+    """返回梯度检查表中最大相对误差（smoke 自检用）。"""
+    return max(row["relative_error"] for row in gradient_check_table(params, batch, eps))
+
+
 def run_smoke(tiny_batch_csv: Path, overfit_batch_csv: Path) -> dict[str, object]:
     params = _init_params()
     tiny_batch = _dataset(tiny_batch_csv)

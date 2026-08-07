@@ -1,4 +1,4 @@
----
+﻿---
 type: study
 topic: "随机 Kronecker 图与网络演化"
 course: "社交网络挖掘"
@@ -11,6 +11,7 @@ prerequisites: [随机网络模型-ER-WS-BA-配置模型, 矩阵, 二项式定�
 related: [图表示学习-DeepWalk与Node2Vec, 可复现网络挖掘实验]
 flow: knowledge
 kind: derivation
+stage_moc: "[[🧭 阶段6-表示学习与项目]]"
 source: "Stanford CS224W 2017 HW4-Q3.1-Q3.5 and lecture 16"
 source_url: "https://snap.stanford.edu/class/cs224w-2017/handouts.html"
 accessed: 2026-08-06
@@ -22,7 +23,7 @@ anki_tags: [Kronecker, bit-vector, 期望度, 自环, HW4]
 
 # 随机 Kronecker 图与网络演化
 
-## 0. 先判断它值不值得深挖
+## 0. 学习边界
 - **类别**：**A 类**；HW4-Q3.1–Q3.5 全部依赖同一条 bit-vector 推导链。
 - **判断理由**：只记 $(\sum\Theta)^k$ 不足以回答节点边概率、按权重的期望度和自环数。
 
@@ -35,14 +36,14 @@ anki_tags: [Kronecker, bit-vector, 期望度, 自环, HW4]
 - HW4-Q3 要求逐步推导，不是调用 `np.kron` 即完成。
 
 ## 3. 学它之前需要哪些前置知识？
-1. **[[../02-网络结构与生成模型/随机网络模型-ER-WS-BA-配置模型]]**：生成模型与期望计数。
+1. **[[随机网络模型-ER-WS-BA-配置模型]]**：生成模型与期望计数。
 2. 二项式定理、Kronecker 积和伯努利变量期望。
 
 ### 先备诊断
 - [ ] 能把整数 0–3 写成长度 2 的 bit-vector。
 - [ ] 能用 $(x+y)^r=\sum_j\binom rj x^jy^{r-j}$ 合并一类概率和。
 - [ ] 能解释 $E[\sum X_{uv}]=\sum E[X_{uv}]$ 不要求独立。
-- **失败补救**：前两项任一失败，先做[[../01-图与网络基础/数学与Python前置诊断]]。
+- **失败补救**：前两项任一失败，先做[[数学与Python前置诊断]]。
 
 ## 4. 用直觉语言解释它
 > “每个节点是一个长度 $k$ 的二进制地址；两个节点每一位的组合都从小模板取一个概率，整条边的概率是 $k$ 层概率相乘。”
@@ -173,7 +174,7 @@ assert np.isclose(np.trace(probability), expected_loops)
 | SBM | 社区标签 | 块概率 | 离散群组 |
 
 ## 9. 相关知识点与 Obsidian 双链建议
-- 上游：[[../02-网络结构与生成模型/随机网络模型-ER-WS-BA-配置模型]]。
+- 上游：[[随机网络模型-ER-WS-BA-配置模型]]。
 - 下游：[[可复现网络挖掘实验]]。
 - 横向：[[图表示学习-DeepWalk与Node2Vec]]。
 - 作业：CS224W 2017 HW4-Q3.1–Q3.5。
@@ -228,6 +229,7 @@ assert np.isclose(np.trace(probability), expected_loops)
 
 ## 🧪 学完本节后可完成的作业
 
-- **可立即完成**：[[03-Projects/01-社交网络挖掘/课后作业/社交网络挖掘-课后作业-05-排序边介数Kronecker与谱聚类#3. 随机 Kronecker 图（20 分，Yokila）|课后作业 05 题 3]]。
+- **可立即完成**：[[社交网络挖掘-课后作业-05-排序边介数Kronecker与谱聚类#3. 随机 Kronecker 图（20 分，Yokila）|课后作业 05 题 3]]。
 - **为什么现在能做**：已覆盖 bit-vector、边概率、期望度、边数与自环的完整推导链。
 - **提交产物**：3.1–3.5 推导、小规模枚举校验与公式边界说明。
+

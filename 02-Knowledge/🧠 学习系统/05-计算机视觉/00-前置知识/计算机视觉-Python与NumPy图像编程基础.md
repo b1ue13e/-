@@ -20,7 +20,7 @@ tags: [学习, 计算机视觉, 前置知识, Python, NumPy]
 
 # 计算机视觉｜Python 与 NumPy 图像编程基础
 
-## 0. 先判断它值不值得深挖
+## 0. 学习边界
 
 这是**前置知识**，不是计算机视觉本身。本卡只讲"把图像当成数字数组来操作"这一件事——它是 HW01-03（kNN、Softmax、两层网络、CNN）所有代码作业的地基。你已经会用 NumPy 切片、广播和向量化的话，直接做卡末的「通过标准」自检，通过即可跳过。
 
@@ -182,3 +182,4 @@ FROM "03-Projects"
 WHERE contains(requires, this.file.link)
 SORT assignment_level ASC, file.name ASC
 ```
+

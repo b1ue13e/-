@@ -6,7 +6,7 @@ created: '2026-08-03'
 status: ongoing
 difficulty: advanced
 course: 量化金融
-importance: A
+stage_moc: '[[🧭 阶段2-定价时序与风险]]'
 stage: 📘 第二阶段：量化核心技能
 tags:
 - 学习
@@ -22,10 +22,7 @@ related:
 - 因子模型与Fama-French三因子
 - HW03-FamaMacBeth回归作业说明书
 upstream:
-- CAPM资本资产定价模型
-downstream:
-- 因子模型与Fama-French三因子
-- 回测框架与无泄漏实验
+  - '[[CAPM 资本资产定价模型]]'
 flow: knowledge
 kind: concept
 sources:
@@ -36,7 +33,7 @@ source_type: paper
 license: journal access
 verified_at: 2026-08-03
 source: Fama & MacBeth (1973) Risk, Return, and Equilibrium
-source_url: '[待验证]'
+source_url: "https://doi.org/10.1086/260061"
 accessed: '2026-08-06'
 assessment_exempt: false
 ---
@@ -45,9 +42,9 @@ assessment_exempt: false
 
 ---
 
-## 0. 先判断它值不值得深挖
+## 0. 学习边界
 
-- **类别**：**A 类（核心概念，必须深挖）**
+- **类别**：**核心主题（核心概念，必须深挖）**
 - **判断理由**：HW03 直接对象；因子"有没有溢价"的检验标准工具，纠正了"同截面重复检验"的统计错误。
 
 ---
@@ -168,7 +165,7 @@ $$t_k = \frac{\bar\gamma_k}{\hat\sigma_{\gamma_k}/\sqrt{T}},\qquad \hat\sigma_{\
 - [[回测框架与无泄漏实验]]：因子验证协议
 
 ### 横向关联
-- [[03-Projects/金融与时序/03-量化金融/课后作业/量化金融-课后作业-03-Fama-MacBeth回归|HW03 Fama-MacBeth回归]] ↔ 本卡：作业实操
+- [[量化金融-课后作业-07-因子模型|HW03 Fama-MacBeth回归]] ↔ 本卡：作业实操
 
 ### 应用场景
 - HW03、因子研究
@@ -257,13 +254,20 @@ $$t_k = \frac{\bar\gamma_k}{\hat\sigma_{\gamma_k}/\sqrt{T}},\qquad \hat\sigma_{\
 ## 13. 给 Obsidian 的归档建议
 
 - **适合文件夹**：`02-Knowledge/🧠 学习系统/03-量化金融/`
-- **关联已有笔记**：[[Fama-French三因子模型|因子模型与Fama-French三因子]] [[CAPM 资本资产定价模型|CAPM资本资产定价模型]] [[03-Projects/金融与时序/03-量化金融/课后作业/量化金融-课后作业-03-Fama-MacBeth回归|HW03 Fama-MacBeth回归]]
+- **关联已有笔记**：[[Fama-French三因子模型|因子模型与Fama-French三因子]] [[CAPM 资本资产定价模型|CAPM资本资产定价模型]] [[量化金融-课后作业-07-因子模型|HW03 Fama-MacBeth回归]]
 - **建议标签**：`#学习` `#量化金融`
 - **拆分建议**：不拆分
-\n\n> ⚔️ **专题实战任务**：👉 点击进入 [[03-Projects/金融与时序/03-量化金融/课后作业/量化金融-课后作业-03-Fama-MacBeth回归|HW03 Fama-MacBeth回归]] 刷怪通关！\n
+\n\n> ⚔️ **专题实战任务**：👉 点击进入 [[量化金融-课后作业-07-因子模型|HW03 Fama-MacBeth回归]] 刷怪通关！\n
 
-## 🧪 学完本节后可完成的作业
+## 学完后可以完成
 
-- **可完成**：[[03-Projects/金融与时序/03-量化金融/课后作业/量化金融-课后作业-03-Fama-MacBeth回归|Fama-MacBeth回归]]。
+```dataview
+LIST
+FROM "03-Projects"
+WHERE contains(requires, this.file.link)
+SORT assignment_level ASC, file.name ASC
+```
+
+
 - **为什么现在能做**：本卡已经提供该任务需要的定义、公式、条件或实现边界；若任务还依赖后续知识，先完成对应阶段 MOC 中排在本卡之后的知识卡。
 - **提交产物**：闭卷定义/推导、一个可复查计算或代码结果、一个失败案例，以及对适用边界的说明。

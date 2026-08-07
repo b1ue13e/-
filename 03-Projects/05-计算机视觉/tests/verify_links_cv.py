@@ -13,7 +13,7 @@ import re
 import sys
 
 BASE = r"F:\-\02-Knowledge\🧠 学习系统\05-计算机视觉"
-SKIP_DIRS = {'.归档', '.reasonix', '.recovery-hold', '.pytest_cache', '__pycache__', '.git', '.tmp'}
+SKIP_DIRS = {'.归档', '.reasonix', '.recovery-hold', '.pytest_cache', '__pycache__', '.git', '.tmp', '.workbuddy'}
 
 issues = []
 

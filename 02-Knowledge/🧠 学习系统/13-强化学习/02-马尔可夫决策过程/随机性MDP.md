@@ -1,31 +1,59 @@
 ---
 type: study
 topic: "随机性MDP"
+course: "强化学习"
 created: 2026-04-18
-status: ongoing
+status: completed
+stage_moc: "[[🧭 阶段2-马尔可夫决策过程]]"
+flow: knowledge
+kind: concept
 difficulty: beginner
-concept: ["随机性MDP", "转移概率矩阵"]
-prerequisites: []
-related: []
-tags: ["学习", "强化学习"]
+concept: ["随机性", "MDP"]
+upstream: ["[[MDP-转移概率]]"]
+tags: [学习, 强化学习]
 ---
+
 # 随机性MDP
 
-> 所属模块：[[../🗺️ 强化学习学习路径|强化学习学习路径]]
-> 主教材：`《Reinforcement Learning》`、`《Algorithms for RL》`
-> 对应阶段：[[02-Knowledge/🧠 学习系统/13-强化学习/02-马尔可夫决策过程/🎯 阶段2：马尔可夫决策过程|返回阶段页]]
-> 建议先看：Bandits、MDPs、Dynamic Programming、Value Functions、TD Learning；MDPs、Policy Evaluation、Policy Improvement、Approximation Theory
+> 所属模块：[[🧭 阶段2-马尔可夫决策过程]] · 主线：转移概率
+> 前置：[[MDP-转移概率]]
 
+## 动机
 
-## 待写提纲
-- 这章/这个知识点在这门课里解决什么问题：
-- 所属主线：转移概率矩阵
-- 这张卡要补哪块：随机性环境
-- 核心定义：
-- 关键方法 / 公式：
-- 一个最小例子：
-- 与前后笔记的关系：
-- 前置：待补
-- 相关：待补
+绝大多数现实环境是随机的；这是 RL 与确定性规划的根本区别，也是期望、方差、探索出现的根源。
 
-*创建于：2026-04-18*
+## 正式定义 / 公式
+
+- **随机性 MDP**：对 $(s,a)$，$P(s'\mid s,a)$ 是非退化分布，下一状态按概率采样。
+- 价值是期望 $v_\pi(s)=\mathbb{E}[G_t\mid s]$；同动作不同结果。
+
+## 最小手算例子
+
+掷骰子走格：同样"前进 3"可能因骰子结果落到不同格；规划须用期望。
+
+## 对比与常见错误
+
+- **用单次结果当期望**：随机下需多次采样估计价值。
+- **忽视探索**：随机环境更需探索以估计各臂/状态。
+
+## 闭卷自测
+- 随机 MDP 的价值为何是期望？
+- 与确定性 MDP 训练差异？
+
+## 学完后可以完成
+
+```dataview
+LIST
+FROM "03-Projects"
+WHERE contains(requires, this.file.link)
+SORT assignment_level ASC, file.name ASC
+```
+
+## 相关下游知识
+
+```dataview
+LIST
+FROM "02-Knowledge/🧠 学习系统"
+WHERE contains(upstream, this.file.link)
+SORT file.name ASC
+```

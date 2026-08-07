@@ -45,7 +45,7 @@ def gradient_boosting_objective(): #^gb-objective
 - **前置**：[[依赖概念 1]]、[[依赖概念 2]]
 - **相关**：[[同模块其他概念]]
 - **跨路径**：[[其他路径的相关概念]]
-- **错题入口**：`[[04-Review/04-🔁 Review|Review]]`
+- **错题入口**：`[[04-🔁 Review|Review]]`
 
 ## 📊 Dataview 实战
 

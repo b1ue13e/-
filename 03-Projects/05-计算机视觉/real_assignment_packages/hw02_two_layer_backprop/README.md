@@ -50,9 +50,9 @@ U03 前半段，学生已完成线性基线并学完反向传播、梯度检查�
 ## 运行方式
 
 ```bash
-python "f:\-\03-Projects\课程作业\05-计算机视觉\real_assignment_packages\hw02_two_layer_backprop\starter\run.py" --input-dir "f:\-\03-Projects\data\computer_vision\hw02_two_layer_backprop" --output-dir "f:\-\03-Projects\课程作业\05-计算机视觉\real_assignment_packages\hw02_two_layer_backprop\your_outputs"
-python "f:\-\03-Projects\课程作业\05-计算机视觉\real_assignment_packages\hw02_two_layer_backprop\starter\check_data.py" --input-dir "f:\-\03-Projects\data\computer_vision\hw02_two_layer_backprop"
-pytest "f:\-\03-Projects\课程作业\05-计算机视觉\real_assignment_packages\hw02_two_layer_backprop\tests"
+python "F:\-\03-Projects\05-计算机视觉\real_assignment_packages\hw02_two_layer_backprop\starter\run.py" --input-dir "F:\-\03-Projects\data\computer_vision\hw02_two_layer_backprop" --output-dir "F:\-\03-Projects\05-计算机视觉\real_assignment_packages\hw02_two_layer_backprop\your_outputs"
+python "F:\-\03-Projects\05-计算机视觉\real_assignment_packages\hw02_two_layer_backprop\starter\check_data.py" --input-dir "F:\-\03-Projects\data\computer_vision\hw02_two_layer_backprop"
+pytest "F:\-\03-Projects\05-计算机视觉\real_assignment_packages\hw02_two_layer_backprop\tests"
 ```
 
 ## 当前 baseline 定位

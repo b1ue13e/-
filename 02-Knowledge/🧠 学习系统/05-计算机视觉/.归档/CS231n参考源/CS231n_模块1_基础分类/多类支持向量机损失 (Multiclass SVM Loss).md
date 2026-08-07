@@ -1,4 +1,4 @@
----
+﻿---
 title: "多类支持向量机损失 (Multiclass SVM Loss)"
 date: 2026-08-03
 type: concept
@@ -14,7 +14,7 @@ status: learning
 
 ---
 
-## 0. 先判断它值不值得深挖
+## 0. 学习边界
 
 - **类别**：**A 类（核心概念，必须深挖）**
 - **判断理由**：它是 CS231n 引入的第一个真正的损失函数，是理解目标函数 (Objective Function) 和正则化 (Regularization) 思想的绝佳切入点。其计算图和梯度推导 (Vectorized implementation) 是 CS231n Assignment 1 中最具挑战性的手撕代码之一。
@@ -214,3 +214,4 @@ Multiclass SVM Loss，又称为折页损失 (Hinge Loss)。对于单个样本，
 - **关联已有笔记**：`[[CS231n_Assignment1]]`
 - **建议标签**：`#学习` `#深度学习` `#概念` `#CS231n` `#损失函数`
 - **拆分建议**：保持单篇原子卡片。
+

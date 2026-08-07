@@ -15,7 +15,7 @@ tags: [Inbox, 工作流, 索引]
 
 ## ⚡ 30 秒处理流程
 
-1. 用 [[99-System/📇 模板/📓 快速笔记模板|快速笔记模板]] 捕捉。
+1. 用 [[📓 快速笔记模板|快速笔记模板]] 捕捉。
 2. 24 小时内补全 `type`、`topic`、`flow`。
 3. 按用途改为 `sprint / knowledge / project / review`，或直接删除。
 4. 不为了“清空 Inbox”移动源文件；工作身份由 `flow` 决定。
@@ -57,8 +57,8 @@ SORT file.name ASC
 
 ## 🔗 相关入口
 
-- [[01-Active Sprint/🚀 Active Sprint|Active Sprint]]
-- [[02-Knowledge/02-🧠 Knowledge|Knowledge]]
-- [[03-Projects/03-🛠️ Projects|Projects]]
-- [[04-Review/04-🔁 Review|Review]]
+- [[🚀 Active Sprint|Active Sprint]]
+- [[02-🧠 Knowledge|Knowledge]]
+- [[03-🛠️ Projects|Projects]]
+- [[04-🔁 Review|Review]]
 

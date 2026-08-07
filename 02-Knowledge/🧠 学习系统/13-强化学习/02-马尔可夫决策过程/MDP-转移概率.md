@@ -1,31 +1,60 @@
 ---
 type: study
 topic: "MDP-转移概率"
+course: "强化学习"
 created: 2026-04-18
-status: ongoing
+status: completed
+stage_moc: "[[🧭 阶段2-马尔可夫决策过程]]"
+flow: knowledge
+kind: concept
 difficulty: beginner
-concept: ["MDP-转移概率", "转移概率"]
-prerequisites: []
-related: []
-tags: ["学习", "强化学习"]
+concept: ["MDP", "转移概率"]
+upstream: ["[[MDP-状态空间]]", "[[MDP-动作空间]]"]
+tags: [学习, 强化学习]
 ---
+
 # MDP-转移概率
 
-> 所属模块：[[../🗺️ 强化学习学习路径|强化学习学习路径]]
-> 主教材：`《Reinforcement Learning》`
-> 对应阶段：[[02-Knowledge/🧠 学习系统/13-强化学习/02-马尔可夫决策过程/🎯 阶段2：马尔可夫决策过程|返回阶段页]]
-> 建议先看：Bandits、MDPs、Dynamic Programming、Value Functions、TD Learning
-> 辅助教材：`《Algorithms for RL》`
+> 所属模块：[[🧭 阶段2-马尔可夫决策过程]] · 主线：MDP 五元组
+> 前置：[[MDP-状态空间]] · [[MDP-动作空间]]
 
-## 待写提纲
-- 这章/这个知识点在这门课里解决什么问题：
-- 所属主线：转移概率
-- 这张卡要补哪块：转移概率
-- 核心定义：
-- 关键方法 / 公式：
-- 一个最小例子：
-- 与前后笔记的关系：
-- 前置：待补
-- 相关：待补
+## 动机
 
-*创建于：2026-04-18*
+转移概率 $P$ 是 MDP 的"物理规律"：给定状态与动作，下一状态与奖励如何随机产生。它是动态规划与模型基 RL 的核心。
+
+## 正式定义 / 公式
+
+- 联合形式：$P(s',r\mid s,a)=\Pr\{S_{t+1}=s',R_{t+1}=r\mid S_t=s,A_t=a\}$。
+- 常拆分为转移 $P(s'\mid s,a)=\sum_r P(s',r\mid s,a)$ 与期望奖励 $R(s,a)=\mathbb{E}[R_{t+1}\mid s,a]$。
+- 归一化：$\sum_{s',r}P(s',r\mid s,a)=1$。
+
+## 最小手算例子
+
+网格世界中"向上"：以 0.8 移到上格、0.1 左、0.1 右（随机滑动），则对应 $P$ 三处非零且和为 1。
+
+## 对比与常见错误
+
+- **写成 $P(s'\mid s)$**：漏掉动作 $a$，它不是马尔可夫决策而是普通链。
+- **忘记归一化**：每行（对 $s',r$）必须和为 1。
+
+## 闭卷自测
+- 写出 $P(s',r\mid s,a)$ 含义与归一化约束。
+- 为什么转移必须依赖动作 $a$？
+
+## 学完后可以完成
+
+```dataview
+LIST
+FROM "03-Projects"
+WHERE contains(requires, this.file.link)
+SORT assignment_level ASC, file.name ASC
+```
+
+## 相关下游知识
+
+```dataview
+LIST
+FROM "02-Knowledge/🧠 学习系统"
+WHERE contains(upstream, this.file.link)
+SORT file.name ASC
+```

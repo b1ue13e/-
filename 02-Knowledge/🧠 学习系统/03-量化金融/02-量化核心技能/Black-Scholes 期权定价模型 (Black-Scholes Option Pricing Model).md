@@ -6,7 +6,7 @@ created: '2026-08-03'
 status: ongoing
 difficulty: advanced
 course: 量化金融
-importance: A
+stage_moc: '[[🧭 阶段2-定价时序与风险]]'
 stage: 📘 第二阶段：量化核心技能
 tags:
 - 学习
@@ -23,9 +23,7 @@ related:
 - 量化金融-波动率-GARCH家族模型
 - '历史专题作业 HW05-BSM期权定价与对冲'
 upstream:
-- 收益率定义与对数收益
-downstream:
-- 量化金融-波动率-GARCH家族模型
+  - '[[收益率与对数收益率]]'
 flow: knowledge
 kind: concept
 source: Hull, Options, Futures, and Other Derivatives, Chapters 13-19
@@ -35,7 +33,7 @@ anki_tags:
 - Black-Scholes
 - 期权定价
 assessment_exempt: false
-source_url: '[待验证]'
+source_url: "https://doi.org/10.1086/260062"
 accessed: '2026-08-06'
 license: local reference; redistribution not assumed
 verified_at: 2026-08-03
@@ -44,13 +42,13 @@ verified_at: 2026-08-03
 # Black-Scholes 期权定价模型
 
 > [!info] 主线导航
-> [[🗺️ 量化金融学习路径|返回路径]] · **Week 7** · 前置 [[量化金融-随机过程-伊藤引理与随机微分方程]] · 练习 [[03-Projects/金融与时序/03-量化金融/课后作业/量化金融-课后作业-05-随机微积分与SDE|PS05]] · 实验 [[03-Projects/金融与时序/03-量化金融/课后作业/量化金融-课后作业-05-Black-Scholes定价与对冲|HW05]]
+> [[🗺️ 量化金融学习路径|返回路径]] · **Week 7** · 前置 [[量化金融-随机过程-伊藤引理与随机微分方程]] · 练习 [[量化金融-课后作业-09-SDE与动态对冲|PS05]] · 实验 [[量化金融-课后作业-08-随机微积分与期权|HW05]]
 
 ---
 
-## 0. 先判断它值不值得深挖
+## 0. 学习边界
 
-- **类别**：**A 类（核心概念，必须深挖）**
+- **类别**：**核心主题（核心概念，必须深挖）**
 - **判断理由**：HW05 直接对象；衍生品定价的基准模型，Greeks 是风险管理的日常工具。
 
 ---
@@ -71,7 +69,7 @@ verified_at: 2026-08-03
 
 ## 3. 学它之前需要哪些前置知识？
 
-1. **[[收益率定义与对数收益]]**。
+1. **[[收益率与对数收益率]]**。
 2. 几何布朗运动与伊藤引理（直觉级）。
 
 ---
@@ -334,13 +332,13 @@ print(f'call={price:.4f}, d1={d1:.6f}, d2={d2:.6f}')
 ## 9. 相关知识点与 Obsidian 双链建议
 
 ### 上游依赖
-- [[收益率定义与对数收益]]、随机过程
+- [[收益率与对数收益率]]、随机过程
 
 ### 下游延伸
 - [[量化金融-波动率-GARCH家族模型]]：$\sigma$ 的时变建模
 
 ### 横向关联
-- [[03-Projects/金融与时序/03-量化金融/课后作业/量化金融-课后作业-05-Black-Scholes定价与对冲|HW05 Black-Scholes]] ↔ 本卡：作业实操
+- [[量化金融-课后作业-08-随机微积分与期权|HW05 Black-Scholes]] ↔ 本卡：作业实操
 
 ### 应用场景
 - HW05
@@ -439,10 +437,17 @@ print(f'call={price:.4f}, d1={d1:.6f}, d2={d2:.6f}')
 
 ---
 
-## 🧪 学完本节后可完成的作业
+## 学完后可以完成
 
-- **可立即完成**：[[03-Projects/金融与时序/03-量化金融/课后作业/量化金融-课后作业-05-Black-Scholes定价与对冲|HW05 Black-Scholes 定价与动态 Delta 对冲]]，先跑 smoke 测试，再补闭式定价与对冲误差。
-- **需结合后续知识**：[[03-Projects/金融与时序/03-量化金融/课后作业/量化金融-课后作业-05-随机微积分与SDE#题 1|PS05 题 1]]，闭卷重建伊藤引理与复制组合推导。
+```dataview
+LIST
+FROM "03-Projects"
+WHERE contains(requires, this.file.link)
+SORT assignment_level ASC, file.name ASC
+```
+
+
+- **需结合后续知识**：[[量化金融-课后作业-09-SDE与动态对冲#题 1|PS05 题 1]]，闭卷重建伊藤引理与复制组合推导。
 - **提交产物**：定价公式与假设清单、Delta 路径、蒙特卡洛对照、交易摩擦和误差边界。
 
 > 历史 `历史专题作业` 页面仅保留为待审查资产；本卡的规范作业入口是上面的真实作业包。
@@ -450,6 +455,6 @@ print(f'call={price:.4f}, d1={d1:.6f}, d2={d2:.6f}')
 ## 13. 给 Obsidian 的归档建议
 
 - **适合文件夹**：`02-Knowledge/🧠 学习系统/03-量化金融/`
-- **关联已有笔记**：[[03-Projects/金融与时序/03-量化金融/课后作业/量化金融-课后作业-05-Black-Scholes定价与对冲|HW05 Black-Scholes]] [[量化金融-波动率-GARCH家族模型]]
+- **关联已有笔记**：[[量化金融-课后作业-08-随机微积分与期权|HW05 Black-Scholes]] [[量化金融-波动率-GARCH家族模型]]
 - **建议标签**：`#学习` `#量化金融`
 - **拆分建议**：不拆分

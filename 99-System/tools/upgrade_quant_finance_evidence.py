@@ -15,7 +15,7 @@ from pathlib import Path
 
 
 VAULT = Path(__file__).resolve().parents[2]
-Q = VAULT / "02-Knowledge" / "🧠 学习系统" / "03-量化金融"
+Q = VAULT / "02-Knowledge" / "02-Knowledge/🧠 学习系统" / "03-量化金融"
 AUDIT_CANDIDATES = (
     VAULT / "04-Review" / "知识库审计" / "knowledge_notes_merciless_scores_2026-08-01.json",
     VAULT / "99-System" / "🗄️ 归档" / "知识库审计" / "knowledge_notes_merciless_scores_2026-08-01.json",

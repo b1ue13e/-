@@ -79,8 +79,10 @@ for dirpath, dirnames, filenames in os.walk(root_dir):
             if m:
                 try:
                     yaml.safe_load(m.group(1))
-                except Exception:
+                except Exception as e:
                     yaml_err_cnt += 1
+                    print(f"  [YAML Err #{yaml_err_cnt}] {os.path.relpath(p, root_dir)}")
+
 
 if yaml_err_cnt == 0:
     print("✅ 2. YAML 语法扫描：0 处 Frontmatter 解析错误 (PyYAML 100% 校验通过)")

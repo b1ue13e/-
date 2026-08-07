@@ -1,4 +1,4 @@
----
+﻿---
 title: "博弈：Minimax/Expectimax"
 date: "2026-08-04"
 type: concept
@@ -6,14 +6,12 @@ course: "强化学习"
 importance: "B"
 tags: [学习, 强化学习]
 upstream: ["搜索：BFS与DFS与A星"]
-downstream: ["多臂老虎机与探索-利用"]
 status: learning
 concept: ["Minimax", "Expectimax", "α-β 剪枝", "博弈树"]
 sources:
   - "Berkeley CS188 Project 2 (Multi-Agent Search) 讲义"
   - "Russell & Norvig, AIMA Ch.5"
 ---
-
 # 博弈：Minimax/Expectimax
 
 ---
@@ -26,7 +24,7 @@ sources:
 >   - 手算/口算出至少 1 道基础题；
 >   - 说出 2 个常见误区及其正确理解。
 
-## 0. 先判断它值不值得深挖
+## 0. 学习边界
 
 - **类别**：**B 类（常用工具）**——对抗搜索是多智能体与博弈 AI 的基础（CS188 P2）。
 - **判断理由**：Minimax 处理"对手最小化"的零和博弈；Expectimax 处理"随机机会"节点（掷骰子）；α-β 剪枝是实用化关键。理解它们是理解 AlphaZero 之前博弈 AI 的标准范式。
@@ -154,7 +152,7 @@ $$\operatorname{Value}(s)=\sum_a P(a)\operatorname{Value}(s').$$
 - [[搜索：BFS与DFS与A星]] ↔ [[博弈：Minimax与Expectimax]]：博弈搜索多了对手层。
 
 ### 应用场景
-- [[强化学习 - CS188-P2：多智能体搜索阶梯作业]]：作业直接应用。
+- [[强化学习-课后作业-CS188-P2-多智能体搜索]]：作业直接应用。
 
 ---
 
@@ -254,6 +252,7 @@ $$\operatorname{Value}(s)=\sum_a P(a)\operatorname{Value}(s').$$
 ## 13. 给 Obsidian 的归档建议
 
 - **适合文件夹**：`02-Knowledge/🧠 学习系统/13-强化学习/01-基础与本质/`
-- **关联已有笔记**：`[[强化学习 - CS188-P2：多智能体搜索阶梯作业]]`
+- **关联已有笔记**：`[[强化学习-课后作业-CS188-P2-多智能体搜索]]`
 - **建议标签**：`#学习` `#强化学习` `#博弈`
 - **拆分建议**：α-β 剪枝可拆为独立算法卡。
+

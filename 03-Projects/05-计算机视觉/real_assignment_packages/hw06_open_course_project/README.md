@@ -52,9 +52,9 @@
 ## 运行方式
 
 ```bash
-python "f:\-\03-Projects\课程作业\05-计算机视觉\real_assignment_packages\hw06_open_course_project\starter\run.py" --input-dir "f:\-\03-Projects\data\computer_vision\hw06_open_course_project" --output-dir "f:\-\03-Projects\课程作业\05-计算机视觉\real_assignment_packages\hw06_open_course_project\your_outputs"
-python "f:\-\03-Projects\课程作业\05-计算机视觉\real_assignment_packages\hw06_open_course_project\starter\check_data.py" --input-dir "f:\-\03-Projects\data\computer_vision\hw06_open_course_project"
-pytest "f:\-\03-Projects\课程作业\05-计算机视觉\real_assignment_packages\hw06_open_course_project\tests"
+python "F:\-\03-Projects\05-计算机视觉\real_assignment_packages\hw06_open_course_project\starter\run.py" --input-dir "F:\-\03-Projects\data\computer_vision\hw06_open_course_project" --output-dir "F:\-\03-Projects\05-计算机视觉\real_assignment_packages\hw06_open_course_project\your_outputs"
+python "F:\-\03-Projects\05-计算机视觉\real_assignment_packages\hw06_open_course_project\starter\check_data.py" --input-dir "F:\-\03-Projects\data\computer_vision\hw06_open_course_project"
+pytest "F:\-\03-Projects\05-计算机视觉\real_assignment_packages\hw06_open_course_project\tests"
 ```
 
 ## 当前 baseline 定位

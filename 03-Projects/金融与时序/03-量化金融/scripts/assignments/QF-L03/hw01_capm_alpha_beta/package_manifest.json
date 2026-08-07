@@ -1,0 +1,20 @@
+{
+  "id": "HW01",
+  "slug": "hw01_capm_alpha_beta",
+  "title": "CAPM 资产定价与单股 Alpha/Beta 归因",
+  "stage": "第一阶段：资产定价与财务量化",
+  "generated_at": "2026-07-31",
+  "real_data_dir": "f:\\-\\03-Projects\\data\\quant_finance\\hw01_capm_alpha_beta",
+  "real_files": [
+    "prices.daily.csv",
+    "benchmark.daily.csv",
+    "risk_free.daily.csv"
+  ],
+  "smoke_files": [
+    "prices.smoke.csv",
+    "benchmark.smoke.csv",
+    "risk_free.smoke.csv"
+  ],
+  "baseline": "单资产 CAPM + 滚动 Beta",
+  "next_step": "把 smoke 数据替换成真实市场数据，再补 CAPM 回归和滚动窗口实现。"
+}

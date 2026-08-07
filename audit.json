@@ -1,0 +1,1086 @@
+{
+  "f:\\-\\02-Knowledge\\02-Knowledge/🧠 学习系统\\07-最优化方法\\📚 教材挂载索引.md": {
+    "type": "index",
+    "topic": "最优化方法教材挂载索引",
+    "created": "2026-04-18",
+    "status": "active",
+    "tags": [
+      "最优化方法",
+      "教材",
+      "索引"
+    ],
+    "updated": "2026-08-02",
+    "flow": "knowledge",
+    "kind": "moc",
+    "course": "07-最优化方法"
+  },
+  "f:\\-\\02-Knowledge\\02-Knowledge/🧠 学习系统\\07-最优化方法\\🗺️ 最优化方法学习路径.md": {
+    "type": "index",
+    "topic": "最优化方法学习路径",
+    "created": "2026-04-18",
+    "status": "active",
+    "tags": [
+      "学习路径",
+      "最优化方法",
+      "凸优化",
+      "数值优化"
+    ],
+    "course": "07-最优化方法"
+  },
+  "f:\\-\\02-Knowledge\\02-Knowledge/🧠 学习系统\\07-最优化方法\\00-前置知识\\🧭 07-最优化方法-前置知识.md": {
+    "type": "index",
+    "kind": "moc",
+    "flow": "knowledge",
+    "topic": "07-最优化方法-前置知识",
+    "course": "07-最优化方法",
+    "created": "2026-08-06",
+    "status": "active",
+    "tags": [
+      "学习",
+      "07-最优化方法",
+      "前置知识"
+    ]
+  },
+  "f:\\-\\02-Knowledge\\02-Knowledge/🧠 学习系统\\07-最优化方法\\01-数学基础\\最优化方法-CVXPY建模与求解器.md": {
+    "type": "study",
+    "topic": "CVXPY建模与求解器",
+    "course": "最优化方法",
+    "created": "2026-08-02",
+    "status": "ongoing",
+    "stage_moc": "[[🧭 阶段1-数学基础]]",
+    "flow": "project",
+    "kind": "concept",
+    "title": "CVXPY建模与求解器",
+    "date": "2026-08-02",
+    "importance": "A",
+    "tags": [
+      "学习",
+      "最优化方法"
+    ],
+    "upstream": [
+      "[[最优化方法-凸集与凸函数]]",
+      "[[最优化方法-凸优化与拉格朗日对偶]]"
+    ],
+    "concept": [
+      "凸优化",
+      "数值优化"
+    ],
+    "prerequisites": [
+      "凸集与凸函数",
+      "Python 基础"
+    ],
+    "related": [
+      "凸优化与拉格朗日对偶",
+      "锥规划与半定规划SDP",
+      "拟牛顿法BFGS",
+      "凸集与凸函数"
+    ],
+    "template": "Obsidian单知识点深度学习模板"
+  },
+  "f:\\-\\02-Knowledge\\02-Knowledge/🧠 学习系统\\07-最优化方法\\01-数学基础\\最优化方法-二次规划与CVXPY.md": {
+    "type": "study",
+    "topic": "二次规划与CVXPY(Quadratic Programming)",
+    "course": "最优化方法",
+    "created": "2026-08-06",
+    "status": "ongoing",
+    "stage_moc": "[[🧭 阶段1-数学基础]]",
+    "flow": "knowledge",
+    "kind": "concept",
+    "title": "二次规划与CVXPY(Quadratic Programming)",
+    "date": "2026-08-03",
+    "importance": "A",
+    "tags": [
+      "学习",
+      "最优化方法",
+      "凸优化",
+      "CVXPY"
+    ],
+    "upstream": [
+      "[[最优化方法-凸集与凸函数]]",
+      "[[线性代数基础]]"
+    ]
+  },
+  "f:\\-\\02-Knowledge\\02-Knowledge/🧠 学习系统\\07-最优化方法\\01-数学基础\\🧭 阶段1-数学基础.md": {
+    "type": "index",
+    "kind": "moc",
+    "flow": "knowledge",
+    "topic": "阶段1-数学基础",
+    "course": "07-最优化方法",
+    "created": "2026-08-06",
+    "status": "active",
+    "tags": [
+      "学习",
+      "07-最优化方法",
+      "阶段MOC"
+    ]
+  },
+  "f:\\-\\02-Knowledge\\02-Knowledge/🧠 学习系统\\07-最优化方法\\02-凸分析与最优性条件\\最优化方法-凸优化与拉格朗日对偶.md": {
+    "type": "study",
+    "topic": "凸优化与拉格朗日对偶",
+    "course": "最优化方法",
+    "created": "2026-08-05",
+    "status": "ongoing",
+    "stage_moc": "[[🧭 阶段2-凸分析与最优性条件]]",
+    "flow": "knowledge",
+    "kind": "concept",
+    "tags": [
+      "学习",
+      "最优化方法"
+    ],
+    "difficulty": "advanced",
+    "concept": [
+      "拉格朗日对偶",
+      "KKT条件",
+      "对偶函数"
+    ],
+    "prerequisites": [
+      "凸集与凸函数",
+      "凸优化问题标准形式"
+    ],
+    "related": [
+      "强对偶与Slater条件",
+      "内点法原理",
+      "增广拉格朗日与ADMM"
+    ],
+    "upstream": [
+      "[[最优化方法-凸集与凸函数]]",
+      "[[最优化方法-凸优化问题标准形式]]"
+    ]
+  },
+  "f:\\-\\02-Knowledge\\02-Knowledge/🧠 学习系统\\07-最优化方法\\02-凸分析与最优性条件\\最优化方法-凸优化问题标准形式.md": {
+    "type": "study",
+    "topic": "凸优化问题标准形式",
+    "course": "最优化方法",
+    "created": "2026-08-03",
+    "status": "ongoing",
+    "stage_moc": "[[🧭 阶段2-凸分析与最优性条件]]",
+    "flow": "project",
+    "kind": "concept",
+    "title": "凸优化问题标准形式",
+    "date": "2026-08-03",
+    "importance": "A",
+    "tags": [
+      "学习",
+      "最优化方法"
+    ],
+    "upstream": [
+      "[[最优化方法-凸集与凸函数]]",
+      "[[最优化方法-CVXPY建模与求解器]]"
+    ],
+    "concept": [
+      "凸优化",
+      "标准形式",
+      "锥规划"
+    ],
+    "prerequisites": [
+      "凸集与凸函数",
+      "CVXPY建模与求解器",
+      "线性代数（半正定矩阵）"
+    ],
+    "related": [
+      "CVXPY建模与求解器",
+      "锥规划与半定规划SDP",
+      "凸优化与拉格朗日对偶",
+      "线性规划与单纯形法"
+    ],
+    "template": "Obsidian单知识点深度学习模板"
+  },
+  "f:\\-\\02-Knowledge\\02-Knowledge/🧠 学习系统\\07-最优化方法\\02-凸分析与最优性条件\\最优化方法-凸集与凸函数.md": {
+    "type": "study",
+    "topic": "凸集与凸函数",
+    "course": "最优化方法",
+    "created": "2026-08-02",
+    "status": "ongoing",
+    "stage_moc": "[[🧭 阶段2-凸分析与最优性条件]]",
+    "flow": "project",
+    "kind": "concept",
+    "title": "凸集与凸函数",
+    "date": "2026-08-02",
+    "importance": "A",
+    "tags": [
+      "学习",
+      "最优化方法"
+    ],
+    "upstream": [
+      "[[最优化方法-二次规划与CVXPY]]",
+      "[[最优化方法-凸集与凸函数]]"
+    ],
+    "concept": [
+      "凸分析",
+      "凸优化"
+    ],
+    "prerequisites": [
+      "线性代数",
+      "多元微积分"
+    ],
+    "related": [
+      "凸优化与拉格朗日对偶",
+      "锥规划与半定规划SDP",
+      "CVXPY建模与求解器",
+      "最速下降收敛推导"
+    ],
+    "template": "Obsidian单知识点深度学习模板"
+  },
+  "f:\\-\\02-Knowledge\\02-Knowledge/🧠 学习系统\\07-最优化方法\\02-凸分析与最优性条件\\最优化方法-分离超平面与Farkas引理.md": {
+    "type": "study",
+    "topic": "分离超平面与Farkas引理",
+    "course": "最优化方法",
+    "created": "2026-08-05",
+    "status": "ongoing",
+    "stage_moc": "[[🧭 阶段2-凸分析与最优性条件]]",
+    "flow": "knowledge",
+    "kind": "concept",
+    "tags": [
+      "学习",
+      "最优化方法"
+    ],
+    "difficulty": "advanced",
+    "concept": [
+      "分离超平面",
+      "支撑超平面",
+      "Farkas引理"
+    ],
+    "prerequisites": [
+      "凸集与凸函数"
+    ],
+    "related": [
+      "强对偶与Slater条件",
+      "凸优化问题标准形式"
+    ],
+    "upstream": [
+      "[[最优化方法-凸集与凸函数]]"
+    ]
+  },
+  "f:\\-\\02-Knowledge\\02-Knowledge/🧠 学习系统\\07-最优化方法\\02-凸分析与最优性条件\\最优化方法-强对偶与Slater条件.md": {
+    "type": "study",
+    "topic": "强对偶与Slater条件",
+    "course": "最优化方法",
+    "created": "2026-08-05",
+    "status": "ongoing",
+    "stage_moc": "[[🧭 阶段2-凸分析与最优性条件]]",
+    "flow": "knowledge",
+    "kind": "concept",
+    "tags": [
+      "学习",
+      "最优化方法"
+    ],
+    "difficulty": "advanced",
+    "concept": [
+      "强对偶",
+      "Slater条件",
+      "对偶间隙"
+    ],
+    "prerequisites": [
+      "凸集与凸函数",
+      "凸优化问题标准形式"
+    ],
+    "related": [
+      "凸优化与拉格朗日对偶",
+      "内点法原理",
+      "KKT条件"
+    ],
+    "upstream": [
+      "[[最优化方法-凸集与凸函数]]",
+      "[[最优化方法-凸优化问题标准形式]]"
+    ]
+  },
+  "f:\\-\\02-Knowledge\\02-Knowledge/🧠 学习系统\\07-最优化方法\\02-凸分析与最优性条件\\最优化方法-锥规划与半定规划SDP.md": {
+    "type": "study",
+    "topic": "锥规划与半定规划SDP",
+    "course": "最优化方法",
+    "created": "2026-08-02",
+    "status": "ongoing",
+    "stage_moc": "[[🧭 阶段2-凸分析与最优性条件]]",
+    "flow": "project",
+    "kind": "concept",
+    "title": "锥规划与半定规划SDP",
+    "date": "2026-08-02",
+    "importance": "A",
+    "tags": [
+      "学习",
+      "最优化方法"
+    ],
+    "upstream": [
+      "[[最优化方法-凸集与凸函数]]",
+      "[[最优化方法-凸优化与拉格朗日对偶]]"
+    ],
+    "concept": [
+      "锥规划",
+      "凸优化"
+    ],
+    "prerequisites": [
+      "凸集与凸函数",
+      "线性代数"
+    ],
+    "related": [
+      "凸优化与拉格朗日对偶",
+      "CVXPY建模与求解器",
+      "凸集与凸函数"
+    ],
+    "template": "Obsidian单知识点深度学习模板"
+  },
+  "f:\\-\\02-Knowledge\\02-Knowledge/🧠 学习系统\\07-最优化方法\\02-凸分析与最优性条件\\🧭 阶段2-凸分析与最优性条件.md": {
+    "type": "index",
+    "kind": "moc",
+    "flow": "knowledge",
+    "topic": "阶段2-凸分析与最优性条件",
+    "course": "07-最优化方法",
+    "created": "2026-08-06",
+    "status": "active",
+    "tags": [
+      "学习",
+      "07-最优化方法",
+      "阶段MOC"
+    ]
+  },
+  "f:\\-\\02-Knowledge\\02-Knowledge/🧠 学习系统\\07-最优化方法\\03-经典数值优化算法\\最优化方法-信赖域方法.md": {
+    "type": "study",
+    "topic": "信赖域方法",
+    "course": "最优化方法",
+    "created": "2026-08-05",
+    "status": "ongoing",
+    "stage_moc": "[[🧭 阶段3-经典数值优化算法]]",
+    "flow": "knowledge",
+    "kind": "concept",
+    "tags": [
+      "学习",
+      "最优化方法"
+    ],
+    "difficulty": "advanced",
+    "concept": [
+      "信赖域",
+      "Cauchy点",
+      "信赖域子问题"
+    ],
+    "prerequisites": [
+      "最速下降与收敛分析",
+      "线搜索与步长策略"
+    ],
+    "related": [
+      "拟牛顿法BFGS",
+      "共轭梯度法"
+    ],
+    "upstream": [
+      "[[最优化方法-最速下降与收敛分析]]",
+      "[[最优化方法-线搜索与步长策略]]"
+    ]
+  },
+  "f:\\-\\02-Knowledge\\02-Knowledge/🧠 学习系统\\07-最优化方法\\03-经典数值优化算法\\最优化方法-共轭梯度法.md": {
+    "type": "study",
+    "topic": "共轭梯度法",
+    "course": "最优化方法",
+    "created": "2026-08-05",
+    "status": "ongoing",
+    "stage_moc": "[[🧭 阶段3-经典数值优化算法]]",
+    "flow": "knowledge",
+    "kind": "concept",
+    "tags": [
+      "学习",
+      "最优化方法"
+    ],
+    "difficulty": "advanced",
+    "concept": [
+      "共轭梯度法",
+      "A共轭",
+      "Krylov子空间"
+    ],
+    "prerequisites": [
+      "最速下降与收敛分析",
+      "线搜索与步长策略"
+    ],
+    "related": [
+      "信赖域方法",
+      "拟牛顿法BFGS"
+    ],
+    "upstream": [
+      "[[最优化方法-最速下降与收敛分析]]",
+      "[[最优化方法-线搜索与步长策略]]"
+    ]
+  },
+  "f:\\-\\02-Knowledge\\02-Knowledge/🧠 学习系统\\07-最优化方法\\03-经典数值优化算法\\最优化方法-内点法原理.md": {
+    "type": "study",
+    "topic": "内点法原理",
+    "course": "最优化方法",
+    "created": "2026-08-03",
+    "status": "ongoing",
+    "stage_moc": "[[🧭 阶段3-经典数值优化算法]]",
+    "flow": "project",
+    "kind": "concept",
+    "title": "内点法原理",
+    "date": "2026-08-03",
+    "importance": "A",
+    "tags": [
+      "学习",
+      "最优化方法"
+    ],
+    "upstream": [
+      "[[最优化方法-凸优化问题标准形式]]",
+      "[[最优化方法-凸集与凸函数]]",
+      "[[线性规划与单纯形法]]"
+    ],
+    "concept": [
+      "内点法",
+      "对数障碍",
+      "中心路径"
+    ],
+    "prerequisites": [
+      "凸优化问题标准形式",
+      "牛顿法（拟牛顿法BFGS）",
+      "凸集与凸函数"
+    ],
+    "related": [
+      "线性规划与单纯形法",
+      "拟牛顿法BFGS",
+      "一阶方法收敛性分析",
+      "凸优化与拉格朗日对偶",
+      "CVXPY建模与求解器"
+    ],
+    "template": "Obsidian单知识点深度学习模板"
+  },
+  "f:\\-\\02-Knowledge\\02-Knowledge/🧠 学习系统\\07-最优化方法\\03-经典数值优化算法\\最优化方法-单纯形法与线性规划.md": {
+    "type": "study",
+    "topic": "单纯形法与线性规划",
+    "course": "最优化方法",
+    "created": "2026-08-05",
+    "status": "ongoing",
+    "stage_moc": "[[🧭 阶段3-经典数值优化算法]]",
+    "flow": "knowledge",
+    "kind": "concept",
+    "tags": [
+      "学习",
+      "最优化方法"
+    ],
+    "difficulty": "intermediate",
+    "concept": [
+      "单纯形法",
+      "线性规划",
+      "基可行解"
+    ],
+    "prerequisites": [
+      "凸优化问题标准形式"
+    ],
+    "related": [
+      "强对偶与Slater条件",
+      "内点法原理"
+    ],
+    "upstream": [
+      "[[最优化方法-凸优化问题标准形式]]"
+    ]
+  },
+  "f:\\-\\02-Knowledge\\02-Knowledge/🧠 学习系统\\07-最优化方法\\03-经典数值优化算法\\最优化方法-拟牛顿法BFGS.md": {
+    "type": "study",
+    "topic": "拟牛顿法BFGS",
+    "course": "最优化方法",
+    "created": "2026-08-05",
+    "status": "ongoing",
+    "stage_moc": "[[🧭 阶段3-经典数值优化算法]]",
+    "flow": "knowledge",
+    "kind": "concept",
+    "tags": [
+      "学习",
+      "最优化方法"
+    ],
+    "difficulty": "advanced",
+    "concept": [
+      "拟牛顿法",
+      "BFGS",
+      "割线方程"
+    ],
+    "prerequisites": [
+      "线搜索与步长策略",
+      "最速下降与收敛分析"
+    ],
+    "related": [
+      "共轭梯度法",
+      "信赖域方法"
+    ],
+    "upstream": [
+      "[[最优化方法-线搜索与步长策略]]",
+      "[[最优化方法-最速下降与收敛分析]]"
+    ]
+  },
+  "f:\\-\\02-Knowledge\\02-Knowledge/🧠 学习系统\\07-最优化方法\\03-经典数值优化算法\\最优化方法-最速下降与收敛分析.md": {
+    "type": "study",
+    "topic": "最速下降与收敛分析",
+    "course": "最优化方法",
+    "created": "2026-08-05",
+    "status": "ongoing",
+    "stage_moc": "[[🧭 阶段3-经典数值优化算法]]",
+    "flow": "knowledge",
+    "kind": "concept",
+    "tags": [
+      "学习",
+      "最优化方法"
+    ],
+    "difficulty": "intermediate",
+    "concept": [
+      "最速下降法",
+      "收敛率",
+      "条件数"
+    ],
+    "prerequisites": [
+      "凸集与凸函数",
+      "一阶方法收敛性分析"
+    ],
+    "related": [
+      "线搜索与步长策略",
+      "拟牛顿法BFGS",
+      "共轭梯度法"
+    ],
+    "upstream": [
+      "[[最优化方法-凸集与凸函数]]",
+      "[[最优化方法-一阶方法收敛性分析]]"
+    ]
+  },
+  "f:\\-\\02-Knowledge\\02-Knowledge/🧠 学习系统\\07-最优化方法\\03-经典数值优化算法\\最优化方法-约束优化-SQP与投影梯度法.md": {
+    "type": "study",
+    "topic": "约束优化-SQP与投影梯度法",
+    "course": "最优化方法",
+    "created": "2026-08-05",
+    "status": "ongoing",
+    "stage_moc": "[[🧭 阶段3-经典数值优化算法]]",
+    "flow": "knowledge",
+    "kind": "concept",
+    "tags": [
+      "学习",
+      "最优化方法"
+    ],
+    "difficulty": "advanced",
+    "concept": [
+      "SQP",
+      "投影梯度法",
+      "约束优化"
+    ],
+    "prerequisites": [
+      "线搜索与步长策略",
+      "凸优化与拉格朗日对偶"
+    ],
+    "related": [
+      "内点法原理",
+      "增广拉格朗日与ADMM"
+    ],
+    "upstream": [
+      "[[最优化方法-线搜索与步长策略]]",
+      "[[最优化方法-凸优化与拉格朗日对偶]]"
+    ]
+  },
+  "f:\\-\\02-Knowledge\\02-Knowledge/🧠 学习系统\\07-最优化方法\\03-经典数值优化算法\\最优化方法-线搜索与步长策略.md": {
+    "type": "study",
+    "topic": "线搜索与步长策略",
+    "course": "最优化方法",
+    "created": "2026-08-05",
+    "status": "ongoing",
+    "stage_moc": "[[🧭 阶段3-经典数值优化算法]]",
+    "flow": "knowledge",
+    "kind": "concept",
+    "tags": [
+      "学习",
+      "最优化方法"
+    ],
+    "difficulty": "intermediate",
+    "concept": [
+      "线搜索",
+      "Armijo条件",
+      "Wolfe条件"
+    ],
+    "prerequisites": [
+      "最速下降与收敛分析"
+    ],
+    "related": [
+      "拟牛顿法BFGS",
+      "信赖域方法"
+    ],
+    "upstream": [
+      "[[最优化方法-最速下降与收敛分析]]"
+    ]
+  },
+  "f:\\-\\02-Knowledge\\02-Knowledge/🧠 学习系统\\07-最优化方法\\03-经典数值优化算法\\🧭 阶段3-经典数值优化算法.md": {
+    "type": "index",
+    "kind": "moc",
+    "flow": "knowledge",
+    "topic": "阶段3-经典数值优化算法",
+    "course": "07-最优化方法",
+    "created": "2026-08-06",
+    "status": "active",
+    "tags": [
+      "学习",
+      "07-最优化方法",
+      "阶段MOC"
+    ]
+  },
+  "f:\\-\\02-Knowledge\\02-Knowledge/🧠 学习系统\\07-最优化方法\\04-现代一阶与随机优化\\最优化方法-Adam与自适应学习率.md": {
+    "type": "study",
+    "topic": "Adam与自适应学习率",
+    "course": "最优化方法",
+    "created": "2026-08-05",
+    "status": "ongoing",
+    "stage_moc": "[[🧭 阶段4-现代一阶与随机优化]]",
+    "flow": "knowledge",
+    "kind": "concept",
+    "tags": [
+      "学习",
+      "最优化方法",
+      "深度学习"
+    ],
+    "difficulty": "intermediate",
+    "concept": [
+      "Adam优化器",
+      "自适应学习率",
+      "动量",
+      "RMSProp",
+      "AdaGrad"
+    ],
+    "prerequisites": [
+      "SGD与随机优化",
+      "一阶方法收敛性分析"
+    ],
+    "related": [
+      "最速下降与收敛分析",
+      "近端梯度与FISTA"
+    ],
+    "upstream": [
+      "[[最优化方法-SGD与随机优化]]",
+      "[[最优化方法-一阶方法收敛性分析]]"
+    ]
+  },
+  "f:\\-\\02-Knowledge\\02-Knowledge/🧠 学习系统\\07-最优化方法\\04-现代一阶与随机优化\\最优化方法-SGD与随机优化.md": {
+    "type": "study",
+    "topic": "SGD与随机优化",
+    "course": "最优化方法",
+    "created": "2026-08-05",
+    "status": "ongoing",
+    "stage_moc": "[[🧭 阶段4-现代一阶与随机优化]]",
+    "flow": "knowledge",
+    "kind": "concept",
+    "tags": [
+      "学习",
+      "最优化方法"
+    ],
+    "difficulty": "intermediate",
+    "concept": [
+      "随机梯度下降",
+      "小批量SGD",
+      "方差缩减"
+    ],
+    "prerequisites": [
+      "一阶方法收敛性分析",
+      "最速下降与收敛分析"
+    ],
+    "related": [
+      "Adam与自适应学习率",
+      "近端梯度与FISTA"
+    ],
+    "upstream": [
+      "[[最优化方法-一阶方法收敛性分析]]",
+      "[[最优化方法-最速下降与收敛分析]]"
+    ]
+  },
+  "f:\\-\\02-Knowledge\\02-Knowledge/🧠 学习系统\\07-最优化方法\\04-现代一阶与随机优化\\最优化方法-一阶方法收敛性分析.md": {
+    "type": "study",
+    "topic": "一阶方法收敛性分析",
+    "course": "最优化方法",
+    "created": "2026-08-03",
+    "status": "ongoing",
+    "stage_moc": "[[🧭 阶段4-现代一阶与随机优化]]",
+    "flow": "project",
+    "kind": "concept",
+    "title": "一阶方法收敛性分析",
+    "date": "2026-08-03",
+    "importance": "A",
+    "tags": [
+      "学习",
+      "最优化方法"
+    ],
+    "upstream": [
+      "[[最优化方法-凸集与凸函数]]",
+      "[[最优化方法-最速下降与收敛分析]]",
+      "[[最优化方法-凸优化问题标准形式]]"
+    ],
+    "concept": [
+      "收敛性分析",
+      "Lipschitz梯度",
+      "强凸"
+    ],
+    "prerequisites": [
+      "凸集与凸函数",
+      "微积分（泰勒展开）",
+      "最速下降收敛推导"
+    ],
+    "related": [
+      "SGD收敛推导",
+      "最速下降收敛推导",
+      "内点法原理",
+      "拟牛顿法BFGS",
+      "线性共轭梯度法"
+    ],
+    "template": "Obsidian单知识点深度学习模板"
+  },
+  "f:\\-\\02-Knowledge\\02-Knowledge/🧠 学习系统\\07-最优化方法\\04-现代一阶与随机优化\\最优化方法-次梯度方法.md": {
+    "type": "study",
+    "topic": "次梯度方法",
+    "course": "最优化方法",
+    "created": "2026-08-05",
+    "status": "ongoing",
+    "stage_moc": "[[🧭 阶段4-现代一阶与随机优化]]",
+    "flow": "knowledge",
+    "kind": "concept",
+    "tags": [
+      "学习",
+      "最优化方法"
+    ],
+    "difficulty": "intermediate",
+    "concept": [
+      "次梯度",
+      "非光滑优化",
+      "次梯度下降"
+    ],
+    "prerequisites": [
+      "凸集与凸函数",
+      "一阶方法收敛性分析"
+    ],
+    "related": [
+      "近端梯度与FISTA",
+      "SGD与随机优化"
+    ],
+    "upstream": [
+      "[[最优化方法-凸集与凸函数]]",
+      "[[最优化方法-一阶方法收敛性分析]]"
+    ]
+  },
+  "f:\\-\\02-Knowledge\\02-Knowledge/🧠 学习系统\\07-最优化方法\\04-现代一阶与随机优化\\最优化方法-近端梯度与FISTA.md": {
+    "type": "study",
+    "topic": "近端梯度与FISTA",
+    "course": "最优化方法",
+    "created": "2026-08-05",
+    "status": "ongoing",
+    "stage_moc": "[[🧭 阶段4-现代一阶与随机优化]]",
+    "flow": "knowledge",
+    "kind": "concept",
+    "tags": [
+      "学习",
+      "最优化方法",
+      "高级优化"
+    ],
+    "difficulty": "advanced",
+    "concept": [
+      "近端算子",
+      "ISTA",
+      "FISTA",
+      "复合优化"
+    ],
+    "prerequisites": [
+      "次梯度方法",
+      "一阶方法收敛性分析"
+    ],
+    "related": [
+      "增广拉格朗日与ADMM",
+      "SGD与随机优化"
+    ],
+    "upstream": [
+      "[[最优化方法-次梯度方法]]",
+      "[[最优化方法-一阶方法收敛性分析]]"
+    ]
+  },
+  "f:\\-\\02-Knowledge\\02-Knowledge/🧠 学习系统\\07-最优化方法\\04-现代一阶与随机优化\\最优化方法-非凸优化地形与鞍点分析.md": {
+    "type": "study",
+    "topic": "非凸优化地形与鞍点分析",
+    "course": "最优化方法",
+    "created": "2026-08-06",
+    "status": "ongoing",
+    "stage_moc": "[[🧭 阶段4-现代一阶与随机优化]]",
+    "flow": "knowledge",
+    "kind": "concept",
+    "tags": [
+      "学习",
+      "最优化方法",
+      "深度学习优化",
+      "鞍点"
+    ],
+    "difficulty": "intermediate",
+    "concept": [
+      "非凸地形",
+      "鞍点",
+      "海森矩阵特征值"
+    ],
+    "prerequisites": [
+      "凸函数定义",
+      "海森矩阵",
+      "一阶最优性条件"
+    ],
+    "related": [
+      "SGD与随机优化",
+      "一阶方法收敛性分析"
+    ],
+    "upstream": [
+      "[[最优化方法-凸集与凸函数]]",
+      "[[最优化方法-最速下降与收敛分析]]",
+      "[[最优化方法-凸优化与拉格朗日对偶]]"
+    ]
+  },
+  "f:\\-\\02-Knowledge\\02-Knowledge/🧠 学习系统\\07-最优化方法\\04-现代一阶与随机优化\\🧭 阶段4-现代一阶与随机优化.md": {
+    "type": "index",
+    "kind": "moc",
+    "flow": "knowledge",
+    "topic": "阶段4-现代一阶与随机优化",
+    "course": "07-最优化方法",
+    "created": "2026-08-06",
+    "status": "active",
+    "tags": [
+      "学习",
+      "07-最优化方法",
+      "阶段MOC"
+    ]
+  },
+  "f:\\-\\02-Knowledge\\02-Knowledge/🧠 学习系统\\07-最优化方法\\05-专题应用\\最优化方法-增广拉格朗日与ADMM.md": {
+    "type": "study",
+    "topic": "增广拉格朗日与ADMM",
+    "course": "最优化方法",
+    "created": "2026-08-05",
+    "status": "ongoing",
+    "stage_moc": "[[🧭 阶段5-专题应用]]",
+    "flow": "knowledge",
+    "kind": "concept",
+    "tags": [
+      "学习",
+      "最优化方法"
+    ],
+    "difficulty": "advanced",
+    "concept": [
+      "增广拉格朗日",
+      "ADMM",
+      "算子分裂"
+    ],
+    "prerequisites": [
+      "凸优化与拉格朗日对偶",
+      "强对偶与Slater条件"
+    ],
+    "related": [
+      "近端梯度与FISTA",
+      "内点法原理"
+    ],
+    "upstream": [
+      "[[最优化方法-凸优化与拉格朗日对偶]]",
+      "[[最优化方法-强对偶与Slater条件]]"
+    ]
+  },
+  "f:\\-\\02-Knowledge\\02-Knowledge/🧠 学习系统\\07-最优化方法\\05-专题应用\\🧭 阶段5-专题应用.md": {
+    "type": "index",
+    "kind": "moc",
+    "flow": "knowledge",
+    "topic": "阶段5-专题应用",
+    "course": "07-最优化方法",
+    "created": "2026-08-06",
+    "status": "active",
+    "tags": [
+      "学习",
+      "07-最优化方法",
+      "阶段MOC"
+    ]
+  },
+  "f:\\-\\03-Projects\\07-最优化方法\\🧭 课程作业总索引.md": {
+    "type": "index",
+    "topic": "课程作业总索引",
+    "course": "最优化方法",
+    "created": "2026-08-06",
+    "status": "active",
+    "tags": [
+      "索引",
+      "07-最优化方法",
+      "作业"
+    ]
+  },
+  "f:\\-\\03-Projects\\07-最优化方法\\大作业\\07-最优化方法-大作业-大规模优化与ADMM并行求解器.md": {
+    "type": "project",
+    "project_type": "homework",
+    "course": "最优化方法",
+    "assignment_id": "07-最优化方法-大作业-05",
+    "assignment_level": "capstone",
+    "assignment_format": "project",
+    "stage_id": "05",
+    "requires": [
+      "[[最优化方法-增广拉格朗日与ADMM]]",
+      "[[最优化方法-近端梯度与FISTA]]",
+      "[[最优化方法-SGD与随机优化]]"
+    ],
+    "source_type": "open_source_project_task",
+    "created": "2026-08-06",
+    "status": "planned",
+    "flow": "project",
+    "tags": [
+      "作业",
+      "大作业",
+      "ADMM",
+      "并行计算"
+    ]
+  },
+  "f:\\-\\03-Projects\\07-最优化方法\\课后作业\\07-最优化方法-课后作业-01-凸集与凸函数.md": {
+    "type": "project",
+    "project_type": "homework",
+    "course": "最优化方法",
+    "assignment_id": "07-最优化方法-课后作业-01",
+    "assignment_level": "lesson",
+    "assignment_format": "problem-set",
+    "stage_id": "02",
+    "requires": [
+      "[[最优化方法-凸集与凸函数]]",
+      "[[最优化方法-分离超平面与Farkas引理]]"
+    ],
+    "source_type": "official_assignment",
+    "created": "2026-08-06",
+    "status": "planned",
+    "flow": "project",
+    "tags": [
+      "作业",
+      "凸优化"
+    ]
+  },
+  "f:\\-\\03-Projects\\07-最优化方法\\课后作业\\07-最优化方法-课后作业-02-问题标准形式与规划.md": {
+    "type": "project",
+    "project_type": "homework",
+    "course": "最优化方法",
+    "assignment_id": "07-最优化方法-课后作业-02",
+    "assignment_level": "lesson",
+    "assignment_format": "problem-set",
+    "stage_id": "02",
+    "requires": [
+      "[[最优化方法-凸优化问题标准形式]]",
+      "[[最优化方法-单纯形法与线性规划]]",
+      "[[最优化方法-锥规划与半定规划SDP]]"
+    ],
+    "source_type": "official_assignment",
+    "created": "2026-08-06",
+    "status": "planned",
+    "flow": "project",
+    "tags": [
+      "作业",
+      "凸优化"
+    ]
+  },
+  "f:\\-\\03-Projects\\07-最优化方法\\课后作业\\07-最优化方法-课后作业-03-拉格朗日对偶与CVXPY.md": {
+    "type": "project",
+    "project_type": "homework",
+    "course": "最优化方法",
+    "assignment_id": "07-最优化方法-课后作业-03",
+    "assignment_level": "lesson",
+    "assignment_format": "problem-set",
+    "stage_id": "02",
+    "requires": [
+      "[[最优化方法-凸优化与拉格朗日对偶]]",
+      "[[最优化方法-强对偶与Slater条件]]",
+      "[[最优化方法-二次规划与CVXPY]]"
+    ],
+    "source_type": "official_assignment",
+    "created": "2026-08-06",
+    "status": "planned",
+    "flow": "project",
+    "tags": [
+      "作业",
+      "凸优化"
+    ]
+  },
+  "f:\\-\\03-Projects\\07-最优化方法\\课后作业\\07-最优化方法-课后作业-05-经典数值算法实现.md": {
+    "type": "project",
+    "project_type": "homework",
+    "course": "最优化方法",
+    "assignment_id": "07-最优化方法-课后作业-05",
+    "assignment_level": "lesson",
+    "assignment_format": "lab",
+    "stage_id": "03",
+    "requires": [
+      "[[最优化方法-最速下降与收敛分析]]",
+      "[[最优化方法-一阶方法收敛性分析]]",
+      "[[最优化方法-线搜索与步长策略]]",
+      "[[最优化方法-拟牛顿法BFGS]]"
+    ],
+    "source_type": "official_assignment",
+    "created": "2026-08-06",
+    "status": "planned",
+    "flow": "project",
+    "tags": [
+      "作业",
+      "算法实现"
+    ]
+  },
+  "f:\\-\\03-Projects\\07-最优化方法\\质量审计\\课程严苛审计.md": {
+    "type": "index",
+    "topic": "课程严苛审计",
+    "course": "最优化方法",
+    "created": "2026-08-06",
+    "status": "active",
+    "tags": [
+      "审计",
+      "07-最优化方法"
+    ]
+  },
+  "f:\\-\\03-Projects\\07-最优化方法\\阶段作业\\07-最优化方法-阶段作业-02-凸分析与最优性综合实验.md": {
+    "type": "project",
+    "project_type": "homework",
+    "course": "最优化方法",
+    "assignment_id": "07-最优化方法-阶段作业-02",
+    "assignment_level": "stage",
+    "assignment_format": "lab",
+    "stage_id": "02",
+    "requires": [
+      "[[最优化方法-凸优化与拉格朗日对偶]]",
+      "[[最优化方法-强对偶与Slater条件]]",
+      "[[最优化方法-CVXPY建模与求解器]]"
+    ],
+    "source_type": "local_integration_task",
+    "created": "2026-08-06",
+    "status": "planned",
+    "flow": "project",
+    "tags": [
+      "作业",
+      "阶段测试",
+      "凸分析"
+    ]
+  },
+  "f:\\-\\03-Projects\\07-最优化方法\\阶段作业\\07-最优化方法-阶段作业-03-经典数值优化算法对比实验.md": {
+    "type": "project",
+    "project_type": "homework",
+    "course": "最优化方法",
+    "assignment_id": "07-最优化方法-阶段作业-03",
+    "assignment_level": "stage",
+    "assignment_format": "lab",
+    "stage_id": "03",
+    "requires": [
+      "[[最优化方法-最速下降与收敛分析]]",
+      "[[最优化方法-拟牛顿法BFGS]]",
+      "[[最优化方法-信赖域方法]]",
+      "[[最优化方法-共轭梯度法]]"
+    ],
+    "source_type": "local_integration_task",
+    "created": "2026-08-06",
+    "status": "planned",
+    "flow": "project",
+    "tags": [
+      "作业",
+      "阶段测试",
+      "数值算法"
+    ]
+  },
+  "f:\\-\\03-Projects\\07-最优化方法\\阶段作业\\07-最优化方法-阶段作业-04-随机优化与近端算法对比实验.md": {
+    "type": "project",
+    "project_type": "homework",
+    "course": "最优化方法",
+    "assignment_id": "07-最优化方法-阶段作业-04",
+    "assignment_level": "stage",
+    "assignment_format": "lab",
+    "stage_id": "04",
+    "requires": [
+      "[[最优化方法-一阶方法收敛性分析]]",
+      "[[最优化方法-SGD与随机优化]]",
+      "[[最优化方法-Adam与自适应学习率]]",
+      "[[最优化方法-近端梯度与FISTA]]"
+    ],
+    "source_type": "local_integration_task",
+    "created": "2026-08-06",
+    "status": "active",
+    "flow": "project",
+    "tags": [
+      "作业",
+      "阶段作业",
+      "最优化方法"
+    ]
+  }
+}

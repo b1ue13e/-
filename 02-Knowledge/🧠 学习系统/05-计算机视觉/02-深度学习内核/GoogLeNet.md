@@ -46,7 +46,7 @@ tags:
 
 ---
 
-## 0. 先判断它值不值得深挖
+## 0. 学习边界
 
 - **类别**：**A 类（核心概念，必须深挖）**
 - **判断理由**：GoogLeNet（Inception v1）由 Google 的 Christian Szegedy 等人于 2014 年提出，以 **6.67% Top-5 错误率**斩获 ILSVRC 2014 **分类任务冠军**（略优于 VGGNet 的 7.32%），同时拿下检测冠军。它的名字玩了三重梗——Goog**LeNet** 既是「Google + LeNet」，也是向《盗梦空间》「We need to go deeper」台词致敬。
@@ -502,3 +502,4 @@ FROM "03-Projects"
 WHERE contains(requires, this.file.link)
 SORT assignment_level ASC, file.name ASC
 ```
+

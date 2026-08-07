@@ -1,0 +1,9 @@
+{
+  "seed": 20260806,
+  "prediction_rows": 1068,
+  "failure_rows": 1,
+  "selected_model": "ets",
+  "validation_failure_models": [
+    "arima"
+  ]
+}

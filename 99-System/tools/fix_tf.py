@@ -4,8 +4,8 @@ from pathlib import Path
 sys.stdout.reconfigure(encoding='utf-8')
 
 VAULT_ROOT = Path("F:/-")
-NLP_DIR = VAULT_ROOT / "02-Knowledge" / "🧠 学习系统" / "08-NLP全栈"
-if not NLP_DIR.exists(): NLP_DIR = VAULT_ROOT / "🧠 学习系统" / "08-NLP全栈"
+NLP_DIR = VAULT_ROOT / "02-Knowledge" / "02-Knowledge/🧠 学习系统" / "08-NLP全栈"
+if not NLP_DIR.exists(): NLP_DIR = VAULT_ROOT / "02-Knowledge/🧠 学习系统" / "08-NLP全栈"
 
 # Upgrade Transformer架构.md (79 -> 80+) - Add 1 DOI & 1 URL to boost evidence score from 13 -> 15 (+2 pts)
 tf_path = NLP_DIR / "Transformer架构.md"

@@ -1,0 +1,12 @@
+name: qf-qlib-0.9.7
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11.9
+  - pip=24.2
+  - pip:
+      - pyqlib==0.9.7
+
+# This environment is isolated from the course test environment.
+# After creation, record `pip freeze --all` and the Qlib source commit in 证据日志.md.
+# Market data, data releases, and their licenses are intentionally not included.

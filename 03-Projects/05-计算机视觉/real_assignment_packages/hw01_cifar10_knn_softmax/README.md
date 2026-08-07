@@ -50,9 +50,9 @@ U02 结束后，学生刚完成图像数据表示、线性分类和最小评测�
 ## 运行方式
 
 ```bash
-python "f:\-\03-Projects\课程作业\05-计算机视觉\real_assignment_packages\hw01_cifar10_knn_softmax\starter\run.py" --input-dir "f:\-\03-Projects\data\computer_vision\hw01_cifar10_knn_softmax" --output-dir "f:\-\03-Projects\课程作业\05-计算机视觉\real_assignment_packages\hw01_cifar10_knn_softmax\your_outputs"
-python "f:\-\03-Projects\课程作业\05-计算机视觉\real_assignment_packages\hw01_cifar10_knn_softmax\starter\check_data.py" --input-dir "f:\-\03-Projects\data\computer_vision\hw01_cifar10_knn_softmax"
-pytest "f:\-\03-Projects\课程作业\05-计算机视觉\real_assignment_packages\hw01_cifar10_knn_softmax\tests"
+python "F:\-\03-Projects\05-计算机视觉\real_assignment_packages\hw01_cifar10_knn_softmax\starter\run.py" --input-dir "F:\-\03-Projects\data\computer_vision\hw01_cifar10_knn_softmax" --output-dir "F:\-\03-Projects\05-计算机视觉\real_assignment_packages\hw01_cifar10_knn_softmax\your_outputs"
+python "F:\-\03-Projects\05-计算机视觉\real_assignment_packages\hw01_cifar10_knn_softmax\starter\check_data.py" --input-dir "F:\-\03-Projects\data\computer_vision\hw01_cifar10_knn_softmax"
+pytest "F:\-\03-Projects\05-计算机视觉\real_assignment_packages\hw01_cifar10_knn_softmax\tests"
 ```
 
 ## 当前 baseline 定位

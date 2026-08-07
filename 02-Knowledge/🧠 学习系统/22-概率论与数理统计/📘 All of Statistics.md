@@ -13,7 +13,7 @@ tags:
 - 现代统计
 title: All of Statistics
 author: Larry Wasserman
-cover: "[[📚 书库/书籍封面/All-of-Statistics.png]]"
+cover: "[[02-Knowledge/📚 书库/书籍封面/All-of-Statistics.png]]"
 category: 现代统计 / 推断框架
 topics:
 - 估计
@@ -34,7 +34,7 @@ related:
 - 机器学习
 - 应用回归分析
 - 贝叶斯统计
-source_path: "📚 书库/书籍资源/All of Statistics - A Concise Course in Statistical Inference (Larry Wasserman) (z-library.sk, 1lib.sk, z-lib.sk).pdf"
+source_path: "02-Knowledge/📚 书库/书籍资源/All of Statistics - A Concise Course in Statistical Inference (Larry Wasserman) (z-library.sk, 1lib.sk, z-lib.sk).pdf"
 ---
 
 # 📘 All of Statistics
@@ -43,8 +43,8 @@ source_path: "📚 书库/书籍资源/All of Statistics - A Concise Course in S
 
 ## 🔗 资源入口
 
-- [[📚 书库/书籍资源/All of Statistics - A Concise Course in Statistical Inference (Larry Wasserman) (z-library.sk, 1lib.sk, z-lib.sk).pdf|打开原书]]
-- [[02-Knowledge/🧠 学习系统/22-概率论与数理统计/🗺️ 概率论与数理统计学习路径|进入概率论与数理统计学习路径]]
+- [[02-Knowledge/📚 书库/书籍资源/All of Statistics - A Concise Course in Statistical Inference (Larry Wasserman) (z-library.sk, 1lib.sk, z-lib.sk).pdf|打开原书]]
+- [[🗺️ 概率论与数理统计学习路径|进入概率论与数理统计学习路径]]
 
 ## 🧭 章节地图
 

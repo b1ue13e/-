@@ -12,9 +12,9 @@ status: learning
 difficulty: advanced
 importance: A
 concept: ["偏微分方程", "分离变量法", "有限差分法", "弱解"]
-prerequisites: ["[[02-Knowledge/🧠 学习系统/28-数学分析/🗺️ 数学分析学习路径|数学分析]]"]
+prerequisites: ["[[🗺️ 数学分析学习路径|数学分析]]"]
 related: ["[[数值分析-题型-LU分解与共轭梯度法求解器阶梯作业]]"]
-upstream: ["[[02-Knowledge/🧠 学习系统/34-偏微分方程/🗺️ 偏微分方程学习路径|偏微分方程学习路径]]"]
+upstream: ["[[🗺️ 偏微分方程学习路径|偏微分方程学习路径]]"]
 downstream: []
 tags: [学习, 34-偏微分方程, 作业, 实战, 阶梯作业]
 aliases: ["PDE-HW01-FDM与弱解作业"]

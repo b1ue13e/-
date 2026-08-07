@@ -1,0 +1,2 @@
+split,model,mean_error,std_error,ljung_box_lag,ljung_box_pvalue,worst_timestamp,worst_abs_error
+test,ets,-0.11093964980649673,0.21490854860119254,10,0.030532048460601584,2001-04-01,0.5631666093427157

@@ -36,7 +36,7 @@ tags: [学习, 计算机视觉, 优化器, SGD, Adam, Momentum]
 
 ---
 
-## 0. 先判断它值不值得深挖
+## 0. 学习边界
 
 - **类别**：**A 类（核心概念，必须深挖）**
 - **判断理由**：优化器的选择直接决定模型能否收敛、收敛速度、以及最终泛化性能。从 2012 年的朴素 SGD 到 2024 年 CV 领域的标配 AdamW，优化器的发展史就是深度学习从"手工血汗调参"走向"自动稳定训练"的缩影。理解 SGD → Momentum → NAG → AdaGrad → RMSprop → Adam → AdamW 的演进逻辑，你就能看懂每一代优化器"修了前一代的什么 bug"，从而在实际工作中做出正确的选择——而不是跟风用 Adam 或盲目坚守 SGD。CS231n 在 L3 专门用一整节讲优化器，D2L 以 Ch.12 完整展开。**不理解优化器家族的设计哲学，调参永远靠运气。**
@@ -690,3 +690,4 @@ FROM "03-Projects"
 WHERE contains(requires, this.file.link)
 SORT assignment_level ASC, file.name ASC
 ```
+

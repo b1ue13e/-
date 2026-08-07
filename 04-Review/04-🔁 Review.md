@@ -15,7 +15,7 @@ tags: [复习, 弱点, Anki, 索引]
 
 ## 🧯 知识质量治理
 
-- 当前修复队列：[[04-Review/知识质量修复队列|知识质量修复队列]]。
+- 当前修复队列：[[知识质量修复队列]]。
 - 修复顺序固定为：结构损坏 → 高入链主卡 → 有正文但缺来源 → 低价值卡退役复核。
 - 每轮只处理少量 canonical 主卡；禁止为了提高总分批量灌入模板正文。
 - 最新极严审计保存在 `99-System/🗄️ 归档/知识库审计/`，评分明细不作为日常导航页。
@@ -62,13 +62,13 @@ LIMIT 30
 
 ## 🛠️ 工具与模板
 
-- 错题笔记：[[99-System/📇 模板/🧯 错题漏洞笔记模板|错题漏洞笔记模板]]
+- 错题笔记：[[🧯 错题漏洞笔记模板|错题漏洞笔记模板]]
 - 制卡区要求：原笔记中保留 `## 🃏 Anki 卡片`
 - 导出脚本：`python 99-System/tools/export_anki_cards.py`
 - 恢复/审计日志只是系统记录，没有 `flow: review` 时不进入本队列。
 
 ## 🔗 相关入口
 
-- [[01-Active Sprint/🚀 Active Sprint|Active Sprint]]
-- [[02-Knowledge/02-🧠 Knowledge|Knowledge]]
-- [[03-Projects/03-🛠️ Projects|Projects]]
+- [[🚀 Active Sprint|Active Sprint]]
+- [[02-🧠 Knowledge|Knowledge]]
+- [[03-🛠️ Projects|Projects]]

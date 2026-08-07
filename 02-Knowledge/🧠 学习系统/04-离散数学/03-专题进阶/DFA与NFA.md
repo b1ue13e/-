@@ -1,4 +1,4 @@
----
+﻿---
 type: study
 course: "离散数学"
 topic: "DFA与NFA"
@@ -23,15 +23,15 @@ sources:
   - title: "Introduction to the Theory of Computation (Sipser)"
     locator: "Chapter 1"
     source_type: textbook
-stage_moc: "[[02-Knowledge/🧠 学习系统/04-离散数学/03-专题进阶/🧭 阶段3-专题进阶]]"
-upstream: ["[[02-Knowledge/🧠 学习系统/04-离散数学/01-基础奠基/集合函数与基数]]"]
+stage_moc: "[[🧭 阶段3-专题进阶]]"
+upstream: ["[[集合函数与基数]]"]
 ---
 
 # DFA与NFA
 
 ---
 
-## 0. 先判断它值不值得深挖
+## 0. 学习边界
 
 - **类别**：**A 类**
 - **判断理由**：DFA 和 NFA 是形式语言理论的第一层——定义了"正则语言"的计算模型。它们是编译器词法分析、正则表达式引擎、协议验证的理论基础。MIT 6.042J PS12 考查。
@@ -171,3 +171,4 @@ upstream: ["[[02-Knowledge/🧠 学习系统/04-离散数学/01-基础奠基/集
 - **适合文件夹**：`02-Knowledge/🧠 学习系统/04-离散数学/03-专题进阶/`
 - **关联已有笔记**：`[[集合函数与基数]]` `[[正则表达式与正则语言]]`
 - **建议标签**：`#学习` `#离散数学` `#自动机` `#DFA` `#NFA`
+

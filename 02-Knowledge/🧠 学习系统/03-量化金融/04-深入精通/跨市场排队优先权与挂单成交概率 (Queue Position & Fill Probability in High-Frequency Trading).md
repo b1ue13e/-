@@ -4,9 +4,6 @@ topic: 跨市场排队优先权与挂单概率
 created: '2026-08-06'
 status: planned
 difficulty: intermediate
-concept: []
-prerequisites: []
-related: []
 tags:
 - 学习
 - 量化金融
@@ -21,17 +18,14 @@ tags:
 title: 跨市场排队优先权与挂单成交概率 (Queue Position & Fill Probability in High-Frequency Trading)
 date: 2026-07-23
 course: 量化金融
-importance: A
+stage_moc: '[[🧭 阶段4-微观结构执行与强化学习]]'
 upstream:
-- '[[限价订单簿数据与 L1_L2_L3 盘口重建 (Limit Order Book Data & Reconstructing L1_L2_L3)|订单簿数据]]'
-- '[[买卖价差及其微观结构拆解 (Bid-Ask Spread & Microstructure Decomposition)|买卖价差]]'
-downstream:
-- '[[高频 Alpha 信号工程与盘口特征构建 (High-Frequency Signals & Microstructure Features)|高频信号]]'
-- '[[高频交易系统架构与模块解耦设计 (High-Frequency Trading System Architecture)|高频系统架构]]'
+  - '[[限价订单簿数据与 L1_L2_L3 盘口重建 (Limit Order Book Data & Reconstructing L1_L2_L3)|订单簿数据]]'
+  - '[[买卖价差及其微观结构拆解 (Bid-Ask Spread & Microstructure Decomposition)|买卖价差]]'
 kind: concept
 flow: knowledge
-source: 本课程历史知识卡；原始来源 [待验证]
-source_url: https://english.sse.com.cn/start/trading/mechanism/。用于复核“模拟撤单、部分成交和跨市场延迟，检查
+source: "Shanghai Stock Exchange 官方交易机制；正文为本地教学重写"
+source_url: "https://english.sse.com.cn/start/trading/mechanism/"
 accessed: '2026-08-06'
 license: link-only；正文为本地学习整理
 assessment_exempt: false
@@ -41,9 +35,9 @@ assessment_exempt: false
 
 ---
 
-## 0. 先判断它值不值得深挖
+## 0. 学习边界
 
-**分类：A 类（核心概念，必须深挖）**
+**学习定位：核心主题。**
 
 **理由：**
 跨市场排队优先权与挂单成交概率（Queue Position & Fill Probability，由 Irene Aldridge 在《High-Frequency Trading》第 10 章与微观结构物理学阐述）是高频交易 Maker 挂单策略（Market Making / Passive Liquidity Provision）的生命线。在高频做市中，Maker 不断向 Limit Order Book 挂单赚取 Bid-Ask Spread。然而，根据价格-优先度（Price-Time Priority）原则，你的限价单挂在买一/卖一盘口的最前排还是最末尾，直接决定了该订单是被正常吃掉获利，还是在市场跳空时被毒性流量吃掉（ Adverse Selection）。建立基于泊松到达过程与撤单流（Poisson & Cancellation Flow）的排队队列概率模型，是高频策略实现 P99 级微秒盈利的硬核武器。
@@ -272,7 +266,7 @@ print(f"决策建议: {'✅ 保持挂单 (成交概率高)' if p_fill > 0.70 els
 > 🔓 **作业解锁前置条件**：学完 [[限价订单簿数据与 L1_L2_L3 盘口重建 (Limit Order Book Data & Reconstructing L1_L2_L3)|订单簿数据]] + [[买卖价差及其微观结构拆解 (Bid-Ask Spread & Microstructure Decomposition)|买卖价差]] + [[跨市场排队优先权与挂单成交概率 (Queue Position & Fill Probability in High-Frequency Trading)|跨市场排队优先权与挂单概率]] 即可正式解锁本 Challenge 实战！
 > 💡 **解锁指引**：理解 Price-Time Priority 规则与 L3 逐笔流后即可解锁 Poisson 队列消耗计算。
 
- 🧪 拓展实验与李宏毅式实战 Challenge 题 (HW15-盘口队列消耗估计与 Maker 挂单成交概率计算)
+ 🧪 专题实战练习（盘口队列消耗估计与 Maker 挂单成交概率计算）
 
 本作业参考 **李宏毅 (Hung-yi Lee) 教授 ML 课程作业架构** 设计，设置四个渐进式难度基线 (Baselines)：
 
@@ -299,7 +293,7 @@ print(f"决策建议: {'✅ 保持挂单 (成交概率高)' if p_fill > 0.70 els
 
 错误直觉：“我已经挂在买一价了，只要有抛单我就能买到。”  
 为什么错：高频做市商的微秒级光纤系统会在买一价挂单出现后的 1 微秒内迅速占领队列的前 90% 位置。你的挂单排在队列最末尾，绝大部分时间只会在发生大崩盘时被毒性巨单抛给接盘。  
-正确理解：**价格优先只是第一步，时间优先形成的队列位置 $q_t$ 才是决定生死的核心！**
+正确理解：**价格优先决定价位，时间优先形成的队列位置 $q_t$ 会显著影响成交概率和等待时间。**
 
 ### 概念对比：Price Priority vs Time Priority vs Size Priority
 
@@ -324,8 +318,8 @@ print(f"决策建议: {'✅ 保持挂单 (成交概率高)' if p_fill > 0.70 els
 
 下游延伸
 
-- [[高频 Alpha 信号工程与盘口特征构建 (High-Frequency Signals & Microstructure Features)|高频信号]]：进一步延伸拓展该知识点的应用场景与模型构建。
-- [[高频交易系统架构与模块解耦设计 (High-Frequency Trading System Architecture)|高频系统架构]]：进一步延伸拓展该知识点的应用场景与模型构建。
+- [[订单流不平衡 (Order Flow Imbalance, OFI)|高频信号]]：进一步延伸拓展该知识点的应用场景与模型构建。
+- [[限价订单簿数据与 L1_L2_L3 盘口重建 (Limit Order Book Data & Reconstructing L1_L2_L3)|高频系统架构]]：进一步延伸拓展该知识点的应用场景与模型构建。
 
 横向关联
 
@@ -437,7 +431,7 @@ print(f"决策建议: {'✅ 保持挂单 (成交概率高)' if p_fill > 0.70 els
 ## 13. 给 Obsidian 的归档建议
 
 - **适合文件夹**：`02-Knowledge/🧠 学习系统/03-量化金融/04-深入精通/`
-- **建议双链**：[[限价订单簿数据与 L1_L2_L3 盘口重建 (Limit Order Book Data & Reconstructing L1_L2_L3)|订单簿数据]]、[[买卖价差及其微观结构拆解 (Bid-Ask Spread & Microstructure Decomposition)|买卖价差]]、[[高频 Alpha 信号工程与盘口特征构建 (High-Frequency Signals & Microstructure Features)|高频信号]]、[[高频交易系统架构与模块解耦设计 (High-Frequency Trading System Architecture)|高频系统架构]]
+- **建议双链**：[[限价订单簿数据与 L1_L2_L3 盘口重建 (Limit Order Book Data & Reconstructing L1_L2_L3)|订单簿数据]]、[[买卖价差及其微观结构拆解 (Bid-Ask Spread & Microstructure Decomposition)|买卖价差]]、[[订单流不平衡 (Order Flow Imbalance, OFI)|高频信号]]、[[限价订单簿数据与 L1_L2_L3 盘口重建 (Limit Order Book Data & Reconstructing L1_L2_L3)|高频系统架构]]
 
 ---
 
@@ -459,8 +453,15 @@ print(f"决策建议: {'✅ 保持挂单 (成交概率高)' if p_fill > 0.70 els
 - **最小实验**：固定随机种子或冻结原始数据快照，同时保存基线、破坏条件后的对照组、关键中间量与失败日志。
 - **通过标准**：结论必须在样本外仍保持方向一致；若成本、延迟、参数扰动或结构突变使结论反转，就把该情形登记为适用边界而不是删除失败结果。
 
-## 🧪 学完本节后可完成的作业
+## 学完后可以完成
 
-- **可完成**：[[03-Projects/金融与时序/03-量化金融/阶段作业/量化金融-阶段作业-04-盘口队列与挂单概率|盘口队列与挂单概率]]。
+```dataview
+LIST
+FROM "03-Projects"
+WHERE contains(requires, this.file.link)
+SORT assignment_level ASC, file.name ASC
+```
+
+
 - **为什么现在能做**：本卡已经提供该任务需要的定义、公式、条件或实现边界；若任务还依赖后续知识，先完成对应阶段 MOC 中排在本卡之后的知识卡。
 - **提交产物**：闭卷定义/推导、一个可复查计算或代码结果、一个失败案例，以及对适用边界的说明。

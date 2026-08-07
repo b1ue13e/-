@@ -1,4 +1,4 @@
-﻿---
+---
 type: study
 topic: "LU分解"
 course: "高等代数"
@@ -127,7 +127,7 @@ $A = \begin{bmatrix} \varepsilon & 1 \\ 1 & 1 \end{bmatrix}$（$\varepsilon$ 很
 - [[逆矩阵与Gauss-Jordan消元|逆矩阵与 Gauss-Jordan 消元]] — 下游：$A^{-1}=U^{-1}L^{-1}$，工程上用 LU 求解不显式求逆
 - [[矩阵的秩|矩阵的秩]] — 横向：$U$ 的非零行数即秩
 - [[矩阵运算|矩阵运算]] — 上游：舒尔补与分块 LDU 推导（1.3 进阶）
-- 阶段 IV：[[Cholesky分解|Cholesky 分解]]、[[QR分解|QR 分解]]
+- 阶段 IV：[[正定矩阵与二次型|Cholesky 分解]]、[[QR分解|QR 分解]]
 
 ## 10. 闭卷验收（数学模式）
 

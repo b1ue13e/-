@@ -1,0 +1,20 @@
+{
+  "id": "HW05",
+  "slug": "hw05_black_scholes_hedging",
+  "title": "Black-Scholes 定价与动态 Delta 对冲",
+  "stage": "第二阶段：时间序列、期权与风控",
+  "generated_at": "2026-07-31",
+  "real_data_dir": "f:\\-\\03-Projects\\data\\quant_finance\\hw05_black_scholes_hedging",
+  "real_files": [
+    "underlying.daily.csv",
+    "option_quotes.daily.csv",
+    "risk_free.daily.csv"
+  ],
+  "smoke_files": [
+    "underlying.smoke.csv",
+    "option_quotes.smoke.csv",
+    "risk_free.smoke.csv"
+  ],
+  "baseline": "BSM 闭式 + 离散 Delta 对冲",
+  "next_step": "先把 smoke 路径替换成真实期权与标的行情，再补 Greeks 与对冲模块。"
+}

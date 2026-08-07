@@ -6,7 +6,7 @@ created: '2026-08-03'
 status: ongoing
 difficulty: advanced
 course: 量化金融
-importance: B
+stage_moc: '[[🧭 阶段2-定价时序与风险]]'
 stage: 📘 第三阶段：策略开发与实战
 tags:
 - 学习
@@ -22,9 +22,7 @@ prerequisites:
 related:
 - 协整关系与Engle-Granger两步法
 upstream:
-- 收益率定义与对数收益
-downstream:
-- 回测框架与无泄漏实验
+  - '[[收益率与对数收益率]]'
 flow: knowledge
 kind: concept
 sources:
@@ -35,7 +33,7 @@ source_type: textbook
 license: local
 verified_at: 2026-08-03
 source: Analysis of Financial Time Series (Tsay)
-source_url: '[待验证]'
+source_url: "https://doi.org/10.2307/1913236"
 accessed: '2026-08-06'
 assessment_exempt: false
 ---
@@ -44,7 +42,7 @@ assessment_exempt: false
 
 ---
 
-## 0. 先判断它值不值得深挖
+## 0. 学习边界
 
 - **类别**：**B 类（常用工具/重要策略族）**
 - **判断理由**：配对交易（pairs trading）的理论基础；"非平稳价格之间可以有平稳关系"是量化最优雅的洞察之一。
@@ -67,7 +65,7 @@ assessment_exempt: false
 
 ## 3. 学它之前需要哪些前置知识？
 
-1. **[[收益率定义与对数收益]]**。
+1. **[[收益率与对数收益率]]**。
 2. **单位根检验（ADF）**：平稳性判定。
 
 ---
@@ -159,7 +157,7 @@ EG 两步法：① OLS 回归 $y_t=\alpha+\beta x_t+e_t$；② 对残差 $\hat e
 ## 9. 相关知识点与 Obsidian 双链建议
 
 ### 上游依赖
-- [[收益率定义与对数收益]]、单位根检验
+- [[收益率与对数收益率]]、单位根检验
 
 ### 下游延伸
 - [[回测框架与无泄漏实验]]：策略验证
@@ -258,8 +256,15 @@ EG 两步法：① OLS 回归 $y_t=\alpha+\beta x_t+e_t$；② 对残差 $\hat e
 - **建议标签**：`#学习` `#量化金融`
 - **拆分建议**：不拆分
 
-## 🧪 学完本节后可完成的作业
+## 学完后可以完成
 
-- **可完成**：[[03-Projects/金融与时序/03-量化金融/课后作业/量化金融-课后作业-06-GARCH波动率与动态VaR|GARCH波动率与动态VaR]]。
+```dataview
+LIST
+FROM "03-Projects"
+WHERE contains(requires, this.file.link)
+SORT assignment_level ASC, file.name ASC
+```
+
+
 - **为什么现在能做**：本卡已经提供该任务需要的定义、公式、条件或实现边界；若任务还依赖后续知识，先完成对应阶段 MOC 中排在本卡之后的知识卡。
 - **提交产物**：闭卷定义/推导、一个可复查计算或代码结果、一个失败案例，以及对适用边界的说明。

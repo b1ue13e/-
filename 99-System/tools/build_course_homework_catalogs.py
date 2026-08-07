@@ -20,7 +20,7 @@ from build_formal_course_homework_packs import COURSES
 sys.stdout.reconfigure(encoding="utf-8")
 ROOT = Path(__file__).resolve().parents[2]
 PROJECT_ROOT = ROOT / "03-Projects" / "课程作业"
-STUDY_ROOT = ROOT / "02-Knowledge" / "🧠 学习系统"
+STUDY_ROOT = ROOT / "02-Knowledge" / "02-Knowledge/🧠 学习系统"
 DATE = "2026-07-28"
 BLOCK_START = "<!-- complete-homework-catalog:start -->"
 BLOCK_END = "<!-- complete-homework-catalog:end -->"

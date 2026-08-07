@@ -1,0 +1,16 @@
+{
+  "id": "HW07",
+  "slug": "hw07_asymmetric_garch",
+  "title": "非对称 GARCH 与杠杆效应",
+  "stage": "第二阶段：时间序列、期权与风控",
+  "generated_at": "2026-07-31",
+  "real_data_dir": "f:\\-\\03-Projects\\data\\quant_finance\\hw07_asymmetric_garch",
+  "real_files": [
+    "returns.daily.csv"
+  ],
+  "smoke_files": [
+    "returns.smoke.csv"
+  ],
+  "baseline": "GARCH vs EGARCH/GJR-GARCH",
+  "next_step": "在真实收益数据上补模型对照、参数解释和新闻响应曲线。"
+}

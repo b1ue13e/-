@@ -12,9 +12,9 @@ status: learning
 difficulty: advanced
 importance: A
 concept: ["贝叶斯统计", "MCMC", "PyMC", "分层模型"]
-prerequisites: ["[[02-Knowledge/🧠 学习系统/22-概率论与数理统计/🗺️ 概率论与数理统计学习路径|概率统计]]"]
+prerequisites: ["[[🗺️ 概率论与数理统计学习路径|概率统计]]"]
 related: ["[[概率图模型-题型-变分推断与MCMC采样求解器阶梯作业]]"]
-upstream: ["[[02-Knowledge/🧠 学习系统/33-贝叶斯统计/🗺️ 贝叶斯统计学习路径|贝叶斯统计学习路径]]"]
+upstream: ["[[🗺️ 贝叶斯统计学习路径|贝叶斯统计学习路径]]"]
 downstream: []
 tags: [学习, 33-贝叶斯统计, 作业, 实战, 阶梯作业]
 aliases: ["Bayes-HW01-MCMC分层模型作业"]

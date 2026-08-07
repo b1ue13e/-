@@ -15,7 +15,7 @@ if sys.platform == 'win32':
     sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
 
 VAULT_ROOT = Path(r"F:\-")
-LEARNING_SYS_DIR = VAULT_ROOT / "02-Knowledge" / "🧠 学习系统"
+LEARNING_SYS_DIR = VAULT_ROOT / "02-Knowledge" / "02-Knowledge/🧠 学习系统"
 
 CORE_PATHS = [
     "01-社交网络挖掘", "02-时间序列分析", "03-量化金融", "04-离散数学", "05-计算机视觉",

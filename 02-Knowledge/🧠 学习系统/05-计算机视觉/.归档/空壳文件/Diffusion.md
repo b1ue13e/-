@@ -11,9 +11,9 @@ tags: ["学习", "计算机视觉"]
 ---
 # Diffusion
 
-> 所属模块：[[../🗺️ 计算机视觉学习路径|计算机视觉学习路径]]
+> 所属模块：[[🗺️ 计算机视觉学习路径|计算机视觉学习路径]]
 > 主教材：`《Deep Learning》`
-> 对应阶段：[[02-Knowledge/🧠 学习系统/05-计算机视觉/04-前沿架构探索/🚀 第四阶段：前沿架构探索|返回阶段页]]
+> 对应阶段：[[🚀 第四阶段：前沿架构探索|返回阶段页]]
 > 建议先看：Representation Learning、Sequence Models、Generative Models
 > 辅助教材：`《Deep Learning》`、`Hands-on Machine Learning`
 
@@ -26,6 +26,6 @@ tags: ["学习", "计算机视觉"]
 - 一个最小例子：
 - 与前后笔记的关系：
 - 前置：[[GAN]]
-- 相关：[[ControlNet]]、[[02-Knowledge/🧠 学习系统/05-计算机视觉/04-前沿架构探索/LoRA|LoRA]]
+- 相关：[[ControlNet]]、[[LoRA]]
 
 *创建于：2026-04-18*

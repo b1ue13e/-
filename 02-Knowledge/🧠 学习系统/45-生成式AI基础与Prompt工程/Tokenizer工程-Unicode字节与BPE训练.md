@@ -1,4 +1,4 @@
----
+﻿---
 type: study
 topic: "Unicode、UTF-8 字节与 BPE Tokenizer 训练"
 tags: [学习, 45-生成式AI基础与Prompt工程, Tokenizer, BPE]
@@ -18,7 +18,7 @@ anki_tags: [Unicode, UTF8, BPE, Tokenizer]
 
 # Tokenizer 工程：Unicode、字节与 BPE 训练
 
-## 0. 先判断它值不值得深挖
+## 0. 学习边界
 
 - **类别**：A 类（Stanford CS336 A1 §2 的必需知识卡）。
 - **判断理由**：把“Token 是词”当定义会在中文、emoji、罕见字符、特殊 token 和可逆解码处失败。BPE 作业还要求训练、性能、语料差异和边界测试。
@@ -210,3 +210,4 @@ A: 初始词表覆盖全部 256 个 byte，任何 UTF-8 文本都能退化为 by
 
 Q: BPE 合并表为什么必须有顺序？
 A: 后续 token 基于先前 token 构造，编码必须按训练优先级重放，顺序改变会改变切分。
+

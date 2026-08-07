@@ -123,7 +123,7 @@ REQUIRED_SUPPORT_URLS = {
     ],
     "37-复变函数": ["https://github.com/complex-analysis/complex-analysis.github.io"],
 }
-STUDY_ROOT = ROOT / "02-Knowledge" / "🧠 学习系统"
+STUDY_ROOT = ROOT / "02-Knowledge" / "02-Knowledge/🧠 学习系统"
 EXECUTION_HEADING = "## 🧭 开源自学执行方案"
 REQUIRED_TERMS = ("Spine", "Lab", "Capstone", "Rubric", "许可证", "镜像", "失败")
 FORBIDDEN_PATTERNS = {

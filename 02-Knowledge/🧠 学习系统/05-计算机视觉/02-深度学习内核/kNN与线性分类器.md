@@ -47,10 +47,10 @@ tags:
 
 ---
 
-## 0. 先判断它值不值得深挖
+## 0. 学习边界
 
 - **类别**：**A 类（核心概念，必须深挖）**
-- **判断理由**：kNN 与线性分类器并列为 CS231n Assignment 1 的两大基础分类器。它们各自代表一种"分类哲学"：kNN 是**记忆型 (memory-based)** 方法的终极简化版，线性分类器是**参数化 (parametric)** 方法的起点。理解"kNN → 线性分类器"的动机链条（慢→快、存数据→存参数、无学习→可优化），是理解后续 CNN、Transformer 等一切可训练模型的认知基础。线性分类器的权重 $W$ 维度推理、Softmax 梯度链更是 BP 的最简特例，直接过渡到多层网络。
+- **判断理由**：kNN 与线性分类器并列为 CS231n Assignment 1 的两大基础分类器。它们各自代表一种"分类哲学"：kNN 是**记忆型 (memory-based)** 方法的综合简化版，线性分类器是**参数化 (parametric)** 方法的起点。理解"kNN → 线性分类器"的动机链条（慢→快、存数据→存参数、无学习→可优化），是理解后续 CNN、Transformer 等一切可训练模型的认知基础。线性分类器的权重 $W$ 维度推理、Softmax 梯度链更是 BP 的最简特例，直接过渡到多层网络。
 
 ---
 
@@ -629,3 +629,4 @@ FROM "03-Projects"
 WHERE contains(requires, this.file.link)
 SORT assignment_level ASC, file.name ASC
 ```
+

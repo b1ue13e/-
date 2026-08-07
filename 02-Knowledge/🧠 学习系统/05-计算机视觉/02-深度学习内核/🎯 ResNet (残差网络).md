@@ -48,7 +48,7 @@ tags:
 
 ---
 
-## 0. 先判断它值不值得深挖
+## 0. 学习边界
 
 - **类别**：**A 类（核心概念，必须深挖）**
 - **判断理由**：ResNet（Residual Network，残差网络）由 Kaiming He（何恺明）团队于 2015 年提出，斩获 CVPR 2016 最佳论文，是深度学习发展史上最伟大的里程碑之一。它提出的**快捷连接 (Shortcut Connection / Skip Connection)** 和**残差学习 (Residual Learning)** 思想，彻底打破了深层神经网络层数增加导致的“网络退化危机”（Degradation Problem），成功将网络深度从几十层推向上百甚至上千层（ResNet-152 / ResNet-1001）。如今残差连接已成为 Transformer、ConvNeXt、Diffusion Model 等几乎所有 SOTA 模型的必备基础设施。
@@ -339,3 +339,4 @@ FROM "03-Projects"
 WHERE contains(requires, this.file.link)
 SORT assignment_level ASC, file.name ASC
 ```
+

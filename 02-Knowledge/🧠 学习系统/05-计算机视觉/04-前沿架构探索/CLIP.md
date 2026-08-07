@@ -19,7 +19,7 @@ tags: [学习, 计算机视觉, 多模态, CLIP, 零样本]
 
 # CLIP：对比语言-图像预训练
 
-## 0. 先判断它值不值得深挖
+## 0. 学习边界
 
 - **值得**：CLIP 是"视觉-语言对齐"的奠基工作，零样本分类、图文检索、可控生成（Stable Diffusion 的 text encoder 就是 CLIP）都建立在其上；工业界文本-图像模型的事实标准。
 - **不值得**：如果你只做单模态纯视觉任务且无多模态需求，可只读 §5 损失与 §8 误区，不必深挖训练细节（WebImageText 数据集不可复现）。
@@ -173,3 +173,4 @@ FROM "02-Knowledge/🧠 学习系统"
 WHERE contains(upstream, this.file.link)
 SORT file.name ASC
 ```
+

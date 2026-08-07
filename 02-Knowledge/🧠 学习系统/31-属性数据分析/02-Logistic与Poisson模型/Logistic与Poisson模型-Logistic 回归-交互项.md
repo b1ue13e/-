@@ -14,7 +14,7 @@ tags: ["学习", "属性数据分析", "Logistic 回归"]
 > 所属阶段：[[📊 第二阶段：Logistic与Poisson模型|📊 第2阶段：Logistic与Poisson模型]]
 
 ## 学习定位
-- 路径：[[../🗺️ 属性数据分析学习路径|属性数据分析学习路径]]
+- 路径：[[🗺️ 属性数据分析学习路径|属性数据分析学习路径]]
 - 阶段：[[📊 第二阶段：Logistic与Poisson模型|📊 第2阶段：Logistic与Poisson模型]]
 - 模块：Logistic 回归
 - 建议先学：[[Logistic与Poisson模型-Logistic 回归-最大似然]]、[[Logistic与Poisson模型-Logistic 回归-优势比]]

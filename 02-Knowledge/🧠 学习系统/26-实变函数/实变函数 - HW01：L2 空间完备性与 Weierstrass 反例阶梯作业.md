@@ -12,9 +12,9 @@ status: learning
 difficulty: advanced
 importance: A
 concept: ["实变函数", "Lebesgue积分", "L2空间完备性"]
-prerequisites: ["[[02-Knowledge/🧠 学习系统/28-数学分析/🗺️ 数学分析学习路径|数学分析]]"]
+prerequisites: ["[[🗺️ 数学分析学习路径|数学分析]]"]
 related: ["[[泛函分析-题型-三大定理与Hilbert空间算子阶梯作业]]"]
-upstream: ["[[02-Knowledge/🧠 学习系统/26-实变函数/🗺️ 实变函数学习路径|实变函数学习路径]]"]
+upstream: ["[[🗺️ 实变函数学习路径|实变函数学习路径]]"]
 downstream: []
 tags: [学习, 26-实变函数, 作业, 纸笔推导, 阶梯作业]
 aliases: ["RA-HW01-L2完备性与Weierstrass作业"]

@@ -12,9 +12,9 @@ status: learning
 difficulty: intermediate
 importance: A
 concept: ["数理统计", "MLE估计", "Bootstrap", "假设检验"]
-prerequisites: ["[[02-Knowledge/🧠 学习系统/22-概率论与数理统计/🗺️ 概率论与数理统计学习路径|概率统计学习路径]]"]
+prerequisites: ["[[🗺️ 概率论与数理统计学习路径|概率统计学习路径]]"]
 related: ["[[应用回归分析-题型-坐标下降Lasso与IRLS回归阶梯作业]]"]
-upstream: ["[[02-Knowledge/🧠 学习系统/22-概率论与数理统计/🗺️ 概率论与数理统计学习路径|概率统计学习路径]]"]
+upstream: ["[[🗺️ 概率论与数理统计学习路径|概率统计学习路径]]"]
 downstream: []
 tags: [学习, 22-概率论与数理统计, 作业, 实战, 阶梯作业]
 aliases: ["Stat-HW01-MLE与Bootstrap作业"]

@@ -27,15 +27,15 @@ ROOT_DIRS = [
     "02-Knowledge",
     "03-Projects",
     "99-System/🗓️ 计划执行系统",
-    "📚 书库",
-    "📚 论文库",
+    "02-Knowledge/📚 书库",
+    "02-Knowledge/📚 论文库",
 ]
 
 PATTERNS = (
-    (re.compile(r"(?<!02-Knowledge/)🧠 学习系统/"), "02-Knowledge/🧠 学习系统/"),
-    (re.compile(r"(?<!99-System/)🗓️ 计划执行系统/"), "99-System/🗓️ 计划执行系统/"),
+    (re.compile(r"(?<!02-Knowledge/)02-Knowledge/🧠 学习系统/"), "02-Knowledge/🧠 学习系统/"),
+    (re.compile(r"(?<!99-System/)99-System/🗓️ 计划执行系统/"), "99-System/🗓️ 计划执行系统/"),
     (
-        re.compile(r'''(["'])🧠 学习系统\1'''),
+        re.compile(r'''(["'])02-Knowledge/🧠 学习系统\1'''),
         lambda match: (
             match.group(1) + "02-Knowledge/🧠 学习系统" + match.group(1)
         ),

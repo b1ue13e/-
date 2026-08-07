@@ -2,11 +2,14 @@
 title: 参数法与历史模拟法 VaR (Value at Risk)
 type: study
 topic: 量化金融-风险管理-参数法与历史模拟法VaR
+aliases:
+- 参数法VaR（方差-协方差法）
+- 历史模拟法 VaR 与非参数风险度量
 created: '2026-08-04'
 status: ongoing
 difficulty: intermediate
 course: 量化金融
-importance: A
+stage_moc: '[[🧭 阶段2-定价时序与风险]]'
 tags:
 - 学习
 - 核心概念
@@ -23,16 +26,11 @@ prerequisites:
 related:
 - CVaR
 upstream:
-- '[[收益率定义与对数收益]]'
-- '[[历史模拟法 VaR 与非参数风险度量 (Historical Simulation VaR)]]'
-downstream:
-- '[[量化金融-风险管理-期望损失分解与ES理论|CVaR条件风险价值]]'
-- '[[EVT极值理论与VaR-CVaR]]'
-- '[[蒙特卡洛模拟法 VaR (Monte Carlo Simulation VaR)]]'
+  - '[[收益率与对数收益率]]'
 flow: knowledge
 kind: concept
-source: 本课程历史知识卡；原始来源 [待验证]
-source_url: '[待验证]'
+source: "Basel Committee 官方材料；正文为本地教学重写"
+source_url: https://www.bis.org/publ/bcbs128.htm
 accessed: '2026-08-06'
 license: link-only；正文为本地学习整理
 assessment_exempt: false
@@ -42,17 +40,17 @@ assessment_exempt: false
 
 ---
 
-## 0. 先判断它值不值得深挖
+## 0. 学习边界
 
-- **类别**：**A 类核心概念，必须深挖**
-- **判断理由**：VaR 是整个现代金融风控体系的基础，是巴塞尔协议规定的核心风险计量指标。参数法（方差-协方差法）与历史模拟法是最经典的两种计算方式。不仅是求职面试必考，更是量化策略实盘回测中动态调整仓位的核心依据。
+- **类别**：**核心主题核心概念，必须深挖**
+- **判断理由**：VaR 是损失分布的分位数摘要，参数法（方差-协方差法）与历史模拟法提供两种常用估计口径。学习重点是理解其条件、估计误差和尾部盲区，并与 Expected Shortfall 对照使用。
 
 ---
 
 ## 1. 这个知识点解决什么问题？
 
 > **我们遇到了什么麻烦**：
-> 投资者总是问：“如果市场出现极端情况，我最糟糕会亏多少钱？”如果我们只用“波动率（标准差）”来回答，显得不够直观（普通人不知道标准差对应多少真金白银）。我们需要一个一目了然的单一金额指标，直接告诉老板：在 99% 的把握下，明天我们的损失不会超过 X 万元。
+> 风险管理需要把收益分布转换为统一的损失阈值。VaR 回答的是：在给定持有期、置信水平和估计口径下，损失分布的相应分位点是多少。它不是“最坏损失”，也不保证超出阈值的事件不会发生。
 
 ---
 
@@ -69,7 +67,7 @@ assessment_exempt: false
 最小必要背景（各 200 字以内）：
 
 1. **正态分布与分位数**：理解标准正态分布的累计概率，熟悉 $Z=1.645$ (对应95%) 和 $Z=2.33$ (对应99%)。
-2. **[[收益率定义与对数收益]]**：熟悉资产组合的预期收益率 $\mu$ 和方差 $\sigma^2$ 的计算。
+2. **[[收益率与对数收益率]]**：熟悉资产组合的预期收益率 $\mu$ 和方差 $\sigma^2$ 的计算。
 
 ---
 
@@ -169,14 +167,14 @@ def calc_historical_var(returns_array, alpha=0.01, portfolio_value=1.0):
 ## 9. 相关知识点与 Obsidian 双链建议
 
 ### 上游依赖
-- [[历史模拟法 VaR 与非参数风险度量 (Historical Simulation VaR)]]：原先分散的笔记。
+- [[量化金融-风险管理-参数法与历史模拟法VaR]]：原先分散的笔记。
 
 ### 下游延伸
-- [[量化金融-风险管理-期望损失分解与ES理论|CVaR条件风险价值]]：解决 VaR 不满足次可加性（无法鼓励分散化）以及尾部盲区的问题。
+- [[EVT极值理论与VaR-CVaR|CVaR条件风险价值]]：解决 VaR 不满足次可加性（无法鼓励分散化）以及尾部盲区的问题。
 - [[EVT极值理论与VaR-CVaR]]：专门对尾部极值建模。
 
 ### 横向关联
-- [[量化金融-风险管理-期望损失分解与ES理论|压力测试 (Stress Testing)]]：弥补历史法无法预测前所未有危机的缺陷。
+- [[EVT极值理论与VaR-CVaR|压力测试 (Stress Testing)]]：弥补历史法无法预测前所未有危机的缺陷。
 
 ### 应用场景
 - [[实盘风控]]：在量化交易引擎中设置触及 VaR 的自动平仓熔断。
@@ -264,8 +262,15 @@ def calc_historical_var(returns_array, alpha=0.01, portfolio_value=1.0):
 - **建议标签**：`#学习` `#核心概念` `#VaR` `#风控`
 - **拆分建议**：保持完整。
 
-## 🧪 学完本节后可完成的作业
+## 学完后可以完成
 
-- **可完成**：[[03-Projects/金融与时序/03-量化金融/课后作业/量化金融-课后作业-08-EVT尾部风险|EVT尾部风险]]。
+```dataview
+LIST
+FROM "03-Projects"
+WHERE contains(requires, this.file.link)
+SORT assignment_level ASC, file.name ASC
+```
+
+
 - **为什么现在能做**：本卡已经提供该任务需要的定义、公式、条件或实现边界；若任务还依赖后续知识，先完成对应阶段 MOC 中排在本卡之后的知识卡。
 - **提交产物**：闭卷定义/推导、一个可复查计算或代码结果、一个失败案例，以及对适用边界的说明。

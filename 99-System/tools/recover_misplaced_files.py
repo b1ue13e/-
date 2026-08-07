@@ -18,8 +18,8 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[2]
-SYSTEM = ROOT / "02-Knowledge" / "🧠 学习系统"
-HISTORY_SYSTEM = ROOT / ".recovery-hold" / "02-Knowledge" / "🧠 学习系统"
+SYSTEM = ROOT / "02-Knowledge" / "02-Knowledge/🧠 学习系统"
+HISTORY_SYSTEM = ROOT / ".recovery-hold" / "02-Knowledge" / "02-Knowledge/🧠 学习系统"
 FLAT_PROJECT_DIR = ROOT / "03-Projects" / "李宏毅机器学习实战作业"
 RUN_ID = "2026-07-31-location-restore"
 BACKUP = ROOT / ".recovery-hold" / RUN_ID

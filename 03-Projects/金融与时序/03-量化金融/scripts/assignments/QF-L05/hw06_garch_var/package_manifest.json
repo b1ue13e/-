@@ -1,0 +1,16 @@
+{
+  "id": "HW06",
+  "slug": "hw06_garch_var",
+  "title": "GARCH(1,1) 动态波动率与动态 VaR",
+  "stage": "第二阶段：时间序列、期权与风控",
+  "generated_at": "2026-07-31",
+  "real_data_dir": "f:\\-\\03-Projects\\data\\quant_finance\\hw06_garch_var",
+  "real_files": [
+    "returns.daily.csv"
+  ],
+  "smoke_files": [
+    "returns.smoke.csv"
+  ],
+  "baseline": "GARCH 条件波动率 + VaR 覆盖检验",
+  "next_step": "在真实收益序列上补充 GARCH 拟合、VaR 回测和覆盖检验。"
+}

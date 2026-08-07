@@ -8,7 +8,7 @@ from pathlib import Path
 
 
 VAULT = Path(__file__).resolve().parents[2]
-Q = VAULT / "02-Knowledge" / "🧠 学习系统" / "03-量化金融"
+Q = VAULT / "02-Knowledge" / "02-Knowledge/🧠 学习系统" / "03-量化金融"
 ARCHIVE = VAULT / ".recovery-hold" / "quarantine" / "量化金融未达标知识卡-2026-08-01"
 OUT_DIR = VAULT / "99-System" / "🗄️ 归档" / "知识库审计"
 OUT_MD = OUT_DIR / "quant_finance_quarantine_triage_2026-08-01.md"

@@ -46,7 +46,7 @@ tags:
 
 ---
 
-## 0. 先判断它值不值得深挖
+## 0. 学习边界
 
 - **类别**：**A 类（核心概念，必须深挖）**
 - **判断理由**：相机标定（Camera Calibration）与对极几何（Epipolar Geometry）是连接 **2D 图像平面**与**真实 3D 物理世界**的几何桥梁，也是 Hartley & Zisserman 经典巨著《Multiple View Geometry》的绝对灵魂。无论是自动驾驶感知、机器人 SLAM 定位、三维重建（SfM），还是当下的 NeRF 与 3D Gaussian Splatting，都必须建立在相机内参外参矩阵以及两视角对极约束（本质矩阵 $\mathbf{E}$ 与基础矩阵 $\mathbf{F}$）之上。
@@ -341,3 +341,4 @@ FROM "03-Projects"
 WHERE contains(requires, this.file.link)
 SORT assignment_level ASC, file.name ASC
 ```
+

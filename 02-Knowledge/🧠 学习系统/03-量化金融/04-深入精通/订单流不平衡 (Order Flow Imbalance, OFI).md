@@ -6,19 +6,14 @@ created: '2026-07-23'
 status: ongoing
 difficulty: intermediate
 course: 量化金融
-importance: A
+stage_moc: '[[🧭 阶段4-微观结构执行与强化学习]]'
 tags:
 - 学习
 - 量化金融
-concept: []
-prerequisites: []
-related: []
-upstream: null
-downstream: null
 kind: concept
 flow: knowledge
-source: 本课程历史知识卡；原始来源 [待验证]
-source_url: https://english.sse.com.cn/start/trading/mechanism/。用于复核“逐事件重建新增、撤单和成交量，检查
+source: "Shanghai Stock Exchange 官方交易机制；正文为本地教学重写"
+source_url: "https://english.sse.com.cn/start/trading/mechanism/"
 accessed: '2026-08-06'
 license: link-only；正文为本地学习整理
 assessment_exempt: false
@@ -28,9 +23,9 @@ assessment_exempt: false
 
 ---
 
-## 0. 先判断它值不值得深挖
+## 0. 学习边界
 
-**分类：A 类（核心概念，必须深挖）**
+**学习定位：核心主题。**
 
 **理由：**
 订单流不平衡（Order Flow Imbalance, OFI，由 Cont, Kukanov and Stoikov 2014 提出）是高频交易（HFT）、统计做市与日内微观结构预测中最强大的线性 Alpha 信号之一。不同于静态的盘口挂单量不平衡（Order Book Imbalance, OBI），OFI 捕捉的是相邻 Tick 之间买一/卖一价格变化与挂单量增减的**动态净供给与净需求流动**。实证表明，OFI 对未来数秒至数分钟内资产中间价的变化具有极高的线性预测能力（$R^2$ 可达 50%~70%）。
@@ -227,7 +222,7 @@ print("计算出的高频 OFI 信号:", compute_ofi(df_ticks))
 > 🔓 **作业解锁前置条件**：学完 [[收益率与对数收益率]] + [[订单流不平衡 (Order Flow Imbalance, OFI)|订单流不平衡]] 即可正式解锁本 Challenge 实战！
 > 💡 **解锁指引**：理解 订单流不平衡 的核心定义与基本推导逻辑后即可解锁。
 
- 🧪 拓展实验与李宏毅式实战 Challenge 题 (Lab Assignment: 订单流不平衡 工业级实战 challenge)
+ 🧪 专题实战练习（订单流不平衡专题实战任务）
 
 本作业参考 **李宏毅 (Hung-yi Lee) 教授 ML 课程作业架构** 设计，设置四个渐进式难度基线 (Baselines)：
 
@@ -278,8 +273,8 @@ print("计算出的高频 OFI 信号:", compute_ofi(df_ticks))
 
 下游延伸
 
-- [[高频 Alpha 信号工程与盘口特征构建 (High-Frequency Signals & Microstructure Features)|高频信号]]：进一步延伸拓展该知识点的应用场景与模型构建。
-- [[信息交易模型与 VPIN 毒性订单流度量 (Information-Based Models & VPIN)|信息交易模型]]：进一步延伸拓展该知识点的应用场景与模型构建。
+- [[订单流不平衡 (Order Flow Imbalance, OFI)|高频信号]]：进一步延伸拓展该知识点的应用场景与模型构建。
+- [[订单流不平衡 (Order Flow Imbalance, OFI)|信息交易模型]]：进一步延伸拓展该知识点的应用场景与模型构建。
 
 横向关联
 
@@ -397,7 +392,7 @@ print("计算出的高频 OFI 信号:", compute_ofi(df_ticks))
 ## 13. 给 Obsidian 的归档建议
 
 - **适合文件夹**：`02-Knowledge/🧠 学习系统/03-量化金融/04-深入精通/`
-- **建议双链**：[[限价订单簿数据与 L1_L2_L3 盘口重建 (Limit Order Book Data & Reconstructing L1_L2_L3)|订单簿数据]]、[[高频 Alpha 信号工程与盘口特征构建 (High-Frequency Signals & Microstructure Features)|高频信号]]、[[买卖价差及其微观结构拆解 (Bid-Ask Spread & Microstructure Decomposition)|买卖价差]]
+- **建议双链**：[[限价订单簿数据与 L1_L2_L3 盘口重建 (Limit Order Book Data & Reconstructing L1_L2_L3)|订单簿数据]]、[[订单流不平衡 (Order Flow Imbalance, OFI)|高频信号]]、[[买卖价差及其微观结构拆解 (Bid-Ask Spread & Microstructure Decomposition)|买卖价差]]
 - **标签**：`#学习` `#量化金融` `#高频交易` `#OFI` `#订单流不平衡` `#高频信号` `#微观结构`
 
 ---
@@ -420,8 +415,15 @@ print("计算出的高频 OFI 信号:", compute_ofi(df_ticks))
 - **最小实验**：固定随机种子或冻结原始数据快照，同时保存基线、破坏条件后的对照组、关键中间量与失败日志。
 - **通过标准**：结论必须在样本外仍保持方向一致；若成本、延迟、参数扰动或结构突变使结论反转，就把该情形登记为适用边界而不是删除失败结果。
 
-## 🧪 学完本节后可完成的作业
+## 学完后可以完成
 
-- **可完成**：[[03-Projects/金融与时序/03-量化金融/阶段作业/量化金融-阶段作业-03-信息驱动采样|信息驱动采样]]。
+```dataview
+LIST
+FROM "03-Projects"
+WHERE contains(requires, this.file.link)
+SORT assignment_level ASC, file.name ASC
+```
+
+
 - **为什么现在能做**：本卡已经提供该任务需要的定义、公式、条件或实现边界；若任务还依赖后续知识，先完成对应阶段 MOC 中排在本卡之后的知识卡。
 - **提交产物**：闭卷定义/推导、一个可复查计算或代码结果、一个失败案例，以及对适用边界的说明。

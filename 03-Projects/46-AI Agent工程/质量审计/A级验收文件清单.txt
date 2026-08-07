@@ -1,0 +1,41 @@
+﻿F:\-\02-Knowledge\🧠 学习系统\46-AI Agent工程\00-前置知识\AI-Agent-前置-消息JSON异常与单元测试.md
+F:\-\02-Knowledge\🧠 学习系统\46-AI Agent工程\00-前置知识\🧭 AI-Agent工程-前置知识.md
+F:\-\02-Knowledge\🧠 学习系统\46-AI Agent工程\01-Agent基础与受限循环\AI-Agent-ReAct推理行动范式.md
+F:\-\02-Knowledge\🧠 学习系统\46-AI Agent工程\01-Agent基础与受限循环\AI-Agent-边界与感知行动循环.md
+F:\-\02-Knowledge\🧠 学习系统\46-AI Agent工程\01-Agent基础与受限循环\AI-Agent-工具调用与结构化契约.md
+F:\-\02-Knowledge\🧠 学习系统\46-AI Agent工程\01-Agent基础与受限循环\🧭 阶段1-Agent基础与受限循环.md
+F:\-\02-Knowledge\🧠 学习系统\46-AI Agent工程\02-运行时规划与状态\AI-Agent-多智能体协作与消息协议.md
+F:\-\02-Knowledge\🧠 学习系统\46-AI Agent工程\02-运行时规划与状态\AI-Agent-规划状态与工作流编排.md
+F:\-\02-Knowledge\🧠 学习系统\46-AI Agent工程\02-运行时规划与状态\AI-Agent-框架-AutoGen官方Lab版本补丁.md
+F:\-\02-Knowledge\🧠 学习系统\46-AI Agent工程\02-运行时规划与状态\AI-Agent-框架选型与最小运行时.md
+F:\-\02-Knowledge\🧠 学习系统\46-AI Agent工程\02-运行时规划与状态\🧭 阶段2-运行时规划与状态.md
+F:\-\02-Knowledge\🧠 学习系统\46-AI Agent工程\03-上下文记忆与校验\AI-Agent-反思与元认知-校验修正停止.md
+F:\-\02-Knowledge\🧠 学习系统\46-AI Agent工程\03-上下文记忆与校验\AI-Agent-记忆与检索增强生成.md
+F:\-\02-Knowledge\🧠 学习系统\46-AI Agent工程\03-上下文记忆与校验\AI-Agent-上下文工程-选择压缩隔离.md
+F:\-\02-Knowledge\🧠 学习系统\46-AI Agent工程\03-上下文记忆与校验\🧭 阶段3-上下文记忆与校验.md
+F:\-\02-Knowledge\🧠 学习系统\46-AI Agent工程\04-协作协议与环境\AI-Agent-安全威胁建模与系统评测.md
+F:\-\02-Knowledge\🧠 学习系统\46-AI Agent工程\04-协作协议与环境\AI-Agent-环境交互-代码网页与沙箱执行.md
+F:\-\02-Knowledge\🧠 学习系统\46-AI Agent工程\04-协作协议与环境\AI-Agent-协议-MCP与A2A互操作.md
+F:\-\02-Knowledge\🧠 学习系统\46-AI Agent工程\04-协作协议与环境\🧭 阶段4-协作协议与环境.md
+F:\-\02-Knowledge\🧠 学习系统\46-AI Agent工程\05-评测与生产运行\AI-Agent-可观测性与生产运行-轨迹审批恢复.md
+F:\-\02-Knowledge\🧠 学习系统\46-AI Agent工程\05-评测与生产运行\AI-Agent-评测与基准-任务轨迹成本.md
+F:\-\02-Knowledge\🧠 学习系统\46-AI Agent工程\05-评测与生产运行\🧭 阶段5-评测与生产运行.md
+F:\-\02-Knowledge\🧠 学习系统\46-AI Agent工程\06-部署审计与改进\AI-Agent-Agentic-RL与自改进边界.md
+F:\-\02-Knowledge\🧠 学习系统\46-AI Agent工程\06-部署审计与改进\AI-Agent-安全审计-加密收据与审批绑定.md
+F:\-\02-Knowledge\🧠 学习系统\46-AI Agent工程\06-部署审计与改进\AI-Agent-部署与本地运行-伸缩路由烟测.md
+F:\-\02-Knowledge\🧠 学习系统\46-AI Agent工程\06-部署审计与改进\🧭 阶段6-部署审计与改进.md
+F:\-\02-Knowledge\🧠 学习系统\46-AI Agent工程\📚 教材挂载索引.md
+F:\-\02-Knowledge\🧠 学习系统\46-AI Agent工程\🗺️ AI-Agent工程-学习路径.md
+F:\-\03-Projects\46-AI Agent工程\scripts\README.md
+F:\-\03-Projects\46-AI Agent工程\tests\README.md
+F:\-\03-Projects\46-AI Agent工程\🧭 课程作业总索引.md
+F:\-\03-Projects\46-AI Agent工程\大作业\AI-Agent工程-大作业-受限可恢复Agent.md
+F:\-\03-Projects\46-AI Agent工程\阶段作业\AI-Agent工程-阶段作业-01-有限ReAct工具台.md
+F:\-\03-Projects\46-AI Agent工程\阶段作业\AI-Agent工程-阶段作业-02-餐厅评论可恢复管线.md
+F:\-\03-Projects\46-AI Agent工程\阶段作业\AI-Agent工程-阶段作业-03-带引用研究助手.md
+F:\-\03-Projects\46-AI Agent工程\阶段作业\AI-Agent工程-阶段作业-04-协议边界与沙箱执行.md
+F:\-\03-Projects\46-AI Agent工程\阶段作业\AI-Agent工程-阶段作业-05-Agent攻防与四层评测.md
+F:\-\03-Projects\46-AI Agent工程\课后作业\AI-Agent工程-课后作业-01-消息契约与测试.md
+F:\-\03-Projects\46-AI Agent工程\课后作业\AI-Agent工程-课后作业-02-受限循环与工具契约.md
+F:\-\03-Projects\46-AI Agent工程\课后作业\AI-Agent工程-课后作业-03-上下文记忆与引用校验.md
+F:\-\03-Projects\46-AI Agent工程\课后作业\AI-Agent工程-课后作业-04-部署收据与奖励审计.md

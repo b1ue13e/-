@@ -6,10 +6,10 @@ if hasattr(sys.stdout, 'reconfigure'):
     sys.stdout.reconfigure(encoding='utf-8')
 
 VAULT_ROOT = Path("F:/-")
-KNOWLEDGE_DIR = VAULT_ROOT / "02-Knowledge" / "🧠 学习系统"
+KNOWLEDGE_DIR = VAULT_ROOT / "02-Knowledge" / "02-Knowledge/🧠 学习系统"
 
 if not KNOWLEDGE_DIR.exists():
-    KNOWLEDGE_DIR = VAULT_ROOT / "🧠 学习系统"
+    KNOWLEDGE_DIR = VAULT_ROOT / "02-Knowledge/🧠 学习系统"
 
 ALGO_DIR = KNOWLEDGE_DIR / "10-数据结构与算法"
 

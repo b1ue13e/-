@@ -8,7 +8,7 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[2]
-SYSTEM = ROOT / "02-Knowledge" / "🧠 学习系统"
+SYSTEM = ROOT / "02-Knowledge" / "02-Knowledge/🧠 学习系统"
 REPORT = ROOT / "99-System" / "🗄️ 归档" / "33门课程开源自学项目调研-2026-07-27.md"
 TODAY = "2026-07-31"
 START = "<!-- OPEN_SELF_STUDY_START -->"
@@ -399,7 +399,7 @@ def update_navigation() -> None:
             ('"34-偏微分方程","35-数值分析","36-数据挖掘与信息检索"', '"34-偏微分方程","35-数值分析","36-数据挖掘与信息检索","37-复变函数"'),
             ("01-17 与 22-36 的 32 条核心学术路径", "01-17 与 22-37 的 33 条正式学习路径"),
             ("`22-36` 扩展学科路径", "`22-37` 扩展学科路径"),
-            ("`🧠 学习系统/${dir}/📚 教材挂载索引.md`", "`02-Knowledge/🧠 学习系统/${dir}/📚 教材挂载索引.md`"),
+            ("`02-Knowledge/🧠 学习系统/${dir}/📚 教材挂载索引.md`", "`02-Knowledge/🧠 学习系统/${dir}/📚 教材挂载索引.md`"),
         ],
     }
     for path, pairs in replacements.items():

@@ -19,7 +19,7 @@ tags: [学习, 计算机视觉, TensorRT, 推理优化, 部署]
 
 # TensorRT：推理优化与部署
 
-## 0. 先判断它值不值得深挖
+## 0. 学习边界
 
 - **值得**：TensorRT 是 NVIDIA GPU 上推理部署的事实标准（TensorFlow/PyTorch 后端、自动驾驶、云服务都用它）；理解其优化原理（图优化 + 精度校准 + 层融合）对任何 GPU 推理任务都有价值。
 - **不值得**：如果部署在非 NVIDIA 硬件（手机/ARM/Intel），TensorRT 不适用，应看 ONNXRuntime / OpenVINO / TFLite。
@@ -194,3 +194,4 @@ FROM "02-Knowledge/🧠 学习系统"
 WHERE contains(upstream, this.file.link)
 SORT file.name ASC
 ```
+

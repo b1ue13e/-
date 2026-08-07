@@ -1,4 +1,4 @@
----
+﻿---
 title: "搜索：BFS/DFS/A*"
 date: "2026-08-04"
 type: concept
@@ -6,14 +6,12 @@ course: "强化学习"
 importance: "B"
 tags: [学习, 强化学习]
 upstream: [图论基础, 数据结构]
-downstream: ["博弈：Minimax与Expectimax"]
 status: learning
 concept: ["BFS", "DFS", "A* 搜索", "启发式"]
 sources:
   - "Berkeley CS188 Project 1 (Pacman Search) 讲义"
   - "Russell & Norvig, AIMA Ch.3"
 ---
-
 # 搜索：BFS/DFS/A*
 
 ---
@@ -26,7 +24,7 @@ sources:
 >   - 手算/口算出至少 1 道基础题；
 >   - 说出 2 个常见误区及其正确理解。
 
-## 0. 先判断它值不值得深挖
+## 0. 学习边界
 
 - **类别**：**B 类（常用工具）**——经典搜索是 AI 与 RL 的共同基础（CS188 P1）。
 - **判断理由**：BFS/DFS/A* 是"规划"的基本工具，理解"搜索树、open/closed 集、启发式可采纳性"是理解博弈搜索（卡 10）与 MCTS 的前提。属于"常用工具"级。
@@ -163,7 +161,7 @@ sources:
 - [[博弈：Minimax与Expectimax]] ↔ [[搜索：BFS与DFS与A星]]：都是"状态空间搜索"，博弈多了对手。
 
 ### 应用场景
-- [[强化学习 - CS188-P1：Pacman 搜索阶梯作业]]：作业直接应用。
+- [[强化学习-课后作业-CS188-P1-Pacman搜索]]：作业直接应用。
 
 ---
 
@@ -263,6 +261,7 @@ sources:
 ## 13. 给 Obsidian 的归档建议
 
 - **适合文件夹**：`02-Knowledge/🧠 学习系统/13-强化学习/01-基础与本质/`
-- **关联已有笔记**：`[[强化学习 - CS188-P1：Pacman 搜索阶梯作业]]`
+- **关联已有笔记**：`[[强化学习-课后作业-CS188-P1-Pacman搜索]]`
 - **建议标签**：`#学习` `#强化学习` `#搜索`
 - **拆分建议**：A* 与 BFS/DFS 可拆为两张卡。
+

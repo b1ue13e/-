@@ -1,31 +1,51 @@
 ---
 type: study
 topic: "Q函数-公式"
+course: "强化学习"
 created: 2026-04-18
-status: ongoing
+status: completed
+stage_moc: "[[🧭 阶段3-策略与价值函数]]"
+flow: knowledge
+kind: concept
 difficulty: intermediate
-concept: ["Q函数-公式", "动作价值函数 Q^π(s,a)"]
-prerequisites: ["V函数-公式"]
-related: []
-tags: ["学习", "强化学习"]
+concept: ["Q函数-公式", "Q^π(s,a) 的期望展开"]
+upstream: ["[[Q函数-定义]]"]
+tags: [学习, 强化学习]
 ---
+
 # Q函数-公式
 
-> 所属模块：[[../🗺️ 强化学习学习路径|强化学习学习路径]]
+> 所属模块：[[🗺️ 强化学习学习路径|强化学习学习路径]]
 > 主教材：`《Reinforcement Learning》`
-> 对应阶段：[[02-Knowledge/🧠 学习系统/13-强化学习/03-策略与价值函数/📊 阶段3：策略与价值函数|返回阶段页]]
-> 建议先看：Bandits、MDPs、Dynamic Programming、Value Functions、TD Learning
-> 辅助教材：`《Algorithms for RL》`、`机器学习（周志华）`
+> 对应阶段：[[🧭 阶段3-策略与价值函数|返回阶段页]]
 
-## 待写提纲
-- 这章/这个知识点在这门课里解决什么问题：
-- 所属主线：动作价值函数 Q^π(s,a)
-- 这张卡要补哪块：数学表达
-- 核心定义：
-- 关键方法 / 公式：
-- 一个最小例子：
-- 与前后笔记的关系：
-- 前置：[[V函数-公式]]
-- 相关：待补
+## 动机
+同 V，把 Q 的期望展开成可计算形式。
 
-*创建于：2026-04-18*
+## 正式定义 / 公式
+Q^π(s,a) = E_π [ Σ_{k=0}^∞ γ^k R_{t+k+1} | S_t=s, A_t=a ]
+递归形式：
+Q^π(s,a) = E_π [ R_{t+1} + γ Q^π(S_{t+1}, A_{t+1}) | S_t=s, A_t=a ]
+
+## 最小手算例子
+2 状态 MDP：Q^π(s1,step)=E[R+γQ(s2,·)]，而 s2 终止 Q=0，故 =1。
+
+## 对比与常见错误
+- 常见错误：递归式里第二步仍写 V 而非 Q——严格递归应回到 Q（因第一步固定了 a，其后动作由 π 决定，是 Q 的自举）。
+
+## 闭卷自测
+1. 写出 Q^π(s,a) 的两种公式。
+2. 递归形式里为什么回到 Q 而不是 V？
+## 学完后可以完成
+
+```dataview
+TABLE assignment_level, source_type FROM "03-Projects"
+WHERE contains(requires, this.file.link)
+```
+
+## 相关下游知识
+
+```dataview
+LIST FROM "02-Knowledge/🧠 学习系统"
+WHERE contains(upstream, this.file.link)
+```

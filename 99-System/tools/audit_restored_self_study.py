@@ -10,7 +10,7 @@ import yaml
 
 
 ROOT = Path(__file__).resolve().parents[2]
-SYSTEM = ROOT / "02-Knowledge" / "🧠 学习系统"
+SYSTEM = ROOT / "02-Knowledge" / "02-Knowledge/🧠 学习系统"
 COURSE_RE = re.compile(r"^(0[1-9]|1[0-7]|2[2-9]|3[0-7])-")
 LINK_RE = re.compile(r"\[\[([^\]]]+)\]\]")
 

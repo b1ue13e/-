@@ -1,31 +1,58 @@
 ---
-type: study
-topic: "SIR滤波"
-created: 2026-04-18
-status: ongoing
-difficulty: advanced
-concept: ["SIR滤波", "粒子滤波(PF)"]
-prerequisites: ["重要性采样"]
-related: ["重采样", "数据关联"]
-tags: ["学习", "控制与机器人学"]
+title: "SIR滤波"
+type: concept
+course: "15-控制与机器人学"
+stage_moc: "[[🧭 阶段10-状态估计]]"
+flow: knowledge
+kind: concept
+importance: "A"
+status: completed
+created: 2026-08-07
+updated: 2026-08-07
+tags: [学习, 控制与机器人学, 状态估计]
+upstream:
+  - "[[重要性采样]]"
+  - "[[粒子滤波]]"
+concept: ["SIR", "序列重要性重采样"]
+prerequisites: ["重要性采样", "重采样", "蒙特卡洛"]
+related: ["重采样", "粒子滤波", "蒙特卡洛"]
 ---
+
 # SIR滤波
 
-> 所属模块：[[🗺️ 控制与机器人学学习路径|控制与机器人学学习路径]]
-> 主教材：`《Probabilistic Robotics》`
-> 对应阶段：[[🧭 阶段10-状态估计|返回阶段页]]
-> 建议先看：Bayesian Filtering、Kalman Filter、Particle Filter、Localization、SLAM
-> 辅助教材：`Mathematics for Machine Learning`、`《Autonomous Driving》`
+> **一句话**:SIR = 序列重要性采样 + 重采样——粒子滤波的标准形态:采样→加权→重采样循环,每个粒子都是对状态分布的一次"猜测"。
 
-## 待写提纲
-- 这章/这个知识点在这门课里解决什么问题：
-- 所属主线：粒子滤波(PF)
-- 这张卡要补哪块：粒子滤波(PF)
-- 核心定义：
-- 关键方法 / 公式：
-- 一个最小例子：
-- 与前后笔记的关系：
-- 前置：[[重要性采样]]
-- 相关：[[重采样]]、[[数据关联]]
+## SIR 全称
 
-*创建于：2026-04-18*
+**S**equential **I**mportance **R**esampling(序列重要性重采样)
+
+## 算法流程
+
+**初始化**:从先验采 $N$ 个粒子 $\{x_0^{(i)}\}$,权重 $1/N$
+
+**循环 k**:
+1. **采样(预测)**:每个粒子过过程模型
+   $$x_k^{(i)} \sim p(x_k | x_{k-1}^{(i)})$$
+2. **加权(更新)**:按测量似然更新权重
+   $$w_k^{(i)} \propto w_{k-1}^{(i)} p(z_k | x_k^{(i)})$$
+3. **归一化**:$\sum w^{(i)} = 1$
+4. **重采样**:按权重从粒子集重抽 $N$ 个(权重均化)(见[[重采样]])
+5. 估计:$\hat{x}_k = \sum w^{(i)} x_k^{(i)}$
+
+## 为什么叫 SIR
+
+- 序列:逐时刻递推
+- 重要性:用似然加权
+- 重采样:消除权重退化
+
+## 粒子数的选择
+
+- 维度 $d$ 与非线性度决定 $N$(通常 100–10000)
+- 粒子少 → 精度差/退化快;多 → 计算重
+- 自适应:按 $N_{eff}$ 调(见[[重要性采样]])
+
+## 自检
+
+- [ ] SIR 的四步循环?
+- [ ] 重采样在 SIR 中的角色?
+- [ ] 粒子数的权衡?

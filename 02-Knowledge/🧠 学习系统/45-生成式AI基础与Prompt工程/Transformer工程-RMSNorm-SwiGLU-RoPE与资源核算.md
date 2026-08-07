@@ -1,4 +1,4 @@
----
+﻿---
 type: study
 topic: "RMSNorm、SwiGLU、RoPE 与 Transformer 资源核算"
 tags: [学习, 45-生成式AI基础与Prompt工程, Transformer工程, CS336]
@@ -18,7 +18,7 @@ anki_tags: [RMSNorm, SwiGLU, RoPE, 参数量, FLOPs]
 
 # Transformer 工程：RMSNorm、SwiGLU、RoPE 与资源核算
 
-## 0. 先判断它值不值得深挖
+## 0. 学习边界
 
 - **类别**：A 类（CS336 A1 §3 架构补丁）。
 - **判断理由**：通用 Transformer 卡解释大图景，本卡负责官方实现实际要求的 RMSNorm、SwiGLU、RoPE、因果 MHA、参数/FLOP/激活核算。
@@ -172,3 +172,4 @@ A: RMSNorm 只按均方根缩放，不减均值；LayerNorm 同时中心化并�
 
 Q: RoPE 怎样引入相对位置？
 A: 按绝对位置旋转 Q/K，而两者点积中的旋转合并为位置差对应的旋转。
+

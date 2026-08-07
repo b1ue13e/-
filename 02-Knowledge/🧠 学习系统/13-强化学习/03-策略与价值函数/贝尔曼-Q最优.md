@@ -1,31 +1,50 @@
 ---
 type: study
 topic: "贝尔曼-Q最优"
+course: "强化学习"
 created: 2026-04-18
-status: ongoing
+status: completed
+stage_moc: "[[🧭 阶段3-策略与价值函数]]"
+flow: knowledge
+kind: concept
 difficulty: intermediate
-concept: ["贝尔曼-Q最优", "贝尔曼最优方程"]
-prerequisites: []
-related: []
-tags: ["学习", "强化学习"]
+concept: ["贝尔曼-Q最优", "贝尔曼最优方程（Q）"]
+upstream: ["[[Q函数-最优]]", "[[贝尔曼-Q期望]]"]
+tags: [学习, 强化学习]
 ---
+
 # 贝尔曼-Q最优
 
-> 所属模块：[[../🗺️ 强化学习学习路径|强化学习学习路径]]
+> 所属模块：[[🗺️ 强化学习学习路径|强化学习学习路径]]
 > 主教材：`《Reinforcement Learning》`
-> 对应阶段：[[02-Knowledge/🧠 学习系统/13-强化学习/03-策略与价值函数/📊 阶段3：策略与价值函数|返回阶段页]]
-> 建议先看：Bandits、MDPs、Dynamic Programming、Value Functions、TD Learning
-> 辅助教材：`《Algorithms for RL》`、`机器学习（周志华）`
+> 对应阶段：[[🧭 阶段3-策略与价值函数|返回阶段页]]
 
-## 待写提纲
-- 这章/这个知识点在这门课里解决什么问题：
-- 所属主线：贝尔曼最优方程
-- 这张卡要补哪块：Q的最优方程
-- 核心定义：
-- 关键方法 / 公式：
-- 一个最小例子：
-- 与前后笔记的关系：
-- 前置：待补
-- 相关：待补
+## 动机
+Q* 的最优方程是很多算法的直接学习目标（DQN 的 TD 目标就是它）。
 
-*创建于：2026-04-18*
+## 正式定义 / 公式
+Q*(s,a) = Σ_{s'} P(s'|s,a) [ R(s,a,s') + γ max_{a'} Q*(s',a') ]
+第一步固定 a，后续取 max。
+
+## 最小手算例子
+2 状态：Q*(s1,step)=1·[1+0.9·max_{a'}Q*(s2,a')]=1+0.9·0=1。✓
+
+## 对比与常见错误
+- 常见错误：把 max 写在 Σ_{s'} 外面——必须先在每 s' 取 max_{a'}，再对 s' 求期望。
+
+## 闭卷自测
+1. 默写贝尔曼最优方程（Q）。
+2. max 与期望的嵌套顺序？
+## 学完后可以完成
+
+```dataview
+TABLE assignment_level, source_type FROM "03-Projects"
+WHERE contains(requires, this.file.link)
+```
+
+## 相关下游知识
+
+```dataview
+LIST FROM "02-Knowledge/🧠 学习系统"
+WHERE contains(upstream, this.file.link)
+```

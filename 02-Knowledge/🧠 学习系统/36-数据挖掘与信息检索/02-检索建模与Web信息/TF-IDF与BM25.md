@@ -11,9 +11,9 @@ tags: ["学习", "数据挖掘与信息检索"]
 ---
 # TF-IDF与BM25
 
-> 所属模块：[[../🗺️ 数据挖掘与信息检索学习路径|数据挖掘与信息检索学习路径]]
+> 所属模块：[[🗺️ 数据挖掘与信息检索学习路径|数据挖掘与信息检索学习路径]]
 > 主教材：`《Introduction to Information Retrieval》`
-> 对应阶段：[[02-Knowledge/🧠 学习系统/36-数据挖掘与信息检索/02-检索建模与Web信息/📗 第二阶段：检索建模与Web信息|返回阶段页]]
+> 对应阶段：[[📗 第二阶段：检索建模与Web信息|返回阶段页]]
 > 建议先看：Inverted Indexing、Vector Space Model、Evaluation、Web Search
 > 辅助教材：`检索力`
 

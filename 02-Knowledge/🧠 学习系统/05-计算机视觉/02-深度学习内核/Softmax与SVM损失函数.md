@@ -36,7 +36,7 @@ tags: [学习, 计算机视觉, Softmax, SVM, 交叉熵, 损失函数, 梯度推
 
 ---
 
-## 0. 先判断它值不值得深挖
+## 0. 学习边界
 
 - **类别**：**A 类（核心概念，必须深挖）**
 - **判断理由**：损失函数（Loss Function）是监督学习的"指挥棒"——它用**一个标量值**告诉模型"你错得有多离谱"。Softmax + Cross-Entropy 和 Multiclass SVM Loss（Hinge Loss）是多类分类中**最根本的两种损失函数范式**，所有现代分类模型（ResNet、ViT、GPT 的下游分类头）都在这两类损失中二选一。两者的区别不仅是公式不同，更体现了对"正确"的根本哲学分歧：Softmax 要你**永远不满足**（概率永不完美），SVM 只要求你**过线即可**（只要正确类比其他类高出一个 margin）。不理解它们的梯度形式，就无法理解反向传播的起点——所有深度网络的参数更新，都是从损失函数的梯度**出发**的。
@@ -520,3 +520,4 @@ FROM "03-Projects"
 WHERE contains(requires, this.file.link)
 SORT assignment_level ASC, file.name ASC
 ```
+

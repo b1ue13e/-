@@ -6,7 +6,7 @@ created: '2026-08-03'
 status: ongoing
 difficulty: advanced
 course: 量化金融
-importance: B
+stage_moc: '[[🧭 阶段4-微观结构执行与强化学习]]'
 stage: 📘 第四阶段：深入精通
 tags:
 - 学习
@@ -22,10 +22,7 @@ related:
 - 最优执行-Almgren-Chriss
 - Implementation Shortfall
 upstream:
-- 收益率定义与对数收益
-downstream:
-- 最优执行-Almgren-Chriss
-- 回测框架与无泄漏实验
+  - '[[收益率与对数收益率]]'
 flow: knowledge
 kind: concept
 sources:
@@ -36,7 +33,7 @@ source_type: textbook
 license: local
 verified_at: 2026-08-03
 source: Market Microstructure Theory (O'Hara)
-source_url: '[待验证]'
+source_url: 02-Knowledge/🧠 学习系统/03-量化金融/📚 教材挂载索引.md
 accessed: '2026-08-06'
 assessment_exempt: false
 ---
@@ -45,7 +42,7 @@ assessment_exempt: false
 
 ---
 
-## 0. 先判断它值不值得深挖
+## 0. 学习边界
 
 - **类别**：**B 类（常用工具/重要背景）**
 - **判断理由**：回测成本建模与执行优化的底层机制；不理解价差/冲击，策略的"纸面收益"无法落地。
@@ -68,7 +65,7 @@ assessment_exempt: false
 
 ## 3. 学它之前需要哪些前置知识？
 
-1. **[[收益率定义与对数收益]]**。
+1. **[[收益率与对数收益率]]**。
 2. 订单簿基本概念（限价单/市价单）。
 
 ---
@@ -161,10 +158,10 @@ assessment_exempt: false
 ## 9. 相关知识点与 Obsidian 双链建议
 
 ### 上游依赖
-- [[收益率定义与对数收益]]
+- [[收益率与对数收益率]]
 
 ### 下游延伸
-- [[Almgren-Chriss最优拆单|最优执行-Almgren-Chriss]]：冲击成本模型化
+- [[Implementation Shortfall 执行缺口与 Almgren-Chriss 最优执行模型|最优执行-Almgren-Chriss]]：冲击成本模型化
 - [[回测框架与无泄漏实验]]：成本计入回测
 
 ### 横向关联
@@ -257,13 +254,20 @@ assessment_exempt: false
 ## 13. 给 Obsidian 的归档建议
 
 - **适合文件夹**：`02-Knowledge/🧠 学习系统/03-量化金融/`
-- **关联已有笔记**：[[Almgren-Chriss最优拆单|最优执行-Almgren-Chriss]] [[Implementation Shortfall 执行缺口与 Almgren-Chriss 最优执行模型|Implementation Shortfall]]
+- **关联已有笔记**：[[Implementation Shortfall 执行缺口与 Almgren-Chriss 最优执行模型|最优执行-Almgren-Chriss]] [[Implementation Shortfall 执行缺口与 Almgren-Chriss 最优执行模型|Implementation Shortfall]]
 - **建议标签**：`#学习` `#量化金融`
 - **拆分建议**：不拆分
-\n\n> ⚔️ **支线实战任务 (Side Quest)**：👉 点击进入 [[[支线任务] HW15-盘口队列与挂单概率]] 刷怪通关！\n
+\n\n> **专题实战任务**：[[量化金融-阶段作业-04-市场冲击与最优执行|阶段4 盘口队列与挂单概率]]。\n
 
-## 🧪 学完本节后可完成的作业
+## 学完后可以完成
 
-- **可完成**：[[03-Projects/金融与时序/03-量化金融/阶段作业/量化金融-阶段作业-04-盘口队列与挂单概率|盘口队列与挂单概率]]。
+```dataview
+LIST
+FROM "03-Projects"
+WHERE contains(requires, this.file.link)
+SORT assignment_level ASC, file.name ASC
+```
+
+
 - **为什么现在能做**：本卡已经提供该任务需要的定义、公式、条件或实现边界；若任务还依赖后续知识，先完成对应阶段 MOC 中排在本卡之后的知识卡。
 - **提交产物**：闭卷定义/推导、一个可复查计算或代码结果、一个失败案例，以及对适用边界的说明。

@@ -22,12 +22,13 @@ tags:
 - 量化金融
 - 累计测验
 - 交错练习
-flow: review
+flow: knowledge
 kind: problem-type
 course: 量化金融
+stage_moc: '[[🧭 阶段1-数据与收益基础]]'
 assessment_exempt: false
 source: K01-K06 必修卡与 AAPL Phase 1 数据协议
-source_url: '[待验证]'
+source_url: "02-Knowledge/🧠 学习系统/03-量化金融/📚 教材挂载索引.md"
 accessed: '2026-08-06'
 license: link-only；正文为本地学习整理
 ---
@@ -125,31 +126,31 @@ license: link-only；正文为本地学习整理
 > **9**：删除或改变 $T$ 后数据并重跑，$T$ 以前的特征、股票池、训练输入和当时已冻结的选择结果必须不变。测试定义与至少两类不变量各 1 分。  
 > **10**：风险路径不同；最大回撤不描述回撤持续时间、尾部全貌、流动性或未来风险。否定“风险相同”与指出至少一项边界各 1 分。  
 > **11**：参考实现如下；两个断言各 1 分。  
-> ```python
-> import pandas as pd
-> from pandas.testing import assert_series_equal
->
-> prices = pd.Series([100, 101, 102, 104, 103, 105, 106, 108], dtype=float)
-> frame = pd.DataFrame({'close': prices})
-> frame['signal'] = (frame['close'] > frame['close'].rolling(3).mean()).astype(float)
-> frame['position'] = frame['signal'].shift(1).fillna(0.0)
-> frame['strategy_return'] = frame['position'] * frame['close'].pct_change()
->
-> expected_position = frame['signal'].shift(1).fillna(0.0)
-> assert_series_equal(frame['position'], expected_position, check_names=False)
->
-> changed = prices.copy()
-> changed.iloc[-1] *= 2
-> changed_signal = (changed > changed.rolling(3).mean()).astype(float)
-> changed_position = changed_signal.shift(1).fillna(0.0)
-> changed_return = changed_position * changed.pct_change()
-> assert_series_equal(
->     frame['strategy_return'].iloc[:-1],
->     changed_return.iloc[:-1],
->     check_names=False,
-> )
-> print('lag_and_truncation_checks=passed')
-> ```
+```python
+import pandas as pd
+from pandas.testing import assert_series_equal
+
+prices = pd.Series([100, 101, 102, 104, 103, 105, 106, 108], dtype=float)
+frame = pd.DataFrame({'close': prices})
+frame['signal'] = (frame['close'] > frame['close'].rolling(3).mean()).astype(float)
+frame['position'] = frame['signal'].shift(1).fillna(0.0)
+frame['strategy_return'] = frame['position'] * frame['close'].pct_change()
+
+expected_position = frame['signal'].shift(1).fillna(0.0)
+assert_series_equal(frame['position'], expected_position, check_names=False)
+
+changed = prices.copy()
+changed.iloc[-1] *= 2
+changed_signal = (changed > changed.rolling(3).mean()).astype(float)
+changed_position = changed_signal.shift(1).fillna(0.0)
+changed_return = changed_position * changed.pct_change()
+assert_series_equal(
+    frame['strategy_return'].iloc[:-1],
+    changed_return.iloc[:-1],
+    check_names=False,
+)
+print('lag_and_truncation_checks=passed')
+```
 > **12**：数据可能复权错误或有幸存者偏差；时间对齐可能偷看未来；手续费、滑点和容量可能吞噬收益；模型可能只拟合历史噪声，必须有冻结的样本外测试。覆盖四类得 2 分，覆盖两到三类得 1 分。
 
 ## 4. 晋级与补救
@@ -159,12 +160,12 @@ license: link-only；正文为本地学习整理
 | 20-24 分，红线题全对 | 48 小时后做变式重测；再次达到 20 分才进入 Capstone Phase 1 |
 | 16-19 分，红线题全对 | 只复习错题对应卡，24 小时后重测，不整套重读 |
 | 任一红线题 0 分 | 设置 `weak: true`，回到对应卡完成失败案例后再测 |
-| 0-15 分 | 回到 [[02-Knowledge/🧠 学习系统/03-量化金融/00-前置知识/🧭 阶段0-先修诊断与研究协议]] 重新分流 |
+| 0-15 分 | 回到 [[🧭 阶段0-先修诊断与研究协议]] 重新分流 |
 
 ### 错题补救映射
 
 - 题 1、7 → [[收益率与对数收益率]]
-- 题 2 → [[02-Knowledge/🧠 学习系统/03-量化金融/01-夯实基础/OHLCV字段清洗与复权]]
+- 题 2 → [[OHLCV字段清洗与复权]]
 - 题 3、9 → [[时间索引与频率（量化）]]、[[样本泄漏]]
 - 题 4 → [[Pandas分组聚合与透视表]]
 - 题 5 → [[滚动窗口与波动率特征]]
@@ -189,8 +190,15 @@ license: link-only；正文为本地学习整理
 
 答题时至少写清收益率 $R_t$、滚动窗口长度 $L$、信号时间 $a_t$ 与执行时间 $e_t$；核心时间约束为 $a_t<e_t$。
 
-## 🧪 学完本节后可完成的作业
+## 学完后可以完成
 
-- **可立即完成**：[[03-Projects/金融与时序/03-量化金融/大作业/量化金融-大作业-AAPL贯穿式量化研究#Phase 1|Capstone-AAPL Phase 1]]，仅在本测验达到解锁分数后运行。
-- **需结合后续知识**：[[03-Projects/金融与时序/03-量化金融/Qlib因子研究/A01-数据协议与无泄漏审计|A01 数据协议与无泄漏审计]]，把错题映射为数据协议测试。
+```dataview
+LIST
+FROM "03-Projects"
+WHERE contains(requires, this.file.link)
+SORT assignment_level ASC, file.name ASC
+```
+
+
+- **需结合后续知识**：[[量化金融-阶段作业-01-数据协议与无泄漏基线|A01 数据协议与无泄漏审计]]，把错题映射为数据协议测试。
 - **提交产物**：首测/重测分数、信心校准、错因和失败案例链接。

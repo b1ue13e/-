@@ -44,7 +44,7 @@ tags:
 
 ---
 
-## 0. 先判断它值不值得深挖
+## 0. 学习边界
 
 - **类别**：**A 类（核心概念，必须深挖）**
 - **判断理由**：VAE 由 Diederik Kingma 和 Max Welling 于 2013 年提出，是现代**概率生成模型（Generative Models）**的核心奠基石。它巧妙结合了神经网络与贝叶斯变分推断，引入了著名的**重参数技巧（Reparameterization Trick）**和**证据下界（ELBO）**推导。不搞懂 VAE，就无法真正理解后来的 Stable Diffusion、Latent Diffusion 以及生成式 AI 中隐空间（Latent Space）的数学本质。
@@ -346,3 +346,4 @@ FROM "03-Projects"
 WHERE contains(requires, this.file.link)
 SORT assignment_level ASC, file.name ASC
 ```
+

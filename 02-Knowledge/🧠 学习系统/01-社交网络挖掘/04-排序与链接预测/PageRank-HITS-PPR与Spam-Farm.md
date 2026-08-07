@@ -1,4 +1,4 @@
----
+﻿---
 type: study
 topic: "PageRank HITS PPR 与 Spam Farm"
 course: "社交网络挖掘"
@@ -11,6 +11,7 @@ prerequisites: [图与网络基础, Python基础]
 related: []
 flow: knowledge
 kind: derivation
+stage_moc: "[[🧭 阶段4-排序与链接预测]]"
 source: "合并自课程内已有笔记；原始来源见各节"
 source_url: "https://snap.stanford.edu/class/cs224w-2017/handouts.html"
 accessed: 2026-08-06
@@ -25,7 +26,7 @@ verification_status: "核心公式与示例已合并；Spam Farm 实验需按数
 
 ## 原笔记：PageRank-HITS与PPR
 
-### 0. 先判断它值不值得深挖
+### 0. 学习边界
 - **类别**：A 类；HW0 与 HW4 直接考查。
 ### 1. 这个知识点解决什么问题？
 > 入度只数票，不考虑投票者质量；随机游走与 hub-authority 递归地传播声望，并用 teleport 解决陷阱和悬挂节点。
@@ -33,7 +34,7 @@ verification_status: "核心公式与示例已合并；Spam Farm 实验需按数
 - 网页排序、推荐、局部社区搜索、专家发现。
 - PPR 对 teleport 向量线性，是 HW4 组合题核心。
 ### 3. 学它之前需要哪些前置知识？
-1. [[../01-图与网络基础/有向网络统计与数据清洗]]。
+1. [[有向网络统计与数据清洗]]。
 2. 随机矩阵、特征向量、幂迭代。
 ### 4. 用直觉语言解释它
 > PageRank 是会偶尔传送的随机浏览者；HITS 把好目录（hub）与好内容（authority）相互定义。
@@ -77,7 +78,7 @@ print(round(sum(ppr.values()), 12), max(authorities, key=authorities.get))
 | HITS | hub-authority 双分数 | 查询子图常见 | 目录与内容 |
 | 特征向量中心性 | $Ax=\lambda x$ | 否 | 无向/递归声望 |
 ### 9. 相关知识点与 Obsidian 双链建议
-- 上游：[[../01-图与网络基础/有向网络统计与数据清洗]]。
+- 上游：[[有向网络统计与数据清洗]]。
 - 下游：[[链接预测与无泄漏评估]]。
 - 横向：[[中心性度量]]。
 - 应用：HW0-Q3、HW4-Q1。
@@ -131,7 +132,7 @@ print(round(sum(ppr.values()), 12), max(authorities, key=authorities.get))
 
 ## 原笔记：PageRank-Spam-Farm与抗操纵
 
-### 0. 先判断它值不值得深挖
+### 0. 学习边界
 - **类别**：**A 类**；补齐 HW4-Q1.3–Q1.5。
 - **判断理由**：会算 PPR 线性组合不足以覆盖 HW4-Q1；后半题要求把链接结构翻译成联立 PageRank 流量方程，并比较联盟结构。
 
@@ -256,9 +257,9 @@ assert np.allclose([target, booster], feedback @ [target, booster] + injection)
 
 ### 9. 相关知识点与 Obsidian 双链建议
 - 上游：[[PageRank-HITS-PPR与Spam-Farm]]。
-- 横向：[[../01-图与网络基础/有向网络统计与数据清洗]]。
+- 横向：[[有向网络统计与数据清洗]]。
 - 应用：CS224W 2017 HW4-Q1.3–Q1.5。
-- 实验：[[../06-表示学习与项目/可复现网络挖掘实验]]。
+- 实验：[[可复现网络挖掘实验]]。
 
 ### 10. 闭卷复现任务
 - [ ] 从入边逐项写 PageRank 守恒方程。
@@ -310,6 +311,7 @@ assert np.allclose([target, booster], feedback @ [target, booster] + injection)
 
 ## 🧪 学完本节后可完成的作业
 
-- **可立即完成**：[[03-Projects/01-社交网络挖掘/课后作业/社交网络挖掘-课后作业-05-排序边介数Kronecker与谱聚类#1. PageRank 主题变体（25 分，Silviana、Poorvi）|课后作业 05 题 1]]。
+- **可立即完成**：[[社交网络挖掘-课后作业-05-排序边介数Kronecker与谱聚类#1. PageRank 主题变体（25 分，Silviana、Poorvi）|课后作业 05 题 1]]。
 - **为什么现在能做**：已覆盖 PPR 线性条件、守恒方程、完整/目标互链 Spam Farm。
 - **提交产物**：每小问可行条件、方程、独立/联盟基线和增量比较。
+

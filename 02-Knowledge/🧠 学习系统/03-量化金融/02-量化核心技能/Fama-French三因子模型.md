@@ -6,7 +6,7 @@ created: '2026-08-03'
 status: ongoing
 difficulty: intermediate
 course: 量化金融
-importance: A
+stage_moc: '[[🧭 阶段2-定价时序与风险]]'
 stage: 📘 第二阶段：量化核心技能
 tags:
 - 学习
@@ -26,10 +26,7 @@ related:
 - Fama-MacBeth两步回归
 - APT套利定价理论
 upstream:
-- CAPM资本资产定价模型
-downstream:
-- Fama-MacBeth两步回归
-- 回测框架与无泄漏实验
+  - '[[CAPM 资本资产定价模型]]'
 flow: knowledge
 kind: concept
 sources:
@@ -40,7 +37,7 @@ source_type: paper
 license: journal access
 verified_at: 2026-08-03
 source: Fama & French (1993) Common risk factors in the returns on stocks and bonds
-source_url: '[待验证]'
+source_url: "https://doi.org/10.1016/0304-405X(93)90023-5"
 accessed: '2026-08-06'
 assessment_exempt: false
 ---
@@ -49,9 +46,9 @@ assessment_exempt: false
 
 ---
 
-## 0. 先判断它值不值得深挖
+## 0. 学习边界
 
-- **类别**：**A 类（核心概念，必须深挖）**
+- **类别**：**核心主题（核心概念，必须深挖）**
 - **判断理由**：CAPM 实证失败后的标准补救；因子投资（SMB/HML）的起源；量化多因子体系的模板。
 
 ---
@@ -73,7 +70,7 @@ assessment_exempt: false
 ## 3. 学它之前需要哪些前置知识？
 
 1. **[[CAPM 资本资产定价模型|CAPM资本资产定价模型]]**：单因子定价与 Alpha。
-2. **[[收益率定义与对数收益]]**：超额收益。
+2. **[[收益率与对数收益率]]**：超额收益。
 
 ---
 
@@ -175,7 +172,7 @@ SMB（Small Minus Big）：每月按市值中位数分大小两组，SMB = 小�
 - [[回测框架与无泄漏实验]]：因子策略验证
 
 ### 横向关联
-- [[量化金融-资产定价-多因子模型|APT套利定价理论]] ↔ 本卡：多因子理论框架
+- [[Fama-French三因子模型|APT套利定价理论]] ↔ 本卡：多因子理论框架
 - [[Fama-MacBeth 两步回归法 (Fama-MacBeth Two-Step Regression)|Fama-MacBeth两步回归]] ↔ 本卡：因子收益估计
 
 ### 应用场景
@@ -265,12 +262,19 @@ SMB（Small Minus Big）：每月按市值中位数分大小两组，SMB = 小�
 ## 13. 给 Obsidian 的归档建议
 
 - **适合文件夹**：`02-Knowledge/🧠 学习系统/03-量化金融/`
-- **关联已有笔记**：[[CAPM 资本资产定价模型|CAPM资本资产定价模型]] [[Fama-MacBeth 两步回归法 (Fama-MacBeth Two-Step Regression)|Fama-MacBeth两步回归]] [[量化金融-资产定价-多因子模型|APT套利定价理论]]
+- **关联已有笔记**：[[CAPM 资本资产定价模型|CAPM资本资产定价模型]] [[Fama-MacBeth 两步回归法 (Fama-MacBeth Two-Step Regression)|Fama-MacBeth两步回归]] [[Fama-French三因子模型|APT套利定价理论]]
 - **建议标签**：`#学习` `#量化金融` `#因子模型`
 - **拆分建议**：不拆分
 
-## 🧪 学完本节后可完成的作业
+## 学完后可以完成
 
-- **可完成**：[[03-Projects/金融与时序/03-量化金融/课后作业/量化金融-课后作业-03-Fama-MacBeth回归|Fama-MacBeth回归]]。
+```dataview
+LIST
+FROM "03-Projects"
+WHERE contains(requires, this.file.link)
+SORT assignment_level ASC, file.name ASC
+```
+
+
 - **为什么现在能做**：本卡已经提供该任务需要的定义、公式、条件或实现边界；若任务还依赖后续知识，先完成对应阶段 MOC 中排在本卡之后的知识卡。
 - **提交产物**：闭卷定义/推导、一个可复查计算或代码结果、一个失败案例，以及对适用边界的说明。

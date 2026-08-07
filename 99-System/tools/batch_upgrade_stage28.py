@@ -4,9 +4,9 @@ from pathlib import Path
 sys.stdout.reconfigure(encoding='utf-8')
 
 VAULT_ROOT = Path("F:/-")
-CV_DIR = VAULT_ROOT / "02-Knowledge" / "🧠 学习系统" / "05-计算机视觉"
+CV_DIR = VAULT_ROOT / "02-Knowledge" / "02-Knowledge/🧠 学习系统" / "05-计算机视觉"
 if not CV_DIR.exists():
-    CV_DIR = VAULT_ROOT / "🧠 学习系统" / "05-计算机视觉"
+    CV_DIR = VAULT_ROOT / "02-Knowledge/🧠 学习系统" / "05-计算机视觉"
 
 print(f"Stage 28: Upgrading CNN, ResNet, and YOLO in {CV_DIR}...")
 

@@ -12,9 +12,9 @@ status: learning
 difficulty: advanced
 importance: A
 concept: ["泛函分析", "Banach空间", "Hahn-Banach定理", "算子谱理论"]
-prerequisites: ["[[02-Knowledge/🧠 学习系统/26-实变函数/🗺️ 实变函数学习路径|实变函数]]"]
+prerequisites: ["[[🗺️ 实变函数学习路径|实变函数]]"]
 related: ["[[偏微分方程-题型-有限差分与椭圆PDE弱解阶梯作业]]"]
-upstream: ["[[02-Knowledge/🧠 学习系统/27-泛函分析/🗺️ 泛函分析学习路径|泛函分析学习路径]]"]
+upstream: ["[[🗺️ 泛函分析学习路径|泛函分析学习路径]]"]
 downstream: []
 tags: [学习, 27-泛函分析, 作业, 纸笔推导, 阶梯作业]
 aliases: ["FA-HW01-三大定理与Hilbert空间作业"]

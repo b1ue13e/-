@@ -4,13 +4,13 @@ from pathlib import Path
 sys.stdout.reconfigure(encoding='utf-8')
 
 VAULT_ROOT = Path("F:/-")
-ODE_DIR = VAULT_ROOT / "02-Knowledge" / "🧠 学习系统" / "06-常微分方程"
-CSAPP_DIR = VAULT_ROOT / "02-Knowledge" / "🧠 学习系统" / "11-计算机组成原理"
-DS_DIR = VAULT_ROOT / "02-Knowledge" / "🧠 学习系统" / "10-数据结构与算法"
+ODE_DIR = VAULT_ROOT / "02-Knowledge" / "02-Knowledge/🧠 学习系统" / "06-常微分方程"
+CSAPP_DIR = VAULT_ROOT / "02-Knowledge" / "02-Knowledge/🧠 学习系统" / "11-计算机组成原理"
+DS_DIR = VAULT_ROOT / "02-Knowledge" / "02-Knowledge/🧠 学习系统" / "10-数据结构与算法"
 
-if not ODE_DIR.exists(): ODE_DIR = VAULT_ROOT / "🧠 学习系统" / "06-常微分方程"
-if not CSAPP_DIR.exists(): CSAPP_DIR = VAULT_ROOT / "🧠 学习系统" / "11-计算机组成原理"
-if not DS_DIR.exists(): DS_DIR = VAULT_ROOT / "🧠 学习系统" / "10-数据结构与算法"
+if not ODE_DIR.exists(): ODE_DIR = VAULT_ROOT / "02-Knowledge/🧠 学习系统" / "06-常微分方程"
+if not CSAPP_DIR.exists(): CSAPP_DIR = VAULT_ROOT / "02-Knowledge/🧠 学习系统" / "11-计算机组成原理"
+if not DS_DIR.exists(): DS_DIR = VAULT_ROOT / "02-Knowledge/🧠 学习系统" / "10-数据结构与算法"
 
 print("Stage 18: Pushing 解析视角, 几何视角, Amdahl定律, 双指针 to 80+...")
 

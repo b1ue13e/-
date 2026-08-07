@@ -5,12 +5,12 @@ if hasattr(sys.stdout, 'reconfigure'):
     sys.stdout.reconfigure(encoding='utf-8')
 
 VAULT_ROOT = Path("F:/-")
-CSAPP_DIR = VAULT_ROOT / "02-Knowledge" / "🧠 学习系统" / "11-计算机组成原理"
-ODE_DIR = VAULT_ROOT / "02-Knowledge" / "🧠 学习系统" / "06-常微分方程"
+CSAPP_DIR = VAULT_ROOT / "02-Knowledge" / "02-Knowledge/🧠 学习系统" / "11-计算机组成原理"
+ODE_DIR = VAULT_ROOT / "02-Knowledge" / "02-Knowledge/🧠 学习系统" / "06-常微分方程"
 if not CSAPP_DIR.exists():
-    CSAPP_DIR = VAULT_ROOT / "🧠 学习系统" / "11-计算机组成原理"
+    CSAPP_DIR = VAULT_ROOT / "02-Knowledge/🧠 学习系统" / "11-计算机组成原理"
 if not ODE_DIR.exists():
-    ODE_DIR = VAULT_ROOT / "🧠 学习系统" / "06-常微分方程"
+    ODE_DIR = VAULT_ROOT / "02-Knowledge/🧠 学习系统" / "06-常微分方程"
 
 print(f"Stage 12: Upgrading 内存调试, 分页机制, 流水线技术, 指令集架构, ODE (>1200 chars)...")
 

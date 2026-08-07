@@ -53,7 +53,7 @@ $$Q(s_t, a_t) \leftarrow Q(s_t, a_t) + \alpha \cdot \delta_t$$
 
 **局限（误区）**：因为含有 $\max$ 算子，Q-Learning 算法在噪声环境中存在严重的**高估偏差 (Overestimation Bias)**（最大值的期望大于期望的最大值），导致评估值虚高；这一局限促使了 Double Q-Learning 和 Double DQN 的诞生。
 
-关联知识点推荐：[[PPO近端策略优化]]、[[梯度下降与Adam优化器]]、[[二分搜索]]、[[双指针]]。
+关联知识点推荐：[[PPO近端策略优化]]、[[梯度下降与优化器|梯度下降与Adam优化器]]、[[二分搜索]]、[[双指针]]。
 
 ---
 

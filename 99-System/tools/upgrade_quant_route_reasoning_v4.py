@@ -6,7 +6,7 @@ from pathlib import Path
 
 
 VAULT = Path(__file__).resolve().parents[2]
-Q = VAULT / "02-Knowledge" / "🧠 学习系统" / "03-量化金融"
+Q = VAULT / "02-Knowledge" / "02-Knowledge/🧠 学习系统" / "03-量化金融"
 MARKER = "<!-- quant-route-reasoning-v4 -->"
 
 

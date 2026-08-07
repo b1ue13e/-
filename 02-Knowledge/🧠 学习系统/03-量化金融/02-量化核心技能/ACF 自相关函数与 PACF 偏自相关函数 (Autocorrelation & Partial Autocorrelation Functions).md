@@ -6,20 +6,15 @@ created: '2026-08-06'
 status: ongoing
 difficulty: intermediate
 course: 量化金融
-importance: A
+stage_moc: '[[🧭 阶段2-定价时序与风险]]'
 tags:
 - 学习
 - 量化金融
-concept: []
-prerequisites: []
-related: []
-upstream: null
-downstream: null
 date: 2026-07-23
 kind: concept
 flow: knowledge
-source: 本课程历史知识卡；原始来源 [待验证]
-source_url: https://www.statsmodels.org/stable/tsa.html。用于复核“用白噪声反例校验置信带，再用
+source: "statsmodels 官方时间序列文档；正文为本地教学重写"
+source_url: "https://www.statsmodels.org/stable/tsa.html"
 accessed: '2026-08-06'
 license: link-only；正文为本地学习整理
 assessment_exempt: false
@@ -29,12 +24,12 @@ assessment_exempt: false
 
 ---
 
-## 0. 先判断它值不值得深挖
+## 0. 学习边界
 
-**分类：A 类（核心概念，必须深挖）**
+**学习定位：核心主题。**
 
 **理由：**
-ACF（自相关函数）与 PACF（偏自相关函数）是平稳时间序列建模的“两把手术刀”。不理解 ACF 与 PACF 的截尾（Cut-off）与拖尾（Tails off）性质，就无法对 ARMA / ARIMA 模型进行定阶（$p, q$ 选择），也无法对高频收益率序列或因子残差进行白噪声（White Noise）诊断。它是金融计量学与时序量化选股的绝对基石。
+ACF（自相关函数）与 PACF（偏自相关函数）是平稳时间序列建模的两个诊断工具。不理解它们的截尾（Cut-off）与拖尾（Tails off）性质，就难以对 ARMA / ARIMA 模型定阶（$p, q$ 选择），也难以对高频收益率序列或因子残差进行白噪声（White Noise）诊断。
 
 ---
 
@@ -69,7 +64,7 @@ ACF（自相关函数）与 PACF（偏自相关函数）是平稳时间序列建
 
 ## 3. 学它之前需要哪些前置知识？
 
-1. **[[非对称 GARCH 模型与杠杆效应 (EGARCH & GJR-GARCH)|收益率序列的风格化事实]]**：理解收益率序列通常无显著一阶自相关（弱有效市场），但收益率平方/绝对值存在强自相关（波动率聚集）。
+1. **[[量化金融-波动率-GARCH家族模型|收益率序列的风格化事实]]**：理解收益率序列通常无显著一阶自相关（弱有效市场），但收益率平方/绝对值存在强自相关（波动率聚集）。
 2. **[[单位根检验与 ADF 检验 (Unit Root & Augmented Dickey-Fuller Test)|单位根检验]]**：ACF 与 PACF 的计算前提是时间序列满足**平稳性（Stationarity）**。
 3. **最小必要背景（自协方差）**：
    $$\gamma_k = Cov(X_t, X_{t-k}) = E[(X_t - \mu)(X_{t-k} - \mu)]$$
@@ -260,11 +255,11 @@ print(f"均值回归半衰期 Half-life: {half_life:.2f} 天")
 上游依赖
 
 - [[收益率与对数收益率]]：提供基础概念与理论推导支撑。
-- [[非对称 GARCH 模型与杠杆效应 (EGARCH & GJR-GARCH)|收益率序列的风格化事实]]：提供基础概念与理论推导支撑。
+- [[量化金融-波动率-GARCH家族模型|收益率序列的风格化事实]]：提供基础概念与理论推导支撑。
 
 下游延伸
 
-- [[量化金融-平稳性与单位根检验实战|ARIMA模型]]：进一步延伸拓展该知识点的应用场景与模型构建。
+- [[单位根检验与 ADF 检验 (Unit Root & Augmented Dickey-Fuller Test)|ARIMA模型]]：进一步延伸拓展该知识点的应用场景与模型构建。
 - [[单位根检验与 ADF 检验 (Unit Root & Augmented Dickey-Fuller Test)|单位根检验]]：进一步延伸拓展该知识点的应用场景与模型构建。
 
 横向关联
@@ -378,7 +373,7 @@ print(f"均值回归半衰期 Half-life: {half_life:.2f} 天")
 ## 13. 给 Obsidian 的归档建议
 
 - **适合文件夹**：`02-Knowledge/🧠 学习系统/03-量化金融/02-量化核心技能/`
-- **建议双链**：[[非对称 GARCH 模型与杠杆效应 (EGARCH & GJR-GARCH)|收益率序列的风格化事实]]、[[量化金融-平稳性与单位根检验实战|ARIMA 实战]]
+- **建议双链**：[[量化金融-波动率-GARCH家族模型|收益率序列的风格化事实]]、[[单位根检验与 ADF 检验 (Unit Root & Augmented Dickey-Fuller Test)|ARIMA 实战]]
 
 ---
 
@@ -400,8 +395,15 @@ print(f"均值回归半衰期 Half-life: {half_life:.2f} 天")
 - **最小实验**：固定随机种子或冻结原始数据快照，同时保存基线、破坏条件后的对照组、关键中间量与失败日志。
 - **通过标准**：结论必须在样本外仍保持方向一致；若成本、延迟、参数扰动或结构突变使结论反转，就把该情形登记为适用边界而不是删除失败结果。
 
-## 🧪 学完本节后可完成的作业
+## 学完后可以完成
 
-- **可完成**：[[03-Projects/金融与时序/03-量化金融/课后作业/量化金融-课后作业-06-GARCH波动率与动态VaR|GARCH波动率与动态VaR]]。
+```dataview
+LIST
+FROM "03-Projects"
+WHERE contains(requires, this.file.link)
+SORT assignment_level ASC, file.name ASC
+```
+
+
 - **为什么现在能做**：本卡已经提供该任务需要的定义、公式、条件或实现边界；若任务还依赖后续知识，先完成对应阶段 MOC 中排在本卡之后的知识卡。
 - **提交产物**：闭卷定义/推导、一个可复查计算或代码结果、一个失败案例，以及对适用边界的说明。

@@ -19,7 +19,7 @@ tags: [学习, 计算机视觉, 目标检测, Transformer, DETR]
 
 # DETR：端到端目标检测
 
-## 0. 先判断它值不值得深挖
+## 0. 学习边界
 
 - **值得**：DETR 是第一个把目标检测从"手工 pipeline（Anchor/Proposal/NMS）"变成"集合预测"的 Transformer 方法；理解它等于理解"检测 = 二分图匹配 + Transformer"，是理解后续 RT-DETR、Deformable DETR 的起点。
 - **不值得**：如果只做工程部署且关心推理速度，DETR 收敛慢、小目标差；可直接用 Deformable DETR / RT-DETR 的结论。
@@ -173,3 +173,4 @@ FROM "02-Knowledge/🧠 学习系统"
 WHERE contains(upstream, this.file.link)
 SORT file.name ASC
 ```
+

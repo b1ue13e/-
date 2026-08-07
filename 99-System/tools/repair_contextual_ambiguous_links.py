@@ -22,7 +22,7 @@ from verify_links_and_paths import ROOT, audit
 
 
 ARCHIVE_PREFIX = ("99-System", "🗄️ 归档")
-PLAN_PREFIX = ("99-System", "🗓️ 计划执行系统")
+PLAN_PREFIX = ("99-System", "99-System/🗓️ 计划执行系统")
 COURSE_RE = re.compile(r"^(?:0[1-9]|1[0-9]|2[0-9]|3[0-7])-.+")
 NON_COURSE_PARTS = {"02-Knowledge", "03-Projects", "04-Review", "99-System"}
 

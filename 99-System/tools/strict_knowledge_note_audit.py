@@ -12,7 +12,7 @@ from statistics import median
 
 
 VAULT = Path(__file__).resolve().parents[2]
-KNOWLEDGE_ROOT = VAULT / "02-Knowledge" / "🧠 学习系统"
+KNOWLEDGE_ROOT = VAULT / "02-Knowledge" / "02-Knowledge/🧠 学习系统"
 OUTPUT_DIR = VAULT / "99-System" / "🗄️ 归档" / "知识库审计"
 REPORT_PATH = OUTPUT_DIR / "knowledge_notes_rigorous_audit_2026-07-31.md"
 CSV_PATH = OUTPUT_DIR / "knowledge_notes_rigorous_scores_2026-07-31.csv"
@@ -177,7 +177,7 @@ def resolve_links(notes: list[Note]) -> None:
         rel_no_ext = note.rel[:-3].lower()
         rel_keys.add(rel_no_ext)
         suffixes.add(rel_no_ext.removeprefix("02-knowledge/"))
-        suffixes.add(rel_no_ext.removeprefix("02-knowledge/🧠 学习系统/"))
+        suffixes.add(rel_no_ext.removeprefix("02-knowledge/02-Knowledge/🧠 学习系统/"))
         stems[note.path.stem.lower()].append(rel_no_ext)
 
     for note in notes:

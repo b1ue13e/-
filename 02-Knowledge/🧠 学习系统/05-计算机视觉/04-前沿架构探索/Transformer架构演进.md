@@ -20,7 +20,7 @@ tags: [学习, 计算机视觉, Transformer, 架构演进]
 
 # Transformer 架构演进（PVT / ConvNeXt / CoAtNet）
 
-## 0. 先判断它值不值得深挖
+## 0. 学习边界
 
 **B 类专题（架构演进主线）**。ViT 证明了纯 Transformer 能做视觉，但"怎么把 Transformer 用得更高效、更适合密集预测"经历了三轮演进：**金字塔化**（PVT，处理多尺度）、**CNN 现代化**（ConvNeXt，反向证明卷积没死）、**融合**（CoAtNet，全局+局部结合）。本卡合并 MOC 中 PVT / CNN+Transformer / ConvNeXt / CoAtNet 四个规划项——它们是"视觉骨干演进"同一主题的四个节点。
 
@@ -177,3 +177,4 @@ SORT assignment_level ASC, file.name ASC
 - [ ] 能写出 SRA 公式并解释复杂度收益
 - [ ] 能说出 ConvNeXt 现代化的核心设计原则
 - [ ] 能解释 CoAtNet 分层融合的理由
+

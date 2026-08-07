@@ -1,31 +1,52 @@
 ---
 type: study
 topic: "GAE-单步"
+course: "强化学习"
 created: 2026-04-18
-status: ongoing
-difficulty: advanced
-concept: ["GAE-单步", "单步优势"]
-prerequisites: []
-related: []
-tags: ["学习", "强化学习"]
+status: completed
+stage_moc: "[[🧭 阶段7-PPO]]"
+flow: knowledge
+kind: concept
+difficulty: intermediate
+concept: ["GAE-单步", "单步优势估计"]
+upstream: ["[[优势-定义]]", "[[TD-0]]"]
+tags: [学习, 强化学习]
 ---
+
 # GAE-单步
 
-> 所属模块：[[../🗺️ 强化学习学习路径|强化学习学习路径]]
-> 主教材：`《动手学强化学习》`
-> 对应阶段：[[02-Knowledge/🧠 学习系统/13-强化学习/07-PPO/🚀 阶段7：PPO|返回阶段页]]
-> 建议先看：DQN、Policy Gradient、Actor-Critic、PPO、实验环境
-> 辅助教材：`Hands-on Machine Learning`、`《Algorithms for RL》`、`《动手学强化学习》`
+> 所属模块：[[🗺️ 强化学习学习路径|强化学习学习路径]]
+> 主教材：`《Reinforcement Learning》`
+> 对应阶段：[[🧭 阶段7-PPO|返回阶段页]]
 
-## 待写提纲
-- 这章/这个知识点在这门课里解决什么问题：
-- 所属主线：单步优势
-- 这张卡要补哪块：单步优势
-- 核心定义：
-- 关键方法 / 公式：
-- 一个最小例子：
-- 与前后笔记的关系：
-- 前置：待补
-- 相关：待补
+## 动机
+优势 A(s,a) 需要知道 Q 与 V，但二者都未知。能否用 critic 的单步 TD 误差就地估计优势，而不等整条轨迹？
 
-*创建于：2026-04-18*
+## 正式定义 / 公式
+单步（λ=0）优势就是 TD 误差：
+δ_t = r_t + γ V_φ(s_{t+1}) − V_φ(s_t) ≈ A(s_t, a_t)
+它用下一状态的 V 估计替代了真实后续回报，偏差小但方差较低。
+
+## 最小手算例子
+V(s_t)=1.0, r_t=0.5, γ=0.9, V(s_{t+1})=1.2 → δ_t = 0.5 + 0.9·1.2 − 1.0 = 0.58。
+
+## 对比与常见错误
+- 与 MC 优势：单步优势方差小、偏差大；MC 无偏但方差大。
+- 常见错误：把 δ_t 当成无偏优势——它依赖 V_φ 的估计误差。
+
+## 闭卷自测
+1. 单步优势估计与 TD 误差是什么关系？
+2. 它的偏差与方差特点？
+## 学完后可以完成
+
+```dataview
+TABLE assignment_level, source_type FROM "03-Projects"
+WHERE contains(requires, this.file.link)
+```
+
+## 相关下游知识
+
+```dataview
+LIST FROM "02-Knowledge/🧠 学习系统"
+WHERE contains(upstream, this.file.link)
+```

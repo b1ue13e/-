@@ -41,7 +41,7 @@ tags:
 
 ---
 
-## 0. 先判断它值不值得深挖
+## 0. 学习边界
 
 - **类别**：**A 类（核心概念，必须深挖）**
 - **判断理由**：SIFT 是 CV 史上最具影响力的手工特征。它首次系统性解决"同一物体在不同尺度、旋转、光照下的匹配"，其**尺度空间理论、DoG 近似、梯度方向直方图**三大思想深刻影响了 SURF、ORB、DAISY 乃至深度学习的 SuperPoint。三维重建（SfM）、全景拼接、视觉 SLAM 中 SIFT 至今仍是精度标杆。理解 SIFT 是理解"手工特征 → 学习特征"学科演进线的起点。
@@ -558,3 +558,4 @@ FROM "03-Projects"
 WHERE contains(requires, this.file.link)
 SORT assignment_level ASC, file.name ASC
 ```
+

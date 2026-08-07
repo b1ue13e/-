@@ -1,0 +1,840 @@
+{
+  "stages": {
+    "00-前置知识": [
+      {
+        "rel": "00-前置知识\\08-NLP全栈-前置-PyTorch与NLP编程基础.md",
+        "fname": "08-NLP全栈-前置-PyTorch与NLP编程基础.md",
+        "is_moc": false,
+        "len": 4511,
+        "has_recall": true,
+        "has_quiz": true,
+        "has_latex": true,
+        "has_code": true
+      },
+      {
+        "rel": "00-前置知识\\08-NLP全栈-前置-概率论与信息论基础.md",
+        "fname": "08-NLP全栈-前置-概率论与信息论基础.md",
+        "is_moc": false,
+        "len": 4152,
+        "has_recall": true,
+        "has_quiz": true,
+        "has_latex": true,
+        "has_code": true
+      },
+      {
+        "rel": "00-前置知识\\08-NLP全栈-前置-线性代数与张量运算.md",
+        "fname": "08-NLP全栈-前置-线性代数与张量运算.md",
+        "is_moc": false,
+        "len": 4067,
+        "has_recall": true,
+        "has_quiz": true,
+        "has_latex": true,
+        "has_code": true
+      },
+      {
+        "rel": "00-前置知识\\🧭 08-NLP全栈-前置知识.md",
+        "fname": "🧭 08-NLP全栈-前置知识.md",
+        "is_moc": true,
+        "len": 1380,
+        "has_recall": false,
+        "has_quiz": false,
+        "has_latex": true,
+        "has_code": true
+      }
+    ],
+    "01-基础准备": [
+      {
+        "rel": "01-基础准备\\08-NLP全栈-NLP数学基础.md",
+        "fname": "08-NLP全栈-NLP数学基础.md",
+        "is_moc": false,
+        "len": 4003,
+        "has_recall": true,
+        "has_quiz": true,
+        "has_latex": true,
+        "has_code": true
+      },
+      {
+        "rel": "01-基础准备\\08-NLP全栈-Python编程与NLP工具.md",
+        "fname": "08-NLP全栈-Python编程与NLP工具.md",
+        "is_moc": false,
+        "len": 3839,
+        "has_recall": true,
+        "has_quiz": true,
+        "has_latex": true,
+        "has_code": true
+      },
+      {
+        "rel": "01-基础准备\\08-NLP全栈-倒排索引.md",
+        "fname": "08-NLP全栈-倒排索引.md",
+        "is_moc": false,
+        "len": 4251,
+        "has_recall": true,
+        "has_quiz": true,
+        "has_latex": true,
+        "has_code": true
+      },
+      {
+        "rel": "01-基础准备\\08-NLP全栈-语言学基础.md",
+        "fname": "08-NLP全栈-语言学基础.md",
+        "is_moc": false,
+        "len": 3827,
+        "has_recall": true,
+        "has_quiz": true,
+        "has_latex": true,
+        "has_code": true
+      },
+      {
+        "rel": "01-基础准备\\🧭 阶段1-基础准备.md",
+        "fname": "🧭 阶段1-基础准备.md",
+        "is_moc": true,
+        "len": 1300,
+        "has_recall": false,
+        "has_quiz": false,
+        "has_latex": false,
+        "has_code": true
+      }
+    ],
+    "02-传统NLP方法": [
+      {
+        "rel": "02-传统NLP方法\\08-NLP全栈-WordPiece与SentencePiece分词.md",
+        "fname": "08-NLP全栈-WordPiece与SentencePiece分词.md",
+        "is_moc": false,
+        "len": 3372,
+        "has_recall": true,
+        "has_quiz": true,
+        "has_latex": true,
+        "has_code": true
+      },
+      {
+        "rel": "02-传统NLP方法\\08-NLP全栈-主题模型.md",
+        "fname": "08-NLP全栈-主题模型.md",
+        "is_moc": false,
+        "len": 4058,
+        "has_recall": true,
+        "has_quiz": true,
+        "has_latex": true,
+        "has_code": true
+      },
+      {
+        "rel": "02-传统NLP方法\\08-NLP全栈-句法分析.md",
+        "fname": "08-NLP全栈-句法分析.md",
+        "is_moc": false,
+        "len": 3218,
+        "has_recall": true,
+        "has_quiz": true,
+        "has_latex": true,
+        "has_code": true
+      },
+      {
+        "rel": "02-传统NLP方法\\08-NLP全栈-子词分词.md",
+        "fname": "08-NLP全栈-子词分词.md",
+        "is_moc": false,
+        "len": 4413,
+        "has_recall": true,
+        "has_quiz": true,
+        "has_latex": true,
+        "has_code": true
+      },
+      {
+        "rel": "02-传统NLP方法\\08-NLP全栈-序列标注.md",
+        "fname": "08-NLP全栈-序列标注.md",
+        "is_moc": false,
+        "len": 3931,
+        "has_recall": true,
+        "has_quiz": true,
+        "has_latex": true,
+        "has_code": true
+      },
+      {
+        "rel": "02-传统NLP方法\\08-NLP全栈-文本表示方法.md",
+        "fname": "08-NLP全栈-文本表示方法.md",
+        "is_moc": false,
+        "len": 4066,
+        "has_recall": true,
+        "has_quiz": true,
+        "has_latex": true,
+        "has_code": true
+      },
+      {
+        "rel": "02-传统NLP方法\\08-NLP全栈-文本预处理.md",
+        "fname": "08-NLP全栈-文本预处理.md",
+        "is_moc": false,
+        "len": 3404,
+        "has_recall": true,
+        "has_quiz": true,
+        "has_latex": true,
+        "has_code": true
+      },
+      {
+        "rel": "02-传统NLP方法\\08-NLP全栈-统计机器学习.md",
+        "fname": "08-NLP全栈-统计机器学习.md",
+        "is_moc": false,
+        "len": 3449,
+        "has_recall": true,
+        "has_quiz": true,
+        "has_latex": true,
+        "has_code": true
+      },
+      {
+        "rel": "02-传统NLP方法\\🧭 阶段2-传统NLP方法.md",
+        "fname": "🧭 阶段2-传统NLP方法.md",
+        "is_moc": true,
+        "len": 1799,
+        "has_recall": false,
+        "has_quiz": false,
+        "has_latex": false,
+        "has_code": true
+      }
+    ],
+    "03-深度学习NLP基础": [
+      {
+        "rel": "03-深度学习NLP基础\\08-NLP全栈-Attention计算.md",
+        "fname": "08-NLP全栈-Attention计算.md",
+        "is_moc": false,
+        "len": 4328,
+        "has_recall": true,
+        "has_quiz": true,
+        "has_latex": true,
+        "has_code": true
+      },
+      {
+        "rel": "03-深度学习NLP基础\\08-NLP全栈-CNN在NLP中的应用.md",
+        "fname": "08-NLP全栈-CNN在NLP中的应用.md",
+        "is_moc": false,
+        "len": 4364,
+        "has_recall": true,
+        "has_quiz": true,
+        "has_latex": true,
+        "has_code": true
+      },
+      {
+        "rel": "03-深度学习NLP基础\\08-NLP全栈-GloVe与稠密向量.md",
+        "fname": "08-NLP全栈-GloVe与稠密向量.md",
+        "is_moc": false,
+        "len": 3860,
+        "has_recall": true,
+        "has_quiz": true,
+        "has_latex": true,
+        "has_code": true
+      },
+      {
+        "rel": "03-深度学习NLP基础\\08-NLP全栈-Seq2Seq与注意力机制.md",
+        "fname": "08-NLP全栈-Seq2Seq与注意力机制.md",
+        "is_moc": false,
+        "len": 5092,
+        "has_recall": true,
+        "has_quiz": true,
+        "has_latex": true,
+        "has_code": true
+      },
+      {
+        "rel": "03-深度学习NLP基础\\08-NLP全栈-循环神经网络RNN.md",
+        "fname": "08-NLP全栈-循环神经网络RNN.md",
+        "is_moc": false,
+        "len": 4384,
+        "has_recall": true,
+        "has_quiz": true,
+        "has_latex": true,
+        "has_code": true
+      },
+      {
+        "rel": "03-深度学习NLP基础\\08-NLP全栈-数据集与评测指标.md",
+        "fname": "08-NLP全栈-数据集与评测指标.md",
+        "is_moc": false,
+        "len": 3777,
+        "has_recall": true,
+        "has_quiz": true,
+        "has_latex": true,
+        "has_code": true
+      },
+      {
+        "rel": "03-深度学习NLP基础\\08-NLP全栈-文本分类与情感分析.md",
+        "fname": "08-NLP全栈-文本分类与情感分析.md",
+        "is_moc": false,
+        "len": 3502,
+        "has_recall": true,
+        "has_quiz": true,
+        "has_latex": true,
+        "has_code": true
+      },
+      {
+        "rel": "03-深度学习NLP基础\\08-NLP全栈-词向量与Word2Vec.md",
+        "fname": "08-NLP全栈-词向量与Word2Vec.md",
+        "is_moc": false,
+        "len": 4776,
+        "has_recall": true,
+        "has_quiz": true,
+        "has_latex": true,
+        "has_code": true
+      },
+      {
+        "rel": "03-深度学习NLP基础\\🧭 阶段3-深度学习NLP基础.md",
+        "fname": "🧭 阶段3-深度学习NLP基础.md",
+        "is_moc": true,
+        "len": 1996,
+        "has_recall": false,
+        "has_quiz": false,
+        "has_latex": true,
+        "has_code": true
+      }
+    ],
+    "04-Transformer与预训练模型": [
+      {
+        "rel": "04-Transformer与预训练模型\\08-NLP全栈-BERT与GPT对比.md",
+        "fname": "08-NLP全栈-BERT与GPT对比.md",
+        "is_moc": false,
+        "len": 3654,
+        "has_recall": true,
+        "has_quiz": true,
+        "has_latex": true,
+        "has_code": true
+      },
+      {
+        "rel": "04-Transformer与预训练模型\\08-NLP全栈-BERT及其变体.md",
+        "fname": "08-NLP全栈-BERT及其变体.md",
+        "is_moc": false,
+        "len": 4940,
+        "has_recall": true,
+        "has_quiz": true,
+        "has_latex": true,
+        "has_code": true
+      },
+      {
+        "rel": "04-Transformer与预训练模型\\08-NLP全栈-BERT模型.md",
+        "fname": "08-NLP全栈-BERT模型.md",
+        "is_moc": false,
+        "len": 3849,
+        "has_recall": true,
+        "has_quiz": true,
+        "has_latex": true,
+        "has_code": true
+      },
+      {
+        "rel": "04-Transformer与预训练模型\\08-NLP全栈-FlashAttention与KVCache显存优化.md",
+        "fname": "08-NLP全栈-FlashAttention与KVCache显存优化.md",
+        "is_moc": false,
+        "len": 4265,
+        "has_recall": true,
+        "has_quiz": true,
+        "has_latex": true,
+        "has_code": true
+      },
+      {
+        "rel": "04-Transformer与预训练模型\\08-NLP全栈-GPT系列.md",
+        "fname": "08-NLP全栈-GPT系列.md",
+        "is_moc": false,
+        "len": 3984,
+        "has_recall": true,
+        "has_quiz": true,
+        "has_latex": true,
+        "has_code": true
+      },
+      {
+        "rel": "04-Transformer与预训练模型\\08-NLP全栈-HuggingFace生态系统.md",
+        "fname": "08-NLP全栈-HuggingFace生态系统.md",
+        "is_moc": false,
+        "len": 4277,
+        "has_recall": true,
+        "has_quiz": true,
+        "has_latex": true,
+        "has_code": true
+      },
+      {
+        "rel": "04-Transformer与预训练模型\\08-NLP全栈-RoPE旋转位置编码.md",
+        "fname": "08-NLP全栈-RoPE旋转位置编码.md",
+        "is_moc": false,
+        "len": 6028,
+        "has_recall": true,
+        "has_quiz": true,
+        "has_latex": true,
+        "has_code": true
+      },
+      {
+        "rel": "04-Transformer与预训练模型\\08-NLP全栈-Self-Attention自注意力机制.md",
+        "fname": "08-NLP全栈-Self-Attention自注意力机制.md",
+        "is_moc": false,
+        "len": 8384,
+        "has_recall": true,
+        "has_quiz": true,
+        "has_latex": true,
+        "has_code": true
+      },
+      {
+        "rel": "04-Transformer与预训练模型\\08-NLP全栈-Transformer架构.md",
+        "fname": "08-NLP全栈-Transformer架构.md",
+        "is_moc": false,
+        "len": 6099,
+        "has_recall": true,
+        "has_quiz": true,
+        "has_latex": true,
+        "has_code": true
+      },
+      {
+        "rel": "04-Transformer与预训练模型\\08-NLP全栈-其他预训练模型.md",
+        "fname": "08-NLP全栈-其他预训练模型.md",
+        "is_moc": false,
+        "len": 4302,
+        "has_recall": true,
+        "has_quiz": true,
+        "has_latex": true,
+        "has_code": true
+      },
+      {
+        "rel": "04-Transformer与预训练模型\\🧭 阶段4-Transformer与预训练模型.md",
+        "fname": "🧭 阶段4-Transformer与预训练模型.md",
+        "is_moc": true,
+        "len": 2259,
+        "has_recall": false,
+        "has_quiz": false,
+        "has_latex": true,
+        "has_code": true
+      }
+    ],
+    "05-大语言模型与前沿技术": [
+      {
+        "rel": "05-大语言模型与前沿技术\\08-NLP全栈-Agent与工具使用.md",
+        "fname": "08-NLP全栈-Agent与工具使用.md",
+        "is_moc": false,
+        "len": 4089,
+        "has_recall": true,
+        "has_quiz": true,
+        "has_latex": true,
+        "has_code": true
+      },
+      {
+        "rel": "05-大语言模型与前沿技术\\08-NLP全栈-DPO直接偏好优化与RLHF对齐.md",
+        "fname": "08-NLP全栈-DPO直接偏好优化与RLHF对齐.md",
+        "is_moc": false,
+        "len": 4215,
+        "has_recall": true,
+        "has_quiz": true,
+        "has_latex": true,
+        "has_code": true
+      },
+      {
+        "rel": "05-大语言模型与前沿技术\\08-NLP全栈-LLM推理优化.md",
+        "fname": "08-NLP全栈-LLM推理优化.md",
+        "is_moc": false,
+        "len": 4278,
+        "has_recall": true,
+        "has_quiz": true,
+        "has_latex": true,
+        "has_code": true
+      },
+      {
+        "rel": "05-大语言模型与前沿技术\\08-NLP全栈-LLM量化算法AWQ与GPTQ.md",
+        "fname": "08-NLP全栈-LLM量化算法AWQ与GPTQ.md",
+        "is_moc": false,
+        "len": 3610,
+        "has_recall": true,
+        "has_quiz": true,
+        "has_latex": true,
+        "has_code": true
+      },
+      {
+        "rel": "05-大语言模型与前沿技术\\08-NLP全栈-参数高效微调PEFT.md",
+        "fname": "08-NLP全栈-参数高效微调PEFT.md",
+        "is_moc": false,
+        "len": 4653,
+        "has_recall": true,
+        "has_quiz": true,
+        "has_latex": true,
+        "has_code": true
+      },
+      {
+        "rel": "05-大语言模型与前沿技术\\08-NLP全栈-多模态NLP.md",
+        "fname": "08-NLP全栈-多模态NLP.md",
+        "is_moc": false,
+        "len": 4081,
+        "has_recall": true,
+        "has_quiz": true,
+        "has_latex": true,
+        "has_code": true
+      },
+      {
+        "rel": "05-大语言模型与前沿技术\\08-NLP全栈-指令微调与对齐.md",
+        "fname": "08-NLP全栈-指令微调与对齐.md",
+        "is_moc": false,
+        "len": 5963,
+        "has_recall": true,
+        "has_quiz": true,
+        "has_latex": true,
+        "has_code": true
+      },
+      {
+        "rel": "05-大语言模型与前沿技术\\08-NLP全栈-提示工程.md",
+        "fname": "08-NLP全栈-提示工程.md",
+        "is_moc": false,
+        "len": 3607,
+        "has_recall": true,
+        "has_quiz": true,
+        "has_latex": true,
+        "has_code": true
+      },
+      {
+        "rel": "05-大语言模型与前沿技术\\08-NLP全栈-检索增强生成RAG.md",
+        "fname": "08-NLP全栈-检索增强生成RAG.md",
+        "is_moc": false,
+        "len": 4485,
+        "has_recall": true,
+        "has_quiz": true,
+        "has_latex": true,
+        "has_code": true
+      },
+      {
+        "rel": "05-大语言模型与前沿技术\\🧭 阶段5-大语言模型与前沿技术.md",
+        "fname": "🧭 阶段5-大语言模型与前沿技术.md",
+        "is_moc": true,
+        "len": 2057,
+        "has_recall": false,
+        "has_quiz": false,
+        "has_latex": false,
+        "has_code": true
+      }
+    ],
+    "06-专业方向深入": [
+      {
+        "rel": "06-专业方向深入\\08-NLP全栈-信息抽取.md",
+        "fname": "08-NLP全栈-信息抽取.md",
+        "is_moc": false,
+        "len": 3421,
+        "has_recall": true,
+        "has_quiz": true,
+        "has_latex": true,
+        "has_code": true
+      },
+      {
+        "rel": "06-专业方向深入\\08-NLP全栈-对话系统.md",
+        "fname": "08-NLP全栈-对话系统.md",
+        "is_moc": false,
+        "len": 3552,
+        "has_recall": true,
+        "has_quiz": true,
+        "has_latex": true,
+        "has_code": true
+      },
+      {
+        "rel": "06-专业方向深入\\08-NLP全栈-文本生成.md",
+        "fname": "08-NLP全栈-文本生成.md",
+        "is_moc": false,
+        "len": 4325,
+        "has_recall": true,
+        "has_quiz": true,
+        "has_latex": true,
+        "has_code": true
+      },
+      {
+        "rel": "06-专业方向深入\\08-NLP全栈-文本生成解码与采样策略.md",
+        "fname": "08-NLP全栈-文本生成解码与采样策略.md",
+        "is_moc": false,
+        "len": 3938,
+        "has_recall": true,
+        "has_quiz": true,
+        "has_latex": true,
+        "has_code": true
+      },
+      {
+        "rel": "06-专业方向深入\\08-NLP全栈-问答系统.md",
+        "fname": "08-NLP全栈-问答系统.md",
+        "is_moc": false,
+        "len": 3924,
+        "has_recall": true,
+        "has_quiz": true,
+        "has_latex": true,
+        "has_code": true
+      },
+      {
+        "rel": "06-专业方向深入\\🧭 阶段6-专业方向深入.md",
+        "fname": "🧭 阶段6-专业方向深入.md",
+        "is_moc": true,
+        "len": 1455,
+        "has_recall": false,
+        "has_quiz": false,
+        "has_latex": false,
+        "has_code": true
+      }
+    ],
+    "📚 教材挂载索引.md": [
+      {
+        "rel": "📚 教材挂载索引.md",
+        "fname": "📚 教材挂载索引.md",
+        "is_moc": true,
+        "len": 3008,
+        "has_recall": false,
+        "has_quiz": false,
+        "has_latex": false,
+        "has_code": true
+      }
+    ],
+    "🗺️ 08-NLP全栈学习路径.md": [
+      {
+        "rel": "🗺️ 08-NLP全栈学习路径.md",
+        "fname": "🗺️ 08-NLP全栈学习路径.md",
+        "is_moc": true,
+        "len": 5069,
+        "has_recall": true,
+        "has_quiz": true,
+        "has_latex": true,
+        "has_code": true
+      }
+    ]
+  },
+  "assignments": [
+    {
+      "rel": "大作业\\08-NLP全栈-大作业-稀疏检索到Transformer文本误差审计.md",
+      "fname": "08-NLP全栈-大作业-稀疏检索到Transformer文本误差审计.md",
+      "assignment_id": "\"08-NLP全栈-HW04\"",
+      "level": "capstone",
+      "format": "project",
+      "source_type": "local_integration_task",
+      "requires": [
+        "08-NLP全栈-检索增强生成RAG",
+        "08-NLP全栈-BERT及其变体",
+        "08-NLP全栈-Agent与工具使用"
+      ],
+      "len": 2243,
+      "source_lines": [
+        "source_type: local_integration_task",
+        "source: \"Stanford CS224n Capstone & RAG System Lab\"",
+        "source_url: \"https://web.stanford.edu/class/cs224n/projects.html\""
+      ]
+    },
+    {
+      "rel": "课后作业\\08-NLP全栈-课后作业-01-词向量与文本表征.md",
+      "fname": "08-NLP全栈-课后作业-01-词向量与文本表征.md",
+      "assignment_id": "\"08-NLP全栈-HW01\"",
+      "level": "lesson",
+      "format": "lab",
+      "source_type": "official_assignment",
+      "requires": [
+        "08-NLP全栈-词向量与Word2Vec",
+        "08-NLP全栈-GloVe与稠密向量",
+        "08-NLP全栈-文本表示方法"
+      ],
+      "len": 2172,
+      "source_lines": [
+        "source_type: official_assignment",
+        "source: \"Stanford CS224n: Natural Language Processing with Deep Learning\"",
+        "source_url: \"https://github.com/stanfordnlp/cs224n-assignments/tree/master/assignment1\""
+      ]
+    },
+    {
+      "rel": "课后作业\\08-NLP全栈-课后作业-02-子词分词与BPE算法.md",
+      "fname": "08-NLP全栈-课后作业-02-子词分词与BPE算法.md",
+      "assignment_id": "\"08-NLP全栈-HW02\"",
+      "level": "lesson",
+      "format": "lab",
+      "source_type": "open_source_project_task",
+      "requires": [
+        "08-NLP全栈-子词分词",
+        "08-NLP全栈-文本预处理"
+      ],
+      "len": 2278,
+      "source_lines": [
+        "source_type: open_source_project_task",
+        "source: \"Hugging Face Tokenizers & MinGPT Tokenizer Labs\"",
+        "source_url: \"https://github.com/huggingface/tokenizers\""
+      ]
+    },
+    {
+      "rel": "课后作业\\08-NLP全栈-课后作业-03-RoPE旋转位置编码与注意力掩码.md",
+      "fname": "08-NLP全栈-课后作业-03-RoPE旋转位置编码与注意力掩码.md",
+      "assignment_id": "\"08-NLP全栈-HW03\"",
+      "level": "lesson",
+      "format": "lab",
+      "source_type": "open_source_project_task",
+      "requires": [
+        "08-NLP全栈-RoPE旋转位置编码",
+        "08-NLP全栈-Self-Attention自注意力机制"
+      ],
+      "len": 2775,
+      "source_lines": [
+        "source_type: open_source_project_task",
+        "source: \"Meta LLaMA Architecture & RoPE Reference Repo\"",
+        "source_url: \"https://github.com/meta-llama/llama\"",
+        "| **RoPE 旋转算子** | 40% | 正确实现 `rotate_half` 与 Sin/Cos 广播相乘，与 HuggingFace `LlamaAttention` 对齐 |"
+      ]
+    },
+    {
+      "rel": "课后作业\\08-NLP全栈-课后作业-04-LoRA参数高效微调算子.md",
+      "fname": "08-NLP全栈-课后作业-04-LoRA参数高效微调算子.md",
+      "assignment_id": "\"08-NLP全栈-HW04\"",
+      "level": "lesson",
+      "format": "lab",
+      "source_type": "open_source_project_task",
+      "requires": [
+        "08-NLP全栈-参数高效微调PEFT"
+      ],
+      "len": 2623,
+      "source_lines": [
+        "source_type: open_source_project_task",
+        "source: \"Hugging Face PEFT & Microsoft LoRA Official Paper Repo\"",
+        "source_url: \"https://github.com/microsoft/LoRA\""
+      ]
+    },
+    {
+      "rel": "课后作业\\08-NLP全栈-课后作业-05-传统NLP与序列标注实战.md",
+      "fname": "08-NLP全栈-课后作业-05-传统NLP与序列标注实战.md",
+      "assignment_id": "\"08-NLP全栈-HW05\"",
+      "level": "lesson",
+      "format": "lab",
+      "source_type": "official_assignment",
+      "requires": [
+        "08-NLP全栈-NLP数学基础",
+        "08-NLP全栈-Python编程与NLP工具",
+        "08-NLP全栈-倒排索引",
+        "08-NLP全栈-语言学基础",
+        "08-NLP全栈-主题模型",
+        "08-NLP全栈-句法分析",
+        "08-NLP全栈-序列标注",
+        "08-NLP全栈-统计机器学习",
+        "08-NLP全栈-WordPiece与SentencePiece分词"
+      ],
+      "len": 2089,
+      "source_lines": [
+        "source_type: official_assignment",
+        "source: \"Stanford CS224n & NLTK Traditional NLP Assignment\"",
+        "source_url: \"https://github.com/stanfordnlp/cs224n-assignments\""
+      ]
+    },
+    {
+      "rel": "课后作业\\08-NLP全栈-课后作业-06-文本分类与评测指标.md",
+      "fname": "08-NLP全栈-课后作业-06-文本分类与评测指标.md",
+      "assignment_id": "\"08-NLP全栈-HW06\"",
+      "level": "lesson",
+      "format": "lab",
+      "source_type": "official_assignment",
+      "requires": [
+        "08-NLP全栈-CNN在NLP中的应用",
+        "08-NLP全栈-数据集与评测指标",
+        "08-NLP全栈-文本分类与情感分析",
+        "08-NLP全栈-BERT与GPT对比",
+        "08-NLP全栈-GPT系列",
+        "08-NLP全栈-HuggingFace生态系统",
+        "08-NLP全栈-其他预训练模型",
+        "08-NLP全栈-提示工程"
+      ],
+      "len": 2415,
+      "source_lines": [
+        "requires: [\"[[08-NLP全栈-CNN在NLP中的应用]]\", \"[[08-NLP全栈-数据集与评测指标]]\", \"[[08-NLP全栈-文本分类与情感分析]]\", \"[[08-NLP全栈-BERT与GPT对比]]\", \"[[08-NLP全栈-GPT系列]]\", \"[[08-NLP全栈-HuggingFace生态系统]]\", \"[[08-NLP全栈-其他预训练模型]]\", \"[[08-NLP全栈-提示工程]]\"]",
+        "source_type: official_assignment",
+        "source: \"Hugging Face NLP Course & Stanford CS224n Assignment 2\"",
+        "source_url: \"https://huggingface.co/learn/nlp-course/\"",
+        "tags: [作业, NLP, TextCNN, BLEU, ROUGE, HuggingFace, 提示工程]"
+      ]
+    },
+    {
+      "rel": "质量审计\\课程严苛审计.md",
+      "fname": "课程严苛审计.md",
+      "assignment_id": null,
+      "level": null,
+      "format": null,
+      "source_type": null,
+      "requires": [],
+      "len": 1476,
+      "source_lines": [
+        "| **2. 名校开源作业真实度** | **19** / 20 | ≥ 16 | ✅ | 100% (10/10) 作业均包含 Stanford CS224n 与 Hugging Face 官方溯源 URL。 |",
+        "| 2. 元数据溯源 URL 缺失 | ✅ **0 项** | 10 份作业 YAML 中 `source` 和 `source_url` 全部填齐并校验有效。 |"
+      ]
+    },
+    {
+      "rel": "质量审计\\课程重构执行清单.md",
+      "fname": "课程重构执行清单.md",
+      "assignment_id": null,
+      "level": null,
+      "format": null,
+      "source_type": null,
+      "requires": [],
+      "len": 1282,
+      "source_lines": [
+        "- **作业维度**：10 份作业（6 课后 + 3 阶段 + 1 大作业），100% 来自 Stanford CS224n / HuggingFace 等官方源并提供 URL"
+      ]
+    },
+    {
+      "rel": "阶段作业\\08-NLP全栈-阶段作业-01-RNN与Seq2Seq注意力.md",
+      "fname": "08-NLP全栈-阶段作业-01-RNN与Seq2Seq注意力.md",
+      "assignment_id": "\"08-NLP全栈-HW02\"",
+      "level": "stage",
+      "format": "lab",
+      "source_type": "official_assignment",
+      "requires": [
+        "08-NLP全栈-循环神经网络RNN",
+        "08-NLP全栈-Seq2Seq与注意力机制",
+        "08-NLP全栈-Attention计算"
+      ],
+      "len": 2221,
+      "source_lines": [
+        "source_type: official_assignment",
+        "source: \"Stanford CS224n Assignment 3: Dependency Parsing & NMT RNN\"",
+        "source_url: \"https://github.com/stanfordnlp/cs224n-assignments/tree/master/assignment3\""
+      ]
+    },
+    {
+      "rel": "阶段作业\\08-NLP全栈-阶段作业-02-Transformer与MinBERT实现.md",
+      "fname": "08-NLP全栈-阶段作业-02-Transformer与MinBERT实现.md",
+      "assignment_id": "\"08-NLP全栈-HW03\"",
+      "level": "stage",
+      "format": "project",
+      "source_type": "official_assignment",
+      "requires": [
+        "08-NLP全栈-Self-Attention自注意力机制",
+        "08-NLP全栈-Transformer架构",
+        "08-NLP全栈-BERT模型"
+      ],
+      "len": 3541,
+      "source_lines": [
+        "source_type: official_assignment",
+        "source: \"Stanford CS224n Assignment 5: MinBERT and Downstream Tasks\"",
+        "source_url: \"https://github.com/stanfordnlp/cs224n-assignments/tree/master/assignment5\"",
+        "1. 参考 Stanford CS224N MinBERT 官方实践，从零手写补全 Transformer Encoder 架构的核心算子。"
+      ]
+    },
+    {
+      "rel": "阶段作业\\08-NLP全栈-阶段作业-03-大模型微调对齐与推理评估.md",
+      "fname": "08-NLP全栈-阶段作业-03-大模型微调对齐与推理评估.md",
+      "assignment_id": "\"08-NLP全栈-HW07\"",
+      "level": "stage",
+      "format": "project",
+      "source_type": "official_assignment",
+      "requires": [
+        "08-NLP全栈-前置-PyTorch与NLP编程基础",
+        "08-NLP全栈-前置-概率论与信息论基础",
+        "08-NLP全栈-前置-线性代数与张量运算",
+        "08-NLP全栈-LLM推理优化",
+        "08-NLP全栈-多模态NLP",
+        "08-NLP全栈-指令微调与对齐",
+        "08-NLP全栈-信息抽取",
+        "08-NLP全栈-对话系统",
+        "08-NLP全栈-文本生成",
+        "08-NLP全栈-问答系统",
+        "08-NLP全栈-FlashAttention与KVCache显存优化",
+        "08-NLP全栈-DPO直接偏好优化与RLHF对齐",
+        "08-NLP全栈-LLM量化算法AWQ与GPTQ",
+        "08-NLP全栈-文本生成解码与采样策略"
+      ],
+      "len": 2672,
+      "source_lines": [
+        "source_type: official_assignment",
+        "source: \"Hugging Face Alignment Handbook & CS224n LLM Lab\"",
+        "source_url: \"https://github.com/huggingface/alignment-handbook\""
+      ]
+    },
+    {
+      "rel": "🧭 课程作业总索引.md",
+      "fname": "🧭 课程作业总索引.md",
+      "assignment_id": null,
+      "level": null,
+      "format": null,
+      "source_type": null,
+      "requires": [],
+      "len": 2398,
+      "source_lines": [
+        "| 规模层级 (`assignment_level`) | 规范作业文件名 | 核心考核技能 | 开源名校来源 |",
+        "| **课后作业 1** (`lesson`) | [[课后作业/08-NLP全栈-课后作业-01-词向量与文本表征\\|01-词向量与文本表征]] | TF-IDF 矩阵、Skip-Gram Negative Sampling 与余弦相似度 | Stanford CS224n Assignment 1 |",
+        "| **课后作业 2** (`lesson`) | [[课后作业/08-NLP全栈-课后作业-02-子词分词与BPE算法\\|02-子词分词与BPE算法]] | 纯 Python 从零手写 BPE 分词器训练与 encode/decode | Hugging Face Tokenizers Repo |",
+        "| **课后作业 4** (`lesson`) | [[课后作业/08-NLP全栈-课后作业-04-LoRA参数高效微调算子\\|04-LoRA参数高效微调]] | PyTorch 手写 `LoRALinear` 旁路算子与 Merge 权重融合 | Hugging Face PEFT Project |",
+        "| **课后作业 5** (`lesson`) | [[课后作业/08-NLP全栈-课后作业-05-传统NLP与序列标注实战\\|05-传统NLP与序列标注]] | 倒排索引构建、BM25 检索算法与 HMM Viterbi POS 标注 | Stanford CS224n / NLTK Lab |"
+      ]
+    }
+  ]
+}

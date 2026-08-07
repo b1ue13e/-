@@ -25,7 +25,7 @@ tags: [学习,计算机视觉,目标检测,RCNN,YOLO]
 > 建议先看：[[卷积神经网络CNN]]、[[Softmax与SVM损失函数]]
 > 辅助教材：`《动手学深度学习》Ch.14`、`CS231n Assignment 3`
 
-## 0. 先判断它值不值得深挖
+## 0. 学习边界
 
 - **类别**：**A 类（核心范式，必须深挖）**。
 - **判断理由**：目标检测是计算机视觉中兼具理论深度与工程价值的核心任务——从自动驾驶的障碍物感知到安防监控的人脸锁定，都依赖检测算法。R-CNN 系列奠定了 Two-Stage 的精度标杆，YOLO 系列开创了 One-Stage 的实时范式——理解二者演进逻辑就等于掌握了检测领域半部发展史。IoU/NMS/mAP 三大工具是任何检测任务的"标配"，漏掉任何一个都无法独立评估和调试检测模型。
@@ -516,3 +516,4 @@ FROM "03-Projects"
 WHERE contains(requires, this.file.link)
 SORT assignment_level ASC, file.name ASC
 ```
+

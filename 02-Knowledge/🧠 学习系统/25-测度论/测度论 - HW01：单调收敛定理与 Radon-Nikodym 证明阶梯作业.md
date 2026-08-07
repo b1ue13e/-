@@ -12,9 +12,9 @@ status: learning
 difficulty: advanced
 importance: A
 concept: ["测度论", "勒贝格积分", "Radon-Nikodym定理"]
-prerequisites: ["[[02-Knowledge/🧠 学习系统/28-数学分析/🗺️ 数学分析学习路径|数学分析]]"]
+prerequisites: ["[[🗺️ 数学分析学习路径|数学分析]]"]
 related: ["[[实变函数-题型-L2空间完备性与Weierstrass反例阶梯作业]]"]
-upstream: ["[[02-Knowledge/🧠 学习系统/25-测度论/🗺️ 测度论学习路径|测度论学习路径]]"]
+upstream: ["[[🗺️ 测度论学习路径|测度论学习路径]]"]
 downstream: []
 tags: [学习, 25-测度论, 作业, 纸笔推导, 阶梯作业]
 aliases: ["MT-HW01-单调收敛与Radon定理作业"]

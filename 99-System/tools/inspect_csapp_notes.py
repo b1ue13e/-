@@ -4,7 +4,7 @@ if hasattr(sys.stdout, 'reconfigure'):
 
 p = pathlib.Path('F:/-/02-Knowledge/🧠 学习系统/11-计算机组成原理')
 if not p.exists():
-    p = pathlib.Path('F:/-/🧠 学习系统/11-计算机组成原理')
+    p = pathlib.Path('F:/-/02-Knowledge/🧠 学习系统/11-计算机组成原理')
 
 files = list(p.glob('*.md'))
 print(f"Total notes in 11-计算机组成原理: {len(files)}")

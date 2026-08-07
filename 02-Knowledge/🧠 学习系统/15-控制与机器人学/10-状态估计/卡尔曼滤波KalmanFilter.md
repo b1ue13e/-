@@ -1,6 +1,14 @@
 ---
 title: "卡尔曼滤波 Kalman Filter (Kalman Filter)"
 course: "15-控制与机器人学"
+stage_moc: "[[🧭 阶段10-状态估计]]"
+flow: knowledge
+kind: concept
+type: concept
+status: completed
+created: 2026-08-01
+updated: 2026-08-07
+importance: "S"
 tags:
   - 控制与机器人学
   - 卡尔曼滤波
@@ -8,9 +16,12 @@ tags:
   - 贝叶斯估计
   - 状态估计
   - 协方差更新
-type: knowledge_card
-status: completed
-created: 2026-08-01
+upstream:
+  - "[[观测器结构]]"
+  - "[[能观性定义]]"
+concept: ["卡尔曼滤波", "贝叶斯估计", "协方差更新"]
+prerequisites: ["观测器结构", "能观性定义"]
+related: ["EKF非线性状态估计", "MPC状态估计"]
 ---
 
 # 卡尔曼滤波 Kalman Filter (Kalman Filter)

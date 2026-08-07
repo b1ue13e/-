@@ -11,7 +11,7 @@ from pathlib import Path
 
 
 VAULT = Path(__file__).resolve().parents[2]
-Q = VAULT / "02-Knowledge" / "🧠 学习系统" / "03-量化金融"
+Q = VAULT / "02-Knowledge" / "02-Knowledge/🧠 学习系统" / "03-量化金融"
 ARCHIVE = VAULT / ".recovery-hold" / "quarantine" / "量化金融合并重复卡-2026-08-01"
 TODAY = "2026-08-01"
 

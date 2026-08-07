@@ -6,8 +6,9 @@ updated: 2026-08-01
 status: planned
 difficulty: intermediate
 course: 量化金融
+stage_moc: '[[🧭 阶段1-数据与收益基础]]'
 note_role: concept
-flow: sprint
+flow: knowledge
 kind: concept
 prerequisites:
 - 收益率与对数收益率
@@ -20,7 +21,6 @@ source: pandas 时间序列文档与 Qlib Data Layer 文档
 source_url: https://qlib.readthedocs.io/en/stable/component/data.html
 accessed: '2026-08-06'
 license: link-only
-sprint_id: 2026-S01-quant
 concept:
 - OHLCV字段清洗与复权
 tags:
@@ -65,7 +65,7 @@ assert raw_return == -0.5  # 拆股反例，不能解释为财富损失
 1. 用自己的数据重新构造上述最小示例，不直接复制数值。
 2. 增加一个由本主题边界产生的失败案例，并确认断言确实失败。
 3. 闭卷解释公式或机制，再与权威来源逐项核对。
-4. 把代码、输出、失败日志和一句结论登记到 [[A01-数据协议与无泄漏审计]]。
+4. 把代码、输出、失败日志和一句结论登记到 [[量化金融-阶段作业-01-数据协议与无泄漏基线]]。
 
 ## 4. 闭卷闸门
 
@@ -89,10 +89,10 @@ assert raw_return == -0.5  # 拆股反例，不能解释为财富损失
 
 ## 6. 知识连接
 
-- [[02-Knowledge/🧠 学习系统/03-量化金融/01-夯实基础/收益率与对数收益率]]
-- [[02-Knowledge/🧠 学习系统/03-量化金融/01-夯实基础/时间索引与频率（量化）]]
-- [[不要骗自己：什么叫前视偏差 (Look-Ahead Bias)]]
-- [[02-Knowledge/🧠 学习系统/03-量化金融/00-前置知识/🧭 阶段0-先修诊断与研究协议]]
+- [[收益率与对数收益率]]
+- [[时间索引与频率（量化）]]
+- [[策略回测前视偏差与生存者偏差防范审计 (Look-Ahead & Survivorship Bias Audit)]]
+- [[🧭 阶段0-先修诊断与研究协议]]
 
 ---
 
@@ -116,7 +116,7 @@ assert raw_return == -0.5  # 拆股反例，不能解释为财富损失
 光看公式没用，跑通代码才是真的！利用下方组件进行交互或直接跑通实盘代码：
 
 ### 💻 实战靶场
-- [打开 Notebook：02 第一个量化实验](https://github.com/datawhalechina/quant-for-beginners/blob/main/notebooks/phase1_intro/02_你的第一个量化实验.ipynb)（扩展材料，见 [[02-Knowledge/🧠 学习系统/03-量化金融/00-前置知识/量化金融-外部实验资产索引]]）
+- [打开 Notebook：02 第一个量化实验](https://github.com/datawhalechina/quant-for-beginners/blob/main/notebooks/phase1_intro/02_你的第一个量化实验.ipynb)（扩展材料，见 [[量化金融-外部实验资产索引]]）
 
 ## 适用条件与边界
 
@@ -127,8 +127,15 @@ assert raw_return == -0.5  # 拆股反例，不能解释为财富损失
 
 设原始价格为 $P_t$，调整因子为 $A_t$，复权价格可写为 $P_t^{adj}=A_tP_t$。`O/H/L/C/V` 分别表示开、高、低、收、量；$A_t$ 的来源、版本和生效日期必须写入 manifest。
 
-## 🧪 学完本节后可完成的作业
+## 学完后可以完成
 
-- **可立即完成**：[[03-Projects/金融与时序/03-量化金融/大作业/量化金融-大作业-AAPL贯穿式量化研究#数据契约|Capstone-AAPL 数据契约]]，让重复日期、倒序、非正价格和拆股错误测试失败。
-- **需结合后续知识**：[[03-Projects/金融与时序/03-量化金融/Qlib因子研究/A01-数据协议与无泄漏审计|A01 数据协议与无泄漏审计]]，补齐可得时点与公告日边界。
+```dataview
+LIST
+FROM "03-Projects"
+WHERE contains(requires, this.file.link)
+SORT assignment_level ASC, file.name ASC
+```
+
+
+- **需结合后续知识**：[[量化金融-阶段作业-01-数据协议与无泄漏基线|A01 数据协议与无泄漏审计]]，补齐可得时点与公告日边界。
 - **提交产物**：字段字典、数据来源/版本、复权事件审计和失败样例。

@@ -28,7 +28,7 @@ tags: [学习, 计算机视觉, LoRA, 微调, PEFT]
 
 ---
 
-## 0. 先判断它值不值得深挖
+## 0. 学习边界
 
 - **类别**：**A 类（核心概念）** — LoRA 是当前大模型微调的事实标准，从 LLM 到 Stable Diffusion 都在用。
 - **一句话本质**：冻结预训练权重，只训练两个低秩矩阵的乘积作为权重增量，参数减少 200+ 倍。
@@ -188,3 +188,4 @@ FROM "03-Projects"
 WHERE contains(requires, this.file.link)
 SORT assignment_level ASC, file.name ASC
 ```
+

@@ -50,7 +50,7 @@ if sys.stderr and hasattr(sys.stderr, 'reconfigure'):
     sys.stderr.reconfigure(encoding='utf-8')
 
 VAULT_ROOT = Path(__file__).resolve().parent.parent.parent
-LEARNING_SYS_DIR = VAULT_ROOT / "02-Knowledge" / "🧠 学习系统"
+LEARNING_SYS_DIR = VAULT_ROOT / "02-Knowledge" / "02-Knowledge/🧠 学习系统"
 
 SKELETON_BODY_TEMPLATE = """---
 title: "{title}"

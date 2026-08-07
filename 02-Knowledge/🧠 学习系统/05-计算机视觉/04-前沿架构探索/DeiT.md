@@ -19,7 +19,7 @@ tags: [学习, 计算机视觉, Transformer, DeiT, 知识蒸馏]
 
 # DeiT：数据高效图像 Transformer
 
-## 0. 先判断它值不值得深挖
+## 0. 学习边界
 
 - **值得**：它是"ViT 在小数据集上怎么训练起来"的官方答案；知识蒸馏 + 数据增强的组合思路在 CV 之外（多模态、推荐）也通用；DeiT 蒸馏 token 的设计是 2021 年后多种蒸馏架构（DeiT-III、DINO 蒸馏）的源头。
 - **不值得**：如果你只做大规模预训练（几十亿数据）且不关心数据效率，DeiT 的蒸馏技巧收益有限；纯研究蒸馏算法的可以看更专门的蒸馏卡。
@@ -175,3 +175,4 @@ FROM "02-Knowledge/🧠 学习系统"
 WHERE contains(upstream, this.file.link)
 SORT file.name ASC
 ```
+

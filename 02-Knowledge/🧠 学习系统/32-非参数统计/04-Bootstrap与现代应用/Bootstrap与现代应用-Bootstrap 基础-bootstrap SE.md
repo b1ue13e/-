@@ -14,7 +14,7 @@ tags: ["学习", "非参数统计", "Bootstrap 基础"]
 > 所属阶段：[[🚀 第四阶段：Bootstrap与现代应用|🚀 第4阶段：Bootstrap与现代应用]]
 
 ## 学习定位
-- 路径：[[../🗺️ 非参数统计学习路径|非参数统计学习路径]]
+- 路径：[[🗺️ 非参数统计学习路径|非参数统计学习路径]]
 - 阶段：[[🚀 第四阶段：Bootstrap与现代应用|🚀 第4阶段：Bootstrap与现代应用]]
 - 模块：Bootstrap 基础
 - 建议先学：[[Bootstrap与现代应用-Bootstrap 基础-resampling]]、[[Bootstrap与现代应用-Bootstrap 基础-plug-in principle]]

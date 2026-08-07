@@ -46,7 +46,7 @@ tags:
 
 ---
 
-## 0. 先判断它值不值得深挖
+## 0. 学习边界
 
 - **类别**：**A 类（核心概念，必须深挖）**
 - **判断理由**：DenseNet（Densely Connected Convolutional Network，稠密连接卷积网络）由黄高（Gao Huang）、刘壮（Zhuang Liu）与 Kilian Q. Weinberger 于 2017 年提出，斩获 **CVPR 2017 最佳论文**。它提出了一种与 ResNet"加法残差"截然不同的信息流范式——**稠密连接（Dense Connectivity）**：网络中每一层都以前面所有层的输出作为输入，并将其自身的特征图传递给后面所有层。这一设计带来了三个革命性优势：(1) **极致的梯度流动**——每一层与损失函数之间都建立了直达通道，彻底消除梯度消失；(2) **极致的参数效率**——每层只需产生极少的新特征图（增长率 $k$，通常仅 12–40），却能达到甚至超越 ResNet 的精度；(3) **极致的特征复用**——浅层特征通过拼接原封不动地流到深层，无需像 ResNet 那样强行让它们叠加。DenseNet 是理解"网络拓扑设计如何影响信息流"的经典教材，它直接启发了后续的 CondenseNet、CSPNet（YOLOv4/v5 的骨干）、以及现代 ViT 中 dense connection 思路的回潮。
@@ -570,3 +570,4 @@ FROM "03-Projects"
 WHERE contains(requires, this.file.link)
 SORT assignment_level ASC, file.name ASC
 ```
+

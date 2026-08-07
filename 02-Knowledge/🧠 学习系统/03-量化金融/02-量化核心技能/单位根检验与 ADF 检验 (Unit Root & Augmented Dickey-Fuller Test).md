@@ -6,19 +6,14 @@ created: '2026-07-23'
 status: ongoing
 difficulty: intermediate
 course: 量化金融
-importance: A
+stage_moc: '[[🧭 阶段2-定价时序与风险]]'
 tags:
 - 学习
 - 量化金融
-concept: []
-prerequisites: []
-related: []
-upstream: null
-downstream: null
 kind: concept
 flow: knowledge
-source: 本课程历史知识卡；原始来源 [待验证]
-source_url: https://www.statsmodels.org/stable/generated/statsmodels.tsa.stattools.adfuller.html。用于复核“同时记录检验回归中的常数、趋势和滞后阶数，并用结构突变反例检验结论稳健性”。
+source: "statsmodels 官方时间序列文档；正文为本地教学重写"
+source_url: "https://www.statsmodels.org/stable/generated/statsmodels.tsa.stattools.adfuller.html"
 accessed: '2026-08-06'
 license: link-only；正文为本地学习整理
 assessment_exempt: false
@@ -28,12 +23,12 @@ assessment_exempt: false
 
 ---
 
-## 0. 先判断它值不值得深挖
+## 0. 学习边界
 
-**分类：A 类（核心概念，必须深挖）**
+**学习定位：核心主题。**
 
 **理由：**
-单位根检验（Unit Root Test，最常用为 ADF 检验与 PP 检验）是时间序列分析中判断序列是否平稳（Stationary）的“终极诊断探针”。在金融计量学中，未经单位根检验直接对非平稳价格原序列做 OLS 回归会导致毁灭性的伪回归（Spurious Regression）；而对不含单位根的平稳序列强行求差分则会导致过度差分与信息丢失。掌握单位根检验是构建 ARIMA、GARCH、协整与配对交易的首要门槛。
+单位根检验（Unit Root Test，最常用为 ADF 检验与 PP 检验）是时间序列分析中判断序列是否平稳（Stationary）的“综合诊断探针”。在金融计量学中，未经单位根检验直接对非平稳价格原序列做 OLS 回归会导致毁灭性的伪回归（Spurious Regression）；而对不含单位根的平稳序列强行求差分则会导致过度差分与信息丢失。掌握单位根检验是构建 ARIMA、GARCH、协整与配对交易的首要门槛。
 
 ---
 
@@ -132,7 +127,7 @@ $$\Delta X_t = \alpha + \beta t + \gamma X_{t-1} + \sum_{i=1}^p \psi_i \Delta X_
 > [!tip] 🚧 认知脚手架：为什么经典中心极限定理在此失效？
 > 在经典统计学中，我们习惯了用 $t$ 分布去检验回归系数。因为只要样本量够大，中心极限定理就会保证估计量服从正态分布。
 > **但是！** 单位根的原假设是“该序列是一个随机游走”。还记得前面的“醉汉”吗？随机游走的方差是随时间发散的（$Var = t\sigma^2$），它根本没有稳定的均值和方差！
-> 当底层数据的方差爆炸时，经典的中心极限定理彻底崩塌。因此，我们在下面即将看到的极限分布，不再是我们熟悉的钟形曲线，而是一个高度向左偏斜的“怪物”（维纳过程积分的泛函分布）。不要被下面的随机微积分公式吓倒，你只需要记住其物理意义：**它要求证据极其确凿，临界值比普通 $t$ 检验要严苛得多（向左偏移极大）！**
+> 在单位根原假设下，常规平稳回归的渐近正态近似不成立，ADF 统计量服从由维纳过程泛函决定的非标准极限分布。因此必须使用 Dickey–Fuller 临界值，不能套用普通 $t$ 检验临界值。
 
 ### 为什么 ADF 检验不能使用标准 $t$ 分布临界值？
 1. **零假设下的非正态性**：在 $H_0: \gamma = 0$（即序列是随机游走 $X_t = \sum \epsilon_i$）的前提下，估计量 $\hat{\gamma}$ 的分母包含维纳过程的平方积分：
@@ -140,7 +135,7 @@ $$\Delta X_t = \alpha + \beta t + \gamma X_{t-1} + \sum_{i=1}^p \psi_i \Delta X_
 <summary>🧠 点击展开：硬核的维纳过程积分分布（不看完全没关系）</summary>
 
    $$\hat{\gamma} \xrightarrow{d} \frac{\frac{1}{2} [W(1)^2 - 1]}{\int_0^1 W(r)^2 dr}$$
-这不再是一个钟形的标准正态分布，而是一个极其向左偏斜的怪物分布。
+这不是标准正态分布，而是 Dickey–Fuller 非标准极限分布。
 </details>
 
 2. **转念（Dickey-Fuller 模拟临界值）**：此极限分布严重**左偏**，并非标准正态 $N(0,1)$ 或学生 $t$ 分布！因此 Dickey 和 Fuller 运用 Monte Carlo 模拟得出了专门的 **DF/ADF 临界值表**（通常 5% 显著性水平下的临界值为 $-2.86 \sim -3.45$ 左右，远比正态分布的 $-1.645$ 更加严格/偏负）。
@@ -269,7 +264,7 @@ if result[1] < 0.05:
 
 - [[单位根检验与 ADF 检验 (Unit Root & Augmented Dickey-Fuller Test)|Zivot-Andrews 检验]]：进一步延伸拓展该知识点的应用场景与模型构建。
 - [[协整关系与 Engle-Granger 两步法 (Cointegration & Engle-Granger Method)|协整]]：进一步延伸拓展该知识点的应用场景与模型构建。
-- [[量化金融-平稳性与单位根检验实战|ARIMA模型]]：进一步延伸拓展该知识点的应用场景与模型构建。
+- [[单位根检验与 ADF 检验 (Unit Root & Augmented Dickey-Fuller Test)|ARIMA模型]]：进一步延伸拓展该知识点的应用场景与模型构建。
 
 横向关联
 
@@ -347,7 +342,7 @@ if result[1] < 0.05:
 
 > [!question]- 答案解析
 > **解析**：
-> 1. **传统 ADF 局限**：传统 ADF 假设截距 $\alpha$ 和趋势系数 $\beta$ 永恒不变。当金融危机导致序列均值突然发生永久跃迁（跳阶）时，传统 ADF 会将这种均值跳变误认为是随机游走的无界漂移，从而极其错误地接受单位根假假设（统计功效拉垮）。
+> 1. **传统 ADF 局限**：传统 ADF 的确定性项不包含未知结构突变。当均值或趋势发生突变时，检验可能降低拒绝单位根原假设的功效，因此应增加结构突变检验作为敏感性分析。
 > 2. **Zivot-Andrews 修正**：允许在数据驱动下内生寻找结构断裂点 $T_{break}$，并在 ADF 方程中加入断裂哑变量（Dummy Variables），在允许结构突变的前提下重新检验单位根。  
 > **Obsidian 标签**：`#自测题/ZivotAndrews`
 
@@ -379,7 +374,7 @@ if result[1] < 0.05:
 ## 13. 给 Obsidian 的归档建议
 
 - **适合文件夹**：`02-Knowledge/🧠 学习系统/03-量化金融/02-量化核心技能/`
-- **建议双链**：[[ACF 自相关函数与 PACF 偏自相关函数 (Autocorrelation & Partial Autocorrelation Functions)|ACF与PACF]]、[[量化金融-平稳性与单位根检验实战|ARIMA模型]]、[[协整关系与 Engle-Granger 两步法 (Cointegration & Engle-Granger Method)|协整]]
+- **建议双链**：[[ACF 自相关函数与 PACF 偏自相关函数 (Autocorrelation & Partial Autocorrelation Functions)|ACF与PACF]]、[[单位根检验与 ADF 检验 (Unit Root & Augmented Dickey-Fuller Test)|ARIMA模型]]、[[协整关系与 Engle-Granger 两步法 (Cointegration & Engle-Granger Method)|协整]]
 - **标签**：`#学习` `#量化金融` `#时间序列` `#单位根检验` `#ADF检验` `#伪回归` `#平稳性`
 
 ---
@@ -402,8 +397,15 @@ if result[1] < 0.05:
 - **最小实验**：固定随机种子或冻结原始数据快照，同时保存基线、破坏条件后的对照组、关键中间量与失败日志。
 - **通过标准**：结论必须在样本外仍保持方向一致；若成本、延迟、参数扰动或结构突变使结论反转，就把该情形登记为适用边界而不是删除失败结果。
 
-## 🧪 学完本节后可完成的作业
+## 学完后可以完成
 
-- **可完成**：[[03-Projects/金融与时序/03-量化金融/课后作业/量化金融-课后作业-06-GARCH波动率与动态VaR|GARCH波动率与动态VaR]]。
+```dataview
+LIST
+FROM "03-Projects"
+WHERE contains(requires, this.file.link)
+SORT assignment_level ASC, file.name ASC
+```
+
+
 - **为什么现在能做**：本卡已经提供该任务需要的定义、公式、条件或实现边界；若任务还依赖后续知识，先完成对应阶段 MOC 中排在本卡之后的知识卡。
 - **提交产物**：闭卷定义/推导、一个可复查计算或代码结果、一个失败案例，以及对适用边界的说明。

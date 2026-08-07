@@ -13,7 +13,7 @@ tags:
 - 数值分析
 title: Numerical Linear Algebra
 author: Lloyd N. Trefethen；David Bau III
-cover: "[[02-Knowledge/📚 书库/书籍封面/Numerical-Linear-Algebra.png]]"
+cover: "（附件待补）"
 category: 数值线性代数 / 科学计算
 topics:
 - QR分解
@@ -41,18 +41,18 @@ source_path: "02-Knowledge/📚 书库/书籍资源/Numerical Linear Algebra (Ll
 
 ## 🔗 资源入口
 
-- [[02-Knowledge/📚 书库/书籍资源/Numerical Linear Algebra (Lloyd N. Trefethen, David Bau III) (z-library.sk, 1lib.sk, z-lib.sk).pdf|打开原书]]
+- （附件待补）
 - [[🗺️ 高等代数学习路径|进入高等代数学习路径]]
 
 ## 🧭 章节地图
 
 | 章节 | 章节目标 | 对应路径阶段 | 对应模块 | 代表原子卡 |
 |:---|:---|:---|:---|:---|
-| Linear Systems and Conditioning | 理解病态问题、条件数与数值误差来源 | [[02-Knowledge/🧠 学习系统/09-高等代数/04-精通拓展/🚀 第四阶段：精通拓展\|第四阶段]] | 矩阵分析与数值稳定性 | [[02-Knowledge/🧠 学习系统/09-高等代数/04-精通拓展/矩阵范数\|矩阵范数]] |
-| QR and Least Squares | 把正交化与最小二乘算法接到工程实现 | [[02-Knowledge/🧠 学习系统/09-高等代数/04-精通拓展/🚀 第四阶段：精通拓展\|第四阶段]] | 矩阵分解与最小二乘 | [[02-Knowledge/🧠 学习系统/09-高等代数/04-精通拓展/QR分解\|QR分解]] |
-| Singular Value Decomposition | 理解 SVD 的几何、逼近与数据分析价值 | [[02-Knowledge/🧠 学习系统/09-高等代数/04-精通拓展/🚀 第四阶段：精通拓展\|第四阶段]] | 矩阵分解与最小二乘 | [[02-Knowledge/🧠 学习系统/09-高等代数/04-精通拓展/奇异值分解(SVD)\|奇异值分解(SVD)]] |
-| Eigenvalue Algorithms | 把谱问题和迭代计算方法连起来 | [[02-Knowledge/🧠 学习系统/09-高等代数/04-精通拓展/🚀 第四阶段：精通拓展\|第四阶段]] | 矩阵分析与数值稳定性 | [[02-Knowledge/🧠 学习系统/09-高等代数/04-精通拓展/特征值计算\|特征值计算]] |
-| Large-Scale Problems | 面向大规模矩阵的近似、迭代与稀疏计算 | [[02-Knowledge/🧠 学习系统/09-高等代数/04-精通拓展/🚀 第四阶段：精通拓展\|第四阶段]] | 前沿补充 | [[02-Knowledge/🧠 学习系统/09-高等代数/04-精通拓展/大规模计算\|大规模计算]] |
+| Linear Systems and Conditioning | 理解病态问题、条件数与数值误差来源 | [[02-Knowledge/🧠 学习系统/09-高等代数/04-精通拓展/🚀 第四阶段：内积空间与谱理论\|第四阶段]] | 矩阵分析与数值稳定性 | [[02-Knowledge/🧠 学习系统/09-高等代数/矩阵范数（数值补充，已归档）]] |
+| QR and Least Squares | 把正交化与最小二乘算法接到工程实现 | [[02-Knowledge/🧠 学习系统/09-高等代数/04-精通拓展/🚀 第四阶段：内积空间与谱理论\|第四阶段]] | 矩阵分解与最小二乘 | [[02-Knowledge/🧠 学习系统/09-高等代数/04-精通拓展/QR分解\|QR分解]] |
+| Singular Value Decomposition | 理解 SVD 的几何、逼近与数据分析价值 | [[02-Knowledge/🧠 学习系统/09-高等代数/04-精通拓展/🚀 第四阶段：内积空间与谱理论\|第四阶段]] | 矩阵分解与最小二乘 | [[02-Knowledge/🧠 学习系统/09-高等代数/04-精通拓展/奇异值分解(SVD)\|奇异值分解(SVD)]] |
+| Eigenvalue Algorithms | 把谱问题和迭代计算方法连起来 | [[02-Knowledge/🧠 学习系统/09-高等代数/04-精通拓展/🚀 第四阶段：内积空间与谱理论\|第四阶段]] | 矩阵分析与数值稳定性 | [[02-Knowledge/🧠 学习系统/09-高等代数/特征值计算（数值补充，已归档）]] |
+| Large-Scale Problems | 面向大规模矩阵的近似、迭代与稀疏计算 | [[02-Knowledge/🧠 学习系统/09-高等代数/04-精通拓展/🚀 第四阶段：内积空间与谱理论\|第四阶段]] | 前沿补充 | [[02-Knowledge/🧠 学习系统/09-高等代数/大规模计算（数值补充，已归档）]] |
 
 ## 🪜 推荐读法
 

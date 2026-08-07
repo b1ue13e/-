@@ -1,4 +1,4 @@
----
+﻿---
 title: "Prompt增强-RAG-检索生成与可追溯回答"
 aliases: ["检索增强生成RAG"]
 type: study
@@ -26,7 +26,7 @@ anki_tags: [Prompt工程, RAG, 检索, 可追溯]
 
 ---
 
-## 0. 先判断它值不值得深挖
+## 0. 学习边界
 
 - **类别**：**A 类（核心概念，必须深挖）**
 - **判断理由**：RAG 是本课程“增强、评测与可靠性”阶段的核心技术，也是文档问答与可追溯回答的技术底座。LLM 幻觉与知识截止不能仅靠 Prompt 缓解，必须引入外部证据与拒答边界。
@@ -98,7 +98,7 @@ $$\text{score} = \lambda \cdot \text{BM25}(q, d_i) + (1-\lambda)\cdot \text{sim}
 ### 4. 常见变体与适用条件
 - **Naive RAG**：索引→检索→生成，最简单；问题：检索噪声直接污染答案。
 - **Advanced RAG**：检索前做查询改写（rewrite）、混合检索、rerank；检索后做上下文压缩（过滤无关块）。
-- **Modular RAG**：加入记忆、路由、Agent 化（见 [[05-大语言模型与前沿技术/Self-RAG|Self-RAG]]、[[05-大语言模型与前沿技术/Corrective RAG|Corrective RAG]]）。
+- **Modular RAG**：加入记忆、路由、Agent 化（见 [[Self-RAG]]、[[Corrective RAG]]）。
 - **适用条件**：知识密集型问答（开放域 QA、文档 QA）；**限制**：检索质量决定上限（"garbage in, garbage out"）、多跳推理需多次检索、延迟比纯生成高。
 
 ---
@@ -263,7 +263,7 @@ assert evidence and evidence[0][0] == "policy#1"
 
 #### 4. 检索结果质量差（top-1 总是不相关），列出 4 个排查/优化方向。
 > [!question]- 答案解析
-> - **答案**：① 嵌入模型：换更强的嵌入模型（bge/m3e/e5 系列）或领域微调嵌入（见 [[05-大语言模型与前沿技术/RAG Embedding|RAG Embedding]]）；② 混合检索：BM25 + 稠密加权（$\lambda$ 调优），覆盖关键词型查询；③ rerank：对 top-50 粗召回做精排（cross-encoder，见 [[05-大语言模型与前沿技术/Reranking|Reranking]]）；④ 查询侧：查询改写/扩展（rewrite）、拆分子问题（多跳）；⑤ 数据侧：重切 chunk、清洗噪声文档。
+> - **答案**：① 嵌入模型：换更强的嵌入模型（bge/m3e/e5 系列）或领域微调嵌入（见 [[RAG Embedding]]）；② 混合检索：BM25 + 稠密加权（$\lambda$ 调优），覆盖关键词型查询；③ rerank：对 top-50 粗召回做精排（cross-encoder，见 [[Reranking]]）；④ 查询侧：查询改写/扩展（rewrite）、拆分子问题（多跳）；⑤ 数据侧：重切 chunk、清洗噪声文档。
 > - **解析**：按"数据→表示→召回→排序→查询"五层排查；rerank 是性价比最高的单点优化。
 > - **易错原因**：只换嵌入模型——检索质量是多环节乘积。
 > - **Obsidian 标签建议**：`#自测题/中等`
@@ -308,3 +308,4 @@ assert evidence and evidence[0][0] == "policy#1"
 - RAG 的三个基本阶段是什么？::索引阶段切块并建立表示，查询阶段检索相关证据，生成阶段基于证据回答并引用来源。
 - RAG 为什么不能完全消除幻觉？::检索可能漏召回或返回错误证据，生成器也可能忽略、误解或超出证据回答。
 - RAG 评测为什么要分开检索与生成？::只有分开测 Recall@k 等检索指标和答案支持率，才能定位错误来自找错资料还是用错资料。
+

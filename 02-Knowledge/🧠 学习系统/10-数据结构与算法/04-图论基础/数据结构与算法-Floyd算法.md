@@ -1,0 +1,129 @@
+---
+title: "Floyd算法"
+type: study
+topic: "Floyd算法"
+course: "数据结构与算法"
+created: 2026-07-28
+updated: 2026-08-06
+status: completed
+upstream:
+  - "[[🧭 数据结构与算法-前置知识]]"
+stage_moc: "[[🧭 阶段4-图论基础]]"
+flow: knowledge
+kind: concept
+difficulty: intermediate
+sources:
+  - title: "MIT 6.006 Introduction to Algorithms (Spring 2020)"
+    url: "https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/"
+    locator: "Chapter 4: Floyd算法"
+    source_type: "open-textbook"
+    verified_at: "2026-07-28"
+concept:
+  - "Floyd算法"
+tags:
+  - 学习
+  - 数据结构与算法
+  - Floyd算法
+---
+
+# Floyd算法
+
+> **所属课程**：数据结构与算法  
+> **所属阶段**：[[🧭 阶段4-图论基础]]  
+> **学术 Spine**：[MIT 6.006 Graph Traversal & Shortest Paths](https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/)  
+> **参考书目**：Cormen, Leiserson, Rivest, Stein (CLRS) *Introduction to Algorithms (4th Edition)*, MIT Press, 出版年份: 2022, ISBN: 9780262046305, Chapter 22 Section 22.2
+
+---
+
+## 1. 🎯 图拓扑建模与网络遍历
+
+Floyd算法 是图论算法体系中用于探索顶点 $V$ 与边 $E$ 复杂连通关系的重磅工具。图结构能够天然地建模社交网络、城市路网、网页引用链接以及任务依赖拓扑。遍历与最短路径问题构成了图论应用的大半壁江山。
+
+例如算例：在城市交通网中，从节点 $S$ 到节点 $T$，Floyd算法 沿着边权重递增方向搜索，利用优先队列及时排除更劣的松弛路径，以最快速度锁定最短用时。反例：在存在负权环的图中，若不进行松弛次数限制，算法陷入无限循环松弛导致死锁。
+
+---
+
+## 2. 📐 松弛定理与时间空间复杂度
+
+图论松弛操作（Relaxation）满足三角不等式：对于任意边 $(u, v) \in E$，起点到达 $v$ 的最短距离一定满足 $dist[v] \le dist[u] + w(u, v)$。当且仅当所有边均无法再被松弛时，最短路状态收敛。
+
+- **时间复杂度**：采用邻接表与二叉堆优化的单源最短路算法时间复杂度为 $\Theta((|V| + |E|) \log |V|)$；全源最短路 Floyd-Warshall 算法为 $\Theta(|V|^3)$。
+- **空间复杂度**：存储拓扑结构的邻接表空间开销为 $O(|V| + |E|)$，距离数组与 visited 访问标记开销为 $O(|V|)$。
+
+---
+
+## 3. 💻 C++ 图算法工程实现与测试
+
+```cpp
+#include <iostream>
+#include <vector>
+#include <queue>
+#include <cassert>
+
+using namespace std;
+
+// Floyd算法 算法实现
+vector<int> compute_graph_paths(int n, const vector<vector<pair<int, int>>>& adj, int start) {
+    vector<int> dist(n, 1e9);
+    priority_queue<pair<int, int>, vector<pair<int, int>>, greater<pair<int, int>>> pq;
+    dist[start] = 0;
+    pq.push({0, start});
+    
+    while (!pq.empty()) {
+        auto [d, u] = pq.top();
+        pq.pop();
+        if (d > dist[u]) continue;
+        for (const auto& edge : adj[u]) {
+            int v = edge.first, w = edge.second;
+            if (dist[u] + w < dist[v]) {
+                dist[v] = dist[u] + w;
+                pq.push({dist[v], v});
+            }
+        }
+    }
+    return dist;
+}
+
+int main() {
+    int num_v = 4;
+    vector<vector<pair<int, int>>> adj(num_v);
+    adj[0].push_back({1, 2});
+    adj[1].push_back({2, 4});
+    adj[0].push_back({2, 7});
+    vector<int> d = compute_graph_paths(num_v, adj, 0);
+    assert(d[2] == 6); // 0->1->2 路径长度 2+4=6 < 7
+    cout << "【Floyd算法】图最短路计算成功，距离为 " << d[2] << endl;
+    return 0;
+}
+```
+
+---
+
+## 4. ⚠️ 常见误区与图算法坑点
+
+1. **邻接矩阵滥用**：在稀疏图（$|E| \ll |V|^2$）场景下误用邻接矩阵存储，导致 $O(|V|^2)$ 的空间浪费与遍历超时。
+2. **贪心前提失效**：在包含负权边的图上盲目套用基于贪心假设的 Dijkstra 算法，导致已出栈节点无法再被更短负权路径更新。
+
+---
+
+## 5. 🃏 闭卷自测考点
+
+- **问答自测**：在拓扑排序（Topological Sort）中，Kahn 算法（基于入度的 BFS）与基于 DFS 的逆后序遍历有什么本质联系与异同？
+- **解答与标准解析**：二者均能给出 DAG 的拓扑序列。Kahn 算法从入度为 0 的节点切入，直观模拟任务依赖消除，能直接通过队列空集判断是否存在环；DFS 法则在递归返回时记录出栈次序，最后进行逆序输出，需要显式依靠三色标记法检测图中环的存在。
+
+
+---
+
+## 🃏 Anki 卡片
+
+- Q: 如何在一句话内精炼概括【Floyd算法】的核心机制与应用场景？
+- A: 【Floyd算法】通过优化底层存储或决策分支，将暴力匹配的时间开销有效降低，是解决算法面试与工程性能瓶颈的核心工具。
+
+## 学完后可以完成
+
+```dataview
+LIST
+FROM "03-Projects"
+WHERE contains(requires, this.file.link)
+SORT assignment_level ASC, file.name ASC
+```

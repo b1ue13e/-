@@ -19,7 +19,7 @@ if hasattr(sys.stdout, "reconfigure"):
 
 
 VAULT_ROOT = Path(__file__).resolve().parents[2]
-LEARNING_ROOT = VAULT_ROOT / "02-Knowledge" / "🧠 学习系统"
+LEARNING_ROOT = VAULT_ROOT / "02-Knowledge" / "02-Knowledge/🧠 学习系统"
 DOMAINS = {
     "social_network_mining": "01-社交网络挖掘",
     "time_series": "02-时间序列分析",

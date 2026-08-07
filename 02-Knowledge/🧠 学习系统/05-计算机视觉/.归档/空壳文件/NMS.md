@@ -11,9 +11,9 @@ tags: ["学习", "计算机视觉"]
 ---
 # NMS
 
-> 所属模块：[[../🗺️ 计算机视觉学习路径|计算机视觉学习路径]]
+> 所属模块：[[🗺️ 计算机视觉学习路径|计算机视觉学习路径]]
 > 主教材：`《Computer Vision: Algorithms and Applications》`
-> 对应阶段：[[02-Knowledge/🧠 学习系统/05-计算机视觉/03-视觉核心任务/🎯 第三阶段：视觉核心任务|返回阶段页]]
+> 对应阶段：[[🎯 第三阶段：视觉核心任务|返回阶段页]]
 > 建议先看：Image Formation、Filtering、Features、Segmentation、Geometry
 > 辅助教材：`Hands-on Machine Learning`、`《Computer Vision: Algorithms and Applications》`、`《动手学深度学习》`
 

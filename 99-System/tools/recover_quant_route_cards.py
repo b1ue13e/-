@@ -7,7 +7,7 @@ import runpy
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
-Q = ROOT / "02-Knowledge" / "🧠 学习系统" / "03-量化金融"
+Q = ROOT / "02-Knowledge" / "02-Knowledge/🧠 学习系统" / "03-量化金融"
 P1 = runpy.run_path(str(ROOT / "99-System" / "tools" / "upgrade_quant_route_quality.py"))["ITEMS"]
 P2 = runpy.run_path(str(ROOT / "99-System" / "tools" / "upgrade_quant_route_quality_k15_k28.py"))["ITEMS"]
 ITEMS = {**P1, **P2}

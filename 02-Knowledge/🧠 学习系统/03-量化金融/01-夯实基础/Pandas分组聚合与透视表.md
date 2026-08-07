@@ -6,8 +6,9 @@ updated: 2026-08-01
 status: planned
 difficulty: intermediate
 course: 量化金融
+stage_moc: '[[🧭 阶段1-数据与收益基础]]'
 note_role: concept
-flow: sprint
+flow: knowledge
 kind: concept
 prerequisites:
 - 时间索引与频率（量化）
@@ -20,7 +21,6 @@ source: pandas GroupBy 与 Reshaping 文档
 source_url: https://pandas.pydata.org/docs/user_guide/groupby.html
 accessed: '2026-08-06'
 license: link-only
-sprint_id: 2026-S01-quant
 concept:
 - Pandas分组聚合与透视表
 tags:
@@ -65,7 +65,7 @@ assert lag.iloc[3] == 20
 1. 用自己的数据重新构造上述最小示例，不直接复制数值。
 2. 增加一个由本主题边界产生的失败案例，并确认断言确实失败。
 3. 闭卷解释公式或机制，再与权威来源逐项核对。
-4. 把代码、输出、失败日志和一句结论登记到 [[A01-数据协议与无泄漏审计]]。
+4. 把代码、输出、失败日志和一句结论登记到 [[量化金融-阶段作业-01-数据协议与无泄漏基线]]。
 
 ## 4. 闭卷闸门
 
@@ -89,10 +89,10 @@ assert lag.iloc[3] == 20
 
 ## 6. 知识连接
 
-- [[02-Knowledge/🧠 学习系统/03-量化金融/01-夯实基础/时间索引与频率（量化）]]
-- [[02-Knowledge/🧠 学习系统/03-量化金融/01-夯实基础/滚动窗口与波动率特征]]
+- [[时间索引与频率（量化）]]
+- [[滚动窗口与波动率特征]]
 - [[因子预处理：去极值、中性化与标准化 (Factor Preprocessing_ Winsorization, Neutralization & Z-Score)]]
-- [[02-Knowledge/🧠 学习系统/03-量化金融/00-前置知识/🧭 阶段0-先修诊断与研究协议]]
+- [[🧭 阶段0-先修诊断与研究协议]]
 
 ---
 
@@ -112,10 +112,17 @@ assert lag.iloc[3] == 20
 
 对分组 $g$ 的均值为 $\bar{x}_g=|g|^{-1}\sum_{i\in g}x_i$；`groupby(keys)` 中 `keys` 定义经济对象，`transform` 返回与输入同长的组内统计量，`agg` 返回每组一行的汇总表。
 
-## 🧪 学完本节后可完成的作业
+## 学完后可以完成
 
-- **可立即完成**：[[03-Projects/金融与时序/03-量化金融/课后作业/量化金融-课后作业-01-线性代数与概率基础#题 4|PS01 题 4]]，用分组聚合验证协方差与权重汇总不发生跨资产污染。
-- **需结合后续知识**：[[03-Projects/金融与时序/03-量化金融/大作业/量化金融-大作业-AAPL贯穿式量化研究|Capstone-AAPL Phase 1]]，在多资产面板上通过分组与时间排序测试。
+```dataview
+LIST
+FROM "03-Projects"
+WHERE contains(requires, this.file.link)
+SORT assignment_level ASC, file.name ASC
+```
+
+
+- **需结合后续知识**：[[量化金融-大作业-QF-CAPSTONE-QLIB因子研究与成本敏感回测|Capstone-AAPL Phase 1]]，在多资产面板上通过分组与时间排序测试。
 - **提交产物**：输入/输出粒度说明、最小样例、重复键和缺失键失败案例。
 
 <!-- quant-route-reasoning-v4 -->

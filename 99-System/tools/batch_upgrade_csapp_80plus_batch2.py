@@ -6,10 +6,10 @@ if hasattr(sys.stdout, 'reconfigure'):
     sys.stdout.reconfigure(encoding='utf-8')
 
 VAULT_ROOT = Path("F:/-")
-CSAPP_DIR = VAULT_ROOT / "02-Knowledge" / "🧠 学习系统" / "11-计算机组成原理"
+CSAPP_DIR = VAULT_ROOT / "02-Knowledge" / "02-Knowledge/🧠 学习系统" / "11-计算机组成原理"
 
 if not CSAPP_DIR.exists():
-    CSAPP_DIR = VAULT_ROOT / "🧠 学习系统" / "11-计算机组成原理"
+    CSAPP_DIR = VAULT_ROOT / "02-Knowledge/🧠 学习系统" / "11-计算机组成原理"
 
 print(f"Batch 2 CSAPP Upgrade: Writing MESI, False Sharing, Amdahl (>1200 chars, DOIs, URLs, wikilinks) in: {CSAPP_DIR}")
 

@@ -15,7 +15,7 @@ from pathlib import Path
 sys.stdout.reconfigure(encoding="utf-8")
 ROOT = Path(__file__).resolve().parents[2]
 PROJECT_ROOT = ROOT / "03-Projects" / "课程作业"
-STUDY_ROOT = ROOT / "02-Knowledge" / "🧠 学习系统"
+STUDY_ROOT = ROOT / "02-Knowledge" / "02-Knowledge/🧠 学习系统"
 DATE = "2026-07-28"
 BLOCK_START = "<!-- formal-homework:start -->"
 BLOCK_END = "<!-- formal-homework:end -->"
@@ -574,7 +574,7 @@ def main() -> int:
 
     # Quant finance already has the fully specified Qlib HW17; keep a single canonical assignment.
     qlib_path = (
-        ROOT / "02-Knowledge" / "🧠 学习系统" / "03-量化金融"
+        ROOT / "02-Knowledge" / "02-Knowledge/🧠 学习系统" / "03-量化金融"
         / "18-实战作业说明书" / "HW17-Qlib因子研究与成本敏感回测作业说明书.md"
     )
     rows.insert(2, (

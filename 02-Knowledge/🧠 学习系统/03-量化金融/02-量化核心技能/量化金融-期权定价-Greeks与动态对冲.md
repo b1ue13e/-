@@ -6,7 +6,7 @@ created: '2026-08-04'
 status: ongoing
 difficulty: intermediate
 course: 量化金融
-importance: A
+stage_moc: '[[🧭 阶段2-定价时序与风险]]'
 stage: 📘 第三阶段：期权与衍生品
 tags:
 - 学习
@@ -26,13 +26,11 @@ related:
 - 隐含波动率与波动率微笑
 - 高阶希腊字母与衍生品风险对冲 (Higher-Order Greeks_ Vanna, Volga & Charm)
 upstream:
-- '[[Black-Scholes 期权定价模型 (Black-Scholes Option Pricing Model)]]'
-downstream:
-- '[[高阶希腊字母与衍生品风险对冲 (Higher-Order Greeks_ Vanna, Volga & Charm)]]'
+  - '[[Black-Scholes 期权定价模型 (Black-Scholes Option Pricing Model)]]'
 flow: knowledge
 kind: concept
-source: 本课程历史知识卡；原始来源 [待验证]
-source_url: '[待验证]'
+source: MIT OCW 18.S096 lecture notes on Black-Scholes and risk-neutral valuation
+source_url: https://ocw.mit.edu/courses/18-s096-topics-in-mathematics-with-applications-in-finance-fall-2013/pages/lecture-notes/
 accessed: '2026-08-06'
 license: link-only；正文为本地学习整理
 assessment_exempt: false
@@ -42,10 +40,10 @@ assessment_exempt: false
 
 ---
 
-## 0. 先判断它值不值得深挖
+## 0. 学习边界
 
-- **类别**：**A 类（核心概念，必须深挖）**
-- **判断理由**：不懂 Greeks，就等于盲人摸象做期权交易。所有的专业期权做市商（Market Maker）和波动率交易员，每天看的都不是期权的价格，而是 Greeks 敞口。动态对冲（Delta Hedging）更是华尔街衍生品部门每天必做的底层风控操作，属于面试必考、实盘必用的硬核知识。
+- **类别**：**核心主题（核心概念，必须深挖）**
+- **判断理由**：不懂 Greeks，就等于盲人摸象做期权交易。所有的专业期权做市商（Market Maker）和波动率交易员，每天看的都不是期权的价格，而是 Greeks 敞口。动态对冲（Delta Hedging）更是市场实践衍生品部门每天必做的底层风控操作，属于面试必考、实盘必用的硬核知识。
 
 ---
 
@@ -151,7 +149,7 @@ $$ \Delta_{\Pi} = \sum_{i} w_i \Delta_i $$
 ## 9. 相关知识点与 Obsidian 双链建议
 
 ### 下游延伸
-- [[高阶希腊字母与衍生品风险对冲 (Higher-Order Greeks_ Vanna, Volga & Charm)]]：在更复杂的场外期权（OTC）交易中，需要考虑波动率曲面的变化，引入 Vanna 和 Volga 的动态对冲。
+- [[量化金融-期权定价-Greeks与动态对冲]]：在更复杂的场外期权（OTC）交易中，需要考虑波动率曲面的变化，引入 Vanna 和 Volga 的动态对冲。
 
 ---
 
@@ -162,10 +160,17 @@ $$ \Delta_{\Pi} = \sum_{i} w_i \Delta_i $$
 - [ ] 3. 什么是 Delta 中性？为什么要动态维护？
 - [ ] 4. 说明为什么 Gamma 对冲必须使用期权而不能用正股。
 - [ ] 5. 用泰勒展开解释期权价格变动的四大因素。
-\n\n> ⚔️ **专题实战任务**：👉 点击进入 [[03-Projects/金融与时序/03-量化金融/课后作业/量化金融-课后作业-05-Black-Scholes定价与对冲|HW05 Black-Scholes]] 刷怪通关！\n
+\n\n> ⚔️ **专题实战任务**：👉 点击进入 [[量化金融-课后作业-08-随机微积分与期权|HW05 Black-Scholes]] 刷怪通关！\n
 
-## 🧪 学完本节后可完成的作业
+## 学完后可以完成
 
-- **可完成**：[[03-Projects/金融与时序/03-量化金融/课后作业/量化金融-课后作业-05-Black-Scholes定价与对冲|Black-Scholes定价与对冲]]。
+```dataview
+LIST
+FROM "03-Projects"
+WHERE contains(requires, this.file.link)
+SORT assignment_level ASC, file.name ASC
+```
+
+
 - **为什么现在能做**：本卡已经提供该任务需要的定义、公式、条件或实现边界；若任务还依赖后续知识，先完成对应阶段 MOC 中排在本卡之后的知识卡。
 - **提交产物**：闭卷定义/推导、一个可复查计算或代码结果、一个失败案例，以及对适用边界的说明。

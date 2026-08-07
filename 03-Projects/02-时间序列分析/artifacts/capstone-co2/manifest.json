@@ -1,0 +1,49 @@
+{
+  "dataset": "statsmodels.datasets.co2",
+  "source_url": "https://www.statsmodels.org/stable/datasets/co2.html",
+  "frequency": "monthly start",
+  "range": [
+    "1965-01-01",
+    "2001-12-01"
+  ],
+  "missing_months_after_1965": 0,
+  "validation_origins": [
+    "1996-01-01",
+    "1996-04-01",
+    "1996-07-01",
+    "1996-10-01",
+    "1997-01-01",
+    "1997-04-01",
+    "1997-07-01",
+    "1997-10-01",
+    "1998-01-01",
+    "1998-04-01",
+    "1998-07-01",
+    "1998-10-01",
+    "1999-01-01",
+    "1999-04-01",
+    "1999-07-01",
+    "1999-10-01",
+    "2000-01-01"
+  ],
+  "test_origin": [
+    "2001-01-01"
+  ],
+  "horizon": 12,
+  "models": [
+    "naive",
+    "seasonal_naive",
+    "ets",
+    "arima",
+    "ml_lag"
+  ],
+  "selected_on_validation": "ets",
+  "seed": 20260806,
+  "python": "3.11.9",
+  "statsmodels": "0.14.6",
+  "sklearn": "1.8.0",
+  "command": "python scripts/run_capstone_co2.py",
+  "test_policy": "2001 is evaluated once after validation selection; no test tuning",
+  "interval_policy": "ETS/naive/ML intervals use training residual scale; ARIMA intervals use model forecast distribution",
+  "diagnostic_policy": "Ljung-Box is descriptive on selected test errors; it does not retroactively tune the model"
+}

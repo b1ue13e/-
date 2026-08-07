@@ -13,7 +13,7 @@ tags:
 - 线性代数
 title: Linear Algebra Done Right
 author: Sheldon Axler
-cover: "[[02-Knowledge/📚 书库/书籍封面/Linear-Algebra-Done-Right.png]]"
+cover: "（附件待补）"
 category: 线性代数 / 结构视角
 topics:
 - 向量空间
@@ -40,18 +40,18 @@ source_path: 02-Knowledge/📚 书库/书籍资源/Linear Algebra Done Right 4th
 
 ## 🔗 资源入口
 
-- [[02-Knowledge/📚 书库/书籍资源/Linear Algebra Done Right 4th ed - Axler.pdf|打开原书]]
+- （附件待补）
 - [[🗺️ 高等代数学习路径|进入高等代数学习路径]]
 
 ## 🧭 章节地图
 
 | 章节 | 章节目标 | 对应路径阶段 | 对应模块 | 代表原子卡 |
 |:---|:---|:---|:---|:---|
-| Vector Spaces | 用抽象空间语言统一线性相关、基与维数 | [[02-Knowledge/🧠 学习系统/09-高等代数/02-理论深化/🎨 第二阶段：理论深化\|第二阶段]] | 线性空间与子空间 | [[02-Knowledge/🧠 学习系统/09-高等代数/02-理论深化/基与维数\|基与维数]] |
-| Linear Maps | 把矩阵表示还原为算子与结构保持映射 | [[02-Knowledge/🧠 学习系统/09-高等代数/02-理论深化/🎨 第二阶段：理论深化\|第二阶段]] | 坐标、同构与线性映射 | [[02-Knowledge/🧠 学习系统/09-高等代数/02-理论深化/线性映射定义\|线性映射定义]] |
-| Eigenvalues and Invariant Subspaces | 用不变子空间解释谱结构与对角化 | [[02-Knowledge/🧠 学习系统/09-高等代数/02-理论深化/🎨 第二阶段：理论深化\|第二阶段]] | 特征值与对角化 | [[02-Knowledge/🧠 学习系统/09-高等代数/02-理论深化/相似对角化条件\|相似对角化条件]] |
-| Inner Product Spaces | 把长度、角度、正交和投影接到线代主线里 | [[02-Knowledge/🧠 学习系统/09-高等代数/03-进阶提升/🌟 第三阶段：进阶提升\|第三阶段]] | 内积与正交结构 | [[02-Knowledge/🧠 学习系统/09-高等代数/03-进阶提升/Gram-Schmidt正交化\|Gram-Schmidt正交化]] |
-| Operators on Inner Product Spaces | 用正规算子统一酉、Hermite 与谱分解 | [[02-Knowledge/🧠 学习系统/09-高等代数/03-进阶提升/🌟 第三阶段：进阶提升\|第三阶段]] | 正规矩阵与谱分解 | [[02-Knowledge/🧠 学习系统/09-高等代数/03-进阶提升/谱分解\|谱分解]] |
+| Vector Spaces | 用抽象空间语言统一线性相关、基与维数 | [[02-Knowledge/🧠 学习系统/09-高等代数/02-理论深化/🎨 第二阶段：理论深化\|第二阶段]] | 线性空间与子空间 | [[02-Knowledge/🧠 学习系统/09-高等代数/01-基础入门/基与维数\|基与维数]] |
+| Linear Maps | 把矩阵表示还原为算子与结构保持映射 | [[02-Knowledge/🧠 学习系统/09-高等代数/02-理论深化/🎨 第二阶段：理论深化\|第二阶段]] | 坐标、同构与线性映射 | [[02-Knowledge/🧠 学习系统/09-高等代数/02-理论深化/线性映射的定义与性质\|线性映射的定义与性质]] |
+| Eigenvalues and Invariant Subspaces | 用不变子空间解释谱结构与对角化 | [[02-Knowledge/🧠 学习系统/09-高等代数/02-理论深化/🎨 第二阶段：理论深化\|第二阶段]] | 特征值与对角化 | [[02-Knowledge/🧠 学习系统/09-高等代数/03-进阶提升/相似对角化条件与判定\|相似对角化条件与判定]] |
+| Inner Product Spaces | 把长度、角度、正交和投影接到线代主线里 | [[02-Knowledge/🧠 学习系统/09-高等代数/03-进阶提升/🌟 第三阶段：进阶提升\|第三阶段]] | 内积与正交结构 | [[02-Knowledge/🧠 学习系统/09-高等代数/04-精通拓展/Gram-Schmidt正交化\|Gram-Schmidt正交化]] |
+| Operators on Inner Product Spaces | 用正规算子统一酉、Hermite 与谱分解 | [[02-Knowledge/🧠 学习系统/09-高等代数/03-进阶提升/🌟 第三阶段：进阶提升\|第三阶段]] | 正规矩阵与谱分解 | [[02-Knowledge/🧠 学习系统/09-高等代数/04-精通拓展/实对称矩阵与谱定理\|谱分解]] |
 
 ## 🪜 推荐读法
 

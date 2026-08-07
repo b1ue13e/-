@@ -20,7 +20,7 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[2]
-DEFAULT_SCOPE = ROOT / "02-Knowledge" / "🧠 学习系统"
+DEFAULT_SCOPE = ROOT / "02-Knowledge" / "02-Knowledge/🧠 学习系统"
 REPLACEMENTS = (
     (b"\text", b"\\text", "TAB+ext -> \\text"),
     (b"\times", b"\\times", "TAB+imes -> \\times"),

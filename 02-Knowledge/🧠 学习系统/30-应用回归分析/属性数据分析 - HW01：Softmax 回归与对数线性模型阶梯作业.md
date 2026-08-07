@@ -12,9 +12,9 @@ status: learning
 difficulty: intermediate
 importance: A
 concept: ["分类数据", "列联表", "Logistic回归", "对数线性模型"]
-prerequisites: ["[[02-Knowledge/🧠 学习系统/30-应用回归分析/🗺️ 应用回归分析学习路径|应用回归分析]]"]
+prerequisites: ["[[🗺️ 应用回归分析学习路径|应用回归分析]]"]
 related: ["[[应用回归分析-题型-坐标下降Lasso与IRLS回归阶梯作业]]"]
-upstream: ["[[02-Knowledge/🧠 学习系统/31-属性数据分析/🗺️ 属性数据分析学习路径|属性数据分析学习路径]]"]
+upstream: ["[[🗺️ 属性数据分析学习路径|属性数据分析学习路径]]"]
 downstream: []
 tags: [学习, 31-属性数据分析, 作业, 实战, 阶梯作业]
 aliases: ["CDA-HW01-Softmax与对数线性作业"]

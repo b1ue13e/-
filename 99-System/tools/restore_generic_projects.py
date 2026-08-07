@@ -77,7 +77,7 @@ def load_core_tracks() -> dict[str, str]:
 
 def infer_course(text: str, name: str) -> str | None:
     match = re.search(
-        r"(?:02-Knowledge/)?🧠 学习系统[/\\](\d{2}-[^/\\|\]\r\n]+)",
+        r"(?:02-Knowledge/)?02-Knowledge/🧠 学习系统[/\\](\d{2}-[^/\\|\]\r\n]+)",
         text,
     )
     if match:

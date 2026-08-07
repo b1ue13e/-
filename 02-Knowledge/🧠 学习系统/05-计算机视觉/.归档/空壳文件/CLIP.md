@@ -11,9 +11,9 @@ tags: ["学习", "计算机视觉"]
 ---
 # CLIP
 
-> 所属模块：[[../🗺️ 计算机视觉学习路径|计算机视觉学习路径]]
+> 所属模块：[[🗺️ 计算机视觉学习路径|计算机视觉学习路径]]
 > 主教材：`《Deep Learning》`
-> 对应阶段：[[02-Knowledge/🧠 学习系统/05-计算机视觉/04-前沿架构探索/🚀 第四阶段：前沿架构探索|返回阶段页]]
+> 对应阶段：[[🚀 第四阶段：前沿架构探索|返回阶段页]]
 > 建议先看：Feedforward Nets、Regularization、Optimization、Representation Learning、CNN Basics
 > 辅助教材：`Hands-on Machine Learning`、`《Deep Learning》`
 
@@ -26,6 +26,6 @@ tags: ["学习", "计算机视觉"]
 - 一个最小例子：
 - 与前后笔记的关系：
 - 前置：待补
-- 相关：[[ALIGN]]、[[02-Knowledge/🧠 学习系统/05-计算机视觉/04-前沿架构探索/BLIP|BLIP]]
+- 相关：[[ALIGN]]、[[BLIP]]
 
 *创建于：2026-04-18*

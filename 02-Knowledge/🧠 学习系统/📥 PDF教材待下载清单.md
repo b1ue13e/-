@@ -8,7 +8,7 @@ tags: [教材, PDF, 下载清单]
 ---
 # 📥 PDF教材待下载清单
 
-> [!warning] 本页从 2026-08-02 起只记录**合法获取缺口**。优先使用 [[02-Knowledge/MOC/开放教材主线注册表|开放教材主线注册表]] 的官方在线版；不得把第三方影印站、网盘或来源不明 PDF 当成待下载任务。`official-free` 也不自动允许本地再分发。
+> [!warning] 本页从 2026-08-02 起只记录**合法获取缺口**。优先使用 [[开放教材主线注册表]] 的官方在线版；不得把第三方影印站、网盘或来源不明 PDF 当成待下载任务。`official-free` 也不自动允许本地再分发。
 
 > 这页只整理“书名 + 用途 + 优先级”，不提供下载链接。请优先通过出版社官网、作者主页、学校图书馆、开放课件或你已购买的合法来源获取 PDF。
 
@@ -16,26 +16,26 @@ tags: [教材, PDF, 下载清单]
 
 | 路径/用途 | 教材 | 状态 |
 |:---|:---|:---:|
-| 时间序列主教材 | [[📚 书库/书籍笔记/时间序列分析基于R\|时间序列分析基于R]] | 已在库中 |
-| 机器学习主教材 | [[📚 书库/书籍笔记/机器学习-周志华\|机器学习（周志华）]] | 已在库中 |
-| 多元统计主教材 | [[📚 书库/书籍笔记/多元统计分析-第5版\|多元统计分析（第5版）]] | 已在库中 |
-| 应用回归主教材 | [[📚 书库/书籍笔记/应用回归分析-第5版\|应用回归分析（第5版）]] | 已在库中 |
-| 数学底座 | [[📚 书库/书籍资源/Mathematics for Machine Learning (Marc Peter Deisenroth, A. Aldo Faisal etc.) (z-library.sk, 1lib.sk, z-lib.sk).pdf\|Mathematics for Machine Learning]] | 已在库中 |
-| 数据处理底座 | [[📚 书库/书籍资源/Python for Data Analysis Data Wrangling with Pandas, NumPy, and IPython (Wes McKinney) (z-library.sk, 1lib.sk, z-lib.sk).pdf\|Python for Data Analysis]] | 已在库中 |
-| 工程化 ML | [[📚 书库/书籍资源/Hands-on Machine Learning with Scikit-Learn, Keras, and TensorFlow (Aurélien Géron) (z-library.sk, 1lib.sk, z-lib.sk).pdf\|Hands-on Machine Learning]] | 已在库中 |
-| 高频/量化辅助 | [[📚 书库/书籍资源/Analysis of Financial Time Series (Wiley Series in Probability and Statistics) (Ruey S. Tsay) (z-library.sk, 1lib.sk, z-lib.sk).pdf\|Analysis of Financial Time Series]] | 已在库中 |
-| 量化衍生品 | [[📚 书库/书籍资源/Options, futures, and other derivatives (Hull John, Basu Sankarshan) (z-library.sk, 1lib.sk, z-lib.sk).pdf\|Options, Futures, and Other Derivatives]] | 已在库中 |
-| 量化风控 | [[📚 书库/书籍资源/Value At Risk The New Benchmark For Managing Financial (Philippe Jorion) (z-library.sk, 1lib.sk, z-lib.sk).pdf\|Value at Risk]] | 已在库中 |
-| 量化策略 | [[📚 书库/书籍资源/Quantitative Trading How to Build Your Own Algorithmic Trading Business (Ernest P. Chan) (z-library.sk, 1lib.sk, z-lib.sk).pdf\|Quantitative Trading]] | 已在库中 |
-| 量化价值投资 | [[📚 书库/书籍资源/Quantitative Value A Practitioners Guide to Automating Intelligent Investment and Eliminating Behavioral Errors (Carlisle, Tobias, Gray etc.) (z-library.sk, 1lib.sk, z-lib.sk).pdf\|Quantitative Value]] | 已在库中 |
-| 金融 ML | [[📚 书库/书籍资源/Advances in Financial Machine Learning (Marcos M. López de Prado) (z-library.sk, 1lib.sk, z-lib.sk).pdf\|Advances in Financial Machine Learning]] | 已在库中 |
-| 高频执行 | [[📚 书库/书籍资源/High-frequency trading a practical guide to algorithmic strategies and trading systems (Irene Aldridge) (z-library.sk, 1lib.sk, z-lib.sk).pdf\|High-frequency trading]] | 已在库中 |
-| 微观结构 | [[📚 书库/书籍资源/Market Microstructure Theory (Maureen OHara) (z-library.sk, 1lib.sk, z-lib.sk).pdf\|Market Microstructure Theory]] | 已在库中 |
-| 金融 RL | [[📚 书库/书籍资源/Reinforcement Learning for Finance A Python-Based Introduction (Yves J. Hilpisch) (z-library.sk, 1lib.sk, z-lib.sk).pdf\|Reinforcement Learning for Finance]] | 已在库中 |
-| 高代辅助 | [[📚 书库/书籍笔记/鸢尾花丛书第四册-矩阵力量\|矩阵力量]] | 已在库中 |
-| 数据挖掘辅助 | [[📚 书库/书籍笔记/鸢尾花丛书第六册-数据有道\|数据有道]] | 已在库中 |
-| 可视化辅助 | [[📚 书库/书籍笔记/鸢尾花丛书第二册-可视之美\|可视之美]] | 已在库中 |
-| 检索辅助 | [[📚 书库/书籍笔记/检索力\|检索力]] | 已在库中 |
+| 时间序列主教材 | [[02-Knowledge/📚 书库/书籍笔记/时间序列分析基于R\|时间序列分析基于R]] | 已在库中 |
+| 机器学习主教材 | [[02-Knowledge/📚 书库/书籍笔记/机器学习-周志华\|机器学习（周志华）]] | 已在库中 |
+| 多元统计主教材 | [[02-Knowledge/📚 书库/书籍笔记/多元统计分析-第5版\|多元统计分析（第5版）]] | 已在库中 |
+| 应用回归主教材 | [[02-Knowledge/📚 书库/书籍笔记/应用回归分析-第5版\|应用回归分析（第5版）]] | 已在库中 |
+| 数学底座 | [[02-Knowledge/📚 书库/书籍资源/Mathematics for Machine Learning (Marc Peter Deisenroth, A. Aldo Faisal etc.) (z-library.sk, 1lib.sk, z-lib.sk).pdf\|Mathematics for Machine Learning]] | 已在库中 |
+| 数据处理底座 | [[02-Knowledge/📚 书库/书籍资源/Python for Data Analysis Data Wrangling with Pandas, NumPy, and IPython (Wes McKinney) (z-library.sk, 1lib.sk, z-lib.sk).pdf\|Python for Data Analysis]] | 已在库中 |
+| 工程化 ML | [[02-Knowledge/📚 书库/书籍资源/Hands-on Machine Learning with Scikit-Learn, Keras, and TensorFlow (Aurélien Géron) (z-library.sk, 1lib.sk, z-lib.sk).pdf\|Hands-on Machine Learning]] | 已在库中 |
+| 高频/量化辅助 | [[02-Knowledge/📚 书库/书籍资源/Analysis of Financial Time Series (Wiley Series in Probability and Statistics) (Ruey S. Tsay) (z-library.sk, 1lib.sk, z-lib.sk).pdf\|Analysis of Financial Time Series]] | 已在库中 |
+| 量化衍生品 | [[02-Knowledge/📚 书库/书籍资源/Options, futures, and other derivatives (Hull John, Basu Sankarshan) (z-library.sk, 1lib.sk, z-lib.sk).pdf\|Options, Futures, and Other Derivatives]] | 已在库中 |
+| 量化风控 | [[02-Knowledge/📚 书库/书籍资源/Value At Risk The New Benchmark For Managing Financial (Philippe Jorion) (z-library.sk, 1lib.sk, z-lib.sk).pdf\|Value at Risk]] | 已在库中 |
+| 量化策略 | [[02-Knowledge/📚 书库/书籍资源/Quantitative Trading How to Build Your Own Algorithmic Trading Business (Ernest P. Chan) (z-library.sk, 1lib.sk, z-lib.sk).pdf\|Quantitative Trading]] | 已在库中 |
+| 量化价值投资 | [[02-Knowledge/📚 书库/书籍资源/Quantitative Value A Practitioners Guide to Automating Intelligent Investment and Eliminating Behavioral Errors (Carlisle, Tobias, Gray etc.) (z-library.sk, 1lib.sk, z-lib.sk).pdf\|Quantitative Value]] | 已在库中 |
+| 金融 ML | [[02-Knowledge/📚 书库/书籍资源/Advances in Financial Machine Learning (Marcos M. López de Prado) (z-library.sk, 1lib.sk, z-lib.sk).pdf\|Advances in Financial Machine Learning]] | 已在库中 |
+| 高频执行 | [[02-Knowledge/📚 书库/书籍资源/High-frequency trading a practical guide to algorithmic strategies and trading systems (Irene Aldridge) (z-library.sk, 1lib.sk, z-lib.sk).pdf\|High-frequency trading]] | 已在库中 |
+| 微观结构 | [[02-Knowledge/📚 书库/书籍资源/Market Microstructure Theory (Maureen OHara) (z-library.sk, 1lib.sk, z-lib.sk).pdf\|Market Microstructure Theory]] | 已在库中 |
+| 金融 RL | [[02-Knowledge/📚 书库/书籍资源/Reinforcement Learning for Finance A Python-Based Introduction (Yves J. Hilpisch) (z-library.sk, 1lib.sk, z-lib.sk).pdf\|Reinforcement Learning for Finance]] | 已在库中 |
+| 高代辅助 | [[02-Knowledge/📚 书库/书籍笔记/鸢尾花丛书第四册-矩阵力量\|矩阵力量]] | 已在库中 |
+| 数据挖掘辅助 | [[02-Knowledge/📚 书库/书籍笔记/鸢尾花丛书第六册-数据有道\|数据有道]] | 已在库中 |
+| 可视化辅助 | [[02-Knowledge/📚 书库/书籍笔记/鸢尾花丛书第二册-可视之美\|可视之美]] | 已在库中 |
+| 检索辅助 | [[02-Knowledge/📚 书库/书籍笔记/检索力\|检索力]] | 已在库中 |
 
 ---
 
@@ -259,4 +259,4 @@ tags: [教材, PDF, 下载清单]
 
 1. 如果你只想先补最影响当前系统推进的书，就先下载“第一优先级”这 77 本。
 2. 如果你准备继续扩路径，再按“第二优先级”逐条路径补主教材，不需要一次下齐。
-3. 下载完成后，优先放进 `📚 书库/书籍资源/`，这样后续我可以继续把它们挂到各学习路径里。
+3. 下载完成后，优先放进 `02-Knowledge/📚 书库/书籍资源/`，这样后续我可以继续把它们挂到各学习路径里。

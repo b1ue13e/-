@@ -22,7 +22,7 @@ tags: [学习,计算机视觉,Transformer,自注意力,注意力机制]
 
 ---
 
-## 0. 先判断它值不值得深挖
+## 0. 学习边界
 
 - **类别**：**A 类（核心概念，必须深挖）**
 - **判断理由**：Transformer 由 Vaswani 等人在 "Attention Is All You Need" (NeurIPS 2017) 中提出，最初在 NLP 领域彻底替代 RNN/LSTM，随后以 ViT (Dosovitskiy et al., 2021) 大规模入侵计算机视觉，成为**当代 CV 架构的第一性原理基石**。此后的 Swin Transformer、DETR、CLIP、Stable Diffusion 等全部建立在 Self-Attention 之上。不搞懂 QKV 机制与 Multi-Head Attention，就无法理解 2022 年之后的任何前沿模型。
@@ -446,3 +446,4 @@ FROM "03-Projects"
 WHERE contains(requires, this.file.link)
 SORT assignment_level ASC, file.name ASC
 ```
+

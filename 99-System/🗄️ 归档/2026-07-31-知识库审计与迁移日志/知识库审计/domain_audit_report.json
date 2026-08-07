@@ -6,103 +6,103 @@
       "placeholder_files": 15,
       "placeholder_rate": 4.7,
       "placeholder_examples": [
-        "02-Knowledge\\🧠 学习系统\\01-社交网络挖掘\\占位-代码实践 深度学习笔记.md",
-        "02-Knowledge\\🧠 学习系统\\01-社交网络挖掘\\占位-代码实践.md",
-        "02-Knowledge\\🧠 学习系统\\01-社交网络挖掘\\占位-网络指标.md",
-        "02-Knowledge\\🧠 学习系统\\01-社交网络挖掘\\占位-课堂作业复盘 深度学习笔记.md",
-        "02-Knowledge\\🧠 学习系统\\01-社交网络挖掘\\占位-课堂作业复盘.md",
-        "02-Knowledge\\🧠 学习系统\\01-社交网络挖掘\\占位-课程任务挂载 深度学习笔记.md",
-        "02-Knowledge\\🧠 学习系统\\01-社交网络挖掘\\占位-课程任务挂载.md",
-        "02-Knowledge\\🧠 学习系统\\01-社交网络挖掘\\占位-课程复盘 深度学习笔记.md",
-        "02-Knowledge\\🧠 学习系统\\01-社交网络挖掘\\占位-课程复盘.md",
-        "02-Knowledge\\🧠 学习系统\\01-社交网络挖掘\\占位-错题整理 深度学习笔记.md",
-        "02-Knowledge\\🧠 学习系统\\01-社交网络挖掘\\占位-错题整理.md",
-        "02-Knowledge\\🧠 学习系统\\01-社交网络挖掘\\占位-项目实践 深度学习笔记.md",
-        "02-Knowledge\\🧠 学习系统\\01-社交网络挖掘\\占位-项目实践.md",
-        "02-Knowledge\\🧠 学习系统\\01-社交网络挖掘\\计划占位常见题型 深度学习笔记.md",
-        "02-Knowledge\\🧠 学习系统\\01-社交网络挖掘\\计划占位常见题型.md"
+        "02-Knowledge\\02-Knowledge/🧠 学习系统\\01-社交网络挖掘\\占位-代码实践 深度学习笔记.md",
+        "02-Knowledge\\02-Knowledge/🧠 学习系统\\01-社交网络挖掘\\占位-代码实践.md",
+        "02-Knowledge\\02-Knowledge/🧠 学习系统\\01-社交网络挖掘\\占位-网络指标.md",
+        "02-Knowledge\\02-Knowledge/🧠 学习系统\\01-社交网络挖掘\\占位-课堂作业复盘 深度学习笔记.md",
+        "02-Knowledge\\02-Knowledge/🧠 学习系统\\01-社交网络挖掘\\占位-课堂作业复盘.md",
+        "02-Knowledge\\02-Knowledge/🧠 学习系统\\01-社交网络挖掘\\占位-课程任务挂载 深度学习笔记.md",
+        "02-Knowledge\\02-Knowledge/🧠 学习系统\\01-社交网络挖掘\\占位-课程任务挂载.md",
+        "02-Knowledge\\02-Knowledge/🧠 学习系统\\01-社交网络挖掘\\占位-课程复盘 深度学习笔记.md",
+        "02-Knowledge\\02-Knowledge/🧠 学习系统\\01-社交网络挖掘\\占位-课程复盘.md",
+        "02-Knowledge\\02-Knowledge/🧠 学习系统\\01-社交网络挖掘\\占位-错题整理 深度学习笔记.md",
+        "02-Knowledge\\02-Knowledge/🧠 学习系统\\01-社交网络挖掘\\占位-错题整理.md",
+        "02-Knowledge\\02-Knowledge/🧠 学习系统\\01-社交网络挖掘\\占位-项目实践 深度学习笔记.md",
+        "02-Knowledge\\02-Knowledge/🧠 学习系统\\01-社交网络挖掘\\占位-项目实践.md",
+        "02-Knowledge\\02-Knowledge/🧠 学习系统\\01-社交网络挖掘\\计划占位常见题型 深度学习笔记.md",
+        "02-Knowledge\\02-Knowledge/🧠 学习系统\\01-社交网络挖掘\\计划占位常见题型.md"
       ],
       "repeated_shells": 0,
       "broken_wikilinks": 1091,
       "broken_wikilink_examples": [
         {
-          "file": "02-Knowledge\\🧠 学习系统\\01-社交网络挖掘\\1. 创建图 (例如：从边列表创建有向图).md",
+          "file": "02-Knowledge\\02-Knowledge/🧠 学习系统\\01-社交网络挖掘\\1. 创建图 (例如：从边列表创建有向图).md",
           "target": "网络统计特性"
         },
         {
-          "file": "02-Knowledge\\🧠 学习系统\\01-社交网络挖掘\\1. 创建图 (例如：从边列表创建有向图).md",
+          "file": "02-Knowledge\\02-Knowledge/🧠 学习系统\\01-社交网络挖掘\\1. 创建图 (例如：从边列表创建有向图).md",
           "target": "中心性度量"
         },
         {
-          "file": "02-Knowledge\\🧠 学习系统\\01-社交网络挖掘\\1. 创建图 (例如：从边列表创建有向图).md",
+          "file": "02-Knowledge\\02-Knowledge/🧠 学习系统\\01-社交网络挖掘\\1. 创建图 (例如：从边列表创建有向图).md",
           "target": "数据结构（邻接矩阵与邻接表）"
         },
         {
-          "file": "02-Knowledge\\🧠 学习系统\\01-社交网络挖掘\\1. 创建图 (例如：从边列表创建有向图).md",
+          "file": "02-Knowledge\\02-Knowledge/🧠 学习系统\\01-社交网络挖掘\\1. 创建图 (例如：从边列表创建有向图).md",
           "target": "复杂网络中心性度量"
         },
         {
-          "file": "02-Knowledge\\🧠 学习系统\\01-社交网络挖掘\\1. 创建图 (例如：从边列表创建有向图).md",
+          "file": "02-Knowledge\\02-Knowledge/🧠 学习系统\\01-社交网络挖掘\\1. 创建图 (例如：从边列表创建有向图).md",
           "target": "社团发现算法 (Louvain, FastGreedy)"
         },
         {
-          "file": "02-Knowledge\\🧠 学习系统\\01-社交网络挖掘\\1. 创建图结构.md",
+          "file": "02-Knowledge\\02-Knowledge/🧠 学习系统\\01-社交网络挖掘\\1. 创建图结构.md",
           "target": "随机游走"
         },
         {
-          "file": "02-Knowledge\\🧠 学习系统\\01-社交网络挖掘\\1. 创建图结构.md",
+          "file": "02-Knowledge\\02-Knowledge/🧠 学习系统\\01-社交网络挖掘\\1. 创建图结构.md",
           "target": "Word2Vec"
         },
         {
-          "file": "02-Knowledge\\🧠 学习系统\\01-社交网络挖掘\\1. 创建图结构.md",
+          "file": "02-Knowledge\\02-Knowledge/🧠 学习系统\\01-社交网络挖掘\\1. 创建图结构.md",
           "target": "链接预测"
         },
         {
-          "file": "02-Knowledge\\🧠 学习系统\\01-社交网络挖掘\\1. 创建图结构.md",
+          "file": "02-Knowledge\\02-Knowledge/🧠 学习系统\\01-社交网络挖掘\\1. 创建图结构.md",
           "target": "社区发现"
         },
         {
-          "file": "02-Knowledge\\🧠 学习系统\\01-社交网络挖掘\\1. 创建图结构.md",
+          "file": "02-Knowledge\\02-Knowledge/🧠 学习系统\\01-社交网络挖掘\\1. 创建图结构.md",
           "target": "图神经网络"
         },
         {
-          "file": "02-Knowledge\\🧠 学习系统\\01-社交网络挖掘\\1. 创建图结构.md",
+          "file": "02-Knowledge\\02-Knowledge/🧠 学习系统\\01-社交网络挖掘\\1. 创建图结构.md",
           "target": "随机游走"
         },
         {
-          "file": "02-Knowledge\\🧠 学习系统\\01-社交网络挖掘\\1. 创建图结构.md",
+          "file": "02-Knowledge\\02-Knowledge/🧠 学习系统\\01-社交网络挖掘\\1. 创建图结构.md",
           "target": "Word2Vec"
         },
         {
-          "file": "02-Knowledge\\🧠 学习系统\\01-社交网络挖掘\\1. 创建图结构.md",
+          "file": "02-Knowledge\\02-Knowledge/🧠 学习系统\\01-社交网络挖掘\\1. 创建图结构.md",
           "target": "链接预测"
         },
         {
-          "file": "02-Knowledge\\🧠 学习系统\\01-社交网络挖掘\\1. 创建图结构.md",
+          "file": "02-Knowledge\\02-Knowledge/🧠 学习系统\\01-社交网络挖掘\\1. 创建图结构.md",
           "target": "社区发现"
         },
         {
-          "file": "02-Knowledge\\🧠 学习系统\\01-社交网络挖掘\\1. 创建图结构.md",
+          "file": "02-Knowledge\\02-Knowledge/🧠 学习系统\\01-社交网络挖掘\\1. 创建图结构.md",
           "target": "图神经网络(GNN)"
         },
         {
-          "file": "02-Knowledge\\🧠 学习系统\\01-社交网络挖掘\\1. 创建无向图并添加边.md",
+          "file": "02-Knowledge\\02-Knowledge/🧠 学习系统\\01-社交网络挖掘\\1. 创建无向图并添加边.md",
           "target": "图的定义"
         },
         {
-          "file": "02-Knowledge\\🧠 学习系统\\01-社交网络挖掘\\1. 创建无向图并添加边.md",
+          "file": "02-Knowledge\\02-Knowledge/🧠 学习系统\\01-社交网络挖掘\\1. 创建无向图并添加边.md",
           "target": "有向图与无向图"
         },
         {
-          "file": "02-Knowledge\\🧠 学习系统\\01-社交网络挖掘\\1. 创建无向图并添加边.md",
+          "file": "02-Knowledge\\02-Knowledge/🧠 学习系统\\01-社交网络挖掘\\1. 创建无向图并添加边.md",
           "target": "边的权重"
         },
         {
-          "file": "02-Knowledge\\🧠 学习系统\\01-社交网络挖掘\\1. 创建无向图并添加边.md",
+          "file": "02-Knowledge\\02-Knowledge/🧠 学习系统\\01-社交网络挖掘\\1. 创建无向图并添加边.md",
           "target": "二分图"
         },
         {
-          "file": "02-Knowledge\\🧠 学习系统\\01-社交网络挖掘\\1. 创建无向图并添加边.md",
+          "file": "02-Knowledge\\02-Knowledge/🧠 学习系统\\01-社交网络挖掘\\1. 创建无向图并添加边.md",
           "target": "图的定义"
         }
       ]
@@ -112,96 +112,96 @@
       "placeholder_files": 8,
       "placeholder_rate": 8.3,
       "placeholder_examples": [
-        "02-Knowledge\\🧠 学习系统\\02-时间序列分析\\OHLCV字段清洗与复权.md",
-        "02-Knowledge\\🧠 学习系统\\02-时间序列分析\\公式清单.md",
-        "02-Knowledge\\🧠 学习系统\\02-时间序列分析\\模拟题复盘.md",
-        "02-Knowledge\\🧠 学习系统\\02-时间序列分析\\课程任务挂载.md",
-        "02-Knowledge\\🧠 学习系统\\02-时间序列分析\\课程复盘.md",
-        "02-Knowledge\\🧠 学习系统\\02-时间序列分析\\错题整理.md",
-        "02-Knowledge\\🧠 学习系统\\02-时间序列分析\\04-建模与诊断层\\季节效应分析.md",
-        "02-Knowledge\\🧠 学习系统\\02-时间序列分析\\04-建模与诊断层\\趋势分析.md"
+        "02-Knowledge\\02-Knowledge/🧠 学习系统\\02-时间序列分析\\OHLCV字段清洗与复权.md",
+        "02-Knowledge\\02-Knowledge/🧠 学习系统\\02-时间序列分析\\公式清单.md",
+        "02-Knowledge\\02-Knowledge/🧠 学习系统\\02-时间序列分析\\模拟题复盘.md",
+        "02-Knowledge\\02-Knowledge/🧠 学习系统\\02-时间序列分析\\课程任务挂载.md",
+        "02-Knowledge\\02-Knowledge/🧠 学习系统\\02-时间序列分析\\课程复盘.md",
+        "02-Knowledge\\02-Knowledge/🧠 学习系统\\02-时间序列分析\\错题整理.md",
+        "02-Knowledge\\02-Knowledge/🧠 学习系统\\02-时间序列分析\\04-建模与诊断层\\季节效应分析.md",
+        "02-Knowledge\\02-Knowledge/🧠 学习系统\\02-时间序列分析\\04-建模与诊断层\\趋势分析.md"
       ],
       "repeated_shells": 0,
       "broken_wikilinks": 929,
       "broken_wikilink_examples": [
         {
-          "file": "02-Knowledge\\🧠 学习系统\\02-时间序列分析\\0. 先判断它值不值得深挖.md",
+          "file": "02-Knowledge\\02-Knowledge/🧠 学习系统\\02-时间序列分析\\0. 先判断它值不值得深挖.md",
           "target": "滞后算子"
         },
         {
-          "file": "02-Knowledge\\🧠 学习系统\\02-时间序列分析\\0. 先判断它值不值得深挖.md",
+          "file": "02-Knowledge\\02-Knowledge/🧠 学习系统\\02-时间序列分析\\0. 先判断它值不值得深挖.md",
           "target": "ARIMA模型"
         },
         {
-          "file": "02-Knowledge\\🧠 学习系统\\02-时间序列分析\\0. 先判断它值不值得深挖.md",
+          "file": "02-Knowledge\\02-Knowledge/🧠 学习系统\\02-时间序列分析\\0. 先判断它值不值得深挖.md",
           "target": "过度差分"
         },
         {
-          "file": "02-Knowledge\\🧠 学习系统\\02-时间序列分析\\0. 先判断它值不值得深挖.md",
+          "file": "02-Knowledge\\02-Knowledge/🧠 学习系统\\02-时间序列分析\\0. 先判断它值不值得深挖.md",
           "target": "单位根检验"
         },
         {
-          "file": "02-Knowledge\\🧠 学习系统\\02-时间序列分析\\0. 先判断它值不值得深挖.md",
+          "file": "02-Knowledge\\02-Knowledge/🧠 学习系统\\02-时间序列分析\\0. 先判断它值不值得深挖.md",
           "target": "滞后算子"
         },
         {
-          "file": "02-Knowledge\\🧠 学习系统\\02-时间序列分析\\0. 先判断它值不值得深挖.md",
+          "file": "02-Knowledge\\02-Knowledge/🧠 学习系统\\02-时间序列分析\\0. 先判断它值不值得深挖.md",
           "target": "时间序列基础"
         },
         {
-          "file": "02-Knowledge\\🧠 学习系统\\02-时间序列分析\\0. 先判断它值不值得深挖.md",
+          "file": "02-Knowledge\\02-Knowledge/🧠 学习系统\\02-时间序列分析\\0. 先判断它值不值得深挖.md",
           "target": "ARIMA模型"
         },
         {
-          "file": "02-Knowledge\\🧠 学习系统\\02-时间序列分析\\0. 先判断它值不值得深挖.md",
+          "file": "02-Knowledge\\02-Knowledge/🧠 学习系统\\02-时间序列分析\\0. 先判断它值不值得深挖.md",
           "target": "过度差分"
         },
         {
-          "file": "02-Knowledge\\🧠 学习系统\\02-时间序列分析\\0. 先判断它值不值得深挖.md",
+          "file": "02-Knowledge\\02-Knowledge/🧠 学习系统\\02-时间序列分析\\0. 先判断它值不值得深挖.md",
           "target": "单位根检验"
         },
         {
-          "file": "02-Knowledge\\🧠 学习系统\\02-时间序列分析\\0. 先判断它值不值得深挖.md",
+          "file": "02-Knowledge\\02-Knowledge/🧠 学习系统\\02-时间序列分析\\0. 先判断它值不值得深挖.md",
           "target": "SARIMA模型"
         },
         {
-          "file": "02-Knowledge\\🧠 学习系统\\02-时间序列分析\\0. 先判断它值不值得深挖.md",
+          "file": "02-Knowledge\\02-Knowledge/🧠 学习系统\\02-时间序列分析\\0. 先判断它值不值得深挖.md",
           "target": "对数变换"
         },
         {
-          "file": "02-Knowledge\\🧠 学习系统\\02-时间序列分析\\0. 先判断它值不值得深挖.md",
+          "file": "02-Knowledge\\02-Knowledge/🧠 学习系统\\02-时间序列分析\\0. 先判断它值不值得深挖.md",
           "target": "分数阶差分"
         },
         {
-          "file": "02-Knowledge\\🧠 学习系统\\02-时间序列分析\\0. 先判断它值不值得深挖.md",
+          "file": "02-Knowledge\\02-Knowledge/🧠 学习系统\\02-时间序列分析\\0. 先判断它值不值得深挖.md",
           "target": "量化交易策略"
         },
         {
-          "file": "02-Knowledge\\🧠 学习系统\\02-时间序列分析\\0. 先判断它值不值得深挖.md",
+          "file": "02-Knowledge\\02-Knowledge/🧠 学习系统\\02-时间序列分析\\0. 先判断它值不值得深挖.md",
           "target": "需求预测"
         },
         {
-          "file": "02-Knowledge\\🧠 学习系统\\02-时间序列分析\\0. 先判断它值不值得深挖.md",
+          "file": "02-Knowledge\\02-Knowledge/🧠 学习系统\\02-时间序列分析\\0. 先判断它值不值得深挖.md",
           "target": "滞后算子"
         },
         {
-          "file": "02-Knowledge\\🧠 学习系统\\02-时间序列分析\\0. 先判断它值不值得深挖.md",
+          "file": "02-Knowledge\\02-Knowledge/🧠 学习系统\\02-时间序列分析\\0. 先判断它值不值得深挖.md",
           "target": "ARIMA模型"
         },
         {
-          "file": "02-Knowledge\\🧠 学习系统\\02-时间序列分析\\0. 先判断它值不值得深挖.md",
+          "file": "02-Knowledge\\02-Knowledge/🧠 学习系统\\02-时间序列分析\\0. 先判断它值不值得深挖.md",
           "target": "过度差分"
         },
         {
-          "file": "02-Knowledge\\🧠 学习系统\\02-时间序列分析\\0. 先判断它值不值得深挖.md",
+          "file": "02-Knowledge\\02-Knowledge/🧠 学习系统\\02-时间序列分析\\0. 先判断它值不值得深挖.md",
           "target": "单位根检验"
         },
         {
-          "file": "02-Knowledge\\🧠 学习系统\\02-时间序列分析\\2026-06-06 周六 日计划.md",
+          "file": "02-Knowledge\\02-Knowledge/🧠 学习系统\\02-时间序列分析\\2026-06-06 周六 日计划.md",
           "target": "🧭 修炼总枢"
         },
         {
-          "file": "02-Knowledge\\🧠 学习系统\\02-时间序列分析\\2026-06-06 周六 日计划.md",
+          "file": "02-Knowledge\\02-Knowledge/🧠 学习系统\\02-时间序列分析\\2026-06-06 周六 日计划.md",
           "target": "📜 修炼规则"
         }
       ]
@@ -211,98 +211,98 @@
       "placeholder_files": 10,
       "placeholder_rate": 4.6,
       "placeholder_examples": [
-        "02-Knowledge\\🧠 学习系统\\03-量化金融\\低延迟系统设计与 C++_FPGA 极致性能优化 (Low-Latency System Design & C++_FPGA Optimization).md",
-        "02-Knowledge\\🧠 学习系统\\03-量化金融\\量化金融 MOC.md",
-        "02-Knowledge\\🧠 学习系统\\03-量化金融\\01-夯实基础\\OHLCV字段清洗与复权.md",
-        "02-Knowledge\\🧠 学习系统\\03-量化金融\\01-夯实基础\\利润表与利润质量.md",
-        "02-Knowledge\\🧠 学习系统\\03-量化金融\\01-夯实基础\\利润质量与现金流背离.md",
-        "02-Knowledge\\🧠 学习系统\\03-量化金融\\03-策略开发与实战\\事件驱动回测.md",
-        "02-Knowledge\\🧠 学习系统\\03-量化金融\\03-策略开发与实战\\分层回测.md",
-        "02-Knowledge\\🧠 学习系统\\03-量化金融\\03-策略开发与实战\\半衰期.md",
-        "02-Knowledge\\🧠 学习系统\\03-量化金融\\03-策略开发与实战\\标签设计.md",
-        "02-Knowledge\\🧠 学习系统\\03-量化金融\\03-策略开发与实战\\生存者偏差.md"
+        "02-Knowledge\\02-Knowledge/🧠 学习系统\\03-量化金融\\低延迟系统设计与 C++_FPGA 极致性能优化 (Low-Latency System Design & C++_FPGA Optimization).md",
+        "02-Knowledge\\02-Knowledge/🧠 学习系统\\03-量化金融\\量化金融 MOC.md",
+        "02-Knowledge\\02-Knowledge/🧠 学习系统\\03-量化金融\\01-夯实基础\\OHLCV字段清洗与复权.md",
+        "02-Knowledge\\02-Knowledge/🧠 学习系统\\03-量化金融\\01-夯实基础\\利润表与利润质量.md",
+        "02-Knowledge\\02-Knowledge/🧠 学习系统\\03-量化金融\\01-夯实基础\\利润质量与现金流背离.md",
+        "02-Knowledge\\02-Knowledge/🧠 学习系统\\03-量化金融\\03-策略开发与实战\\事件驱动回测.md",
+        "02-Knowledge\\02-Knowledge/🧠 学习系统\\03-量化金融\\03-策略开发与实战\\分层回测.md",
+        "02-Knowledge\\02-Knowledge/🧠 学习系统\\03-量化金融\\03-策略开发与实战\\半衰期.md",
+        "02-Knowledge\\02-Knowledge/🧠 学习系统\\03-量化金融\\03-策略开发与实战\\标签设计.md",
+        "02-Knowledge\\02-Knowledge/🧠 学习系统\\03-量化金融\\03-策略开发与实战\\生存者偏差.md"
       ],
       "repeated_shells": 0,
       "broken_wikilinks": 2445,
       "broken_wikilink_examples": [
         {
-          "file": "02-Knowledge\\🧠 学习系统\\03-量化金融\\2026-06-04 周四 日计划.md",
+          "file": "02-Knowledge\\02-Knowledge/🧠 学习系统\\03-量化金融\\2026-06-04 周四 日计划.md",
           "target": "🧭 修炼总枢"
         },
         {
-          "file": "02-Knowledge\\🧠 学习系统\\03-量化金融\\2026-06-04 周四 日计划.md",
+          "file": "02-Knowledge\\02-Knowledge/🧠 学习系统\\03-量化金融\\2026-06-04 周四 日计划.md",
           "target": "📜 修炼规则"
         },
         {
-          "file": "02-Knowledge\\🧠 学习系统\\03-量化金融\\2026-06-04 周四 日计划.md",
+          "file": "02-Knowledge\\02-Knowledge/🧠 学习系统\\03-量化金融\\2026-06-04 周四 日计划.md",
           "target": "🗺️ 机器学习学习路径"
         },
         {
-          "file": "02-Knowledge\\🧠 学习系统\\03-量化金融\\2026-06-04 周四 日计划.md",
+          "file": "02-Knowledge\\02-Knowledge/🧠 学习系统\\03-量化金融\\2026-06-04 周四 日计划.md",
           "target": "机器学习概述"
         },
         {
-          "file": "02-Knowledge\\🧠 学习系统\\03-量化金融\\2026-06-04 周四 日计划.md",
+          "file": "02-Knowledge\\02-Knowledge/🧠 学习系统\\03-量化金融\\2026-06-04 周四 日计划.md",
           "target": "监督学习"
         },
         {
-          "file": "02-Knowledge\\🧠 学习系统\\03-量化金融\\2026-06-04 周四 日计划.md",
+          "file": "02-Knowledge\\02-Knowledge/🧠 学习系统\\03-量化金融\\2026-06-04 周四 日计划.md",
           "target": "无监督学习"
         },
         {
-          "file": "02-Knowledge\\🧠 学习系统\\03-量化金融\\2026-06-04 周四 日计划.md",
+          "file": "02-Knowledge\\02-Knowledge/🧠 学习系统\\03-量化金融\\2026-06-04 周四 日计划.md",
           "target": "订单类型与成交机制"
         },
         {
-          "file": "02-Knowledge\\🧠 学习系统\\03-量化金融\\2026-06-04 周四 日计划.md",
+          "file": "02-Knowledge\\02-Knowledge/🧠 学习系统\\03-量化金融\\2026-06-04 周四 日计划.md",
           "target": "🗺️ 时间序列分析学习路径"
         },
         {
-          "file": "02-Knowledge\\🧠 学习系统\\03-量化金融\\2026-06-04 周四 日计划.md",
+          "file": "02-Knowledge\\02-Knowledge/🧠 学习系统\\03-量化金融\\2026-06-04 周四 日计划.md",
           "target": "2026-雅思4500词背诵计划"
         },
         {
-          "file": "02-Knowledge\\🧠 学习系统\\03-量化金融\\2026-06-04 周四 日计划.md",
+          "file": "02-Knowledge\\02-Knowledge/🧠 学习系统\\03-量化金融\\2026-06-04 周四 日计划.md",
           "target": "2026-2027减脂与体能系统"
         },
         {
-          "file": "02-Knowledge\\🧠 学习系统\\03-量化金融\\2026-06-04 周四 日计划.md",
+          "file": "02-Knowledge\\02-Knowledge/🧠 学习系统\\03-量化金融\\2026-06-04 周四 日计划.md",
           "target": "🗺️ 机器学习学习路径"
         },
         {
-          "file": "02-Knowledge\\🧠 学习系统\\03-量化金融\\2026-06-04 周四 日计划.md",
+          "file": "02-Knowledge\\02-Knowledge/🧠 学习系统\\03-量化金融\\2026-06-04 周四 日计划.md",
           "target": "机器学习概述"
         },
         {
-          "file": "02-Knowledge\\🧠 学习系统\\03-量化金融\\2026-06-04 周四 日计划.md",
+          "file": "02-Knowledge\\02-Knowledge/🧠 学习系统\\03-量化金融\\2026-06-04 周四 日计划.md",
           "target": "监督学习"
         },
         {
-          "file": "02-Knowledge\\🧠 学习系统\\03-量化金融\\2026-06-04 周四 日计划.md",
+          "file": "02-Knowledge\\02-Knowledge/🧠 学习系统\\03-量化金融\\2026-06-04 周四 日计划.md",
           "target": "无监督学习"
         },
         {
-          "file": "02-Knowledge\\🧠 学习系统\\03-量化金融\\2026-06-04 周四 日计划.md",
+          "file": "02-Knowledge\\02-Knowledge/🧠 学习系统\\03-量化金融\\2026-06-04 周四 日计划.md",
           "target": "订单类型与成交机制"
         },
         {
-          "file": "02-Knowledge\\🧠 学习系统\\03-量化金融\\2026-06-04 周四 日计划.md",
+          "file": "02-Knowledge\\02-Knowledge/🧠 学习系统\\03-量化金融\\2026-06-04 周四 日计划.md",
           "target": "🗺️ 时间序列分析学习路径"
         },
         {
-          "file": "02-Knowledge\\🧠 学习系统\\03-量化金融\\2026-06-04 周四 日计划.md",
+          "file": "02-Knowledge\\02-Knowledge/🧠 学习系统\\03-量化金融\\2026-06-04 周四 日计划.md",
           "target": "2026-W23 周计划"
         },
         {
-          "file": "02-Knowledge\\🧠 学习系统\\03-量化金融\\2026-06-04 周四 日计划.md",
+          "file": "02-Knowledge\\02-Knowledge/🧠 学习系统\\03-量化金融\\2026-06-04 周四 日计划.md",
           "target": "2026-06 月计划"
         },
         {
-          "file": "02-Knowledge\\🧠 学习系统\\03-量化金融\\2026-06-04 周四 日计划.md",
+          "file": "02-Knowledge\\02-Knowledge/🧠 学习系统\\03-量化金融\\2026-06-04 周四 日计划.md",
           "target": "Q1 2026-06-04 ~ 2026-09-03 季度计划"
         },
         {
-          "file": "02-Knowledge\\🧠 学习系统\\03-量化金融\\2026-06-04 周四 日计划.md",
+          "file": "02-Knowledge\\02-Knowledge/🧠 学习系统\\03-量化金融\\2026-06-04 周四 日计划.md",
           "target": "🗂️ 2026-06-04 ~ 2026-09-03 季度学习计划总索引"
         }
       ]

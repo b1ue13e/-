@@ -12,9 +12,9 @@ status: learning
 difficulty: intermediate
 importance: A
 concept: ["随机过程", "布朗运动", "SDE求解", "伊藤引理"]
-prerequisites: ["[[02-Knowledge/🧠 学习系统/22-概率论与数理统计/🗺️ 概率论与数理统计学习路径|概率统计]]"]
+prerequisites: ["[[🗺️ 概率论与数理统计学习路径|概率统计]]"]
 related: ["[[量化金融-题型-Alpha101因子与成本敏感回测阶梯作业]]"]
-upstream: ["[[02-Knowledge/🧠 学习系统/24-随机过程/🗺️ 随机过程学习路径|随机过程学习路径]]"]
+upstream: ["[[🗺️ 随机过程学习路径|随机过程学习路径]]"]
 downstream: []
 tags: [学习, 24-随机过程, 作业, 实战, 阶梯作业]
 aliases: ["Stoch-HW01-布朗运动与SDE作业"]

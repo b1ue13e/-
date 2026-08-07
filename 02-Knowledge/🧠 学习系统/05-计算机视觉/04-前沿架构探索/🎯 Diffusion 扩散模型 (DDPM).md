@@ -45,7 +45,7 @@ tags:
 
 ---
 
-## 0. 先判断它值不值得深挖
+## 0. 学习边界
 
 - **类别**：**A 类（核心概念，必须深挖）**
 - **判断理由**：扩散模型（Diffusion Models，以 DDPM 为代表）由 Jonathan Ho 等人于 2020 年提出，是当下**AIGC 与文本生成图像（Text-to-Image）时代的绝对基石**（Stable Diffusion、Midjourney、DALL-E 3、Sora 的底层核心驱动引擎）。它打破了 GAN 训练不稳定、模式崩溃的困境，通过优雅的马尔可夫链前向加噪与反向去噪过程，实现了前所未有的超高质量图像生成。
@@ -346,3 +346,4 @@ FROM "03-Projects"
 WHERE contains(requires, this.file.link)
 SORT assignment_level ASC, file.name ASC
 ```
+

@@ -14,7 +14,7 @@ from build_course_homework_catalogs import CATALOGS, all_units, capstone_path
 sys.stdout.reconfigure(encoding="utf-8")
 ROOT = Path(__file__).resolve().parents[2]
 PROJECT_ROOT = ROOT / "03-Projects" / "课程作业"
-STUDY_ROOT = ROOT / "02-Knowledge" / "🧠 学习系统"
+STUDY_ROOT = ROOT / "02-Knowledge" / "02-Knowledge/🧠 学习系统"
 INDEX_PATH = PROJECT_ROOT / "33门课程完整作业包索引.md"
 EXPECTED_OFFICIAL = 273
 EXPECTED_LOCAL = 132

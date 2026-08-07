@@ -112,7 +112,7 @@ source: "MIT OCW 6.7960 Deep Learning Fall 2024; Stanford CS336 Spring 2025; Sta
 
 - **本课必须掌握**：条件生成、Token/上下文、Transformer、自回归、解码、需求规格、ICL、分解、RAG、评测、幻觉、注入。
 - **理解但不要求重训练大模型**：数据清洗、Scaling Laws、分布式训练、RLHF/DPO、多模态训练。
-- **转入下一课程**：工具执行、状态机、长期记忆、多智能体与 Agent 评测进入 [[46-AI Agent工程/🗺️ AI-Agent工程-学习路径|AI Agent 工程学习路径]]。
+- **转入下一课程**：工具执行、状态机、长期记忆、多智能体与 Agent 评测进入 [[🗺️ AI-Agent工程-学习路径|AI Agent 工程学习路径]]。
 
 ## 闭卷结课验收
 

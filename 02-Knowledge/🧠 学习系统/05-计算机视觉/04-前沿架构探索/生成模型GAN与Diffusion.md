@@ -22,7 +22,7 @@ tags: [学习,计算机视觉,生成模型,GAN,Diffusion]
 
 ---
 
-## 0. 先判断它值不值得深挖
+## 0. 学习边界
 
 - **类别**：**A 类（核心概念，必须深挖）**
 - **判断理由**：生成模型是深度学习从"判别"走向"创造"的分水岭。GAN（Goodfellow et al., 2014）首次用对抗博弈实现逼真的单步图像生成；Diffusion（Ho et al., 2020 的 DDPM）以热力学扩散的严谨框架，一举解决 GAN 训练不稳定与模式崩溃，成为 Stable Diffusion、Midjourney、DALL·E 3、Sora 的共同底层引擎。不搞懂 minimax 博弈与加噪-去噪范式，就无法进入生成式 AI。
@@ -420,3 +420,4 @@ FROM "03-Projects"
 WHERE contains(requires, this.file.link)
 SORT assignment_level ASC, file.name ASC
 ```
+

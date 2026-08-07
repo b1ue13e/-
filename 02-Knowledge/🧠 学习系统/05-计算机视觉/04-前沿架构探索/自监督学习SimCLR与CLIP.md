@@ -22,7 +22,7 @@ tags: [学习, 计算机视觉, 自监督学习, 对比学习, SimCLR, CLIP]
 
 ---
 
-## 0. 先判断它值不值得深挖
+## 0. 学习边界
 
 - **类别**：**A 类（核心概念，必须深挖）**
 - **判断理由**：
@@ -534,3 +534,4 @@ FROM "03-Projects"
 WHERE contains(requires, this.file.link)
 SORT assignment_level ASC, file.name ASC
 ```
+

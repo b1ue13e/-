@@ -4,9 +4,9 @@ from pathlib import Path
 sys.stdout.reconfigure(encoding='utf-8')
 
 VAULT_ROOT = Path("F:/-")
-NLP_DIR = VAULT_ROOT / "02-Knowledge" / "🧠 学习系统" / "08-NLP全栈"
+NLP_DIR = VAULT_ROOT / "02-Knowledge" / "02-Knowledge/🧠 学习系统" / "08-NLP全栈"
 if not NLP_DIR.exists():
-    NLP_DIR = VAULT_ROOT / "🧠 学习系统" / "08-NLP全栈"
+    NLP_DIR = VAULT_ROOT / "02-Knowledge/🧠 学习系统" / "08-NLP全栈"
 
 print(f"Stage 29: Upgrading Transformer, Self-Attention, and BERT/GPT in {NLP_DIR}...")
 

@@ -9,7 +9,7 @@ from collections import Counter
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
-Q = ROOT / "02-Knowledge" / "🧠 学习系统" / "03-量化金融"
+Q = ROOT / "02-Knowledge" / "02-Knowledge/🧠 学习系统" / "03-量化金融"
 AUDIT_DIR = ROOT / "99-System" / "🗄️ 归档" / "知识库审计"
 ARCHIVE = ROOT / ".recovery-hold" / "quarantine" / "量化金融未达标知识卡-2026-08-01"
 CSV_PATH = AUDIT_DIR / "knowledge_notes_merciless_scores_2026-08-01.csv"
