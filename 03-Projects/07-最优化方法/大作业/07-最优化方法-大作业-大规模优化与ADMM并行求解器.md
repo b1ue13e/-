@@ -6,7 +6,7 @@ assignment_id: 07-最优化方法-大作业-01
 assignment_level: capstone
 assignment_format: project
 stage_id: '05'
-requires: ["[[最优化方法-增广拉格朗日与ADMM]]", "[[最优化方法-近端梯度与FISTA]]", "[[最优化方法-凸优化与拉格朗日对偶]]"]
+requires: ["[[最优化方法-增广拉格朗日与ADMM]]", "[[最优化方法-近端梯度与FISTA]]", "[[最优化方法-凸优化与拉格朗日对偶]]", "[[最优化方法-分布式优化与对偶分解]]", "[[最优化方法-稀疏与结构化优化]]"]
 source_type: open_source_project_task
 created: 2026-08-06
 status: ongoing
