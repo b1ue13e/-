@@ -12,14 +12,8 @@ upstream:
   - "[[最优化方法-强对偶与Slater条件]]"
 ---
 
-# 锥规划与半定规划SDP
+# 最优化方法-锥规划与半定规划SDP
 
----
-## 0. 学习边界
-- **类别**：**A 类（核心概念，必须深挖）**
-- **判断理由**：SDP 是"多项式可解的最大凸问题类"（Boyd Ch.4.6），是 LP 与 SOCP 的统一框架；HW04 的对偶锥、HW06 的最大割/矩阵补全应用都直接依赖它；CVXPY 原生支持 PSD 变量与锥约束。不学它，组合优化松弛与核方法只能停留在"黑盒"层面。
-
----
 ## 1. 这个知识点解决什么问题？
 > **我们遇到了什么麻烦**：
 > LP 只能表达仿射约束（$\mathbf{A}\mathbf{x} \le \mathbf{b}$），但大量真实问题的约束是"向量长度不超过某值"（鲁棒优化、投资组合）、"矩阵必须半正定"（最大割松弛、矩阵补全、控制系统的 LMI）。以前的方法是把它们强行线性化/近似，要么保守、要么失真。因此需要一个**统一且可高效求解的框架**：用"广义不等式 $\preceq_K$"把 LP/SOCP/SDP 装进同一个"锥规划"语言，而锥的结构（凸性）保证了多项式时间可解。
@@ -202,54 +196,31 @@ print("SDP 上界:", prob.value, "| 割值:", 0.25 * (W.sum() - z @ W @ z))
 > - **Obsidian 标签建议**：`#自测题/较难`
 
 ---
-## 12. 我的主动回忆区
-### 我的闭卷复述
-> 不看上文，用自己的话解释这个知识点：
-### 我的推导复现
-> 不看上文，尝试写出核心公式或推导主线：
-### 我的错误与卡点
--
-### 下次复习日期
-- [ ] 明天
-- [ ] 3 天后
-- [ ] 7 天后
-- [ ] 14 天后
+## 12. 学完后可以完成
 
----
-## 13. 给 Obsidian 的归档建议
-- **适合文件夹**：`02-Knowledge/🧠 学习系统/07-最优化方法/`
-- **关联已有笔记**：[[🧭 课程作业总索引]]、[[最优化方法-凸集与凸函数]]、[[最优化方法-凸优化与拉格朗日对偶]]、[[最优化方法-CVXPY建模与求解器]]
-- **建议标签**：`#学习` `#最优化方法` `#锥规划` `#SDP` `#概念`
-- **拆分建议**：暂不需要拆分；若 HW06 做矩阵补全/LMI 专题，可拆出"SDP 应用题型卡"。
-
-## ⚠️ 常见陷阱与避坑指南
-
-> [!CAUTION]
-> 1. **半定锥约束的维数爆炸**：矩阵变量 $X \in \mathbf{S}^n_+$ 的半定约束 $X \succeq 0$ 对应 $n(n+1)/2$ 个独立标量变量。内点法求解 SDP 的每步 Newton 叠代复杂度为 $\mathcal{O}(n^6)$，维数稍大（如 $n > 1000$）便会内存溢出。
-> 2. **SDP 松弛的间隙 (Relaxation Gap)**：用 SDP 解决组合优化问题（如 Max-Cut）时，SDP 给出的解是松弛界（的上界/下界）。必须通过随机投影（如 Goemans-Williamson 算法）进行舍入（Rounding），并分析近似比。
-
-## 🃏 Anki 卡片
-
-Q: 半定规划 (SDP, Semidefinite Programming) 的标准表达形式是什么？
-A: $\min_{X \in \mathbf{S}^n} \mathbf{tr}(C X), \quad \text{s.t.} \quad \mathbf{tr}(A_i X) = b_i \; (i=1,\dots,m), \quad X \succeq 0$。目标和等式约束均为矩阵内积的形式。
-<!-- id: opt-sdp-01 -->
-
-Q: 为什么 SDP 可以将许多非凸二次约束二次规划 (QCQP) 转化为凸优化问题？
-A: 通过引入对称矩阵变量 $X = x x^T$，非凸二次项 $x^T A x = \mathbf{tr}(A x x^T) = \mathbf{tr}(A X)$ 变成了关于 $X$ 的线性项。随后将非凸秩一约束 $\mathbf{rank}(X) = 1$ 丢弃，保留凸锥约束 $X \succeq 0$，即完成了 SDP 松弛。
-<!-- id: opt-sdp-02 -->
-
-
----
-Q: 半定规划 (SDP) 中控制矩阵半正定的约束形式是什么？
-A: $F(x) = F_0 + \sum x_i F_i \succeq 0$，表示对称矩阵线性组合必须处于半正定锥中。
-<!-- id: opt-sdp-03 -->
-
-## 学完后可以完成
-
+完成本卡后，你能：把矩阵变量约束写成 PSD 广义不等式；判断问题属于 LP/SOCP/SDP 哪一层；理解 SDP 松弛在最大割、矩阵补全中的作用；在 CVXPY 中用 PSD=True 与锥约束建模。以下作业直接验收本卡知识：
 
 ```dataview
 LIST
-FROM "03-Projects"
+FROM "03-Projects/07-最优化方法"
 WHERE contains(requires, this.file.link)
 SORT assignment_level ASC, file.name ASC
 ```
+
+---
+
+## 🃏 Anki 卡片
+
+Q: 半定规划（SDP）的标准形式？与 SOCP/LP 的关系？
+A: $\min \mathrm{tr}(CX)$ s.t. $\mathrm{tr}(A_i X) = b_i,\ X \succeq 0$。SDP 以半定锥为约束，LP ⊂ SOCP ⊂ SDP，是凸优化中最广的多项式可解类之一。
+<!-- id: opt-sdp-01 -->
+
+---
+Q: 为什么最大割问题可以用 SDP 松弛求解？
+A: 最大割是 NP-hard 的组合问题；将其整数变量松弛为 PSD 矩阵变量后得到 SDP（Goemans-Williamson），最优值给出割值的上界，随机舍入保证 0.878 近似比。
+<!-- id: opt-sdp-02 -->
+
+---
+Q: CVXPY 中如何声明半定变量与锥约束？
+A: $X = cp.Variable((n,n), PSD=True)$ 声明 PSD 变量；约束可直接写 $X >> 0$ 或 $X >> np.zeros((n,n))$（广义不等式），求解器（SCS/CLARABEL/MOSEK）内部转锥标准形。
+<!-- id: opt-sdp-03 -->
