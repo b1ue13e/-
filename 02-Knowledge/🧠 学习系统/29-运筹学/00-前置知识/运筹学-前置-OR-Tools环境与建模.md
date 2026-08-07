@@ -10,7 +10,7 @@ kind: concept
 difficulty: beginner
 concept: ["OR-Tools", "求解器", "建模"]
 upstream:
-  - "[[02-Knowledge/🧠 学习系统/07-最优化方法/02-凸分析与最优性条件/最优化方法-凸集与凸函数]]"
+  - "[[运筹学-前置-线性代数最小集]]"
 tags: [学习, 运筹学, 前置知识]
 ---
 
