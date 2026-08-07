@@ -12,6 +12,8 @@ upstream: ["[[概率图模型-隐马尔可夫模型HMM]]", "[[概率图模型-EM
 concept: ["前向算法", "后向算法", "Baum-Welch", "EM"]
 related: ["概率图模型-隐马尔可夫模型HMM", "概率图模型-Viterbi解码"]
 tags: [概率图模型, HMM, 前向后向, BaumWelch]
+anki_deck: "概率图模型::05-隐马尔可夫模型"
+anki_tags: [概率图模型, HMM, 前向后向, BaumWelch]
 ---
 
 # 概率图模型-前向后向算法与BaumWelch
@@ -186,3 +188,10 @@ SORT file.name ASC
 ```
 
 > 直接下游：[[概率图模型-Viterbi解码]]、阶段 6 的 HMM 项目、课程 Capstone。
+
+## 🃏 Anki 卡片
+
+- 前向变量 α_t(i) 的定义::α_t(i) = P(o_1,...,o_t, q_t=s_i | λ)，前 t 个观测且 t 时刻处于状态 i 的联合概率
+- 前向递推式::α_{t+1}(j) = b_j(o_{t+1}) · Σ_{i=1}^{N} α_t(i)·a_{ij}
+- 后向变量 β_t(i) 的定义::β_t(i) = P(o_{t+1},...,o_T | q_t=s_i, λ)，给定 t 时刻状态后其后观测的概率
+- 前向/后向算法的时间复杂度::O(N²T)，N 为状态数、T 为序列长度

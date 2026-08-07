@@ -10,6 +10,8 @@ kind: derivation
 difficulty: advanced
 upstream: ["[[概率图模型-贝叶斯网络]]", "[[概率图模型-KL散度]]"]
 importance: "A"
+anki_deck: "概率图模型::02-推断算法"
+anki_tags: [概率图模型, 变分推断, ELBO]
 tags: [学习, 概率图模型, 变分推断, VI, ELBO, 证据下界, KL散度, 贝叶斯推断]
 ---
 
@@ -307,3 +309,9 @@ print(f"变分推断完成！均值估计 mu_q = {mu_q.item():.3f} (真实均值
 - **通过标准**：能独立完成 ELBO 的双推导（Jensen 与 KL 两条主线）；能写出平均场更新与重参数化；完成卡内 10 项闭卷任务与 5 道自测题；能解释 VI vs MCMC 的取舍。
 - **可执行产物**：卡内 Python 自测脚本（可运行验证）。
 
+
+## 🃏 Anki 卡片
+
+- ELBO 的定义式::L(q) = E_q[log p(x,z)] − E_q[log q(z)] = log p(x) − KL(q‖p)
+- 为什么变分推断用 KL(q‖p) 而非 KL(p‖q)::KL(q‖p) 对 q 可优化且呈 mode-seeking 行为；KL(p‖q) 需要知道 p 的归一化常数，计算困难
+- log p(x) 与 ELBO 的关系::log p(x) = ELBO + KL(q‖p) ≥ ELBO，故 ELBO 是证据下界
