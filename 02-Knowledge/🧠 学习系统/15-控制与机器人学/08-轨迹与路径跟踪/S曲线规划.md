@@ -1,31 +1,72 @@
 ---
-type: study
-topic: "S曲线规划"
-created: 2026-04-18
-status: ongoing
-difficulty: advanced
-concept: ["S曲线规划", "时间参数化方法"]
-prerequisites: []
-related: []
-tags: ["学习", "控制与机器人学"]
+title: "S曲线规划"
+type: concept
+course: "15-控制与机器人学"
+stage_moc: "[[🧭 阶段8-轨迹与路径跟踪]]"
+flow: knowledge
+kind: concept
+importance: "A"
+status: completed
+created: 2026-08-07
+updated: 2026-08-07
+tags: [学习, 控制与机器人学, 轨迹规划]
+upstream:
+  - "[[梯形速度]]"
+  - "[[jerk约束]]"
+concept: ["S曲线", "jerk受限", "7段式"]
+prerequisites: ["梯形速度", "jerk约束"]
+related: ["梯形速度", "时间参数化", "最优轨迹"]
 ---
+
 # S曲线规划
 
-> 所属模块：[[🗺️ 控制与机器人学学习路径|控制与机器人学学习路径]]
-> 主教材：`《机器人学导论》`、`《Autonomous Driving》`
-> 对应阶段：[[🧭 阶段8-轨迹与路径跟踪|返回阶段页]]
-> 建议先看：Rigid Motions、Kinematics、Dynamics、Jacobians；Lateral Control、Longitudinal Control、Trajectory Tracking、Planning-Tracking Loop
+> **一句话**:对加速度变化率(jerk)设限,把梯形剖面圆角化成"S 形",换来平顺无冲击的运动。
 
+## 从梯形到 S 曲线
 
-## 待写提纲
-- 这章/这个知识点在这门课里解决什么问题：
-- 所属主线：时间参数化方法
-- 这张卡要补哪块：S曲线
-- 核心定义：
-- 关键方法 / 公式：
-- 一个最小例子：
-- 与前后笔记的关系：
-- 前置：待补
-- 相关：待补
+梯形剖面的加速度**阶跃跳变**(jerk 无穷)。S 曲线用 jerk 受限的斜坡替换阶跃:
 
-*创建于：2026-04-18*
+$$\text{梯形: } a(t) = \{a_{max}, 0, -a_{max}\} \quad \Rightarrow \quad \text{S曲线: } a(t) \text{ 斜坡过渡}$$
+
+## 七段式结构
+
+| 段 | 名称 | jerk | 加速度 | 速度 |
+|:---|:---|:---:|:---|:---|
+| 1 | 加加速 | $+J_{max}$ | 0→$a_{max}$ | 缓增 |
+| 2 | 匀加速 | 0 | $a_{max}$ | 线性增 |
+| 3 | 减加速 | $-J_{max}$ | $a_{max}$→0 | 缓增 |
+| 4 | 匀速 | 0 | 0 | $v_{max}$ |
+| 5-7 | 对称减速 | 镜像 | | |
+
+## 关键公式
+
+加速段位移($v_0=0$):
+
+$$s_a = v_{max} \left( \frac{a_{max}}{J_{max}} + \frac{v_{max}}{a_{max}} \right)$$
+
+减加速度时间 $t_{jerk} = a_{max}/J_{max}$;若距离不足,速度达不到 $v_{max}$,需降级为"无匀速段"的 6 段/4 段 S 曲线。
+
+## 降级策略(距离不足)
+
+1. 完整 7 段($L$ 足够)
+2. 6 段:无匀速段($v_{peak} < v_{max}$)
+3. 4 段:仅加减速($a$ 达不到 $a_{max}$)
+4. 2 段:三角形
+
+## 优缺点
+
+- ✅ jerk 连续 → 舒适(乘客体感)、机构磨损小
+- ✅ 高速精密运动(CNC/机械臂)标配
+- ❌ 公式复杂、分段判断多、计算量略大
+
+## 工程要点
+
+- 自动驾驶纵向控制常用 S 曲线 + 梯形混合
+- 换道横向多项式本质也是"最小 jerk"思路(见[[横向多项式]])
+- jerk 限值:舒适驾驶约 $0.5\text{–}1.5\ \text{m/s}^3$
+
+## 自检
+
+- [ ] S 曲线的七段分别是什么?
+- [ ] 距离不足时如何降级?
+- [ ] 为什么 S 曲线比梯形舒适?
