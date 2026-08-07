@@ -73,3 +73,12 @@ $$H(s)=\frac{1}{\sqrt{1+\frac{1}{\varepsilon^2 T_n^2(\Omega_s/\Omega)}}},\quad \
 - [ ] 何时选它？
 
 *创建于：2026-04-18 · 更新于：2026-08-06*
+
+## 学完后可以完成
+
+```dataview
+LIST
+FROM "03-Projects/12-信号与系统"
+WHERE contains(requires, this.file.link)
+SORT assignment_level ASC, file.name ASC
+```

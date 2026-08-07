@@ -73,3 +73,12 @@ $$\text{有限时长可积}\Rightarrow \text{ROC}=\mathbb{C}\ (\text{全平面})
 - [ ] 什么例外会缩小 ROC？
 
 *创建于：2026-04-18 · 更新于：2026-08-06*
+
+## 学完后可以完成
+
+```dataview
+LIST
+FROM "03-Projects/12-信号与系统"
+WHERE contains(requires, this.file.link)
+SORT assignment_level ASC, file.name ASC
+```

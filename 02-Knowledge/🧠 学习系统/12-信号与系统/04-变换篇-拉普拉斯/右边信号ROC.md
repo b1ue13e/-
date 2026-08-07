@@ -73,3 +73,12 @@ x=e^{-2t}u(t) ⇒ ROC Re(s)>-2。
 - [ ] 因果信号 ROC 含 ∞ 吗？
 
 *创建于：2026-04-18 · 更新于：2026-08-06*
+
+## 学完后可以完成
+
+```dataview
+LIST
+FROM "03-Projects/12-信号与系统"
+WHERE contains(requires, this.file.link)
+SORT assignment_level ASC, file.name ASC
+```

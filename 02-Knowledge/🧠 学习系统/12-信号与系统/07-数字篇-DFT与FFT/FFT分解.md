@@ -11,7 +11,7 @@ related: []
 tags: ["学习", "信号与系统"]
 course: "信号与系统"
 flow: knowledge
-stage_moc: "[[02-Knowledge/🧠 学习系统/12-信号与系统/07-数字篇-DFT与FFT/07-数字篇-DFT与FFT|DFT与FFT]]"
+stage_moc: "[[💻 第七阶段：DFT与FFT|DFT与FFT]]"
 kind: concept
 sources:
   - "Think DSP Ch.8：Fast Convolution / FFT"
@@ -22,7 +22,7 @@ sources:
 # FFT分解
 
 > 所属路径：[[🗺️ 信号与系统学习路径|信号与系统学习路径]]
-> 所属阶段：[[02-Knowledge/🧠 学习系统/12-信号与系统/07-数字篇-DFT与FFT/07-数字篇-DFT与FFT|DFT与FFT]]
+> 所属阶段：[[💻 第七阶段：DFT与FFT|DFT与FFT]]
 > 教材入口：[[📚 教材挂载索引|教材挂载索引]]
 
 ## 学习定位
@@ -59,7 +59,7 @@ $W_N=e^{-j2\pi/N}$；$\mathrm{DFT}_N$ 分解为 $\mathrm{DFT}_{N/2}$（偶/奇�
 
 ## 和其他笔记的关系
 - 前置：[[DFT乘积]]
-- 相关：[[Cooley-Tukey]]、[[循环卷积]]、[[numpy.fft]]
+- 相关：[[Cooley-Tukey]]、[[循环卷积]]、[[NumPy信号]]
 
 ## 最小自测
 > **检索练习 / 通过标准**：合上笔记，能独立复述本节定义、写出核心公式（LaTeX）、指出至少一处常见误区，并独立完成上面的自测题，即视为掌握。
@@ -69,3 +69,12 @@ $W_N=e^{-j2\pi/N}$；$\mathrm{DFT}_N$ 分解为 $\mathrm{DFT}_{N/2}$（偶/奇�
 - [ ] 指出 radix-2 FFT 对长度 N 的要求。
 
 *创建于：2026-04-18 · 更新于：2026-08-06*
+
+## 学完后可以完成
+
+```dataview
+LIST
+FROM "03-Projects/12-信号与系统"
+WHERE contains(requires, this.file.link)
+SORT assignment_level ASC, file.name ASC
+```

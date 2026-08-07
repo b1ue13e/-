@@ -73,3 +73,12 @@ x=a^n u[n] (|a|<1) 绝对可和 ⇒ DTFT 存在；x=u[n] 不存在普通 DTFT。
 - [ ] 与 ZT 的什么 ROC 条件对应？
 
 *创建于：2026-04-18 · 更新于：2026-08-06*
+
+## 学完后可以完成
+
+```dataview
+LIST
+FROM "03-Projects/12-信号与系统"
+WHERE contains(requires, this.file.link)
+SORT assignment_level ASC, file.name ASC
+```

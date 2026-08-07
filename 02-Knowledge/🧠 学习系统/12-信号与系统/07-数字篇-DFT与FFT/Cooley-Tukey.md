@@ -11,7 +11,7 @@ related: []
 tags: ["学习", "信号与系统"]
 course: "信号与系统"
 flow: knowledge
-stage_moc: "[[02-Knowledge/🧠 学习系统/12-信号与系统/07-数字篇-DFT与FFT/07-数字篇-DFT与FFT|DFT与FFT]]"
+stage_moc: "[[💻 第七阶段：DFT与FFT|DFT与FFT]]"
 kind: concept
 sources:
   - "Think DSP Ch.8：The Cooley-Tukey algorithm"
@@ -22,7 +22,7 @@ sources:
 # Cooley-Tukey
 
 > 所属路径：[[🗺️ 信号与系统学习路径|信号与系统学习路径]]
-> 所属阶段：[[02-Knowledge/🧠 学习系统/12-信号与系统/07-数字篇-DFT与FFT/07-数字篇-DFT与FFT|DFT与FFT]]
+> 所属阶段：[[💻 第七阶段：DFT与FFT|DFT与FFT]]
 > 教材入口：[[📚 教材挂载索引|教材挂载索引]]
 
 ## 学习定位
@@ -59,7 +59,7 @@ $$X[k]=E[k]+W_N^k O[k],\quad X[k+N/2]=E[k]-W_N^k O[k],\quad W_N=e^{-j2\pi/N}$$
 
 ## 和其他笔记的关系
 - 前置：[[FFT分解]]、[[DFT乘积]]
-- 相关：[[循环卷积]]、[[numpy.fft]]
+- 相关：[[循环卷积]]、[[NumPy信号]]
 - 推导：[[Cooley-Tukey正确性推导]]
 
 ## 最小自测
@@ -70,3 +70,12 @@ $$X[k]=E[k]+W_N^k O[k],\quad X[k+N/2]=E[k]-W_N^k O[k],\quad W_N=e^{-j2\pi/N}$$
 - [ ] 解释为何需要位反转重排。
 
 *创建于：2026-04-18 · 更新于：2026-08-06*
+
+## 学完后可以完成
+
+```dataview
+LIST
+FROM "03-Projects/12-信号与系统"
+WHERE contains(requires, this.file.link)
+SORT assignment_level ASC, file.name ASC
+```

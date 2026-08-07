@@ -11,7 +11,7 @@ related: []
 tags: ["学习", "信号与系统"]
 course: "信号与系统"
 flow: knowledge
-stage_moc: "[[02-Knowledge/🧠 学习系统/12-信号与系统/07-数字篇-DFT与FFT/07-数字篇-DFT与FFT|DFT与FFT]]"
+stage_moc: "[[💻 第七阶段：DFT与FFT|DFT与FFT]]"
 sources:
   - "Think DSP Ch.7：DFT"
   - "Oppenheim §8.2：Properties"
@@ -22,7 +22,7 @@ kind: concept
 # DFT线性
 
 > 所属路径：[[🗺️ 信号与系统学习路径|信号与系统学习路径]]
-> 所属阶段：[[02-Knowledge/🧠 学习系统/12-信号与系统/07-数字篇-DFT与FFT/07-数字篇-DFT与FFT|DFT与FFT]]
+> 所属阶段：[[💻 第七阶段：DFT与FFT|DFT与FFT]]
 > 教材入口：[[📚 教材挂载索引|教材挂载索引]]
 
 ## 学习定位
@@ -63,7 +63,7 @@ x+噪声：DFT 后信号谱与噪声谱线性叠加。
 - 相关：[[DFT时域周期]]
 - 相关：[[卷积关系]]
 - 相关：[[补零]]
-- 返回阶段索引：[[02-Knowledge/🧠 学习系统/12-信号与系统/07-数字篇-DFT与FFT/07-数字篇-DFT与FFT|DFT与FFT]]
+- 返回阶段索引：[[💻 第七阶段：DFT与FFT|DFT与FFT]]
 
 ## 最小自测
 > **检索练习 / 通过标准**：合上笔记，能独立复述本节定义、写出核心公式（LaTeX）、指出至少一处常见误区，并独立完成上面的自测题，即视为掌握。
@@ -73,3 +73,12 @@ x+噪声：DFT 后信号谱与噪声谱线性叠加。
 - [ ] 举一个应用。
 
 *创建于：2026-04-18 · 更新于：2026-08-06*
+
+## 学完后可以完成
+
+```dataview
+LIST
+FROM "03-Projects/12-信号与系统"
+WHERE contains(requires, this.file.link)
+SORT assignment_level ASC, file.name ASC
+```

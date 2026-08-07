@@ -73,3 +73,12 @@ $$H(z)=A\frac{\prod(z-z_k)}{\prod(z-p_k)},\quad \text{稳定}\iff |p_k|<1$$
 - [ ] 共轭极点对时域意味着什么？
 
 *创建于：2026-04-18 · 更新于：2026-08-06*
+
+## 学完后可以完成
+
+```dataview
+LIST
+FROM "03-Projects/12-信号与系统"
+WHERE contains(requires, this.file.link)
+SORT assignment_level ASC, file.name ASC
+```

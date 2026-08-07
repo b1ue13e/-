@@ -66,3 +66,12 @@ $$\boxed{\text{BIBO 稳定}\;\iff\;j\omega\text{ 轴}\subset\text{ROC}}$$
 - [ ] 举一个「极点全在 LHP 但不稳定」的例子并说明原因（提示：ROC 不取包含 $j\omega$ 轴的那一侧）。
 
 *创建于：2026-08-06 · 更新于：2026-08-06*
+
+## 学完后可以完成
+
+```dataview
+LIST
+FROM "03-Projects/12-信号与系统"
+WHERE contains(requires, this.file.link)
+SORT assignment_level ASC, file.name ASC
+```

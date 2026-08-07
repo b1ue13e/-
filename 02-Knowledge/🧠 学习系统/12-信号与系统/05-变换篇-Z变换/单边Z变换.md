@@ -67,3 +67,12 @@ $$X(z)=\sum_{n=0}^{\infty}x[n]z^{-n}$$；位移：$Z\{x[n-1]\}=z^{-1}X(z)+x[-1]$
 - [ ] 何时优先使用单边 Z 变换？
 
 *创建于：2026-04-18 · 更新于：2026-08-06*
+
+## 学完后可以完成
+
+```dataview
+LIST
+FROM "03-Projects/12-信号与系统"
+WHERE contains(requires, this.file.link)
+SORT assignment_level ASC, file.name ASC
+```

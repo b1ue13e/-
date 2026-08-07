@@ -73,3 +73,12 @@ x=a^{|n|} 只有双边 ZT 有 ROC（圆环）；x=a^n u[n] 单边即可。
 - [ ] 何时必须用双边？
 
 *创建于：2026-04-18 · 更新于：2026-08-06*
+
+## 学完后可以完成
+
+```dataview
+LIST
+FROM "03-Projects/12-信号与系统"
+WHERE contains(requires, this.file.link)
+SORT assignment_level ASC, file.name ASC
+```
