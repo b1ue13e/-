@@ -1,8 +1,8 @@
 ---
-title: "路径规划Astar与RRT"
+topic: "路径规划Astar与RRT"
 date: "2026-08-02"
-type: concept
-course: "15-控制与机器人学"
+type: study
+course: "控制与机器人学"
 stage_moc: "[[🧭 阶段8-轨迹与路径跟踪]]"
 flow: knowledge
 kind: concept
@@ -248,3 +248,11 @@ RRT* 重连：对 $x_{\text{new}}$ 半径 $r$ 内的候选父节点 $x'$，若 $
 - **建议标签**：`#学习` `#控制与机器人学` `#路径规划` `#概念`
 - **拆分建议**：若 HW02 出现高频错误，可拆"栅格地图与占据栅格"（前置概念卡）与"A* 调试记录"（题型笔记）；主卡保持"图搜索 × 采样规划"双族对比不拆。
 
+## 学完后可以完成
+
+```dataview
+LIST
+FROM "03-Projects/系统与硬件/15-控制与机器人学"
+WHERE contains(requires, this.file.link)
+SORT assignment_level ASC, file.name ASC
+```
