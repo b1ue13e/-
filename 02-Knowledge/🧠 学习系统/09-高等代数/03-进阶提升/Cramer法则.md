@@ -3,7 +3,7 @@ type: study
 topic: "Cramer法则"
 course: "高等代数"
 created: 2026-08-06
-status: ongoing
+status: completed
 difficulty: intermediate
 concept: ["Cramer法则", "行列式比值", "解的显式公式"]
 stage_moc: "[[🌟 第三阶段：行列式、特征值与对角化]]"
@@ -126,6 +126,17 @@ $m\times n$ 长方形系统没有 $\det$，不能用 Cramer——用秩/最小�
 | ★★★★ | 比较 $n=10$ 时 Cramer 与 LU 消元的运算量（数量级） | Trefethen & Bau 补充 |
 
 ## 12. 我的主动回忆区
+
+<details>
+<summary>🔄 核对要点（先默写，再展开比对）</summary>
+
+
+- [ ] **公式默写**：$x_j=\det A_j/\det A$ 及 $A_j$ 定义。
+- [ ] **推导**：多线性 + 重复列归零的完整论证。
+- [ ] **计算**：$3\times3$ 系统用 Cramer 求解。
+- [ ] **边界**：何时不能用；计算复杂度对比。
+
+</details>
 
 > 不看上文：写公式；推导一遍；算 $2\times2$；说明为何数值计算不用它。
 

@@ -3,7 +3,7 @@ type: study
 topic: "Jordan标准形"
 course: "高等代数"
 created: 2026-08-06
-status: ongoing
+status: completed
 difficulty: advanced
 concept: ["Jordan块", "Jordan标准形", "特征向量链", "广义特征向量", "矩阵指数"]
 stage_moc: "[[🌟 第三阶段：行列式、特征值与对角化]]"
@@ -146,6 +146,18 @@ $R=\begin{bmatrix}0&-1\\1&0\end{bmatrix}$ 在 $\mathbb{R}$ 上无 Jordan 形（�
 | ★★★★ | 用 $\dim\ker(A-\lambda I)^k$ 判定 $A=\begin{bmatrix}2&1&0\\0&2&1\\0&0&2\end{bmatrix}$ 的 Jordan 形并验证唯一性 | 高等代数（第5版） |
 
 ## 12. 我的主动回忆区
+
+<details>
+<summary>🔄 核对要点（先默写，再展开比对）</summary>
+
+
+- [ ] **定义默写**：Jordan 块、Jordan 形、特征向量链、广义特征向量。
+- [ ] **定理陈述**：Jordan 标准形定理（存在 + 唯一）。
+- [ ] **证明**：$J^k$ 的二项式展开；$e^{Jt}$ 公式。
+- [ ] **计算**：给 $4\times4$ 缺陷矩阵写 Jordan 形（含块大小判定）。
+- [ ] **反例**：同特征多项式不同 Jordan 结构不相似。
+
+</details>
 
 > 不看上文：写 Jordan 块定义；$J^k$ 展开；$e^{Jt}$ 公式；构造 $J_2(2)$ 的特征向量链。
 

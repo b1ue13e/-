@@ -3,7 +3,7 @@ type: study
 topic: "奇异值分解(SVD)"
 course: "高等代数"
 created: 2026-08-06
-status: ongoing
+status: completed
 difficulty: advanced
 concept: ["奇异值分解", "奇异值", "左奇异向量", "右奇异向量", "Eckart-Young定理"]
 stage_moc: "[[🚀 第四阶段：内积空间与谱理论]]"
@@ -165,6 +165,18 @@ $\operatorname{rank}$ 相同的矩阵对：$AA^T=U\Sigma^2U^T$、$A^TA=V\Sigma^2
 | ★★★★ | 用 SVD 给出最小二乘解 $\hat{\mathbf{x}}=V\Sigma^{-1}U^T\mathbf{b}$ 并说明与正规方程关系 | 高等代数（第5版） |
 
 ## 12. 我的主动回忆区
+
+<details>
+<summary>🔄 核对要点（先默写，再展开比对）</summary>
+
+
+- [ ] **定义默写**：$A=U\Sigma V^T$ 与构造步骤。
+- [ ] **证明**：SVD 存在性；Eckart-Young（交论证）。
+- [ ] **计算**：给 $2\times2$ 手算 SVD。
+- [ ] **反例**：奇异值 vs 特征值；$U,V$ 不唯一。
+- [ ] **应用**：范数、伪逆、低秩逼近公式。
+
+</details>
 
 > 不看上文：写 SVD 与构造；几何意义；Eckart-Young；$\lVert A\rVert_2$；伪逆公式。
 

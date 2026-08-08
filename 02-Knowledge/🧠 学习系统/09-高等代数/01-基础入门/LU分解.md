@@ -3,7 +3,7 @@ type: study
 topic: "LU分解"
 course: "高等代数"
 created: 2026-08-06
-status: ongoing
+status: completed
 difficulty: intermediate
 concept: ["LU分解", "三角分解", "PA=LU", "消元乘子"]
 stage_moc: "[[📐 第一阶段：线性方程组与矩阵]]"
@@ -145,6 +145,17 @@ $A = \begin{bmatrix} \varepsilon & 1 \\ 1 & 1 \end{bmatrix}$（$\varepsilon$ 很
 | ★★★★ | 对 $A=\begin{bmatrix}\varepsilon&1\\1&1\end{bmatrix}$ 分析列主元 LU 与朴素 LU 的稳定性差异 | Trefethen & Bau Lec 21 |
 
 ## 12. 我的主动回忆区
+
+<details>
+<summary>🔄 核对要点（先默写，再展开比对）</summary>
+
+
+- [ ] **定义默写**：LU 分解定义与唯一性条件；$PA=LU$ 的 $P$ 是什么。
+- [ ] **算法执行**：手算 3×3 矩阵的 LU 分解并验证 $A=LU$。
+- [ ] **定理证明**：证明唯一性（"下三角=上三角 ⇒ 对角阵"论证）。
+- [ ] **应用**：用 LU 解 $A\mathbf{x}=\mathbf{b}$ 两步流程；说明为何多右端时 LU 优于 Gauss-Jordan。
+
+</details>
 
 > 不看上文：写出 Doolittle 算法；手算 3×3 LU；证明唯一性；解释 $PA=LU$ 中 $P$ 的来历。
 

@@ -3,7 +3,7 @@ type: study
 topic: "QR分解"
 course: "高等代数"
 created: 2026-08-06
-status: ongoing
+status: completed
 difficulty: intermediate
 concept: ["QR分解", "正交矩阵", "上三角矩阵", "最小二乘QR解法"]
 stage_moc: "[[🚀 第四阶段：内积空间与谱理论]]"
@@ -72,6 +72,16 @@ $Q$ 的第 $i$ 列 = $\mathbf{q}_i$（G-S 归一化输出）；$R_{ij}=\langle\m
 - QR = "先摆正坐标轴（$Q$），再读坐标（$R$）"。
 - 数值：$A^TA$ 把条件数平方（小奇异值更小），QR 直接处理 $A$——**避免平方**。
 
+**QR 的结构**：
+
+```mermaid
+flowchart LR
+    A["A（列向量 v₁..vₙ）"] -->|"Gram-Schmidt 正交化"| Q["Q：单位正交列（新坐标轴）"]
+    A -->|"新轴下读坐标"| R["R：上三角（第 j 列只用前 j 个方向）"]
+    Q --> M["A = Q R"]
+    R --> M
+```
+
 > **一句话本质**：$A=QR$ = "把列向量组正交化"的矩阵记法：$Q$ 是新坐标轴，$R$ 是旧坐标在新轴下的三角读数。
 
 ## 6. 定理陈述与证明重建
@@ -139,6 +149,17 @@ $\operatorname{rank}A<n$ 时 $R$ 奇异，分解不唯一——需约定（如�
 | ★★★★ | 说明为什么 QR 比正规方程数值稳定（条件数 $\kappa^2$ vs $\kappa$） | Trefethen & Bau |
 
 ## 12. 我的主动回忆区
+
+<details>
+<summary>🔄 核对要点（先默写，再展开比对）</summary>
+
+
+- [ ] **定义默写**：$A=QR$ 条件与唯一性约定。
+- [ ] **构造**：给 $3\times2$ 矩阵手算 QR（G-S 法）。
+- [ ] **证明**：唯一性（上三角正交 = 对角）；QR 解最小二乘。
+- [ ] **反例**：缺列秩；符号约定。
+
+</details>
 
 > 不看上文：写 QR 定义；G-S 构造 $R$ 的公式；唯一性论证；QR 解最小二乘。
 

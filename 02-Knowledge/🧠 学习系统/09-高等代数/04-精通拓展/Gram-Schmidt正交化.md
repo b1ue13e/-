@@ -3,7 +3,7 @@ type: study
 topic: "Gram-Schmidt正交化"
 course: "高等代数"
 created: 2026-08-06
-status: ongoing
+status: completed
 difficulty: intermediate
 concept: ["Gram-Schmidt", "标准正交基", "QR分解前置", "正交化算法"]
 stage_moc: "[[🚀 第四阶段：内积空间与谱理论]]"
@@ -154,6 +154,17 @@ G-S 与输入顺序有关：交换 $\mathbf{v}_1,\mathbf{v}_2$ 会得到不同�
 | ★★★★ | 证明修正 G-S 与经典 G-S 数学等价（归纳） | Trefethen & Bau |
 
 ## 12. 我的主动回忆区
+
+<details>
+<summary>🔄 核对要点（先默写，再展开比对）</summary>
+
+
+- [ ] **算法默写**：G-S 递推公式；修正版区别。
+- [ ] **证明**：输出正交且张成不变（归纳）。
+- [ ] **计算**：对 $\mathbb{R}^3$ 三向量手算 G-S。
+- [ ] **反例**：线性相关输入；数值不稳定。
+
+</details>
 
 > 不看上文：写 G-S 公式；手算一次；解释"减去投影造垂直"；说明经典与修正版差别。
 

@@ -3,7 +3,7 @@ type: study
 topic: "逆矩阵与Gauss-Jordan消元"
 course: "高等代数"
 created: 2026-08-06
-status: ongoing
+status: completed
 difficulty: beginner
 concept: ["逆矩阵", "可逆性", "奇异矩阵", "Gauss-Jordan消元"]
 stage_moc: "[[📐 第一阶段：线性方程组与矩阵]]"
@@ -153,6 +153,17 @@ $\begin{bmatrix} 1 & 1 \\ 1 & 1.0001 \end{bmatrix}$ 可逆但 $\det$ 极小—�
 | ★★★★ | 对 $A=\begin{bmatrix}a&b\\c&d\end{bmatrix}$，用 $A^{-1}$ 公式解 $A\mathbf{x}=\mathbf{b}$，讨论 $ad-bc=0$ 时发生什么 | MIT 18.06 Lec 3 |
 
 ## 12. 我的主动回忆区
+
+<details>
+<summary>🔄 核对要点（先默写，再展开比对）</summary>
+
+
+- [ ] **定义默写**：可逆定义与 8 条等价条件链。
+- [ ] **算法执行**：用 Gauss-Jordan 求 $\begin{bmatrix}1&2&3\\0&1&4\\5&6&0\end{bmatrix}$ 的逆。
+- [ ] **定理证明**：证明 $(AB)^{-1}=B^{-1}A^{-1}$；证明"方阵 $AB=I$ 蕴含 $BA=I$"。
+- [ ] **反例**：给出一个"近奇异"矩阵并说明数值风险。
+
+</details>
 
 > 不看上文：默写 8 条可逆等价条件；用 Gauss-Jordan 求 3×3 逆；证明 $(AB)^{-1}=B^{-1}A^{-1}$ 与方阵单侧逆定理。
 

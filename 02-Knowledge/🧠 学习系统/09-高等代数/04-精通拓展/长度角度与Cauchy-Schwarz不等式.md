@@ -3,7 +3,7 @@ type: study
 topic: "长度、角度与Cauchy-Schwarz不等式"
 course: "高等代数"
 created: 2026-08-06
-status: ongoing
+status: completed
 difficulty: intermediate
 concept: ["范数", "夹角", "Cauchy-Schwarz不等式", "三角不等式"]
 stage_moc: "[[🚀 第四阶段：内积空间与谱理论]]"
@@ -139,6 +139,17 @@ $\lVert(x,y)\rVert_\infty=\max(|x|,|y|)$ 满足范数公理但无内积（平行
 | ★★★★ | 证明极化恒等式并由此说明 $l^1$ 无内积 | Hefferon §6.1 |
 
 ## 12. 我的主动回忆区
+
+<details>
+<summary>🔄 核对要点（先默写，再展开比对）</summary>
+
+
+- [ ] **定义默写**：范数、夹角、C-S 不等式。
+- [ ] **证明**：C-S（判别式法与投影法）；三角不等式。
+- [ ] **计算**：给向量算长度、夹角、投影长度。
+- [ ] **反例**：非内积范数；等号条件。
+
+</details>
 
 > 不看上文：写 C-S 与两种证明；三角不等式；夹角公式；举非内积范数。
 
