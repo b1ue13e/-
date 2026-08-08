@@ -12,6 +12,10 @@ concept: ["OR-Tools", "求解器", "建模"]
 upstream:
   - "[[运筹学-前置-线性代数最小集]]"
 tags: [学习, 运筹学, 前置知识]
+source: "Google OR-Tools 官方教程与文档"
+source_url: "https://developers.google.com/optimization"
+accessed: 2026-08-08
+license: "Apache-2.0（OR-Tools）；教程文档可阅读运行"
 ---
 
 # 运筹学-前置-OR-Tools环境与建模

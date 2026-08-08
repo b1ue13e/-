@@ -13,6 +13,10 @@ flow: knowledge
 kind: concept
 created: 2026-08-02
 updated: 2026-08-06
+source: "OR-Tools CP-SAT 官方教程与文档"
+source_url: "https://developers.google.com/optimization"
+accessed: 2026-08-08
+license: "Apache-2.0（OR-Tools）"
 ---
 
 # 运筹学-约束规划与CP-SAT

@@ -14,6 +14,10 @@ upstream:
   - "[[运筹学-前置-概率与期望]]"
 related: ["运筹学-库存管理", "运筹学-决策分析"]
 tags: [学习, 运筹学, MDP]
+source: "13-强化学习 MDP 卡（桥接）＋ Bertsekas (1987)"
+source_url: "https://web.mit.edu/people/dimitrib/books.htm"
+accessed: 2026-08-08
+license: "官方免费 PDF；桥接按 13 课程口径"
 ---
 
 # 运筹学-Markov决策过程

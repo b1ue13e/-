@@ -14,6 +14,10 @@ upstream:
   - "[[运筹学-排队论]]"
 related: ["运筹学-库存管理", "运筹学-元启发式方法"]
 tags: [学习, 运筹学, 仿真]
+source: "OR-Tools 官方文档 ＋ Hillier & Lieberman 仿真章节参考"
+source_url: "https://developers.google.com/optimization"
+accessed: 2026-08-08
+license: "Apache-2.0（OR-Tools）；Hillier link-only"
 ---
 
 # 运筹学-仿真与MonteCarlo

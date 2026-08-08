@@ -23,3 +23,7 @@ __pycache__/
 # Sensitive sync plugin data
 .obsidian/plugins/remotely-save/data.json
 .obsidian/plugins/google-drive-sync/data.json
+
+# AI 工作目录（临时资产，不入版本控制）
+.workbuddy/
+.workbuddy-ai/

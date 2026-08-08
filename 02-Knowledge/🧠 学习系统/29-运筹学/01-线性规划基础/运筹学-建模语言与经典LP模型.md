@@ -13,6 +13,10 @@ upstream:
   - "[[运筹学-线性规划与单纯形法]]"
 related: ["运筹学-对偶理论与影子价格", "运筹学-灵敏度分析"]
 tags: [学习, 运筹学, 建模]
+source: "MIT 15.053（LP 建模）＋ Bradley/Hax/Magnanti《Applied Mathematical Programming》Ch.1-2"
+source_url: "https://ocw.mit.edu/courses/15-053-optimization-methods-in-management-science-spring-2013/"
+accessed: 2026-08-08
+license: "MIT OCW 公开；AMP 官方免费（MIT 官网）"
 ---
 
 # 运筹学-建模语言与经典LP模型

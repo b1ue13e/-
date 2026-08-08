@@ -14,6 +14,10 @@ upstream:
   - "[[运筹学-约束规划与CP-SAT]]"
 related: ["运筹学-网络流模型", "运筹学-元启发式方法"]
 tags: [学习, 运筹学, VRP]
+source: "OR-Tools Routing 官方教程 ＋ MIT 15.053（网络优化）"
+source_url: "https://developers.google.com/optimization"
+accessed: 2026-08-08
+license: "Apache-2.0（OR-Tools）；MIT OCW 公开"
 ---
 
 # 运筹学-VRP与路径优化
