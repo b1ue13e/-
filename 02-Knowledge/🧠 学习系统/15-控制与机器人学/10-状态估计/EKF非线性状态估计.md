@@ -2,7 +2,7 @@
 title: "EKF非线性状态估计"
 date: "2026-08-03"
 type: concept
-course: "15-控制与机器人学"
+course: "控制与机器人学"
 stage_moc: "[[🧭 阶段10-状态估计]]"
 flow: knowledge
 kind: concept
