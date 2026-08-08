@@ -1,14 +1,11 @@
----
+﻿---
 title: ODE求解器基础实现
 type: project
 topic: 常微分方程-阶段作业-01-ODE求解器基础实现
 course: 常微分方程
 created: 2026-04-18
-updated: 2026-08-06
 status: active
-progress: 0%
 flow: project
-kind: project
 project_type: homework
 asset_eligibility: eligible
 eligibility_audited: 2026-08-06
@@ -19,8 +16,8 @@ source_course: MIT 18.03
 license: 本地原创作业规格；外部课程与素材保持 link-only
 adaptation: original
 dataset_version: 谐振子与指数衰减测试集；参数写入配置表
-starter_code: 03-Projects/数学底座/06-常微分方程/scripts/ode_solvers.py
-tests: 03-Projects/数学底座/06-常微分方程/tests/test_ode_solvers.py
+starter_code: 03-Projects/06-常微分方程/scripts/ode_solvers.py
+tests: 03-Projects/06-常微分方程/tests/test_ode_solvers.py
 baseline: 显式 Euler 法与解析解误差对照
 acceptance_test: PyTest 通过且 4 阶收敛阶定量校验通过
 compute_budget: low
@@ -66,7 +63,7 @@ assignment_format: lab
 工具与环境配置：
 - Python 3.10+
 - `numpy`, `pytest`
-- 代码位于：`03-Projects/数学底座/06-常微分方程/scripts/ode_solvers.py`
+- 代码位于：`03-Projects/06-常微分方程/scripts/ode_solvers.py`
 
 ---
 
@@ -98,14 +95,14 @@ assignment_format: lab
 ## 4. 提交产物与代码接口 (Starter & Test Interface)
 
 依赖的底层算法代码位于：
-- `03-Projects/数学底座/06-常微分方程/scripts/ode_solvers.py`
+- `03-Projects/06-常微分方程/scripts/ode_solvers.py`
 
 单测试自动化入口：
-- `03-Projects/数学底座/06-常微分方程/tests/test_ode_solvers.py`
+- `03-Projects/06-常微分方程/tests/test_ode_solvers.py`
 
 运行单元测试：
 ```bash
-pytest 03-Projects/数学底座/06-常微分方程/tests/test_ode_solvers.py -k "test_euler_accuracy or test_rk4"
+pytest 03-Projects/06-常微分方程/tests/test_ode_solvers.py -k "test_euler_accuracy or test_rk4"
 ```
 
 ---
@@ -134,4 +131,4 @@ pytest 03-Projects/数学底座/06-常微分方程/tests/test_ode_solvers.py -k 
 
 - **学习路径**：[[02-Knowledge/🧠 学习系统/06-常微分方程/🗺️ 常微分方程学习路径\|常微分方程学习路径]]
 - **阶段 MOC**：[[02-Knowledge/🧠 学习系统/06-常微分方程/01-一阶基石与数值启蒙/🧭 阶段1-一阶基石与数值启蒙\|阶段1-一阶基石与数值启蒙]]
-- **下一个作业包**：[[03-Projects/数学底座/06-常微分方程/课后作业/常微分方程-课后作业-02-二阶常系数与受迫振动\|课后作业 02：二阶常系数与受迫振动]]
+- **下一个作业包**：[[03-Projects/06-常微分方程/课后作业/常微分方程-课后作业-02-二阶常系数与受迫振动\|课后作业 02：二阶常系数与受迫振动]]

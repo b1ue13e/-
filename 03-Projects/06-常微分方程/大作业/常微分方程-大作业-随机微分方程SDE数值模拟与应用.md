@@ -1,14 +1,11 @@
----
+﻿---
 title: 随机微分方程SDE数值模拟与应用
 type: project
 topic: 常微分方程-大作业-随机微分方程SDE数值模拟与应用
 course: 常微分方程
 created: 2026-04-18
-updated: 2026-08-06
 status: active
-progress: 0%
 flow: project
-kind: project
 project_type: homework
 asset_eligibility: eligible
 eligibility_audited: 2026-08-06
@@ -19,8 +16,8 @@ source_course: Stochastic Differential Equations / Higham 2001 Algorithmic Intro
 license: 本地原创作业规格；外部文献 link-only 引用
 adaptation: original
 dataset_version: 几何布朗运动 (GBM) 与 Ornstein-Uhlenbeck 随机过程
-starter_code: 03-Projects/数学底座/06-常微分方程/scripts/ode_solvers.py
-tests: 03-Projects/数学底座/06-常微分方程/tests/test_ode_solvers.py
+starter_code: 03-Projects/06-常微分方程/scripts/ode_solvers.py
+tests: 03-Projects/06-常微分方程/tests/test_ode_solvers.py
 baseline: 确定性常微分方程漂移项对照
 acceptance_test: Euler-Maruyama 仿真数值正性与 PyTest 单元测试通过
 compute_budget: medium
@@ -102,7 +99,7 @@ PyTest 单元测试：
 
 运行测试命令：
 ```bash
-pytest 03-Projects/数学底座/06-常微分方程/tests/test_ode_solvers.py -k "test_sde_simulation"
+pytest 03-Projects/06-常微分方程/tests/test_ode_solvers.py -k "test_sde_simulation"
 ```
 
 ---

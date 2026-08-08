@@ -1,4 +1,4 @@
----
+﻿---
 type: index
 topic: PDE桥梁与高级解析
 tags:
@@ -9,6 +9,8 @@ status: active
 course: 常微分方程
 flow: knowledge
 kind: moc
+assessment_exempt: true
+assessment_exempt_reason: "阶段 MOC 导航页，不属于可独立闭卷验收的课程知识卡"
 ---
 
 
@@ -35,13 +37,11 @@ kind: moc
 
 ## 🧪 阶段验收与作业
 
-完成本阶段知识后，学习者应能够用级数解法与 Sturm-Liouville 理论处理变系数方程与边值问题，并完成以下课后作业：
-
-- [[03-Projects/数学底座/06-常微分方程/课后作业/常微分方程-课后作业-04-级数解法与边值问题\|课后作业 04：级数解法与边值问题]]
+完成本阶段知识后，学习者应能够用级数解法与 Sturm-Liouville 理论处理变系数方程与边值问题，并完成本阶段课后作业 04（作业入口由下方 Dataview 从 `03-Projects` 自动查询，不在此静态维护）：
 
 ```dataview
 LIST
-FROM "03-Projects/数学底座/06-常微分方程"
+FROM "03-Projects/06-常微分方程"
 WHERE contains(requires, this.file.link) OR (
   file.folder != null AND 
   contains(file.folder, "03-Projects") AND 
@@ -58,12 +58,3 @@ SORT assignment_level ASC, file.name ASC
 | ⬅️ 上一阶段 | 📋 总览 | 下一阶段 ➡️ |
 |:---:|:---:|:---:|
 | [[🧭 阶段5-现代非线性动力系统\|返回第五阶段]] | [[02-Knowledge/🧠 学习系统/06-常微分方程/🗺️ 常微分方程学习路径\|返回总览]] | [[🧭 阶段7-精通与专题\|进入第七阶段]] |
-
-## 学完后可以完成
-
-```dataview
-LIST
-FROM "03-Projects/数学底座/06-常微分方程"
-WHERE contains(requires, this.file.link)
-SORT assignment_level ASC, file.name ASC
-```

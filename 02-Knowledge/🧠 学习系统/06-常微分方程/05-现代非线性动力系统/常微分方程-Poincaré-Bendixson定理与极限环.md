@@ -1,4 +1,4 @@
----
+﻿---
 type: study
 topic: "Poincaré-Bendixson定理与极限环"
 course: "常微分方程"
@@ -84,7 +84,7 @@ $$\begin{cases} \frac{dr}{dt} = r(1 - r^2) + \mu r \cos\theta \\ \frac{d\theta}{
 
 ---
 
-## 6. 🔗 学完后可以完成
+## 学完后可以完成
 
 ```dataview
 LIST

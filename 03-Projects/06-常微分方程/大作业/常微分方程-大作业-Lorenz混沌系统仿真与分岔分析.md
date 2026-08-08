@@ -1,14 +1,11 @@
----
+﻿---
 title: Lorenz混沌系统仿真与分岔分析
 type: project
 topic: 常微分方程-大作业-Lorenz混沌系统仿真与分岔分析
 course: 常微分方程
 created: 2026-04-18
-updated: 2026-08-06
 status: active
-progress: 0%
 flow: project
-kind: project
 project_type: homework
 asset_eligibility: eligible
 eligibility_audited: 2026-08-06
@@ -19,8 +16,8 @@ source_course: MIT 18.03 & Strogatz Nonlinear Dynamics
 license: 本地原创作业规格；外部课程与素材保持 link-only
 adaptation: original
 dataset_version: Lorenz 三维非线性动力方程组（sigma=10, rho=28, beta=8/3）
-starter_code: 03-Projects/数学底座/06-常微分方程/scripts/ode_solvers.py
-tests: 03-Projects/数学底座/06-常微分方程/tests/test_ode_solvers.py
+starter_code: 03-Projects/06-常微分方程/scripts/ode_solvers.py
+tests: 03-Projects/06-常微分方程/tests/test_ode_solvers.py
 baseline: 线性化平衡点雅可比矩阵分析
 acceptance_test: 三维双蝶翼相轨线重构与 PyTest 仿真无爆炸验证
 compute_budget: medium
@@ -77,7 +74,7 @@ $$\begin{aligned}
 
 环境与资源要求：
 - Python 3.10+, `numpy`, `matplotlib`, `pytest`
-- 代码位于 `03-Projects/数学底座/06-常微分方程/scripts/ode_solvers.py`
+- 代码位于 `03-Projects/06-常微分方程/scripts/ode_solvers.py`
 
 ---
 
@@ -110,7 +107,7 @@ $$\begin{aligned}
 
 命令行测试：
 ```bash
-pytest 03-Projects/数学底座/06-常微分方程/tests/test_ode_solvers.py -k "test_lorenz_simulation"
+pytest 03-Projects/06-常微分方程/tests/test_ode_solvers.py -k "test_lorenz_simulation"
 ```
 
 ---

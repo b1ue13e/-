@@ -1,14 +1,11 @@
----
+﻿---
 title: 神经微分方程NeuralODE建模与反向传播
 type: project
 topic: 常微分方程-大作业-神经微分方程NeuralODE建模与反向传播
 course: 常微分方程
 created: 2026-04-18
-updated: 2026-08-06
 status: active
-progress: 0%
 flow: project
-kind: project
 project_type: homework
 asset_eligibility: eligible
 eligibility_audited: 2026-08-06
@@ -19,8 +16,8 @@ source_course: Neural ODE (Chen et al. NeurIPS 2018 Best Paper)
 license: 本地原创作业规格；外部论文与框架按 link-only 引用
 adaptation: original
 dataset_version: 连续动态系统轨迹与 Neural ODE 伴随求导；参数写入代码
-starter_code: 03-Projects/数学底座/06-常微分方程/scripts/ode_solvers.py
-tests: 03-Projects/数学底座/06-常微分方程/tests/test_ode_solvers.py
+starter_code: 03-Projects/06-常微分方程/scripts/ode_solvers.py
+tests: 03-Projects/06-常微分方程/tests/test_ode_solvers.py
 baseline: 有限差分法 (Finite Difference) 梯度对比
 acceptance_test: 伴随灵敏度梯度与有限差分相对误差 < 5%
 compute_budget: medium
@@ -108,7 +105,7 @@ PyTest 单元测试：
 
 运行测试：
 ```bash
-pytest 03-Projects/数学底座/06-常微分方程/tests/test_ode_solvers.py -k "test_neural_ode"
+pytest 03-Projects/06-常微分方程/tests/test_ode_solvers.py -k "test_neural_ode"
 ```
 
 ---

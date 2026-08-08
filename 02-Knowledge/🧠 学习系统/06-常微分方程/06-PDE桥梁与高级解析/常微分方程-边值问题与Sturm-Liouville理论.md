@@ -2,7 +2,7 @@
 type: study
 topic: 边值问题与Sturm-Liouville理论
 created: 2026-08-05
-status: ongoing
+status: completed
 difficulty: advanced
 concept:
 - 边值问题 (BVP)
@@ -175,27 +175,11 @@ S-L特征函数的正交性：若 $\lambda_m \neq \lambda_n$ 是正则 S-L 问�
 - [ ] 3 天后
 
 
-## 🧪 学完本节后可完成的作业
-
-```dataview
-LIST
-FROM "03-Projects"
-WHERE contains(requires, this.file.link)
-SORT assignment_level ASC, file.name ASC
-```
-
- 解决经典方法在特定条件下的局限性。
-
-## ⚠️ 常见误区与边界条件
-
-1. **混淆适用范围**: 注意算子有界性与系统线性/非线性前提。
-2. **边界条件缺失**: 初值/边值条件不足时解不唯一。
-
 ## 学完后可以完成
 
 ```dataview
 LIST
-FROM "03-Projects/数学底座/06-常微分方程"
+FROM "03-Projects/06-常微分方程"
 WHERE contains(requires, this.file.link)
 SORT assignment_level ASC, file.name ASC
 ```

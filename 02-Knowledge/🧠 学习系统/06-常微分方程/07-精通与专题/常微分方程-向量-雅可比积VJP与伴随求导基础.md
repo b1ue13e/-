@@ -4,6 +4,7 @@ topic: 向量-雅可比积VJP与伴随求导基础
 course: 常微分方程
 created: 2026-08-06
 status: completed
+difficulty: advanced
 tags:
   - 学习
   - 数学
@@ -117,27 +118,16 @@ print(f"VJP 数值结果: {vjp_num} | 理论解析值: [5.5, 2.0]")
 
 ---
 
-## 🧪 学完本节后可完成的作业
-
-```dataview
-LIST
-FROM "03-Projects"
-WHERE contains(requires, this.file.link)
-SORT assignment_level ASC, file.name ASC
-```
-
----
-
 ## 📌 返回导航
 
 - **阶段 MOC**：[[02-Knowledge/🧠 学习系统/06-常微分方程/07-精通与专题/🧭 阶段7-精通与专题\|阶段7-精通与专题]]
-- **关联大作业**：[[03-Projects/数学底座/06-常微分方程/大作业/常微分方程-大作业-神经微分方程NeuralODE建模与反向传播\|大作业 02：Neural ODE 建模与反向传播]]
+- **关联大作业**：[[03-Projects/06-常微分方程/大作业/常微分方程-大作业-神经微分方程NeuralODE建模与反向传播\|大作业 02：Neural ODE 建模与反向传播]]
 
 ## 学完后可以完成
 
 ```dataview
 LIST
-FROM "03-Projects/数学底座/06-常微分方程"
+FROM "03-Projects/06-常微分方程"
 WHERE contains(requires, this.file.link)
 SORT assignment_level ASC, file.name ASC
 ```

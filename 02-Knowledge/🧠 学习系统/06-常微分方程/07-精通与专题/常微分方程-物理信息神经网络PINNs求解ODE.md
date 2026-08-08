@@ -1,4 +1,4 @@
----
+﻿---
 type: study
 topic: "物理信息神经网络PINNs求解ODE"
 course: "常微分方程"
@@ -122,7 +122,7 @@ for epoch in range(1000):
 
 ---
 
-## 6. 🔗 学完后可以完成
+## 学完后可以完成
 
 ```dataview
 LIST
