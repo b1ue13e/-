@@ -175,4 +175,4 @@ WHERE contains(upstream, this.file.link)
 SORT file.name ASC
 ```
 
-> 直接下游：阶段 5 的 [[生成vs判别]]（NB vs CRF）、课程 Capstone（诊断 BN 建模部分）。
+> 直接下游：阶段 5 的 生成vs判别（NB vs CRF）、课程 Capstone（诊断 BN 建模部分）。

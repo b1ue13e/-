@@ -185,7 +185,7 @@ WHERE contains(upstream, this.file.link)
 SORT file.name ASC
 ```
 
-> 直接下游：[[概率图模型-变分EM]]、阶段 5 的 [[BW重估计]]（HMM 的 EM）、阶段 6 的 [[LDA推断]]、课程 Capstone（EM 部分）。
+> 直接下游：[[概率图模型-变分EM]]、阶段 5 的 [[概率图模型-前向后向算法与BaumWelch]]（HMM 的 EM）、阶段 6 的 [[概率图模型-主题模型]]、课程 Capstone（EM 部分）。
 
 ## 🃏 Anki 卡片
 

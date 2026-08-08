@@ -3,19 +3,18 @@ type: study
 topic: "变分推断 (Variational Inference & ELBO)"
 course: "14-概率图模型"
 created: 2026-07-27
-status: learning
+status: completed
 stage_moc: "[[🧭 阶段2-推断算法]]"
 flow: knowledge
 kind: derivation
 difficulty: advanced
 upstream: ["[[概率图模型-贝叶斯网络]]", "[[概率图模型-KL散度]]"]
-importance: "A"
 anki_deck: "概率图模型::02-推断算法"
 anki_tags: [概率图模型, 变分推断, ELBO]
 tags: [学习, 概率图模型, 变分推断, VI, ELBO, 证据下界, KL散度, 贝叶斯推断]
 ---
 
-# 🎯 变分推断 (Variational Inference & ELBO)
+# 概率图模型-变分推断与ELBO (Variational Inference & ELBO)
 
 ---
 
@@ -28,7 +27,7 @@ tags: [学习, 概率图模型, 变分推断, VI, ELBO, 证据下界, KL散度, 
 
 ## 1. 这个知识点解决什么问题？
 
-> **We Encountered a Problem (我们遇到了什么麻烦)**：
+> **遇到的核心问题 (我们遇到了什么麻烦)**：
 > 在贝叶斯统计中，我们已知观测数据 $\mathbf{x}$，希望计算隐变量/参数 $\mathbf{z}$ 的后验概率分布 $p(\mathbf{z} \mid \mathbf{x}) = \frac{p(\mathbf{x}, \mathbf{z})}{p(\mathbf{x})}$。
 > 算这个后验的分母需要计算边缘概率积分 $p(\mathbf{x}) = \int p(\mathbf{x}, \mathbf{z}) d\mathbf{z}$。
 > 然而对于复杂的深层概率模型，这个高维积分在数学上是**无法精确求解的（Intractable）**！传统的 MCMC 采样虽然精确，但在大规模大数据集上**采样速度慢到令人发指**。
@@ -48,8 +47,8 @@ tags: [学习, 概率图模型, 变分推断, VI, ELBO, 证据下界, KL散度, 
 
 最小必要背景：
 
-1. **[[22-概率论与数理统计/01-基础/贝叶斯公式|贝叶斯后验概率]]**：先验 $p(\mathbf{z})$ 结合似然 $p(\mathbf{x}|\mathbf{z})$ 得到后验 $p(\mathbf{z}|\mathbf{x})$。
-2. **[[14-概率图模型/变分推断|KL 散度 (KL-Divergence)]]**：衡量两个分布 $q(\mathbf{z})$ 与 $p(\mathbf{z})$ 接近程度的指标：$\mathcal{D}_{KL}(q \parallel p) = \mathbb{E}_q [\ln q(\mathbf{z}) - \ln p(\mathbf{z})]$。
+1. **[[概率图模型-贝叶斯规则与条件独立|贝叶斯后验概率]]**：先验 $p(\mathbf{z})$ 结合似然 $p(\mathbf{x}|\mathbf{z})$ 得到后验 $p(\mathbf{z}|\mathbf{x})$。
+2. **[[概率图模型-变分推断与ELBO|KL 散度 (KL-Divergence)]]**：衡量两个分布 $q(\mathbf{z})$ 与 $p(\mathbf{z})$ 接近程度的指标：$\mathcal{D}_{KL}(q \parallel p) = \mathbb{E}_q [\ln q(\mathbf{z}) - \ln p(\mathbf{z})]$。
 
 ---
 
@@ -194,14 +193,14 @@ print(f"变分推断完成！均值估计 mu_q = {mu_q.item():.3f} (真实均值
 ## 9. 相关知识点与 Obsidian 双链建议
 
 ### 上游依赖
-- [[14-概率图模型/01-基础概念/贝叶斯网|贝叶斯网]]：概率图模型的联合分布 $p(\mathbf{x}, \mathbf{z})$ 定义。
-- [[22-概率论与数理统计/01-基础/贝叶斯公式|贝叶斯公式]]：后验概率不可算的背景原因。
+- [[概率图模型-贝叶斯网络|贝叶斯网]]：概率图模型的联合分布 $p(\mathbf{x}, \mathbf{z})$ 定义。
+- [[概率图模型-贝叶斯规则与条件独立|贝叶斯公式]]：后验概率不可算的背景原因。
 
 ### 下游延伸
-- [[17-机器学习/03-正则优化/VAE 变分自编码器|VAE 变分自编码器]]：将变分推断与深度神经网络结合的生成模型。
+- [[概率图模型-变分自编码器|VAE 变分自编码器]]：将变分推断与深度神经网络结合的生成模型。
 
 ### 横向关联
-- [[14-概率图模型/03-近似推断/MCMC|MCMC 采样]] ↔ [[14-概率图模型/变分推断|变分推断]]：PGM 近似推断两大双雄。
+- [[概率图模型-基本采样方法|MCMC 采样]] ↔ [[概率图模型-变分推断与ELBO|变分推断]]：PGM 近似推断两大双雄。
 
 ---
 
@@ -287,12 +286,19 @@ print(f"变分推断完成！均值估计 mu_q = {mu_q.item():.3f} (真实均值
 
 ---
 
-## 12. 学完后可以完成
+## 学完后可以完成
 
 - 推导 ELBO 的两种等价形式（$\log p(x) = \mathcal{L} + \text{KL}(q\|p)$）并解释"证据下界"的含义；
 - 对简单模型手算 CAVI 更新（见 [[概率图模型-变分推断算法]] 的伯努利-高斯例）；
-- 完成 [[03-Projects/14-概率图模型/阶段作业/概率图模型-阶段作业-02-变分推断与MCMC采样求解器|阶段作业-02]] 的变分推断部分；
+- 完成 [[03-Projects/14-概率图模型/阶段作业/概率图模型-阶段作业-02-变分推断与MCMC采样求解器|阶段作业-02]] 的变分推断部分（其他验收入口见下方自动查询）；
 - **承接**：本卡是阶段 2 的收口概念之一，向下支撑 [[概率图模型-变分EM]]（阶段 3 用 ELBO 推导 EM 单调性）与 [[概率图模型-变分自编码器]]（阶段 6 用 ELBO 训练 VAE）。
+
+```dataview
+LIST
+FROM "03-Projects/14-概率图模型"
+WHERE contains(requires, this.file.link)
+SORT assignment_level ASC, file.name ASC
+```
 
 ---
 

@@ -165,7 +165,7 @@ WHERE contains(upstream, this.file.link)
 SORT file.name ASC
 ```
 
-> 直接下游：阶段 6 的 [[LDA推断]]/[[LDA生成]]、课程 Capstone（EM/VI 部分）。
+> 直接下游：阶段 6 的 [[概率图模型-主题模型]]/[[概率图模型-主题模型]]、课程 Capstone（EM/VI 部分）。
 
 ## 🃏 Anki 卡片
 

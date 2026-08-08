@@ -177,4 +177,4 @@ WHERE contains(upstream, this.file.link)
 SORT file.name ASC
 ```
 
-> 直接下游：阶段 6 的 [[PyMC]]/[[NumPyro]]/[[Stan]] 概率编程实践、课程 Capstone（采样部分）。
+> 直接下游：阶段 6 的 [[概率图模型-标准化流与概率编程|概率编程实践]]（PyMC/NumPyro/Stan）、课程 Capstone（采样部分）。

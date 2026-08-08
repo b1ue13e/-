@@ -170,4 +170,4 @@ WHERE contains(upstream, this.file.link)
 SORT file.name ASC
 ```
 
-> 直接下游：阶段 4 的 [[朴素贝叶斯]]/[[NB变体]]（树视角）、课程 Capstone（结构学习部分）。
+> 直接下游：阶段 4 的 [[概率图模型-朴素贝叶斯与典型BN模型]]/[[概率图模型-朴素贝叶斯与典型BN模型]]（树视角）、课程 Capstone（结构学习部分）。

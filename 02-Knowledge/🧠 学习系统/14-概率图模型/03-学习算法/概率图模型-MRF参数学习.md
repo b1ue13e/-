@@ -187,4 +187,4 @@ WHERE contains(upstream, this.file.link)
 SORT file.name ASC
 ```
 
-> 直接下游：阶段 5 的 [[CRF学习]]、阶段 6 的能量模型/扩散模型训练、课程 Capstone。
+> 直接下游：阶段 5 的 [[概率图模型-条件随机场]]、阶段 6 的能量模型/扩散模型训练、课程 Capstone。

@@ -177,4 +177,4 @@ WHERE contains(upstream, this.file.link)
 SORT file.name ASC
 ```
 
-> 直接下游：[[概率图模型-变分推断与ELBO]]、[[概率图模型-变分推断算法]]、阶段 6 的 [[KL损失]]（VAE）。
+> 直接下游：[[概率图模型-变分推断与ELBO]]、[[概率图模型-变分推断算法]]、阶段 6 的 [[概率图模型-变分自编码器]]（VAE）。

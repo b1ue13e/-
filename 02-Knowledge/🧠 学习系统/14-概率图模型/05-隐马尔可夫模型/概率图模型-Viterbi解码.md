@@ -172,7 +172,7 @@ WHERE contains(upstream, this.file.link)
 SORT file.name ASC
 ```
 
-> 直接下游：[[概率图模型-CRF推断]]（CRF 解码）、阶段 6 的 [[语音解码]]/[[POS-CRF]]、课程 Capstone。
+> 直接下游：[[概率图模型-条件随机场]]（CRF 解码）、阶段 6 的 语音解码/[[概率图模型-条件随机场]]、课程 Capstone。
 
 ## 🃏 Anki 卡片
 

@@ -12,11 +12,9 @@ requires:
   - "[[概率图模型-变量消去]]"
   - "[[概率图模型-和积算法与消息传递]]"
   - "[[概率图模型-Gibbs与MH采样]]"
-  - "[[概率图模型-Gibbs与MH采样]]"
   - "[[概率图模型-MCMC收敛与诊断]]"
   - "[[概率图模型-变分推断与ELBO]]"
   - "[[概率图模型-KL散度]]"
-  - "[[概率图模型-变分推断与ELBO]]"
 source_type: local_integration_task
 created: 2026-07-29
 updated: 2026-08-06
@@ -24,13 +22,11 @@ date: 2026-07-29
 status: planned
 flow: project
 difficulty: advanced
-importance: A
 concept: ["概率图模型", "MCMC采样", "变分推断"]
 adapted_from: "Stanford CS228 HW 结构启发（本地原创任务规格）"
 source_url: "https://ermongroup.github.io/cs228-notes/"
 license: "本地原创改编；外部素材 link-only"
 tags: [作业, 14-概率图模型, 推断]
-aliases: ["CS228-HW02-PGM推断作业"]
 ---
 
 # 概率图模型 - 阶段作业 02：变分推断与 MCMC 采样求解器
@@ -51,7 +47,7 @@ aliases: ["CS228-HW02-PGM推断作业"]
 ---
 
 ## 1. ⚙️ 环境与 Starter Code 准备
-- **Starter Code 路径**：`03-Projects/projects-pgm/hw02_vi_mcmc.ipynb`
+- **Starter Code 路径**：`03-Projects/14-概率图模型/scripts/hw02_verify.py`（本作业最小参考实现/验收脚本；完整任务由学习者独立实现，不提供现成答案）
 - **开源标杆仓库**：[ermongroup/cs228-notes](https://github.com/ermongroup/cs228-notes) (Stanford CS228)
 - **核心依赖**：`pgmpy`, `torch`, `numpy`, `pytest`
 

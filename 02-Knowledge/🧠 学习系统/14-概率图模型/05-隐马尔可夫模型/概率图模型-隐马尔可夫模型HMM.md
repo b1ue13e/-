@@ -20,7 +20,7 @@ anki_deck: "概率图模型::05-隐马尔可夫模型"
 anki_tags: [概率图模型, HMM, 序列模型]
 ---
 
-# 隐马尔可夫模型 HMM (Hidden Markov Model)
+# 概率图模型-隐马尔可夫模型 HMM (Hidden Markov Model)
 
 ## 1. 隐马尔可夫模型 HMM 的定义与三大基本问题
 
@@ -46,10 +46,8 @@ $$\delta_t(i) = \max_{q_1, \dots, q_{t-1}} P(q_1, \dots, q_{t-1}, q_t = i, O_1, 
 2. **初始化 ($t=1$)**：
 $$\delta_1(i) = \pi_i b_i(O_1), \quad \psi_1(i) = 0 \quad (i=1,\dots,N)$$
 3. **递推 ($t=2,\dots,T$)**：根据马尔可夫性与状态独立性：
-$$\delta_t(j) = \max_{1 \le i \le N} \left[ \delta_{t-1}(i) a_{ij} 
-ight] \cdot b_j(O_t)$$
-$$\psi_t(j) = \arg\max_{1 \le i \le N} \left[ \delta_{t-1}(i) a_{ij} 
-ight]$$
+$$\delta_t(j) = \max_{1 \le i \le N} \left[ \delta_{t-1}(i) a_{ij} \right] \cdot b_j(O_t)$$
+$$\psi_t(j) = \arg\max_{1 \le i \le N} \left[ \delta_{t-1}(i) a_{ij} \right]$$
 4. **终止与路径回溯**：
 $$P^* = \max_{1 \le i \le N} \delta_T(i), \quad q_T^* = \arg\max_{1 \le i \le N} \delta_T(i)$$
 $$q_t^* = \psi_{t+1}(q_{t+1}^*) \quad (t = T-1, T-2, \dots, 1)$$
@@ -69,7 +67,7 @@ $$q_t^* = \psi_{t+1}(q_{t+1}^*) \quad (t = T-1, T-2, \dots, 1)$$
 
 **局限（误区与反例）**：隐马尔可夫模型 HMM 假设 $O_t$ 仅依赖当前隐状态 $q_t$（观测独立假设），这导致 HMM 无法利用文本中上下文的关联特征（如前后的词性）；这一局限促使了线性链 CRF 的诞生。
 
-关联知识点推荐：[[概率图模型-马尔可夫随机场]]、[[概率图模型-贝叶斯网络]]、[[维特比算法]]、[[二分搜索]]。
+关联知识点推荐：[[概率图模型-马尔可夫随机场]]、[[概率图模型-贝叶斯网络]]、[[概率图模型-Viterbi解码]]。
 
 ---
 
@@ -145,9 +143,15 @@ if __name__ == "__main__":
 
 ## 学完后可以完成
 
-- 写出 HMM 五元组 $(N,M,\pi,A,B)$ 与联合分解 $P(O,Q\mid\lambda)=\pi_{q_1}b_{q_1}(o_1)\prod a_{q_t,q_{t+1}}b_{q_{t+1}}(o_{t+1})$；
-- 说明三大问题的分工：评估/解码/学习（对应 [[03-Projects/14-概率图模型/课后作业/概率图模型-课后作业-05-序列模型HMM三大问题|课后作业-05]]）；
+- 写出 HMM 五元组 $(N,M,\pi,A,B)$ 与联合分解 $P(O,Q\mid\lambda)=\pi_{q_1}b_{q_1}(o_1)\prod a_{q_t,q_{t+1}}b_{q_{t+1}}(o_{t+1})$；说明三大问题的分工（评估/解码/学习，验收入口见下方自动查询）；
 - **承接**：本卡是阶段 5 的导论卡——三大问题的算法实现见 [[概率图模型-前向后向算法与BaumWelch]]（评估+学习）与 [[概率图模型-Viterbi解码]]（解码）；与判别式 [[概率图模型-条件随机场]] 的对比见卡内 §对比 与课后作业-05。
+
+```dataview
+LIST
+FROM "03-Projects/14-概率图模型"
+WHERE contains(requires, this.file.link)
+SORT assignment_level ASC, file.name ASC
+```
 
 ---
 

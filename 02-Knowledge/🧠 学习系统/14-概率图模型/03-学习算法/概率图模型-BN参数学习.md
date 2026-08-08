@@ -179,7 +179,7 @@ WHERE contains(upstream, this.file.link)
 SORT file.name ASC
 ```
 
-> 直接下游：[[概率图模型-BN结构学习]]（BDeu 评分）、阶段 4 的 [[BN参数工具]]、课程 Capstone（参数学习部分）。
+> 直接下游：[[概率图模型-BN结构学习]]（BDeu 评分）、阶段 4 的 [[概率图模型-BN工程实践]]、课程 Capstone（参数学习部分）。
 
 ## 🃏 Anki 卡片
 
