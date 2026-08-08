@@ -12,7 +12,7 @@ kind: concept
 concept: ["ACC切换", "状态机", "模式管理"]
 prerequisites: ["跟随模式", "速度模式"]
 related: ["跟随模式", "速度模式"]
-upstream: ["[[07-纵向控制/跟随模式]]"]
+upstream: ["[[跟随模式]]"]
 source: "Rajamani Ch.6; ACC 工程实现"
 tags: [学习, 控制与机器人学, ACC]
 ---

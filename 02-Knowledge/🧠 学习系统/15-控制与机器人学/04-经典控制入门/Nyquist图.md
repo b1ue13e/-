@@ -12,7 +12,7 @@ kind: concept
 concept: ["Nyquist图", "极坐标图", "频域分析"]
 prerequisites: ["频率响应", "Bode图"]
 related: ["Nyquist判据", "稳定裕度", "相位裕度"]
-upstream: ["[[04-经典控制入门/Bode图]]"]
+upstream: ["[[Bode图]]"]
 source: "Modern Control Engineering (Ogata) Ch.7"
 tags: [学习, 控制与机器人学, 频域分析]
 ---

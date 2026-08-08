@@ -12,7 +12,7 @@ kind: derivation
 concept: ["Pure Pursuit", "转向角", "控制律"]
 prerequisites: ["PP曲率", "自行车模型"]
 related: ["PP算法", "PP曲率"]
-upstream: ["[[06-横向控制/PP曲率]]"]
+upstream: ["[[PP曲率]]"]
 source: "Pure Pursuit 文献; PythonRobotics"
 tags: [学习, 控制与机器人学, 横向控制]
 ---

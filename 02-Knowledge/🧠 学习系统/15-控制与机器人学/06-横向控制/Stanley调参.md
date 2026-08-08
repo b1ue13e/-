@@ -12,7 +12,7 @@ kind: problem-type
 concept: ["Stanley", "调参", "增益"]
 prerequisites: ["Stanley公式"]
 related: ["Stanley公式", "Stanley低速", "Stanley高速"]
-upstream: ["[[06-横向控制/Stanley公式]]"]
+upstream: ["[[Stanley公式]]"]
 source: "Stanford Stanley (2006); PythonRobotics"
 tags: [学习, 控制与机器人学, 横向控制]
 ---

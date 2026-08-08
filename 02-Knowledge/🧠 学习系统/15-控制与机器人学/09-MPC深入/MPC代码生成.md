@@ -12,7 +12,7 @@ kind: concept
 concept: ["代码生成", "嵌入式部署"]
 prerequisites: ["OSQP", "QP标准形式", "稀疏QP"]
 related: ["OSQP", "稀疏QP", "显式MPC"]
-upstream: ["[[09-MPC深入/OSQP]]"]
+upstream: ["[[OSQP]]"]
 source: "OSQP codegen / CVXGEN / acados 文档"
 tags: [学习, 控制与机器人学, MPC]
 ---

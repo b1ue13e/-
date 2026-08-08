@@ -12,7 +12,7 @@ kind: concept
 concept: ["二次规划", "标准形式", "Hessian"]
 prerequisites: ["预测方程", "MPC代价函数"]
 related: ["QP Hessian", "稀疏QP", "OSQP"]
-upstream: ["[[09-MPC深入/预测方程]]", "[[09-MPC深入/MPC代价函数]]"]
+upstream: ["[[预测方程]]", "[[MPC代价函数]]"]
 source: "Borrelli, Predictive Control；OSQP 文档"
 tags: [学习, 控制与机器人学, MPC]
 ---

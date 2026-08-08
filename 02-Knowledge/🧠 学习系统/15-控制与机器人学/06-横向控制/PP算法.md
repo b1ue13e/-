@@ -12,7 +12,7 @@ kind: derivation
 concept: ["Pure Pursuit", "横向控制", "几何跟踪"]
 prerequisites: ["圆弧逼近", "预瞄距离"]
 related: ["PP曲率", "PP转向角", "PP稳定性"]
-upstream: ["[[06-横向控制/圆弧逼近]]"]
+upstream: ["[[圆弧逼近]]"]
 source: "Coulter (1992); PythonRobotics pure_pursuit.py"
 tags: [学习, 控制与机器人学, 横向控制]
 ---

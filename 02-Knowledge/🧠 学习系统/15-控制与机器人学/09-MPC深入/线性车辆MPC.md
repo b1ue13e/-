@@ -12,7 +12,7 @@ kind: concept
 concept: ["线性化MPC", "时变线性化", "LTV-MPC"]
 prerequisites: ["车辆线性化", "模型预测控制(MPC)", "QP标准形式"]
 related: ["横向MPC设计", "纵向MPC设计", "非线性车辆MPC"]
-upstream: ["[[03-移动机器人与车辆模型/车辆线性化]]", "[[09-MPC深入/模型预测控制(MPC)]]"]
+upstream: ["[[车辆线性化]]", "[[模型预测控制(MPC)]]"]
 source: "车辆 MPC 文献；PythonRobotics model_predictive_control（MIT）"
 tags: [学习, 控制与机器人学, MPC]
 ---

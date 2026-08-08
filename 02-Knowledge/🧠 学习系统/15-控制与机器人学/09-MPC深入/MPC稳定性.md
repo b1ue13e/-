@@ -12,7 +12,7 @@ kind: concept
 concept: ["闭环稳定", "终端约束", "Lyapunov"]
 prerequisites: ["模型预测控制(MPC)", "终端代价"]
 related: ["终端代价", "终端集", "Lyapunov稳定"]
-upstream: ["[[09-MPC深入/模型预测控制(MPC)]]"]
+upstream: ["[[模型预测控制(MPC)]]"]
 source: "Rawlings, Model Predictive Control；阶段5 Lyapunov 复用"
 tags: [学习, 控制与机器人学, MPC]
 ---

@@ -12,7 +12,7 @@ kind: derivation
 concept: ["Stanley", "前馈", "曲率补偿"]
 prerequisites: ["Stanley公式", "曲率控制"]
 related: ["Stanley公式", "Stanley高速"]
-upstream: ["[[06-横向控制/Stanley公式]]"]
+upstream: ["[[Stanley公式]]"]
 source: "Stanford Stanley (2006); 横向控制文献"
 tags: [学习, 控制与机器人学, 横向控制]
 ---

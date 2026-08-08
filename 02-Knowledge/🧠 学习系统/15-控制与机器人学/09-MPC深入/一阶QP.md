@@ -12,7 +12,7 @@ kind: concept
 concept: ["一阶方法", "梯度投影", "ADMM"]
 prerequisites: ["QP标准形式", "QP Hessian"]
 related: ["内点法", "有效集法", "OSQP", "早期终止"]
-upstream: ["[[09-MPC深入/QP标准形式]]"]
+upstream: ["[[QP标准形式]]"]
 source: "Boyd, ADMM；OSQP 文档"
 tags: [学习, 控制与机器人学, MPC]
 ---

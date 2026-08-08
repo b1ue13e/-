@@ -12,7 +12,7 @@ kind: derivation
 concept: ["解析Jacobian", "欧拉角", "速度映射"]
 prerequisites: ["几何Jacobian", "欧拉角"]
 related: ["几何Jacobian", "奇异位形"]
-upstream: ["[[02-机器人学基础模型/几何Jacobian]]"]
+upstream: ["[[几何Jacobian]]"]
 source: "Modern Robotics (Lynch & Park), Ch.5; Craig Ch.5"
 tags: [学习, 控制与机器人学, 机器人学]
 ---

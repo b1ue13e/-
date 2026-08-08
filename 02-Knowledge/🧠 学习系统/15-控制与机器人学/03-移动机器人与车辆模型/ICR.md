@@ -12,7 +12,7 @@ kind: concept
 concept: ["ICR", "瞬时旋转中心", "运动学"]
 prerequisites: ["差分驱动", "线速度", "角速度"]
 related: ["差分驱动", "阿克曼几何", "单轮车模型"]
-upstream: ["[[03-移动机器人与车辆模型/差分驱动]]"]
+upstream: ["[[差分驱动]]"]
 source: "Modern Robotics (Lynch & Park), Ch.13; 经典运动学"
 tags: [学习, 控制与机器人学, 移动机器人]
 ---

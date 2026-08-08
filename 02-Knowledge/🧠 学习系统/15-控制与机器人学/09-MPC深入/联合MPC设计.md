@@ -12,7 +12,7 @@ kind: concept
 concept: ["纵横向联合", "耦合优化"]
 prerequisites: ["横向MPC设计", "纵向MPC设计", "Frenet耦合"]
 related: ["横向MPC设计", "纵向MPC设计", "Frenet耦合"]
-upstream: ["[[09-MPC深入/横向MPC设计]]", "[[09-MPC深入/纵向MPC设计]]"]
+upstream: ["[[横向MPC设计]]", "[[纵向MPC设计]]"]
 source: "车辆 MPC 文献；耦合控制工程实践"
 tags: [学习, 控制与机器人学, MPC]
 ---

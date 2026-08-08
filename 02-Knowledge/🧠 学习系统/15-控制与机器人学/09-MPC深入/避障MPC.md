@@ -12,7 +12,7 @@ kind: concept
 concept: ["避障约束", "动态障碍"]
 prerequisites: ["联合MPC设计", "碰撞检测"]
 related: ["联合MPC设计", "横向避障", "横向MPC设计"]
-upstream: ["[[09-MPC深入/联合MPC设计]]", "[[08-轨迹与路径跟踪/碰撞检测]]"]
+upstream: ["[[联合MPC设计]]", "[[碰撞检测]]"]
 source: "车辆避障 MPC 文献；PythonRobotics（MIT）"
 tags: [学习, 控制与机器人学, MPC]
 ---

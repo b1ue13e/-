@@ -12,7 +12,7 @@ kind: derivation
 concept: ["Stanley", "横向控制", "几何跟踪"]
 prerequisites: ["横向偏差", "自行车模型"]
 related: ["Stanley前馈", "Stanley调参", "PP算法"]
-upstream: ["[[06-横向控制/运动学横向]]"]
+upstream: ["[[运动学横向]]"]
 source: "Stanford Stanley (2006); PythonRobotics stanley_control.py"
 tags: [学习, 控制与机器人学, 横向控制]
 ---

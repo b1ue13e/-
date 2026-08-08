@@ -12,7 +12,7 @@ kind: problem-type
 concept: ["IK多解", "肘上肘下", "解选择"]
 prerequisites: ["解析逆运动学", "几何法IK"]
 related: ["奇异位形", "数值IK"]
-upstream: ["[[02-机器人学基础模型/解析逆运动学]]"]
+upstream: ["[[解析逆运动学]]"]
 source: "Modern Robotics (Lynch & Park), Ch.6"
 tags: [学习, 控制与机器人学, 机器人学]
 ---

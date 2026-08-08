@@ -12,7 +12,7 @@ kind: derivation
 concept: ["LQR增益", "最优状态反馈", "Riccati"]
 prerequisites: ["ARE", "LQR代价函数"]
 related: ["ARE", "LQR稳定性", "LQR调参"]
-upstream: ["[[05-状态空间与现代控制/ARE]]"]
+upstream: ["[[ARE]]"]
 source: "Modern Control Engineering (Ogata) Ch.10"
 tags: [学习, 控制与机器人学, LQR]
 ---

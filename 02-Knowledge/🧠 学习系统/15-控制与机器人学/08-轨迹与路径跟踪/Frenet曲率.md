@@ -12,7 +12,7 @@ kind: concept
 concept: ["曲率传递", "横向导数", "合成曲率"]
 prerequisites: ["Frenet转换"]
 related: ["曲率约束", "Frenet横向", "轨迹可行性"]
-upstream: ["[[08-轨迹与路径跟踪/Frenet转换]]"]
+upstream: ["[[Frenet转换]]"]
 source: "Werling et al. Frenet 框架论文；PythonRobotics（MIT）"
 tags: [学习, 控制与机器人学, Frenet]
 ---

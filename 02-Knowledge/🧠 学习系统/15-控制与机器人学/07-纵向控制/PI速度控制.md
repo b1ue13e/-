@@ -12,7 +12,7 @@ kind: derivation
 concept: ["PI速度控制", "定速巡航", "纵向控制"]
 prerequisites: ["纵向方程", "I控制"]
 related: ["速度控制调参", "参考前馈", "阻力前馈"]
-upstream: ["[[07-纵向控制/纵向方程]]"]
+upstream: ["[[纵向方程]]"]
 source: "Rajamani Ch.4; PythonRobotics pid_speed_control.py"
 tags: [学习, 控制与机器人学, 纵向控制]
 ---

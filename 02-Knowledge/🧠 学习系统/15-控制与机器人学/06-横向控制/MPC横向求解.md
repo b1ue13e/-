@@ -12,7 +12,7 @@ kind: derivation
 concept: ["MPC横向", "QP求解", "滚动优化"]
 prerequisites: ["MPC横向预测", "QP标准形式"]
 related: ["MPC横向预测", "MPC横向约束"]
-upstream: ["[[06-横向控制/MPC横向预测]]"]
+upstream: ["[[MPC横向预测]]"]
 source: "PythonRobotics model_predictive_control.py; OSQP/CVXPY"
 tags: [学习, 控制与机器人学, MPC横向]
 ---

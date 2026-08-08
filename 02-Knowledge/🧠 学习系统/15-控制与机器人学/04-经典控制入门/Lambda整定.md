@@ -12,7 +12,7 @@ kind: problem-type
 concept: ["Lambda整定", "PID整定", "鲁棒整定"]
 prerequisites: ["PID公式", "一阶系统"]
 related: ["ZN调参", "试凑法"]
-upstream: ["[[04-经典控制入门/PID公式]]"]
+upstream: ["[[PID公式]]"]
 source: "Lambda tuning (Dahlin); 工业整定文献"
 tags: [学习, 控制与机器人学, PID]
 ---

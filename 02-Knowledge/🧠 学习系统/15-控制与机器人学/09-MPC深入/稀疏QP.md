@@ -12,7 +12,7 @@ kind: concept
 concept: ["稀疏结构", "带状矩阵"]
 prerequisites: ["QP标准形式", "QP Hessian"]
 related: ["QP Hessian", "OSQP", "MPC代码生成"]
-upstream: ["[[09-MPC深入/QP标准形式]]"]
+upstream: ["[[QP标准形式]]"]
 source: "Borrelli, Predictive Control；OSQP 文档"
 tags: [学习, 控制与机器人学, MPC]
 ---

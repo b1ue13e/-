@@ -12,7 +12,7 @@ kind: derivation
 concept: ["LQR横向", "误差状态", "横向控制"]
 prerequisites: ["横向系统矩阵", "LQR增益"]
 related: ["LQR横向权重", "LQR横向增益", "横向系统矩阵"]
-upstream: ["[[06-横向控制/横向系统矩阵]]"]
+upstream: ["[[横向系统矩阵]]"]
 source: "Rajamani Ch.3; PythonRobotics lqr_steering_control.py"
 tags: [学习, 控制与机器人学, 横向控制]
 ---

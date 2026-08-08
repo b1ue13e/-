@@ -12,7 +12,7 @@ kind: problem-type
 concept: ["LQR调参", "权重选择", "性能权衡"]
 prerequisites: ["LQR代价函数", "LQR增益"]
 related: ["LQR代价函数", "极点选择"]
-upstream: ["[[05-状态空间与现代控制/LQR代价函数]]"]
+upstream: ["[[LQR代价函数]]"]
 source: "最优控制实践; 自动驾驶横向控制工程"
 tags: [学习, 控制与机器人学, LQR]
 ---

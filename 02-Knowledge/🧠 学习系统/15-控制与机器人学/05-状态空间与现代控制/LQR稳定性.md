@@ -12,7 +12,7 @@ kind: derivation
 concept: ["LQR稳定性", "Lyapunov", "最优控制性质"]
 prerequisites: ["LQR增益", "Lyapunov稳定"]
 related: ["Lyapunov稳定", "ARE", "MPC稳定性"]
-upstream: ["[[05-状态空间与现代控制/LQR增益]]"]
+upstream: ["[[LQR增益]]"]
 source: "Modern Control Engineering (Ogata) Ch.10; 最优控制经典"
 tags: [学习, 控制与机器人学, LQR]
 ---

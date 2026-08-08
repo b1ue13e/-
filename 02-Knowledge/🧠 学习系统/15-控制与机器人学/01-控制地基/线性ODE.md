@@ -12,7 +12,7 @@ kind: concept
 concept: ["线性常微分方程", "特征方程", "叠加原理"]
 prerequisites: ["ODE基础"]
 related: ["拉氏变换", "传递函数", "二阶系统"]
-upstream: ["[[01-控制地基/ODE基础]]"]
+upstream: ["[[ODE基础]]"]
 source: "Modern Control Engineering (Ogata), Ch.2"
 tags: [学习, 控制与机器人学, 微分方程]
 ---

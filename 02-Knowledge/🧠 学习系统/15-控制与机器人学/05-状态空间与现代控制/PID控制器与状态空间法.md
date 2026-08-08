@@ -2,6 +2,7 @@
 title: "PID 控制器与状态空间法 (PID Controller and State Space Method)"
 course: "控制与机器人学"
 type: study
+topic: "PID控制器与状态空间法"
 stage_moc: "[[🧭 阶段5-状态空间与现代控制]]"
 flow: knowledge
 kind: concept
@@ -57,7 +58,7 @@ $$u(k) = K_p e(k) + K_i T_s \sum_{i=0}^k e(i) + K_d \frac{e(k) - e(k-1)}{T_s}$$
 
 **局限（误区与反例）**：PID 控制器中积分项易产生**积分饱和 (Integral Windup)**，导致大误差下系统严重超调或振荡；状态空间法若物理模型矩阵 $A, B$ 存在建模误差，全状态反馈的鲁棒性将急剧下降。
 
-关联知识点推荐：[[卡尔曼滤波KalmanFilter]]、[[拉普拉斯变换]]、[[拟牛顿法BFGS]]、[[红黑树]]。
+关联知识点推荐：[[卡尔曼滤波KalmanFilter]]、[[拉氏变换]]、拟牛顿法BFGS、红黑树。
 
 ---
 
@@ -123,3 +124,17 @@ if __name__ == "__main__":
 - Minorsky, N. (1922). Directional stability of automatically steered bodies. *Journal of the American Society for Naval Engineers*, 34(2), 280-309. DOI: https://doi.org/10.1111/j.1559-3584.1922.tb04958.x
 - Ogata, K. (2010). *Modern Control Engineering* (5th ed.). Prentice Hall. Chapter 10 (Control Systems Analysis and Design in State Space). ISBN: 978-0136156734. URL: https://www.pearson.com/en-us/subject-catalog/p/modern-control-engineering/P200000003265
 - Kalman, R. E. (1960). On the general theory of control systems. *Proceedings of the First International Congress of IFAC*, 481-492.
+
+## 学完后可以完成
+
+```dataview
+LIST
+FROM "03-Projects/系统与硬件/15-控制与机器人学"
+WHERE contains(requires, this.file.link)
+SORT assignment_level ASC, file.name ASC
+```
+
+## 复习
+
+- 下次复习：重做本卡最小手算例子并对照 PythonRobotics 官方 demo；
+- 薄弱点写入 [[控制与机器人学错题漏洞入口]]。

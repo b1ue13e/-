@@ -12,7 +12,7 @@ kind: concept
 concept: ["BIBO稳定", "稳定性理论"]
 prerequisites: ["传递函数", "零极点"]
 related: ["劳斯判据", "根轨迹", "Nyquist判据"]
-upstream: ["[[01-控制地基/零极点]]"]
+upstream: ["[[零极点]]"]
 source: "Modern Control Engineering (Ogata), Ch.5"
 tags: [学习, 控制与机器人学, 稳定性]
 ---

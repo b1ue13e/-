@@ -12,7 +12,7 @@ kind: concept
 concept: ["jerk", "舒适性", "加速度变化率"]
 prerequisites: ["加速度约束"]
 related: ["S曲线规划", "横向优化", "轨迹代价"]
-upstream: ["[[08-轨迹与路径跟踪/加速度约束]]"]
+upstream: ["[[加速度约束]]"]
 source: "运动规划舒适性文献；PythonRobotics（MIT）"
 tags: [学习, 控制与机器人学, 轨迹规划]
 ---

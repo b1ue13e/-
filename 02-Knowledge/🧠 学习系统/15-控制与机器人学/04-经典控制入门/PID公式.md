@@ -12,7 +12,7 @@ kind: concept
 concept: ["PID", "控制器", "反馈控制"]
 prerequisites: ["负反馈", "稳态误差", "时域指标"]
 related: ["P控制", "I控制", "D控制", "抗饱和"]
-upstream: ["[[01-控制地基/负反馈]]"]
+upstream: ["[[负反馈]]"]
 source: "Modern Control Engineering (Ogata) Ch.6-8; PID 经典文献"
 tags: [学习, 控制与机器人学, PID]
 ---

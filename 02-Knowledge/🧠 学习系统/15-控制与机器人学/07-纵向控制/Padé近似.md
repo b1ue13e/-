@@ -12,7 +12,7 @@ kind: derivation
 concept: ["Padé近似", "时延建模", "有理逼近"]
 prerequisites: ["执行器时延", "传递函数"]
 related: ["时延稳定性", "Smith预估器"]
-upstream: ["[[07-纵向控制/执行器时延]]"]
+upstream: ["[[执行器时延]]"]
 source: "时滞系统文献; 有理逼近理论"
 tags: [学习, 控制与机器人学, 时延]
 ---

@@ -12,7 +12,7 @@ kind: derivation
 concept: ["LQI", "积分增广", "无差跟踪"]
 prerequisites: ["LQR增益", "LQR伺服"]
 related: ["LQR伺服", "参考增益"]
-upstream: ["[[05-状态空间与现代控制/LQR伺服]]"]
+upstream: ["[[LQR伺服]]"]
 source: "Modern Control Engineering (Ogata) Ch.10; 伺服系统教材"
 tags: [学习, 控制与机器人学, LQR]
 ---

@@ -12,7 +12,7 @@ kind: concept
 concept: ["S曲线", "jerk受限", "7段式"]
 prerequisites: ["梯形速度", "jerk约束"]
 related: ["梯形速度", "时间参数化", "最优轨迹"]
-upstream: ["[[08-轨迹与路径跟踪/梯形速度]]", "[[08-轨迹与路径跟踪/jerk约束]]"]
+upstream: ["[[梯形速度]]", "[[jerk约束]]"]
 source: "PythonRobotics trajectory planning（MIT）；经典运动控制教材（CNC 速度规划）"
 tags: [学习, 控制与机器人学, 轨迹规划]
 ---

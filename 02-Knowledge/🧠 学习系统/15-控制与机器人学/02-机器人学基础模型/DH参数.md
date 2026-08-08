@@ -12,7 +12,7 @@ kind: concept
 concept: ["DH参数", "连杆描述", "正运动学"]
 prerequisites: ["齐次变换矩阵", "变换链"]
 related: ["MDH参数", "PUMA560", "机械臂DH参数与逆运动学"]
-upstream: ["[[02-机器人学基础模型/变换链]]"]
+upstream: ["[[变换链]]"]
 source: "Modern Robotics (Lynch & Park), Ch.4; 机器人学导论 (Craig) Ch.3"
 tags: [学习, 控制与机器人学, 机器人学]
 ---

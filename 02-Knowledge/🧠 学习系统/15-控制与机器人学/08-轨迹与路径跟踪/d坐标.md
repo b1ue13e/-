@@ -12,7 +12,7 @@ kind: concept
 concept: ["横向偏移", "法向坐标"]
 prerequisites: ["参考线"]
 related: ["s坐标", "Frenet转换", "Frenet横向"]
-upstream: ["[[08-轨迹与路径跟踪/参考线]]"]
+upstream: ["[[参考线]]"]
 source: "Werling et al. Frenet 框架论文；PythonRobotics（MIT）"
 tags: [学习, 控制与机器人学, Frenet]
 ---

@@ -12,7 +12,7 @@ kind: concept
 concept: ["离线求解", "分片仿射"]
 prerequisites: ["QP标准形式", "MPC稳定性"]
 related: ["热启动", "MPC代码生成", "有效集法"]
-upstream: ["[[09-MPC深入/QP标准形式]]"]
+upstream: ["[[QP标准形式]]"]
 source: "Bemporad et al., Explicit MPC；MPC 理论文献"
 tags: [学习, 控制与机器人学, MPC]
 ---

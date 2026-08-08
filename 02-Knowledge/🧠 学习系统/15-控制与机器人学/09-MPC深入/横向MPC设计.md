@@ -12,7 +12,7 @@ kind: concept
 concept: ["横向控制", "轨迹跟踪MPC"]
 prerequisites: ["线性车辆MPC", "横向动力学"]
 related: ["纵向MPC设计", "联合MPC设计", "线性车辆MPC"]
-upstream: ["[[09-MPC深入/线性车辆MPC]]", "[[06-横向控制/横向动力学]]"]
+upstream: ["[[线性车辆MPC]]", "[[横向动力学]]"]
 source: "车辆 MPC 文献；PythonRobotics model_predictive_control（MIT）"
 tags: [学习, 控制与机器人学, MPC]
 ---

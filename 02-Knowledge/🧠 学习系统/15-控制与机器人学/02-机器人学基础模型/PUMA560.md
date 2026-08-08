@@ -12,7 +12,7 @@ kind: derivation
 concept: ["PUMA560", "正运动学", "6DOF机械臂"]
 prerequisites: ["DH参数", "变换链"]
 related: ["机械臂DH参数与逆运动学", "几何Jacobian"]
-upstream: ["[[02-机器人学基础模型/DH参数]]"]
+upstream: ["[[DH参数]]"]
 source: "Modern Robotics (Lynch & Park), Ch.4 习题; Craig Ch.3 例"
 tags: [学习, 控制与机器人学, 机器人学]
 ---

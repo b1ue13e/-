@@ -12,7 +12,7 @@ kind: problem-type
 concept: ["ZN调参", "PID整定", "经验法"]
 prerequisites: ["PID公式"]
 related: ["Lambda整定", "试凑法", "CC调参"]
-upstream: ["[[04-经典控制入门/PID公式]]"]
+upstream: ["[[PID公式]]"]
 source: "Ziegler & Nichols (1942)"
 tags: [学习, 控制与机器人学, PID]
 ---

@@ -12,7 +12,7 @@ kind: problem-type
 concept: ["LQR横向", "权重", "误差权衡"]
 prerequisites: ["LQR横向状态", "LQR代价函数"]
 related: ["LQR横向状态", "LQR横向增益"]
-upstream: ["[[06-横向控制/LQR横向状态]]"]
+upstream: ["[[LQR横向状态]]"]
 source: "自动驾驶横向控制工程实践; PythonRobotics"
 tags: [学习, 控制与机器人学, 横向控制]
 ---

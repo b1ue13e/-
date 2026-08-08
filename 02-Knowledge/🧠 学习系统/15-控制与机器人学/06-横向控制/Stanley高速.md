@@ -12,7 +12,7 @@ kind: concept
 concept: ["Stanley", "高速", "侧偏影响"]
 prerequisites: ["Stanley公式", "横向动力学"]
 related: ["Stanley公式", "Stanley低速"]
-upstream: ["[[06-横向控制/Stanley公式]]"]
+upstream: ["[[Stanley公式]]"]
 source: "Stanford Stanley (2006); 横向控制文献"
 tags: [学习, 控制与机器人学, 横向控制]
 ---

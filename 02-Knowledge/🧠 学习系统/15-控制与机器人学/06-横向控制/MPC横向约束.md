@@ -12,7 +12,7 @@ kind: derivation
 concept: ["MPC横向", "约束", "QP"]
 prerequisites: ["MPC横向预测", "输入幅值约束"]
 related: ["MPC横向预测", "MPC横向代价"]
-upstream: ["[[06-横向控制/MPC横向预测]]"]
+upstream: ["[[MPC横向预测]]"]
 source: "MPC 标准文献; PythonRobotics"
 tags: [学习, 控制与机器人学, MPC横向]
 ---

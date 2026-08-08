@@ -12,7 +12,7 @@ kind: concept
 concept: ["MDH参数", "改进DH", "连杆描述"]
 prerequisites: ["DH参数"]
 related: ["DH参数", "PUMA560"]
-upstream: ["[[02-机器人学基础模型/DH参数]]"]
+upstream: ["[[DH参数]]"]
 source: "机器人学导论 (Craig) Ch.3; Modern Robotics Ch.4"
 tags: [学习, 控制与机器人学, 机器人学]
 ---

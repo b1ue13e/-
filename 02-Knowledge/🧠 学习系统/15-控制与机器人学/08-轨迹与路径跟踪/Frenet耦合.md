@@ -12,7 +12,7 @@ kind: concept
 concept: ["纵横向耦合", "解耦近似", "摩擦圆"]
 prerequisites: ["Frenet纵向", "Frenet横向"]
 related: ["解耦控制", "耦合MPC", "Frenet曲率"]
-upstream: ["[[08-轨迹与路径跟踪/Frenet纵向]]", "[[08-轨迹与路径跟踪/Frenet横向]]"]
+upstream: ["[[Frenet纵向]]", "[[Frenet横向]]"]
 source: "Werling et al. Frenet 框架论文；车辆动力学（摩擦圆）"
 tags: [学习, 控制与机器人学, Frenet]
 ---

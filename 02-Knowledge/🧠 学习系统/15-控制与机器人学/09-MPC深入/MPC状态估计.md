@@ -12,7 +12,7 @@ kind: concept
 concept: ["状态反馈", "观测器", "分离结构"]
 prerequisites: ["扰动模型", "观测器结构"]
 related: ["MPC积分", "EKF非线性状态估计", "卡尔曼滤波KalmanFilter"]
-upstream: ["[[09-MPC深入/扰动模型]]", "[[05-状态空间与现代控制/观测器结构]]"]
+upstream: ["[[扰动模型]]", "[[观测器结构]]"]
 source: "Rawlings, Model Predictive Control；阶段5 观测器知识复用"
 tags: [学习, 控制与机器人学, MPC]
 ---

@@ -12,7 +12,7 @@ kind: concept
 concept: ["PBH判据", "能控性", "特征向量"]
 prerequisites: ["能控性定义", "特征值分析"]
 related: ["能控性定义", "能观性定义"]
-upstream: ["[[05-状态空间与现代控制/能控性定义]]"]
+upstream: ["[[能控性定义]]"]
 source: "Modern Control Engineering (Ogata) Ch.10; Popov-Belevitch-Hautus"
 tags: [学习, 控制与机器人学, 能控能观]
 ---

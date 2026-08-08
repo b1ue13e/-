@@ -12,7 +12,7 @@ kind: concept
 concept: ["比例控制", "P控制"]
 prerequisites: ["PID公式", "稳态误差"]
 related: ["I控制", "D控制", "根轨迹"]
-upstream: ["[[04-经典控制入门/PID公式]]"]
+upstream: ["[[PID公式]]"]
 source: "Modern Control Engineering (Ogata) Ch.6"
 tags: [学习, 控制与机器人学, PID]
 ---

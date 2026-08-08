@@ -12,7 +12,7 @@ kind: derivation
 concept: ["Smith预估器", "时延补偿", "预测控制"]
 prerequisites: ["执行器时延", "时延稳定性"]
 related: ["预测时延补偿", "时延稳定性"]
-upstream: ["[[07-纵向控制/执行器时延]]"]
+upstream: ["[[执行器时延]]"]
 source: "Smith (1957); 时滞系统经典"
 tags: [学习, 控制与机器人学, 时延]
 ---

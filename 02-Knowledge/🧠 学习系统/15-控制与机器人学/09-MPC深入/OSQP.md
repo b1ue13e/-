@@ -12,7 +12,7 @@ kind: concept
 concept: ["ADMM求解器", "嵌入式优化"]
 prerequisites: ["一阶QP", "QP标准形式"]
 related: ["稀疏QP", "热启动", "MPC代码生成"]
-upstream: ["[[09-MPC深入/一阶QP]]"]
+upstream: ["[[一阶QP]]"]
 source: "OSQP 官方文档（oxfordcontrol/OSQP）"
 tags: [学习, 控制与机器人学, MPC]
 ---

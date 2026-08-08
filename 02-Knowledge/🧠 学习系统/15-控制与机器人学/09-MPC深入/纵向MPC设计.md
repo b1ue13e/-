@@ -12,7 +12,7 @@ kind: concept
 concept: ["纵向控制", "ACC/跟车MPC"]
 prerequisites: ["线性车辆MPC", "纵向方程"]
 related: ["横向MPC设计", "联合MPC设计", "线性车辆MPC"]
-upstream: ["[[09-MPC深入/线性车辆MPC]]", "[[07-纵向控制/纵向方程]]"]
+upstream: ["[[线性车辆MPC]]", "[[纵向方程]]"]
 source: "ACC 控制文献；车辆纵向 MPC 工程实践"
 tags: [学习, 控制与机器人学, MPC]
 ---

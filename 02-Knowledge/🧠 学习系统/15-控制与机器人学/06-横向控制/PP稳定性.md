@@ -12,7 +12,7 @@ kind: derivation
 concept: ["Pure Pursuit", "稳定性", "前视距离"]
 prerequisites: ["PP算法", "预瞄距离"]
 related: ["预瞄距离", "PP算法"]
-upstream: ["[[06-横向控制/PP算法]]"]
+upstream: ["[[PP算法]]"]
 source: "Pure Pursuit 稳定性分析文献 (Coulter 1992 等)"
 tags: [学习, 控制与机器人学, 横向控制]
 ---

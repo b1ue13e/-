@@ -12,7 +12,7 @@ kind: derivation
 concept: ["几何Jacobian", "速度映射", "奇异位形"]
 prerequisites: ["速度传递", "角速度", "线速度"]
 related: ["解析Jacobian", "奇异位形", "力映射"]
-upstream: ["[[02-机器人学基础模型/速度传递]]"]
+upstream: ["[[速度传递]]"]
 source: "Modern Robotics (Lynch & Park), Ch.5"
 tags: [学习, 控制与机器人学, 机器人学]
 ---

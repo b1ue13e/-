@@ -12,7 +12,7 @@ kind: concept
 concept: ["二次代价", "权重矩阵", "LQR"]
 prerequisites: ["模型预测控制(MPC)", "预测方程"]
 related: ["QP标准形式", "终端代价", "时域设计"]
-upstream: ["[[09-MPC深入/模型预测控制(MPC)]]"]
+upstream: ["[[模型预测控制(MPC)]]"]
 source: "Rawlings, Model Predictive Control；Borrelli, Predictive Control"
 tags: [学习, 控制与机器人学, MPC]
 ---

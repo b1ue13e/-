@@ -12,7 +12,7 @@ kind: derivation
 concept: ["Riccati方程", "ARE", "LQR"]
 prerequisites: ["LQR代价函数", "Lyapunov稳定"]
 related: ["LQR增益", "LQR稳定性"]
-upstream: ["[[05-状态空间与现代控制/LQR代价函数]]"]
+upstream: ["[[LQR代价函数]]"]
 source: "Modern Control Engineering (Ogata) Ch.10; 最优控制经典"
 tags: [学习, 控制与机器人学, LQR]
 ---

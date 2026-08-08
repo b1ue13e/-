@@ -12,7 +12,7 @@ kind: derivation
 concept: ["Lyapunov稳定", "李雅普诺夫函数", "非线性稳定性"]
 prerequisites: ["特征值分析", "Jacobian线性化"]
 related: ["LQR稳定性", "特征值分析"]
-upstream: ["[[05-状态空间与现代控制/特征值分析]]"]
+upstream: ["[[特征值分析]]"]
 source: "Modern Control Engineering (Ogata) Ch.9; 非线性系统经典教材"
 tags: [学习, 控制与机器人学, 稳定性]
 ---

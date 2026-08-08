@@ -12,7 +12,7 @@ kind: concept
 concept: ["积分作用", "无偏跟踪"]
 prerequisites: ["离散状态空间", "MPC代价函数"]
 related: ["增量MPC", "扰动模型", "MPC状态估计"]
-upstream: ["[[09-MPC深入/离散状态空间]]"]
+upstream: ["[[离散状态空间]]"]
 source: "Rawlings, Model Predictive Control；MPC 无偏跟踪文献"
 tags: [学习, 控制与机器人学, MPC]
 ---

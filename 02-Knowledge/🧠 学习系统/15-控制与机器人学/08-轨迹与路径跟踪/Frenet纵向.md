@@ -12,7 +12,7 @@ kind: concept
 concept: ["纵向运动", "s-sdot-ssdot", "一维规划"]
 prerequisites: ["s坐标", "Frenet转换"]
 related: ["Frenet横向", "Frenet耦合", "速度分配"]
-upstream: ["[[08-轨迹与路径跟踪/s坐标]]"]
+upstream: ["[[s坐标]]"]
 source: "Werling et al. Frenet 框架论文；PythonRobotics（MIT）"
 tags: [学习, 控制与机器人学, Frenet]
 ---

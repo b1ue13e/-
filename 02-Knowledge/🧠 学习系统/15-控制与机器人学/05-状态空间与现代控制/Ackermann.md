@@ -12,7 +12,7 @@ kind: derivation
 concept: ["Ackermann公式", "极点配置", "状态反馈"]
 prerequisites: ["状态反馈", "能控性矩阵"]
 related: ["状态反馈", "极点选择"]
-upstream: ["[[05-状态空间与现代控制/状态反馈]]"]
+upstream: ["[[状态反馈]]"]
 source: "Modern Control Engineering (Ogata) Ch.10; Ackermann (1972)"
 tags: [学习, 控制与机器人学, 状态反馈]
 ---

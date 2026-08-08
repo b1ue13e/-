@@ -12,7 +12,7 @@ kind: derivation
 concept: ["MPC横向", "预测模型", "横向控制"]
 prerequisites: ["横向系统矩阵", "预测方程"]
 related: ["MPC横向约束", "MPC横向代价", "MPC横向求解"]
-upstream: ["[[06-横向控制/横向系统矩阵]]"]
+upstream: ["[[横向系统矩阵]]"]
 source: "PythonRobotics model_predictive_control.py; MPC 文献"
 tags: [学习, 控制与机器人学, MPC横向]
 ---

@@ -12,7 +12,7 @@ kind: concept
 concept: ["积分控制", "消除稳态误差"]
 prerequisites: ["PID公式", "P控制"]
 related: ["D控制", "抗饱和", "稳态误差"]
-upstream: ["[[04-经典控制入门/P控制]]"]
+upstream: ["[[P控制]]"]
 source: "Modern Control Engineering (Ogata) Ch.6"
 tags: [学习, 控制与机器人学, PID]
 ---

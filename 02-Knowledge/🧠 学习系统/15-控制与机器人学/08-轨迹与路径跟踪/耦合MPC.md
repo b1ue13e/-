@@ -12,7 +12,7 @@ kind: concept
 concept: ["联合优化", "MPC", "摩擦圆约束"]
 prerequisites: ["Frenet耦合", "MPC横向预测", "MPC横向代价"]
 related: ["解耦控制", "MPC深入", "横向优化"]
-upstream: ["[[08-轨迹与路径跟踪/Frenet耦合]]", "[[06-横向控制/MPC横向预测]]"]
+upstream: ["[[Frenet耦合]]", "[[MPC横向预测]]"]
 source: "MPC 控制文献；MIT 6.832 Underactuated（Drake）"
 tags: [学习, 控制与机器人学, 轨迹跟踪]
 ---

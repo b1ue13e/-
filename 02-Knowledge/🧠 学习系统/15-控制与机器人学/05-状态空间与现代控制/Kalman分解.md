@@ -12,7 +12,7 @@ kind: derivation
 concept: ["Kalman分解", "可控可观分解", "最小实现"]
 prerequisites: ["能控性定义", "能观性定义"]
 related: ["最小实现", "能控标准型", "能观标准型"]
-upstream: ["[[05-状态空间与现代控制/能观性定义]]"]
+upstream: ["[[能观性定义]]"]
 source: "Modern Control Engineering (Ogata) Ch.10"
 tags: [学习, 控制与机器人学, 能控能观]
 ---

@@ -12,7 +12,7 @@ kind: concept
 concept: ["增量控制", "积分内置", "抗饱和"]
 prerequisites: ["离散状态空间"]
 related: ["MPC积分", "输入速率约束", "松弛变量"]
-upstream: ["[[09-MPC深入/离散状态空间]]"]
+upstream: ["[[离散状态空间]]"]
 source: "Rawlings, Model Predictive Control；工业 MPC（DMC/QDMC 传统）"
 tags: [学习, 控制与机器人学, MPC]
 ---

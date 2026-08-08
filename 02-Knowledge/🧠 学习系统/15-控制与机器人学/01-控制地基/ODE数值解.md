@@ -12,7 +12,7 @@ kind: concept
 concept: ["数值积分", "欧拉法", "龙格库塔法"]
 prerequisites: ["ODE基础", "Python编程基础"]
 related: ["ODE基础", "线性ODE"]
-upstream: ["[[01-控制地基/ODE基础]]"]
+upstream: ["[[ODE基础]]"]
 source: "Modern Control Engineering (Ogata); scipy.integrate.solve_ivp 文档"
 tags: [学习, 控制与机器人学, 数值方法]
 ---

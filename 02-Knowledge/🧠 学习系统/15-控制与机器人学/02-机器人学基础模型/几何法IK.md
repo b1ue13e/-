@@ -12,7 +12,7 @@ kind: derivation
 concept: ["几何法IK", "逆运动学", "平面分解"]
 prerequisites: ["解析逆运动学", "DH参数"]
 related: ["数值IK", "IK多解"]
-upstream: ["[[02-机器人学基础模型/解析逆运动学]]"]
+upstream: ["[[解析逆运动学]]"]
 source: "Modern Robotics (Lynch & Park), Ch.6; Craig Ch.4"
 tags: [学习, 控制与机器人学, 机器人学]
 ---

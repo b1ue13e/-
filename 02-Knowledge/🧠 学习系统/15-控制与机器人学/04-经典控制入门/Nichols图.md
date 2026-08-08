@@ -12,7 +12,7 @@ kind: concept
 concept: ["Nichols图", "幅相图", "频域分析"]
 prerequisites: ["Bode图", "稳定裕度"]
 related: ["Bode图", "Nyquist图", "稳定裕度"]
-upstream: ["[[04-经典控制入门/Bode图]]"]
+upstream: ["[[Bode图]]"]
 source: "Modern Control Engineering (Ogata) Ch.7"
 tags: [学习, 控制与机器人学, 频域分析]
 ---

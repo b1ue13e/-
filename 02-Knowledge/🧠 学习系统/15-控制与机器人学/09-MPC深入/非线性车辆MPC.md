@@ -12,7 +12,7 @@ kind: concept
 concept: ["NMPC", "非线性优化"]
 prerequisites: ["线性车辆MPC", "非线性预测"]
 related: ["非线性预测", "线性车辆MPC", "显式MPC"]
-upstream: ["[[09-MPC深入/线性车辆MPC]]", "[[09-MPC深入/非线性预测]]"]
+upstream: ["[[线性车辆MPC]]", "[[非线性预测]]"]
 source: "acados/CasADi 文档；车辆 NMPC 文献"
 tags: [学习, 控制与机器人学, MPC]
 ---

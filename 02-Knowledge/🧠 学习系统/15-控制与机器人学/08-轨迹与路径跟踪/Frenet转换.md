@@ -12,7 +12,7 @@ kind: concept
 concept: ["坐标变换", "最近点投影"]
 prerequisites: ["参考线", "s坐标", "d坐标"]
 related: ["Frenet横向", "Frenet纵向", "Frenet误差"]
-upstream: ["[[08-轨迹与路径跟踪/参考线]]", "[[08-轨迹与路径跟踪/s坐标]]", "[[08-轨迹与路径跟踪/d坐标]]"]
+upstream: ["[[参考线]]", "[[s坐标]]", "[[d坐标]]"]
 source: "Werling et al. Frenet 框架论文；PythonRobotics frenet_optimal_trajectory（MIT）"
 tags: [学习, 控制与机器人学, Frenet]
 ---

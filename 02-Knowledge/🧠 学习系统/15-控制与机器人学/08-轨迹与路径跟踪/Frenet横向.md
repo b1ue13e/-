@@ -12,7 +12,7 @@ kind: concept
 concept: ["横向运动", "横向多项式", "车道保持"]
 prerequisites: ["d坐标", "Frenet转换"]
 related: ["横向多项式", "横向边界条件", "Frenet纵向"]
-upstream: ["[[08-轨迹与路径跟踪/d坐标]]"]
+upstream: ["[[d坐标]]"]
 source: "Werling et al. Frenet 框架论文；PythonRobotics（MIT）"
 tags: [学习, 控制与机器人学, Frenet]
 ---

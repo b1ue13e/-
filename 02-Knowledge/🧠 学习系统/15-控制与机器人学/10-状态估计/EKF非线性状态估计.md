@@ -1,23 +1,22 @@
 ---
-title: "EKF非线性状态估计"
-date: "2026-08-03"
-type: concept
+type: study
+topic: "EKF非线性状态估计"
 course: "控制与机器人学"
 stage_moc: "[[🧭 阶段10-状态估计]]"
 flow: knowledge
 kind: concept
-importance: "A"
 status: completed
-tags: [学习, 控制与机器人学]
+created: 2026-08-03
+updated: 2026-08-09
+difficulty: intermediate
+concept: ["扩展卡尔曼滤波", "线性化", "状态估计"]
+prerequisites: ["卡尔曼滤波KalmanFilter", "Jacobian线性化"]
+related: ["UKF算法", "SIR滤波", "SLAM基础"]
 upstream:
   - "[[卡尔曼滤波KalmanFilter]]"
   - "[[Jacobian线性化]]"
-concept: ["扩展卡尔曼滤波", "线性化", "状态估计"]
-prerequisites: ["卡尔曼滤波KalmanFilter", "Jacobian线性化"]
-related: ["UKF", "粒子滤波", "SLAM"]
-template: Obsidian单知识点深度学习模板
-created: 2026-08-03
-updated: 2026-08-07
+source: "Probabilistic Robotics (Thrun et al.) Ch.3；PythonRobotics ekf_localization.py（MIT）"
+tags: [学习, 控制与机器人学, 状态估计, EKF]
 ---
 
 # EKF非线性状态估计
@@ -27,7 +26,7 @@ updated: 2026-08-07
 ## 0. 学习边界
 
 - **类别**：**A 类（核心概念，必须深挖）**
-- **判断理由**：HW04（卡尔曼滤波与状态估计）的核心——官方验收 demo 就是 `ekf_localization.py`，验收指标（EKF 定位 RMSE < 0.5 m）直接由本知识点决定；它同时是 *Probabilistic Robotics* 状态估计主线（KF → EKF → UKF → PF）的承上启下环节，也是 [[卡尔曼滤波KalmanFilter]] 从"玩具线性系统"走向"真实机器人"的唯一桥梁。跳过它，HW04 只能复现 demo 不能理解为什么 EKF 能压住里程计漂移。
+- **判断理由**：阶段作业-10（卡尔曼滤波与状态估计）的核心——官方验收 demo 就是 `ekf_localization.py`，验收指标（EKF 定位 RMSE < 0.5 m）直接由本知识点决定；它同时是 *Probabilistic Robotics* 状态估计主线（KF → EKF → UKF → PF）的承上启下环节，也是 [[卡尔曼滤波KalmanFilter]] 从"玩具线性系统"走向"真实机器人"的唯一桥梁。跳过它，阶段作业-10 只能复现 demo 不能理解为什么 EKF 能压住里程计漂移。
 
 ---
 
@@ -41,7 +40,7 @@ updated: 2026-08-07
 
 ## 2. 为什么它重要？它有什么用？
 
-- **连接大图景**：它是 HW04 验收基准（`ekf_localization.py`：GPS + 里程计融合，RMSE < 0.5 m，对比纯里程计漂移基线）；是理解 UKF（无迹变换）、粒子滤波（蒙特卡洛）的参照系——后两者都是为了克服 EKF 的线性化误差而生的；EKF-SLAM 是 SLAM 的经典形式。
+- **连接大图景**：它是 阶段作业-10 验收基准（`ekf_localization.py`：GPS + 里程计融合，RMSE < 0.5 m，对比纯里程计漂移基线）；是理解 UKF（无迹变换）、粒子滤波（蒙特卡洛）的参照系——后两者都是为了克服 EKF 的线性化误差而生的；EKF-SLAM 是 SLAM 的经典形式。
 - **实际应用场景**：自动驾驶车辆 GNSS/IMU/轮速融合定位、手机惯性导航、无人机姿态估计（互补滤波的进阶版）、机械臂末端力/位估计、目标跟踪（雷达 + 视觉）。
 - **高频题型/任务**：写出系统方程并求雅可比 $F = \partial f/\partial x$；手算一步 EKF 预测（$P^- = FPF^T + Q$）；比较 KF 与 EKF 的公式差异（$A$ 常数 vs $F$ 时变）；判断强非线性场景该用 EKF 还是 UKF/PF；复现 `ekf_localization.py` 并做 Q/R 敏感性分析。
 
@@ -89,7 +88,7 @@ $$\hat{x}_k = \hat{x}_k^- + K_k \big(z_k - h(\hat{x}_k^-)\big), \qquad P_k = (I 
 | $x_k, z_k, u_k$ | 状态 / 观测 / 输入 | $\mathbb{R}^n, \mathbb{R}^m, \mathbb{R}^p$ | 位姿 / GPS 等 / 轮速 |
 | $f, h$ | 状态转移 / 观测函数 | 非线性映射 | 来自运动学与传感器模型 |
 | $F_k, H_k$ | 雅可比矩阵 | $n\times n$ / $m\times n$ | **时变**，每步重算 |
-| $Q, R$ | 过程 / 观测噪声协方差 | 对称半正定 | 调参核心（HW04 敏感性分析） |
+| $Q, R$ | 过程 / 观测噪声协方差 | 对称半正定 | 调参核心（阶段作业-10 敏感性分析） |
 | $P_k^-, \hat{x}_k^-$ | 预测协方差 / 预测均值 | — | 先验 |
 | $K_k$ | 卡尔曼增益 | $n\times m$ | 权衡预测与观测 |
 | $P_k, \hat{x}_k$ | 更新后协方差 / 均值 | — | 后验 |
@@ -122,7 +121,7 @@ $$\hat{x}_k = \hat{x}_k^- + K_k \big(z_k - h(\hat{x}_k^-)\big), \qquad P_k = (I 
 - **题目与完整解答**：unicycle 模型 $x = (x, y, \theta)^T$，输入 $u = (v, \omega)$，离散状态方程 $x_{k+1} = x_k + v\cos\theta_k\,\Delta t$、$y_{k+1} = y_k + v\sin\theta_k\,\Delta t$、$\theta_{k+1} = \theta_k + \omega\,\Delta t$。求雅可比 $F_k$。
   解：$F_k = \begin{pmatrix} 1 & 0 & -v\sin\theta\,\Delta t \\ 0 & 1 & v\cos\theta\,\Delta t \\ 0 & 0 & 1 \end{pmatrix}$。**关键推理**：$F$ 中非对角项 $(-v\sin\theta\,\Delta t, v\cos\theta\,\Delta t)$ 表示"航向不确定性会泄漏到位置不确定性"——这正是 EKF 能描述"转个弯后位置误差变大"的机制；若写成线性 $A$（$\theta$ 固定），这项永远为零，误差被系统性低估。数值例：$v=1$、$\omega=0.5$、$\Delta t=0.1$、$\theta=0$ 时 $F = \begin{pmatrix} 1 & 0 & 0 \\ 0 & 1 & 0.1 \\ 0 & 0 & 1 \end{pmatrix}$，若 $P$ 的 $\theta$ 分量方差为 1，则 $y$ 方差被注入 $0.01$——数值上验证了"航向误差 → 横向位置误差"。
 ### 例子 3：实际应用例子（真实场景/代码）
-- **实际价值与转化**：PythonRobotics `Localization/ekf_localization/ekf_localization.py` 演示"GPS（每 10 步一次）+ 里程计"融合定位：预测步用 unicycle 模型（本例子的雅可比），更新步用 GPS 观测 $h(x) = (x, y)$（线性，$H = [I_{2\times2}, 0]$）。HW04 验收流程：先复现官方 demo（保持参数），再自写 EKF，在固定仿真轨迹下对比——EKF 定位 RMSE < 0.5 m，纯里程计漂移随距离线性增长（对照基线）；最后做 Q/R 敏感性分析：$R$ 增大（GPS 更不可信）→ 轨迹更平滑但误差增大；$Q$ 增大（模型更不可信）→ 更信任 GPS、轨迹更抖——"参数 → 误差"曲线即 HW04 报告的核心内容。
+- **实际价值与转化**：PythonRobotics `Localization/ekf_localization/ekf_localization.py` 演示"GPS（每 10 步一次）+ 里程计"融合定位：预测步用 unicycle 模型（本例子的雅可比），更新步用 GPS 观测 $h(x) = (x, y)$（线性，$H = [I_{2\times2}, 0]$）。阶段作业-10 验收流程：先复现官方 demo（保持参数），再自写 EKF，在固定仿真轨迹下对比——EKF 定位 RMSE < 0.5 m，纯里程计漂移随距离线性增长（对照基线）；最后做 Q/R 敏感性分析：$R$ 增大（GPS 更不可信）→ 轨迹更平滑但误差增大；$Q$ 增大（模型更不可信）→ 更信任 GPS、轨迹更抖——"参数 → 误差"曲线即 阶段作业-10 报告的核心内容。
 
 ---
 
@@ -141,7 +140,7 @@ $$\hat{x}_k = \hat{x}_k^- + K_k \big(z_k - h(\hat{x}_k^-)\big), \qquad P_k = (I 
 | 概念 | 核心问题 | 关键区别 | 典型使用场景 |
 | :--- | :--- | :--- | :--- |
 | KF | 线性高斯系统的最优估计 | 精确最优；$A$、$H$ 常数 | 线性系统、简单模型教学 |
-| EKF | 非线性系统的一阶近似估计 | 雅可比线性化；次优但便宜 | GPS+里程计、弱非线性定位（HW04） |
+| EKF | 非线性系统的一阶近似估计 | 雅可比线性化；次优但便宜 | GPS+里程计、弱非线性定位（阶段作业-10） |
 | UKF | 免求导的非线性估计 | sigma 点传播，二阶精度 | 强非线性、难求雅可比 |
 | 粒子滤波 | 任意分布的非线性估计 | 采样近似后验，无高斯假设 | 全局定位（kidnapped robot）、多峰后验 |
 
@@ -155,15 +154,15 @@ $$\hat{x}_k = \hat{x}_k^- + K_k \big(z_k - h(\hat{x}_k^-)\big), \qquad P_k = (I 
 - [[里程计]]：预测步的输入 $u_k$（轮速/里程），其漂移正是 EKF 要压制的对象。
 ### 下游延伸
 - [[栅格地图与占据栅格]]：建图前先定位——EKF 提供"我在地图哪里"，占据栅格回答"哪里有障碍"。
-- [[路径规划Astar与RRT]]：定位（EKF）→ 规划（A*/RRT）→ 跟踪，HW06 闭环的"定位"环节。
+- [[路径规划Astar与RRT]]：定位（EKF）→ 规划（A*/RRT）→ 跟踪，阶段作业-08 闭环的"定位"环节。
 - [[项目-位姿估计]]：EKF 在工程位姿估计中的落地。
 ### 横向关联
-- [[纯跟踪与Stanley控制器]] ↔ 本知识点：一个用估计的位姿去跟踪路径（定位误差直接进入跟踪误差），一个保证"估计准"——HW04→HW06 的交接点。
+- [[纯跟踪与Stanley控制器]] ↔ 本知识点：一个用估计的位姿去跟踪路径（定位误差直接进入跟踪误差），一个保证"估计准"——阶段作业-10→阶段作业-08 的交接点。
 - [[项目-KF跟踪]] ↔ 本知识点：线性 KF 目标跟踪与非线性 EKF 定位的对比实验。
 ### 应用场景
 - [[项目-自动驾驶仿真]]：车辆 GNSS/IMU 融合定位模块。
 - [[项目-无人机控制]]：无人机姿态/位置估计的 EKF 实现。
-- [[🧭 课程作业总索引|课程作业总索引]]：HW04 验收基准（`ekf_localization.py` + RMSE 指标 + Q/R 敏感性分析）。
+- [[03-Projects/系统与硬件/15-控制与机器人学/🧭 课程作业总索引|课程作业总索引]]：阶段作业-10 验收基准（`ekf_localization.py` + RMSE 指标 + Q/R 敏感性分析）。
 
 ---
 
@@ -178,7 +177,7 @@ $$\hat{x}_k = \hat{x}_k^- + K_k \big(z_k - h(\hat{x}_k^-)\big), \qquad P_k = (I 
 - [ ] 7. 手算例子 1（$h(x)=x^2$ 的一步 EKF）。
 - [ ] 8. 说出 EKF 的两个常见误区与 KF/EKF/UKF 的区别。
 - [ ] 9. 说出它与 KF、运动学模型、栅格地图三个知识点的关系。
-- [ ] 10. 说出 PythonRobotics 的 `ekf_localization.py` 在 HW04 中的角色。
+- [ ] 10. 说出 PythonRobotics 的 `ekf_localization.py` 在 阶段作业-10 中的角色。
 
 ---
 
@@ -223,7 +222,7 @@ $$\hat{x}_k = \hat{x}_k^- + K_k \big(z_k - h(\hat{x}_k^-)\big), \qquad P_k = (I 
 #### 5. 为什么说 EKF 的线性化误差会让滤波器"高估自信"（低估协方差）？请给出论证思路。
 > [!question]- 答案解析
 > - **答案**：一阶展开丢掉了二阶及以上项：真实传播是 $P_{\text{true}} \approx FPF^T + Q + \text{高阶项}$（对凸函数，Jensen 不等式方向使高阶项 $\ge 0$，例如 $E[\cos^2\theta] \ge \cos^2 E[\theta]$）。EKF 只保留 $FPF^T + Q$，故 $P^-_{\text{EKF}} \le P_{\text{true}}$——滤波器以为自己很确定，实际不确定。后果链：$P$ 偏小 → $K$ 偏小（过度信任预测）→ 新观测被轻视 → 误差积累不被修正 → 发散。
-> - **解析**：这是"模型误差不进入滤波器统计量"的通病（EKF 没有把线性化误差建模进 $Q$）；工程缓解：人为增大 $Q$（process noise 吸收模型误差）、用 IEKF/UKF、或对角度做 wrapping。这也是 HW04 敏感性分析中"$Q$ 该取多大"没有标准答案的根本原因。
+> - **解析**：这是"模型误差不进入滤波器统计量"的通病（EKF 没有把线性化误差建模进 $Q$）；工程缓解：人为增大 $Q$（process noise 吸收模型误差）、用 IEKF/UKF、或对角度做 wrapping。这也是 阶段作业-10 敏感性分析中"$Q$ 该取多大"没有标准答案的根本原因。
 > - **易错原因**：以为调 $R$ 就能解决一切；不理解"低估不确定性 → 增益错误 → 发散"的因果链。
 > - **Obsidian 标签建议**：`#自测题/较难`
 
@@ -243,12 +242,19 @@ $$\hat{x}_k = \hat{x}_k^- + K_k \big(z_k - h(\hat{x}_k^-)\big), \qquad P_k = (I 
 - [ ] 7 天后
 - [ ] 14 天后
 
----
+## 学完后可以完成
 
-## 13. 给 Obsidian 的归档建议
+```dataview
+LIST
+FROM "03-Projects/系统与硬件/15-控制与机器人学"
+WHERE contains(requires, this.file.link)
+SORT assignment_level ASC, file.name ASC
+```
 
-- **适合文件夹**：`02-Knowledge/🧠 学习系统/15-控制与机器人学/`（目录根，与 HW04 对应）
-- **关联已有笔记**：[[🧭 课程作业总索引|课程作业总索引]]、[[卡尔曼滤波KalmanFilter]]、[[移动机器人运动学与差分驱动]]、[[里程计]]、[[项目-位姿估计]]、[[项目-KF跟踪]]
-- **建议标签**：`#学习` `#控制与机器人学` `#状态估计` `#概念`
-- **拆分建议**：主卡保持"线性化 + 五公式"一体不拆；若 HW04 调参阶段出现"发散排查"经验，可另拆"EKF 发散调试手册"题型笔记（角度 wrapping、Q 吸收模型误差、观测野值剔除）。
+## 复习
+
+- 下次复习：重做例子 1（$h(x)=\sin x$ 变式），复述"局部线性化保住高斯闭包性"推导主线；
+- 薄弱点写入 [[控制与机器人学错题漏洞入口]]；
+- 关联：[[UKF算法\|UKF算法]]、[[SIR滤波\|SIR滤波]]、[[移动机器人运动学与差分驱动\|移动机器人运动学]]。
+
 

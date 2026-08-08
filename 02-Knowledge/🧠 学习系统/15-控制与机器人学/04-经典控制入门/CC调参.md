@@ -12,7 +12,7 @@ kind: problem-type
 concept: ["CC调参", "计算机辅助整定", "仿真整定"]
 prerequisites: ["PID公式", "试凑法"]
 related: ["ZN调参", "Lambda整定", "主导极点"]
-upstream: ["[[04-经典控制入门/PID公式]]"]
+upstream: ["[[PID公式]]"]
 source: "Python Control / MATLAB 整定工具实践"
 tags: [学习, 控制与机器人学, PID]
 ---

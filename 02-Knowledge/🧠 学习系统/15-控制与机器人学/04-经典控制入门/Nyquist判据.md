@@ -12,7 +12,7 @@ kind: derivation
 concept: ["Nyquist判据", "频域稳定性", "围线积分"]
 prerequisites: ["Nyquist图", "BIBO稳定"]
 related: ["稳定裕度", "Nyquist图", "劳斯判据"]
-upstream: ["[[04-经典控制入门/Nyquist图]]"]
+upstream: ["[[Nyquist图]]"]
 source: "Modern Control Engineering (Ogata) Ch.7; Nyquist (1932)"
 tags: [学习, 控制与机器人学, 频域分析]
 ---

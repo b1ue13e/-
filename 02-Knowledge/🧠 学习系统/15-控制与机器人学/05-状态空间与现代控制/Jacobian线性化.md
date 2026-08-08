@@ -12,7 +12,7 @@ kind: derivation
 concept: ["Jacobian线性化", "泰勒展开", "非线性系统"]
 prerequisites: ["状态方程", "微积分基础"]
 related: ["小扰动分析", "车辆线性化"]
-upstream: ["[[05-状态空间与现代控制/状态方程]]"]
+upstream: ["[[状态方程]]"]
 source: "Modern Control Engineering (Ogata) Ch.9"
 tags: [学习, 控制与机器人学, 状态空间]
 ---

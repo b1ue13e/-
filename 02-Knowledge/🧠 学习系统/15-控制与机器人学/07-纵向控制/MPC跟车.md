@@ -12,7 +12,7 @@ kind: derivation
 concept: ["MPC跟车", "ACC优化", "约束控制"]
 prerequisites: ["间距误差", "MPC横向预测"]
 related: ["间距误差", "ACC切换逻辑"]
-upstream: ["[[07-纵向控制/间距误差]]"]
+upstream: ["[[间距误差]]"]
 source: "ACC MPC 文献; PythonRobotics model_predictive_speed_and_steering_control.py"
 tags: [学习, 控制与机器人学, ACC]
 ---

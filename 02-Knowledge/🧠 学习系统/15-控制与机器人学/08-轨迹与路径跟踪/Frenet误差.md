@@ -12,7 +12,7 @@ kind: concept
 concept: ["跟踪误差", "横纵向误差"]
 prerequisites: ["Frenet转换"]
 related: ["解耦控制", "横向偏差", "间距误差"]
-upstream: ["[[08-轨迹与路径跟踪/Frenet转换]]"]
+upstream: ["[[Frenet转换]]"]
 source: "轨迹跟踪控制文献；PythonRobotics（MIT）"
 tags: [学习, 控制与机器人学, 轨迹跟踪]
 ---

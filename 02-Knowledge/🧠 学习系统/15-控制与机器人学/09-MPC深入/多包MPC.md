@@ -12,7 +12,7 @@ kind: concept
 concept: ["增益调度", "多模型"]
 prerequisites: ["线性车辆MPC", "QP标准形式"]
 related: ["线性车辆MPC", "非线性车辆MPC", "增益调度"]
-upstream: ["[[09-MPC深入/线性车辆MPC]]"]
+upstream: ["[[线性车辆MPC]]"]
 source: "增益调度控制文献；车辆 MPC 工程实践"
 tags: [学习, 控制与机器人学, MPC]
 ---

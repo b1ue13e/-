@@ -12,7 +12,7 @@ kind: concept
 concept: ["微分控制", "阻尼", "预测"]
 prerequisites: ["PID公式", "P控制"]
 related: ["I控制", "不完全微分", "微分先行"]
-upstream: ["[[04-经典控制入门/P控制]]"]
+upstream: ["[[P控制]]"]
 source: "Modern Control Engineering (Ogata) Ch.6"
 tags: [学习, 控制与机器人学, PID]
 ---
