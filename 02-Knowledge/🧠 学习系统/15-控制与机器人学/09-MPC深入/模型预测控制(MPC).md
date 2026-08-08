@@ -1,8 +1,8 @@
 ---
-title: "模型预测控制(MPC)"
+topic: "模型预测控制(MPC)"
 date: "2026-08-03"
-type: concept
-course: "15-控制与机器人学"
+type: study
+course: "控制与机器人学"
 stage_moc: "[[🧭 阶段9-MPC深入]]"
 flow: knowledge
 kind: concept
@@ -144,3 +144,11 @@ $$
 - **适合文件夹**：`02-Knowledge/🧠 学习系统/15-控制与机器人学/09-MPC深入`
 - **建议标签**：`#学习` `#MPC` `#控制理论` `#自动驾驶`
 
+## 学完后可以完成
+
+```dataview
+LIST
+FROM "03-Projects/系统与硬件/15-控制与机器人学"
+WHERE contains(requires, this.file.link)
+SORT assignment_level ASC, file.name ASC
+```
