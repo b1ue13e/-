@@ -16,6 +16,7 @@ source_type: open_textbook_exercise
 created: 2026-08-07
 updated: 2026-08-07
 status: planned
+eligibility_status: spec_verified
 flow: project
 kind: project
 difficulty: intermediate
@@ -92,6 +93,7 @@ tags: [作业, 14-概率图模型, HMM, 序列模型]
 - **Python**：3.11+；依赖仅 `numpy`；
 - 题 1-2 可用 numpy 逐表验证；题 3-4 纸笔；
 - 无需随机种子。
+- **运行证据（2026-08-09）**：`scripts/hw05_verify.py` 实际运行通过——题 1 $\alpha_1=(0.45,0.10)$、$\alpha_2=(0.0355,0.156)$、$P(O)=0.1915$；题 2 $\delta_2=(0.0315,0.108)$、$P^*=0.108$、最优路径 $(1,2)$；题 3 $\beta_1=(0.31,0.52)$、$\gamma_1(1)\approx0.728$。环境：Python 3.13 + numpy。
 
 ---
 

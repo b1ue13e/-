@@ -16,6 +16,7 @@ source_type: open_textbook_exercise
 created: 2026-08-07
 updated: 2026-08-07
 status: planned
+eligibility_status: spec_verified
 flow: project
 kind: project
 difficulty: advanced
@@ -84,6 +85,7 @@ tags: [作业, 14-概率图模型, VAE, LDA]
 - **Python**：3.11+；依赖仅 `numpy`；
 - 题 2 数值可验证；题 1/3/4 推导；
 - 无需随机种子。
+- **运行证据（2026-08-09）**：`scripts/hw06_verify.py` 实际运行通过——题 2 高斯 KL（$\mu{=}0.5,\sigma^2{=}2$）$=0.278$、（$\mu{=}1,\sigma^2{=}1$）$=0.5$，二维合计 $\approx0.778$；重参数化 $\mu{=}1.0,\sigma{=}0.5,\epsilon{=}0.8\to z{=}1.4$。环境：Python 3.13。
 
 ---
 
@@ -100,7 +102,7 @@ tags: [作业, 14-概率图模型, VAE, LDA]
 | 维度 | 分值 | 通过要求 |
 |:---|---:|:---|
 | 题 1 ELBO 推导 | 25 | 下界推导完整（Jensen/分解）、两项解释合理 |
-| 题 2 KL + 重参数化 | 25 | KL 闭式推导正确、$\text{KL}=1.279$、重参数化值正确 |
+| 题 2 KL + 重参数化 | 25 | KL 闭式推导正确、$\text{KL}\approx 0.778$（二维独立分解 $0.278+0.500$）、重参数化值正确 |
 | 题 3 LDA 生成 | 25 | 生成过程/联合分布正确、后验不可解理由合理 |
 | 题 4 LDA 变分 EM | 25 | $\phi$ 与 $\beta$ 更新公式正确、与变分 EM 关联清晰 |
 | **总计** | **100** | **≥ 75 且题 1 不低于 20** |

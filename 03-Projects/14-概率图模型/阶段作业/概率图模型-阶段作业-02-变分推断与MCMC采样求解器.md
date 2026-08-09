@@ -20,6 +20,7 @@ created: 2026-07-29
 updated: 2026-08-06
 date: 2026-07-29
 status: planned
+eligibility_status: spec_verified
 flow: project
 difficulty: advanced
 concept: ["概率图模型", "MCMC采样", "变分推断"]
@@ -50,6 +51,7 @@ tags: [作业, 14-概率图模型, 推断]
 - **Starter Code 路径**：`03-Projects/14-概率图模型/scripts/hw02_verify.py`（本作业最小参考实现/验收脚本；完整任务由学习者独立实现，不提供现成答案）
 - **开源标杆仓库**：[ermongroup/cs228-notes](https://github.com/ermongroup/cs228-notes) (Stanford CS228)
 - **核心依赖**：`pgmpy`, `torch`, `numpy`, `pytest`
+- **规格验证证据（2026-08-09）**：`scripts/stage02_verify.py` 实际运行通过——内置 Harness 测试 1（变量消去边际化 $P(B)=[0.60,0.40]$，含归一化与数值断言）在最小参考实现下可执行；作业规格本身可运行、无缺失依赖。环境：Python 3.13 + numpy。学习者仍须独立实现 `pgm_solvers` 模块完成全部任务。
 
 ---
 
