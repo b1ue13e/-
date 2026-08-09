@@ -6,7 +6,7 @@ created: '2026-08-03'
 status: ongoing
 difficulty: advanced
 course: 量化金融
-stage_moc: '[[🧭 阶段4-微观结构执行与强化学习]]'
+stage_moc: '[[🧭 阶段4-微观结构与执行]]'
 stage: 📘 第四阶段：深入精通
 tags:
 - 学习

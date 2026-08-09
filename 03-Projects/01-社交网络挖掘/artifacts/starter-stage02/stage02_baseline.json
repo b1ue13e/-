@@ -1,0 +1,18 @@
+{
+  "seed": 42,
+  "observed": {
+    "nodes": 24,
+    "edges": 99,
+    "average_clustering": 0.4822601010101011,
+    "largest_component_fraction": 1.0,
+    "largest_component_average_path": 1.6956521739130435
+  },
+  "er_same_n_m": {
+    "nodes": 24,
+    "edges": 99,
+    "average_clustering": 0.36787726162726164,
+    "largest_component_fraction": 1.0,
+    "largest_component_average_path": 1.6557971014492754
+  },
+  "boundary": "One ER draw is a smoke baseline, not a statistical conclusion."
+}

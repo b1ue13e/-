@@ -1,13 +1,6 @@
 import unittest
-import sys
-from pathlib import Path
 
-# Add scripts directory to path
-SCRIPTS_DIR = Path(__file__).resolve().parent.parent / "scripts"
-if str(SCRIPTS_DIR) not in sys.path:
-    sys.path.insert(0, str(SCRIPTS_DIR))
-
-from limited_agent import LimitedAgentLoop, ToolSchema, AgentStatus, get_temperature
+from scripts.limited_agent import AgentStatus, LimitedAgentLoop, ToolSchema, get_temperature
 
 class TestLimitedAgentLoop(unittest.TestCase):
     def setUp(self):
@@ -16,7 +9,8 @@ class TestLimitedAgentLoop(unittest.TestCase):
             name="get_temperature",
             description="获取城市温度",
             func=get_temperature,
-            permission="READ_ONLY"
+            permission="READ_ONLY",
+            argument_types={"city": str},
         ))
 
     def test_normal_execution(self):
@@ -52,6 +46,25 @@ class TestLimitedAgentLoop(unittest.TestCase):
 
         res = self.agent.run("未知城市", mock_provider)
         self.assertEqual(res["status"], AgentStatus.INVALID_ARGUMENT)
+
+    def test_non_mapping_action_and_wrong_argument_type_fail_closed(self):
+        self.assertEqual(
+            self.agent.run("坏动作", lambda step, traces: None)["status"],
+            AgentStatus.INVALID_ARGUMENT,
+        )
+        self.assertEqual(
+            self.agent.run(
+                "坏参数",
+                lambda step, traces: {"tool": "get_temperature", "args": {"city": 7}},
+            )["status"],
+            AgentStatus.INVALID_ARGUMENT,
+        )
+
+    def test_duplicate_tool_registration_is_rejected(self):
+        with self.assertRaises(ValueError):
+            self.agent.register_tool(
+                ToolSchema("get_temperature", "duplicate", get_temperature)
+            )
 
 if __name__ == "__main__":
     unittest.main()

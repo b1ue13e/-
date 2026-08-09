@@ -1,0 +1,11 @@
+{
+  "id": "QF-ST03-BARS",
+  "assignment_id": "QF-ST03",
+  "slug": "volume_dollar_bars",
+  "title": "Volume Bars 与 Dollar Bars",
+  "stage": "03",
+  "smoke_data_dir": "data/smoke/volume_dollar_bars",
+  "real_files": ["ticks.csv"],
+  "baseline": "固定阈值信息条与守恒检查",
+  "next_step": "在冻结阈值下构造信息条，比较样本数、持续时间和收益分布，不按结果选择采样方式。"
+}

@@ -6,7 +6,23 @@ assignment_id: "信号与系统-01"
 assignment_level: stage
 assignment_format: lab
 stage_id: "07"
-requires: ["[[FFT分解]]", "[[窗函数]]", "[[巴特沃斯]]", "[[离散频谱]]"]
+requires:
+  - "[[Cooley-Tukey正确性推导]]"
+  - "[[DFT周期性后果]]"
+  - "[[DFT时域周期]]"
+  - "[[DFT线性]]"
+  - "[[DFT频域周期]]"
+  - "[[共轭对称]]"
+  - "[[卷积关系]]"
+  - "[[多速率与多相]]"
+  - "[[布莱克曼窗]]"
+  - "[[循环卷积定义]]"
+  - "[[循环移位]]"
+  - "[[栅栏后果]]"
+  - "[[汉明窗]]"
+  - "[[泄漏后果]]"
+  - "[[矩形窗]]"
+  - "[[补零]]"
 source_type: open_source_project_task
 created: 2026-07-29
 status: planned

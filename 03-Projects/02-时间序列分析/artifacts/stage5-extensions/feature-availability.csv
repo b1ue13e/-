@@ -1,0 +1,8 @@
+feature,available_at_origin,used_by
+gdp_growth_lag1,True,"ar, ml_lag"
+gdp_growth_lag2,True,"ar, ml_lag"
+gdp_growth_lag4,True,"ar, ml_lag"
+cons_growth_lag1,True,"arimax, var, ml_lag"
+inv_growth_lag1,True,"arimax, var, ml_lag"
+tbilrate_lag1,True,"arimax, ml_lag"
+quarter_sin/cos,True,ml_lag

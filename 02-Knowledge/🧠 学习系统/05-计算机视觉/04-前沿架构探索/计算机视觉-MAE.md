@@ -125,26 +125,33 @@ MAE 用"像素回归"重建被掩 patch；**BEiT**（Bao et al., 2021）与 **iB
 ## 🧪 自测题
 
 1. **(基础)** MAE 的典型掩码率是多少？为什么这么高？
-   <details><summary>💡 提示</summary>75%。图像有大量空间冗余，低掩码率（如15%）太简单，模型只需"插值"邻域像素即可重建。</details>
+   <details><summary>💡 思路</summary>从「任务难度」角度想：图像相邻像素高度冗余，掩码率低时模型能否靠邻域插值蒙混过关？再查论文实际采用的比例。</details>
 
 2. **(中等)** MAE 的编码器为什么不处理被遮住的 patch？
-   <details><summary>💡 提示</summary>省计算（处理 token 减少 75%）。被遮 patch 没有信息，处理它们是浪费。解码器才需要重建它们。</details>
+   <details><summary>💡 思路</summary>数一数若编码器跳过被遮 token，参与计算的序列长度会缩短多少；再想被遮 token 本身携带多少信息、重建工作该由哪个模块承担。</details>
 
 3. **(较难)** MAE 和 SimCLR 作为两种自监督范式，哪种更适合下游密集预测任务（检测/分割）？为什么？
-   <details><💡 提示</summary>MAE 更适合。MAE 迫使模型理解全局结构（从部分重建整体），学到的是空间语义；SimCLR 学到的是实例级判别特征。</details>
+   <details><summary>💡 思路</summary>先分别问：MAE 的预训练任务要求模型输出什么粒度的信息？SimCLR 的对比目标又是在什么粒度上做区分（整图还是局部）？再想检测/分割需要的是哪种粒度的表征，据此判断并说明理由。</details>
 
 ---
 
-## 🧪 学完本节后可完成的作业
+## 🔀 学完本节后的横向连接
 
 - 配合 [[计算机视觉-ViT]] 理解为什么 MAE 特别适合 ViT 预训练
 ---
 
 ## 学完后可以完成
 
-- 可作为 HW06 开放项目『MAE 自监督预训练实验』选题
+> 下列作业在 `requires` 中引用了本卡，由 Dataview 实时派生（非人工维护反向链接）：
 
-> 该卡无直接课后/阶段作业：以卡内自测题与闭卷复现作为形成性验收；如需综合实践，可挂靠 HW06 开放课程项目或 CAP01。
+```dataview
+LIST
+FROM "03-Projects"
+WHERE contains(requires, this.file.link)
+SORT assignment_level ASC, file.name ASC
+```
+
+本卡另以前置「🧪 自测题」与闭卷复现作为形成性验收。
 
 ## 🔗 知识图谱
 

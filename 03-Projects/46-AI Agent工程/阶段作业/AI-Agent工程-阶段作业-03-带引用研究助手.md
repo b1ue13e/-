@@ -11,17 +11,7 @@ requires: ["[[AI-Agent-上下文工程-选择压缩隔离]]", "[[AI-Agent-记忆
 source_type: local_integration_task
 source: "课程原创任务；融合 Microsoft Agentic RAG/Context/Memory/Metacognition 与 Hello-Agents Deep Research 能力目标"
 source_url: "https://github.com/datawhalechina/hello-agents/tree/main/docs/chapter14"
-accessed: 2026-08-06
-license: "任务文本原创；Microsoft MIT；Hello-Agents CC BY-NC-SA 4.0"
-assignment_id: "AI-Agent工程-S03"
-assignment_level: stage
-assignment_format: project
-stage_id: "03"
-requires: ["[[AI-Agent-上下文工程-选择压缩隔离]]", "[[AI-Agent-记忆与检索增强生成]]", "[[AI-Agent-反思与元认知-校验修正停止]]", "[[AI-Agent-规划状态与工作流编排]]"]
-source_type: local_integration_task
-source: "课程原创任务；融合 Microsoft Agentic RAG/Context/Memory/Metacognition 与 Hello-Agents Deep Research 能力目标"
-source_url: "https://github.com/datawhalechina/hello-agents/tree/main/docs/chapter14"
-accessed: 2026-08-06
+accessed: 2026-08-08
 license: "任务文本原创；Microsoft MIT；Hello-Agents CC BY-NC-SA 4.0"
 created: 2026-08-06
 status: planned
@@ -84,6 +74,13 @@ class ResearchChunk:
 3. 重合度 $< 0.4$ 时触发至多 2 轮修正。若第 2 轮仍失败，标为 `[证据不足/争议]` 并保留降级输出。
 
 ---
+
+## 任务分层
+
+- **基础要求**：离线检索、证据 ID、逐断言支持检查、有限修正和失败日志形成闭环。
+- **必要提示**：先用可定位原文的 extractive claim 验证；语义 judge 只能作为额外层并需人工校准。
+- **常见错误**：source ID 存在即通过、引用切片不包含断言、修正时删除来源但保留结论。
+- **可选进阶**：加入语义蕴含模型或人工双盲抽检，并报告其相对规则验证器的误报/漏报。
 
 ## 🛠️ 环境与复现
 

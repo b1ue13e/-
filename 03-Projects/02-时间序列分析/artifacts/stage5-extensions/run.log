@@ -1,0 +1,6 @@
+validation_prediction_rows=96
+test_prediction_rows=32
+failure_rows=0
+warning_rows=0
+selected_model=var
+final_test_models=naive,var

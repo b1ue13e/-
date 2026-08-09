@@ -1,17 +1,17 @@
-﻿---
-title: "域着色可视化画廊（Capstone）"
-date: "2026-08-04"
+---
 type: study
+topic: "域着色可视化画廊（Capstone）"
 course: "复变函数"
-importance: "C"
+created: 2026-08-04
+status: completed
+stage_moc: "[[🧭 阶段4-保角映射与综合项目]]"
+flow: knowledge
+kind: concept
 tags: [学习, 复变函数, Capstone]
-upstream: ["初等函数：指数、对数与幂", "奇点分类与留数定理", "保角映射与 Möbius 变换"]
-downstream: []
-status: learning
-proof_mode: true
+upstream: ["[[初等函数：指数、对数与幂]]", "[[奇点分类与留数定理]]", "[[保角映射与 Möbius 变换]]"]
 concept: ["域着色", "相图", "复函数可视化"]
 sources:
-  - "Complex Analysis: A Visual and Interactive Introduction, Ch.3 (Domain Coloring; Enhanced Phase Portraits) & Ch.5 (Phase Portraits of Singularities)"
+  - "Complex Analysis: A Visual and Interactive Introduction, Ch.3 & Ch.5"
   - "CA 在线工具 (complex-analysis.com)"
 ---
 
@@ -247,41 +247,26 @@ sources:
 > - **解析**：覆盖零点、极点、本性奇点、分支、保角五大主题。
 > - **易错原因**：只贴图不写证明——验收要求"每图配证明"。
 
----
+## 学完后可以完成
 
-## 12. 我的主动回忆区
+学完本卡后，可直接点击下方链接跳转至对应的实战作业包：
 
-> **用法**：合上笔记，按引导填空。填不出 = 没掌握，回到第 4-6 节重读再重填。写不出来 = 卡点，记入下方。
+### 🔍 派生动态视图 (Obsidian Dataview)
 
-### 我的闭卷复述
-> 复述「域着色可视化画廊（Capstone）」的精确定义：
-> - 前提条件：______
-> - 结论：______
-> - 符号含义（至少 3 个）：______
+> [!tip] 以下视图由 Obsidian Dataview 自动派生，展示库内所有引用本卡的作业与下游知识。
 
-### 我的证明重建
-> 不看上文，写出证明主线：
-> - 第 1 步：______
-> - 关键"转念"：______
-> - 我卡住的证明步骤：______（复习重点）
+#### 关联作业
+```dataview
+TABLE assignment_id AS "作业编号", assignment_level AS "层级", assignment_format AS "形态"
+FROM "03-Projects"
+WHERE contains(requires, this.file.link)
+SORT assignment_level ASC, file.name ASC
+```
 
-### 我的反例与卡点
-- 我构造的反例：______（对应哪个条件不能省）
-- 我默写时卡住的步骤：______
-- 修正后的理解：______
-
-### 下次复习日期
-- [ ] 明天
-- [ ] 3 天后
-- [ ] 7 天后
-- [ ] 14 天后
-
----
-
-## 13. 给 Obsidian 的归档建议
-
-- **适合文件夹**：`02-Knowledge/🧠 学习系统/37-复变函数/04-保角映射与综合项目/`
-- **关联已有笔记**：`[[📕 第四阶段：保角映射与综合项目]]`、`[[🗺️ 复变函数学习路径]]`
-- **建议标签**：`#学习` `#复变函数` `#Capstone`
-- **拆分建议**：画廊图与证明卡可拆为多张子卡（每图一卡）。
-
+#### 下游关联知识卡
+```dataview
+LIST
+FROM "02-Knowledge/🧠 学习系统"
+WHERE contains(upstream, this.file.link)
+SORT file.name ASC
+```

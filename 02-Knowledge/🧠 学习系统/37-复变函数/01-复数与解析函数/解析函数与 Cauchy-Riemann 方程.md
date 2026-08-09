@@ -1,17 +1,17 @@
-﻿---
-title: "解析函数与 Cauchy-Riemann 方程"
-date: "2026-08-04"
+---
 type: study
+topic: "解析函数与 Cauchy-Riemann 方程"
 course: "复变函数"
-importance: "A"
+created: 2026-08-04
+status: completed
+stage_moc: "[[🧭 阶段1-复数与解析函数]]"
+flow: knowledge
+kind: derivation
 tags: [学习, 复变函数]
-upstream: ["复数运算与复平面", "多元微积分偏导数"]
-downstream: ["初等函数：指数、对数与幂", "复积分与 Cauchy 定理"]
-status: learning
-proof_mode: true
+upstream: ["[[复数运算与复平面]]", "[[复变函数-前置-实分析与多元微积分]]"]
 concept: ["解析函数", "Cauchy-Riemann 方程", "复导数"]
 sources:
-  - "Complex Analysis: A Visual and Interactive Introduction, Ch.2 (Complex Differentiation; Limits; Continuity)"
+  - "Complex Analysis: A Visual and Interactive Introduction, Ch.2"
   - "MIT 18.04 PS2"
 ---
 
@@ -55,7 +55,7 @@ sources:
 最小必要背景（各 200 字以内）：
 
 1. **[[复数运算与复平面]]**：复数的模、辐角、四则运算；"$\Delta z\to 0$ 沿任意方向"的几何意义。
-2. **[[多元微积分偏导数]]**：$u_x,u_y,v_x,v_y$ 的定义与连续性概念；方向导数的存在 ≠ 偏导数连续。
+2. **[[复变函数-前置-实分析与多元微积分|实分析与多元微积分]]**：$u_x,u_y,v_x,v_y$ 的定义与连续性概念；方向导数的存在 ≠ 偏导数连续。
 
 ---
 
@@ -251,41 +251,26 @@ $$u_x=v_y,\qquad u_y=-v_x.$$
 > - **解析**：这是复分析与实分析最戏剧性的差异之一。
 > - **易错原因**：试图用实分析直觉直接断言。
 
----
+## 学完后可以完成
 
-## 12. 我的主动回忆区
+学完本卡后，可直接点击下方链接跳转至对应的实战作业包：
 
-> **用法**：合上笔记，按引导填空。填不出 = 没掌握，回到第 4-6 节重读再重填。写不出来 = 卡点，记入下方。
+### 🔍 派生动态视图 (Obsidian Dataview)
 
-### 我的闭卷复述
-> 复述「解析函数与 Cauchy-Riemann 方程」的精确定义：
-> - 前提条件：______
-> - 结论：______
-> - 符号含义（至少 3 个）：______
+> [!tip] 以下视图由 Obsidian Dataview 自动派生，展示库内所有引用本卡的作业与下游知识。
 
-### 我的证明重建
-> 不看上文，写出证明主线：
-> - 第 1 步：______
-> - 关键"转念"：______
-> - 我卡住的证明步骤：______（复习重点）
+#### 关联作业
+```dataview
+TABLE assignment_id AS "作业编号", assignment_level AS "层级", assignment_format AS "形态"
+FROM "03-Projects"
+WHERE contains(requires, this.file.link)
+SORT assignment_level ASC, file.name ASC
+```
 
-### 我的反例与卡点
-- 我构造的反例：______（对应哪个条件不能省）
-- 我默写时卡住的步骤：______
-- 修正后的理解：______
-
-### 下次复习日期
-- [ ] 明天
-- [ ] 3 天后
-- [ ] 7 天后
-- [ ] 14 天后
-
----
-
-## 13. 给 Obsidian 的归档建议
-
-- **适合文件夹**：`02-Knowledge/🧠 学习系统/37-复变函数/01-复数与解析函数/`
-- **关联已有笔记**：`[[📘 第一阶段：复数与解析函数]]`
-- **建议标签**：`#学习` `#复变函数` `#概念`
-- **拆分建议**："CR 充分性反例"可拆为独立错题卡。
-
+#### 下游关联知识卡
+```dataview
+LIST
+FROM "02-Knowledge/🧠 学习系统"
+WHERE contains(upstream, this.file.link)
+SORT file.name ASC
+```

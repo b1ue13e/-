@@ -1,0 +1,26 @@
+{
+  "rows": [
+    {
+      "representation": "raw-features",
+      "val_accuracy": 0.6666666865348816,
+      "test_accuracy": 0.3333333432674408
+    },
+    {
+      "representation": "walk-svd",
+      "val_accuracy": 1.0,
+      "test_accuracy": 1.0
+    },
+    {
+      "representation": "laplacian",
+      "val_accuracy": 1.0,
+      "test_accuracy": 1.0
+    }
+  ],
+  "singular_values": [
+    117.5718765258789,
+    90.53897857666016,
+    44.90815353393555,
+    36.14680099487305
+  ],
+  "cooccurrence_total": 1356
+}

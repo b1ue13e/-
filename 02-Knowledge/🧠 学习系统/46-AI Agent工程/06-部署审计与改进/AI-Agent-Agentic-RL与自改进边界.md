@@ -1,4 +1,4 @@
-﻿---
+---
 type: study
 topic: "AI Agent的Agentic RL与自改进边界"
 course: "AI Agent工程"
@@ -13,7 +13,6 @@ stage_moc: "[[🧭 阶段6-部署审计与改进]]"
 upstream: ["[[AI-Agent-安全审计-加密收据与审批绑定]]", "[[AI-Agent-评测与基准-任务轨迹成本]]"]
 flow: knowledge
 kind: concept
-assessment_exempt: false
 source: "Datawhale Hello-Agents Chapter 11; Microsoft AI Agents for Beginners Lessons 9 and 13 (repositories verified 2026-08-06)"
 source_urls: ["https://github.com/datawhalechina/hello-agents/tree/main/docs/chapter11", "https://github.com/microsoft/ai-agents-for-beginners/tree/main/09-metacognition", "https://github.com/microsoft/ai-agents-for-beginners/tree/main/13-agent-memory"]
 accessed: 2026-08-06
@@ -45,7 +44,7 @@ Agentic RL 将 Agent 的多步交互看成轨迹，依据结果或过程反馈�
 
 ## 3. 学它之前需要哪些前置知识？
 
-1. [[半监督与强化学习|强化学习]]：状态、动作、奖励、策略、回报。
+1. [[02-Knowledge/🧠 学习系统/17-机器学习/05-其他方法/机器学习-半监督与强化学习|强化学习]]：状态、动作、奖励、策略、回报。
 2. [[AI-Agent-评测与基准-任务轨迹成本]]：训练信号必须与独立评测分开。
 3. [[AI-Agent-反思与元认知-校验修正停止]]：先用推理时反馈验证问题是否需要改权重。
 

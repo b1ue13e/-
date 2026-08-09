@@ -9,7 +9,7 @@ flow: knowledge
 kind: concept
 difficulty: intermediate
 concept: ["DDPG", "深度确定性策略梯度"]
-upstream: ["[[Q函数-定义]]", "[[经验回放与目标网络]]", "[[策略-确定性]]", "[[DQN-目标网络]]"]
+upstream: ["[[Q函数（动作价值函数）]]", "[[经验回放与目标网络]]", "[[策略与策略空间]]", "[[经验回放与目标网络]]"]
 tags: [学习, 强化学习]
 ---
 

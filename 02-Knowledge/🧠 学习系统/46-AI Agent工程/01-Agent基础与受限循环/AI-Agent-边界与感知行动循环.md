@@ -1,4 +1,4 @@
-﻿---
+---
 type: study
 topic: "AI Agent边界与感知行动循环"
 course: "AI Agent工程"
@@ -13,7 +13,6 @@ stage_moc: "[[🧭 阶段1-Agent基础与受限循环]]"
 upstream: ["[[AI-Agent-前置-消息JSON异常与单元测试]]"]
 flow: knowledge
 kind: concept
-assessment_exempt: false
 source: "UC Berkeley CS 194/294-196 F24 overview; Microsoft AI Agents for Beginners Lessons 1 and 3; Datawhale Hello-Agents Chapters 1-2; Hugging Face Agents Course Unit 1"
 source_urls: ["https://github.com/microsoft/ai-agents-for-beginners/tree/main/01-intro-to-ai-agents", "https://github.com/microsoft/ai-agents-for-beginners/tree/main/03-agentic-design-patterns", "https://github.com/datawhalechina/hello-agents/tree/main/docs/chapter1", "https://github.com/datawhalechina/hello-agents/tree/main/docs/chapter2"]
 accessed: 2026-08-06
@@ -43,7 +42,7 @@ anki_tags: [46-AI-Agent工程, Agent循环, 基础]
 
 ## 3. 学它之前需要哪些前置知识？
 
-1. **[[08-NLP全栈/01-基础准备/NLP全栈-Python编程与NLP工具|Python 编程与工具]]**：动作最终要落到可调用函数；异常是环境反馈的一种。
+1. **[[02-Knowledge/🧠 学习系统/08-NLP全栈/01-基础准备/08-NLP全栈-Python编程与NLP工具|Python 编程与工具]]**：动作最终要落到可调用函数；异常是环境反馈的一种。
 2. **[[Prompt工程-需求-任务规格与结构化输出|Prompt 与消息规格]]**：模型通过消息读取目标、历史、工具结果和约束。
 
 ## 4. 用直觉语言解释它
@@ -167,8 +166,8 @@ print(result.trace[-1].endswith("correct"))
 
 ## 9. 来源定位与关系
 
-- 外部语义前置：[[08-NLP全栈/01-基础准备/NLP全栈-Python编程与NLP工具|Python 编程与工具]]、[[Prompt工程-需求-任务规格与结构化输出|Prompt 与消息规格]]。
-- 横向关联：[[🎯 阶段2：马尔可夫决策过程|马尔可夫决策过程]]同样使用状态、动作和转移描述序贯决策。
+- 外部语义前置：[[02-Knowledge/🧠 学习系统/08-NLP全栈/01-基础准备/08-NLP全栈-Python编程与NLP工具|Python 编程与工具]]、[[Prompt工程-需求-任务规格与结构化输出|Prompt 与消息规格]]。
+- 横向关联：[[02-Knowledge/🧠 学习系统/13-强化学习/02-马尔可夫决策过程/🧭 阶段2-马尔可夫决策过程|马尔可夫决策过程]]同样使用状态、动作和转移描述序贯决策。
 - 直接知识依赖以 frontmatter `upstream` 为唯一事实源；直接后续由本文末 Dataview 反向派生。
 
 ## 10. 闭卷复现任务

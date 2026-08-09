@@ -129,17 +129,17 @@ x = nn.Linear(384, 192)(x)            # (28, 28, 192)
 ## 🧪 自测题
 
 1. **(基础)** Swin Transformer 的窗口大小通常是多大？为什么用这个值？
-   <details><summary>💡 提示</summary>$7 \times 7$。经验值——太小损失效率，太大回归 $O(N^2)$。7×7 在局部性和效率间取得平衡。</details>
+   <details><summary>💡 思路</summary>从两端夹逼着想：窗口太小会损失什么、太大又会退化成什么复杂度；再查论文里实际采用的经验值。</details>
 
 2. **(中等)** Swin 的移位窗口解决了什么问题？如果只用固定窗口会怎样？
-   <details><summary>💡 提示</summary>固定窗口限制了不同窗口间 patch 的交互。移位窗口让相邻层的窗口边界偏移，使信息可以跨窗口流动，最终所有位置都能间接交互。</details>
+   <details><summary>💡 思路</summary>设想窗口固定不动时，处在两个窗口边界两侧的 patch 能否互相看见；再想让相邻层的窗口边界「错位」之后会发生什么。</details>
 
 3. **(较难)** Swin 如何做到在检测/分割任务上超越 CNN？与 ViT 相比的架构优势在哪里？
-   <details><summary>💡 提示</summary>CNN 的 success 源于层次化多尺度特征（FPN 的基础）。ViT 丢失了这一点。Swin 恢复了层次化结构→可以无缝接入 FPN→直接用于密集预测任务。</details>
+   <details><summary>💡 思路</summary>对比三者在特征图分辨率上的差异：CNN 是层次化多尺度，ViT 是单一尺度。再想密集预测任务（检测/分割）需要哪一种、能否直接接上 FPN。</details>
 
 ---
 
-## 🧪 学完本节后可完成的作业
+## 🔀 学完本节后的横向连接
 
 - 配合 [[目标检测RCNN与YOLO|目标检测]] 理解 Swin 如何作为检测 backbone 替代 ResNet
 - 配合 [[计算机视觉-MAE]] 理解 Swin 的自监督预训练
@@ -147,9 +147,16 @@ x = nn.Linear(384, 192)(x)            # (28, 28, 192)
 
 ## 学完后可以完成
 
-- 可作为 HW06 开放项目『Swin 层次化架构实验』选题
+> 下列作业在 `requires` 中引用了本卡，由 Dataview 实时派生（非人工维护反向链接）：
 
-> 该卡无直接课后/阶段作业：以卡内自测题与闭卷复现作为形成性验收；如需综合实践，可挂靠 HW06 开放课程项目或 CAP01。
+```dataview
+LIST
+FROM "03-Projects"
+WHERE contains(requires, this.file.link)
+SORT assignment_level ASC, file.name ASC
+```
+
+本卡另以前置「🧪 自测题」与闭卷复现作为形成性验收。
 
 ## 🔗 知识图谱
 

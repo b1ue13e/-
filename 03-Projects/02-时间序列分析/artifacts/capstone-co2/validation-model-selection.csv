@@ -1,6 +1,6 @@
-model,rmse
-ets,0.6488671838369928
-arima,0.6845428894112621
-seasonal_naive,1.9251525366591338
-ml_lag,2.4647105591172784
-naive,3.171257121573848
+model,prediction_count,failure_count,rmse,expected_prediction_count,eligible,selected
+ets,204,0,0.6488671838369928,204,True,True
+seasonal_naive,204,0,1.9251525366591338,204,True,False
+ml_lag,204,0,2.4647105591172784,204,True,False
+naive,204,0,3.171257121573848,204,True,False
+arima,168,3,0.6997457746798491,204,False,False

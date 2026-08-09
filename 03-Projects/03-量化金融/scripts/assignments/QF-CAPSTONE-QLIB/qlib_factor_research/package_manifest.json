@@ -1,0 +1,11 @@
+{
+  "id": "QF-CAPSTONE-QLIB",
+  "assignment_id": "QF-CAPSTONE-QLIB",
+  "slug": "qlib_factor_research",
+  "title": "Qlib 因子研究与成本敏感回测",
+  "stage": "04",
+  "smoke_data_dir": "data/smoke/qlib_factor_research",
+  "real_files": ["qlib_manifest.json", "workflow_config.yaml", "baseline_protocol.json"],
+  "baseline": "E0 等权、E1 朴素因子、E2 Qlib LightGBM Alpha158",
+  "next_step": "contract preflight 通过后，在锁定环境与合法 provider 数据上运行 run_qlib.py；只有 qrun 返回 0 才能记录执行通过。"
+}

@@ -2,8 +2,14 @@
 
 from __future__ import annotations
 
+import base64
+import binascii
 import hashlib
+import hmac
+import ipaddress
 import json
+import secrets
+import socket
 import time
 import urllib.request
 import uuid
@@ -12,7 +18,10 @@ from pathlib import Path
 from typing import Callable, Protocol
 from urllib.parse import urlparse
 
-from restaurant_pipeline import Review, aggregate_score, select_reviews
+try:
+    from .restaurant_pipeline import Review, aggregate_score, select_reviews
+except ImportError:  # Supports direct execution from the scripts directory.
+    from restaurant_pipeline import Review, aggregate_score, select_reviews
 
 
 REQUIRED_STAGES = ("intake", "retrieve", "score", "aggregate", "finalize")
@@ -61,6 +70,8 @@ class ToolSpec:
     name: str
     required_args: tuple[str, ...]
     handler: Callable[..., object]
+    argument_types: dict[str, type] = field(default_factory=dict)
+    result_validator: Callable[[object], bool] | None = None
 
 
 @dataclass(frozen=True)
@@ -98,6 +109,74 @@ class DeterministicDecisionModel:
         return decisions[stage]
 
 
+class HttpDecisionModel:
+    """HTTP adapter for a provider-specific decision service.
+
+    The service must return ``{"action": str, "tool": str | null}``. This
+    verifies the network and response boundary without claiming compatibility
+    with a specific model provider.
+    """
+
+    def __init__(
+        self,
+        endpoint: str,
+        *,
+        api_token: str | None = None,
+        timeout: float = 10.0,
+        max_response_bytes: int = 65_536,
+        allow_http_localhost: bool = False,
+        name: str = "http-decision-model",
+    ) -> None:
+        parsed = urlparse(endpoint)
+        local_hosts = {"localhost", "127.0.0.1", "::1"}
+        secure = parsed.scheme == "https"
+        local_http = (
+            allow_http_localhost
+            and parsed.scheme == "http"
+            and (parsed.hostname or "").casefold() in local_hosts
+        )
+        if not parsed.hostname or not (secure or local_http):
+            raise ValueError("decision endpoint must use HTTPS, except explicit localhost tests")
+        if timeout <= 0 or max_response_bytes <= 0:
+            raise ValueError("timeout and max_response_bytes must be positive")
+        self.endpoint = endpoint
+        self.api_token = api_token
+        self.timeout = timeout
+        self.max_response_bytes = max_response_bytes
+        self.name = name
+
+    def decide(self, stage: str, observation: dict[str, object]) -> Decision:
+        payload = json.dumps(
+            {"stage": stage, "observation": observation},
+            ensure_ascii=False,
+            sort_keys=True,
+        ).encode("utf-8")
+        headers = {"Accept": "application/json", "Content-Type": "application/json"}
+        if self.api_token:
+            headers["Authorization"] = f"Bearer {self.api_token}"
+        request = urllib.request.Request(self.endpoint, data=payload, headers=headers, method="POST")
+
+        class NoRedirect(urllib.request.HTTPRedirectHandler):
+            def redirect_request(self, *args: object, **kwargs: object) -> None:
+                return None
+
+        opener = urllib.request.build_opener(NoRedirect)
+        with opener.open(request, timeout=self.timeout) as response:
+            content_type = response.headers.get_content_type()
+            if content_type != "application/json":
+                raise ValueError(f"decision endpoint returned {content_type}, expected application/json")
+            raw = response.read(self.max_response_bytes + 1)
+        if len(raw) > self.max_response_bytes:
+            raise ValueError("decision response exceeded the size limit")
+        body = json.loads(raw.decode("utf-8"))
+        if not isinstance(body, dict) or not isinstance(body.get("action"), str):
+            raise ValueError("decision response must contain a string action")
+        tool = body.get("tool")
+        if tool is not None and not isinstance(tool, str):
+            raise ValueError("decision response tool must be a string or null")
+        return Decision(body["action"], tool)
+
+
 class ToolRegistry:
     def __init__(self) -> None:
         self._tools: dict[str, ToolSpec] = {}
@@ -109,6 +188,9 @@ class ToolRegistry:
     def register(self, spec: ToolSpec) -> None:
         if spec.name in self._tools:
             raise ValueError(f"duplicate tool: {spec.name}")
+        undeclared_types = set(spec.argument_types) - set(spec.required_args)
+        if undeclared_types:
+            raise ValueError(f"type rules reference undeclared arguments: {sorted(undeclared_types)}")
         self._tools[spec.name] = spec
 
     def call(self, name: str, **kwargs: object) -> object:
@@ -118,7 +200,13 @@ class ToolRegistry:
         required, provided = set(spec.required_args), set(kwargs)
         if required != provided:
             raise ValueError(f"{name} expects {sorted(required)}, received {sorted(provided)}")
-        return spec.handler(**kwargs)
+        for argument, expected_type in spec.argument_types.items():
+            if argument in kwargs and not isinstance(kwargs[argument], expected_type):
+                raise TypeError(f"{name}.{argument} must be {expected_type.__name__}")
+        result = spec.handler(**kwargs)
+        if spec.result_validator is not None and not spec.result_validator(result):
+            raise TypeError(f"{name} returned a value outside its declared contract")
+        return result
 
 
 def _retrieve_tool(reviews: list[Review], restaurant: str) -> list[Review]:
@@ -173,8 +261,24 @@ class ReviewAgentPipeline:
         self.retry_limit = retry_limit
         self.model = model or DeterministicDecisionModel()
         self.registry = ToolRegistry()
-        self.registry.register(ToolSpec("retrieve_reviews", ("reviews", "restaurant"), _retrieve_tool))
-        self.registry.register(ToolSpec("aggregate_scores", ("scores",), _aggregate_tool))
+        self.registry.register(
+            ToolSpec(
+                "retrieve_reviews",
+                ("reviews", "restaurant"),
+                _retrieve_tool,
+                {"reviews": list, "restaurant": str},
+                lambda result: isinstance(result, list) and all(isinstance(item, Review) for item in result),
+            )
+        )
+        self.registry.register(
+            ToolSpec(
+                "aggregate_scores",
+                ("scores",),
+                _aggregate_tool,
+                {"scores": list},
+                lambda result: result is None or isinstance(result, float),
+            )
+        )
         self.state = AgentState()
         self._step_started = time.perf_counter()
 
@@ -245,7 +349,12 @@ class ReviewAgentPipeline:
             selected = self.registry.call(decision.tool, reviews=self.reviews, restaurant=state.query)
             assert isinstance(selected, list)
             # Durable memory keeps identifiers and numeric evidence only, never review instructions.
-            state.evidence_ids = [f"review-{self.reviews.index(review)}" for review in selected]
+            selected_object_ids = {id(review) for review in selected}
+            state.evidence_ids = [
+                f"review-{index}"
+                for index, review in enumerate(self.reviews)
+                if id(review) in selected_object_ids
+            ]
             state.evidence_scores = [review.score for review in selected]
             self._handoff("retriever", "scorer", "evidence_ids")
             self._event(self.model.name, "retrieve", f"{len(selected)} evidence items", decision.tool)
@@ -390,56 +499,225 @@ class SafeWorkspace:
     def read_text(self, relative: str) -> str:
         return self.resolve(relative).read_text(encoding="utf-8")
 
-    def write_text(self, relative: str, content: str, *, approved: bool = False) -> None:
-        if not approved:
-            raise PermissionError("write requires explicit approval")
+    def approval_resource(self, relative: str) -> str:
+        return self.resolve(relative).relative_to(self.root).as_posix()
+
+    @staticmethod
+    def approval_parameters(content: str) -> dict[str, object]:
+        encoded = content.encode("utf-8")
+        return {"bytes": len(encoded), "sha256": hashlib.sha256(encoded).hexdigest()}
+
+    def write_text(
+        self,
+        relative: str,
+        content: str,
+        *,
+        approval_gate: "ApprovalGate" | None = None,
+        receipt: str | None = None,
+    ) -> None:
+        if approval_gate is None or receipt is None:
+            raise PermissionError("write requires an approved receipt")
+        resource = self.approval_resource(relative)
+        approval_gate.consume(
+            receipt,
+            "workspace_write",
+            resource,
+            self.approval_parameters(content),
+        )
         target = self.resolve(relative)
         target.parent.mkdir(parents=True, exist_ok=True)
         target.write_text(content, encoding="utf-8")
 
 
 class ApprovalGate:
-    def __init__(self) -> None:
-        self._requests: dict[str, dict[str, str]] = {}
+    """Issues short-lived, single-use receipts bound to complete action parameters."""
 
-    def request(self, action: str, resource: str) -> str:
+    def __init__(
+        self,
+        *,
+        secret: bytes | None = None,
+        clock: Callable[[], float] = time.time,
+    ) -> None:
+        self._secret = secret or secrets.token_bytes(32)
+        if len(self._secret) < 32:
+            raise ValueError("approval secret must contain at least 32 bytes")
+        self._clock = clock
+        self._requests: dict[str, dict[str, object]] = {}
+        self._consumed_nonces: set[str] = set()
+
+    @staticmethod
+    def _canonical_parameters(parameters: dict[str, object] | None) -> dict[str, object]:
+        normalized = parameters or {}
+        serialized = json.dumps(normalized, ensure_ascii=False, sort_keys=True, separators=(",", ":"))
+        return json.loads(serialized)
+
+    def _encode_receipt(self, payload: dict[str, object]) -> str:
+        raw = json.dumps(payload, ensure_ascii=False, sort_keys=True, separators=(",", ":")).encode("utf-8")
+        signature = hmac.new(self._secret, raw, hashlib.sha256).digest()
+        encoded_payload = base64.urlsafe_b64encode(raw).decode("ascii").rstrip("=")
+        encoded_signature = base64.urlsafe_b64encode(signature).decode("ascii").rstrip("=")
+        return f"{encoded_payload}.{encoded_signature}"
+
+    def _decode_receipt(self, receipt: str) -> dict[str, object]:
+        try:
+            encoded_payload, encoded_signature = receipt.split(".", 1)
+            raw = base64.urlsafe_b64decode(encoded_payload + "=" * (-len(encoded_payload) % 4))
+            signature = base64.urlsafe_b64decode(encoded_signature + "=" * (-len(encoded_signature) % 4))
+        except (ValueError, TypeError, binascii.Error, UnicodeError, json.JSONDecodeError) as error:
+            raise PermissionError("approval receipt is malformed") from error
+        expected = hmac.new(self._secret, raw, hashlib.sha256).digest()
+        if not hmac.compare_digest(signature, expected):
+            raise PermissionError("approval receipt integrity check failed")
+        payload = json.loads(raw.decode("utf-8"))
+        if not isinstance(payload, dict):
+            raise PermissionError("approval receipt payload is invalid")
+        return payload
+
+    def request(
+        self,
+        action: str,
+        resource: str,
+        parameters: dict[str, object] | None = None,
+        *,
+        expires_in: float = 300.0,
+    ) -> str:
+        if expires_in <= 0:
+            raise ValueError("expires_in must be positive")
         request_id = f"approval-{uuid.uuid4().hex}"
-        self._requests[request_id] = {"status": "pending", "action": action, "resource": resource}
+        normalized = self._canonical_parameters(parameters)
+        self._requests[request_id] = {
+            "status": "pending",
+            "action": action,
+            "resource": resource,
+            "parameters": normalized,
+            "nonce": secrets.token_urlsafe(18),
+            "issued_at": self._clock(),
+            "expires_at": self._clock() + expires_in,
+        }
         return request_id
 
-    def approve(self, request_id: str) -> None:
+    def approve(self, request_id: str) -> str:
         request = self._requests.get(request_id)
         if request is None or request["status"] != "pending":
             raise KeyError("unknown approval request")
+        if self._clock() >= float(request["expires_at"]):
+            request["status"] = "expired"
+            raise PermissionError("approval request expired")
         request["status"] = "approved"
+        payload = {"version": 1, "request_id": request_id, **request}
+        payload.pop("status")
+        return self._encode_receipt(payload)
 
-    def consume(self, request_id: str, action: str, resource: str) -> None:
-        request = self._requests.get(request_id)
+    def consume(
+        self,
+        receipt: str,
+        action: str,
+        resource: str,
+        parameters: dict[str, object] | None = None,
+    ) -> None:
+        payload = self._decode_receipt(receipt)
+        request_id = payload.get("request_id")
+        request = self._requests.get(str(request_id))
         if request is None or request["status"] != "approved":
             raise PermissionError("action is not approved")
-        if request["action"] != action or request["resource"] != resource:
+        normalized = self._canonical_parameters(parameters)
+        if (
+            payload.get("version") != 1
+            or payload.get("action") != action
+            or payload.get("resource") != resource
+            or payload.get("parameters") != normalized
+            or request.get("action") != action
+            or request.get("resource") != resource
+            or request.get("parameters") != normalized
+        ):
             raise PermissionError("approval does not match action and resource")
+        if self._clock() >= float(payload["expires_at"]):
+            request["status"] = "expired"
+            raise PermissionError("approval request expired")
+        nonce = str(payload.get("nonce", ""))
+        if not nonce or nonce != request.get("nonce") or nonce in self._consumed_nonces:
+            raise PermissionError("approval receipt was replayed or is unknown")
+        self._consumed_nonces.add(nonce)
         request["status"] = "consumed"
 
 
 class BrowserTool:
-    """Allowlisted HTTPS browser boundary with injected transport for tests."""
+    """HTTPS-only, redirect-free browser boundary with bounded responses."""
 
-    def __init__(self, allowed_hosts: set[str], transport: Callable[[str], str] | None = None) -> None:
+    def __init__(
+        self,
+        allowed_hosts: set[str],
+        transport: Callable[[str, str, bytes | None], str] | None = None,
+        *,
+        max_response_bytes: int = 1_000_000,
+    ) -> None:
+        if not allowed_hosts or max_response_bytes <= 0:
+            raise ValueError("allowed_hosts and a positive response limit are required")
         self.allowed_hosts = {host.casefold() for host in allowed_hosts}
+        self.max_response_bytes = max_response_bytes
+        self._uses_default_transport = transport is None
         self.transport = transport or self._default_transport
 
-    @staticmethod
-    def _default_transport(url: str) -> str:
-        with urllib.request.urlopen(url, timeout=10) as response:
-            return response.read().decode("utf-8", errors="replace")
+    def _default_transport(self, method: str, url: str, body: bytes | None) -> str:
+        class NoRedirect(urllib.request.HTTPRedirectHandler):
+            def redirect_request(self, *args: object, **kwargs: object) -> None:
+                return None
+
+        request = urllib.request.Request(
+            url,
+            data=body if method == "POST" else None,
+            headers={"Accept": "application/json, text/plain"},
+            method=method,
+        )
+        opener = urllib.request.build_opener(NoRedirect)
+        with opener.open(request, timeout=10) as response:
+            content_type = response.headers.get_content_type()
+            if not (content_type.startswith("text/") or content_type == "application/json"):
+                raise ValueError(f"unsupported browser content type: {content_type}")
+            raw = response.read(self.max_response_bytes + 1)
+        if len(raw) > self.max_response_bytes:
+            raise ValueError("browser response exceeded the size limit")
+        return raw.decode("utf-8", errors="replace")
+
+    def _validate_url(self, url: str) -> None:
+        try:
+            parsed = urlparse(url)
+            port = parsed.port
+        except ValueError as error:
+            raise PermissionError("browser URL has an invalid authority") from error
+        hostname = (parsed.hostname or "").casefold()
+        if (
+            parsed.scheme != "https"
+            or port not in (None, 443)
+            or parsed.username is not None
+            or parsed.password is not None
+            or hostname not in self.allowed_hosts
+        ):
+            raise PermissionError("browser URL is outside the HTTPS allowlist")
+        if self._uses_default_transport:
+            try:
+                addresses = {
+                    item[4][0]
+                    for item in socket.getaddrinfo(hostname, 443, type=socket.SOCK_STREAM)
+                }
+            except OSError as error:
+                raise PermissionError("browser host resolution failed") from error
+            if not addresses:
+                raise PermissionError("browser host did not resolve")
+            for address in addresses:
+                ip = ipaddress.ip_address(address)
+                if not ip.is_global:
+                    raise PermissionError("browser host resolves to a non-public address")
 
     def get(self, url: str) -> str:
-        parsed = urlparse(url)
-        if parsed.scheme != "https" or (parsed.hostname or "").casefold() not in self.allowed_hosts:
-            raise PermissionError("browser URL is outside the HTTPS allowlist")
-        return self.transport(url)
+        self._validate_url(url)
+        return self.transport("GET", url, None)
 
-    def submit(self, url: str, approval_gate: ApprovalGate, request_id: str) -> str:
-        approval_gate.consume(request_id, "browser_submit", url)
-        return self.get(url)
+    @staticmethod
+    def approval_parameters(body: bytes) -> dict[str, object]:
+        return {"bytes": len(body), "sha256": hashlib.sha256(body).hexdigest()}
+
+    def submit(self, url: str, body: bytes, approval_gate: ApprovalGate, receipt: str) -> str:
+        self._validate_url(url)
+        approval_gate.consume(receipt, "browser_submit", url, self.approval_parameters(body))
+        return self.transport("POST", url, body)

@@ -1,4 +1,4 @@
-﻿---
+---
 type: study
 topic: "AI Agent评测与基准：任务、轨迹与成本"
 course: "AI Agent工程"
@@ -13,10 +13,9 @@ stage_moc: "[[🧭 阶段5-评测与生产运行]]"
 upstream: ["[[AI-Agent-环境交互-代码网页与沙箱执行]]", "[[AI-Agent-安全威胁建模与系统评测]]", "[[AI-Agent-规划状态与工作流编排]]"]
 flow: knowledge
 kind: concept
-assessment_exempt: false
 source: "Microsoft AI Agents for Beginners Lesson 10; Datawhale Hello-Agents Chapter 12; Berkeley Agentic AI F25 evaluation topics (verified 2026-08-06)"
 source_urls: ["https://github.com/microsoft/ai-agents-for-beginners/tree/main/10-ai-agents-production", "https://github.com/datawhalechina/hello-agents/tree/main/docs/chapter12"]
-accessed: 2026-08-06
+accessed: 2026-08-08
 license: "Microsoft MIT；Hello-Agents CC BY-NC-SA 4.0；Berkeley许可待核验；本卡为原创整合"
 anki_deck: "46-AI Agent工程::评测"
 anki_tags: [Agent评测, 轨迹, 基准, 成本]
@@ -133,6 +132,8 @@ print({"TSR": tsr, "ASR": asr, "P50_ms": median(latencies), "P95_ms": latencies[
 ```
 
 输入是逐样本记录；输出包含任务、安全和延迟指标。真实报告还需样本数、置信区间、版本与切片。
+
+本课程的固定回归集位于 `03-Projects/46-AI Agent工程/data/eval_cases.jsonl`，明确分成 20 条正常、10 条异常、10 条对抗样本。运行 `python -m scripts.run_eval` 会逐样本执行 runtime 和安全策略，输出状态、分数、工具轨迹、是否通过，并聚合 TSR、异常失败关闭率、ASR、ToolAcc、平均/P95 步数与成本代理到 `artifacts/eval/latest.json`。该结果只支持标准库离线控制面；真实模型仍须另建版本化在线 eval，不能把本地 `ASR=0` 外推到生产攻击面。
 
 ## 8. 常见误区和易混概念
 

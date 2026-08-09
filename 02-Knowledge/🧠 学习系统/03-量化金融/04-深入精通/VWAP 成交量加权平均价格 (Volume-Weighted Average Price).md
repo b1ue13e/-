@@ -3,7 +3,7 @@ title: VWAP 成交量加权平均价格 (Volume-Weighted Average Price)
 date: 2026-07-23
 type: study
 course: 量化金融
-stage_moc: '[[🧭 阶段4-微观结构执行与强化学习]]'
+stage_moc: '[[🧭 阶段4-微观结构与执行]]'
 tags:
 - 学习
 - 量化金融

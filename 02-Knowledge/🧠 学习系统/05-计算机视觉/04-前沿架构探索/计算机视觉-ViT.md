@@ -156,17 +156,17 @@ print(f"Tokens shape: {tokens.shape}")     # (4, 196, 768) — 196个"单词"
 ## 🧪 自测题
 
 1. **(基础)** ViT 把 224×224 图像切成 16×16 patch 后，序列长度是多少？
-   <details><summary>💡 提示</summary>224/16 = 14，14×14 = 196 个 patch。加上 CLS token 共 197 个 token。</details>
+   <details><summary>💡 思路</summary>先算一边能切出多少个 patch（边长 ÷ patch 边长），再平方；最后别忘了 ViT 额外拼接的那个分类 token。</details>
 
 2. **(中等)** ViT 在小数据集上不如 CNN，根本原因是什么？
-   <details><summary>💡 提示</summary>CNN 的卷积操作自带局部性和平移等变性（强归纳偏置），小数据即可学。ViT 的自注意力无此偏置，需要海量数据才能从零学到局部模式。</details>
+   <details><summary>💡 思路</summary>从「归纳偏置」切入：卷积天然假设了局部性与平移等变性，自注意力假设了什么？数据量少时缺少这些假设意味着模型要额外从数据里学什么。</details>
 
 3. **(较难)** ViT 的位置编码为什么是"可学习的"而非固定的（如 NLP 中的正弦位置编码）？两者有什么区别？
-   <details><summary>💡 提示</summary>图像 patch 之间的空间关系不像文本那样严格有序。可学习的位置编码允许模型自行发现"上下左右"的 2D 空间关系。实验表明 1D 可学习位置编码对图像同样有效。</details>
+   <details><summary>💡 思路</summary>对比文本与图像的位置结构：文本严格一维有序，图像是二维邻接。再想固定编码把哪种先验写死了，可学习编码又留出了什么自由度。</details>
 
 ---
 
-## 🧪 学完本节后可完成的作业
+## 🔀 学完本节后的横向连接
 
 - 配合 [[计算机视觉-SwinTransformer]] 理解层次化 ViT 的设计动机
 - 配合 [[计算机视觉-MAE]] 理解 ViT 的自监督预训练范式
@@ -174,9 +174,16 @@ print(f"Tokens shape: {tokens.shape}")     # (4, 196, 768) — 196个"单词"
 
 ## 学完后可以完成
 
-- 可作为 HW06 开放项目『ViT 小样本/微调实验』选题
+> 下列作业在 `requires` 中引用了本卡，由 Dataview 实时派生（非人工维护反向链接）：
 
-> 该卡无直接课后/阶段作业：以卡内自测题与闭卷复现作为形成性验收；如需综合实践，可挂靠 HW06 开放课程项目或 CAP01。
+```dataview
+LIST
+FROM "03-Projects"
+WHERE contains(requires, this.file.link)
+SORT assignment_level ASC, file.name ASC
+```
+
+本卡另以前置「🧪 自测题」与闭卷复现作为形成性验收。
 
 ## 🔗 知识图谱
 

@@ -7,16 +7,69 @@ assignment_id: "RL-HW05"
 assignment_level: lesson
 assignment_format: exercise
 stage_id: "06"
-requires:
-  - "[[Actor-Critic架构]]"
-  - "[[GAE广义优势估计]]"
-  - "[[优势-符号]]"
-  - "[[🧭 强化学习-前置知识]]"
 source_type: local_integration_task
+accessed: "2026-08-07"
+license: "[待验证]"
+source: "本课程（强化学习）自编形成性练习；非任何名校官方作业，不冒充官方。"
 created: 2026-08-07
 status: ongoing
 flow: project
 tags: [作业, 强化学习, 课后作业, Actor-Critic, GAE, 优势]
+requires:
+  - "[[Actor-Critic架构]]"
+  - "[[GAE广义优势估计]]"
+  - "[[优势估计]]"
+  - "[[🧭 强化学习-前置知识]]"
+  - "[[Critic网络]]"
+  - "[[TRPO信任域优化]]"
+  - "[[优势估计]]"
+  - "[[A3C算法]]"
+  - "[[TRPO与PPO对比]]"
+  - "[[Actor网络]]"
+  - "[[TRPO简介]]"
+  - "[[TRPO与PPO对比]]"
+  - "[[GAE-Lambda1]]"
+  - "[[GAE广义优势估计]]"
+  - "[[A3C算法]]"
+  - "[[Actor-Critic 与 PPO]]"
+  - "[[TRPO信任域优化]]"
+  - "[[A2C算法]]"
+  - "[[优势函数]]"
+  - "[[A2C算法]]"
+  - "[[优势估计]]"
+  - "[[Critic网络]]"
+  - "[[PPOvsTRPO-实现]]"
+  - "[[优势估计]]"
+  - "[[GAE-单步]]"
+  - "[[A2C算法]]"
+  - "[[优势-估计]]"
+  - "[[TRPO信任域优化]]"
+  - "[[SAC软Actor-Critic]]"
+  - "[[TRPO信任域优化]]"
+  - "[[策略评估]]"
+  - "[[GAE-公式]]"
+  - "[[A3C算法]]"
+  - "[[GAE-Lambda0]]"
+  - "[[Critic网络]]"
+  - "[[优势函数]]"
+  - "[[优势估计]]"
+  - "[[PPOvsTRPO-效果]]"
+  - "[[Actor网络]]"
+  - "[[A3C算法]]"
+  - "[[Actor网络]]"
+  - "[[TRPO与PPO对比]]"
+  - "[[Critic网络]]"
+  - "[[A2C算法]]"
+  - "[[GAE-Lambda]]"
+  - "[[A3C算法]]"
+  - "[[TRPO信任域优化]]"
+  - "[[GAE-Lambda95]]"
+  - "[[Actor网络]]"
+  - "[[TRPO与PPO对比]]"
+  - "[[PPOvsTRPO-效率]]"
+  - "[[PPOvsTRPO-约束]]"
+  - "[[A2C算法]]"
+  - "[[优势-方差]]"
 ---
 
 # 强化学习-课后作业-ActorCritic优势与GAE
@@ -28,7 +81,7 @@ tags: [作业, 强化学习, 课后作业, Actor-Critic, GAE, 优势]
 ## 1. 身份与边界
 
 - **身份**：强化学习课程课后作业（lesson 级），对应阶段 6（Actor-Critic）。
-- **对应知识**：`[[Actor-Critic架构]]`、`[[GAE广义优势估计]]`、`[[优势-符号]]`、`[[🧭 强化学习-前置知识]]`。
+- **对应知识**：`[[Actor-Critic架构]]`、`[[GAE广义优势估计]]`、`[[优势估计]]`、`[[🧭 强化学习-前置知识]]`。
 - **边界（允许 / 禁止）**：
   - ✅ 允许：纸笔推导 + 自写 A2C（actor + critic，numpy/torch）。
   - ❌ 禁止：直接调用 `sb3.A2C/PPO` 黑盒；禁止在 actor 损失里用 `Q` 而非 `A`（优势）导致尺度失衡。
@@ -155,7 +208,7 @@ assert abs(delta - 1.7) < 1e-9 and abs(actor_dir - 0.85) < 1e-9
 
 - **来源**：本作业为**课程自编形成性练习**（`source_type: local_integration_task`），非单一官方作业；题面与验收由本课程独立制定，参考 Sutton & Barto §13.5 与阶段 6 知识卡，未冒充官方作业。
 - **后续入口**：完成本作业即走完「基础→MDP→值函数→Q-Learning→策略梯度→Actor-Critic」全范式；下一步进入 `[[强化学习-阶段作业-HW02-DQN与PPO连续动作控制|阶段作业 HW02：DQN 与 PPO]]`（阶段 7）或 `[[强化学习-大作业-从表格Q学习到深度策略梯度|大作业：从表格 Q 到深度策略梯度]]`。
-- **复习卡**：`[[Actor-Critic架构]]`、`[[GAE广义优势估计]]`、`[[优势-符号]]`。
+- **复习卡**：`[[Actor-Critic架构]]`、`[[GAE广义优势估计]]`、`[[优势估计]]`。
 
 ---
 
@@ -167,3 +220,10 @@ assert abs(delta - 1.7) < 1e-9 and abs(actor_dir - 0.85) < 1e-9
 - A：`A` 以 0 为中心，只表达「该动作相对平均水平的优劣」，消除状态绝对价值的尺度影响，梯度更稳定；且 `E_a[A]=0` 自带基线效果。
 - Q：GAE 的 `λ` 控制什么？
 - A：`A_t^{GAE}=Σ_l (γλ)^l δ_{t+l}`。`λ→0` 用单步 TD 优势（低方差、高偏差）；`λ→1` 趋近 Monte Carlo（低偏差、高方差）；`λ` 在二者间折中。
+
+
+## 来源声明（诚实标注）
+
+本作业 `source_type: local_integration_task`，为**本课程（强化学习）自编形成性练习**。
+- 诚实说明：非任何名校官方作业，不冒充官方题面；题面与验收由本课程独立制定。
+- 许可：[待验证]；访问日期 2026-08-07。

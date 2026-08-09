@@ -1,4 +1,4 @@
-﻿---
+---
 type: study
 topic: "AI Agent规划状态与工作流编排"
 course: "AI Agent工程"
@@ -13,7 +13,6 @@ stage_moc: "[[🧭 阶段2-运行时规划与状态]]"
 upstream: ["[[AI-Agent-框架选型与最小运行时]]"]
 flow: knowledge
 kind: concept
-assessment_exempt: false
 source: "UC Berkeley CS 194/294-196 F24 StateFlow and Lab 01; Microsoft AI Agents for Beginners Lesson 7; Datawhale Hello-Agents Chapters 4.3 and 7"
 source_urls: ["https://github.com/microsoft/ai-agents-for-beginners/tree/main/07-planning-design", "https://github.com/datawhalechina/hello-agents/tree/main/docs/chapter4", "https://github.com/datawhalechina/hello-agents/tree/main/docs/chapter7"]
 accessed: 2026-08-06

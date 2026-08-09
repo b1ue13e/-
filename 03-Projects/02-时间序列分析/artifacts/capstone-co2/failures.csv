@@ -1,2 +1,4 @@
 split,origin,model,error
+validation,1998-10-01,arima,RuntimeError('ARIMA optimizer did not converge')
+validation,1999-04-01,arima,RuntimeError('ARIMA optimizer did not converge')
 validation,1999-10-01,arima,LinAlgError('LU decomposition error.')

@@ -1,0 +1,39 @@
+{
+  "dataset": "statsmodels macrodata",
+  "source_url": "https://www.statsmodels.org/stable/datasets/generated/macrodata.html",
+  "license": "public domain",
+  "source_observations": 203,
+  "transformed_observations": 198,
+  "target": "400 * log(real GDP).diff()",
+  "frequency": "quarterly",
+  "forecast_horizon": 1,
+  "feature_timing": "all non-calendar predictors are lagged at least one quarter",
+  "models": [
+    "naive",
+    "ar",
+    "arimax",
+    "var",
+    "state_space",
+    "ml_lag"
+  ],
+  "validation_origins": 16,
+  "validation_start": "2001Q4",
+  "validation_end": "2005Q3",
+  "test_origins": 16,
+  "test_start": "2005Q4",
+  "test_end": "2009Q3",
+  "selection_policy": "complete every validation origin with zero failures, then minimize validation RMSE",
+  "selected_on_validation": "var",
+  "final_test_models": [
+    "naive",
+    "var"
+  ],
+  "seed": 20260807,
+  "command": "python scripts/run_stage5_extensions.py",
+  "versions": {
+    "numpy": "2.4.6",
+    "pandas": "3.0.3",
+    "scikit-learn": "1.8.0",
+    "statsmodels": "0.14.6"
+  }
+}

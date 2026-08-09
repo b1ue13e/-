@@ -6,6 +6,10 @@ import ast
 from collections import defaultdict
 from pathlib import Path
 import re
+import sys
+
+if hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8")
 
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
@@ -16,7 +20,7 @@ if (PROJECT_ROOT.parent / "knowledge").is_dir():
     SNAPSHOT_MODE = True
 else:
     REPO_ROOT = PROJECT_ROOT.parents[1]
-    KNOWLEDGE_ROOT = REPO_ROOT / "02-Knowledge" / "02-Knowledge/🧠 学习系统" / "46-AI Agent工程"
+    KNOWLEDGE_ROOT = REPO_ROOT / "02-Knowledge/🧠 学习系统/46-AI Agent工程"
     MARKDOWN_ROOTS = (REPO_ROOT / "02-Knowledge", REPO_ROOT / "03-Projects")
     SNAPSHOT_MODE = False
 ASSIGNMENT_DIRS = {
@@ -38,7 +42,6 @@ STUDY_FIELDS = {
     "stage_moc",
     "flow",
     "kind",
-    "assessment_exempt",
     "source",
     "source_urls",
     "accessed",
@@ -62,8 +65,8 @@ FORBIDDEN_NAMES = {"李宏毅式", "李宏毅-CMU模式", "4-Tier", "Boss Baseli
 
 
 def parse_frontmatter(path: Path) -> dict[str, str]:
-    lines = path.read_text(encoding="utf-8").splitlines()
-    if not lines or lines[0] != "---":
+    lines = path.read_text(encoding="utf-8-sig").splitlines()
+    if not lines or lines[0].lstrip("\ufeff") != "---":
         return {}
     fields: dict[str, str] = {}
     for line in lines[1:]:
@@ -73,6 +76,25 @@ def parse_frontmatter(path: Path) -> dict[str, str]:
         if match:
             fields[match.group(1)] = match.group(2).strip()
     return {}
+
+
+def duplicate_frontmatter_keys(path: Path) -> list[str]:
+    lines = path.read_text(encoding="utf-8-sig").splitlines()
+    if not lines or lines[0].lstrip("\ufeff") != "---":
+        return []
+    seen: set[str] = set()
+    duplicates: set[str] = set()
+    for line in lines[1:]:
+        if line == "---":
+            break
+        match = re.match(r"^([A-Za-z_]+):\s*", line)
+        if not match:
+            continue
+        key = match.group(1)
+        if key in seen:
+            duplicates.add(key)
+        seen.add(key)
+    return sorted(duplicates)
 
 
 def parse_list(value: str) -> list[str]:
@@ -139,6 +161,7 @@ def main() -> int:
         errors.append(f"阶段 MOC 应为 7 个，实际为 {len(stage_mocs)}")
 
     current_markdown = active_markdown(KNOWLEDGE_ROOT) + active_markdown(PROJECT_ROOT)
+    current_set = set(current_markdown)
     all_markdown = [path for root in MARKDOWN_ROOTS for path in active_markdown(root)]
     by_stem: dict[str, list[Path]] = defaultdict(list)
     normalized_paths: dict[Path, str] = {}
@@ -149,6 +172,9 @@ def main() -> int:
     for path in current_markdown:
         text = path.read_text(encoding="utf-8")
         link_text = without_fenced_code(text)
+        duplicate_keys = duplicate_frontmatter_keys(path)
+        if duplicate_keys:
+            errors.append(f"{path.name} 的 frontmatter 含重复字段: {duplicate_keys}")
         if h1_count(text) != 1:
             errors.append(f"{path.name} 应恰有一个代码围栏外 H1")
         h1 = next((line for line in text.splitlines() if line.startswith("# ")), "")
@@ -161,8 +187,15 @@ def main() -> int:
             target = raw_target.rstrip("\\").replace("\\|", "|")
             if "/" not in target:
                 candidates = by_stem.get(target, [])
+                local_candidates = [candidate for candidate in candidates if candidate in current_set]
+                if len(local_candidates) == 1:
+                    candidates = local_candidates
             else:
                 normalized_target = target.strip("/")
+                if normalized_target.startswith("02-Knowledge/") or normalized_target.startswith("03-Projects/"):
+                    normalized_target = normalized_target
+                else:
+                    normalized_target = normalized_target.replace("02-Knowledge/🧠 学习系统/", "")
                 candidates = [
                     candidate
                     for candidate, normalized in normalized_paths.items()

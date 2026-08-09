@@ -11,17 +11,7 @@ requires: ["[[AI-Agent-多智能体协作与消息协议]]", "[[AI-Agent-协议-
 source_type: local_integration_task
 source: "课程原创任务；概念对齐官方 MCP/A2A 规范与 Microsoft Lessons 8/11/15"
 source_url: "https://modelcontextprotocol.io/docs/learn/architecture"
-accessed: 2026-08-06
-license: "任务文本原创；协议与课程材料按各自许可；实现为本地模拟而非官方SDK兼容声明"
-assignment_id: "AI-Agent工程-S04"
-assignment_level: stage
-assignment_format: lab
-stage_id: "04"
-requires: ["[[AI-Agent-多智能体协作与消息协议]]", "[[AI-Agent-协议-MCP与A2A互操作]]", "[[AI-Agent-安全威胁建模与系统评测]]", "[[AI-Agent-环境交互-代码网页与沙箱执行]]"]
-source_type: local_integration_task
-source: "课程原创任务；概念对齐官方 MCP/A2A 规范与 Microsoft Lessons 8/11/15"
-source_url: "https://modelcontextprotocol.io/docs/learn/architecture"
-accessed: 2026-08-06
+accessed: 2026-08-08
 license: "任务文本原创；协议与课程材料按各自许可；实现为本地模拟而非官方SDK兼容声明"
 created: 2026-08-06
 status: planned
@@ -90,6 +80,13 @@ class TaskState(Enum):
 4. **任务取消重放**：对已取消的 `CANCELED` 任务再次发送更新指令被拒绝。
 
 ---
+
+## 任务分层
+
+- **基础要求**：本地工具与远程任务委托分层，路径/网络/审批边界有正常和拒绝测试，未配置 transport 时不伪报提交成功。
+- **必要提示**：课程 `TaskTransport` 只验证接口边界；MCP/A2A conformance 必须另按官方 schema 与 transport 测试。
+- **常见错误**：把 Agent Card 当授权、允许重定向绕过 host allowlist、用布尔审批执行写操作。
+- **可选进阶**：实现官方版本锁定的协议 adapter 和回环 server；必须标明规范版本和未覆盖能力。
 
 ## 🛠️ 环境与复现
 

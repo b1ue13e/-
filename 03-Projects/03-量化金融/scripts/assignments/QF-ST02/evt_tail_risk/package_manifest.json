@@ -1,0 +1,11 @@
+{
+  "id": "QF-ST02-EVT",
+  "assignment_id": "QF-ST02",
+  "slug": "evt_tail_risk",
+  "title": "POT/GPD 尾部风险估计",
+  "stage": "02",
+  "smoke_data_dir": "data/smoke/evt_tail_risk",
+  "real_files": ["returns.csv"],
+  "baseline": "历史 VaR/ES 与 POT/GPD 对照",
+  "next_step": "冻结阈值选择规则，在训练段拟合 GPD，并在样本外报告阈值敏感性。"
+}

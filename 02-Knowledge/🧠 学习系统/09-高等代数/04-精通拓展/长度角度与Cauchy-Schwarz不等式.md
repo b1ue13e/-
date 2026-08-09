@@ -30,13 +30,13 @@ tags: [高等代数, 线性代数, 范数, Cauchy-Schwarz]
 
 ## 1. 这个知识点解决什么问题？
 
-内积（4.1）定义了配对运算，本卡把它"翻译"成几何语言：**范数**（长度）$\lVert\mathbf{u}\rVert=\sqrt{\langle\mathbf{u},\mathbf{u}\rangle}$ 与**夹角** $\cos\theta=\langle\mathbf{u},\mathbf{v}\rangle/(\lVert\mathbf{u}\rVert\lVert\mathbf{v}\rVert)$。夹角公式有意义的**前提**是 $|\cos\theta|\le1$——这正是 **Cauchy-Schwarz 不等式**：$|\langle\mathbf{u},\mathbf{v}\rangle|\le\lVert\mathbf{u}\rVert\lVert\mathbf{v}\rVert$。
+内积定义了配对运算，本卡把它"翻译"成几何语言：**范数**（长度）$\lVert\mathbf{u}\rVert=\sqrt{\langle\mathbf{u},\mathbf{u}\rangle}$ 与**夹角** $\cos\theta=\langle\mathbf{u},\mathbf{v}\rangle/(\lVert\mathbf{u}\rVert\lVert\mathbf{v}\rVert)$。夹角公式有意义的**前提**是 $|\cos\theta|\le1$——这正是 **Cauchy-Schwarz 不等式**：$|\langle\mathbf{u},\mathbf{v}\rangle|\le\lVert\mathbf{u}\rVert\lVert\mathbf{v}\rVert$。
 
 ## 2. 它为什么重要？它有什么用？
 
 - **三角不等式**：$\lVert\mathbf{u}+\mathbf{v}\rVert\le\lVert\mathbf{u}\rVert+\lVert\mathbf{v}\rVert$（C-S 的推论）——度量空间公理。
 - **夹角定义合法化**：$\cos\theta$ 有界 ⟹ 角度有意义。
-- **投影公式**：$\operatorname{proj}_\mathbf{v}\mathbf{u}=\frac{\langle\mathbf{u},\mathbf{v}\rangle}{\lVert\mathbf{v}\rVert^2}\mathbf{v}$（4.4）。
+- **投影公式**：$\operatorname{proj}_\mathbf{v}\mathbf{u}=\frac{\langle\mathbf{u},\mathbf{v}\rangle}{\lVert\mathbf{v}\rVert^2}\mathbf{v}$。
 - **应用**：相关系数（$|\rho|\le1$）、Holder/Minkowski 不等式（$L^p$ 空间）、机器学习相似度。
 
 ## 3. 学它之前需要哪些前置知识？
@@ -94,7 +94,7 @@ $\lVert\mathbf{x}\rVert_2=\sqrt{\sum x_i^2}$（Euclid）；$\lVert\mathbf{x}\rVe
 
 ### 反例 1：$l^1$ 范数不满足平行四边形恒等式
 
-$\lVert(1,0)\rVert_1+\lVert(0,1)\rVert_1$ 检验平行四边形失败 ⟹ 无内积诱导（4.1 反例 1 回看）。
+$\lVert(1,0)\rVert_1+\lVert(0,1)\rVert_1$ 检验平行四边形失败 ⟹ 无内积诱导（反例 1 回看）。
 
 ### 反例 2：C-S 等号在相关时取到
 
@@ -117,8 +117,8 @@ $\lVert(x,y)\rVert_\infty=\max(|x|,|y|)$ 满足范数公理但无内积（平行
 ## 9. 相关知识点与 Obsidian 双链建议
 
 - [[内积的定义与性质|内积的定义与性质]] — 上游
-- [[正交与正交补|正交与正交补]] — 下游：夹角 90° 特例
-- [[正交投影与正交分解|正交投影与正交分解]] — 下游：投影公式
+- [[正交与正交补|正交与正交补]]
+- [[正交投影与正交分解|正交投影与正交分解]]
 - [[正交矩阵与正交变换|正交矩阵]] — 横向：保内积的变换
 - 矩阵范数（数值补充）— 横向：范数的矩阵版本
 
@@ -135,23 +135,20 @@ $\lVert(x,y)\rVert_\infty=\max(|x|,|y|)$ 满足范数公理但无内积（平行
 |:--|:--|:--|
 | ★ | 求 $\mathbf{u}=(1,2,2)$ 的范数与 $\mathbf{u},(1,0,0)$ 的夹角 | Hefferon §6.1 |
 | ★★ | 证明 $\lvert\langle\mathbf{u},\mathbf{v}\rangle\rvert^2\le\langle\mathbf{u},\mathbf{u}\rangle\langle\mathbf{v},\mathbf{v}\rangle$（展开 $\lVert\mathbf{u}+t\mathbf{v}\rVert^2\ge0$） | MIT 18.06 Lec 14 |
-| ★★★ | 证明三角不等式并说明等号条件（共线同向） | 高等代数（第5版）[待验证] |
+| ★★★ | 证明三角不等式并说明等号条件（共线同向） | 本地融合习题（参考高等代数第5版，题号待补） |
 | ★★★★ | 证明极化恒等式并由此说明 $l^1$ 无内积 | Hefferon §6.1 |
 
 ## 12. 我的主动回忆区
 
-<details>
-<summary>🔄 核对要点（先默写，再展开比对）</summary>
+> 闭卷检索：先自己写答案，再回头核对「闭卷验收」一节。下面只给线索，不给答案。
+>
+> **① 情境反推**：为什么「夹角余弦」的定义必须先有一条不等式撑腰？没有它，反余弦会遇到什么问题？
+>
+> **② 易错辨析**：该不等式取等号的充要条件是什么？三角不等式与它的推导先后顺序为何不能颠倒？
+>
+> **③ 迁移应用**：把该不等式搬到积分内积上，写出对应的积分形式不等式。
 
-
-- [ ] **定义默写**：范数、夹角、C-S 不等式。
-- [ ] **证明**：C-S（判别式法与投影法）；三角不等式。
-- [ ] **计算**：给向量算长度、夹角、投影长度。
-- [ ] **反例**：非内积范数；等号条件。
-
-</details>
-
-> 不看上文：写 C-S 与两种证明；三角不等式；夹角公式；举非内积范数。
+⏱ **间隔复习节奏**：学完当天 → 次日 → 第 7 天 → 第 30 天，各闭卷重做一次本区；每轮只回读「写不出来」的那一条对应正文，写得出来的不再重读。
 
 ## 13. 学完后可以完成
 
@@ -164,4 +161,3 @@ SORT assignment_level ASC, file.name ASC
 
 ---
 *创建于：2026-08-06 | 来源：Hefferon Ch.6 §6.1 + MIT 18.06SC Lec 14 + 高等代数（第5版）；旧空壳（长度与角度）于 2026-08-06 重写*
-

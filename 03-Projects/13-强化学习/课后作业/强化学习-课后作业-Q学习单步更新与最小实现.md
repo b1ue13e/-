@@ -7,16 +7,41 @@ assignment_id: "RL-HW03"
 assignment_level: lesson
 assignment_format: exercise
 stage_id: "04"
+source_type: local_integration_task
+accessed: "2026-08-07"
+license: "[待验证]"
+source: "本课程（强化学习）自编形成性练习；非任何名校官方作业，不冒充官方。"
+created: 2026-08-07
+status: ongoing
+flow: project
+tags: [作业, 强化学习, 课后作业, Q-Learning, SARSA, TD]
 requires:
   - "[[时序差分与 Q-Learning]]"
   - "[[SARSA-更新]]"
   - "[[探索与利用]]"
   - "[[🧭 强化学习-前置知识]]"
-source_type: local_integration_task
-created: 2026-08-07
-status: ongoing
-flow: project
-tags: [作业, 强化学习, 课后作业, Q-Learning, SARSA, TD]
+  - "[[TD-0]]"
+  - "[[QLvsSARSA-策略]]"
+  - "[[QLvsSARSA-目标]]"
+  - "[[QL-更新]]"
+  - "[[局限-连续动作]]"
+  - "[[SARSA-同策略]]"
+  - "[[TD-自举]]"
+  - "[[QL-收敛]]"
+  - "[[局限-连续状态]]"
+  - "[[TD-采样]]"
+  - "[[QL-异策略]]"
+  - "[[QLvsSARSA-风险]]"
+  - "[[SARSA-名称]]"
+  - "[[QL-最大化偏差]]"
+  - "[[局限-离散限制]]"
+  - "[[局限-维度灾难]]"
+  - "[[TD-误差]]"
+  - "[[TD0对比]]"
+  - "[[MC方法]]"
+  - "[[SARSA-收敛]]"
+  - "[[QLvsSARSA-应用]]"
+  - "[[DP方法]]"
 ---
 
 # 强化学习-课后作业-Q学习单步更新与最小实现
@@ -173,3 +198,10 @@ assert abs(Q - 0.4) < 1e-9   # Q-Learning 单步结果
 - A：SARSA 的更新用**实际**会走的下一步动作，其中包含「踩到悬崖」的危险动作，于是把靠近悬崖的状态估值压低、学到远离悬崖的安全路径；Q-Learning 用 `max`，忽视该危险动作，路径更近但训练中可能真掉崖。
 - Q：Q-Learning 为何是 off-policy？
 - A：行为策略是 ε-greedy（用于采样），但学习目标是贪心 `max`，直接估计最优动作值；行为策略只影响采到的样本，不影响被学习的策略。
+
+
+## 来源声明（诚实标注）
+
+本作业 `source_type: local_integration_task`，为**本课程（强化学习）自编形成性练习**。
+- 诚实说明：非任何名校官方作业，不冒充官方题面；题面与验收由本课程独立制定。
+- 许可：[待验证]；访问日期 2026-08-07。

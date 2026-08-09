@@ -14,8 +14,9 @@ source_course: "Stanford CS231n 2025 (Assignment 1)"
 adapted_from: "CS231n A1 Q1 (kNN) 与 Q3 (Softmax)；本地为原创规格 + 非官方中文版"
 license: "link-only；本地作业包为原创规格，官方题目/Starter 不复制"
 created: 2026-08-06
-updated: 2026-08-07
-status: planned
+updated: 2026-08-08
+status: verified
+execution_evidence: "2026-08-08 实际执行：pytest test_hw01_cifar10_knn_softmax.py 1 passed（smoke 管线：starter/run.py 在 smoke 数据上跑通 kNN+Softmax 基线，输出 summary.json，knn/softmax 准确率阈值 ≥0.5 通过）；配套 test_prereq_cv.py 6 passed + test_cv_course_integrity.py 1 passed。真实 CIFAR-10 npz 数据未就绪，smoke 阶段验证通过，完整训练待数据落地。"
 flow: project
 tags: [作业, 计算机视觉, kNN, Softmax]
 ---

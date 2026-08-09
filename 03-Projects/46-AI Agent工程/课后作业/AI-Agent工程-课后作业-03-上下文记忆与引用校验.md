@@ -12,17 +12,6 @@ source_type: local_integration_task
 source: "课程原创任务；对齐 Microsoft Lessons 5/9/12/13 与 Hello-Agents Chapters 4/8/9"
 source_url: "https://github.com/microsoft/ai-agents-for-beginners/tree/main/12-context-engineering"
 accessed: 2026-08-06
-license: "任务文本原创；Microsoft MIT；Hello-Agents CC BY-NC-SA 4.0"
-assignment_id: "AI-Agent工程-L03"
-assignment_level: lesson
-assignment_format: lab
-stage_id: "03"
-requires: ["[[AI-Agent-上下文工程-选择压缩隔离]]", "[[AI-Agent-记忆与检索增强生成]]", "[[AI-Agent-反思与元认知-校验修正停止]]"]
-source_type: local_integration_task
-source: "课程原创任务；对齐 Microsoft Lessons 5/9/12/13 与 Hello-Agents Chapters 4/8/9"
-source_url: "https://github.com/microsoft/ai-agents-for-beginners/tree/main/12-context-engineering"
-accessed: 2026-08-06
-license: "任务文本原创；Microsoft MIT；Hello-Agents CC BY-NC-SA 4.0"
 created: 2026-08-06
 status: planned
 flow: project
@@ -86,6 +75,13 @@ class ContextChunk:
 - 若第 2 轮修正后仍有引用无法通过校验，触发降级保护，输出 `STATUS: DEGRADED_INSUFFICIENT_EVIDENCE` 并保留已有合法摘要。
 
 ---
+
+## 任务分层
+
+- **基础要求**：上下文预算、可信/不可信分区、证据 ID 和确定性引用支持校验均有失败样本。
+- **必要提示**：先做可解释的 extractive support 检查；词面交集只能作为召回信号，不能直接判定事实被支持。
+- **常见错误**：引用 ID 存在就通过、把网页指令混入系统规则、压缩后丢失来源定位。
+- **可选进阶**：增加人工抽检或校准后的语义判别器；必须保留规则校验结果作为独立证据。
 
 ## 🛠️ 环境与复现
 

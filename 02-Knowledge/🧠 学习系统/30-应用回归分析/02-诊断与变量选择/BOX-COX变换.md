@@ -1,9 +1,9 @@
-﻿---
+---
 type: study
 topic: BOX-COX变换
 created: 2026-04-16
-updated: 2026-08-05
-status: completed
+updated: 2026-08-09
+status: ongoing
 difficulty: intermediate
 flow: knowledge
 kind: concept
@@ -20,13 +20,19 @@ anki_deck: "30-应用回归分析::应用回归分析"
 anki_tags:
 - 30-应用回归分析
 - 应用回归分析
+course: "30-应用回归分析"
+stage_moc: "[[🧭 阶段2-诊断与变量选择]]"
+upstream: ["[[异方差]]"]
+source_url: "https://online.stat.psu.edu/stat462/"
+accessed: 2026-08-09
+license: "link-only；具体许可 [待验证]"
 ---
 
 # BOX-COX 变换
 
 > 所属模块：[[🗺️ 应用回归分析学习路径|应用回归分析]]
-> 主教材：[[应用回归分析-第5版|应用回归分析（第5版）]]
-> 对应阶段：[[🔍 第二阶段：诊断与变量选择|返回阶段页]]
+> 主教材：[[02-Knowledge/📚 书库/书籍笔记/应用回归分析-第5版|应用回归分析（第5版）]]
+> 对应阶段：[[🧭 阶段2-诊断与变量选择|返回阶段页]]
 
 ---
 
@@ -311,14 +317,14 @@ print(model_bc.summary())
 - [[异方差]]：Box-Cox 变换常用于稳定异方差，特别是在方差随均值增大而增大的"喇叭形"模式中。
 
 ### 下游延伸
-- [[待创建:Yeo-Johnson 变换]]：Box-Cox 的扩展，允许 $y$ 为负值或零。在数据预处理中更通用。
-- [[待创建:广义线性模型 (GLM)]]：Box-Cox 变换的"现代替代"—— GLM 通过链接函数而非数据变换来处理非正态响应。
+- Yeo-Johnson 变换：Box-Cox 的扩展，允许 $y$ 为负值或零。在数据预处理中更通用。
+- [[应用回归分析-广义线性模型框架]]：Box-Cox 变换的"现代替代"—— GLM 通过链接函数而非数据变换来处理非正态响应。
 
 ### 横向关联
-- [[加权最小二乘]] ↔ [[Box-Cox 变换]]：两者都是处理异方差的方法。Box-Cox 通过变换 $y$ 来稳定方差，加权最小二乘通过给不同观测分配不同权重来处理已知方差结构。
+- [[多元加权最小二乘估计]] ↔ [[BOX-COX变换]]：两者都是处理异方差的方法。Box-Cox 通过变换 $y$ 来稳定方差，加权最小二乘通过给不同观测分配不同权重来处理已知方差结构。
 
 ### 应用场景
-- [[待创建:房价预测建模]]：房价数据通常右偏，Box-Cox 变换是房价预测比赛（如 Kaggle 房价预测）的标准预处理步骤。
+- 房价预测建模：房价数据通常右偏，Box-Cox 变换是房价预测比赛（如 Kaggle 房价预测）的标准预处理步骤。
 
 ---
 
@@ -407,3 +413,12 @@ print(model_bc.summary())
 - **关联已有笔记**：`[[最小二乘估计]]` `[[残差分析]]` `[[异方差]]` `[[加权最小二乘]]` `[[自变量选择]]`
 - **建议标签**：`#学习` `#30-应用回归分析` `#Box-Cox变换`
 - **拆分建议**：暂不需要拆分。若需深入可拆分"Yeo-Johnson 变换"和"广义线性模型"为独立笔记。
+
+## 学完后可以完成
+
+```dataview
+LIST
+FROM "03-Projects"
+WHERE contains(requires, this.file.link)
+SORT assignment_level ASC, file.name ASC
+```

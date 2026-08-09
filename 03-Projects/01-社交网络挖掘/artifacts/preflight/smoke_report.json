@@ -1,0 +1,24 @@
+{
+  "python": "3.11.9",
+  "numpy": "2.4.6",
+  "networkx": "3.6.1",
+  "checks": {
+    "karate_nodes": 34,
+    "karate_edges": 78,
+    "directed_scc": [
+      [
+        4
+      ],
+      [
+        0,
+        1
+      ],
+      [
+        2,
+        3
+      ]
+    ],
+    "directed_selfloops": 1,
+    "transition_rows_sum_to_one": true
+  }
+}

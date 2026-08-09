@@ -1,4 +1,4 @@
-﻿---
+---
 type: study
 topic: "AI Agent协议：MCP与A2A互操作"
 course: "AI Agent工程"
@@ -13,10 +13,9 @@ stage_moc: "[[🧭 阶段4-协作协议与环境]]"
 upstream: ["[[AI-Agent-多智能体协作与消息协议]]", "[[AI-Agent-工具调用与结构化契约]]"]
 flow: knowledge
 kind: concept
-assessment_exempt: false
 source: "Microsoft AI Agents for Beginners Lesson 11; Datawhale Hello-Agents Chapter 10; official MCP and A2A specifications (verified 2026-08-06)"
 source_urls: ["https://github.com/microsoft/ai-agents-for-beginners/tree/main/11-agentic-protocols", "https://github.com/datawhalechina/hello-agents/tree/main/docs/chapter10", "https://modelcontextprotocol.io/docs/learn/architecture", "https://a2a-protocol.org/latest/topics/key-concepts/"]
-accessed: 2026-08-06
+accessed: 2026-08-08
 license: "Microsoft MIT；Hello-Agents CC BY-NC-SA 4.0；协议规范按各站点许可；本卡为原创整合"
 anki_deck: "46-AI Agent工程::协议互操作"
 anki_tags: [MCP, A2A, Agent协议, 互操作]
@@ -153,7 +152,7 @@ task.artifacts.append({"id": "report-1", "source_ids": ["doc-7"]})
 print(task)
 ```
 
-这是概念模型，不冒充任何官方 SDK。它演示本地策略、声明能力、任务状态和 artifact 的分离。
+这是概念模型，不冒充任何官方 SDK。它演示本地策略、声明能力、任务状态和 artifact 的分离。课程代码 `scripts/curriculum_labs.py::delegate` 进一步把 transport 抽成协议：未配置 transport 时只能返回 `planned`，只有 transport 返回匹配的 `task_id` 与合法状态后才接受回执。这仍不是 A2A 兼容性声明；协议兼容必须对照官方 schema、transport、认证和 conformance 测试单独验收。
 
 ## 8. 常见误区和易混概念
 
@@ -175,7 +174,8 @@ print(task)
 - **Hello-Agents Chapter 10**：MCP/A2A/ANP 的客户端、传输、服务发现和自建服务实践。
 - **官方 MCP 架构**：<https://modelcontextprotocol.io/docs/learn/architecture>
 - **官方 A2A 核心概念**：<https://a2a-protocol.org/latest/topics/key-concepts/>
-- 教材中的具体 SDK/API 仅作为当时版本案例；字段与传输以调用时的官方规范为准。
+- **本次核验版本**：MCP protocol revision `2025-06-18`；A2A specification `0.3.0`，核验日期 `2026-08-08`。
+- 教材中的具体 SDK/API 仅作为当时版本案例；字段与传输以调用时的官方规范为准。本课程 transport interface 只验收边界设计，不声称通过官方 conformance。
 
 ## 10. 闭卷复现任务
 

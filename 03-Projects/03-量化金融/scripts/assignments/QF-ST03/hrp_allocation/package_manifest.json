@@ -1,0 +1,11 @@
+{
+  "id": "QF-ST03-HRP",
+  "assignment_id": "QF-ST03",
+  "slug": "hrp_allocation",
+  "title": "HRP 分层风险平价",
+  "stage": "03",
+  "smoke_data_dir": "data/smoke/hrp_allocation",
+  "real_files": ["asset_returns.csv"],
+  "baseline": "层次聚类、准对角化与递归二分",
+  "next_step": "冻结距离与联结方法，和 1/N、GMV 在同一训练/测试边界下比较。"
+}

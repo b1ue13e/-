@@ -1,4 +1,4 @@
-﻿---
+---
 type: study
 topic: "AI Agent上下文工程：选择、压缩与隔离"
 course: "AI Agent工程"
@@ -13,7 +13,6 @@ stage_moc: "[[🧭 阶段3-上下文记忆与校验]]"
 upstream: ["[[AI-Agent-规划状态与工作流编排]]"]
 flow: knowledge
 kind: concept
-assessment_exempt: false
 source: "Microsoft AI Agents for Beginners Lesson 12; Datawhale Hello-Agents Chapter 9 (repositories verified 2026-08-06)"
 source_urls: ["https://github.com/microsoft/ai-agents-for-beginners/tree/main/12-context-engineering", "https://github.com/datawhalechina/hello-agents/tree/main/docs/chapter9"]
 accessed: 2026-08-06

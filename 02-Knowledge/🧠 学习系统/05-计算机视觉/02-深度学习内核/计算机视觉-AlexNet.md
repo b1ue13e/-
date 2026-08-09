@@ -511,9 +511,16 @@ Flatten 前特征图: torch.Size([2, 256, 6, 6])
 
 ## 学完后可以完成
 
-- 结合 HW03 理解 CNN 架构演进；完成卡内自测与复现
+> 下列作业在 `requires` 中引用了本卡，由 Dataview 实时派生（非人工维护反向链接）：
 
-> 该卡无直接课后/阶段作业：以卡内自测题与闭卷复现作为形成性验收；如需综合实践，可挂靠 HW06 开放课程项目或 CAP01。
+```dataview
+LIST
+FROM "03-Projects"
+WHERE contains(requires, this.file.link)
+SORT assignment_level ASC, file.name ASC
+```
+
+本卡另以前置「🧪 自测题」与闭卷复现作为形成性验收。
 
 ## 🔗 知识图谱
 

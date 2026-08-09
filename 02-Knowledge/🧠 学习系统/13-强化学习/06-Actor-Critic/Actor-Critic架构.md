@@ -9,7 +9,7 @@ flow: knowledge
 kind: concept
 difficulty: intermediate
 concept: ["Actor-Critic 架构", "Actor-Critic", "优势函数", "TD误差"]
-upstream: ["[[PG-梯度]]", "[[V函数-定义]]", "[[Q函数-定义]]", "[[优势-定义]]"]
+upstream: ["[[策略梯度]]", "[[V函数（状态价值函数）]]", "[[Q函数（动作价值函数）]]", "[[优势函数]]"]
 tags: [学习, 强化学习]
 ---
 > 所属模块：[[🗺️ 强化学习学习路径|强化学习学习路径]]

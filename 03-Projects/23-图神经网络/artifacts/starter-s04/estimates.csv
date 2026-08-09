@@ -1,0 +1,4 @@
+nodes,edges,hidden_dim,dense_score_elements,sparse_score_elements,dense_score_bytes,sparse_score_bytes,dense_attention_main_ops,sparse_attention_main_ops
+1000,5000,64,1000000,5000,4000000,20000,64000000,320000
+100000,1000000,64,10000000000,1000000,40000000000,4000000,640000000000,64000000
+100,0,64,10000,0,40000,0,640000,0

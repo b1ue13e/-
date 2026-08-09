@@ -82,6 +82,33 @@ $$\hat{\theta}_{\text{MAP}} = \arg\max_\theta [\log P(D|\theta) + \log P(\theta)
 
 其中 $\log P(\theta)$ 正是 L2 正则化（当先验为高斯分布时）或 L1 正则化（当先验为拉普拉斯分布时）的等价形式。
 
+### 3.4 可运行示例：从数据计算后验
+
+把 §2 的医学检测与 §3.3 的 MAP 公式落成可验证代码（NumPy，无外部依赖）：
+
+```python
+import numpy as np
+
+# (1) 医学检测后验：复现 §2，验证 P(D|+) ≈ 0.167
+p_pos_given_D, p_D = 0.99, 0.01
+p_pos_given_notD, p_notD = 0.05, 1 - p_D
+p_D_given_pos = (p_pos_given_D * p_D) / (p_pos_given_D * p_D + p_pos_given_notD * p_notD)
+print(f"P(D|+) = {p_D_given_pos:.4f}")   # ≈ 0.1670
+
+# (2) 一维高斯 MAP：先验 N(0, sigma_p^2)，似然 N(theta, sigma_l^2)
+#     theta_MAP = (n / (n + sigma_l^2/sigma_p^2)) * theta_MLE
+sigma_p, sigma_l = 1.0, 0.5           # sigma_p 越小 = 先验越强 = 正则越重
+data = np.array([0.3, 0.1, 0.4, -0.2, 0.5])
+theta_mle = data.mean()
+n = len(data)
+shrink = n / (n + sigma_l**2 / sigma_p**2)
+theta_map = shrink * theta_mle
+print(f"theta_MLE={theta_mle:.3f}  theta_MAP={theta_map:.3f}  shrink={shrink:.3f}")
+# shrink<1 → 先验把 MLE 拉向 0，正是 L2 正则的贝叶斯解释
+```
+
+运行应得 `P(D|+) = 0.1670` 与 `shrink ≈ 0.862`（`theta_MAP` 比 `theta_MLE` 更靠近 0）。
+
 ---
 
 ## 4. 条件变式：MLE vs MAP vs 全贝叶斯
@@ -102,29 +129,44 @@ $$\hat{\theta}_{\text{MAP}} = \arg\max_\theta [\log P(D|\theta) + \log P(\theta)
 
 ---
 
-## 🧪 自测题
+## 6. 适用边界与注意事项
 
-1. **(基础)** 贝叶斯定理中，先验 $P(\theta)$ 和似然 $P(D|\theta)$ 的区别是什么？
-   <details><summary>💡 提示</summary>先验 = 看到数据前对参数的信念（"θ 大概是什么"）；似然 = 给定参数后数据的概率（"这个 θ 能多好地解释数据"）。</details>
-
-2. **(中等)** 如果把先验设为均匀分布 $P(\theta) = \text{const}$，MAP 退化成什么？
-   <details><summary>💡 提示</summary>MAP = MLE。因为 $\log P(\theta)$ 是常数，不参与优化。均匀先验 = "我对参数一无所知"。</details>
-
-3. **(较难)** L2 正则化等价于参数的什么先验分布？L1 正则化呢？
-   <details><summary>💡 提示</summary>L2 正则 $\|\mathbf{w}\|^2$ 等价于高斯先验 $\mathbf{w} \sim \mathcal{N}(0, \sigma^2)$；L1 正则 $\|\mathbf{w}\|_1$ 等价于拉普拉斯先验 $\mathbf{w} \sim \text{Laplace}(0, b)$。</details>
+- **贝叶斯真正占优的场景**：小样本 / 数据昂贵（医疗、机器人）、需要不确定性量化（主动学习、异常检测）、或为安全关键系统提供置信度。此时"先验 + 后验"比单点估计更稳健。
+- **贝叶斯代价高、通常退化的场景**：现代大规模深度网络对 $P(\theta\mid D)$ 做精确推断不可行（维度太高、无解析形式），只能用变分推断（VAE）、MCMC 或 Dropout 近似；若只想要预测而不要不确定性，MLE + 正则往往更省事。
+- **与深度学习的接口**：把深度网络权重视为分布即 Bayesian NN；Diffusion 的前向（加噪）/反向（去噪）过程本质就是先验 ↔ 后验的桥梁。读懂本卡，是理解这些模型"为什么这样设计"的前置。
 
 ---
 
-## 🧪 学完本节后可完成的作业
+## 🧪 自测题
+
+1. **(基础)** 贝叶斯定理中，先验 $P(\theta)$ 和似然 $P(D|\theta)$ 的区别是什么？
+   <details><summary>💡 思路</summary>看两个概率各自「以什么为条件」：一个不依赖数据，另一个以参数为条件。再用一句话概括它们分别回答什么问题。</details>
+
+2. **(中等)** 如果把先验设为均匀分布 $P(\theta) = \text{const}$，MAP 退化成什么？
+   <details><summary>💡 思路</summary>写出 MAP 的目标 $\arg\max_\theta [\log P(D|\theta) + \log P(\theta)]$，把 $P(\theta)$ 换成常数后，看第二项还参不参与优化。</details>
+
+3. **(较难)** L2 正则化等价于参数的什么先验分布？L1 正则化呢？
+   <details><summary>💡 思路</summary>把正则项写进 MAP 的目标函数，反推 $\log P(\theta)$ 该长什么样：平方项对应哪种分布的对数密度？绝对值项又对应哪种？</details>
+
+---
+
+## 🔀 学完本节后的横向连接
 
 - 理解 [[Softmax与SVM损失函数|Softmax]] 中的概率解释（Softmax 输出 = 后验概率 $P(y|\mathbf{x})$）
 ---
 
 ## 学完后可以完成
 
-- 完成卡内自测题与闭卷复现（贝叶斯推断）
+> 下列作业在 `requires` 中引用了本卡，由 Dataview 实时派生（非人工维护反向链接）：
 
-> 该卡无直接课后/阶段作业：以卡内自测题与闭卷复现作为形成性验收；如需综合实践，可挂靠 HW06 开放课程项目或 CAP01。
+```dataview
+LIST
+FROM "03-Projects"
+WHERE contains(requires, this.file.link)
+SORT assignment_level ASC, file.name ASC
+```
+
+本卡另以前置「🧪 自测题」与闭卷复现作为形成性验收。
 
 ## 🔗 知识图谱
 

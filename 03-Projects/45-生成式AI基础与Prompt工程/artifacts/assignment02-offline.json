@@ -1,0 +1,774 @@
+{
+  "assignment": "02",
+  "warning": "Offline rule results validate the protocol, not real-model quality.",
+  "baseline_dev": {
+    "adapter": "offline-rule-adapter",
+    "split": "dev",
+    "prompt_sha256": "550c3895f4962370aaad8ee3f212f57c80e1f175539270ab639c8dbb362b1e19",
+    "count": 20,
+    "accuracy": 0.7,
+    "invalid_rate": 0.0,
+    "elapsed_seconds": 0.0017744999786373228,
+    "provider_metadata": [],
+    "records": [
+      {
+        "id": "d01",
+        "text": "The guide is excellent and clear.",
+        "label": "positive",
+        "split": "dev",
+        "prediction": "positive",
+        "raw": "{\"label\": \"positive\"}",
+        "correct": true
+      },
+      {
+        "id": "d02",
+        "text": "The service was awful and slow.",
+        "label": "negative",
+        "split": "dev",
+        "prediction": "negative",
+        "raw": "{\"label\": \"negative\"}",
+        "correct": true
+      },
+      {
+        "id": "d03",
+        "text": "I love the reliable workflow.",
+        "label": "positive",
+        "split": "dev",
+        "prediction": "positive",
+        "raw": "{\"label\": \"positive\"}",
+        "correct": true
+      },
+      {
+        "id": "d04",
+        "text": "The interface is bad and unusable.",
+        "label": "negative",
+        "split": "dev",
+        "prediction": "negative",
+        "raw": "{\"label\": \"negative\"}",
+        "correct": true
+      },
+      {
+        "id": "d05",
+        "text": "A helpful and fast response.",
+        "label": "positive",
+        "split": "dev",
+        "prediction": "positive",
+        "raw": "{\"label\": \"positive\"}",
+        "correct": true
+      },
+      {
+        "id": "d06",
+        "text": "The result was disappointing.",
+        "label": "negative",
+        "split": "dev",
+        "prediction": "negative",
+        "raw": "{\"label\": \"negative\"}",
+        "correct": true
+      },
+      {
+        "id": "d07",
+        "text": "The explanation is not bad.",
+        "label": "positive",
+        "split": "dev",
+        "prediction": "negative",
+        "raw": "{\"label\": \"negative\"}",
+        "correct": false
+      },
+      {
+        "id": "d08",
+        "text": "The final answer is not good.",
+        "label": "negative",
+        "split": "dev",
+        "prediction": "positive",
+        "raw": "{\"label\": \"positive\"}",
+        "correct": false
+      },
+      {
+        "id": "d09",
+        "text": "The tool never failed during the demo.",
+        "label": "positive",
+        "split": "dev",
+        "prediction": "positive",
+        "raw": "{\"label\": \"positive\"}",
+        "correct": true
+      },
+      {
+        "id": "d10",
+        "text": "The tool never works on my files.",
+        "label": "negative",
+        "split": "dev",
+        "prediction": "positive",
+        "raw": "{\"label\": \"positive\"}",
+        "correct": false
+      },
+      {
+        "id": "d11",
+        "text": "No complaints about the clear setup.",
+        "label": "positive",
+        "split": "dev",
+        "prediction": "positive",
+        "raw": "{\"label\": \"positive\"}",
+        "correct": true
+      },
+      {
+        "id": "d12",
+        "text": "The output is no longer reliable.",
+        "label": "negative",
+        "split": "dev",
+        "prediction": "positive",
+        "raw": "{\"label\": \"positive\"}",
+        "correct": false
+      },
+      {
+        "id": "d13",
+        "text": "A great concise tutorial.",
+        "label": "positive",
+        "split": "dev",
+        "prediction": "positive",
+        "raw": "{\"label\": \"positive\"}",
+        "correct": true
+      },
+      {
+        "id": "d14",
+        "text": "I hate the confusing defaults.",
+        "label": "negative",
+        "split": "dev",
+        "prediction": "negative",
+        "raw": "{\"label\": \"negative\"}",
+        "correct": true
+      },
+      {
+        "id": "d15",
+        "text": "The tests are useful and good.",
+        "label": "positive",
+        "split": "dev",
+        "prediction": "positive",
+        "raw": "{\"label\": \"positive\"}",
+        "correct": true
+      },
+      {
+        "id": "d16",
+        "text": "The build is poor and slow.",
+        "label": "negative",
+        "split": "dev",
+        "prediction": "negative",
+        "raw": "{\"label\": \"negative\"}",
+        "correct": true
+      },
+      {
+        "id": "d17",
+        "text": "This is not terrible at all.",
+        "label": "positive",
+        "split": "dev",
+        "prediction": "negative",
+        "raw": "{\"label\": \"negative\"}",
+        "correct": false
+      },
+      {
+        "id": "d18",
+        "text": "This is not helpful for beginners.",
+        "label": "negative",
+        "split": "dev",
+        "prediction": "positive",
+        "raw": "{\"label\": \"positive\"}",
+        "correct": false
+      },
+      {
+        "id": "d19",
+        "text": "The example is simple and reliable.",
+        "label": "positive",
+        "split": "dev",
+        "prediction": "positive",
+        "raw": "{\"label\": \"positive\"}",
+        "correct": true
+      },
+      {
+        "id": "d20",
+        "text": "The documentation is confusing and bad.",
+        "label": "negative",
+        "split": "dev",
+        "prediction": "negative",
+        "raw": "{\"label\": \"negative\"}",
+        "correct": true
+      }
+    ]
+  },
+  "few_shot_dev": {
+    "adapter": "offline-rule-adapter",
+    "split": "dev",
+    "prompt_sha256": "82c288e7686388af0220560a94d40ee2cd7986b914d5c0f11cdb7a5c7574cbbb",
+    "count": 20,
+    "accuracy": 1.0,
+    "invalid_rate": 0.0,
+    "elapsed_seconds": 0.0005615999980363995,
+    "provider_metadata": [],
+    "records": [
+      {
+        "id": "d01",
+        "text": "The guide is excellent and clear.",
+        "label": "positive",
+        "split": "dev",
+        "prediction": "positive",
+        "raw": "{\"label\": \"positive\"}",
+        "correct": true
+      },
+      {
+        "id": "d02",
+        "text": "The service was awful and slow.",
+        "label": "negative",
+        "split": "dev",
+        "prediction": "negative",
+        "raw": "{\"label\": \"negative\"}",
+        "correct": true
+      },
+      {
+        "id": "d03",
+        "text": "I love the reliable workflow.",
+        "label": "positive",
+        "split": "dev",
+        "prediction": "positive",
+        "raw": "{\"label\": \"positive\"}",
+        "correct": true
+      },
+      {
+        "id": "d04",
+        "text": "The interface is bad and unusable.",
+        "label": "negative",
+        "split": "dev",
+        "prediction": "negative",
+        "raw": "{\"label\": \"negative\"}",
+        "correct": true
+      },
+      {
+        "id": "d05",
+        "text": "A helpful and fast response.",
+        "label": "positive",
+        "split": "dev",
+        "prediction": "positive",
+        "raw": "{\"label\": \"positive\"}",
+        "correct": true
+      },
+      {
+        "id": "d06",
+        "text": "The result was disappointing.",
+        "label": "negative",
+        "split": "dev",
+        "prediction": "negative",
+        "raw": "{\"label\": \"negative\"}",
+        "correct": true
+      },
+      {
+        "id": "d07",
+        "text": "The explanation is not bad.",
+        "label": "positive",
+        "split": "dev",
+        "prediction": "positive",
+        "raw": "{\"label\": \"positive\"}",
+        "correct": true
+      },
+      {
+        "id": "d08",
+        "text": "The final answer is not good.",
+        "label": "negative",
+        "split": "dev",
+        "prediction": "negative",
+        "raw": "{\"label\": \"negative\"}",
+        "correct": true
+      },
+      {
+        "id": "d09",
+        "text": "The tool never failed during the demo.",
+        "label": "positive",
+        "split": "dev",
+        "prediction": "positive",
+        "raw": "{\"label\": \"positive\"}",
+        "correct": true
+      },
+      {
+        "id": "d10",
+        "text": "The tool never works on my files.",
+        "label": "negative",
+        "split": "dev",
+        "prediction": "negative",
+        "raw": "{\"label\": \"negative\"}",
+        "correct": true
+      },
+      {
+        "id": "d11",
+        "text": "No complaints about the clear setup.",
+        "label": "positive",
+        "split": "dev",
+        "prediction": "positive",
+        "raw": "{\"label\": \"positive\"}",
+        "correct": true
+      },
+      {
+        "id": "d12",
+        "text": "The output is no longer reliable.",
+        "label": "negative",
+        "split": "dev",
+        "prediction": "negative",
+        "raw": "{\"label\": \"negative\"}",
+        "correct": true
+      },
+      {
+        "id": "d13",
+        "text": "A great concise tutorial.",
+        "label": "positive",
+        "split": "dev",
+        "prediction": "positive",
+        "raw": "{\"label\": \"positive\"}",
+        "correct": true
+      },
+      {
+        "id": "d14",
+        "text": "I hate the confusing defaults.",
+        "label": "negative",
+        "split": "dev",
+        "prediction": "negative",
+        "raw": "{\"label\": \"negative\"}",
+        "correct": true
+      },
+      {
+        "id": "d15",
+        "text": "The tests are useful and good.",
+        "label": "positive",
+        "split": "dev",
+        "prediction": "positive",
+        "raw": "{\"label\": \"positive\"}",
+        "correct": true
+      },
+      {
+        "id": "d16",
+        "text": "The build is poor and slow.",
+        "label": "negative",
+        "split": "dev",
+        "prediction": "negative",
+        "raw": "{\"label\": \"negative\"}",
+        "correct": true
+      },
+      {
+        "id": "d17",
+        "text": "This is not terrible at all.",
+        "label": "positive",
+        "split": "dev",
+        "prediction": "positive",
+        "raw": "{\"label\": \"positive\"}",
+        "correct": true
+      },
+      {
+        "id": "d18",
+        "text": "This is not helpful for beginners.",
+        "label": "negative",
+        "split": "dev",
+        "prediction": "negative",
+        "raw": "{\"label\": \"negative\"}",
+        "correct": true
+      },
+      {
+        "id": "d19",
+        "text": "The example is simple and reliable.",
+        "label": "positive",
+        "split": "dev",
+        "prediction": "positive",
+        "raw": "{\"label\": \"positive\"}",
+        "correct": true
+      },
+      {
+        "id": "d20",
+        "text": "The documentation is confusing and bad.",
+        "label": "negative",
+        "split": "dev",
+        "prediction": "negative",
+        "raw": "{\"label\": \"negative\"}",
+        "correct": true
+      }
+    ]
+  },
+  "baseline_test": {
+    "adapter": "offline-rule-adapter",
+    "split": "test",
+    "prompt_sha256": "550c3895f4962370aaad8ee3f212f57c80e1f175539270ab639c8dbb362b1e19",
+    "count": 20,
+    "accuracy": 0.7,
+    "invalid_rate": 0.0,
+    "elapsed_seconds": 0.000378700002329424,
+    "provider_metadata": [],
+    "records": [
+      {
+        "id": "t01",
+        "text": "The lesson is great and practical.",
+        "label": "positive",
+        "split": "test",
+        "prediction": "positive",
+        "raw": "{\"label\": \"positive\"}",
+        "correct": true
+      },
+      {
+        "id": "t02",
+        "text": "The generated plan is terrible.",
+        "label": "negative",
+        "split": "test",
+        "prediction": "negative",
+        "raw": "{\"label\": \"negative\"}",
+        "correct": true
+      },
+      {
+        "id": "t03",
+        "text": "I love this clear checklist.",
+        "label": "positive",
+        "split": "test",
+        "prediction": "positive",
+        "raw": "{\"label\": \"positive\"}",
+        "correct": true
+      },
+      {
+        "id": "t04",
+        "text": "I hate the unusable export.",
+        "label": "negative",
+        "split": "test",
+        "prediction": "negative",
+        "raw": "{\"label\": \"negative\"}",
+        "correct": true
+      },
+      {
+        "id": "t05",
+        "text": "The assistant is fast and helpful.",
+        "label": "positive",
+        "split": "test",
+        "prediction": "positive",
+        "raw": "{\"label\": \"positive\"}",
+        "correct": true
+      },
+      {
+        "id": "t06",
+        "text": "The response is slow and poor.",
+        "label": "negative",
+        "split": "test",
+        "prediction": "negative",
+        "raw": "{\"label\": \"negative\"}",
+        "correct": true
+      },
+      {
+        "id": "t07",
+        "text": "The update is not disappointing.",
+        "label": "positive",
+        "split": "test",
+        "prediction": "negative",
+        "raw": "{\"label\": \"negative\"}",
+        "correct": false
+      },
+      {
+        "id": "t08",
+        "text": "The new version is not reliable.",
+        "label": "negative",
+        "split": "test",
+        "prediction": "positive",
+        "raw": "{\"label\": \"positive\"}",
+        "correct": false
+      },
+      {
+        "id": "t09",
+        "text": "The parser never failed in our tests.",
+        "label": "positive",
+        "split": "test",
+        "prediction": "positive",
+        "raw": "{\"label\": \"positive\"}",
+        "correct": true
+      },
+      {
+        "id": "t10",
+        "text": "The search never works for Chinese text.",
+        "label": "negative",
+        "split": "test",
+        "prediction": "positive",
+        "raw": "{\"label\": \"positive\"}",
+        "correct": false
+      },
+      {
+        "id": "t11",
+        "text": "No complaints about the useful examples.",
+        "label": "positive",
+        "split": "test",
+        "prediction": "positive",
+        "raw": "{\"label\": \"positive\"}",
+        "correct": true
+      },
+      {
+        "id": "t12",
+        "text": "The app is no longer fast.",
+        "label": "negative",
+        "split": "test",
+        "prediction": "positive",
+        "raw": "{\"label\": \"positive\"}",
+        "correct": false
+      },
+      {
+        "id": "t13",
+        "text": "This explanation is not awful.",
+        "label": "positive",
+        "split": "test",
+        "prediction": "negative",
+        "raw": "{\"label\": \"negative\"}",
+        "correct": false
+      },
+      {
+        "id": "t14",
+        "text": "This workflow is not great.",
+        "label": "negative",
+        "split": "test",
+        "prediction": "positive",
+        "raw": "{\"label\": \"positive\"}",
+        "correct": false
+      },
+      {
+        "id": "t15",
+        "text": "A reliable and excellent baseline.",
+        "label": "positive",
+        "split": "test",
+        "prediction": "positive",
+        "raw": "{\"label\": \"positive\"}",
+        "correct": true
+      },
+      {
+        "id": "t16",
+        "text": "A bad and confusing failure message.",
+        "label": "negative",
+        "split": "test",
+        "prediction": "negative",
+        "raw": "{\"label\": \"negative\"}",
+        "correct": true
+      },
+      {
+        "id": "t17",
+        "text": "The compact rubric is good.",
+        "label": "positive",
+        "split": "test",
+        "prediction": "positive",
+        "raw": "{\"label\": \"positive\"}",
+        "correct": true
+      },
+      {
+        "id": "t18",
+        "text": "The hidden state makes it unusable.",
+        "label": "negative",
+        "split": "test",
+        "prediction": "negative",
+        "raw": "{\"label\": \"negative\"}",
+        "correct": true
+      },
+      {
+        "id": "t19",
+        "text": "The setup is clear, useful, and fast.",
+        "label": "positive",
+        "split": "test",
+        "prediction": "positive",
+        "raw": "{\"label\": \"positive\"}",
+        "correct": true
+      },
+      {
+        "id": "t20",
+        "text": "The API is slow and disappointing.",
+        "label": "negative",
+        "split": "test",
+        "prediction": "negative",
+        "raw": "{\"label\": \"negative\"}",
+        "correct": true
+      }
+    ]
+  },
+  "few_shot_test": {
+    "adapter": "offline-rule-adapter",
+    "split": "test",
+    "prompt_sha256": "82c288e7686388af0220560a94d40ee2cd7986b914d5c0f11cdb7a5c7574cbbb",
+    "count": 20,
+    "accuracy": 1.0,
+    "invalid_rate": 0.0,
+    "elapsed_seconds": 0.0004197999951429665,
+    "provider_metadata": [],
+    "records": [
+      {
+        "id": "t01",
+        "text": "The lesson is great and practical.",
+        "label": "positive",
+        "split": "test",
+        "prediction": "positive",
+        "raw": "{\"label\": \"positive\"}",
+        "correct": true
+      },
+      {
+        "id": "t02",
+        "text": "The generated plan is terrible.",
+        "label": "negative",
+        "split": "test",
+        "prediction": "negative",
+        "raw": "{\"label\": \"negative\"}",
+        "correct": true
+      },
+      {
+        "id": "t03",
+        "text": "I love this clear checklist.",
+        "label": "positive",
+        "split": "test",
+        "prediction": "positive",
+        "raw": "{\"label\": \"positive\"}",
+        "correct": true
+      },
+      {
+        "id": "t04",
+        "text": "I hate the unusable export.",
+        "label": "negative",
+        "split": "test",
+        "prediction": "negative",
+        "raw": "{\"label\": \"negative\"}",
+        "correct": true
+      },
+      {
+        "id": "t05",
+        "text": "The assistant is fast and helpful.",
+        "label": "positive",
+        "split": "test",
+        "prediction": "positive",
+        "raw": "{\"label\": \"positive\"}",
+        "correct": true
+      },
+      {
+        "id": "t06",
+        "text": "The response is slow and poor.",
+        "label": "negative",
+        "split": "test",
+        "prediction": "negative",
+        "raw": "{\"label\": \"negative\"}",
+        "correct": true
+      },
+      {
+        "id": "t07",
+        "text": "The update is not disappointing.",
+        "label": "positive",
+        "split": "test",
+        "prediction": "positive",
+        "raw": "{\"label\": \"positive\"}",
+        "correct": true
+      },
+      {
+        "id": "t08",
+        "text": "The new version is not reliable.",
+        "label": "negative",
+        "split": "test",
+        "prediction": "negative",
+        "raw": "{\"label\": \"negative\"}",
+        "correct": true
+      },
+      {
+        "id": "t09",
+        "text": "The parser never failed in our tests.",
+        "label": "positive",
+        "split": "test",
+        "prediction": "positive",
+        "raw": "{\"label\": \"positive\"}",
+        "correct": true
+      },
+      {
+        "id": "t10",
+        "text": "The search never works for Chinese text.",
+        "label": "negative",
+        "split": "test",
+        "prediction": "negative",
+        "raw": "{\"label\": \"negative\"}",
+        "correct": true
+      },
+      {
+        "id": "t11",
+        "text": "No complaints about the useful examples.",
+        "label": "positive",
+        "split": "test",
+        "prediction": "positive",
+        "raw": "{\"label\": \"positive\"}",
+        "correct": true
+      },
+      {
+        "id": "t12",
+        "text": "The app is no longer fast.",
+        "label": "negative",
+        "split": "test",
+        "prediction": "negative",
+        "raw": "{\"label\": \"negative\"}",
+        "correct": true
+      },
+      {
+        "id": "t13",
+        "text": "This explanation is not awful.",
+        "label": "positive",
+        "split": "test",
+        "prediction": "positive",
+        "raw": "{\"label\": \"positive\"}",
+        "correct": true
+      },
+      {
+        "id": "t14",
+        "text": "This workflow is not great.",
+        "label": "negative",
+        "split": "test",
+        "prediction": "negative",
+        "raw": "{\"label\": \"negative\"}",
+        "correct": true
+      },
+      {
+        "id": "t15",
+        "text": "A reliable and excellent baseline.",
+        "label": "positive",
+        "split": "test",
+        "prediction": "positive",
+        "raw": "{\"label\": \"positive\"}",
+        "correct": true
+      },
+      {
+        "id": "t16",
+        "text": "A bad and confusing failure message.",
+        "label": "negative",
+        "split": "test",
+        "prediction": "negative",
+        "raw": "{\"label\": \"negative\"}",
+        "correct": true
+      },
+      {
+        "id": "t17",
+        "text": "The compact rubric is good.",
+        "label": "positive",
+        "split": "test",
+        "prediction": "positive",
+        "raw": "{\"label\": \"positive\"}",
+        "correct": true
+      },
+      {
+        "id": "t18",
+        "text": "The hidden state makes it unusable.",
+        "label": "negative",
+        "split": "test",
+        "prediction": "negative",
+        "raw": "{\"label\": \"negative\"}",
+        "correct": true
+      },
+      {
+        "id": "t19",
+        "text": "The setup is clear, useful, and fast.",
+        "label": "positive",
+        "split": "test",
+        "prediction": "positive",
+        "raw": "{\"label\": \"positive\"}",
+        "correct": true
+      },
+      {
+        "id": "t20",
+        "text": "The API is slow and disappointing.",
+        "label": "negative",
+        "split": "test",
+        "prediction": "negative",
+        "raw": "{\"label\": \"negative\"}",
+        "correct": true
+      }
+    ]
+  },
+  "evidence_scope": "protocol_only",
+  "gate_passed": true
+}

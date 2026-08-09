@@ -1,4 +1,4 @@
-﻿---
+---
 type: study
 topic: "RL 评估协议：种子方差与样本效率"
 course: "强化学习"
@@ -9,7 +9,7 @@ flow: knowledge
 kind: concept
 difficulty: intermediate
 concept: ["RL 评估", "种子方差", "样本效率", "基准"]
-upstream: ["[[PPO近端策略优化]]", "[[A2C家族]]"]
+upstream: ["[[PPO近端策略优化]]", "[[A2C算法]]"]
 tags: [学习, 强化学习]
 ---
 > 所属模块：[[🗺️ 强化学习学习路径|强化学习学习路径]]

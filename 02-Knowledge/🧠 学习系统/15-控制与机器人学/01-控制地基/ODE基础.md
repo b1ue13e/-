@@ -12,7 +12,6 @@ kind: concept
 concept: ["常微分方程", "动态系统建模"]
 prerequisites: ["微积分基础"]
 related: ["线性ODE", "拉氏变换", "传递函数"]
-upstream: []
 source: "Modern Control Engineering (Ogata), Ch.2; 06-常微分方程课程复用"
 tags: [学习, 控制与机器人学, 微分方程]
 ---

@@ -208,25 +208,31 @@ def soft_nms(boxes, scores, iou_threshold=0.5, sigma=0.5, method='gaussian'):
 ## 🧪 自测题
 
 1. **(基础)** 两个完全不重叠的框，IoU 是多少？NMS 中 IoU 阈值设为 0.5 意味着什么？
-   <details><summary>💡 提示</summary>完全不重叠 → IoU = 0。NMS τ=0.5 意味着两个框重叠超过 50% 就认为它们是同一物体，只保留 score 最高的那个。</details>
+   <details><summary>💡 思路</summary>先按 IoU 定义算交集面积为 0 时的取值；再想阈值 $\tau$ 在 NMS 中的判定语义——它决定了「多大重叠算同一个物体」。</details>
 
 2. **(中等)** NMS 的 IoU 阈值设得太低会有什么问题？设得太高呢？
-   <details><summary>💡 提示</summary>太低：误删不同物体的框（假阴性增加）；太高：保留过多重复框（假阳性增加）。通常 0.5-0.7 是平衡点。</details>
+   <details><summary>💡 思路</summary>分别设想两个极端：$\tau \to 0$ 与 $\tau \to 1$ 时 NMS 会保留多少框，再判断各自抬高的是假阳性还是假阴性。</details>
 
 3. **(中等)** Soft-NMS 相比 Greedy NMS 的核心改进是什么？在什么场景下改善最显著？
-   <details><summary>💡 提示</summary>直接删除 → 平滑降分。在**密集场景**（如行人检测、人群计数）改善最显著，因为同一区域可能有多个同类物体。</details>
+   <details><summary>💡 思路</summary>对比两者对「被抑制框」的处理动作（直接删除 vs 平滑降分）；再想哪类场景下同类物体本身就高度重叠，删除策略会误伤。</details>
 
 4. **(较难)** 为什么标准 IoU 不适合直接作为边界框回归的 Loss 函数？GIoU 如何解决这个问题？
-   <details><summary>💡 提示</summary>IoU=0 时梯度为零，优化停滞。GIoU 引入最小闭包面积惩罚项 $-\frac{|C - (A \cup B)|}{|C|}$，即使不重叠也有梯度信号引导框靠近。</details>
+   <details><summary>💡 思路</summary>先考察当 IoU=0 时，损失关于框坐标的导数是多少；再看 GIoU 额外引入的最小闭包项在两框不重叠时是否仍随距离变化。</details>
 
 
 ---
 
 ## 学完后可以完成
 
-- [[05-计算机视觉-阶段作业-03-目标检测PascalVOC|HW05]]：实现 IoU 与 NMS 并评测
+> 下列作业在 `requires` 中引用了本卡，由 Dataview 实时派生（非人工维护反向链接）：
 
-> 作业入口由 frontmatter `requires` 维护（唯一事实源），下方 Dataview 反向派生当前卡可完成的全部作业。
+```dataview
+LIST
+FROM "03-Projects"
+WHERE contains(requires, this.file.link)
+SORT assignment_level ASC, file.name ASC
+```
+
 ## 🔗 知识图谱
 
 ```dataview

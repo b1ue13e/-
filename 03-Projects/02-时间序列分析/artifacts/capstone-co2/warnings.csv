@@ -1,0 +1,6 @@
+split,origin,model,category,message
+validation,1998-10-01,arima,ConvergenceWarning,Maximum Likelihood optimization failed to converge. Check mle_retvals
+validation,1999-04-01,arima,UserWarning,Non-stationary starting seasonal autoregressive Using zeros as starting parameters.
+validation,1999-04-01,arima,ConvergenceWarning,Maximum Likelihood optimization failed to converge. Check mle_retvals
+validation,1999-07-01,arima,UserWarning,Non-stationary starting seasonal autoregressive Using zeros as starting parameters.
+validation,1999-10-01,arima,UserWarning,Non-stationary starting seasonal autoregressive Using zeros as starting parameters.

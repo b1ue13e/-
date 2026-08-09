@@ -464,9 +464,15 @@ with torch.no_grad():
 
 ## 学完后可以完成
 
-- [[05-计算机视觉-课后作业-03-小型CNN与训练工程|HW03]]：单因素对照 BatchNorm 效果
+> 下列作业在 `requires` 中引用了本卡，由 Dataview 实时派生（非人工维护反向链接）：
 
-> 作业入口由 frontmatter `requires` 维护（唯一事实源），下方 Dataview 反向派生当前卡可完成的全部作业。
+```dataview
+LIST
+FROM "03-Projects"
+WHERE contains(requires, this.file.link)
+SORT assignment_level ASC, file.name ASC
+```
+
 ## 🔗 知识图谱
 
 ```dataview

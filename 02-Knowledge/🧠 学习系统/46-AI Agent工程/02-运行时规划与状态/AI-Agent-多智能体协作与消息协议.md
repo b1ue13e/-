@@ -1,4 +1,4 @@
-﻿---
+---
 type: study
 topic: "AI Agent多智能体协作与消息协议"
 course: "AI Agent工程"
@@ -13,7 +13,6 @@ stage_moc: "[[🧭 阶段2-运行时规划与状态]]"
 upstream: ["[[AI-Agent-工具调用与结构化契约]]", "[[AI-Agent-规划状态与工作流编排]]"]
 flow: knowledge
 kind: concept
-assessment_exempt: false
 source: "UC Berkeley CS 194/294-196 F24 multi-agent and Lab 01; Microsoft AI Agents for Beginners Lesson 8; Datawhale Hello-Agents Chapters 1.4 and 13"
 source_urls: ["https://github.com/microsoft/ai-agents-for-beginners/tree/main/08-multi-agent", "https://github.com/datawhalechina/hello-agents/tree/main/docs/chapter1", "https://github.com/datawhalechina/hello-agents/tree/main/docs/chapter13"]
 accessed: 2026-08-06

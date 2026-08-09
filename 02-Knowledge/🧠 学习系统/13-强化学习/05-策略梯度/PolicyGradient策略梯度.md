@@ -14,7 +14,7 @@ stage_moc: "[[🧭 阶段5-策略梯度]]"
 flow: knowledge
 kind: concept
 status: completed
-upstream: ["[[PG-梯度]]", "[[REINFORCE-MC]]"]
+upstream: ["[[策略梯度]]", "[[策略梯度定理与REINFORCE]]"]
 status: completed
 created: 2026-08-01
 ---

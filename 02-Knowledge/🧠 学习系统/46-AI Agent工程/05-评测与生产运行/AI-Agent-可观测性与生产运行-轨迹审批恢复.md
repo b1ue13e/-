@@ -1,4 +1,4 @@
-﻿---
+---
 type: study
 topic: "Agent 可观测性、人工审批与生产恢复"
 course: "AI Agent工程"
@@ -14,7 +14,6 @@ stage_moc: "[[🧭 阶段5-评测与生产运行]]"
 upstream: ["[[AI-Agent-安全威胁建模与系统评测]]", "[[AI-Agent-评测与基准-任务轨迹成本]]"]
 flow: knowledge
 kind: concept
-assessment_exempt: false
 source: "UC Berkeley Agentic AI F25; Stanford CS224V F25; Microsoft AI Agents for Beginners Lessons 10, 16 and 18; Datawhale Hello-Agents Chapter 12; Hugging Face Agents Course observability"
 source_urls: ["https://github.com/microsoft/ai-agents-for-beginners/tree/main/10-ai-agents-production", "https://github.com/microsoft/ai-agents-for-beginners/tree/main/16-deploying-scalable-agents", "https://github.com/microsoft/ai-agents-for-beginners/tree/main/18-securing-ai-agents", "https://github.com/datawhalechina/hello-agents/tree/main/docs/chapter12"]
 accessed: 2026-08-06

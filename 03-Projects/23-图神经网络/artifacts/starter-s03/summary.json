@@ -1,0 +1,17 @@
+{
+  "initial_pretrain_loss": 1.8516149520874023,
+  "final_pretrain_loss": 2.32430100440979,
+  "rows": [
+    {
+      "protocol": "pretrained-frozen",
+      "val_accuracy": 1.0,
+      "test_accuracy": 1.0
+    },
+    {
+      "protocol": "supervised-from-scratch",
+      "val_accuracy": 1.0,
+      "test_accuracy": 1.0
+    }
+  ],
+  "claim_boundary": "toy worked example; no stable self-supervised gain claim"
+}

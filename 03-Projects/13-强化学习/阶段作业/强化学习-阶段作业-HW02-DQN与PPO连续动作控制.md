@@ -7,6 +7,16 @@ assignment_id: "HW02"
 assignment_level: stage
 assignment_format: lab
 stage_id: "07"
+source_type: official_assignment
+accessed: "2026-08-07"
+license: "[待验证]"
+source: "改编自 UC Berkeley CS285 HW1/HW2 (Deep RL)；本题为本地改编，非 CS285 原题直译。"
+source_url: "https://github.com/berkeleydeeprlcourse/homework_fall2023"
+created: 2026-08-06
+updated: 2026-08-06
+status: ongoing
+flow: project
+tags: [作业, 强化学习, 阶段作业, 深度RL]
 requires:
   - "[[动态规划：策略与值迭代]]"
   - "[[值函数近似与 DQN]]"
@@ -14,13 +24,53 @@ requires:
   - "[[PPO近端策略优化]]"
   - "[[GAE-公式]]"
   - "[[🧭 强化学习-前置知识]]"
-source_type: official_assignment
-source_url: "https://github.com/berkeleydeeprlcourse/homework_fall2023"
-created: 2026-08-06
-updated: 2026-08-06
-status: ongoing
-flow: project
-tags: [作业, 强化学习, 阶段作业, 深度RL]
+  - "[[IS-比率]]"
+  - "[[DQN-函数逼近]]"
+  - "[[RLHF-PPO]]"
+  - "[[DQN-经验回放]]"
+  - "[[DQN-跳帧]]"
+  - "[[PER]]"
+  - "[[GAE-Lambda1]]"
+  - "[[Double-DQN]]"
+  - "[[PPOClip-目标]]"
+  - "[[GAE广义优势估计]]"
+  - "[[C51]]"
+  - "[[Actor-Critic 与 PPO]]"
+  - "[[PPOClip-Epsilon]]"
+  - "[[IS-目标]]"
+  - "[[DQN-TN详解]]"
+  - "[[DQN-衰减]]"
+  - "[[PPOClip-函数]]"
+  - "[[局限-连续动作]]"
+  - "[[IS-约束]]"
+  - "[[PPOvsTRPO-实现]]"
+  - "[[GAE-单步]]"
+  - "[[参数化-连续]]"
+  - "[[IS-KL]]"
+  - "[[局限-连续状态]]"
+  - "[[DQN-损失]]"
+  - "[[SAC软Actor-Critic]]"
+  - "[[IS-含义]]"
+  - "[[GAE-Lambda0]]"
+  - "[[Rainbow]]"
+  - "[[PPOvsTRPO-效果]]"
+  - "[[IS-稳定]]"
+  - "[[Dueling-DQN]]"
+  - "[[PolicyGradient策略梯度]]"
+  - "[[GAE-Lambda]]"
+  - "[[GAE-Lambda95]]"
+  - "[[IS-问题]]"
+  - "[[演进-连续优化]]"
+  - "[[DQN-ER详解]]"
+  - "[[演进-连续动作]]"
+  - "[[PPOClip-最小值]]"
+  - "[[DQN深度Q网络]]"
+  - "[[DQN-目标网络]]"
+  - "[[DDPG深度确定性策略梯度(DDPG)]]"
+  - "[[PPOvsTRPO-效率]]"
+  - "[[连续MDP]]"
+  - "[[PPOvsTRPO-约束]]"
+  - "[[NoisyNets]]"
 ---
 
 # 强化学习-阶段作业-HW02-DQN与PPO连续动作控制
@@ -159,3 +209,10 @@ assert not torch.isnan(loss), "PPO Loss 不得计算为 NaN"
 - A：λ 越接近 0，优势估计越偏（用单步 TD 误差，低方差）；λ 越接近 1，越接近 Monte Carlo 回报（低偏差、高方差）。GAE 用 `(γλ)^l` 加权折中。
 - Q：经验回放与目标网络分别解决 DQN 的什么问题？
 - A：经验回放打破时序相关、提升样本利用率；目标网络固定 TD 目标一段时间，避免「目标随自身移动」导致的发散。
+
+
+## 来源声明（诚实标注）
+
+本作业 `source_type: official_assignment`（改编），上游为 **UC Berkeley CS285 HW1/HW2（Deep RL）**。
+- 诚实说明：本题为**本地改编**，融合课程目标重排，非 CS285 原题直译，不冒充官方题面。
+- 许可：[待验证]；访问日期 2026-08-07。

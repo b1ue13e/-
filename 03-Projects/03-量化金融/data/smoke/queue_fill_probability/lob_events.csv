@@ -1,0 +1,10 @@
+timestamp,event_type,units,initial_ahead,own_order_units,horizon_seconds
+0,trade,3,20,2,10
+1,cancel_ahead,2,20,2,10
+2,add_ahead,1,20,2,10
+3,trade,4,20,2,10
+4,cancel_ahead,3,20,2,10
+5,trade,5,20,2,10
+6,trade,4,20,2,10
+7,cancel_behind,7,20,2,10
+8,trade,2,20,2,10

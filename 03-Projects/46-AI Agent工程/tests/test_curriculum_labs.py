@@ -1,13 +1,11 @@
 import unittest
-from pathlib import Path
-import sys
 
-sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
-
-from curriculum_labs import (
+from scripts.agent_runtime import ApprovalGate
+from scripts.curriculum_labs import (
     AgentCard,
     ContextItem,
     PipelineState,
+    book_trip,
     bounded_loop,
     build_context,
     delegate,
@@ -18,6 +16,7 @@ from curriculum_labs import (
     reward_audit,
     run_pipeline,
     tick_town,
+    trip_approval_scope,
     validate_tool_call,
 )
 
@@ -34,7 +33,7 @@ class CurriculumLabTests(unittest.TestCase):
         self.assertEqual(result["status"], "budget_exhausted")
         self.assertEqual(len(result["trace"]), 3)
 
-    def test_p2_pipeline_can_resume_from_checkpoint(self):
+    def test_p2_pipeline_reaches_done_with_explicit_state(self):
         state = PipelineState()
         state = run_pipeline(state, [2, 4])
         self.assertEqual(state.stage, "done")
@@ -55,9 +54,17 @@ class CurriculumLabTests(unittest.TestCase):
 
     def test_p5_a2a_boundary_checks_skill_and_transport(self):
         card = AgentCard("writer", ("draft",), "https://agent.example")
-        self.assertEqual(delegate(card, "draft")["status"], "submitted")
+        self.assertEqual(delegate(card, "draft")["status"], "planned")
         self.assertEqual(delegate(card, "pay")["reason"], "skill_not_declared")
         self.assertEqual(delegate(AgentCard("writer", ("draft",), "http://bad"), "draft")["reason"], "endpoint_policy")
+
+        class Transport:
+            def submit(self, endpoint, payload):
+                return {"status": "completed", "task_id": payload["task_id"], "artifact": "draft.md"}
+
+        completed = delegate(card, "draft", "write a short draft", Transport())
+        self.assertEqual(completed["status"], "completed")
+        self.assertEqual(completed["artifact"], "draft.md")
 
     def test_p6_metrics_keep_attack_slice(self):
         result = metrics([
@@ -69,15 +76,24 @@ class CurriculumLabTests(unittest.TestCase):
 
     def test_p7_report_rejects_missing_source(self):
         result = research_report([
-            {"text": "grounded", "source_id": "doc-1"},
+            {"text": "grounded fact", "source_id": "doc-1"},
+            {"text": "unrelated claim", "source_id": "doc-1"},
             {"text": "unsupported", "source_id": "doc-9"},
-        ], {"doc-1": "fact"})
+        ], {"doc-1": "grounded fact from source"})
         self.assertEqual(len(result["accepted"]), 1)
-        self.assertEqual(result["rejected"][0]["reason"], "missing_source")
+        self.assertEqual(
+            [item["reason"] for item in result["rejected"]],
+            ["unsupported_by_source", "missing_source"],
+        )
 
     def test_p7a_travel_requires_approval_for_booking(self):
-        self.assertEqual(plan_trip("Hangzhou", 1000)["status"], "awaiting_approval")
-        self.assertEqual(plan_trip("Hangzhou", 1000, approved_booking=True)["status"], "booked")
+        plan = plan_trip("Hangzhou", 1000)
+        self.assertEqual(plan["status"], "awaiting_approval")
+        resource, parameters = trip_approval_scope(plan)
+        gate = ApprovalGate(secret=b"t" * 32)
+        request_id = gate.request("trip_booking", resource, parameters)
+        receipt = gate.approve(request_id)
+        self.assertEqual(book_trip(plan, gate, receipt)["status"], "booked")
         self.assertEqual(plan_trip("Shanghai", 1000)["reason"], "over_budget")
 
     def test_p7b_town_transition_is_deterministic(self):

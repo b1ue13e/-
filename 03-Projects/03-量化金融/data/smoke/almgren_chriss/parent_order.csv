@@ -1,0 +1,2 @@
+order_id,qty,side,intervals,total_time,risk_aversion,volatility,temporary_impact
+Q1,120000,SELL,6,1.0,0.2,0.025,0.01

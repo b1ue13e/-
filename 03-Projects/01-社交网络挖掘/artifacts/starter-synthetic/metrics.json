@@ -1,0 +1,27 @@
+{
+  "random": {
+    "average_precision": 0.4648177379008041,
+    "roc_auc": 0.3788265306122449,
+    "precision_at_10": 0.2
+  },
+  "preferential_attachment": {
+    "average_precision": 0.6991872547298427,
+    "roc_auc": 0.6792091836734694,
+    "precision_at_10": 0.8
+  },
+  "common_neighbors": {
+    "average_precision": 0.6201814058956916,
+    "roc_auc": 0.6434948979591837,
+    "precision_at_10": 0.7
+  },
+  "jaccard": {
+    "average_precision": 0.603585492052338,
+    "roc_auc": 0.6186224489795918,
+    "precision_at_10": 0.7
+  },
+  "adamic_adar": {
+    "average_precision": 0.6146990819290052,
+    "roc_auc": 0.6033163265306123,
+    "precision_at_10": 0.7
+  }
+}

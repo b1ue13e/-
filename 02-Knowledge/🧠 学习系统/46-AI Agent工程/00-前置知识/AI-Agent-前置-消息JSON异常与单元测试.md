@@ -1,4 +1,4 @@
-﻿---
+---
 type: study
 topic: "消息、JSON、异常与单元测试"
 course: "AI Agent工程"
@@ -13,7 +13,6 @@ related: ["AI-Agent-工具调用与结构化契约", "AI-Agent-多智能体协�
 stage_moc: "[[🧭 AI-Agent工程-前置知识]]"
 flow: knowledge
 kind: concept
-assessment_exempt: false
 source: "UC Berkeley CS 194/294-196 Fall 2024 Lab 01 public instructions; Python standard library documentation"
 source_urls: ["https://rdi.berkeley.edu/llm-agents-mooc/assets/instructions.pdf", "https://docs.python.org/3/library/unittest.html", "https://docs.python.org/3/library/json.html"]
 accessed: 2026-08-06

@@ -1,4 +1,4 @@
-﻿---
+---
 type: study
 topic: "ReAct推理行动范式"
 course: "AI Agent工程"
@@ -13,7 +13,6 @@ stage_moc: "[[🧭 阶段1-Agent基础与受限循环]]"
 upstream: ["[[AI-Agent-边界与感知行动循环]]"]
 flow: knowledge
 kind: concept
-assessment_exempt: false
 source: "UC Berkeley CS 194/294-196 F24 overview; Datawhale Hello-Agents Chapter 4.2; Yao et al., ReAct (ICLR 2023)"
 source_urls: ["https://github.com/datawhalechina/hello-agents/tree/main/docs/chapter4", "https://arxiv.org/abs/2210.03629"]
 accessed: 2026-08-06

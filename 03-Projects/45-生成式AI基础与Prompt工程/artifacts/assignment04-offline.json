@@ -1,0 +1,280 @@
+{
+  "assignment": "04",
+  "count": 10,
+  "accuracy": 1.0,
+  "trace_complete": true,
+  "records": [
+    {
+      "id": "m01",
+      "left": 12,
+      "op": "+",
+      "right": 7,
+      "expected": 19,
+      "answer": 19,
+      "trace": [
+        {
+          "stage": "parse",
+          "operands": [
+            12,
+            7
+          ],
+          "operator": "+"
+        },
+        {
+          "stage": "execute",
+          "tool": "integer_+"
+        },
+        {
+          "stage": "verify",
+          "predicate": "answer == expected"
+        }
+      ],
+      "correct": true
+    },
+    {
+      "id": "m02",
+      "left": 9,
+      "op": "*",
+      "right": 6,
+      "expected": 54,
+      "answer": 54,
+      "trace": [
+        {
+          "stage": "parse",
+          "operands": [
+            9,
+            6
+          ],
+          "operator": "*"
+        },
+        {
+          "stage": "execute",
+          "tool": "integer_*"
+        },
+        {
+          "stage": "verify",
+          "predicate": "answer == expected"
+        }
+      ],
+      "correct": true
+    },
+    {
+      "id": "m03",
+      "left": 40,
+      "op": "-",
+      "right": 13,
+      "expected": 27,
+      "answer": 27,
+      "trace": [
+        {
+          "stage": "parse",
+          "operands": [
+            40,
+            13
+          ],
+          "operator": "-"
+        },
+        {
+          "stage": "execute",
+          "tool": "integer_-"
+        },
+        {
+          "stage": "verify",
+          "predicate": "answer == expected"
+        }
+      ],
+      "correct": true
+    },
+    {
+      "id": "m04",
+      "left": 81,
+      "op": "//",
+      "right": 9,
+      "expected": 9,
+      "answer": 9,
+      "trace": [
+        {
+          "stage": "parse",
+          "operands": [
+            81,
+            9
+          ],
+          "operator": "//"
+        },
+        {
+          "stage": "execute",
+          "tool": "integer_//"
+        },
+        {
+          "stage": "verify",
+          "predicate": "answer == expected"
+        }
+      ],
+      "correct": true
+    },
+    {
+      "id": "m05",
+      "left": 15,
+      "op": "+",
+      "right": 28,
+      "expected": 43,
+      "answer": 43,
+      "trace": [
+        {
+          "stage": "parse",
+          "operands": [
+            15,
+            28
+          ],
+          "operator": "+"
+        },
+        {
+          "stage": "execute",
+          "tool": "integer_+"
+        },
+        {
+          "stage": "verify",
+          "predicate": "answer == expected"
+        }
+      ],
+      "correct": true
+    },
+    {
+      "id": "m06",
+      "left": 11,
+      "op": "*",
+      "right": 11,
+      "expected": 121,
+      "answer": 121,
+      "trace": [
+        {
+          "stage": "parse",
+          "operands": [
+            11,
+            11
+          ],
+          "operator": "*"
+        },
+        {
+          "stage": "execute",
+          "tool": "integer_*"
+        },
+        {
+          "stage": "verify",
+          "predicate": "answer == expected"
+        }
+      ],
+      "correct": true
+    },
+    {
+      "id": "m07",
+      "left": 100,
+      "op": "-",
+      "right": 64,
+      "expected": 36,
+      "answer": 36,
+      "trace": [
+        {
+          "stage": "parse",
+          "operands": [
+            100,
+            64
+          ],
+          "operator": "-"
+        },
+        {
+          "stage": "execute",
+          "tool": "integer_-"
+        },
+        {
+          "stage": "verify",
+          "predicate": "answer == expected"
+        }
+      ],
+      "correct": true
+    },
+    {
+      "id": "m08",
+      "left": 72,
+      "op": "//",
+      "right": 8,
+      "expected": 9,
+      "answer": 9,
+      "trace": [
+        {
+          "stage": "parse",
+          "operands": [
+            72,
+            8
+          ],
+          "operator": "//"
+        },
+        {
+          "stage": "execute",
+          "tool": "integer_//"
+        },
+        {
+          "stage": "verify",
+          "predicate": "answer == expected"
+        }
+      ],
+      "correct": true
+    },
+    {
+      "id": "m09",
+      "left": 17,
+      "op": "+",
+      "right": 19,
+      "expected": 36,
+      "answer": 36,
+      "trace": [
+        {
+          "stage": "parse",
+          "operands": [
+            17,
+            19
+          ],
+          "operator": "+"
+        },
+        {
+          "stage": "execute",
+          "tool": "integer_+"
+        },
+        {
+          "stage": "verify",
+          "predicate": "answer == expected"
+        }
+      ],
+      "correct": true
+    },
+    {
+      "id": "m10",
+      "left": 14,
+      "op": "*",
+      "right": 3,
+      "expected": 42,
+      "answer": 42,
+      "trace": [
+        {
+          "stage": "parse",
+          "operands": [
+            14,
+            3
+          ],
+          "operator": "*"
+        },
+        {
+          "stage": "execute",
+          "tool": "integer_*"
+        },
+        {
+          "stage": "verify",
+          "predicate": "answer == expected"
+        }
+      ],
+      "correct": true
+    }
+  ],
+  "evidence_scope": "protocol_only",
+  "gate_passed": true
+}

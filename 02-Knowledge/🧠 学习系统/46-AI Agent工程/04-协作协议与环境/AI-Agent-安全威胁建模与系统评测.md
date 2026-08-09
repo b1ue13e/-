@@ -1,4 +1,4 @@
-﻿---
+---
 type: study
 topic: "AI Agent安全威胁建模与系统评测"
 course: "AI Agent工程"
@@ -13,7 +13,6 @@ stage_moc: "[[🧭 阶段4-协作协议与环境]]"
 upstream: ["[[AI-Agent-协议-MCP与A2A互操作]]", "[[AI-Agent-记忆与检索增强生成]]", "[[AI-Agent-规划状态与工作流编排]]"]
 flow: knowledge
 kind: concept
-assessment_exempt: false
 source: "UC Berkeley CS 194/294-196 F24 safety and Labs 02-03; Berkeley Agentic AI F25 evaluation; Microsoft AI Agents for Beginners Lessons 6 and 18; Datawhale Hello-Agents Chapter 12"
 source_urls: ["https://github.com/microsoft/ai-agents-for-beginners/tree/main/06-building-trustworthy-agents", "https://github.com/microsoft/ai-agents-for-beginners/tree/main/18-securing-ai-agents", "https://github.com/datawhalechina/hello-agents/tree/main/docs/chapter12"]
 accessed: 2026-08-06

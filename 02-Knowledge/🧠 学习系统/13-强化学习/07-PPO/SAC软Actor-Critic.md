@@ -1,4 +1,4 @@
----
+﻿---
 type: study
 topic: "SAC 软 Actor-Critic"
 course: "强化学习"
@@ -9,7 +9,7 @@ flow: knowledge
 kind: concept
 difficulty: advanced
 concept: ["SAC", "软 Actor-Critic", "最大熵 RL", "离线策略"]
-upstream: ["[[Actor-Critic架构]]", "[[策略-随机性]]"]
+upstream: ["[[Actor-Critic架构]]", "[[策略与策略空间]]"]
 tags: [学习, 强化学习]
 ---
 > 所属模块：[[🗺️ 强化学习学习路径|强化学习学习路径]]

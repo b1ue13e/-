@@ -6,14 +6,17 @@ assignment_id: "机器学习-07"
 assignment_level: lesson
 assignment_format: lab
 stage_id: "05"
-requires: ["[[机器学习-K-means]]", "[[机器学习-主成分分析]]"]
-source_type: local_integration_task
-source: "本地综合题；参考周志华《机器学习》第 9–10 章与 Hands-on Machine Learning 第 9 章"
-license: "本地学习用途；外部教材仅 link-only，不复制教材答案"
+requires: ["[[机器学习-K-means++]]", "[[机器学习-主成分分析]]"]
+source_type: official_assignment
+source: "改编自 MIT 6.036 Introduction to Machine Learning (Fall 2020, MIT OpenCourseWare, CC BY-NC-SA 4.0) Problem Set 3：K-means / 高斯混合与 EM / PCA 降维（保留原题号与公式语义，非商用翻译改编）"
 created: 2026-08-06
 status: ongoing
 flow: project
 tags: [作业, 机器学习, 聚类, PCA, 降维]
+license: "CC BY-NC-SA 4.0 (MIT OpenCourseWare)"
+source_license_status: verified
+source_verified_at: 2026-08-07
+
 ---
 
 # 机器学习 · 课后作业 07：聚类与 PCA 降维
@@ -36,6 +39,16 @@ tags: [作业, 机器学习, 聚类, PCA, 降维]
 | 版本 | v1 · 2026-08-06 |
 
 ---
+
+## 名校作业来源（MIT 6.036）
+
+> 本题主体改编自 **MIT 6.036 Introduction to Machine Learning（Fall 2020, MIT OpenCourseWare, CC BY-NC-SA 4.0）**，保留原题号与公式语义，依 CC BY-NC-SA 4.0 翻译/改编，非商用，出处标注 MIT OpenCourseWare。下列为该来源 Problem Set 3 的真实题型映射；环境/产物/Rubric 为本课程本地补充。
+
+**改编题号与问题：**
+- **K-means**：Lloyd 算法迭代、收敛性证明要点与 k 的选择（肘部法）。
+- **高斯混合与 EM**：E 步责任度、M 步参数更新，对比 K-means 的软分配。
+- **PCA**：协方差矩阵特征分解、主成分投影与白化。
+
 
 ## 2. 学习目标
 

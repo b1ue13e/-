@@ -1,0 +1,11 @@
+{
+  "id": "QF-ST01-BASELINE",
+  "assignment_id": "QF-ST01",
+  "slug": "data_protocol_baseline",
+  "title": "数据协议与无泄漏均线基线",
+  "stage": "01",
+  "smoke_data_dir": "data/smoke/data_protocol_baseline",
+  "real_files": ["ohlcv.csv"],
+  "baseline": "滞后一日的 MA5/MA20 信号与成本台账",
+  "next_step": "替换为合法数据时保留字段、复权、交易日历、可得时间和执行延迟契约。"
+}

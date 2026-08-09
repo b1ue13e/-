@@ -1,4 +1,4 @@
-﻿---
+---
 type: study
 topic: "代码、网页与沙箱环境交互"
 course: "AI Agent工程"
@@ -14,10 +14,9 @@ stage_moc: "[[🧭 阶段4-协作协议与环境]]"
 upstream: ["[[AI-Agent-安全威胁建模与系统评测]]", "[[AI-Agent-工具调用与结构化契约]]"]
 flow: knowledge
 kind: concept
-assessment_exempt: false
 source: "UC Berkeley CS 194/294-196 F24 code/web agents; Microsoft AI Agents for Beginners Lessons 15 and 17; Datawhale Hello-Agents Chapter 9; Hugging Face Agents Course"
 source_urls: ["https://github.com/microsoft/ai-agents-for-beginners/tree/main/15-browser-use", "https://github.com/microsoft/ai-agents-for-beginners/tree/main/17-creating-local-ai-agents", "https://github.com/datawhalechina/hello-agents/tree/main/docs/chapter9"]
-accessed: 2026-08-06
+accessed: 2026-08-08
 license: "Microsoft MIT；Hello-Agents CC BY-NC-SA 4.0；其他课程材料许可待核验；本卡为原创整合"
 anki_deck: "46-AI Agent工程::环境交互"
 anki_tags: [代码Agent, 网页Agent, 沙箱, 权限]
@@ -101,11 +100,11 @@ except PermissionError as error:
 
 `03-Projects/46-AI Agent工程/scripts/agent_runtime.py` 提供可运行的：
 
-- `SafeWorkspace`：解析后的路径必须位于工作根目录内；写入还必须显式 `approved=True`。
-- `BrowserTool`：只允许 HTTPS 与显式 host allowlist；transport 可注入 fake，因此网络边界可离线测试。
-- `ApprovalGate`：浏览器提交先生成 request ID，未批准时 `submit` 失败关闭。
+- `SafeWorkspace`：解析后的路径必须位于工作根目录内；写入收据绑定规范化相对路径、UTF-8 字节数和内容 SHA-256。
+- `BrowserTool`：只允许 HTTPS/443 与显式 host allowlist；默认 transport 禁止重定向、限制响应大小和内容类型，并拒绝解析到非公网地址的主机。
+- `ApprovalGate`：审批后签发 HMAC 完整性收据，绑定 action、resource、完整参数、nonce 与过期时间；收据只能消费一次。
 
-对应测试验证路径穿越、未批准写入、HTTP/非白名单 host 和未审批浏览器提交都会被拒绝。它是课程级可信边界实现，不是 OS 级容器隔离，也没有声称可以安全执行任意不可信代码。
+对应测试验证路径穿越、内容偷换、收据篡改、过期、重放、HTTP/非白名单 host、异常端口和未审批浏览器提交都会被拒绝。它是课程级可信边界实现，不是 OS 级容器隔离，也没有声称可以安全执行任意不可信代码。
 
 ## 8. 常见误区和易混概念
 

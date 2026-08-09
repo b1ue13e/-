@@ -1,0 +1,11 @@
+{
+  "id": "QF-ST03-RMT",
+  "assignment_id": "QF-ST03",
+  "slug": "covariance_denoising",
+  "title": "Marchenko-Pastur 协方差去噪",
+  "stage": "03",
+  "smoke_data_dir": "data/smoke/covariance_denoising",
+  "real_files": ["asset_returns.csv"],
+  "baseline": "相关矩阵特征值裁剪",
+  "next_step": "只在训练段估计噪声边界，保留原始与去噪协方差的谱和样本外组合证据。"
+}

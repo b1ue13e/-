@@ -22,11 +22,11 @@ def maxcut_sdp_solver(W, max_iters=200):
         prob = cp.Problem(cp.Maximize(cost), constraints)
         prob.solve(solver=cp.SCS, verbose=False)
         if X.value is not None:
-            return X.value, prob.value
-    except ModuleNotFoundError:
+            return X.value, float(prob.value)
+    except Exception:
         pass
 
-    # Burer-Monteiro (1999/2003) 黎曼流形求解器 (纯 NumPy 零依赖降级方案)
+    # Burer-Monteiro 黎曼流形求解器 (纯 NumPy 零依赖降级方案)
     # X = V V^T, V in R^{n x n}, 行范数 ||V_{i,:}|| = 1 (确保 X_{ii} = 1)
     np.random.seed(42)
     V = np.random.randn(n, n)
@@ -34,42 +34,63 @@ def maxcut_sdp_solver(W, max_iters=200):
 
     lr = 0.05
     for _ in range(max_iters):
-        # 梯度 d/dV [ 1/4 (sum W - tr(W V V^T)) ] = -1/2 W V
+        # 梯度 d/dV [ 1/4 (sum W - tr(W V V^T)) ] = -0.5 * W V (因为要最大化 1/4(sum W - tr(W X)))
+        # 目标是最小化 tr(W X)，即最大化 -tr(W X)，梯度方向为 -W V
         grad_V = -0.5 * (W @ V)
-        # 上升方向 (最大化问题)
-        V = V - lr * grad_V
-        # 流形投影：归一化行范数
+        V = V + lr * grad_V
+        # 黎曼流形投影：单位球面行归一化
         norms = np.linalg.norm(V, axis=1, keepdims=True)
         norms[norms == 0] = 1.0
         V = V / norms
 
     X_opt = V @ V.T
-    sdp_val = 0.25 * (np.sum(W) - np.trace(W @ X_opt))
+    sdp_val = float(0.25 * (np.sum(W) - np.trace(W @ X_opt)))
     return X_opt, sdp_val
 
 
-def random_hyperplane_rounding(X_opt, num_cuts=100):
+def random_hyperplane_rounding(X_opt, W=None, num_trials=200, num_cuts=None):
     """
     Goemans-Williamson 随机超平面剪切算法:
       从 X_opt 提取 Cholesky/特征值因子 V (V V^T = X)，
       随机采样超平面法向量 r ~ N(0, I)，
       计算节点二值切割 sign(V r)。
-    返回: best_cut (1/-1 向量)
+    返回: (cut_val, best_cut) 或 best_cut
     """
+    if num_cuts is not None:
+        num_trials = num_cuts
+
     n = X_opt.shape[0]
     
     # 特征值分解保证 PSD 因子分解
     eigvals, eigvecs = np.linalg.eigh(X_opt)
-    eigvals = np.maximum(eigvals, 0)
+    eigvals = np.maximum(eigvals, 0.0)
     V = eigvecs @ np.diag(np.sqrt(eigvals)) # n x n
     
     best_cut = None
     best_val = -1.0
 
-    for _ in range(num_cuts):
+    for _ in range(num_trials):
         r = np.random.randn(n)
-        s = np.sign(V @ r)
-        s[s == 0] = 1
-        best_cut = s
+        r = r / (np.linalg.norm(r) + 1e-12)
+        # 投影符号
+        cut = np.sign(V @ r)
+        cut[cut == 0] = 1.0
+        
+        # 避免全在同一侧的退化平凡割
+        if np.all(cut == cut[0]):
+            cut[0] = -cut[0]
+            
+        if W is not None:
+            # 计算割值: 1/4 * sum_{i,j} W_{ij} (1 - x_i x_j)
+            cut_val = float(0.25 * (np.sum(W) - cut.T @ (W @ cut)))
+            if cut_val > best_val:
+                best_val = cut_val
+                best_cut = cut.copy()
+        else:
+            if best_cut is None:
+                best_cut = cut.copy()
+                best_val = 1.0
 
+    if W is not None:
+        return best_val, best_cut
     return best_cut

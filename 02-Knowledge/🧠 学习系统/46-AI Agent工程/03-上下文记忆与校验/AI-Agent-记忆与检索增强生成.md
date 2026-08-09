@@ -1,4 +1,4 @@
-﻿---
+---
 type: study
 topic: "AI Agent记忆与检索增强生成"
 course: "AI Agent工程"
@@ -13,7 +13,6 @@ stage_moc: "[[🧭 阶段3-上下文记忆与校验]]"
 upstream: ["[[AI-Agent-上下文工程-选择压缩隔离]]"]
 flow: knowledge
 kind: concept
-assessment_exempt: false
 source: "UC Berkeley CS 194/294-196 F24 RAG; Stanford CS224V F25; Microsoft AI Agents for Beginners Lessons 5 and 13; Datawhale Hello-Agents Chapter 8; Hugging Face Agents Course Unit 3"
 source_urls: ["https://github.com/microsoft/ai-agents-for-beginners/tree/main/05-agentic-rag", "https://github.com/microsoft/ai-agents-for-beginners/tree/main/13-agent-memory", "https://github.com/datawhalechina/hello-agents/tree/main/docs/chapter8"]
 accessed: 2026-08-06
@@ -44,7 +43,7 @@ anki_tags: [46-AI-Agent工程, 记忆, RAG]
 ## 3. 学它之前需要哪些前置知识？
 
 1. **[[AI-Agent-边界与感知行动循环]]**：检索结果是观察，摘要是状态压缩。
-2. **[[08-NLP全栈/03-深度学习NLP基础/NLP全栈-词向量与Word2Vec|词向量与 Word2Vec]]**：理解向量检索只是候选生成，不等于事实正确。
+2. **[[02-Knowledge/🧠 学习系统/08-NLP全栈/03-深度学习NLP基础/08-NLP全栈-词向量与Word2Vec|词向量与 Word2Vec]]**：理解向量检索只是候选生成，不等于事实正确。
 
 ## 4. 用直觉语言解释它
 

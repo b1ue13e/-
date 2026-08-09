@@ -1,4 +1,4 @@
-﻿---
+---
 type: study
 topic: "离线 RL 与模仿学习"
 course: "强化学习"
@@ -9,7 +9,7 @@ flow: knowledge
 kind: concept
 difficulty: advanced
 concept: ["离线 RL", "模仿学习", "行为克隆", "分布偏移"]
-upstream: ["[[Q函数-定义]]", "[[DQN深度Q网络]]"]
+upstream: ["[[Q函数（动作价值函数）]]", "[[DQN深度Q网络]]"]
 tags: [学习, 强化学习]
 ---
 > 所属模块：[[🗺️ 强化学习学习路径|强化学习学习路径]]
@@ -158,7 +158,7 @@ $$\min_Q\left[\alpha E_{s\sim\mathcal{D},a\sim\pi}[Q(s,a)]-E_{\mathcal{D}}[Q(s,a
 - [[值函数近似与 DQN]] ↔ [[离线 RL 与模仿学习]]：DQN 天然异策略，是离线化的起点。
 
 ### 应用场景
-- [[RLHF-PPO]]（旧碎片）：人类反馈对齐。
+- [[RLHF-PPO阶段]]（旧碎片）：人类反馈对齐。
 
 ---
 
@@ -258,7 +258,7 @@ $$\min_Q\left[\alpha E_{s\sim\mathcal{D},a\sim\pi}[Q(s,a)]-E_{\mathcal{D}}[Q(s,a
 ## 13. 给 Obsidian 的归档建议
 
 - **适合文件夹**：`02-Knowledge/🧠 学习系统/13-强化学习/07-PPO/`（RLHF 相邻）
-- **关联已有笔记**：`[[RLHF-PPO]]`（旧）
+- **关联已有笔记**：`[[RLHF-PPO阶段]]`（旧）
 - **建议标签**：`#学习` `#强化学习` `#离线`
 - **拆分建议**：BC 与 CQL 可拆为两张卡。
 

@@ -1,4 +1,4 @@
-﻿---
+---
 type: study
 topic: "AI Agent框架选型与最小运行时"
 course: "AI Agent工程"
@@ -13,7 +13,6 @@ stage_moc: "[[🧭 阶段2-运行时规划与状态]]"
 upstream: ["[[AI-Agent-工具调用与结构化契约]]"]
 flow: knowledge
 kind: concept
-assessment_exempt: false
 source: "Microsoft AI Agents for Beginners Lessons 2 and 14; Datawhale Hello-Agents Chapters 5-7 (repositories verified 2026-08-06)"
 source_urls: ["https://github.com/microsoft/ai-agents-for-beginners/tree/main/02-explore-agentic-frameworks", "https://github.com/microsoft/ai-agents-for-beginners/tree/main/14-microsoft-agent-framework", "https://github.com/datawhalechina/hello-agents/tree/main/docs/chapter5", "https://github.com/datawhalechina/hello-agents/tree/main/docs/chapter6", "https://github.com/datawhalechina/hello-agents/tree/main/docs/chapter7"]
 accessed: 2026-08-06

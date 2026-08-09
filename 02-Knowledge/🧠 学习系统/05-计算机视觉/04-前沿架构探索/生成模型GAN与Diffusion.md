@@ -52,7 +52,7 @@ tags: [学习,计算机视觉,生成模型,GAN,Diffusion]
 2. **[[反向传播与计算图]]与梯度下降**：GAN 交替训练需理解梯度如何从 $D$ 穿过 $G$、何时冻结谁。
 3. **[[Softmax与SVM损失函数|交叉熵 / BCE 损失]]**：GAN 判别器做二分类——不理解 BCE 就读不懂 minimax 公式。
 4. **[[计算机视觉-VAE变分自编码器]]（建议了解）**：VAE 用显式编码-解码 + KL 散度做生成，是理解 GAN 和 Diffusion 的重要参照系——Diffusion 本质是 $T$ 步深度 VAE。
-5. **[[马尔可夫与泊松过程-应用入口-1]]**：Diffusion 的前向与反向过程都是马尔可夫链。
+5. **[[马尔可夫链]]**：Diffusion 的前向与反向过程都是马尔可夫链。
 
 ---
 
@@ -296,7 +296,7 @@ $$v_* = \arg\min_v \; \mathbb{E}_{z_t, t, \epsilon} \left\lVert \epsilon - \epsi
 ## 9. 相关知识点与 Obsidian 双链建议
 
 ### 上游
-- [[卷积神经网络CNN]]、[[计算机视觉-VAE变分自编码器]]、[[Softmax与SVM损失函数|BCE]]、[[马尔可夫与泊松过程-应用入口-1]]
+- [[卷积神经网络CNN]]、[[计算机视觉-VAE变分自编码器]]、[[Softmax与SVM损失函数|BCE]]、[[马尔可夫链]]
 
 ### 下游
 - StableDiffusion（Latent Diffusion + 文本条件）、ControlNet（空间可控）、StyleGAN（GAN 最高形态）、CycleGAN（无配对域翻译）
@@ -404,9 +404,15 @@ $$v_* = \arg\min_v \; \mathbb{E}_{z_t, t, \epsilon} \left\lVert \epsilon - \epsi
 
 ## 学完后可以完成
 
-- [[05-计算机视觉-大作业-开放课程项目|HW06]]：
+> 下列作业在 `requires` 中引用了本卡，由 Dataview 实时派生（非人工维护反向链接）：
 
-> 作业入口由 frontmatter `requires` 维护（唯一事实源），下方 Dataview 反向派生当前卡可完成的全部作业。
+```dataview
+LIST
+FROM "03-Projects"
+WHERE contains(requires, this.file.link)
+SORT assignment_level ASC, file.name ASC
+```
+
 ## 🔗 知识图谱
 
 ```dataview

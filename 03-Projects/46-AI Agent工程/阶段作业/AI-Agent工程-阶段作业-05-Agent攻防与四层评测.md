@@ -11,17 +11,7 @@ requires: ["[[AI-Agent-安全威胁建模与系统评测]]", "[[AI-Agent-评测�
 source_type: official_assignment
 source: "UC Berkeley LLM Agents MOOC Fall 2024 Labs 02-03 public objectives; 本文件是非官方中文摘要与本地综合验收"
 source_url: "https://rdi.berkeley.edu/llm-agents-mooc/assets/instructions.pdf"
-accessed: 2026-08-06
-license: "公开说明许可未统一声明；starter逐文件许可证[待验证]；不复制攻击答案、隐藏测试或官方题面"
-assignment_id: "AI-Agent工程-S05"
-assignment_level: stage
-assignment_format: lab
-stage_id: "05"
-requires: ["[[AI-Agent-安全威胁建模与系统评测]]", "[[AI-Agent-评测与基准-任务轨迹成本]]", "[[AI-Agent-可观测性与生产运行-轨迹审批恢复]]", "[[AI-Agent-工具调用与结构化契约]]"]
-source_type: official_assignment
-source: "UC Berkeley LLM Agents MOOC Fall 2024 Labs 02-03 public objectives; 本文件是非官方中文摘要与本地综合验收"
-source_url: "https://rdi.berkeley.edu/llm-agents-mooc/assets/instructions.pdf"
-accessed: 2026-08-06
+accessed: 2026-08-08
 license: "公开说明许可未统一声明；starter逐文件许可证[待验证]；不复制攻击答案、隐藏测试或官方题面"
 created: 2026-08-06
 status: planned
@@ -95,6 +85,13 @@ class EvalReport:
 - 分析防御拦截的性能开销（P95 延迟增加百分比）。
 
 ---
+
+## 任务分层
+
+- **基础要求**：固定 20 正常、10 异常、10 对抗样本，逐样本保存状态/工具/安全决策，并计算 TSR、异常关闭率、ASR、ToolAcc 和 P95。
+- **必要提示**：直接运行 `python -m scripts.run_eval` 复核课程基线；指标必须能回到 `data/eval_cases.jsonl` 的具体样本。
+- **常见错误**：以拒绝词代替危险效果、只报告平均分、手写评测结果、把本地 ASR 外推到真实模型。
+- **可选进阶**：接入一个版本化真实模型 adapter，冻结模型/参数/费用后重复同一数据集并比较差异。
 
 ## 🛠️ 环境与复现
 

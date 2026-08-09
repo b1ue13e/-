@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "events": "data\\generated\\temporal_edges.csv",
+  "events_sha256": "2fdcdc74c77becb84600b919951a9c5a354e5ef9ea787ab96a6fc8e9b4d72711",
+  "seed": 42,
+  "train_cutoff": 84,
+  "validation_cutoff": 112,
+  "counts": {
+    "train_edges": 84,
+    "validation_positive": 28,
+    "validation_negative": 28,
+    "test_positive": 28,
+    "test_negative": 28
+  },
+  "policy": {
+    "edge_identity": "directed first occurrence",
+    "candidate_nodes": "nodes observed by train cutoff",
+    "negative_rule": "directed pairs never observed in the full event window",
+    "features": "training graph only"
+  }
+}

@@ -497,10 +497,15 @@ if __name__ == "__main__":
 
 ## 学完后可以完成
 
-- [[05-计算机视觉-阶段作业-03-目标检测PascalVOC|HW05]]：搭建最小目标检测工程包（R-CNN/YOLO 系）
-- [[05-计算机视觉-阶段作业-03-迁移学习与误差分析|HW04]]：搭建最小目标检测工程包（R-CNN/YOLO 系）
+> 下列作业在 `requires` 中引用了本卡，由 Dataview 实时派生（非人工维护反向链接）：
 
-> 作业入口由 frontmatter `requires` 维护（唯一事实源），下方 Dataview 反向派生当前卡可完成的全部作业。
+```dataview
+LIST
+FROM "03-Projects"
+WHERE contains(requires, this.file.link)
+SORT assignment_level ASC, file.name ASC
+```
+
 ## 🔗 知识图谱
 
 ```dataview

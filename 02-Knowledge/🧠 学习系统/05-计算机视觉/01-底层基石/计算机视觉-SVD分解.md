@@ -133,26 +133,33 @@ def svd_compress(img_gray, k):
 ## 🧪 自测题
 
 1. **(基础)** SVD 分解得到的三个矩阵 $\mathbf{U}, \mathbf{\Sigma}, \mathbf{V}^T$ 各自的物理含义是什么？
-   <details><summary>💡 提示</summary>$\mathbf{U}$=输出空间的正交基，$\mathbf{\Sigma}$=各方向的缩放因子，$\mathbf{V}^T$=输入空间的正交基。等价于把矩阵作用理解为"旋转→缩放→旋转"。</details>
+   <details><summary>💡 思路</summary>把 $\mathbf{A} = \mathbf{U\Sigma V}^T$ 看成对向量依次施加三次操作；逐个判断每个矩阵是正交阵还是对角阵，再想正交阵和对角阵各自对应什么几何动作。</details>
 
 2. **(中等)** 为什么低秩近似能用于图像去噪？
-   <details><summary>💡 提示</summary>噪声通常是高频、低能量的，对应小奇异值。低秩近似丢弃小奇异值 = 保留主要结构、丢弃噪声。</details>
+   <details><summary>💡 思路</summary>先想噪声在奇异值谱上主要落在哪一端（大奇异值还是小奇异值）；再想截断保留前 $k$ 项相当于滤掉了哪部分成分。</details>
 
 3. **(较难)** LoRA 的核心思想是 $\Delta W = BA$（$B \in \mathbb{R}^{d \times r}, A \in \mathbb{R}^{r \times k}, r \ll \min(d,k)$）。为什么这被称为"受 SVD 启发的低秩分解"？
-   <details><summary>💡 提示</summary>SVD 表明任何矩阵可表达为秩-1 矩阵的加权和 $\sum \sigma_i \mathbf{u}_i\mathbf{v}_i^T$。LoRA 的 $BA$ 正是只保留前 $r$ 项的低秩近似，$\sigma_i$ 被吸收进 $A$ 或 $B$ 中。</details>
+   <details><summary>💡 思路</summary>写出 SVD 的秩一展开式 $\mathbf{A} = \sum_i \sigma_i \mathbf{u}_i\mathbf{v}_i^T$，数一数截断到 $r$ 项需要多少参数；再与 $BA$ 的形状 $(d\times r)(r\times k)$ 对照看两者结构是否一致。</details>
 
 ---
 
-## 🧪 学完本节后可完成的作业
+## 🔀 学完本节后的横向连接
 
 - 可直接用 NumPy 实现 SVD 图像压缩实验：对 CIFAR-10 图像做不同 k 值的重建并计算 PSNR
 ---
 
 ## 学完后可以完成
 
-- 完成卡内自测题与闭卷复现（SVD 分解）
+> 下列作业在 `requires` 中引用了本卡，由 Dataview 实时派生（非人工维护反向链接）：
 
-> 该卡无直接课后/阶段作业：以卡内自测题与闭卷复现作为形成性验收；如需综合实践，可挂靠 HW06 开放课程项目或 CAP01。
+```dataview
+LIST
+FROM "03-Projects"
+WHERE contains(requires, this.file.link)
+SORT assignment_level ASC, file.name ASC
+```
+
+本卡另以前置「🧪 自测题」与闭卷复现作为形成性验收。
 
 ## 🔗 知识图谱
 

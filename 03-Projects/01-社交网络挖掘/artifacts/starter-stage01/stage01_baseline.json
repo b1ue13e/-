@@ -1,0 +1,10 @@
+{
+  "event_rows": 64,
+  "nodes": 24,
+  "unique_edges": 63,
+  "duplicate_events": 1,
+  "self_loops": 1,
+  "reciprocal_pairs": 5,
+  "weak_components": 1,
+  "strong_components": 6
+}

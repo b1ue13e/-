@@ -1,0 +1,118 @@
+{
+  "brownian": {
+    "quadratic_variation_mean": 1.0002634464038263,
+    "terminal_mean": 0.0019459946071631005,
+    "terminal_variance": 1.0058106497912271,
+    "theory_quadratic_variation": 1.0,
+    "theory_terminal_mean": 0.0,
+    "theory_terminal_variance": 1.0
+  },
+  "brownian_reflection": {
+    "empirical_maximum_probability": 0.4256,
+    "empirical_terminal_probability": 0.2296,
+    "paths": 2500.0,
+    "steps": 200.0,
+    "theory_maximum_probability": 0.45325470475373647,
+    "theory_terminal_probability": 0.22662735237686824
+  },
+  "gbm_error_study": {
+    "coupling": "coarse increments are sums of finest-grid increments",
+    "estimated_strong_order": 0.48946650096251015,
+    "paths": 1200,
+    "rows": [
+      {
+        "dt": 0.0625,
+        "endpoint_mean": 1.0921020701977402,
+        "monte_carlo_standard_error": 0.009259606894508922,
+        "steps": 16,
+        "strong_mae": 0.013772088988726517,
+        "theory_mean": 1.0832870676749586,
+        "weak_abs_error": 0.008815002522781556
+      },
+      {
+        "dt": 0.03125,
+        "endpoint_mean": 1.0921060375869238,
+        "monte_carlo_standard_error": 0.009290639191786437,
+        "steps": 32,
+        "strong_mae": 0.009535320011382202,
+        "theory_mean": 1.0832870676749586,
+        "weak_abs_error": 0.00881896991196518
+      },
+      {
+        "dt": 0.015625,
+        "endpoint_mean": 1.0924447072879968,
+        "monte_carlo_standard_error": 0.00929984724893582,
+        "steps": 64,
+        "strong_mae": 0.006816536054410469,
+        "theory_mean": 1.0832870676749586,
+        "weak_abs_error": 0.009157639613038171
+      },
+      {
+        "dt": 0.0078125,
+        "endpoint_mean": 1.0921889482887985,
+        "monte_carlo_standard_error": 0.009304133413633477,
+        "steps": 128,
+        "strong_mae": 0.004970995121566505,
+        "theory_mean": 1.0832870676749586,
+        "weak_abs_error": 0.008901880613839896
+      }
+    ],
+    "theory_strong_order": 0.5
+  },
+  "manifest": {
+    "implementation": "Python standard library",
+    "purpose": "reference toolchain check, not learner completion evidence",
+    "seed": 20260809
+  },
+  "markov": {
+    "empirical_frequencies": [
+      0.5966080678386432,
+      0.40339193216135677
+    ],
+    "matrix": [
+      [
+        0.8,
+        0.2
+      ],
+      [
+        0.3,
+        0.7
+      ]
+    ],
+    "stationary": [
+      0.5999999999999089,
+      0.40000000000009084
+    ],
+    "steps": 50000
+  },
+  "mm1": {
+    "arrivals": 39956,
+    "departures": 39951,
+    "final_number": 5,
+    "rho": 0.6666666666666666,
+    "theory_average_number": 1.9999999999999998,
+    "time_average_number": 2.008193241314874
+  },
+  "ou": {
+    "dt": 0.005,
+    "endpoint_mean": 0.4222399940230424,
+    "endpoint_variance": 0.16257735195513515,
+    "theory_mean": 0.4253193974482041,
+    "theory_variance": 0.16292847047781114
+  },
+  "poisson": {
+    "empirical_mean": 5.9685,
+    "empirical_variance": 6.0643141814182755,
+    "horizon": 2.0,
+    "rate": 3.0,
+    "samples": 10000,
+    "theory_mean_variance": 6.0
+  },
+  "stopped_walk": {
+    "empirical_mean_stopping_time": 20.91425,
+    "empirical_upper_hit_probability": 0.303125,
+    "theory_mean_stopping_time": 21.0,
+    "theory_upper_hit_probability": 0.3,
+    "trials": 8000.0
+  }
+}

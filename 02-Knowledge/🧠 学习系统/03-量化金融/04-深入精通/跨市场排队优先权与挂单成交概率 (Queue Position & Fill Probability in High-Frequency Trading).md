@@ -18,7 +18,7 @@ tags:
 title: 跨市场排队优先权与挂单成交概率 (Queue Position & Fill Probability in High-Frequency Trading)
 date: 2026-07-23
 course: 量化金融
-stage_moc: '[[🧭 阶段4-微观结构执行与强化学习]]'
+stage_moc: '[[🧭 阶段4-微观结构与执行]]'
 upstream:
   - '[[限价订单簿数据与 L1_L2_L3 盘口重建 (Limit Order Book Data & Reconstructing L1_L2_L3)|订单簿数据]]'
   - '[[买卖价差及其微观结构拆解 (Bid-Ask Spread & Microstructure Decomposition)|买卖价差]]'

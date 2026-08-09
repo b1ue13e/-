@@ -1,0 +1,11 @@
+{
+  "id": "QF-ST04-QUEUE",
+  "assignment_id": "QF-ST04",
+  "slug": "queue_fill_probability",
+  "title": "队列消耗与挂单成交概率",
+  "stage": "04",
+  "smoke_data_dir": "data/smoke/queue_fill_probability",
+  "real_files": ["lob_events.csv"],
+  "baseline": "到达队首/自身成交分离的泊松单位消耗近似与事件流台账",
+  "next_step": "用真实 L3 事件区分成交、前方撤单和新增挂单，并报告模型失效边界。"
+}

@@ -1,0 +1,26 @@
+[
+  {
+    "doc_id": "doc_001",
+    "title": "Data Mining Principles",
+    "content": "Data mining involves discovering patterns in large data sets using association rules, Apriori algorithms, and FP-Growth frequent itemset mining.",
+    "category": "Data Mining"
+  },
+  {
+    "doc_id": "doc_002",
+    "title": "Information Retrieval Systems",
+    "content": "Information retrieval systems build inverted indexes and score documents using TF-IDF and Okapi BM25 probabilistic retrieval models.",
+    "category": "Information Retrieval"
+  },
+  {
+    "doc_id": "doc_003",
+    "title": "MapReduce and Distributed Systems",
+    "content": "HDFS provides fault-tolerant storage while MapReduce and Apache Spark enable large-scale distributed data processing and stream analytics.",
+    "category": "Big Data"
+  },
+  {
+    "doc_id": "doc_004",
+    "title": "Dense Retrieval and RAG",
+    "content": "Hybrid search combines BM25 sparse retrieval with dense vector embeddings using FAISS and RRF fusion for RAG systems.",
+    "category": "Advanced IR"
+  }
+]

@@ -7,9 +7,9 @@ assignment_level: lesson
 assignment_format: problem-set
 stage_id: "03"
 requires:
-  - "[[运筹学-动态规划]]"
   - "[[运筹学-Markov决策过程]]"
   - "[[运筹学-前置-概率与期望]]"
+  - "[[运筹学-动态规划]]"
 source_type: local_integration_task
 created: 2026-08-06
 status: planned
@@ -29,6 +29,7 @@ tags: [作业, 运筹学, 动态规划, MDP]
 
 - [[运筹学-动态规划]]（四要素、最优性原理、贝尔曼方程）
 - [[运筹学-Markov决策过程]]（五元组、策略评估/迭代、值迭代）
+- [[运筹学-前置-概率与期望]]
 
 ## 任务边界
 

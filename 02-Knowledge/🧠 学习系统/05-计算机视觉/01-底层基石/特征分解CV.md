@@ -126,26 +126,33 @@ print(f"Reduced shape: {X_pca.shape}")  # 预期 (100, 2)
 ## 🧪 自测题
 
 1. **(基础)** 矩阵 $\mathbf{A} = \begin{bmatrix} 2 & 0 \\ 0 & 3 \end{bmatrix}$ 的特征值和特征向量是什么？
-   <details><summary>💡 提示</summary>特征值就是对角线元素：$\lambda_1=2, \lambda_2=3$。特征向量是标准基：$\mathbf{v}_1=[1,0]^T, \mathbf{v}_2=[0,1]^T$。对角矩阵的特征向量总是坐标轴方向。</details>
+   <details><summary>💡 思路</summary>直接解特征方程 $\det(\mathbf{A}-\lambda\mathbf{I}) = 0$——对角矩阵这一步会非常简单；再把每个 $\lambda$ 回代求对应的 $\mathbf{v}$。</details>
 
 2. **(中等)** PCA 中为什么要取最大的特征值对应的特征向量，而不是最小的？
-   <details><summary>💡 提示</summary>特征值 = 方差。最大特征值方向保留了最多的数据变化信息。取最小特征值意味着投影到数据几乎不变的维度上（信息丢失最大）。</details>
+   <details><summary>💡 思路</summary>回忆协方差矩阵的特征值在几何上代表什么量（与投影到该方向后的方差有关）；再看 PCA 的目标函数是最大化还是最小化它。</details>
 
 3. **(较难)** 如果协方差矩阵的某个特征值接近 0，这意味着什么？对 PCA 有什么影响？
-   <details><summary>💡 提示</summary>特征值 ≈ 0 意味着数据在那个方向上几乎无变化（退化的维度）。PCA 可以安全地丢弃该维度（降维），因为不丢失信息。</details>
+   <details><summary>💡 思路</summary>把特征值理解为该方向上的方差大小，考虑 $\lambda \to 0$ 说明数据沿这个方向如何分布；再判断丢弃这一维会损失多少信息。</details>
 
 ---
 
-## 🧪 学完本节后可完成的作业
+## 🔀 学完本节后的横向连接
 
 - 理解 [[计算机视觉-SVD分解|SVD]] 之前必须先理解特征分解（SVD 是特征分解的推广）
 ---
 
 ## 学完后可以完成
 
-- 完成卡内自测题与闭卷复现（特征值/特征向量）
+> 下列作业在 `requires` 中引用了本卡，由 Dataview 实时派生（非人工维护反向链接）：
 
-> 该卡无直接课后/阶段作业：以卡内自测题与闭卷复现作为形成性验收；如需综合实践，可挂靠 HW06 开放课程项目或 CAP01。
+```dataview
+LIST
+FROM "03-Projects"
+WHERE contains(requires, this.file.link)
+SORT assignment_level ASC, file.name ASC
+```
+
+本卡另以前置「🧪 自测题」与闭卷复现作为形成性验收。
 
 ## 🔗 知识图谱
 

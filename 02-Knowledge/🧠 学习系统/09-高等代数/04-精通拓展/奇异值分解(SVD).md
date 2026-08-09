@@ -37,7 +37,7 @@ tags: [高等代数, 线性代数, SVD, 奇异值]
 - **秩揭示**：$\operatorname{rank}A$ = 非零奇异值个数；$\lVert A\rVert_2=\sigma_1$；$\lVert A\rVert_F=\sqrt{\sum\sigma_i^2}$。
 - **低秩逼近**：Eckart-Young——截断 SVD 是最佳 $k$ 秩逼近。
 - **伪逆**：$A^\dagger=V\Sigma^{-1}U^T$——最小二乘的统一解。
-- **PCA/降维**：数据矩阵的 SVD（4.12）。
+- **PCA/降维**：数据矩阵的 SVD。
 - **应用**：图像压缩、推荐系统（SVD++）、搜索引擎（LSI）、条件数 $\kappa=\sigma_1/\sigma_r$。
 
 ## 3. 学它之前需要哪些前置知识？
@@ -142,7 +142,7 @@ $\operatorname{rank}$ 相同的矩阵对：$AA^T=U\Sigma^2U^T$、$A^TA=V\Sigma^2
 ## 9. 相关知识点与 Obsidian 双链建议
 
 - [[实对称矩阵与谱定理|实对称矩阵与谱定理]]、[[正交矩阵与正交变换|正交矩阵]] — 上游
-- [[低秩逼近与主成分分析|低秩逼近与 PCA]] — 下游：Eckart-Young 应用
+- [[低秩逼近与主成分分析|低秩逼近与 PCA]]
 - [[最小二乘法|最小二乘法]] — 横向：伪逆解
 - 矩阵范数（数值）— 横向：$\sigma_1$、$\sum\sigma_i^2$
 - 伪逆（数值）— 横向：$V\Sigma^{-1}U^T$
@@ -162,22 +162,18 @@ $\operatorname{rank}$ 相同的矩阵对：$AA^T=U\Sigma^2U^T$、$A^TA=V\Sigma^2
 | ★ | 手算 $\begin{bmatrix}3&0\\0&2\end{bmatrix}$ 与 $\begin{bmatrix}1&1\\1&1\end{bmatrix}$ 的 SVD | MIT 18.06 Lec 29 |
 | ★★ | 证明：$\lVert A\rVert_2=\sigma_1$，$\lVert A\rVert_F^2=\sum\sigma_i^2$ | Trefethen & Bau |
 | ★★★ | 证明 Eckart-Young（2-范数，用维数+交） | Trefethen & Bau |
-| ★★★★ | 用 SVD 给出最小二乘解 $\hat{\mathbf{x}}=V\Sigma^{-1}U^T\mathbf{b}$ 并说明与正规方程关系 | 高等代数（第5版）[待验证] |
+| ★★★★ | 用 SVD 给出最小二乘解 $\hat{\mathbf{x}}=V\Sigma^{-1}U^T\mathbf{b}$ 并说明与正规方程关系 | 本地融合习题（参考高等代数第5版，题号待补） |
 ## 12. 我的主动回忆区
 
-<details>
-<summary>🔄 核对要点（先默写，再展开比对）</summary>
+> 闭卷检索：先自己写答案，再回头核对「闭卷验收」一节。下面只给线索，不给答案。
+>
+> **① 情境反推**：任何矩阵都能拆成「旋转 → 拉伸 → 旋转」，这三段分别对应哪三个因子？拉伸量是从哪个对称矩阵算出来的？
+>
+> **② 易错辨析**：奇异值与特征值何时一致、何时完全无关？两个正交因子不唯一，说明分解的哪部分才是本质的？
+>
+> **③ 迁移应用**：用同一组分解数据写出谱范数、伪逆与最佳低秩逼近，说明三者为何能共用一次计算。
 
-
-- [ ] **定义默写**：$A=U\Sigma V^T$ 与构造步骤。
-- [ ] **证明**：SVD 存在性；Eckart-Young（交论证）。
-- [ ] **计算**：给 $2\times2$ 手算 SVD。
-- [ ] **反例**：奇异值 vs 特征值；$U,V$ 不唯一。
-- [ ] **应用**：范数、伪逆、低秩逼近公式。
-
-</details>
-
-> 不看上文：写 SVD 与构造；几何意义；Eckart-Young；$\lVert A\rVert_2$；伪逆公式。
+⏱ **间隔复习节奏**：学完当天 → 次日 → 第 7 天 → 第 30 天，各闭卷重做一次本区；每轮只回读「写不出来」的那一条对应正文，写得出来的不再重读。
 
 ## 13. 学完后可以完成
 
@@ -190,4 +186,3 @@ SORT assignment_level ASC, file.name ASC
 
 ---
 *创建于：2026-08-06 | 来源：Hefferon Ch.6 延伸 + MIT 18.06SC Lec 29 + Trefethen & Bau；旧卡（奇异值分解(SVD)、奇异值性质）合并/重写于 2026-08-06*
-

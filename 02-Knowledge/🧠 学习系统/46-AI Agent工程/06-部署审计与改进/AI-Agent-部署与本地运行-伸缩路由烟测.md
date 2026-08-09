@@ -1,4 +1,4 @@
-﻿---
+---
 type: study
 topic: "AI Agent部署与本地运行：伸缩、路由与烟测"
 course: "AI Agent工程"
@@ -13,10 +13,9 @@ stage_moc: "[[🧭 阶段6-部署审计与改进]]"
 upstream: ["[[AI-Agent-可观测性与生产运行-轨迹审批恢复]]"]
 flow: knowledge
 kind: concept
-assessment_exempt: false
 source: "Microsoft AI Agents for Beginners Lessons 16 and 17 (verified 2026-08-06)"
 source_urls: ["https://github.com/microsoft/ai-agents-for-beginners/tree/main/16-deploying-scalable-agents", "https://github.com/microsoft/ai-agents-for-beginners/tree/main/17-creating-local-ai-agents"]
-accessed: 2026-08-06
+accessed: 2026-08-08
 license: "Microsoft AI Agents for Beginners MIT；本卡为原创整合"
 anki_deck: "46-AI Agent工程::部署与本地运行"
 anki_tags: [部署, 本地Agent, 路由, 烟测, 伸缩]
@@ -152,6 +151,8 @@ print("smoke: ok")
 ```
 
 这是路由策略微型实验，不是部署平台 SDK。真实 smoke test 还应验证一次模型调用、只读工具、状态、trace、认证与超时。
+
+课程项目提供两个可执行门：`python -m scripts.readiness_smoke` 检查包导入、最小 runtime、内容绑定审批写入和 40 样本 eval Gate；`python -m pip wheel . --no-deps --no-build-isolation --wheel-dir artifacts/wheel` 验证项目可打包。两者都属于本地 readiness，不是云部署、canary 或真实模型 smoke；外部环境必须单独记录 endpoint、模型、认证、版本、费用和实际结果。
 
 ## 8. 常见误区和易混概念
 

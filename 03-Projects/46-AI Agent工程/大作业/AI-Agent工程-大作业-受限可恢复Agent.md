@@ -71,6 +71,13 @@ tags: [作业, 大作业, 46-AI Agent工程, Agent系统]
 - 报告 TSR、ToolAcc、ASR、FRR、平均/P95 步数或延迟、成本代理和人工接管率。
 - 中断恢复与不中断结果等价；smoke/readiness/offline eval/canary gate 分开。
 
+## 任务分层
+
+- **基础要求**：完成 M0–M5、40 样本逐项证据、一次性参数绑定审批、checkpoint 恢复和本地 readiness；这是主任务通过门。
+- **必要提示**：先从课程 `scripts/` 与 `data/eval_cases.jsonl` 迁移到一个新领域，再逐步替换 fake model/tool；仅改名称不算迁移。
+- **常见错误**：在线 smoke 代替离线 eval、引用存在但不支持、审批未绑定内容、恢复重复副作用、没有非 Agent 基线。
+- **可选进阶**：真实模型、官方 MCP/A2A adapter、云部署和 canary；必须单独记录凭据边界、版本、费用与未验证项，不影响离线主任务的可复现性。
+
 ## 环境与复现
 
 - 起点：`scripts/agent_runtime.py` 与 `tests/test_local_acceptance.py`；迁移后保留契约/边界测试语义。

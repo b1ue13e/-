@@ -1,0 +1,22 @@
+[
+  ["Bread", "Milk", "Butter"],
+  ["Bread", "Diapers", "Beer", "Eggs"],
+  ["Milk", "Diapers", "Beer", "Cola"],
+  ["Bread", "Milk", "Diapers", "Beer"],
+  ["Bread", "Milk", "Diapers", "Cola"],
+  ["Bread", "Butter", "Eggs"],
+  ["Milk", "Diapers", "Beer", "Butter"],
+  ["Bread", "Milk", "Butter", "Eggs"],
+  ["Bread", "Diapers", "Beer", "Butter"],
+  ["Milk", "Butter", "Eggs", "Cola"],
+  ["Bread", "Milk", "Diapers", "Beer", "Butter"],
+  ["Bread", "Milk", "Beer"],
+  ["Diapers", "Beer", "Chips"],
+  ["Bread", "Chips", "Cola"],
+  ["Milk", "Diapers", "Chips", "Beer"],
+  ["Bread", "Milk", "Butter", "Chips"],
+  ["Beer", "Chips", "Cola"],
+  ["Bread", "Milk", "Eggs"],
+  ["Diapers", "Beer", "Eggs"],
+  ["Bread", "Milk", "Diapers", "Chips"]
+]

@@ -1,0 +1,7 @@
+{
+  "qlib_version": "0.9.7",
+  "qlib_source_commit": null,
+  "data_release": "synthetic-contract-template-v2",
+  "data_license": "CC0 synthetic fixture",
+  "provider_uri": "replace-before-qrun"
+}

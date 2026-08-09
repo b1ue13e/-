@@ -1,0 +1,11 @@
+{
+  "id": "QF-ST03-PBO",
+  "assignment_id": "QF-ST03",
+  "slug": "cpcv_pbo",
+  "title": "CSCV 与 PBO 选择偏差审计",
+  "stage": "03",
+  "smoke_data_dir": "data/smoke/cpcv_pbo",
+  "real_files": ["strategy_returns.csv", "parameter_grid.csv"],
+  "baseline": "组合对称交叉验证与样本外排名 logit",
+  "next_step": "预注册候选集合与分块，保留全部失败策略，并报告 PBO 对分块数量的敏感性。"
+}

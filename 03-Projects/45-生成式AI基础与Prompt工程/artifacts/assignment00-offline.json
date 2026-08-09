@@ -1,0 +1,37 @@
+{
+  "assignment": "00",
+  "evidence_scope": "protocol_only",
+  "softmax": {
+    "logits": [
+      1000.0,
+      999.0,
+      998.0
+    ],
+    "probabilities": [
+      0.6652409557748218,
+      0.24472847105479764,
+      0.09003057317038046
+    ]
+  },
+  "conditional_probabilities": [
+    0.5,
+    0.25,
+    0.8
+  ],
+  "chain_probability": 0.1,
+  "seed": 20260809,
+  "seeded_draw": [
+    0.08992995210181409,
+    0.3803675325843072,
+    0.09815261881318593
+  ],
+  "checks": {
+    "softmax_normalized": true,
+    "softmax_finite": true,
+    "chain_probability": true,
+    "seed_reproducible": true,
+    "valid_json_accepted": true,
+    "invalid_json_rejected": true
+  },
+  "gate_passed": true
+}

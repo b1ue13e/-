@@ -1,0 +1,11 @@
+{
+  "id": "QF-ST04-AC",
+  "assignment_id": "QF-ST04",
+  "slug": "almgren_chriss",
+  "title": "Almgren-Chriss 最优执行",
+  "stage": "04",
+  "smoke_data_dir": "data/smoke/almgren_chriss",
+  "real_files": ["parent_order.csv", "liquidity_profile.csv"],
+  "baseline": "TWAP、VWAP 与连续 Almgren-Chriss 闭式轨迹的离散网格采样",
+  "next_step": "冻结冲击、波动率和风险厌恶参数，比较库存守恒、成本与时间风险。"
+}

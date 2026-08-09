@@ -1,0 +1,71 @@
+{
+  "assignment": "05",
+  "schema_accuracy": 1.0,
+  "judge_swap_consistency": 1.0,
+  "schema_records": [
+    {
+      "raw": "{\"category\":\"billing\",\"priority\":2,\"evidence\":\"duplicate charge\"}",
+      "expected": true,
+      "prediction": true
+    },
+    {
+      "raw": "{\"category\":\"account\",\"priority\":1,\"evidence\":\"cannot sign in\"}",
+      "expected": true,
+      "prediction": true
+    },
+    {
+      "raw": "{\"category\":\"delivery\",\"priority\":3,\"evidence\":\"package missing\"}",
+      "expected": true,
+      "prediction": true
+    },
+    {
+      "raw": "{\"category\":\"other\",\"priority\":2,\"evidence\":\"general question\"}",
+      "expected": true,
+      "prediction": true
+    },
+    {
+      "raw": "{\"category\":\"billing\",\"priority\":9,\"evidence\":\"charge\"}",
+      "expected": false,
+      "prediction": false
+    },
+    {
+      "raw": "{\"category\":\"unknown\",\"priority\":1,\"evidence\":\"x\"}",
+      "expected": false,
+      "prediction": false
+    },
+    {
+      "raw": "{\"category\":\"account\",\"priority\":2}",
+      "expected": false,
+      "prediction": false
+    },
+    {
+      "raw": "not json",
+      "expected": false,
+      "prediction": false
+    }
+  ],
+  "judge_records": [
+    {
+      "forward": "A",
+      "reverse_order": "A",
+      "consistent": true
+    },
+    {
+      "forward": "B",
+      "reverse_order": "B",
+      "consistent": true
+    },
+    {
+      "forward": "A",
+      "reverse_order": "A",
+      "consistent": true
+    },
+    {
+      "forward": "B",
+      "reverse_order": "B",
+      "consistent": true
+    }
+  ],
+  "evidence_scope": "protocol_only",
+  "gate_passed": true
+}

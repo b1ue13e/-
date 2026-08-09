@@ -1,83 +1,171 @@
-﻿---
-type: study
-flow: knowledge
-kind: concept
-topic: "PAC学习"
-course: "机器学习"
-module: "模块3：泛化理论"
-created: 2026-04-18
-status: ongoing
-difficulty: advanced
-concept: ["PAC学习"]
-prerequisites: ["L1正则化Lasso"]
-related: ["VC维", "Rademacher复杂度"]
-source_textbook: ["机器学习（周志华）"]
-source_sections: ["第12章"]
-learning_objectives: ["说明 PAC学习 在“模块3：泛化理论”里解决的具体问题", "把 PAC学习 对应回 第12章", "用一个最小例子或代表题解释 PAC学习 的作用"]
-deliverables: ["一句话定义或项目目标", "一个最小例子/代表题/最小实验", "一条易错点或跨路径连接", "能比较至少两种泛化理论工具，并说明它们在解释什么。"]
-tags: ["机器学习", "学习"]
-aliases: ["🎯 PAC 学习理论"]
-stage_moc: "[[🧭 阶段3-正则优化]]"
-upstream: ["[[机器学习-L1正则化Lasso]]"]
 ---
+
+type: study
+
+flow: knowledge
+
+kind: concept
+
+topic: "PAC学习"
+
+course: "机器学习"
+
+module: "模块3：泛化理论"
+
+created: 2026-04-18
+
+status: ongoing
+
+difficulty: advanced
+
+concept: ["PAC学习"]
+
+prerequisites: ["L1正则化Lasso"]
+
+related: ["VC维", "Rademacher复杂度"]
+
+source_textbook: ["机器学习（周志华）"]
+
+source_sections: ["第12章"]
+
+learning_objectives: ["说明 PAC学习 在“模块3：泛化理论”里解决的具体问题", "把 PAC学习 对应回 第12章", "用一个最小例子或代表题解释 PAC学习 的作用"]
+
+deliverables: ["一句话定义或项目目标", "一个最小例子/代表题/最小实验", "一条易错点或跨路径连接", "能比较至少两种泛化理论工具，并说明它们在解释什么。"]
+
+tags: ["机器学习", "学习"]
+
+aliases: ["🎯 PAC 学习理论"]
+
+stage_moc: "[[🧭 阶段3-正则优化]]"
+
+upstream: ["[[机器学习-L1正则化Lasso]]"]
+
+source: "周志华《机器学习》第5、11、12章"
+source_url: "https://book.douban.com/subject/26708119/"
+accessed: 2026-08-07
+license: "[待验证]"
+
+---
+
+
 
 # PAC学习
 
+
+
 > 所属路径：[[🗺️ 机器学习学习路径|机器学习学习路径]]
+
 > 所属阶段：[[🧭 阶段3-正则优化|返回阶段页]]
+
 > 所属模块：`模块3：泛化理论`
 
+
+
 ## 为什么学
+
 - 这张卡位于“模块3：泛化理论”，用来解决：为什么模型能在新样本上工作，理论上到底靠什么保证？
+
 - 它是你从 [[机器学习-L1正则化Lasso]] 走向 [[机器学习-VC维]]、[[机器学习-Rademacher复杂度]] 的桥梁。
 
+
+
 ## 教材定位
+
 - 主教材：`机器学习（周志华）`
+
 - 对应章节：第12章
-- 阶段入口：[[🧭 阶段3-正则优化|🛡️ 第三阶段：正则优化]]
+
+- 阶段入口：[[🧭 阶段3-正则优化|🧭 阶段3-正则优化]]
+
+
 
 ## 必须掌握
+
 - 用自己的话定义 `PAC学习`，并说清它的边界。
+
 - 解释 `PAC学习` 为什么是“为什么模型能在新样本上工作，理论上到底靠什么保证？”这条问题链的一部分。
+
 - 说明它和同阶段相邻概念的区别与联系。
 
+
+
 ## 关键问题
+
 - PAC学习 在“模块3：泛化理论”这条主线里具体负责哪一步？
+
 - 如果忽略 PAC学习，为什么模型能在新样本上工作，理论上到底靠什么保证？ 会在哪一步断掉？
+
 - PAC学习 和相邻概念的边界是什么？
 
+
+
 ## 最小例子
+
 - 场景：
+
 - 输入：
+
 - 关键一步：
+
 - 结论：
 
+
+
 ## 练习与输出
+
 - [ ] 写 3-5 行自己的定义或项目目标。
+
 - [ ] 补一个最小例子、例题、推导片段或实验记录。
+
 - [ ] 记录一个易错点，或补一条跨路径连接。
 
+
+
 ## 完成标准
+
 - [ ] 能比较至少两种泛化理论工具，并说明它们在解释什么。
+
 - [ ] 能独立解释这张卡在本阶段中的位置。
+
 - [ ] 能把教材章节和这张卡一一对应。
 
+
+
 ## 前后连接
+
 - 前置：[[机器学习-L1正则化Lasso]]
+
 - 相关：[[机器学习-VC维]]、[[机器学习-Rademacher复杂度]]
-- 返回阶段页：[[🧭 阶段3-正则优化|🛡️ 第三阶段：正则优化]]
+
+- 返回阶段页：[[🧭 阶段3-正则优化|🧭 阶段3-正则优化]]
+
+
 
 *创建于：2026-04-18*
 
+
+
 ---
+
+
 
 ## 学完后可以完成
 
+
+
 > 下面由作业 `requires` 自动反查：学完本卡后可完成的课后作业、阶段作业与大作业（单一事实源，不手动维护）。
 
+
+
 ```dataview
+
 LIST
+
 FROM "03-Projects"
-WHERE type = "project" AND contains(requires, this.file.link)
+
+WHERE type = "project" AND contains(map(requires, (r) => r.path), this.file.name)
+
 SORT assignment_level ASC, file.name ASC
+
 ```
+

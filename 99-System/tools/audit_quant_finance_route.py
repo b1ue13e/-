@@ -23,7 +23,7 @@ EXPECTED_CORE_COUNTS = {
     "01-夯实基础": 9,
     "02-量化核心技能": 13,
     "03-研究验证与稳健性": 10,
-    "04-深入精通": 7,
+    "04-深入精通": 8,
 }
 WIKILINK_RE = re.compile(r"\[\[([^\]]+)\]\]")
 
@@ -60,8 +60,11 @@ def main() -> int:
 
     route_text = read(route) if route.exists() else ""
     source_text = read(source) if source.exists() else ""
-    if "16 周" not in route_text or "17–20" not in route_text:
-        errors.append("learning path must declare the 16+4 week contract")
+    if "正式路线为 16 周" not in route_text:
+        errors.append("learning path must declare the delivered 16-week contract")
+    for unsupported_scope in ("16+4", "第 17–20 周", "4 周进阶"):
+        if unsupported_scope in route_text:
+            errors.append(f"learning path advertises undelivered scope: {unsupported_scope}")
     for token in ("阶段 0", "阶段 1", "阶段 2", "阶段 3", "阶段 4"):
         if token not in route_text:
             errors.append(f"learning path missing {token}")
@@ -159,7 +162,7 @@ def main() -> int:
         for error in errors:
             print(f"- {error}")
         return 1
-    print("Quant route audit passed: 16+4 week path, five stage MOCs, canonical assignments, and project boundaries are consistent.")
+    print("Quant route audit passed: 16-week path, five stage MOCs, canonical assignments, and project boundaries are consistent.")
     return 0
 
 

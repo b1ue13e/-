@@ -9,7 +9,7 @@ flow: knowledge
 kind: concept
 difficulty: intermediate
 concept: ["PPO", "近端策略优化", "裁剪目标", "GAE"]
-upstream: ["[[Actor-Critic 与 PPO]]", "[[TRPO-信任区域]]", "[[优势-定义]]"]
+upstream: ["[[Actor-Critic 与 PPO]]", "[[TRPO信任域优化]]", "[[优势函数]]"]
 tags: [学习, 强化学习]
 ---
 > 所属模块：[[🗺️ 强化学习学习路径|强化学习学习路径]]
@@ -36,7 +36,7 @@ $$r_t(\theta) = \frac{\pi_\theta(a_t|s_t)}{\pi_{\theta_{\text{old}}}(a_t|s_t)}, 
 1. 设 $A_t$ 为广义优势函数 (GAE) 估计值；
 2. 基础策略梯度目标：$L^{\text{CPI}}(\theta) = \mathbb{E}_t \left[ r_t(\theta) A_t 
 \right]$；
-3. **PPO-Clip 截断目标**：为了限制 $r_t(\theta)$ 远离区间 $[1-\epsilon, 1+\epsilon]$（通常 $\epsilon=0.2$）：
+3. **PPO-Clip 截断目标**：为了限制 $r_t(\theta)$ 远离区间 $[1-\epsilon, 1+\epsilon]$（经验值：连续控制常取 $\epsilon=0.2$，Atari 常取 $0.1\text{–}0.2$；$\epsilon$ 过大形同无约束、过小则学习缓慢）：
 $$L^{\text{CLIP}}(\theta) = \hat{\mathbb{E}}_t \left[ \min\left( r_t(\theta) A_t, \;\text{clip}(r_t(\theta), 1-\epsilon, 1+\epsilon) A_t 
 \right) 
 \right]$$

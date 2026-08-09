@@ -11,9 +11,8 @@ requires: ["[[AI-Agent-部署与本地运行-伸缩路由烟测]]", "[[AI-Agent-
 source_type: local_integration_task
 source: "课程原创任务；对齐 Microsoft Lessons 16-18"
 source_url: "https://github.com/microsoft/ai-agents-for-beginners/tree/main/18-securing-ai-agents"
-accessed: 2026-08-06
+accessed: 2026-08-08
 license: "任务文本原创；Microsoft MIT"
-created: 2026-08-06
 created: 2026-08-06
 status: planned
 flow: project
@@ -83,6 +82,13 @@ class CanonicalReceipt:
 - 两者均通过方可输出 `ACTION_SUCCESS`，否则输出 `EXECUTION_BLOCKED`。
 
 ---
+
+## 任务分层
+
+- **基础要求**：收据必须绑定 action、resource、完整参数、nonce 和过期时间，并证明内容偷换、篡改、过期和重放失败。
+- **必要提示**：批准阶段返回签名收据，执行阶段只消费收据；不要让执行函数接收 `approved=True`。
+- **常见错误**：只绑定路径不绑定写入内容、使用可重复 nonce、校验失败后仅记录警告仍继续执行。
+- **可选进阶**：将封闭域 HMAC 替换为 Ed25519/JCS/KMS 并设计 key rotation；不作为标准库基础任务前置。
 
 ## 🛠️ 环境与复现
 

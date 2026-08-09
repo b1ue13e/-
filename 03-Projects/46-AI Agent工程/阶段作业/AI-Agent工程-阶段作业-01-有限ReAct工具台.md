@@ -11,17 +11,7 @@ requires: ["[[AI-Agent-前置-消息JSON异常与单元测试]]", "[[AI-Agent-�
 source_type: local_integration_task
 source: "课程原创综合任务；融合 Microsoft Lessons 1/3/4 与 Hello-Agents Chapters 1/4/7"
 source_url: "https://github.com/microsoft/ai-agents-for-beginners/tree/main/04-tool-use"
-accessed: 2026-08-06
-license: "任务文本原创；Microsoft MIT；Hello-Agents CC BY-NC-SA 4.0"
-assignment_id: "AI-Agent工程-S01"
-assignment_level: stage
-assignment_format: lab
-stage_id: "01"
-requires: ["[[AI-Agent-前置-消息JSON异常与单元测试]]", "[[AI-Agent-边界与感知行动循环]]", "[[AI-Agent-ReAct推理行动范式]]", "[[AI-Agent-工具调用与结构化契约]]"]
-source_type: local_integration_task
-source: "课程原创综合任务；融合 Microsoft Lessons 1/3/4 与 Hello-Agents Chapters 1/4/7"
-source_url: "https://github.com/microsoft/ai-agents-for-beginners/tree/main/04-tool-use"
-accessed: 2026-08-06
+accessed: 2026-08-08
 license: "任务文本原创；Microsoft MIT；Hello-Agents CC BY-NC-SA 4.0"
 created: 2026-08-06
 status: planned
@@ -89,6 +79,13 @@ class ReActAgentHarness:
 - 单元测试覆概率等维度的异同。
 
 ---
+
+## 任务分层
+
+- **基础要求**：至少两个只读工具、有限 ReAct 循环、完整 trace 和正常/异常/预算耗尽测试。
+- **必要提示**：先冻结工具 schema 与停止条件，再接入 action provider；先构建可重复的固定工作流基线。
+- **常见错误**：把 thought 文本当授权、未知工具自动重试、终止只依赖模型输出某个词。
+- **可选进阶**：使用本机 HTTP decision adapter 替换 fake model，并报告边界错误与延迟差异。
 
 ## 🛠️ 环境与复现
 

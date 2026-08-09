@@ -1,4 +1,4 @@
-﻿---
+---
 type: study
 topic: "AI Agent工具调用与结构化契约"
 course: "AI Agent工程"
@@ -13,10 +13,9 @@ stage_moc: "[[🧭 阶段1-Agent基础与受限循环]]"
 upstream: ["[[AI-Agent-边界与感知行动循环]]", "[[AI-Agent-ReAct推理行动范式]]"]
 flow: knowledge
 kind: concept
-assessment_exempt: false
 source: "UC Berkeley CS 194/294-196 F24 frameworks; Microsoft AI Agents for Beginners Lesson 4; Datawhale Hello-Agents Chapters 1 and 7; Hugging Face Agents Course Unit 1 Tools"
 source_urls: ["https://github.com/microsoft/ai-agents-for-beginners/tree/main/04-tool-use", "https://github.com/datawhalechina/hello-agents/tree/main/docs/chapter7"]
-accessed: 2026-08-06
+accessed: 2026-08-08
 license: "Microsoft MIT；Hello-Agents CC BY-NC-SA 4.0；Berkeley许可待核验；本卡为原创整合"
 anki_deck: "46-AI Agent工程::03-工具"
 anki_tags: [46-AI-Agent工程, 工具调用, 契约]
@@ -43,7 +42,7 @@ anki_tags: [46-AI-Agent工程, 工具调用, 契约]
 
 ## 3. 学它之前需要哪些前置知识？
 
-1. **[[08-NLP全栈/01-基础准备/NLP全栈-Python编程与NLP工具|Python 编程与工具]]**：理解参数、返回值、异常和纯函数。
+1. **[[02-Knowledge/🧠 学习系统/08-NLP全栈/01-基础准备/08-NLP全栈-Python编程与NLP工具|Python 编程与工具]]**：理解参数、返回值、异常和纯函数。
 2. **[[AI-Agent-边界与感知行动循环]]**：工具结果会成为下一轮观察。
 
 ## 4. 用直觉语言解释它
@@ -132,6 +131,8 @@ def execute(call: dict[str, object]) -> dict[str, object]:
 
 print(execute({"name": "score_review", "arguments": {"food": 4, "service": 5}}))
 ```
+
+本课程的可运行版本位于 `03-Projects/46-AI Agent工程/scripts/agent_runtime.py`。其中 `ToolSpec` 同时声明参数名、参数类型和返回值验证器；`ToolRegistry` 在调用 handler 前后分别校验输入与输出。`HttpDecisionModel` 只接受 HTTPS（本机回环测试可显式放宽），拒绝重定向、非 JSON 响应、超限响应和错误的 `action/tool` 类型。这样把“模型选择动作”与“控制面是否允许执行”分成两个独立可测边界。
 
 ## 8. 常见误区和易混概念
 

@@ -1,0 +1,38 @@
+{
+  "mlp": {
+    "val_accuracy_mean": 0.6666666766007742,
+    "val_accuracy_std": 0.2721655229203264,
+    "test_accuracy_mean": 0.5555555721124014,
+    "test_accuracy_std": 0.1571348449466604,
+    "test_macro_f1_mean": 0.5277777777777778,
+    "test_macro_f1_std": 0.19641855032959654,
+    "runtime_seconds_mean": 0.09937546666575751
+  },
+  "gcn": {
+    "val_accuracy_mean": 1.0,
+    "val_accuracy_std": 0.0,
+    "test_accuracy_mean": 1.0,
+    "test_accuracy_std": 0.0,
+    "test_macro_f1_mean": 1.0,
+    "test_macro_f1_std": 0.0,
+    "runtime_seconds_mean": 0.12164466667066638
+  },
+  "graphsage": {
+    "val_accuracy_mean": 1.0,
+    "val_accuracy_std": 0.0,
+    "test_accuracy_mean": 1.0,
+    "test_accuracy_std": 0.0,
+    "test_macro_f1_mean": 1.0,
+    "test_macro_f1_std": 0.0,
+    "runtime_seconds_mean": 0.16743056667231335
+  },
+  "gat": {
+    "val_accuracy_mean": 1.0,
+    "val_accuracy_std": 0.0,
+    "test_accuracy_mean": 0.8888888955116272,
+    "test_accuracy_std": 0.15713483089771088,
+    "test_macro_f1_mean": 0.8888888888888888,
+    "test_macro_f1_std": 0.15713484026367724,
+    "runtime_seconds_mean": 0.30146409999482177
+  }
+}

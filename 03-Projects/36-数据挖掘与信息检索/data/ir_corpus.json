@@ -1,0 +1,62 @@
+[
+  {
+    "doc_id": "doc_001",
+    "title": "Frequent Itemset Mining and Association Rules",
+    "content": "Apriori algorithm uses the downward closure property of support to prune the search space of itemsets. FP-Growth builds a compact FP-Tree to avoid candidate generation.",
+    "category": "Data Mining"
+  },
+  {
+    "doc_id": "doc_002",
+    "title": "Stream Computing with DGIM and Flajolet-Martin",
+    "content": "DGIM algorithm maintains exponential buckets of power of two sizes to estimate sliding window bit counts. Flajolet-Martin tracks trailing zeros to estimate distinct elements cardinality.",
+    "category": "Stream Mining"
+  },
+  {
+    "doc_id": "doc_003",
+    "title": "Locality-Sensitive Hashing and MinHash",
+    "content": "MinHash estimates Jaccard similarity between document shingles. LSH bands partition signatures into buckets to efficiently discover near-duplicate candidate pairs.",
+    "category": "High Dimensional Data"
+  },
+  {
+    "doc_id": "doc_004",
+    "title": "Inverted Index Construction and Compression",
+    "content": "Inverted index maps dictionary vocabulary terms to posting lists of document IDs. Variable Byte and Elias Gamma codecs compress document gap integers on disk.",
+    "category": "Information Retrieval"
+  },
+  {
+    "doc_id": "doc_005",
+    "title": "Probabilistic Relevance Scoring and BM25",
+    "content": "Okapi BM25 scoring model balances term frequency saturation with document length normalization using k1 and b parameters based on Robertson-Spärck Jones probabilistic IR theory.",
+    "category": "Information Retrieval"
+  },
+  {
+    "doc_id": "doc_006",
+    "title": "Link Analysis and PageRank Power Iteration",
+    "content": "PageRank algorithm models random surfer behavior on directed web graph with teleportation factor d and distributes dangling node authority evenly to ensure convergence.",
+    "category": "Web Search"
+  },
+  {
+    "doc_id": "doc_007",
+    "title": "Dense Vector Retrieval and IVF-Flat Indexing",
+    "content": "Dense retrieval uses neural bi-encoders to map queries and documents into dense embedding spaces. IVF-Flat clusters embeddings with K-Means to speed up multi-probe search.",
+    "category": "Dense Retrieval"
+  },
+  {
+    "doc_id": "doc_008",
+    "title": "Learning to Rank and Pairwise Neural RankNet",
+    "content": "Learning to rank models optimize document ranking orders. Pairwise RankNet neural networks minimize cross-entropy loss over document pair score differences.",
+    "category": "Machine Learning for IR"
+  },
+  {
+    "doc_id": "doc_009",
+    "title": "Distributed Big Data Systems: HDFS and MapReduce",
+    "content": "HDFS stores partitioned block replicas across distributed slave nodes. MapReduce computes map, shuffle, partition, and reduce pipelines with fault-tolerant recovery.",
+    "category": "Big Data Systems"
+  },
+  {
+    "doc_id": "doc_010",
+    "title": "Hybrid Search and RAG Generation Pipelines",
+    "content": "RAG systems combine sparse BM25 keyword matching with dense semantic embeddings via Reciprocal Rank Fusion RRF and cross-encoder re-ranking for grounded text generation.",
+    "category": "Advanced IR"
+  }
+]

@@ -7,19 +7,69 @@ assignment_id: "CS188-P3"
 assignment_level: stage
 assignment_format: lab
 stage_id: "04"
-requires:
-  - "[[MDP 与贝尔曼方程]]"
-  - "[[动态规划：策略与值迭代]]"
-  - "[[时序差分与 Q-Learning]]"
-  - "[[探索与利用]]"
-  - "[[🧭 强化学习-前置知识]]"
 source_type: official_assignment
+accessed: "2026-08-07"
+license: "CC BY 4.0 (Berkeley CS188 course materials)"
+source: "UC Berkeley CS188 Project 3 — Reinforcement Learning；题面译自伯克利官方（非官方中文版），保留上游署名。"
 source_url: "https://inst.eecs.berkeley.edu/~cs188/fa24/assets/projects/rl/reinforcement.zip"
 created: 2026-08-06
 updated: 2026-08-06
 status: ongoing
 flow: project
 tags: [作业, 强化学习, 阶段作业]
+requires:
+  - "[[MDP 与贝尔曼方程]]"
+  - "[[动态规划：策略与值迭代]]"
+  - "[[时序差分与 Q-Learning]]"
+  - "[[探索与利用]]"
+  - "[[🧭 强化学习-前置知识]]"
+  - "[[POMDP]]"
+  - "[[DQN-函数逼近]]"
+  - "[[MDP-动作空间]]"
+  - "[[DQN-经验回放]]"
+  - "[[DQN-跳帧]]"
+  - "[[贝尔曼-Q期望]]"
+  - "[[贝尔曼-算子]]"
+  - "[[贝尔曼-不动点]]"
+  - "[[PER]]"
+  - "[[Double-DQN]]"
+  - "[[QLvsSARSA-策略]]"
+  - "[[C51]]"
+  - "[[QLvsSARSA-目标]]"
+  - "[[SARSA-更新]]"
+  - "[[贝尔曼-Q最优]]"
+  - "[[DQN-TN详解]]"
+  - "[[DQN-衰减]]"
+  - "[[QL-更新]]"
+  - "[[确定性MDP]]"
+  - "[[SARSA-同策略]]"
+  - "[[QL-收敛]]"
+  - "[[DQN-损失]]"
+  - "[[QL-异策略]]"
+  - "[[贝尔曼-最优策略]]"
+  - "[[QLvsSARSA-风险]]"
+  - "[[SARSA-名称]]"
+  - "[[贝尔曼-收缩性]]"
+  - "[[Rainbow]]"
+  - "[[QL-最大化偏差]]"
+  - "[[贝尔曼-V期望]]"
+  - "[[平均奖励MDP]]"
+  - "[[Dueling-DQN]]"
+  - "[[贝尔曼-V最优]]"
+  - "[[MDP-奖励函数]]"
+  - "[[随机性MDP]]"
+  - "[[SARSA-收敛]]"
+  - "[[QLvsSARSA-应用]]"
+  - "[[DQN-ER详解]]"
+  - "[[DQN深度Q网络]]"
+  - "[[MDP-转移概率]]"
+  - "[[DQN-目标网络]]"
+  - "[[MDP-折扣因子]]"
+  - "[[贝尔曼-单调性]]"
+  - "[[连续MDP]]"
+  - "[[多智能体MDP]]"
+  - "[[MDP-状态空间]]"
+  - "[[NoisyNets]]"
 ---
 
 # 强化学习-阶段作业-CS188-P3-Q学习与近似Q学习
@@ -167,3 +217,10 @@ assert abs(agent.getQValue((1, 1), "East") - 5.0) < 1e-9
 - A：`w_i ← w_i + α·(r + γ·max_a' Q(s',a') − Q(s,a))·f_i(s,a)`，即 TD 误差乘以对应特征值；线性特征组合让价值泛化到从未访问过的状态。
 - Q：为什么加入「最近鬼距离 / 停驻惩罚」特征能提升 Pacman 表现？
 - A：鬼距离特征让 agent 学会避险，停驻惩罚抑制原地不动；表格 Q-Learning 无法在连续/大状态上泛化，近似 Q 用特征把相似状态绑定，采样效率与最终分数更高。
+
+
+## 来源声明（诚实标注）
+
+本作业 `source_type: official_assignment`，上游为 **UC Berkeley CS188 Project 3（Reinforcement Learning）**。
+- 诚实说明：题面**译自伯克利官方，非官方中文版**，保留上游署名；未收录官方答案。
+- 许可：CC BY 4.0（伯克利 CS188 课程材料）；访问日期 2026-08-07。

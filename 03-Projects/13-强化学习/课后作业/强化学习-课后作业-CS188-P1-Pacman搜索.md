@@ -12,6 +12,9 @@ requires:
   - "[[博弈：Minimax与Expectimax]]"
   - "[[🧭 强化学习-前置知识]]"
 source_type: official_assignment
+accessed: "2026-08-07"
+license: "CC BY 4.0 (Berkeley CS188 course materials)"
+source: "UC Berkeley CS188 Project 2 — Multi-Agent Search (Pacman Search)；诚实说明：本项目为搜索/对抗博弈项目，并非强化学习作业。"
 source_url: "https://inst.eecs.berkeley.edu/~cs188/fa24/assets/projects/search/search.zip"
 created: 2026-08-06
 updated: 2026-08-06
@@ -168,3 +171,10 @@ python autograder.py --project=search                              # 官方自�
 - A：UCS 无启发信息，按累积代价 `g` 盲目扩展；A\* 按 `f = g + h` 优先扩展「估计总代价」最小的节点，曼哈顿距离引导推进，扩展节点显著减少。
 - Q：次优搜索（StayEast/StayWest）与最优搜索的得分对比说明了什么？
 - A：次优策略只按简单规则行动，可能代价更高或漏吃食物，得分低于最优搜索；说明搜索质量直接转化为游戏得分，这正是 suboptimal search 题目的验收意义。
+
+
+## 来源声明（诚实标注）
+
+本作业 `source_type: official_assignment`，上游为 **UC Berkeley CS188 Project 2（Multi-Agent Search，搜索/对抗博弈）**。
+- 诚实说明：该项目属伯克利 CS188 的**搜索/对抗博弈**内容，**并非强化学习作业**；仅作前置/综合实践借用，不冒充 RL 官方题。
+- 许可：CC BY 4.0（伯克利 CS188 课程材料）；访问日期 2026-08-07。

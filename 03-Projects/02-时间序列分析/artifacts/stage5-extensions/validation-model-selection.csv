@@ -1,0 +1,7 @@
+model,prediction_count,expected_prediction_count,failure_count,eligible,validation_rmse,selected
+naive,16,16,0,True,1.7680571307689872,False
+ar,16,16,0,True,1.4088920202221844,False
+arimax,16,16,0,True,1.7351923634569837,False
+var,16,16,0,True,1.2750617726539812,True
+state_space,16,16,0,True,1.365755536423997,False
+ml_lag,16,16,0,True,1.7262736524592381,False

@@ -7,12 +7,13 @@ assignment_level: capstone
 assignment_format: project
 stage_id: "02"
 requires:
-  - "[[运筹学-线性规划与单纯形法]]"
+  - "[[运筹学-VRP与路径优化]]"
+  - "[[运筹学-元启发式方法]]"
+  - "[[运筹学-前置-OR-Tools环境与建模]]"
   - "[[运筹学-整数规划与分支定界]]"
   - "[[运筹学-约束规划与CP-SAT]]"
-  - "[[运筹学-VRP与路径优化]]"
+  - "[[运筹学-线性规划与单纯形法]]"
   - "[[运筹学-网络流模型]]"
-  - "[[运筹学-前置-OR-Tools环境与建模]]"
 source_type: open_source_project_task
 adapted_from: "历史 HW05（VRP 阶梯作业，2026-08-03）"
 source_url: "https://developers.google.com/optimization/routing"
@@ -36,6 +37,9 @@ tags: [作业, 运筹学, 大作业, VRP]
 - [[运筹学-约束规划与CP-SAT]]：小规模精确对照（`AddCircuit`）。
 - [[运筹学-网络流模型]]：PDP 扩展的建模直觉。
 - guided local search 机制：只需理解"初始解 + 邻域改进"的定性概念即可（[[运筹学-VRP与路径优化]] 卡已覆盖；如需系统学习局部搜索理论，可后续衔接阶段 4 的 [[运筹学-元启发式方法]]，不作为本作业前置）。
+- [[运筹学-前置-OR-Tools环境与建模]]
+- [[运筹学-整数规划与分支定界]]
+- [[运筹学-线性规划与单纯形法]]
 
 ## 任务背景与边界
 

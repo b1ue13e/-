@@ -1,6 +1,7 @@
 {
   "dataset": "statsmodels.datasets.co2",
-  "source_url": "https://www.statsmodels.org/stable/datasets/co2.html",
+  "source_url": "https://www.statsmodels.org/stable/datasets/generated/co2.html",
+  "data_license": "public domain per statsmodels dataset documentation",
   "frequency": "monthly start",
   "range": [
     "1965-01-01",
@@ -30,12 +31,17 @@
     "2001-01-01"
   ],
   "horizon": 12,
-  "models": [
+  "validation_models": [
     "naive",
     "seasonal_naive",
     "ets",
     "arima",
     "ml_lag"
+  ],
+  "final_test_models": [
+    "naive",
+    "seasonal_naive",
+    "ets"
   ],
   "selected_on_validation": "ets",
   "seed": 20260806,
@@ -43,7 +49,8 @@
   "statsmodels": "0.14.6",
   "sklearn": "1.8.0",
   "command": "python scripts/run_capstone_co2.py",
-  "test_policy": "2001 is evaluated once after validation selection; no test tuning",
+  "selection_policy": "A model is eligible only if it completes every validation origin and horizon without a fit failure",
+  "test_policy": "Selection is frozen before the 2001 test run; test evaluates only naive baselines and the selected model",
   "interval_policy": "ETS/naive/ML intervals use training residual scale; ARIMA intervals use model forecast distribution",
   "diagnostic_policy": "Ljung-Box is descriptive on selected test errors; it does not retroactively tune the model"
 }

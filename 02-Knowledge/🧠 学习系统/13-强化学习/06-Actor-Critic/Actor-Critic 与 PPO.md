@@ -1,4 +1,4 @@
-﻿---
+---
 type: study
 topic: "Actor-Critic 与 PPO"
 course: "强化学习"
@@ -9,7 +9,7 @@ flow: knowledge
 kind: concept
 difficulty: intermediate
 concept: ["Actor-Critic", "PPO", "优势函数", "GAE", "裁剪目标"]
-upstream: ["[[Actor-Critic架构]]", "[[PG-梯度]]", "[[优势-定义]]", "[[PPO近端策略优化]]"]
+upstream: ["[[Actor-Critic架构]]", "[[策略梯度]]", "[[优势函数]]", "[[PPO近端策略优化]]"]
 tags: [学习, 强化学习]
 ---
 > 所属模块：[[🗺️ 强化学习学习路径|强化学习学习路径]]
@@ -158,7 +158,23 @@ $$A_t^{GAE(\gamma,\lambda)}=\sum_{l=0}^{\infty}(\gamma\lambda)^l\delta_{t+l},\qq
 - [[策略梯度]] ↔ [[Actor-Critic 与 PPO]]：PPO 是 PG 的稳定版本。
 
 ### 应用场景
-- [[PPO近端策略优化]]（旧）、[[PPOClip-目标]]（旧）
+- [[PPO近端策略优化]]（旧）、[[PPO近端策略优化]]（旧）
+
+---
+
+## 9. PPO 家族（合并「PPO家族」碎片）
+
+PPO（Proximal Policy Optimization）是 TRPO 的实用近似：用裁剪目标限制更新幅度，简单高效，是现代默认算法。
+
+- **裁剪代理目标**：
+  $$L^{CLIP}=\mathbb{E}\big[\min\big(\rho_t A_t,\ \mathrm{clip}(\rho_t,1-\epsilon,1+\epsilon)A_t\big)\big],\qquad \rho_t=\frac{\pi_\theta}{\pi_{old}}$$
+  超出比例 $[1-\epsilon,1+\epsilon]$ 的优势被裁掉，近似 KL 约束（见 [[TRPO信任域优化]]、[[TRPO与PPO对比]]）。
+- **PPO 家族**：PPO-Clip（裁剪替代约束）、PPO-Penalty（KL 惩罚项）；二者共同点都是限制策略更新幅度，避免破坏式大步。
+- **与 TRPO 的关系**：PPO 用裁剪目标近似 TRPO 的 KL 约束，省去 CG/线搜（详见 [[TRPO信任域优化]]）。
+
+**最小手算例子**：$\rho_t=1.2,\ \epsilon=0.2,\ A_t=+1$：$\mathrm{clip}$ 到 $1.2$ 仍在 $[0.8,1.2]$，计入 $1.2\times 1$；若 $\rho=1.5$ 则裁到 $1.2$。
+
+- **常见错误**：以为 PPO 无约束——clip 正是对更新幅度的隐式约束。
 
 ---
 
@@ -258,7 +274,7 @@ $$A_t^{GAE(\gamma,\lambda)}=\sum_{l=0}^{\infty}(\gamma\lambda)^l\delta_{t+l},\qq
 ## 13. 给 Obsidian 的归档建议
 
 - **适合文件夹**：`02-Knowledge/🧠 学习系统/13-强化学习/06-Actor-Critic/` 与 `07-PPO/`
-- **关联已有笔记**：`[[Actor-Critic架构]]`（旧）、`[[PPO近端策略优化]]`（旧）、`[[PPOClip-目标]]`（旧）
+- **关联已有笔记**：`[[Actor-Critic架构]]`（旧）、`[[PPO近端策略优化]]`（旧）、`[[PPO近端策略优化]]`（旧）
 - **建议标签**：`#学习` `#强化学习` `#算法`
 - **拆分建议**：AC 框架与 PPO 裁剪可拆为两张卡。
 

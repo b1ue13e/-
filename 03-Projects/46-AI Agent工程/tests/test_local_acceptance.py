@@ -1,22 +1,23 @@
+import json
 import tempfile
+import threading
 import unittest
+from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
-import sys
 
-sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
-
-from agent_runtime import (
+from scripts.agent_runtime import (
     ApprovalGate,
     BrowserTool,
     Decision,
+    HttpDecisionModel,
     PipelineDefinition,
     ReviewAgentPipeline,
     SafeWorkspace,
     ToolRegistry,
     ToolSpec,
 )
-from restaurant_pipeline import Review, aggregate_score, run_pipeline
-from security_harness import Case, evaluate, evaluate_metrics, policy
+from scripts.restaurant_pipeline import Review, aggregate_score, run_pipeline
+from scripts.security_harness import Case, evaluate, evaluate_metrics, policy
 
 
 class RestaurantPipelineTests(unittest.TestCase):
@@ -97,12 +98,59 @@ class AgentRuntimeTests(unittest.TestCase):
 
     def test_tool_registry_rejects_unknown_and_wrong_schema(self) -> None:
         registry = ToolRegistry()
-        registry.register(ToolSpec("echo", ("value",), lambda value: value))
+        registry.register(
+            ToolSpec(
+                "echo",
+                ("value",),
+                lambda value: value,
+                {"value": str},
+                lambda result: isinstance(result, str),
+            )
+        )
         self.assertEqual(registry.call("echo", value="ok"), "ok")
         with self.assertRaises(ValueError):
             registry.call("echo", wrong="x")
+        with self.assertRaises(TypeError):
+            registry.call("echo", value=7)
         with self.assertRaises(KeyError):
             registry.call("missing", value="x")
+
+    def test_http_decision_adapter_executes_real_local_transport(self) -> None:
+        decisions = {
+            "intake": {"action": "validate_query", "tool": None},
+            "retrieve": {"action": "call_tool", "tool": "retrieve_reviews"},
+            "score": {"action": "validate_scores", "tool": None},
+            "aggregate": {"action": "call_tool", "tool": "aggregate_scores"},
+            "finalize": {"action": "finish", "tool": None},
+        }
+
+        class Handler(BaseHTTPRequestHandler):
+            def do_POST(self) -> None:
+                length = int(self.headers["Content-Length"])
+                request = json.loads(self.rfile.read(length))
+                response = json.dumps(decisions[request["stage"]]).encode("utf-8")
+                self.send_response(200)
+                self.send_header("Content-Type", "application/json")
+                self.send_header("Content-Length", str(len(response)))
+                self.end_headers()
+                self.wfile.write(response)
+
+            def log_message(self, format: str, *args: object) -> None:
+                return
+
+        server = ThreadingHTTPServer(("127.0.0.1", 0), Handler)
+        thread = threading.Thread(target=server.serve_forever, daemon=True)
+        thread.start()
+        try:
+            endpoint = f"http://127.0.0.1:{server.server_port}/decision"
+            model = HttpDecisionModel(endpoint, allow_http_localhost=True)
+            result = ReviewAgentPipeline(self.reviews, model=model).run("A")
+        finally:
+            server.shutdown()
+            server.server_close()
+            thread.join(timeout=2)
+        self.assertEqual(result["status"], "completed")
+        self.assertEqual(result["score"], 3.0)
 
     def test_model_cannot_select_unregistered_tool(self) -> None:
         class AdversarialModel:
@@ -193,36 +241,78 @@ class EnvironmentBoundaryTests(unittest.TestCase):
                 workspace.resolve("../outside.txt")
             with self.assertRaises(PermissionError):
                 workspace.write_text("report.txt", "data")
-            workspace.write_text("report.txt", "data", approved=True)
+            gate = ApprovalGate(secret=b"w" * 32)
+            resource = workspace.approval_resource("report.txt")
+            request_id = gate.request(
+                "workspace_write",
+                resource,
+                workspace.approval_parameters("data"),
+            )
+            receipt = gate.approve(request_id)
+            with self.assertRaises(PermissionError):
+                workspace.write_text("report.txt", "changed", approval_gate=gate, receipt=receipt)
+            workspace.write_text("report.txt", "data", approval_gate=gate, receipt=receipt)
             self.assertEqual(workspace.read_text("report.txt"), "data")
+            with self.assertRaises(PermissionError):
+                workspace.write_text("report.txt", "data", approval_gate=gate, receipt=receipt)
 
     def test_browser_enforces_https_host_allowlist(self) -> None:
-        browser = BrowserTool({"example.edu"}, transport=lambda url: f"fetched:{url}")
-        self.assertEqual(browser.get("https://example.edu/course"), "fetched:https://example.edu/course")
+        browser = BrowserTool(
+            {"example.edu"},
+            transport=lambda method, url, body: f"{method}:{url}:{body!r}",
+        )
+        self.assertEqual(browser.get("https://example.edu/course"), "GET:https://example.edu/course:None")
         with self.assertRaises(PermissionError):
             browser.get("http://example.edu/course")
         with self.assertRaises(PermissionError):
             browser.get("https://evil.example/course")
+        with self.assertRaises(PermissionError):
+            browser.get("https://example.edu:444/course")
 
     def test_browser_submit_requires_approval(self) -> None:
-        browser = BrowserTool({"example.edu"}, transport=lambda url: "submitted")
-        gate = ApprovalGate()
+        browser = BrowserTool({"example.edu"}, transport=lambda method, url, body: "submitted")
+        gate = ApprovalGate(secret=b"b" * 32)
         url = "https://example.edu/form"
-        request_id = gate.request("browser_submit", url)
+        body = b'{"answer": 42}'
+        request_id = gate.request("browser_submit", url, browser.approval_parameters(body))
         with self.assertRaises(PermissionError):
-            browser.submit(url, gate, request_id)
-        gate.approve(request_id)
-        self.assertEqual(browser.submit(url, gate, request_id), "submitted")
+            browser.submit(url, body, gate, "invalid")
+        receipt = gate.approve(request_id)
+        self.assertEqual(browser.submit(url, body, gate, receipt), "submitted")
         with self.assertRaises(PermissionError):
-            browser.submit(url, gate, request_id)
+            browser.submit(url, body, gate, receipt)
 
     def test_browser_approval_cannot_be_replayed_for_another_url(self) -> None:
-        browser = BrowserTool({"example.edu"}, transport=lambda url: "submitted")
-        gate = ApprovalGate()
-        request_id = gate.request("browser_submit", "https://example.edu/form-a")
-        gate.approve(request_id)
+        browser = BrowserTool({"example.edu"}, transport=lambda method, url, body: "submitted")
+        gate = ApprovalGate(secret=b"b" * 32)
+        body = b"payload"
+        request_id = gate.request(
+            "browser_submit",
+            "https://example.edu/form-a",
+            browser.approval_parameters(body),
+        )
+        receipt = gate.approve(request_id)
         with self.assertRaises(PermissionError):
-            browser.submit("https://example.edu/form-b", gate, request_id)
+            browser.submit("https://example.edu/form-b", body, gate, receipt)
+
+    def test_approval_expiry_and_tamper_fail_closed(self) -> None:
+        now = [1_000.0]
+        gate = ApprovalGate(secret=b"a" * 32, clock=lambda: now[0])
+        with self.assertRaises(PermissionError):
+            gate.consume("malformed", "workspace_write", "report.txt", {"sha256": "abc"})
+        request_id = gate.request("workspace_write", "report.txt", {"sha256": "abc"}, expires_in=60.0)
+        receipt = gate.approve(request_id)
+        tampered = receipt[:-1] + ("A" if receipt[-1] != "A" else "B")
+        with self.assertRaises(PermissionError):
+            gate.consume(tampered, "workspace_write", "report.txt", {"sha256": "abc"})
+        now[0] = 1_061.0
+        with self.assertRaises(PermissionError):
+            gate.consume(receipt, "workspace_write", "report.txt", {"sha256": "abc"})
+
+    def test_duplicate_reviews_receive_unique_evidence_ids(self) -> None:
+        duplicate = Review("A", "same", 4.0)
+        result = ReviewAgentPipeline([duplicate, duplicate]).run("A")
+        self.assertEqual(result["evidence_ids"], ["review-0", "review-1"])
 
 
 if __name__ == "__main__":

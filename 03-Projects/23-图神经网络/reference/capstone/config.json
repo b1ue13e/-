@@ -1,0 +1,17 @@
+{
+  "dataset": "contextual-sbm-v1",
+  "num_nodes": 120,
+  "feature_dim": 8,
+  "p_in": 0.12,
+  "p_out": 0.02,
+  "feature_signal": 0.35,
+  "data_seed": 2026,
+  "seeds": [7, 42, 2026],
+  "epochs": 80,
+  "patience": 12,
+  "hidden_channels": 16,
+  "learning_rate": 0.03,
+  "weight_decay": 0.0001,
+  "fanout": 3,
+  "batch_size": 16
+}

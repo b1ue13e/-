@@ -12,17 +12,6 @@ source_type: local_integration_task
 source: "课程原创任务；对齐 Microsoft Lessons 1/3/4 与 Hello-Agents Chapters 1/4/7"
 source_url: "https://github.com/microsoft/ai-agents-for-beginners/tree/main/04-tool-use"
 accessed: 2026-08-06
-license: "任务文本原创；Microsoft MIT；Hello-Agents CC BY-NC-SA 4.0"
-assignment_id: "AI-Agent工程-L02"
-assignment_level: lesson
-assignment_format: lab
-stage_id: "01"
-requires: ["[[AI-Agent-边界与感知行动循环]]", "[[AI-Agent-ReAct推理行动范式]]", "[[AI-Agent-工具调用与结构化契约]]"]
-source_type: local_integration_task
-source: "课程原创任务；对齐 Microsoft Lessons 1/3/4 与 Hello-Agents Chapters 1/4/7"
-source_url: "https://github.com/microsoft/ai-agents-for-beginners/tree/main/04-tool-use"
-accessed: 2026-08-06
-license: "任务文本原创；Microsoft MIT；Hello-Agents CC BY-NC-SA 4.0"
 created: 2026-08-06
 status: planned
 flow: project
@@ -86,6 +75,13 @@ class LimitedAgentLoop:
 - Agent 范式在大规模工具选型与非结构化输入解析上的扩展性优势。
 
 ---
+
+## 任务分层
+
+- **基础要求**：工具 schema、三步预算、连续重复动作熔断和四类失败状态全部可测试。
+- **必要提示**：先让确定性 action provider 通过，再替换决策来源；控制面不得依赖模型自觉停止。
+- **常见错误**：重复注册静默覆盖、`args` 非字典时继续执行、把所有 handler 异常都归为同一成功空值。
+- **可选进阶**：接入 `HttpDecisionModel` 的本机回环服务并比较固定工作流与 HTTP 决策延迟；不作为基础通过前置。
 
 ## 🛠️ 环境与复现
 

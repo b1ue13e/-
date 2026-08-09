@@ -9,7 +9,7 @@ flow: knowledge
 kind: concept
 difficulty: advanced
 concept: ["RLHF", "PPO", "奖励模型", "KL 惩罚"]
-upstream: ["[[RLHF-PPO]]", "[[PPO近端策略优化]]"]
+upstream: ["[[PPO近端策略优化]]", "[[GAE广义优势估计]]", "[[Actor-Critic架构]]"]
 tags: [学习, 强化学习]
 ---
 > 所属模块：[[🗺️ 强化学习学习路径|强化学习学习路径]]

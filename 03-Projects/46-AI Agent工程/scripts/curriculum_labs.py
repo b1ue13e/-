@@ -10,7 +10,7 @@ from __future__ import annotations
 from dataclasses import dataclass, field
 from hashlib import sha256
 import json
-from typing import Any, Callable
+from typing import Any, Callable, Protocol
 
 
 # P0: tool contract
@@ -118,12 +118,34 @@ class AgentCard:
     endpoint: str
 
 
-def delegate(card: AgentCard, skill: str) -> dict[str, Any]:
+class TaskTransport(Protocol):
+    def submit(self, endpoint: str, payload: dict[str, Any]) -> dict[str, Any]:
+        """Submit one task and return its typed acknowledgement."""
+
+
+def delegate(
+    card: AgentCard,
+    skill: str,
+    instruction: str = "",
+    transport: TaskTransport | None = None,
+) -> dict[str, Any]:
     if skill not in card.skills:
         return {"status": "rejected", "reason": "skill_not_declared"}
     if not card.endpoint.startswith("https://"):
         return {"status": "rejected", "reason": "endpoint_policy"}
-    return {"status": "submitted", "task_id": "task-1", "artifact": None}
+    task_id = f"task-{sha256(f'{card.name}:{skill}:{card.endpoint}:{instruction}'.encode()).hexdigest()[:10]}"
+    payload = {"task_id": task_id, "skill": skill, "instruction": instruction}
+    if transport is None:
+        return {
+            "status": "planned",
+            "task_id": task_id,
+            "artifact": None,
+            "reason": "transport_not_configured",
+        }
+    response = transport.submit(card.endpoint, payload)
+    if response.get("task_id") != task_id or response.get("status") not in {"accepted", "completed"}:
+        raise ValueError("task transport returned an invalid acknowledgement")
+    return response
 
 
 # P6: metrics must preserve normal/attack distinctions.
@@ -143,15 +165,21 @@ def metrics(rows: list[dict[str, Any]]) -> dict[str, float]:
 def research_report(claims: list[dict[str, str]], evidence: dict[str, str]) -> dict[str, Any]:
     accepted, rejected = [], []
     for claim in claims:
-        if claim.get("source_id") in evidence:
+        source_id = claim.get("source_id", "")
+        if source_id not in evidence:
+            rejected.append({"claim": claim.get("text", ""), "reason": "missing_source"})
+            continue
+        claim_text = " ".join(claim.get("text", "").casefold().split())
+        source_text = " ".join(evidence[source_id].casefold().split())
+        if claim_text and claim_text in source_text:
             accepted.append(claim)
         else:
-            rejected.append({"claim": claim.get("text", ""), "reason": "missing_source"})
+            rejected.append({"claim": claim.get("text", ""), "reason": "unsupported_by_source"})
     return {"accepted": accepted, "rejected": rejected, "source_ids": sorted({c["source_id"] for c in accepted})}
 
 
 # P7A: constrained travel migration, no booking side effect without approval.
-def plan_trip(destination: str, budget: int, approved_booking: bool = False) -> dict[str, Any]:
+def plan_trip(destination: str, budget: int) -> dict[str, Any]:
     options = {"Hangzhou": {"cost": 800, "days": 2}, "Shanghai": {"cost": 1200, "days": 3}}
     option = options.get(destination)
     if option is None:
@@ -159,11 +187,39 @@ def plan_trip(destination: str, budget: int, approved_booking: bool = False) -> 
     if option["cost"] > budget:
         return {"status": "failed", "reason": "over_budget"}
     return {
-        "status": "booked" if approved_booking else "awaiting_approval",
+        "status": "awaiting_approval",
         "destination": destination,
         "cost": option["cost"],
-        "requires_approval": not approved_booking,
+        "requires_approval": True,
     }
+
+
+class ApprovalConsumer(Protocol):
+    def consume(
+        self,
+        receipt: str,
+        action: str,
+        resource: str,
+        parameters: dict[str, object] | None = None,
+    ) -> None:
+        """Consume one action-bound approval receipt."""
+
+
+def trip_approval_scope(plan: dict[str, Any]) -> tuple[str, dict[str, object]]:
+    if plan.get("status") != "awaiting_approval":
+        raise ValueError("trip plan is not ready for approval")
+    resource = f"trip:{plan['destination']}"
+    parameters: dict[str, object] = {
+        "destination": plan["destination"],
+        "cost": plan["cost"],
+    }
+    return resource, parameters
+
+
+def book_trip(plan: dict[str, Any], approval_gate: ApprovalConsumer, receipt: str) -> dict[str, Any]:
+    resource, parameters = trip_approval_scope(plan)
+    approval_gate.consume(receipt, "trip_booking", resource, parameters)
+    return {**plan, "status": "booked", "requires_approval": False}
 
 
 # P7B: deterministic cyber-town state, useful before adding an LLM NPC.

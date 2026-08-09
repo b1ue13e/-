@@ -1,0 +1,58 @@
+{
+  "dataset": "synthetic-two-community-v1",
+  "graph_sha256": "3e8a816a6e96a97f35497b443043f5ca296fde0e495d7efafdb77ac6721b1d51",
+  "num_nodes": 12,
+  "num_edges": 26,
+  "num_features": 4,
+  "num_classes": 2,
+  "protocol": "transductive-node-classification",
+  "structure_visible": true,
+  "labels_used_for_loss": "train_mask_only",
+  "seeds": [
+    7
+  ],
+  "split_indices": {
+    "train": [
+      0,
+      1,
+      2,
+      6,
+      7,
+      8
+    ],
+    "validation": [
+      3,
+      4,
+      9
+    ],
+    "test": [
+      5,
+      10,
+      11
+    ]
+  },
+  "split_counts": {
+    "train": 6,
+    "validation": 3,
+    "test": 3
+  },
+  "metrics": [
+    "accuracy",
+    "macro_f1"
+  ],
+  "training_config": {
+    "probe_epochs": 40
+  },
+  "environment": {
+    "python": "3.11.9",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "torch": "2.12.1+cpu",
+    "numpy": "2.4.6"
+  },
+  "assignment": "GNN-S03",
+  "starter_status": "worked-example",
+  "pretraining_labels_visible": false,
+  "mask_rate": 0.25,
+  "temperature": 0.5,
+  "pretrain_epochs": 40
+}

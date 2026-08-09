@@ -7,6 +7,14 @@ assignment_id: "RL-CAP"
 assignment_level: capstone
 assignment_format: project
 stage_id: "07"
+source_type: local_integration_task
+accessed: "2026-08-07"
+license: "[待验证]"
+source: "本课程（强化学习）自编形成性练习；非任何名校官方作业，不冒充官方。"
+created: 2026-08-06
+status: active
+flow: project
+tags: [作业, 强化学习, 大作业]
 requires:
   - "[[MDP 与贝尔曼方程]]"
   - "[[时序差分与 Q-Learning]]"
@@ -15,11 +23,77 @@ requires:
   - "[[策略梯度]]"
   - "[[PPO近端策略优化]]"
   - "[[GAE-公式]]"
-source_type: local_integration_task
-created: 2026-08-06
-status: active
-flow: project
-tags: [作业, 强化学习, 大作业]
+  - "[[POMDP]]"
+  - "[[DQN-函数逼近]]"
+  - "[[MDP-动作空间]]"
+  - "[[RLHF-PPO]]"
+  - "[[DQN-经验回放]]"
+  - "[[DQN-跳帧]]"
+  - "[[贝尔曼-Q期望]]"
+  - "[[贝尔曼-算子]]"
+  - "[[贝尔曼-不动点]]"
+  - "[[PER]]"
+  - "[[GAE-Lambda1]]"
+  - "[[Double-DQN]]"
+  - "[[PPOClip-目标]]"
+  - "[[QLvsSARSA-策略]]"
+  - "[[GAE广义优势估计]]"
+  - "[[C51]]"
+  - "[[Actor-Critic 与 PPO]]"
+  - "[[PPOClip-Epsilon]]"
+  - "[[QLvsSARSA-目标]]"
+  - "[[V函数-最优]]"
+  - "[[贝尔曼-Q最优]]"
+  - "[[V函数-直观]]"
+  - "[[DQN-TN详解]]"
+  - "[[DQN-衰减]]"
+  - "[[QL-更新]]"
+  - "[[PPOClip-函数]]"
+  - "[[确定性MDP]]"
+  - "[[PPOvsTRPO-实现]]"
+  - "[[GAE-单步]]"
+  - "[[QL-收敛]]"
+  - "[[DQN-损失]]"
+  - "[[SAC软Actor-Critic]]"
+  - "[[QL-异策略]]"
+  - "[[贝尔曼-最优策略]]"
+  - "[[QLvsSARSA-风险]]"
+  - "[[GAE-Lambda0]]"
+  - "[[贝尔曼-收缩性]]"
+  - "[[Rainbow]]"
+  - "[[V函数-公式]]"
+  - "[[PPOvsTRPO-效果]]"
+  - "[[Actor-Critic架构]]"
+  - "[[QL-最大化偏差]]"
+  - "[[贝尔曼-V期望]]"
+  - "[[平均奖励MDP]]"
+  - "[[Q函数-公式]]"
+  - "[[Dueling-DQN]]"
+  - "[[PolicyGradient策略梯度]]"
+  - "[[贝尔曼-V最优]]"
+  - "[[Q函数-定义]]"
+  - "[[Q函数-最优]]"
+  - "[[MDP-奖励函数]]"
+  - "[[随机性MDP]]"
+  - "[[V函数-定义]]"
+  - "[[GAE-Lambda]]"
+  - "[[GAE-Lambda95]]"
+  - "[[QLvsSARSA-应用]]"
+  - "[[DQN-ER详解]]"
+  - "[[PPOClip-最小值]]"
+  - "[[DQN深度Q网络]]"
+  - "[[MDP-转移概率]]"
+  - "[[DQN-目标网络]]"
+  - "[[MDP-折扣因子]]"
+  - "[[DDPG深度确定性策略梯度(DDPG)]]"
+  - "[[PPOvsTRPO-效率]]"
+  - "[[贝尔曼-单调性]]"
+  - "[[连续MDP]]"
+  - "[[PPOvsTRPO-约束]]"
+  - "[[多智能体MDP]]"
+  - "[[MDP-状态空间]]"
+  - "[[Q函数-直观]]"
+  - "[[NoisyNets]]"
 ---
 
 # 强化学习-大作业：从表格 Q-Learning 到深度策略梯度
@@ -94,3 +168,10 @@ tags: [作业, 强化学习, 大作业]
 - [ ] 实验报告含至少一个训崩案例 + 归因
 - [ ] Anki 卡 ≥ 8 张且能检验真理解（非抄定义）
 - [ ] 核心算法为自实现，仅 `sb3` 作对照基线
+
+
+## 来源声明（诚实标注）
+
+本作业 `source_type: local_integration_task`，为**本课程（强化学习）自编形成性练习**。
+- 诚实说明：非任何名校官方作业，不冒充官方题面；题面与验收由本课程独立制定。
+- 许可：[待验证]；访问日期 2026-08-07。

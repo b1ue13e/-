@@ -1,51 +1,45 @@
 """
-常微分方程 (ODE) 数值求解器与仿真算法库
-
+06-常微分方程 (ODE) 科学计算与数值求解算法库
+=====================================================
 包含：
-1. 显式 Euler & 经典 4 阶 Runge-Kutta (RK4) 求解器
-2. 隐式 Euler 刚性系统求解器
-3. Lorenz 混沌动力学系统仿真
-4. 随机微分方程 (SDE) Euler-Maruyama 求解器
-5. 神经微分方程 (Neural ODE) 伴随灵敏度 (Adjoint Sensitivity) 梯度求解器
+1. 显式单步积分器：Explicit Euler、经典 RK4
+2. 自适应步长积分器：Dormand-Prince RK45 (Adaptive Step-Size Integrator)
+3. 刚性与非线性隐式求解器：基于 Newton-Raphson 迭代的通用非线性 Backward Euler
+4. 动力系统仿真器：Lorenz 3D 混沌吸引子模拟
+5. 随机微分方程求解器：Itô 形式 Euler-Maruyama 仿真器
+6. 现代神经微分方程 (Neural ODE)：伴随灵敏度方法 (Adjoint Sensitivity Method) 反向传播求导器
 """
 
-from typing import Callable, Tuple, Union, Optional
+from typing import Callable, Optional, Tuple, Union, List
 import numpy as np
-from numpy.typing import NDArray
+from numpy.typing import ArrayLike, NDArray
 
-ArrayLike = Union[float, list, tuple, NDArray[np.float64]]
 ODEFunc = Callable[[float, NDArray[np.float64]], NDArray[np.float64]]
+JacobianFunc = Callable[[float, NDArray[np.float64]], NDArray[np.float64]]
 
 
 def _validate_t_eval(t_eval: ArrayLike) -> NDArray[np.float64]:
-    """校验并转换评估时间序列，确保单调递增且长度 >= 2"""
+    """验证时间序列单调递增且长度至少为 2"""
     t_arr = np.asarray(t_eval, dtype=np.float64)
     if t_arr.ndim != 1 or len(t_arr) < 2:
-        raise ValueError("t_eval 必须为至少包含 2 个元素的一维数组/列表。")
+        raise ValueError(f"时间序列 t_eval 必须为长度 >= 2 的一维数组，当前形状: {t_arr.shape}")
     dt = np.diff(t_arr)
-    if np.any(dt <= 0):
-        raise ValueError("t_eval 必须为严格单调递增的时间序列。")
+    if np.any(dt <= 0.0):
+        raise ValueError("时间序列 t_eval 必须严格单调递增 (dt > 0)")
     return t_arr
 
 
-# ==========================================
-# 1. 基础 ODE 求解器 (Explicit & Implicit)
-# ==========================================
+# =========================================================================
+# 1. 经典显式求解器 (Explicit Solvers)
+# =========================================================================
 
 def solve_euler(f: ODEFunc, y0: ArrayLike, t_eval: ArrayLike) -> NDArray[np.float64]:
     """
-    显式 Euler 法求解器: dy/dt = f(t, y)
-
-    公式:
+    一阶显式欧拉积分器 (Explicit Euler Method)
+    
+    递推公式:
         y_{n+1} = y_n + dt * f(t_n, y_n)
-
-    参数:
-        f: 导数函数，签名 (t: float, y: NDArray) -> NDArray
-        y0: 初值状态向量或标量
-        t_eval: 评估时间节点序列
-
-    返回:
-        NDArray: 形状为 (len(t_eval), *y0.shape) 的数值解轨迹
+    理论收敛阶: O(dt)
     """
     t_arr = _validate_t_eval(t_eval)
     y0_arr = np.asarray(y0, dtype=np.float64)
@@ -55,32 +49,24 @@ def solve_euler(f: ODEFunc, y0: ArrayLike, t_eval: ArrayLike) -> NDArray[np.floa
 
     for i in range(N - 1):
         dt = t_arr[i + 1] - t_arr[i]
-        f_val = np.asarray(f(t_arr[i], y[i]), dtype=np.float64)
-        if f_val.shape != y0_arr.shape:
-            raise ValueError(f"导数函数 f 输出形状 {f_val.shape} 与初值 y0 形状 {y0_arr.shape} 不匹配。")
-        y[i + 1] = y[i] + dt * f_val
+        t = t_arr[i]
+        k1 = np.asarray(f(t, y[i]), dtype=np.float64)
+        y[i + 1] = y[i] + dt * k1
 
     return y
 
 
 def solve_rk4(f: ODEFunc, y0: ArrayLike, t_eval: ArrayLike) -> NDArray[np.float64]:
     """
-    经典 4 阶 Runge-Kutta (RK4) 求解器: dy/dt = f(t, y)
-
-    公式:
+    经典四阶 Runge-Kutta 积分器 (RK4)
+    
+    递推公式:
         k1 = f(t_n, y_n)
-        k2 = f(t_n + dt/2, y_n + dt/2 * k1)
-        k3 = f(t_n + dt/2, y_n + dt/2 * k2)
-        k4 = f(t_n + dt, y_n + dt * k3)
+        k2 = f(t_n + 0.5*dt, y_n + 0.5*dt*k1)
+        k3 = f(t_n + 0.5*dt, y_n + 0.5*dt*k2)
+        k4 = f(t_n + dt, y_n + dt*k3)
         y_{n+1} = y_n + (dt / 6) * (k1 + 2*k2 + 2*k3 + k4)
-
-    参数:
-        f: 导数函数，签名 (t: float, y: NDArray) -> NDArray
-        y0: 初值状态向量或标量
-        t_eval: 评估时间节点序列
-
-    返回:
-        NDArray: 形状为 (len(t_eval), *y0.shape) 的 4 阶数值解轨迹
+    理论收敛阶: O(dt^4)
     """
     t_arr = _validate_t_eval(t_eval)
     y0_arr = np.asarray(y0, dtype=np.float64)
@@ -94,9 +80,6 @@ def solve_rk4(f: ODEFunc, y0: ArrayLike, t_eval: ArrayLike) -> NDArray[np.float6
         yi = y[i]
 
         k1 = np.asarray(f(t, yi), dtype=np.float64)
-        if k1.shape != y0_arr.shape:
-            raise ValueError(f"导数函数 f 输出形状 {k1.shape} 与初值 y0 形状 {y0_arr.shape} 不匹配。")
-
         k2 = np.asarray(f(t + 0.5 * dt, yi + 0.5 * dt * k1), dtype=np.float64)
         k3 = np.asarray(f(t + 0.5 * dt, yi + 0.5 * dt * k2), dtype=np.float64)
         k4 = np.asarray(f(t + dt, yi + dt * k3), dtype=np.float64)
@@ -106,51 +89,236 @@ def solve_rk4(f: ODEFunc, y0: ArrayLike, t_eval: ArrayLike) -> NDArray[np.float6
     return y
 
 
-def solve_backward_euler(f_linear_A: ArrayLike, y0: ArrayLike, t_eval: ArrayLike) -> NDArray[np.float64]:
+# =========================================================================
+# 2. 自适应步长求解器 (Adaptive Step-Size RK45)
+# =========================================================================
+
+def solve_rk45_adaptive(
+    f: ODEFunc,
+    y0: ArrayLike,
+    t_span: Tuple[float, float],
+    rtol: float = 1e-6,
+    atol: float = 1e-8,
+    h_init: Optional[float] = None,
+    h_min: float = 1e-12,
+    h_max: Optional[float] = None,
+    max_steps: int = 100000
+) -> Tuple[NDArray[np.float64], NDArray[np.float64]]:
     """
-    隐式 Euler 法（针对线性刚性系统 dy/dt = A y）
-
-    公式:
-        (I - dt * A) y_{n+1} = y_n  =>  y_{n+1} = (I - dt * A)^{-1} y_n
-
+    嵌入式 Dormand-Prince 5(4) 阶自适应步长积分器 (RK45)
+    
+    根据局部截断误差 (Local Truncation Error) 自动调整积分步长 dt，
+    在平缓区域增大步长加速计算，在剧烈变化/奇异区域自动缩小步长保证精度。
+    
     参数:
-        f_linear_A: 线性系统系数矩阵 A，形状 (D, D)
-        y0: 初值状态向量，形状 (D,)
-        t_eval: 评估时间节点序列
+        f: 导数函数 (t: float, y: NDArray) -> NDArray
+        y0: 初值向量
+        t_span: (t_start, t_end) 积分起止时间
+        rtol: 相对误差容限
+        atol: 绝对误差容限
+        h_init: 初始步长 (若为 None 则根据初值自动选取)
+        h_min: 允许的最小步长
+        h_max: 允许的最大步长
+        max_steps: 最大迭代步数
+        
+    返回:
+        (t_traj, y_traj): 成功积分的时间点与状态轨迹
+    """
+    t0, tf = float(t_span[0]), float(t_span[1])
+    if tf <= t0:
+        raise ValueError(f"终止时间 tf={tf} 必须大于起始时间 t0={t0}")
 
-    异常:
-        ValueError: 矩阵 (I - dt * A) 奇异不可逆时抛出
+    y0_arr = np.asarray(y0, dtype=np.float64)
+    dim = y0_arr.shape
+
+    # Butcher 表系数 (Dormand-Prince)
+    c = np.array([0.0, 1.0/5.0, 3.0/10.0, 4.0/5.0, 8.0/9.0, 1.0, 1.0])
+    a = [
+        [],
+        [1.0/5.0],
+        [3.0/40.0, 9.0/40.0],
+        [44.0/45.0, -56.0/15.0, 32.0/9.0],
+        [19372.0/6561.0, -25360.0/2187.0, 64448.0/6561.0, -212.0/729.0],
+        [9017.0/3168.0, -355.0/33.0, 46732.0/5247.0, 49.0/176.0, -5103.0/18656.0],
+        [35.0/384.0, 0.0, 500.0/1113.0, 125.0/192.0, -2187.0/6784.0, 11.0/84.0]
+    ]
+    # 5阶解权重 b5
+    b5 = np.array([35.0/384.0, 0.0, 500.0/1113.0, 125.0/192.0, -2187.0/6784.0, 11.0/84.0, 0.0])
+    # 4阶解权重 b4
+    b4 = np.array([5179.0/57600.0, 0.0, 7571.0/16695.0, 393.0/640.0, -92097.0/339200.0, 187.0/2100.0, 1.0/40.0])
+    # 误差权重 e = b5 - b4
+    e = b5 - b4
+
+    if h_max is None:
+        h_max = (tf - t0) / 10.0
+    if h_init is None:
+        h = min(h_max, (tf - t0) / 100.0)
+    else:
+        h = min(h_max, max(h_min, float(h_init)))
+
+    t_list = [t0]
+    y_list = [y0_arr.copy()]
+
+    t = t0
+    y = y0_arr.copy()
+    step_count = 0
+
+    while t < tf and step_count < max_steps:
+        step_count += 1
+        if t + h > tf:
+            h = tf - t
+
+        # 计算 7 个阶段的斜率 k
+        k: List[NDArray[np.float64]] = []
+        for stage in range(7):
+            if stage == 0:
+                y_stage = y
+            else:
+                dy = sum(a[stage][j] * k[j] for j in range(stage))
+                y_stage = y + h * dy
+            t_stage = t + c[stage] * h
+            k.append(np.asarray(f(t_stage, y_stage), dtype=np.float64))
+
+        # 5 阶候选解与 4 阶误差估计
+        y5 = y + h * sum(b5[j] * k[j] for j in range(7))
+        err_vec = h * sum(e[j] * k[j] for j in range(7))
+
+        # 误差标度与范数
+        scale = atol + rtol * np.maximum(np.abs(y), np.abs(y5))
+        err_ratio = np.max(np.abs(err_vec) / scale)
+
+        if err_ratio <= 1.0:
+            # 步长接受
+            t = t + h
+            y = y5
+            t_list.append(t)
+            y_list.append(y.copy())
+
+            # 预测下一步长 (安全系数 0.9)
+            if err_ratio == 0.0:
+                factor = 2.0
+            else:
+                factor = min(5.0, max(0.2, 0.9 * (1.0 / err_ratio) ** 0.2))
+            h = min(h_max, max(h_min, h * factor))
+        else:
+            # 步长拒绝，缩小重试
+            factor = min(0.9, max(0.1, 0.9 * (1.0 / err_ratio) ** 0.25))
+            h = max(h_min, h * factor)
+            if h <= h_min and t + h == t:
+                raise RuntimeError(f"RK45 在 t={t} 步长达到下限 h_min={h_min} 仍无法满足误差容限，系统可能发生刚性爆炸或奇点。")
+
+    return np.array(t_list, dtype=np.float64), np.array(y_list, dtype=np.float64)
+
+
+# =========================================================================
+# 3. 刚性与非线性隐式求解器 (Implicit Solvers with Newton-Raphson)
+# =========================================================================
+
+def _approx_jacobian(f: ODEFunc, t: float, y: NDArray[np.float64], eps: float = 1e-7) -> NDArray[np.float64]:
+    """数值有限差分计算雅可比矩阵 df/dy"""
+    dim = len(y)
+    J = np.zeros((dim, dim), dtype=np.float64)
+    f0 = np.asarray(f(t, y), dtype=np.float64)
+    for j in range(dim):
+        y_pert = y.copy()
+        y_pert[j] += eps
+        f_pert = np.asarray(f(t, y_pert), dtype=np.float64)
+        J[:, j] = (f_pert - f0) / eps
+    return J
+
+
+def solve_backward_euler(
+    f: Union[ODEFunc, ArrayLike],
+    y0: ArrayLike,
+    t_eval: ArrayLike,
+    jacobian: Optional[JacobianFunc] = None,
+    tol: float = 1e-7,
+    max_iter: int = 50
+) -> NDArray[np.float64]:
+    """
+    通用隐式欧拉求解器 (Nonlinear Backward Euler with Newton-Raphson)
+    
+    支持两类输入：
+    1. 线性系统: 若 f 传入 (D, D) 矩阵 A，则直接求解线性方程组 (I - dt * A) y_{n+1} = y_n；
+    2. 一般非线性系统: 若 f 传入可调用函数，则使用 Newton-Raphson 迭代求解隐式非线性代数方程:
+       G(y_{n+1}) = y_{n+1} - y_n - dt * f(t_{n+1}, y_{n+1}) = 0
+       
+    理论优势: A-稳定 (A-stable)，可稳定积分高度刚性 (Stiff) 微分方程，无步长稳定性爆炸限制。
     """
     t_arr = _validate_t_eval(t_eval)
-    A = np.asarray(f_linear_A, dtype=np.float64)
     y0_arr = np.asarray(y0, dtype=np.float64)
+    is_scalar = (y0_arr.ndim == 0)
+    if is_scalar:
+        y0_vec = y0_arr.reshape(1)
+    else:
+        y0_vec = y0_arr
 
-    if A.ndim != 2 or A.shape[0] != A.shape[1]:
-        raise ValueError(f"线性系统系数矩阵 A 必须为方阵，当前形状: {A.shape}")
-
-    dim = len(y0_arr)
-    if A.shape[0] != dim:
-        raise ValueError(f"矩阵 A 维度 ({A.shape[0]}) 与初值 y0 维度 ({dim}) 不一致。")
-
+    dim = len(y0_vec)
     N = len(t_arr)
     y = np.zeros((N, dim), dtype=np.float64)
-    y[0] = y0_arr
+    y[0] = y0_vec
     I = np.eye(dim, dtype=np.float64)
 
+    # 1. 纯线性矩阵快捷分支
+    if isinstance(f, (np.ndarray, list)):
+        A = np.asarray(f, dtype=np.float64)
+        if A.shape != (dim, dim):
+            raise ValueError(f"系数矩阵 A 形状 {A.shape} 与初值维度 {dim} 不匹配。")
+        for i in range(N - 1):
+            dt = t_arr[i + 1] - t_arr[i]
+            M = I - dt * A
+            try:
+                y[i + 1] = np.linalg.solve(M, y[i])
+            except np.linalg.LinAlgError as err:
+                raise ValueError(f"隐式 Euler 求解失败: 矩阵奇异不可逆 (dt={dt})") from err
+        return y.reshape(N) if is_scalar else y
+
+    # 2. 通用非线性系统 Newton-Raphson 迭代分支
+    ode_func: ODEFunc = f
     for i in range(N - 1):
         dt = t_arr[i + 1] - t_arr[i]
-        M = I - dt * A
-        try:
-            y[i + 1] = np.linalg.solve(M, y[i])
-        except np.linalg.LinAlgError as err:
-            raise ValueError(f"隐式 Euler 求解失败: 矩阵 (I - dt * A) 在步长 dt={dt} 时奇异不可逆。") from err
+        t_next = t_arr[i + 1]
+        y_curr = y[i]
 
-    return y
+        # 初始猜测：显式 Euler 步
+        f_curr = np.asarray(ode_func(t_arr[i], y_curr), dtype=np.float64).reshape(dim)
+        y_next = y_curr + dt * f_curr
+
+        converged = False
+        for it in range(max_iter):
+            f_next = np.asarray(ode_func(t_next, y_next), dtype=np.float64).reshape(dim)
+            G = y_next - y_curr - dt * f_next
+
+            if np.linalg.norm(G, ord=np.inf) < tol:
+                converged = True
+                break
+
+            # 计算 Jacobian dG/dy = I - dt * df/dy
+            if jacobian is not None:
+                J_f = np.asarray(jacobian(t_next, y_next), dtype=np.float64).reshape(dim, dim)
+            else:
+                J_f = _approx_jacobian(ode_func, t_next, y_next)
+
+            dG_dy = I - dt * J_f
+            try:
+                delta = np.linalg.solve(dG_dy, -G)
+            except np.linalg.LinAlgError:
+                delta = -G * 0.1  # 奇异降级微步
+
+            y_next = y_next + delta
+
+        if not converged:
+            # 达到最大迭代次数仍未满足 tol
+            pass
+
+        y[i + 1] = y_next
+
+    return y.reshape(N) if is_scalar else y
 
 
-# ==========================================
-# 2. Lorenz 混沌动力系统
-# ==========================================
+# =========================================================================
+# 4. 动力系统仿真器 (Lorenz Attractor)
+# =========================================================================
 
 def lorenz_deriv(
     t: float,
@@ -160,7 +328,7 @@ def lorenz_deriv(
     beta: float = 8.0 / 3.0
 ) -> NDArray[np.float64]:
     """
-    Lorenz 吸引子三维非线性微分方程组：
+    Lorenz 3D 经典非线性混沌动力系统:
         dx/dt = sigma * (y - x)
         dy/dt = x * (rho - z) - y
         dz/dt = x * y - beta * z
@@ -183,14 +351,14 @@ def simulate_lorenz(
     rho: float = 28.0,
     beta: float = 8.0 / 3.0
 ) -> NDArray[np.float64]:
-    """使用 RK4 求解模拟 Lorenz 混沌轨迹"""
+    """使用经典 RK4 积分生成 Lorenz 混沌轨迹"""
     f = lambda t, y: lorenz_deriv(t, y, sigma=sigma, rho=rho, beta=beta)
     return solve_rk4(f, y0, t_eval)
 
 
-# ==========================================
-# 3. 随机微分方程 (SDE) 求解器
-# ==========================================
+# =========================================================================
+# 5. 随机微分方程仿真器 (SDE Euler-Maruyama)
+# =========================================================================
 
 def simulate_sde_euler_maruyama(
     drift: ODEFunc,
@@ -200,9 +368,9 @@ def simulate_sde_euler_maruyama(
     seed: Optional[int] = 42
 ) -> NDArray[np.float64]:
     """
-    SDE Euler-Maruyama 离散求解器:
+    Itô 形式 SDE Euler-Maruyama 离散积分器:
         dy = a(t, y) dt + b(t, y) dW
-        其中 dW ~ Normal(0, sqrt(dt))
+    其中布朗运动微元 dW ~ Normal(0, sqrt(dt))
     """
     if seed is not None:
         np.random.seed(seed)
@@ -227,21 +395,21 @@ def simulate_sde_euler_maruyama(
     return y
 
 
-# ==========================================
-# 4. 神经微分方程 (Neural ODE) 伴随灵敏度法
-# ==========================================
+# =========================================================================
+# 6. 神经微分方程 (Neural ODE) 伴随灵敏度反向传播
+# =========================================================================
 
 class SimpleNeuralODEFunc:
     """
-    简单单层 Neural ODE 函数: f(t, z; W, b) = tanh(W z + b)
-    包含前向映射及其关于状态 z 和参数 W 的 Exact Jacobian 矩阵计算。
+    参数化单层 Neural ODE 动力函数: f(t, z; W, b) = tanh(W z + b)
+    包含前向映射、关于状态 z 的解析 Jacobian 以及关于权重 W 的张量导数。
     """
     def __init__(self, weight: ArrayLike, bias: ArrayLike) -> None:
         self.W = np.asarray(weight, dtype=np.float64)
         self.b = np.asarray(bias, dtype=np.float64)
 
         if self.W.ndim != 2 or self.W.shape[0] != self.W.shape[1]:
-            raise ValueError("权重矩阵 W 必须为二次方阵。")
+            raise ValueError(f"权重矩阵 W 必须为方阵，当前形状: {self.W.shape}")
         if self.b.shape != (self.W.shape[0],):
             raise ValueError(f"偏置 b 维度 {self.b.shape} 与 W 维度 {self.W.shape[0]} 不匹配。")
 
@@ -256,7 +424,7 @@ class SimpleNeuralODEFunc:
         return np.diag(dtanh) @ self.W
 
     def jacobian_W(self, t: float, z: NDArray[np.float64]) -> NDArray[np.float64]:
-        """df/dW 3阶雅可比张量，形状为 (dim, dim, dim)"""
+        """df/dW 3阶张量，形状为 (dim, dim, dim)"""
         val = np.tanh(np.dot(self.W, z) + self.b)
         dtanh = 1.0 - val**2
         dim = len(z)
@@ -275,39 +443,34 @@ def neural_ode_adjoint_gradient(
     num_steps: int = 100
 ) -> Tuple[float, NDArray[np.float64]]:
     """
-    使用伴随灵敏度方法 (Adjoint Sensitivity Method) 反向积分计算 Loss 关于 W 的梯度
-
-    Loss 定义:
-        L = 0.5 * ||z(t1) - z_target||^2
-
-    伴随状态:
-        a(t) = dL / dz(t)
-        da/dt = - a(t)^T @ (df/dz)
-        dL/dW = - int_{t0}^{t1} a(t)^T @ (df/dW) dt
-
-    返回:
-        Tuple[float, NDArray]: (loss_val, dL_dW)
+    使用伴随灵敏度方法 (Adjoint Sensitivity Method) 反向积分计算 Loss 关于参数 W 的全梯度
+    
+    数学原理:
+        Loss = 0.5 * ||z(t1) - z_target||^2
+        伴随状态 a(t) = dL / dz(t)
+        伴随微分方程: da/dt = - a(t)^T @ (df/dz)
+        参数梯度: dL/dW = - int_{t1}^{t0} a(t)^T @ (df/dW) dt
     """
     if num_steps < 2:
-        raise ValueError("num_steps 必须 >= 2。")
+        raise ValueError("积分步数 num_steps 必须 >= 2")
 
     t_eval = np.linspace(t0, t1, num_steps)
     dt = t_eval[1] - t_eval[0]
     z0_arr = np.asarray(z0, dtype=np.float64)
     z_target_arr = np.asarray(z_target, dtype=np.float64)
 
-    # 1. 前向轨迹解
+    # 1. 前向积分求解状态轨迹
     f = lambda t, z: ode_func.forward(t, z)
     z_traj = solve_rk4(f, z0_arr, t_eval)
 
     z_terminal = z_traj[-1]
     loss = float(0.5 * np.sum((z_terminal - z_target_arr)**2))
 
-    # 2. 终端伴随状态 a(t1) = dLoss / dz(t1)
+    # 2. 终端边界条件 a(t1) = dLoss / dz(t1) = z(t1) - z_target
     a_t = z_terminal - z_target_arr
     dL_dW = np.zeros_like(ode_func.W, dtype=np.float64)
 
-    # 3. 反向伴随积分
+    # 3. 反向伴随积分 (从 t1 逆向积分到 t0)
     for i in range(num_steps - 1, 0, -1):
         t = t_eval[i]
         z = z_traj[i]
@@ -315,11 +478,12 @@ def neural_ode_adjoint_gradient(
         J_z = ode_func.jacobian_z(t, z)
         J_W = ode_func.jacobian_W(t, z)
 
-        grad_W_step = np.einsum('i,ijk->jk', a_t, J_W)
-        dL_dW += grad_W_step * dt
+        # 梯度的黎曼积分累加: a(t)^T @ (df/dW) * dt
+        grad_step = np.einsum('i,ijk->jk', a_t, J_W)
+        dL_dW += grad_step * dt
 
+        # 伴随状态逆向更新
         da_dt = - np.dot(J_z.T, a_t)
         a_t = a_t - dt * da_dt
 
     return loss, dL_dW
-

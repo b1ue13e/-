@@ -1,0 +1,283 @@
+{
+  "gcn-depth-1/gcn": {
+    "experiment": "gcn-depth-1",
+    "model": "gcn",
+    "runs": 3,
+    "test_accuracy_mean": 0.8611111243565878,
+    "test_accuracy_min": 0.7833333611488342,
+    "test_accuracy_max": 0.9166666865348816,
+    "test_error_nodes": [
+      12,
+      13,
+      19,
+      28,
+      30,
+      38,
+      40,
+      67,
+      78,
+      85,
+      90,
+      91,
+      94,
+      97,
+      105
+    ],
+    "early_stopping_epochs": [
+      27,
+      44,
+      30
+    ]
+  },
+  "gcn-depth-4/gcn": {
+    "experiment": "gcn-depth-4",
+    "model": "gcn",
+    "runs": 3,
+    "test_accuracy_mean": 1.0,
+    "test_accuracy_min": 1.0,
+    "test_accuracy_max": 1.0,
+    "test_error_nodes": [],
+    "early_stopping_epochs": [
+      51,
+      78,
+      57
+    ]
+  },
+  "gcn-no-feature-signal/gcn": {
+    "experiment": "gcn-no-feature-signal",
+    "model": "gcn",
+    "runs": 3,
+    "test_accuracy_mean": 0.9055555462837219,
+    "test_accuracy_min": 0.8833333253860474,
+    "test_accuracy_max": 0.9333333373069763,
+    "test_error_nodes": [
+      12,
+      56,
+      65,
+      75,
+      78,
+      85,
+      89,
+      91,
+      97
+    ],
+    "early_stopping_epochs": [
+      32,
+      32,
+      32
+    ]
+  },
+  "graphsage-fanout-3/graphsage": {
+    "experiment": "graphsage-fanout-3",
+    "model": "graphsage",
+    "runs": 3,
+    "test_accuracy_mean": 0.8555555740992228,
+    "test_accuracy_min": 0.8500000238418579,
+    "test_accuracy_max": 0.8666666746139526,
+    "test_error_nodes": [
+      2,
+      12,
+      32,
+      33,
+      41,
+      56,
+      68,
+      75,
+      89,
+      91,
+      94,
+      97
+    ],
+    "early_stopping_epochs": [
+      17,
+      16,
+      16
+    ]
+  },
+  "model-comparison/gat": {
+    "experiment": "model-comparison",
+    "model": "gat",
+    "runs": 3,
+    "test_accuracy_mean": 0.9111110965410868,
+    "test_accuracy_min": 0.8999999761581421,
+    "test_accuracy_max": 0.9333333373069763,
+    "test_error_nodes": [
+      2,
+      27,
+      28,
+      38,
+      45,
+      56,
+      67,
+      68,
+      82,
+      83,
+      85,
+      89
+    ],
+    "early_stopping_epochs": [
+      29,
+      29,
+      46
+    ]
+  },
+  "model-comparison/gcn": {
+    "experiment": "model-comparison",
+    "model": "gcn",
+    "runs": 3,
+    "test_accuracy_mean": 0.9888888994852701,
+    "test_accuracy_min": 0.9833333492279053,
+    "test_accuracy_max": 1.0,
+    "test_error_nodes": [
+      56
+    ],
+    "early_stopping_epochs": [
+      80,
+      80,
+      80
+    ]
+  },
+  "model-comparison/graphsage": {
+    "experiment": "model-comparison",
+    "model": "graphsage",
+    "runs": 3,
+    "test_accuracy_mean": 0.899999996026357,
+    "test_accuracy_min": 0.8833333253860474,
+    "test_accuracy_max": 0.9333333373069763,
+    "test_error_nodes": [
+      12,
+      32,
+      41,
+      56,
+      68,
+      75,
+      85,
+      94,
+      97
+    ],
+    "early_stopping_epochs": [
+      17,
+      16,
+      17
+    ]
+  },
+  "model-comparison/mlp": {
+    "experiment": "model-comparison",
+    "model": "mlp",
+    "runs": 3,
+    "test_accuracy_mean": 0.5555555621782938,
+    "test_accuracy_min": 0.44999998807907104,
+    "test_accuracy_max": 0.6833333373069763,
+    "test_error_nodes": [
+      0,
+      1,
+      2,
+      4,
+      5,
+      7,
+      8,
+      9,
+      12,
+      13,
+      16,
+      18,
+      19,
+      23,
+      25,
+      26,
+      28,
+      30,
+      32,
+      33,
+      34,
+      41,
+      42,
+      45,
+      46,
+      56,
+      58,
+      62,
+      65,
+      67,
+      68,
+      70,
+      73,
+      75,
+      78,
+      79,
+      82,
+      83,
+      84,
+      85,
+      88,
+      89,
+      90,
+      91,
+      92,
+      94,
+      97,
+      98,
+      105
+    ],
+    "early_stopping_epochs": [
+      13,
+      13,
+      15
+    ]
+  },
+  "non-neural-baseline/label-propagation": {
+    "experiment": "non-neural-baseline",
+    "model": "label-propagation",
+    "runs": 1,
+    "test_accuracy_mean": 1.0,
+    "test_accuracy_min": 1.0,
+    "test_accuracy_max": 1.0,
+    "test_error_nodes": [],
+    "early_stopping_epochs": [
+      0
+    ]
+  },
+  "non-neural-baseline/majority": {
+    "experiment": "non-neural-baseline",
+    "model": "majority",
+    "runs": 1,
+    "test_accuracy_mean": 0.5,
+    "test_accuracy_min": 0.5,
+    "test_accuracy_max": 0.5,
+    "test_error_nodes": [
+      60,
+      62,
+      63,
+      65,
+      67,
+      68,
+      70,
+      72,
+      73,
+      75,
+      78,
+      79,
+      82,
+      83,
+      84,
+      85,
+      88,
+      89,
+      90,
+      91,
+      92,
+      93,
+      94,
+      95,
+      97,
+      98,
+      105,
+      110,
+      114,
+      118
+    ],
+    "early_stopping_epochs": [
+      0
+    ]
+  }
+}

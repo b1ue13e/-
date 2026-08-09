@@ -1,0 +1,11 @@
+{
+  "method": "greedy_modularity_communities",
+  "community_count": 3,
+  "community_sizes": [
+    10,
+    8,
+    6
+  ],
+  "modularity": 0.2977757371696766,
+  "oracle_labels_used_in_fit": false
+}

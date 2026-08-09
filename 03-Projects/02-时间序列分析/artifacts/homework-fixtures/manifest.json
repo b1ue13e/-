@@ -1,0 +1,42 @@
+{
+  "generated_at": "2026-08-07",
+  "seed": 20260807,
+  "python": "3.11.9",
+  "command": "python scripts/build_lesson_homework_fixtures.py",
+  "policy": "Synthetic inputs only; no answers, fitted models, or grading outputs are generated.",
+  "files": {
+    "hw00_observations.csv": {
+      "rows": 6,
+      "columns": [
+        "record_id",
+        "date",
+        "value",
+        "published_at"
+      ]
+    },
+    "hw01_structure_series.csv": {
+      "rows": 160,
+      "columns": [
+        "timestamp",
+        "series_a",
+        "series_b",
+        "series_c",
+        "series_d"
+      ]
+    },
+    "hw05_monthly_series.csv": {
+      "rows": 144,
+      "columns": [
+        "timestamp",
+        "value"
+      ]
+    },
+    "hw06_diagnostic_series.csv": {
+      "rows": 240,
+      "columns": [
+        "timestamp",
+        "value"
+      ]
+    }
+  }
+}

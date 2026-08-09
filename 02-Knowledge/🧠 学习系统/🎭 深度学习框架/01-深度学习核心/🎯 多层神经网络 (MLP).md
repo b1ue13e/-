@@ -7,7 +7,7 @@ kind: concept
 status: planned
 topic: "多层神经网络 (MLP)"
 difficulty: intermediate
-upstream: ["[[感知机]]"]
+upstream: ["[[计算机视觉-感知机]]"]
 created: 2026-08-06
 ---
 

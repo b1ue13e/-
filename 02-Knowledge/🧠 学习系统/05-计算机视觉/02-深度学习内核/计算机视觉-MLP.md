@@ -8,7 +8,7 @@ difficulty: intermediate
 concept: ["MLP", "隐藏层", "万能近似定理", "非线性激活", "XOR"]
 prerequisites: ["感知机", "激活函数详解"]
 related: ["反向传播与计算图", "卷积神经网络CNN"]
-upstream: ["[[感知机]]"]
+upstream: ["[[计算机视觉-感知机]]"]
 flow: knowledge
 stage_moc: "[[🧭 阶段2-深度学习内核]]"
 kind: concept
@@ -20,7 +20,7 @@ tags: [学习, 计算机视觉, 深度学习, MLP]
 
 > 所属模块：[[🗺️ 计算机视觉学习路径|计算机视觉学习路径]]
 > 对应阶段：[[🧭 阶段2-深度学习内核|第二阶段]]
-> 建议先看：[[感知机]]、[[激活函数详解]]
+> 建议先看：[[计算机视觉-感知机]]、[[激活函数详解]]
 
 ---
 
@@ -151,21 +151,27 @@ with torch.no_grad():
 ## 🧪 自测题
 
 1. **(基础)** 两层线性变换等价于一层线性变换，为什么？
-   <details><summary>💡 提示</summary>$\mathbf{W}_2(\mathbf{W}_1\mathbf{x}) = (\mathbf{W}_2\mathbf{W}_1)\mathbf{x}$，两个矩阵乘积仍是一个矩阵。</details>
+   <details><summary>💡 思路</summary>用矩阵乘法的结合律把 $\mathbf{W}_2(\mathbf{W}_1\mathbf{x})$ 重组一下，看括号能否换位置、两个矩阵能否先乘起来。</details>
 
 2. **(中等)** 为什么 Sigmoid 在深层 MLP 中会导致梯度消失？
-   <details><summary>💡 提示</summary>Sigmoid 导数最大 0.25，多层连乘后梯度指数衰减。ReLU 导数为 0 或 1，缓解了这个问题。</details>
+   <details><summary>💡 思路</summary>求出 Sigmoid 导数的最大值，再估算 $L$ 层连乘的量级；然后对照 ReLU 的导数取值范围做比较。</details>
 
 3. **(较难)** 万能近似定理说一层隐藏层就够了。为什么实际中深层网络比浅层宽网络更好？
-   <details><summary>💡 提示</summary>浅层宽网络需要指数级神经元才能达到深层网络的表达能力。深度 = 参数效率高 = 更好的归纳偏置。</details>
+   <details><summary>💡 思路</summary>万能近似定理只保证「存在」，不保证「多宽」。查一下达到同等表达力时浅层所需宽度随深度如何增长；再从归纳偏置和参数效率角度补充理由。</details>
 
 ---
 
 ## 学完后可以完成
 
-- [[05-计算机视觉-课后作业-02-两层网络与反向传播|HW02]]：实现两层全连接网络前向与反向
+> 下列作业在 `requires` 中引用了本卡，由 Dataview 实时派生（非人工维护反向链接）：
 
-> 作业入口由 frontmatter `requires` 维护（唯一事实源），下方 Dataview 反向派生当前卡可完成的全部作业。
+```dataview
+LIST
+FROM "03-Projects"
+WHERE contains(requires, this.file.link)
+SORT assignment_level ASC, file.name ASC
+```
+
 ## 🔗 知识图谱
 
 ```dataview

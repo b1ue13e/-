@@ -7,15 +7,81 @@ assignment_id: "RL-HW04"
 assignment_level: lesson
 assignment_format: exercise
 stage_id: "05"
-requires:
-  - "[[策略梯度定理与REINFORCE]]"
-  - "[[基线-自适应]]"
-  - "[[🧭 强化学习-前置知识]]"
 source_type: local_integration_task
+accessed: "2026-08-07"
+license: "[待验证]"
+source: "本课程（强化学习）自编形成性练习；非任何名校官方作业，不冒充官方。"
 created: 2026-08-07
 status: ongoing
 flow: project
 tags: [作业, 强化学习, 课后作业, 策略梯度, REINFORCE]
+requires:
+  - "[[策略梯度定理与REINFORCE]]"
+  - "[[基线-自适应]]"
+  - "[[🧭 强化学习-前置知识]]"
+  - "[[TRPO信任域优化]]"
+  - "[[优势估计]]"
+  - "[[PG-梯度]]"
+  - "[[TRPO与PPO对比]]"
+  - "[[Actor网络]]"
+  - "[[TRPO简介]]"
+  - "[[TRPO与PPO对比]]"
+  - "[[REINFORCE-不稳定]]"
+  - "[[REINFORCE-回报]]"
+  - "[[GAE广义优势估计]]"
+  - "[[参数化-神经网络]]"
+  - "[[演进-随机策略]]"
+  - "[[TRPO信任域优化]]"
+  - "[[AC简介]]"
+  - "[[优势函数]]"
+  - "[[演进-端到端]]"
+  - "[[基线-常数]]"
+  - "[[折扣-回报]]"
+  - "[[优势估计]]"
+  - "[[Critic网络]]"
+  - "[[PPOvsTRPO-实现]]"
+  - "[[优势估计]]"
+  - "[[参数化-连续]]"
+  - "[[优势-估计]]"
+  - "[[TRPO信任域优化]]"
+  - "[[SAC软Actor-Critic]]"
+  - "[[PG-似然比]]"
+  - "[[TRPO信任域优化]]"
+  - "[[优势估计]]"
+  - "[[REINFORCE-高方差]]"
+  - "[[折扣-Gamma]]"
+  - "[[PG-目标函数]]"
+  - "[[优势函数]]"
+  - "[[优势估计]]"
+  - "[[PPOvsTRPO-效果]]"
+  - "[[Actor-Critic架构]]"
+  - "[[Actor网络]]"
+  - "[[参数化-可微]]"
+  - "[[Actor网络]]"
+  - "[[TRPO与PPO对比]]"
+  - "[[折扣-修正]]"
+  - "[[策略-参数化]]"
+  - "[[REINFORCE-更新]]"
+  - "[[PolicyGradient策略梯度]]"
+  - "[[REINFORCE-信用]]"
+  - "[[基线-状态价值]]"
+  - "[[REINFORCE-无偏]]"
+  - "[[TRPO信任域优化]]"
+  - "[[REINFORCE-Baseline]]"
+  - "[[演进-连续优化]]"
+  - "[[REINFORCE-MC]]"
+  - "[[演进-连续动作]]"
+  - "[[Actor网络]]"
+  - "[[PG-直观]]"
+  - "[[MDP-折扣因子]]"
+  - "[[TRPO与PPO对比]]"
+  - "[[DDPG深度确定性策略梯度(DDPG)]]"
+  - "[[PPOvsTRPO-效率]]"
+  - "[[PPOvsTRPO-约束]]"
+  - "[[优势-方差]]"
+  - "[[参数化-离散]]"
+  - "[[NPG]]"
+
 ---
 
 # 强化学习-课后作业-策略梯度REINFORCE
@@ -149,3 +215,10 @@ assert np.allclose(grad, np.array([0.25, -0.25])), grad   # 推向 action 0
 - A：对任意不依赖 `a_t` 的 `b(s_t)`，有 `E[∇logπ(a_t|s_t)·b] = 0`（因 `E_a[∇logπ]=0`），故梯度期望不变；但 `G_t` 减去常数 `b` 后中心化，单次估计的方差下降。
 - Q：REINFORCE 与 Q-Learning 的根本区别？
 - A：REINFORCE 直接对**策略参数**求导（policy-based），可处理连续/随机策略；Q-Learning 学**动作值**再贪心出策略（value-based）。前者高方差、后者有偏（max 引入）。
+
+
+## 来源声明（诚实标注）
+
+本作业 `source_type: local_integration_task`，为**本课程（强化学习）自编形成性练习**。
+- 诚实说明：非任何名校官方作业，不冒充官方题面；题面与验收由本课程独立制定。
+- 许可：[待验证]；访问日期 2026-08-07。

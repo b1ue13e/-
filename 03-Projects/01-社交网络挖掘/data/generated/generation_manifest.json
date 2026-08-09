@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "seed": 42,
+  "node_count": 24,
+  "files": {
+    "directed_edges.csv": {
+      "rows": 64,
+      "sha256": "504d3e25d0e6e702a0ceb85435f92fa8b782893ff51e8f1633305e077008391f"
+    },
+    "evolution_snapshot_01.csv": {
+      "rows": 45,
+      "sha256": "7db245a11ee9ccbed84b55040cd99fd84bc6f97ed332aea46d42473368ec752f"
+    },
+    "evolution_snapshot_02.csv": {
+      "rows": 85,
+      "sha256": "d3ca4634f4b9b982fd337d745661e29b79328dc493719a03c57bfce6f150b4bb"
+    },
+    "evolution_snapshot_03.csv": {
+      "rows": 125,
+      "sha256": "4214702865175c216e8c50aa17441f106115e88479c514cdc038c953086f4344"
+    },
+    "node_attributes.csv": {
+      "rows": 24,
+      "sha256": "d699c3bf3597a022681135763da059fb95088426bf91708339d15632524a14ca"
+    },
+    "node_features.csv": {
+      "rows": 24,
+      "sha256": "bde930b5ab5abccb100d1222812cf1685dbb644f49f017851b62dc02b3d6ade2"
+    },
+    "node_labels.csv": {
+      "rows": 24,
+      "sha256": "97bdd1d13ceab6bf0948ea5bba90dcc50b0b468c0afe9335d7bc79efc3673a62"
+    },
+    "signed_edges.csv": {
+      "rows": 90,
+      "sha256": "a6b58afca0e8ddbef7f8bea14dbb0fbbf831c98a4d444e6b8437a922faa48678"
+    },
+    "structure_edges.csv": {
+      "rows": 99,
+      "sha256": "705381a0751dbe62c3830c594be34638c306505b7cf68fb9fdf79fcde7b6e588"
+    },
+    "temporal_edges.csv": {
+      "rows": 140,
+      "sha256": "2fdcdc74c77becb84600b919951a9c5a354e5ef9ea787ab96a6fc8e9b4d72711"
+    }
+  },
+  "limitations": [
+    "Synthetic fixtures validate course protocols, not real social behavior.",
+    "Community labels exist only in node_labels.csv and must not enter feature loading or unsupervised training.",
+    "feature_a is a permitted pre-split synthetic covariate correlated with the planted structure."
+  ],
+  "roles": {
+    "node_features.csv": "model_input",
+    "node_labels.csv": "evaluation_oracle_only",
+    "node_attributes.csv": "descriptive_attribute",
+    "structure_edges.csv": "shared_static_graph_for_structure_community_and_propagation",
+    "temporal_edges.csv": "time_ordered_link_prediction_events"
+  },
+  "forbidden_feature_fields": [
+    "community",
+    "label",
+    "target",
+    "split"
+  ]
+}

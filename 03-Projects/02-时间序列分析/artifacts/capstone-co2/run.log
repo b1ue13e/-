@@ -1,9 +1,17 @@
 {
   "seed": 20260806,
-  "prediction_rows": 1068,
-  "failure_rows": 1,
+  "prediction_rows": 1020,
+  "failure_rows": 3,
+  "warning_rows": 5,
   "selected_model": "ets",
   "validation_failure_models": [
+    "arima",
+    "arima",
     "arima"
+  ],
+  "final_test_models": [
+    "naive",
+    "seasonal_naive",
+    "ets"
   ]
 }

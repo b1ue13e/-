@@ -1,18 +1,18 @@
-﻿---
-title: "调和函数与 Dirichlet 问题"
-date: "2026-08-04"
+---
 type: study
+topic: "调和函数与 Dirichlet 问题"
 course: "复变函数"
-importance: "B"
+created: 2026-08-04
+status: completed
+stage_moc: "[[🧭 阶段4-保角映射与综合项目]]"
+flow: knowledge
+kind: concept
 tags: [学习, 复变函数]
-upstream: ["解析函数与 Cauchy-Riemann 方程", "保角映射与 Möbius 变换"]
-downstream: ["域着色可视化画廊（Capstone）"]
-status: learning
-proof_mode: true
+upstream: ["[[解析函数与 Cauchy-Riemann 方程]]", "[[保角映射与 Möbius 变换]]"]
 concept: ["调和函数", "Laplace 方程", "Dirichlet 问题", "Poisson 积分"]
 sources:
-  - "Complex Analysis: A Visual and Interactive Introduction, Ch.3 (Complex Potential: Basic examples) 扩展"
-  - "MIT 18.04 Lecture Notes (Harmonic Functions)"
+  - "Complex Analysis: A Visual and Interactive Introduction, Ch.3 扩展"
+  - "MIT 18.04 Lecture Notes"
 ---
 
 # 调和函数与 Dirichlet 问题
@@ -252,41 +252,26 @@ $$u(re^{i\theta})=\frac{1}{2\pi}\int_0^{2\pi}\frac{1-r^2}{1-2r\cos(\theta-t)+r^2
 > - **解析**：保角变换 + Poisson 核。
 > - **易错原因**：Jacobian 变换时核的化简。
 
----
+## 学完后可以完成
 
-## 12. 我的主动回忆区
+学完本卡后，可直接点击下方链接跳转至对应的实战作业包：
 
-> **用法**：合上笔记，按引导填空。填不出 = 没掌握，回到第 4-6 节重读再重填。写不出来 = 卡点，记入下方。
+### 🔍 派生动态视图 (Obsidian Dataview)
 
-### 我的闭卷复述
-> 复述「调和函数与 Dirichlet 问题」的精确定义：
-> - 前提条件：______
-> - 结论：______
-> - 符号含义（至少 3 个）：______
+> [!tip] 以下视图由 Obsidian Dataview 自动派生，展示库内所有引用本卡的作业与下游知识。
 
-### 我的证明重建
-> 不看上文，写出证明主线：
-> - 第 1 步：______
-> - 关键"转念"：______
-> - 我卡住的证明步骤：______（复习重点）
+#### 关联作业
+```dataview
+TABLE assignment_id AS "作业编号", assignment_level AS "层级", assignment_format AS "形态"
+FROM "03-Projects"
+WHERE contains(requires, this.file.link)
+SORT assignment_level ASC, file.name ASC
+```
 
-### 我的反例与卡点
-- 我构造的反例：______（对应哪个条件不能省）
-- 我默写时卡住的步骤：______
-- 修正后的理解：______
-
-### 下次复习日期
-- [ ] 明天
-- [ ] 3 天后
-- [ ] 7 天后
-- [ ] 14 天后
-
----
-
-## 13. 给 Obsidian 的归档建议
-
-- **适合文件夹**：`02-Knowledge/🧠 学习系统/37-复变函数/04-保角映射与综合项目/`
-- **关联已有笔记**：`[[📕 第四阶段：保角映射与综合项目]]`
-- **建议标签**：`#学习` `#复变函数` `#概念`
-- **拆分建议**：Poisson 公式与均值性质可拆为独立小节。
-
+#### 下游关联知识卡
+```dataview
+LIST
+FROM "02-Knowledge/🧠 学习系统"
+WHERE contains(upstream, this.file.link)
+SORT file.name ASC
+```

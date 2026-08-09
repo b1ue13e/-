@@ -1,4 +1,4 @@
-﻿---
+---
 type: study
 topic: "GAE 广义优势估计"
 course: "强化学习"
@@ -9,7 +9,7 @@ flow: knowledge
 kind: concept
 difficulty: advanced
 concept: ["GAE", "GAE(lambda)", "优势函数", "TD误差"]
-upstream: ["[[Actor-Critic架构]]", "[[TD-0]]", "[[优势-定义]]"]
+upstream: ["[[Actor-Critic架构]]", "[[时序差分与 Q-Learning]]", "[[优势函数]]"]
 tags: [学习, 强化学习]
 ---
 > 所属模块：[[🗺️ 强化学习学习路径|强化学习学习路径]]
@@ -248,6 +248,10 @@ def compute_gae(rewards, values, gamma=0.99, lam=0.95):
 - **关联已有笔记**：[[🧭 课程作业总索引]]、[[PPO近端策略优化]]、[[Actor-Critic架构]]、[[MDP 与贝尔曼方程]]、[[Q-Learning算法]]
 - **建议标签**：`#学习` `#强化学习` `#GAE` `#优势估计` `#概念`
 - **拆分建议**：暂不需要；若 HW05 推导卡壳，可拆"GAE 推导题型笔记"（题型笔记）。
+
+## 14. 与「优势-GAE」碎片的关系
+
+「优势-GAE」碎片（已被并入本卡）给出的正是本卡第 5 节的核心内容：GAE 是 n-step 优势的指数加权组合，递推式 $A_t=\delta_t+\gamma\lambda A_{t+1}$，且 $\lambda\to 0$ 近似 TD、$\lambda\to 1$ 近似 MC。其全部信息已包含在第 5、8 节，无额外独有内容需补，故直接并入本卡。
 
 ## 闭卷自测
 1. 一步 TD 优势与蒙特卡洛优势各自的偏差/方差特点是什么？

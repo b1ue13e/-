@@ -1,4 +1,4 @@
-﻿---
+---
 type: study
 topic: "AI Agent安全审计：加密收据与审批绑定"
 course: "AI Agent工程"
@@ -13,10 +13,9 @@ stage_moc: "[[🧭 阶段6-部署审计与改进]]"
 upstream: ["[[AI-Agent-部署与本地运行-伸缩路由烟测]]", "[[AI-Agent-安全威胁建模与系统评测]]"]
 flow: knowledge
 kind: concept
-assessment_exempt: false
 source: "Microsoft AI Agents for Beginners Lesson 18; cryptographic implementation must follow current standards and reviewed libraries"
 source_urls: ["https://github.com/microsoft/ai-agents-for-beginners/tree/main/18-securing-ai-agents"]
-accessed: 2026-08-06
+accessed: 2026-08-08
 license: "Microsoft AI Agents for Beginners MIT；加密实现须另循生产库与标准许可"
 anki_deck: "46-AI Agent工程::安全审计"
 anki_tags: [加密收据, Ed25519, 哈希链, 审批]
@@ -146,6 +145,8 @@ print(verify_demo(receipt, signature))
 ```
 
 输出为 `True`、`False`。生产系统应使用经过审查的 Ed25519/JCS 实现和密钥管理服务；不要把演示 HMAC 当成跨组织签名方案。
+
+课程运行时的 `ApprovalGate` 已实现封闭域 HMAC 收据：请求先冻结 `action/resource/parameters/nonce/issued_at/expires_at`，批准后返回签名 token；执行时重新验证签名、完整参数、时效和一次性 nonce。`SafeWorkspace` 把内容字节数与 SHA-256 纳入参数，因此“批准写 A 内容、执行时换成 B 内容”会失败关闭。它仍不提供审批者身份认证、公钥不可否认性、跨进程持久化、密钥轮换或收据链，不能替代本卡描述的生产级 Ed25519/JCS/KMS 方案。
 
 ## 8. 常见误区和易混概念
 

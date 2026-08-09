@@ -1,0 +1,12 @@
+{
+  "assignment": "GNN-S04",
+  "starter_status": "worked-example",
+  "scope": "attention-score tensor and leading multiply terms only",
+  "excluded": [
+    "optimizer state",
+    "activations",
+    "communication",
+    "kernel overhead",
+    "latency"
+  ]
+}

@@ -1,4 +1,4 @@
-﻿---
+---
 type: study
 topic: "AutoGen 0.2 官方 Lab 版本补丁"
 course: "AI Agent工程"
@@ -14,7 +14,6 @@ stage_moc: "[[🧭 阶段2-运行时规划与状态]]"
 upstream: ["[[AI-Agent-框架选型与最小运行时]]", "[[AI-Agent-规划状态与工作流编排]]", "[[AI-Agent-多智能体协作与消息协议]]"]
 flow: knowledge
 kind: concept
-assessment_exempt: false
 source: "UC Berkeley LLM Agents MOOC F24 Lab 01; Microsoft AutoGen 0.2 docs; Microsoft AI Agents for Beginners Lessons 2 and 14; Datawhale Hello-Agents Chapter 6"
 source_urls: ["https://github.com/microsoft/ai-agents-for-beginners/tree/main/02-explore-agentic-frameworks", "https://github.com/microsoft/ai-agents-for-beginners/tree/main/14-microsoft-agent-framework", "https://github.com/datawhalechina/hello-agents/tree/main/docs/chapter6"]
 accessed: 2026-08-06

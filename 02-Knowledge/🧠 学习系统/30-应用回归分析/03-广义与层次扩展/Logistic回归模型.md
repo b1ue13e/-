@@ -1,9 +1,9 @@
-﻿---
+---
 type: study
 tags: [学习, 30-应用回归分析, 统计学]
 created: 2026-04-16
-updated: 2026-08-05
-status: completed
+updated: 2026-08-09
+status: ongoing
 difficulty: intermediate
 flow: knowledge
 kind: concept
@@ -13,12 +13,19 @@ prerequisites: ["多元线性回归模型", "含定性变量的回归模型"]
 related: ["多类别Logistic回归", "可化为线性回归的曲线回归"]
 anki_deck: "30-应用回归分析::应用回归分析"
 anki_tags: ["30-应用回归分析", "应用回归分析"]
+topic: "Logistic回归模型"
+course: "30-应用回归分析"
+stage_moc: "[[🧭 阶段3-正则化非线性与广义模型]]"
+upstream: ["[[应用回归分析-广义线性模型框架]]"]
+source_url: "https://www.statlearning.com/"
+accessed: 2026-08-09
+license: "link-only；具体许可 [待验证]"
 ---
 
 # Logistic回归模型
 
 > 所属模块：[[🗺️ 应用回归分析学习路径|应用回归分析]]
-> 主教材：[[应用回归分析-第5版|应用回归分析（第5版）]]
+> 主教材：[[02-Knowledge/📚 书库/书籍笔记/应用回归分析-第5版|应用回归分析（第5版）]]
 > 对应章节：第 10 章
 
 ---
@@ -44,7 +51,7 @@ anki_tags: ["30-应用回归分析", "应用回归分析"]
 
 ## 2. 为什么它重要？它有什么用？
 
-- **连接大图景**：Logistic 回归是[[多类别Logistic回归]]（softmax）和[[待创建:广义线性模型GLM]]的基础。它的 logit 链接函数是"变换思想"（见[[可化为线性回归的曲线回归]]）的综合应用。神经网络中的 sigmoid 激活函数就是 logistic 函数。
+- **连接大图景**：Logistic 回归是[[多类别Logistic回归]]（softmax）和[[应用回归分析-广义线性模型框架]]的基础。它的 logit 链接函数是"变换思想"（见[[可化为线性回归的曲线回归]]）的综合应用。神经网络中的 sigmoid 激活函数就是 logistic 函数。
 - **实际应用场景**：医学（疾病诊断 yes/no）、金融（信用违约）、营销（客户流失）、社会科学（投票意愿）。
 - **高频题型/任务**：系数的对数优势比解释、模型比较（似然比检验 vs Wald 检验）、ROC 曲线与 AUC、分类阈值选择。
 
@@ -158,8 +165,8 @@ n = 200
 credit_score = np.random.normal(650, 80, n)  # 信用评分
 income = np.random.normal(50, 20, n)         # 年收入（万元）
 
-# 真实违约概率（评分越低，收入越低，违约概率越高）
-log_odds = -8 + 0.005 * credit_score + 0.04 * income
+# 真实违约概率（评分越高、收入越高，违约概率越低）
+log_odds = 4 - 0.005 * credit_score - 0.04 * income
 p_default = 1 / (1 + np.exp(-log_odds))
 y = np.random.binomial(1, p_default)
 
@@ -167,19 +174,20 @@ y = np.random.binomial(1, p_default)
 X = sm.add_constant(pd.DataFrame({'credit_score': credit_score, 'income': income}))
 model_sm = sm.Logit(y, X).fit(disp=0)
 print(model_sm.summary().tables[1])
-# 系数：const≈-8, credit_score≈0.005, income≈0.04
-# 解释：信用评分每增1分，违约优势比乘以 e^0.005≈1.005
+# 参数估计应接近生成方向，但有限样本下不会精确等于真实值
+# 信用评分每增 1 分，违约优势比乘以 e^-0.005，方向为下降
 
 # 打印优势比
 print("优势比:")
 print(np.exp(model_sm.params))
-# const≈0.0003, credit_score≈1.005, income≈1.041
+# 检查 credit_score 与 income 的优势比均应小于 1
 
 # ---- sklearn LogisticRegression ----
 model_sk = LogisticRegression(penalty=None, solver='lbfgs')
 model_sk.fit(X[['credit_score', 'income']], y)
 y_pred = model_sk.predict(X[['credit_score', 'income']])
-print("准确率:", accuracy_score(y, y_pred))  # 约 0.85-0.90
+print("训练集准确率:", accuracy_score(y, y_pred))
+# 这里只检查 API 和系数方向；正式评价必须使用独立测试集或交叉验证
 ```
 
 ---
@@ -210,14 +218,14 @@ print("准确率:", accuracy_score(y, y_pred))  # 约 0.85-0.90
 
 ### 下游延伸
 - [[多类别Logistic回归]]：将二分类推广到多分类（softmax 函数）。
-- [[待创建:广义线性模型GLM]]：Logistic 回归是 GLM 的特例（Bernoulli 分布 + logit 链接）。
+- [[应用回归分析-广义线性模型框架]]：Logistic 回归是 GLM 的特例（Bernoulli 分布 + logit 链接）。
 
 ### 横向关联
 - [[可化为线性回归的曲线回归]] ↔ [[Logistic回归模型]]：logit 变换本质上是"变换思想"的延续，将概率变换到无界空间后线性建模。
-- [[待创建:ROC曲线与AUC]]：评估 Logistic 回归分类性能的标准工具。
+- ROC曲线与AUC：评估 Logistic 回归分类性能的标准工具。
 
 ### 应用场景
-- [[待创建:信用评分卡建模]]：Logistic 回归是信用评分卡的标准方法，系数映射为分数。
+- 信用评分卡建模：Logistic 回归是信用评分卡的标准方法，系数映射为分数。
 
 ---
 
@@ -304,3 +312,12 @@ print("准确率:", accuracy_score(y, y_pred))  # 约 0.85-0.90
 - **关联已有笔记**：`[[多元线性回归模型]]` `[[多类别Logistic回归]]` `[[含定性变量的回归模型]]`
 - **建议标签**：`#学习` `#30-应用回归分析` `#Logistic回归`
 - **拆分建议**：可拆分为"概念笔记"（Logistic 回归原理）、"推导笔记"（MLE 与 IRLS 推导）、"题型笔记"（系数解释、模型评估）
+
+## 学完后可以完成
+
+```dataview
+LIST
+FROM "03-Projects"
+WHERE contains(requires, this.file.link)
+SORT assignment_level ASC, file.name ASC
+```

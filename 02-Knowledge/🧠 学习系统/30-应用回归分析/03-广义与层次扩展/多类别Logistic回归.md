@@ -1,9 +1,9 @@
-﻿---
+---
 type: study
 tags: [学习, 30-应用回归分析, 统计学]
 created: 2026-04-16
-updated: 2026-08-05
-status: completed
+updated: 2026-08-09
+status: ongoing
 difficulty: intermediate
 flow: knowledge
 kind: concept
@@ -11,16 +11,23 @@ source: "ISLR Ch.4; Penn State STAT 462"
 concept:
 - 多类别Logistic回归
 prerequisites: ["Logistic回归模型", "含定性变量的回归模型"]
-related: ["Logistic回归模型", "待创建:线性判别分析LDA"]
+related: ["Logistic回归模型", "顺序数据的回归模型"]
 anki_deck: "30-应用回归分析::应用回归分析"
 anki_tags: ["30-应用回归分析", "应用回归分析"]
+topic: "多类别Logistic回归"
+course: "30-应用回归分析"
+stage_moc: "[[🧭 阶段3-正则化非线性与广义模型]]"
+upstream: ["[[Logistic回归模型]]"]
+source_url: "https://www.statlearning.com/"
+accessed: 2026-08-09
+license: "link-only；具体许可 [待验证]"
 ---
 
 # 多类别Logistic回归
 
 > 所属模块：[[🗺️ 应用回归分析学习路径|应用回归分析]]
-> 主教材：[[应用回归分析-第5版|应用回归分析（第5版）]]
-> 对应阶段：[[🧩 第三阶段：广义与层次扩展|返回阶段页]]
+> 主教材：[[02-Knowledge/📚 书库/书籍笔记/应用回归分析-第5版|应用回归分析（第5版）]]
+> 对应阶段：[[🧭 阶段3-正则化非线性与广义模型|返回阶段页]]
 
 ---
 
@@ -42,7 +49,7 @@ anki_tags: ["30-应用回归分析", "应用回归分析"]
 
 ## 2. 为什么它重要？它有什么用？
 
-- **连接大图景**：多类别 Logistic 回归（softmax 回归）是二分类 Logistic 回归的直接推广。它的 softmax 函数是神经网络多分类输出层的标准配置，也是[[待创建:广义线性模型GLM]]中多分类链接函数的自然选择。
+- **连接大图景**：多类别 Logistic 回归（softmax 回归）是二分类 Logistic 回归的直接推广。它的 softmax 函数是神经网络多分类输出层的标准配置，也是[[应用回归分析-广义线性模型框架]]中多分类链接函数的自然选择。
 - **实际应用场景**：手写数字识别（0-9）、文本分类（新闻主题分类）、医学诊断（多种疾病鉴别）、客户分群（高/中/低价值客户）。
 - **高频题型/任务**：softmax 函数的计算、基线类别约定（baseline category）、系数解释（相对于基线类别的对数优势比）、模型比较（似然比检验）。
 
@@ -212,15 +219,15 @@ print("系数形状:", model.coef_.shape)  # (3, 2)，3个类别各有一套系�
 - [[含定性变量的回归模型]]：当多类别 Logistic 回归的预测变量中包含定性变量时，同样需要哑变量编码。
 
 ### 下游延伸
-- [[待创建:softmax回归与神经网络]]：softmax 是神经网络多分类输出层的标准配置。
-- [[待创建:有序Logistic回归]]：当响应变量有自然顺序时，应使用比例优势模型。
+- softmax回归与神经网络：softmax 是神经网络多分类输出层的标准配置。
+- [[顺序数据的回归模型]]：当响应变量有自然顺序时，应使用比例优势模型。
 
 ### 横向关联
-- [[待创建:线性判别分析LDA]] ↔ [[多类别Logistic回归]]：两者都处理多分类，但 LDA 建模 $P(X|Y)$，Logistic 建模 $P(Y|X)$。
-- [[待创建:多项分布与指数族]] ↔ [[多类别Logistic回归]]：多类别 Logistic 回归对应多项分布的自然链接函数。
+- 线性判别分析LDA ↔ [[多类别Logistic回归]]：两者都处理多分类，但 LDA 建模 $P(X|Y)$，Logistic 建模 $P(Y|X)$。
+- 多项分布与指数族 ↔ [[多类别Logistic回归]]：多类别 Logistic 回归对应多项分布的自然链接函数。
 
 ### 应用场景
-- [[待创建:手写数字识别]]：MNIST 数据集的 10 分类是 softmax 的经典应用。
+- 手写数字识别：MNIST 数据集的 10 分类是 softmax 的经典应用。
 
 ---
 
@@ -306,3 +313,12 @@ print("系数形状:", model.coef_.shape)  # (3, 2)，3个类别各有一套系�
 - **关联已有笔记**：`[[Logistic回归模型]]` `[[含定性变量的回归模型]]`
 - **建议标签**：`#学习` `#30-应用回归分析` `#多类别Logistic回归`
 - **拆分建议**：可拆分为"概念笔记"（softmax 原理与参数化）和"方法笔记"（多分类模型的评估与选择）
+
+## 学完后可以完成
+
+```dataview
+LIST
+FROM "03-Projects"
+WHERE contains(requires, this.file.link)
+SORT assignment_level ASC, file.name ASC
+```

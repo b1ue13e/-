@@ -9,7 +9,6 @@ flow: project
 project_type: homework
 asset_eligibility: eligible
 eligibility_audited: 2026-08-06
-difficulty_tier: T3
 source_type: open_source_project_task
 source_url: https://arxiv.org/abs/1806.07366
 source_course: Neural ODE (Chen et al. NeurIPS 2018 Best Paper)
