@@ -162,8 +162,7 @@ $\operatorname{rank}$ 相同的矩阵对：$AA^T=U\Sigma^2U^T$、$A^TA=V\Sigma^2
 | ★ | 手算 $\begin{bmatrix}3&0\\0&2\end{bmatrix}$ 与 $\begin{bmatrix}1&1\\1&1\end{bmatrix}$ 的 SVD | MIT 18.06 Lec 29 |
 | ★★ | 证明：$\lVert A\rVert_2=\sigma_1$，$\lVert A\rVert_F^2=\sum\sigma_i^2$ | Trefethen & Bau |
 | ★★★ | 证明 Eckart-Young（2-范数，用维数+交） | Trefethen & Bau |
-| ★★★★ | 用 SVD 给出最小二乘解 $\hat{\mathbf{x}}=V\Sigma^{-1}U^T\mathbf{b}$ 并说明与正规方程关系 | 高等代数（第5版） |
-
+| ★★★★ | 用 SVD 给出最小二乘解 $\hat{\mathbf{x}}=V\Sigma^{-1}U^T\mathbf{b}$ 并说明与正规方程关系 | 高等代数（第5版）[待验证] |
 ## 12. 我的主动回忆区
 
 <details>

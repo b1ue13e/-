@@ -135,7 +135,7 @@ $\lVert(x,y)\rVert_\infty=\max(|x|,|y|)$ 满足范数公理但无内积（平行
 |:--|:--|:--|
 | ★ | 求 $\mathbf{u}=(1,2,2)$ 的范数与 $\mathbf{u},(1,0,0)$ 的夹角 | Hefferon §6.1 |
 | ★★ | 证明 $\lvert\langle\mathbf{u},\mathbf{v}\rangle\rvert^2\le\langle\mathbf{u},\mathbf{u}\rangle\langle\mathbf{v},\mathbf{v}\rangle$（展开 $\lVert\mathbf{u}+t\mathbf{v}\rVert^2\ge0$） | MIT 18.06 Lec 14 |
-| ★★★ | 证明三角不等式并说明等号条件（共线同向） | 高等代数（第5版） |
+| ★★★ | 证明三角不等式并说明等号条件（共线同向） | 高等代数（第5版）[待验证] |
 | ★★★★ | 证明极化恒等式并由此说明 $l^1$ 无内积 | Hefferon §6.1 |
 
 ## 12. 我的主动回忆区

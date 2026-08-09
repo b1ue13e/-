@@ -145,7 +145,7 @@ $\operatorname{rank}A<n$ 时 $R$ 奇异，分解不唯一——需约定（如�
 |:--|:--|:--|
 | ★ | 对 $A=\begin{bmatrix}1&1\\1&0\\1&0\end{bmatrix}$ 做 QR | Hefferon §6.5 |
 | ★★ | 用 QR 解 $\min\lVert A\mathbf{x}-\mathbf{b}\rVert^2$（$A$ 同上，$\mathbf{b}=(1,1,1)$） | MIT 18.06 Lec 17 |
-| ★★★ | 证明：$Q$ 上三角且正交 ⟹ $Q$ 对角且元素 ±1 | 高等代数（第5版） |
+| ★★★ | 证明：$Q$ 上三角且正交 ⟹ $Q$ 对角且元素 ±1 | 高等代数（第5版）[待验证] |
 | ★★★★ | 说明为什么 QR 比正规方程数值稳定（条件数 $\kappa^2$ vs $\kappa$） | Trefethen & Bau |
 
 ## 12. 我的主动回忆区

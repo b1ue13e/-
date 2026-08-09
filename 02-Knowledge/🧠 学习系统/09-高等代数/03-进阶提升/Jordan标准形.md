@@ -142,9 +142,8 @@ $R=\begin{bmatrix}0&-1\\1&0\end{bmatrix}$ 在 $\mathbb{R}$ 上无 Jordan 形（�
 |:--|:--|:--|
 | ★ | 写出 $\begin{bmatrix}3&1&0\\0&3&1\\0&0&3\end{bmatrix}$ 的 Jordan 形 | Hefferon §5.5 |
 | ★★ | 计算 $J_2(\lambda)^k$ 与 $e^{J_2(\lambda)t}$ | MIT 18.06 Lec 28 |
-| ★★★ | 证明：$A$ 可对角化 ⟺ 每个 Jordan 块为 $1\times1$ | 高等代数（第5版） |
-| ★★★★ | 用 $\dim\ker(A-\lambda I)^k$ 判定 $A=\begin{bmatrix}2&1&0\\0&2&1\\0&0&2\end{bmatrix}$ 的 Jordan 形并验证唯一性 | 高等代数（第5版） |
-
+| ★★★ | 证明：$A$ 可对角化 ⟺ 每个 Jordan 块为 $1\times1$ | 高等代数（第5版）[待验证] |
+| ★★★★ | 用 $\dim\ker(A-\lambda I)^k$ 判定 $A=\begin{bmatrix}2&1&0\\0&2&1\\0&0&2\end{bmatrix}$ 的 Jordan 形并验证唯一性 | 高等代数（第5版）[待验证] |
 ## 12. 我的主动回忆区
 
 <details>

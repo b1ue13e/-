@@ -9,7 +9,7 @@ stage_id: "04"
 requires: ["[[线性方程组与高斯消元法]]", "[[矩阵的秩]]", "[[线性映射的矩阵表示]]", "[[特征多项式与特征值性质]]", "[[相似对角化条件与判定]]", "[[正交投影与正交分解]]", "[[Gram-Schmidt正交化]]", "[[最小二乘法]]", "[[实对称矩阵与谱定理]]", "[[奇异值分解(SVD)]]", "[[低秩逼近与主成分分析]]"]
 source_type: local_integration_task
 created: 2026-08-06
-status: ongoing
+status: completed
 flow: project
 tags: [高等代数, 作业]
 ---
