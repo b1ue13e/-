@@ -3,7 +3,7 @@ type: project
 project_type: homework
 course: "控制与机器人学"
 assignment_id: "15-控制与机器人学-项目-04-01-PID温度控制"
-assignment_level: lesson
+assignment_level: stage
 assignment_format: lab
 stage_id: "04"
 requires:
